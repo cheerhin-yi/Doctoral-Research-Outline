@@ -1,7 +1,6 @@
 [
   "obsidian-git",
   "templater-obsidian",
-  "obsidian-minimal-settings",
   "obsidian-style-settings",
   "dataview",
   "obsidian-image-toolkit",
@@ -11,5 +10,6 @@
   "table-editor-obsidian",
   "obsidian-zotero-desktop-connector",
   "obsidian42-brat",
-  "open-in-new-tab"
+  "open-in-new-tab",
+  "obsidian-minimal-settings"
 ]
