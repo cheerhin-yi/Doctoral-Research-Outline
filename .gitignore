@@ -1,0 +1,42 @@
+# 数据集与外部资源
+11_Datasets/raw/
+11_Datasets/processed/
+11_Datasets/external/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# 模型权重与大文件
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+*.weights
+
+# 运行产物
+runs/
+outputs/
+results/
+checkpoints/
+wandb/
+mlruns/
+tensorboard/
+__pycache__/
+.pytest_cache/
+.cache/
+
+# 环境与凭据
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+
+# 编辑器与系统文件
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
