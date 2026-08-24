@@ -1,0 +1,8 @@
+{
+  "promptDelete": false,
+  "readableLineLength": false,
+  "showLineNumber": false,
+  "autoConvertHtml": true,
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "./附件文件"
+}

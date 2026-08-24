@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 2,
+  "sources": {
+    "j310dngcB6KBS3tdm6-pERy9xUukJeCu": {
+      "id": "j310dngcB6KBS3tdm6-pERy9xUukJeCu",
+      "plugin": "templify",
+      "title": "[feichuan][zh-cn] Templify",
+      "type": "plugin",
+      "origin": "cloud",
+      "isActive": false,
+      "checksum": "003b5208d89038d3bd3cb9edf601aa2e4f2a31c9b7f50569e06b1fd97c0021ee",
+      "cloud": {
+        "owner": "lizhengyi3003",
+        "repo": "obsidian-i18n-resources",
+        "hash": "7e44abf77e44abf77e44abf77e44abf7"
+      },
+      "updatedAt": 1781877112427,
+      "createdAt": 1781877112427
+    },
+    "CXgRmgaK7CsDdCa7byISwLCwppDp_c-b": {
+      "id": "CXgRmgaK7CsDdCa7byISwLCwppDp_c-b",
+      "plugin": "templater-obsidian",
+      "title": "Templater",
+      "type": "plugin",
+      "origin": "cloud",
+      "isActive": false,
+      "checksum": "dfd5fe69365a2f8964f2d96d787bd660feff16b9fcd6cf452c9dd320eaecce06",
+      "cloud": {
+        "owner": "win2ter",
+        "repo": "obsidian-translations",
+        "hash": "5f10c48d5f10c48d5f10c48d5f10c48d"
+      },
+      "updatedAt": 1781877442384,
+      "createdAt": 1781877368074
+    },
+    "SnkCSC-YnvaoZCgzbYY061NMs5mjSJ6k": {
+      "id": "SnkCSC-YnvaoZCgzbYY061NMs5mjSJ6k",
+      "plugin": "templater-obsidian",
+      "title": "[zh-tw] Templater",
+      "type": "plugin",
+      "origin": "cloud",
+      "isActive": true,
+      "checksum": "1b144790c53f548e1f7e0c45e5156cbbb55251b2a0bdbb0b683733c02abc513b",
+      "cloud": {
+        "owner": "Chico890921",
+        "repo": "obsidian-translations",
+        "hash": "43480ee343480ee343480ee343480ee3"
+      },
+      "updatedAt": 1781877886307,
+      "createdAt": 1781877886307
+    },
+    "CHbjyqRjPlwR-RVGlwGPviU2jgHAWbsD": {
+      "id": "CHbjyqRjPlwR-RVGlwGPviU2jgHAWbsD",
+      "plugin": "dataview",
+      "title": "[zh-tw] Dataview",
+      "type": "plugin",
+      "origin": "cloud",
+      "isActive": false,
+      "checksum": "7c40d05ba890130c5a4b8eaf6174c3421b9ea92861f1a41f4621352cff2c1dfb",
+      "cloud": {
+        "owner": "Chico890921",
+        "repo": "obsidian-translations",
+        "hash": "741a5aa7741a5aa7741a5aa7741a5aa7"
+      },
+      "updatedAt": 1781877927243,
+      "createdAt": 1781877927243
+    }
+  }
+}

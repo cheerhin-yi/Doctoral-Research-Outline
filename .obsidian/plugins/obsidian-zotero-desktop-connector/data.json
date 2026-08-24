@@ -1,0 +1,28 @@
+{
+  "database": "Zotero",
+  "noteImportFolder": "Paper/1.Note",
+  "pdfExportImageDPI": 120,
+  "pdfExportImageFormat": "jpg",
+  "pdfExportImageQuality": 90,
+  "citeFormats": [
+    {
+      "name": "Bibliography",
+      "format": "formatted-bibliography",
+      "cslStyle": "chicago-author-date-16th-edition"
+    }
+  ],
+  "exportFormats": [
+    {
+      "name": "Import Zotero Note",
+      "outputPathTemplate": "Paper/1.Note/{{citekey}}.md",
+      "imageOutputPathTemplate": "Paper/1.Note/assets/{{citekey}}/",
+      "imageBaseNameTemplate": "image",
+      "cslStyle": "chicago-author-date-16th-edition",
+      "templatePath": "笔记模板/论文笔记.md"
+    }
+  ],
+  "citeSuggestTemplate": "[[{{citekey}}]]",
+  "openNoteAfterImport": false,
+  "whichNotesToOpenAfterImport": "first-imported-note",
+  "shouldConcat": true
+}
