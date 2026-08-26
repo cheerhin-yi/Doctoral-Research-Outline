@@ -8,11 +8,12 @@
 
 ## 从这里开始
 
-1. 阅读[博士研究总计划](00_Project/Master_Plan.md)和[七篇论文路线图](00_Project/Roadmap.md)。
-2. 在[Paper 1十六个研究周弹性计划](00_Project/Paper1_16_Week_Weekly_Plan.md)中找到当前研究周，每次有空时选择一个MUST任务推进，不要求当天完成。
-3. 在对应的[研究周学习记录](00_Project/Weekly_Notes/)记录实际会话、证据和复述；MUST完成并通过检查后再进入下一研究周。
-4. 实验前先登记[实验计划](04_Paper1_OpenWorld_Risk/EXPERIMENT_PLAN.md)，运行后更新[实验跟踪表](04_Paper1_OpenWorld_Risk/EXPERIMENT_TRACKER.md)和[运行索引](13_Experiment_Log/Run_Index.md)。
-5. 达到研究周完成门后提交检查；Codex按[检查量表](00_Project/Review_Rubric.md)生成评审文件并更新[研究周状态](00_Project/Weekly_Status.md)。
+1. 第一次使用先阅读[当前框架详细使用说明](00_Project/Framework_Usage_Guide.md)，了解研究周、笔记、文献、实验和检查的完整填写方法。
+2. 阅读[博士研究总计划](00_Project/Master_Plan.md)和[七篇论文路线图](00_Project/Roadmap.md)。
+3. 在[Paper 1十六个研究周弹性计划](00_Project/Paper1_16_Week_Weekly_Plan.md)中找到当前研究周，每次有空时选择一个MUST任务推进，不要求当天完成。
+4. 在对应的[研究周学习记录](00_Project/Weekly_Notes/)记录实际会话、证据和复述；MUST完成并通过检查后再进入下一研究周。
+5. 实验前先登记[实验计划](04_Paper1_OpenWorld_Risk/EXPERIMENT_PLAN.md)，运行后更新[实验跟踪表](04_Paper1_OpenWorld_Risk/EXPERIMENT_TRACKER.md)和[运行索引](13_Experiment_Log/Run_Index.md)。
+6. 达到研究周完成门后提交检查；Codex按[检查量表](00_Project/Review_Rubric.md)生成评审文件并更新[研究周状态](00_Project/Weekly_Status.md)。
 
 ## 目录导航
 

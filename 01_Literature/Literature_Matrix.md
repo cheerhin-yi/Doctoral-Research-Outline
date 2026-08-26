@@ -1,6 +1,6 @@
 # Literature Matrix
 
-所有条目在核验原文前标为“待核验”。Week 1建立v1，Week 10执行创新复核，写作阶段逐项清理元数据。
+所有条目在核验原文前标为“待核验”。研究周W01建立v1，研究周W10执行创新复核，写作阶段逐项清理元数据。
 
 | ID | Title | Year | Venue | Problem | Dataset | Input | Output | Method | Contributions | Metrics | Limitations | Closest to Paper | Reusable | Innovation Conflict | Priority | Verified Link | Status |
 |---|---|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|

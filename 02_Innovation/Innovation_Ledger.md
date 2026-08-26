@@ -5,7 +5,7 @@
 ## I01 Railway-Normalized Geometry
 
 - **Candidate Innovation**：以铁路方向、中心线和局部宽度归一化表达对象空间关系。
-- **Closest Prior Work**：待Week 1/10核验3–5篇。
+- **Closest Prior Work**：待研究周W01/W10核验3–5篇。
 - **Existing Work**：待核验。
 - **Remaining Gap**：是否缺少面向开放环境风险、并在UAV尺度退化下验证的铁路坐标表达。
 - **Our Hypothesis**：归一化铁路几何比像素距离在尺度和高度样退化下更稳定。
@@ -22,7 +22,7 @@
 - **Our Hypothesis**：Unknownness+Geometry在未知类别上提升高风险识别。
 - **Method**：Semantic/Unknown score与Railway Geometry融合。
 - **Evidence**：已知/未知分组结果、no Unknown与随机Unknown对照。
-- **Novelty Risk**：High（Week 10必须复核）。
+- **Novelty Risk**：High（研究周W10必须复核）。
 
 ## I03 Uncertainty-Aware Risk Reasoning
 

@@ -7,6 +7,7 @@
 | 输出 | 用途 | 版本/状态 |
 |---|---|---|
 | `README.md` | 项目入口与导航 | 固定 |
+| `00_Project/Framework_Usage_Guide.md` | 当前框架的完整使用与填写说明 | 持续更新 |
 | `00_Project/` | 总计划、路线图、弹性研究周计划、16份周模板、检查规则与V3归档 | 持续更新 |
 | `01_Literature/` | 文献矩阵、阅读和检索模板 | 持续更新 |
 | `02_Innovation/Innovation_Ledger.md` | 创新与新颖性风险 | 持续更新 |
