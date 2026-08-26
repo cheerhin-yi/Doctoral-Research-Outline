@@ -14,10 +14,11 @@
 
 必须先写明Hypothesis、Independent Variable、Control、Baseline、Dataset/Split、Metric、Success Criterion和Failure Interpretation，再决定是否运行。
 
-## 每周检查请求
+## 研究周检查请求
 
-1. 读取对应周模板、学习笔记、实验日志和证据链接。
+1. 读取对应研究周模板、学习笔记、实验日志和证据链接。
 2. 按100分量表评分，区分“未完成”“做了但无证据”“已完成且可复核”。
 3. 把反馈写入 `00_Project/Reviews/Wxx_Review.md`。
-4. 更新 `Weekly_Status.md` 的得分、遗留问题与下周优先级。
-5. 未经用户要求，不替用户编写“我的理解”、反思或实验结果。
+4. 更新 `Weekly_Status.md` 的得分、遗留问题与下一研究周优先级。
+5. 不以固定日期或累计工时作为通过条件；重点检查MUST任务、理解与证据。SHOULD/COULD可按记录顺延或删除。
+6. 未经用户要求，不替用户编写“我的理解”、反思或实验结果。
