@@ -2,7 +2,7 @@
 
 **适用版本**：按16个研究周弹性推进版
 **适用对象**：项目本人、指导教师讨论、Codex周检查
-**当前唯一实验主任务**：Paper 1——UAV铁路空间表示稳定性与风险感知
+**当前唯一实验主任务**：Paper 1——以YOLO为核心的铁路UAV开放环境危险感知与风险告警
 
 这套框架的目的不是让你每天打卡，而是保证学习、文献、实验和论文写作始终围绕可验证的研究问题推进。一个“研究周”是一个研究节点，不等于七个自然日；它可以根据实际时间跨越多个自然周。
 
@@ -251,17 +251,18 @@ W10是创新复核节点，指第10个研究周，不是日历中的第10周。
 
 | 文件                                                                                  | 作用                           | 什么时候更新             |
 | ----------------------------------------------------------------------------------- | ---------------------------- | ------------------ |
-| [Paper 1新颖性审计](../01_Literature/Paper1_Novelty_Audit_2026-08-27.md)              | 区分已发表组成、剩余缺口、H1–H3和停止/继续规则 | W01先精读；W10及投稿前更新 |
+| [Paper 1方向校准](Paper1_Research_Alignment.md)                                      | 明确YOLO主线、RQ1–RQ4、模块优先级和投稿口径 | 研究问题或主从关系变化时 |
+| [Paper 1新颖性审计](../01_Literature/Paper1_Novelty_Audit_2026-08-27.md)              | 区分已发表组成、剩余缺口和几何假设的支撑角色 | W01先精读；W10及投稿前更新 |
 | [Project Charter](../04_Paper1_OpenWorld_Risk/Project_Charter.md)                   | 固定问题、主张、反主张、范围和完成标准          | 研究边界变化时            |
 | [Dataset Audit](../04_Paper1_OpenWorld_Risk/Dataset_Audit.md)                       | 数据来源、许可、结构、重复和泄漏审计           | 获取或变更数据时           |
 | [Known/Unknown Protocol](../04_Paper1_OpenWorld_Risk/Known_Unknown_Protocol.md)     | 冻结开放环境划分和评价规则                | 开放集实验前；测试后不得追指标改划分 |
 | [Risk Annotation Protocol](../04_Paper1_OpenWorld_Risk/Risk_Annotation_Protocol.md) | 定义风险等级、证据和边界案例               | 标注前及一致性复核时         |
-| [Experiment Plan](../04_Paper1_OpenWorld_Risk/EXPERIMENT_PLAN.md)                   | 将H1核心finding、H2/H3条件扩展和反解释连接到B1–B5证据块 | 新增或删除核心实验前 |
+| [Experiment Plan](../04_Paper1_OpenWorld_Risk/EXPERIMENT_PLAN.md)                   | 将YOLO主线及RQ1–RQ4连接到B1–B5证据块 | 新增或删除核心实验前 |
 | [Experiment Tracker](../04_Paper1_OpenWorld_Risk/EXPERIMENT_TRACKER.md)             | 管理R000–R023的优先级和状态           | 每次Run状态变化时         |
 | [Paper Outline](../04_Paper1_OpenWorld_Risk/PAPER_OUTLINE.md)                       | 论文写作骨架                       | 有证据后逐段填充           |
 | `Interfaces/`                                                                       | 向Paper 2/3输出几何、风险、未知性和不确定性语义 | 接口语义变化时；当前不虚构字段标准  |
 
-当前使用顺序是：先读新颖性审计，确认中心线/边界、轨距换算、距离风险、铁路open-set和风险校准均不是单独创新；再用Experiment Plan检验H1。H1没有相对现有空间表示的稳定信号时，停止扩大H2/H3。只有跨场景/条件的证据才能把H1写成finding贡献。
+当前使用顺序是：先读方向校准，确认YOLO是感知主线；再读新颖性审计，确认YOLO换版本、中心线/边界、轨距换算、铁路open-set和校准均不能单独称创新。W02–W04先完成YOLO基线、错误分层和一个最小改动；随后才评价未知候选与轨道风险的独立增量。几何稳定性没有信号时只删除该消融，不终止整个Paper 1。
 
 ## 11. 单次实验的完整记录流程
 
@@ -336,9 +337,9 @@ Codex按[Review Rubric](Review_Rubric.md)评分：
 
 1. [研究周状态表](Weekly_Status.md)：当前在哪个节点、用了多久、最大阻塞是什么；
 2. 当前研究周模板：已经产生哪些证据；
-3. [Project Charter](../04_Paper1_OpenWorld_Risk/Project_Charter.md)：问题、H1–H3、已发表组成和反解释；
-4. [Paper 1新颖性审计](../01_Literature/Paper1_Novelty_Audit_2026-08-27.md)与[Innovation Ledger](../02_Innovation/Innovation_Ledger.md)：已发表边界、剩余缺口和新颖性风险；
-5. Experiment Tracker或关键表图：H1是否值得继续，以及H2/H3是否已通过前置门。
+3. [Paper 1方向校准](Paper1_Research_Alignment.md)与[Project Charter](../04_Paper1_OpenWorld_Risk/Project_Charter.md)：YOLO角色、RQ1–RQ4、已发表组成和反解释；
+4. [Paper 1新颖性审计](../01_Literature/Paper1_Novelty_Audit_2026-08-27.md)与[Innovation Ledger](../02_Innovation/Innovation_Ledger.md)：已有边界、YOLO候选改动和系统增量风险；
+5. Experiment Tracker或关键表图：YOLO基线/改动是否可靠，未知候选和风险告警是否分别值得保留。
 
 讨论结论要写回对应文件：方向变化写Project Charter，创新变化写Innovation Ledger，实验变化写Experiment Plan/Tracker，时间与优先级变化写当前研究周模板。
 

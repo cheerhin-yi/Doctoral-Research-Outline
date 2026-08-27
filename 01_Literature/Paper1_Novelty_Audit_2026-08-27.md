@@ -4,6 +4,8 @@
 
 本文件回答：Paper 1原候选主张中，哪些组成已经发表，哪些只能作为待证伪实验假设。它是截至2026-08-27的第一轮公开文献核查，不等于系统综述、专利自由实施检索或“绝对无人做过”的证明。正式投稿前必须更新检索。
 
+**方向校准说明**：本审计曾促使框架把空间表示稳定性提升为Paper 1主问题，但该调整偏离了原定YOLO铁路感知方向。当前Paper 1已恢复为YOLO中心的铁路UAV开放环境危险感知与风险告警；本文件继续用于限制几何、开放集和校准的过度创新表述，空间稳定性只作为RQ3的支撑消融。
+
 ## 2. 审计结论
 
 - 轨道中心线/边界作为空间参照、目标到轨道距离、标准轨距换算和距离风险分级均已有铁路研究，不能单独作为创新。
@@ -24,29 +26,29 @@
 | PA06 | Joseph et al., *Towards Open World Object Detection*, CVPR 2021 | 建立Open World Object Detection问题 | 通用OWOD不是本项目创新 | https://openaccess.thecvf.com/content/CVPR2021/html/Joseph_Towards_Open_World_Object_Detection_CVPR_2021_paper.html |
 | PA07 | Fu and Chen, *Uncertainty-Aware Vision-based Risk Object Identification via Conformal Risk Tube Prediction*, 2026 | calibrated risk scores、risk uncertainty、下游安全决策 | 风险校准/不确定性本身非创新 | https://arxiv.org/abs/2603.23919 |
 
-## 4. 当前可证伪假设
+## 4. 当前角色：支撑风险告警的几何假设
 
-### H1：核心finding假设
+### G1：可选几何消融
 
 在同一物理侵界关系、不同UAV高度/分辨率/轻度视角扰动下，局部轨道宽度归一化横向侵界量相较raw pixel distance及现有铁路空间表示具有更低波动，并能更稳定地预测高风险事件。
 
 必须比较：raw pixel、centerline distance、track-boundary/keypoint zone、standard-gauge metric distance、local-width normalization；标定可用时加入Homography/BEV。
 
-### H2：条件扩展
+### G2：未知候选与侵界关系的可选分析
 
 未知度单独使用可能造成大量误报；`unknownness × clearance violation`只有在跨held-out category轮换稳定优于Unknown-only、Geometry-only和简单融合时才保留。
 
-### H3：辅助可靠性实验
+### G3：辅助可靠性实验
 
 对high-risk event probability校准可能改善独立测试集上的Brier/NLL/ECE或top-k review hit rate。校准方法本身不列为贡献。
 
 ## 5. 停止/继续规则
 
-- H1只优于raw pixel但不优于metric、boundary或BEV：降为基线复现，不称核心创新。
-- H1只在普通图像缩放成立：只能声称缩放不变性，不声称跨飞行高度鲁棒性。
-- H1在真值轨道几何成立、预测几何失败：研究重点转向误差传播，不隐藏上游瓶颈。
-- H1没有稳定信号：停止扩大H2/H3，重构或终止当前论文叙事。
-- H2/H3没有跨split稳定增量：删除或放入附录，不能用工程完整性冒充创新。
+- G1只优于raw pixel但不优于metric、boundary或BEV：降为基线复现，不称核心创新。
+- G1只在普通图像缩放成立：只能声称缩放不变性，不声称跨飞行高度鲁棒性。
+- G1在真值轨道几何成立、预测几何失败：报告误差传播，不隐藏上游瓶颈。
+- G1没有稳定信号：删除归一化消融，采用最简单可靠的track-zone/boundary告警；Paper 1的YOLO主线继续。
+- G2/G3没有跨split或复检增量：删除或放入附录，不能用工程完整性冒充创新。
 
 ## 6. 投稿前仍需完成
 
