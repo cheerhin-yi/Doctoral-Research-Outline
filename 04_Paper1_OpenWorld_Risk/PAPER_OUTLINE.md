@@ -6,23 +6,23 @@
 
 ## 1. Introduction
 
-铁路UAV成像高度/分辨率/视角变化 → 像素距离不稳定问题 → 已有轨道中心/边界、轨距和距离风险方法 → 尚缺的公平跨条件表示比较 → H1及其可证伪条件 → H2/H3仅作为有证据时保留的扩展。
+铁路UAV巡检需求 → YOLO实时检测优势 → 小目标、远距离和开放类别盲区 → 仅检测类别不足以形成风险告警 → RQ1–RQ4及贡献边界。
 
 ## 2. Related Work
 
-Railway UAV Hazard Evaluation；Track-Relative/Metric/BEV Geometry；Railway Open-Set Detection；Risk Probability and Calibration。必须用“已有能力—剩余缺口—本研究不重复什么”组织，而不是罗列模块。
+YOLO and Small-Object Detection for UAV Railway Inspection；Railway Open-Set/Open-Vocabulary Detection；Track Context and Intrusion Risk；Risk Reliability and Calibration。必须说明已有能力、剩余缺口和本研究不重复什么。
 
 ## 3. Problem Formulation
 
-定义同一物理侵界关系、成像条件、pixel/centerline/boundary/metric-gauge/local-width-normalized/BEV表示、稳定性、风险事件和评价条件；未知性与校准作为条件变量。
+定义已知/未知危险对象、YOLO检测输出、未知候选、轨道运行区域、侵界事件、高风险告警、成像/部署条件和评价协议。
 
 ## 4. Method
 
-Experimental Framework；Railway Scene Parsing；Compared Spatial Representations；Controlled Imaging-Condition Protocol；Risk Predictor。Unknown-Conditioned Scoring和Calibration仅在H2/H3通过创新门时保留；不把通用模块包装成新架构。
+YOLO Baseline and Error-Driven Minimal Adaptation；Unknown Candidate Supplement；Track Context and Risk Alarm；Optional Risk Calibration。清楚区分原始YOLO、训练策略、模型规模和候选改动，不把通用模块包装成新架构。
 
 ## 5. Experiments
 
-Dataset/Scene Audit；Matched-Scene Imaging Conditions；Spatial Representation Baselines；Stability Metrics；Risk Results；Segmentation-Error Propagation；Known/Unknown Conditional Analysis；Calibration/Review Ranking；Robustness；Failure Analysis。
+Dataset Audit；YOLO Scale/Training Baselines；Small-Object and Height-Stratified Results；Minimal-Change Ablation；RT-DETR Reference；Known/Unknown Evaluation；Risk Alarm Increment；Calibration/Review Ranking；Robustness；Efficiency；Failure Analysis。
 
 ## 6. Discussion and Limitations
 
@@ -30,4 +30,4 @@ Dataset/Scene Audit；Matched-Scene Imaging Conditions；Spatial Representation 
 
 ## 7. Conclusion
 
-只总结H1–H3实际获得的证据。若只有H1成立，只报告空间表示比较finding；若H1不成立，明确报告边界并停止将H2/H3包装为完整系统贡献。
+只总结RQ1–RQ4实际获得的证据。若YOLO改动无稳定收益，就按强基线/应用系统口径写作；若开放环境或风险模块无增量，则删除，不维持虚假的完整系统。

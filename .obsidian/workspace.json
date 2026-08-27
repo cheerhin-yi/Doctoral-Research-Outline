@@ -105,8 +105,7 @@
               "title": "Innovation_Ledger"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -308,8 +307,10 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "510e39a9f20bc665",
+  "active": "9a6067ff9e99231b",
   "lastOpenFiles": [
+    "00_Project/Paper1_Research_Alignment.md",
+    "00_Project/Master_Plan.md",
     "00_Project/Framework_Usage_Guide.md",
     "01_Literature/Paper1_Novelty_Audit_2026-08-27.md",
     "04_Paper1_OpenWorld_Risk/Dataset_Audit.md",
@@ -323,7 +324,6 @@
     "00_Project/Weekly_Status.md",
     "03_Learning/N01_PyTorch_for_Research.md",
     "00_Project/Weekly_Notes/W01_研究边界与数据审计.md",
-    "00_Project/Master_Plan.md",
     "00_Project/Roadmap.md",
     "00_Project/项目总说明_V3_原文归档.md",
     "MANIFEST.md",
@@ -335,7 +335,6 @@
     "周报记录/2026/8月/系统材料写法.md",
     "目标检测论文/学习计划.md",
     "Pytorch教程/1 基本概念.md",
-    "Paper/1.Note/fanLUDYOLONovelLightweight2025.md",
     "目标检测论文/Chen_AKCMamba-YOLO_Selective_State_Space_Models_For_Real-Time_Object_Detection_CVPR_2026_paper.pdf",
     "周报记录/2026/8月",
     "附件文件/上头Obsidian手把手教你用AI做好知识管理 (Shiki实验室) (z-library.sk, 1lib.sk, .pdf",
