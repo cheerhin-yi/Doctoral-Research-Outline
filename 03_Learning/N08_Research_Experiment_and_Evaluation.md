@@ -50,7 +50,7 @@
 
 ## 7. Railway Example
 
-验证H1时必须控制检测器、划分、物理侵界关系和成像条件，并比较raw pixel、centerline、boundary、metric-gauge、local-width-normalized及可用BEV；普通图像缩放不能冒充真实飞行高度变化。
+验证YOLO最小改动时必须控制模型规模、预训练权重、输入尺寸、epoch、增强、种子和计算预算；先用错误分层选择一个改动，再用原始YOLO和等计算简单基线排除反解释。几何比较只服务风险告警消融。
 
 请画出或描述数据流，并说明普通场景结论为何不能直接迁移到铁路UAV。
 

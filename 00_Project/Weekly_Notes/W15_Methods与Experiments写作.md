@@ -19,9 +19,9 @@
 
 | 任务 | 优先级 | 弹性用时 | 工作内容 | 预期证据 | 完成判据 | 状态 |
 |---|---|---:|---|---|---|---|
-| T01 | MUST | 1–2h | 完成Problem Formulation，统一对象、铁路几何、未知性、风险和不确定性符号。 | 概念笔记或研究决策记录 | 能用自己的语言复述，且结论写入对应笔记 | ☐ |
-| T02 | MUST | 1–2h | 完成Experimental Framework、Compared Spatial Representations和Matched Imaging Conditions，逐项标明已有基线与候选表示。 | 协议、检查表或对照说明 | 不把比较框架写成虚假的全新Architecture | ☐ |
-| T03 | MUST | 2–3h | 仅在H2/H3通过门槛时写条件化风险与校准段，并区分检测分数、未知分数、高风险事件概率和复检动作。 | 操作记录、更新文件或可执行方案 | 无证据模块已删除或明确为辅助分析 | ☐ |
+| T01 | MUST | 1–2h | 完成Problem Formulation，统一YOLO已知检测、未知候选、轨道上下文、风险告警和可信度符号。 | 概念笔记或研究决策记录 | 能用自己的语言复述，且结论写入对应笔记 | ☐ |
+| T02 | MUST | 1–2h | 写YOLO Baseline与保留的最小适配，逐项说明结构、训练、计算预算和与原始YOLO差异。 | 协议、检查表或对照说明 | 改动可归因，不把YOLO版本替换写成创新 | ☐ |
+| T03 | MUST | 2–3h | 写Unknown Candidate、Track Risk和可选Calibration，区分检测分数、未知分数、风险概率和复检动作。 | 操作记录、更新文件或可执行方案 | 无增量模块已删除或明确为辅助分析 | ☐ |
 | T04 | MUST | 3–5h | 写Dataset、Split、Baseline、Metric和Implementation Details，确保与冻结配置一致。 | 核心任务产物；若条件不足则为预注册与阻塞证据 | 有文件、日志或运行ID；无法继续时有可复核阻塞证据 | ☐ |
 | T05 | MUST | 2–3h | 写Main Comparison与Ablation，按主张解释效应和反解释，不逐行复述数字。 | 分析记录、协议、指标或表图 | 关键判断回链原始证据，并写出至少一个失败解释 | ☐ |
 | T06 | SHOULD | 1–2h | 写Robustness、Failure Analysis和Limitations，明确数据规模、地域和标签协议限制。 | 周交付物整合与补充材料 | 材料可追踪且不增加未经批准的新范围 | ☐ |

@@ -1,86 +1,87 @@
 # Paper 1 Experiment Plan
 
-**Problem**：在相同物理侵界关系下，哪种铁路空间表示最能抵抗UAV高度、分辨率和轻度视角变化，并稳定支持高风险事件识别？  
-**Finding Thesis**：本研究比较既有与候选空间表示，不宣称发明轨道中心坐标、归一化几何、开放集检测或风险校准；只有经严格对照支持的稳定性规律才可成为贡献。  
+**Problem**：如何以YOLO为铁路UAV实时感知核心，在小目标、复杂背景和开放类别条件下检测已知危险、补充未见危险候选，并转化为可复核的风险告警？  
+**Research Thesis**：先建立和理解YOLO铁路危险检测能力，再用开放环境候选与轨道风险上下文弥补闭集检测的决策盲区；所有附加模块必须证明相对YOLO主基线的增量价值。  
 **Date**：2026-08-27  
-**Version**：v2（H1–H3均为待证伪假设；v1保留在`versions/`）
+**Version**：v3（恢复YOLO感知主线；空间表示稳定性降为H3支撑消融）
 
 ## Claim Map
 
 | Claim | 为什么重要 | 最小可信证据 | Linked Blocks |
 |---|---|---|---|
-| H1 局部轨道宽度归一化侵界量在UAV成像变化下比原始像素及现有空间表示更稳定 | 像素尺度随成像条件变化，但归一化的真实收益不能只靠直觉断言 | 同一场景/物理关系的跨高度、分辨率、视角比较；必须包含现有表示和误差传播 | B2、B4、B5 |
-| H2 `unknownness × clearance violation`比单独未知度或几何更可靠地识别未知高风险事件 | 未知不等于危险，危险取决于侵界条件 | 无泄漏类别轮换、Unknown-only/Geometry-only/简单融合/随机Unknown对照 | B1、B3、B4、B5 |
-| H3 高风险事件概率校准改善复检排序 | 检测置信度不等于风险概率，但校准并非方法创新 | 独立验证/测试、ECE/Brier/NLL及top-k复检命中率 | B3、B4、B5 |
+| H1 YOLO主基线及一个错误驱动的最小适配改善铁路UAV危险检测 | YOLO是实时感知核心，必须先证明已知危险检测和小目标能力 | YOLO11n/s/m、固定训练预算、尺度/高度分层、单改动消融、速度与重复性 | B1、B2、B5 |
+| H2 开放环境候选补充YOLO闭集盲区 | 实际危险类别无法穷举，但开放候选可能引入大量误报 | 无泄漏类别轮换；YOLO closed-set、YOLO-World及开放集基线；Unknown Recall与误报 | B1、B3、B5 |
+| H3 轨道上下文将检测转成更有用的风险告警 | 检测到对象不等于发生侵界风险 | Detection-only、zone/boundary/distance规则与简单融合；高风险Recall、AUPRC和告警负担 | B4、B5 |
+| H4 高风险事件概率校准改善复检排序 | 检测置信度不等于风险概率，但校准并非方法创新 | 独立验证/测试、ECE/Brier/NLL及top-k复检命中率 | B4、B5 |
 | Anti-claim | 排除更强检测器、额外参数、标签捷径或数据泄漏 | 第二检测器、随机Unknown/删除研究、协议和哈希审计 | B1–B5 |
 
 ## Paper Storyline
 
-- **Main paper最低要求**：最近工作差异清楚；匹配场景的成像条件协议可信；H1相对pixel、centerline、boundary、metric-gauge和可用BEV基线的证据充分；轨道分割误差不被隐藏。
-- **有证据才保留**：H2未知高风险条件规律和H3复检排序校准。它们不自动升级为论文方法贡献。
-- **Appendix支持**：额外类别轮换、退化强度、几何有效性分层和失败案例。
-- **主动删除**：不服务H1–H3的检测器堆叠、通用开放集模块创新叙事、SLAM、多无人机通信和强化学习实验。
+- **Main paper最低要求**：YOLO11主基线可复现；铁路UAV小目标/高度/场景失败分层可信；任何YOLO改动有公平消融；开放候选和风险告警分别证明增量价值。
+- **有证据才保留**：H1中的候选YOLO改动、H2开放环境补充、H4校准。无稳定收益就删除或降为附录。
+- **Appendix支持**：RT-DETR参考结果、额外类别轮换、几何表示稳定性、阈值敏感性和更多失败案例。
+- **主动删除**：同时堆叠Backbone/Neck/Head/Loss、与失败模式无关的注意力模块、SLAM、多无人机通信和强化学习实验。
 
-## B1 数据完整性与检测/开放世界基线
+## B1 数据完整性与YOLO主基线
 
-- **Hypothesis**：在严格划分下，闭集、开放词汇和开放集方法呈现不同的已知/未知能力，且结果可由第二检测器交叉验证。
-- **Independent Variable**：模型家族与开放环境机制。
+- **Hypothesis**：YOLO11在严格划分和可复现配置下能够形成铁路UAV已知危险实时检测基线，不同模型规模呈现可解释的精度—速度折中。
+- **Independent Variable**：YOLO11模型规模n/s/m；输入尺寸；只在预注册后比较一个必要训练设置。
 - **Control**：同一原图组划分、输入尺度、评价代码和测试集；记录无法对齐的预训练差异。
-- **Baseline**：YOLO11、RT-DETR、YOLO-World、Grounding DINO及1–2个最终核验的开放集基线。
+- **Baseline**：YOLO11n为主基线，YOLO11s/m用于规模对照；RT-DETR仅作参考交叉验证，不决定主线。
 - **Dataset/Split**：UAV-RSOD及Split A/B/C；许可、数量与类别均以审计结果为准。
-- **Metrics**：mAP50–95、Recall、Unknown Recall；按定义选择AUROC/FPR95/A-OSE/Wilderness Impact；效率指标。
-- **Success Criterion**：无Unknown训练实例、无增强泄漏；两类检测器结果可复现；开放环境指标通过手算测试。
-- **Failure Interpretation**：若检测对象性不足，风险研究被上游瓶颈限制；若轮换排名剧变，主张必须改为类别条件化。
-- **Output**：Baseline Table、Known/Unknown审计表、失败案例图。
+- **Metrics**：mAP50–95、Precision、Recall、逐类AP、AP_small/尺寸分层Recall、FPS、latency、Params、FLOPs与显存。
+- **Success Criterion**：数据与增强无泄漏；YOLO训练闭环和指标代码可复现；模型规模与速度测量公平；失败样例可按尺寸、高度、遮挡和背景分层。
+- **Failure Interpretation**：若基线不稳定，先修数据/配置；若更大模型只是增加成本而不提高危险Recall，选择更小模型；未通过本块不得进入下游融合。
+- **Output**：YOLO Baseline Table、Scale/Efficiency Curve、Failure Taxonomy。
 - **Priority**：MUST-RUN。
 
-## B2 铁路解析与空间表示公平比较
+## B2 YOLO错误驱动的最小铁路适配
 
-- **Hypothesis**：局部轨道宽度归一化横向侵界量在匹配物理关系的UAV成像变化下，比原始像素及已有铁路空间表示波动更小，并与高风险事件保持更稳定关系。
-- **Independent Variable**：空间表示类型；高度、分辨率和轻度视角条件。
-- **Control**：同一场景、同一障碍物与物理位置；相同检测/分割结果或分别使用真值几何和预测几何；相同风险模型与训练预算。
-- **Baseline**：raw pixel distance、centerline Euclidean distance、track-boundary/keypoint zone、standard-gauge metric distance、local-width-normalized clearance；标定可用时加入Homography/BEV。
-- **Dataset/Split**：优先使用同场景多高度/多视角复采；否则使用保持物理关系且记录局限的可信重投影。普通缩放图只能支持缩放不变性，不能冒充飞行高度实验。
-- **Metrics**：mIoU/Dice/Centerline Error；feature CV/variance、rank stability、与物理侵界/风险的monotonicity；风险AUPRC、高风险Recall和跨条件性能下降。
-- **Success Criterion**：H1在预注册的多数条件和场景划分中相对最强现有表示有稳定效应，并在预测轨道几何下仍成立；不以单一退化或单一split判定成功。
-- **Failure Interpretation**：若只优于raw pixel但不优于metric/BEV/boundary表示，则将结论降为基线复现；若真值几何成立而预测几何失败，论文问题转为误差传播；若均不成立，拒绝H1并停止扩大系统。
-- **Output**：Geometry Table、可视化、误差传播图。
+- **Hypothesis**：针对B1中占比最高且可操作的铁路UAV失败模式，一个最小改动可能在可接受成本下稳定改善危险Recall。
+- **Independent Variable**：仅一个预注册候选改动，例如切片/输入策略、多尺度特征、检测头或铁路数据增强；候选由B1证据选择，不预先堆叠。
+- **Control**：同一YOLO规模、预训练权重、输入尺寸、epoch、增强预算、种子和评价；同时报告参数/FLOPs变化。
+- **Baseline**：原始YOLO11；等参数或等计算对照；若改动涉及分辨率，加入只提高输入尺寸的简单基线。
+- **Dataset/Split**：主split与至少一个场景/高度分层测试。
+- **Metrics**：总体与小目标mAP50–95/Recall、高风险类别Recall、参数、FLOPs、FPS、显存和跨场景下降。
+- **Success Criterion**：核心效应跨seed/场景方向一致，且相对简单计算扩张基线仍有价值。
+- **Failure Interpretation**：无稳定收益则删除改动，论文转为强YOLO基线/应用系统；不得再叠加第二、第三个模块掩盖失败。
+- **Output**：YOLO Minimal-Change Ablation、错误类型变化、效率曲线。
 - **Priority**：MUST-RUN。
 
-## B3 条件化未知高风险识别与辅助校准
+## B3 开放环境候选补充
 
-- **Hypothesis**：未知度只有与clearance violation联合时才改善未知高风险识别；对高风险事件概率校准可能改善复检排序。
-- **Independent Variable**：Unknownness使用方式、clearance条件形式、是否校准。
-- **Control**：检测器、数据划分、风险训练预算和特征维度对照。
-- **Baseline**：Unknownness only、Geometry only、简单拼接、`unknownness × clearance`、随机Unknown、no Calibration、Temperature Scaling。
+- **Hypothesis**：开放词汇/开放集候选可以补充闭集YOLO未见类别盲区，但必须以可控误报为代价。
+- **Independent Variable**：closed-set YOLO、YOLO-World及一个最终核验的开放集/异常候选基线；阈值在验证集冻结。
+- **Control**：Known/Unknown文件清单、输入尺寸、测试集、对象匹配规则和指标代码；明确预训练知识差异。
+- **Baseline**：YOLO11 closed-set、YOLO-World、可用的ROSD/OWOD或异常检测基线；Grounding DINO为NICE参考。
 - **Dataset/Split**：Split A/B/C，Known与Unknown对象分组报告。
-- **Metrics**：未知高风险AUPRC/Recall、误报率、Macro-F1、ECE、Brier、NLL、top-k review hit rate与Reliability Diagram。
-- **Success Criterion**：条件化融合相对Unknown-only、Geometry-only和简单拼接跨类别轮换稳定改善；校准在独立测试集改善概率质量或复检排序且不显著损害高风险Recall。
-- **Failure Interpretation**：若简单拼接或随机Unknown同样有效，拒绝H2；若校准只改善ECE但不改善概率质量/复检动作，H3只保留为诊断；不添加复杂模块补救。
-- **Output**：Risk Baseline、Calibration Results、关键案例。
+- **Metrics**：Known mAP/Recall、Unknown Recall、FPR、AUROC/FPR95及适用时的A-OSE/Wilderness Impact；每图候选数和推理成本。
+- **Success Criterion**：至少两组held-out类别轮换中，未知Recall相对闭集YOLO提高且误报/候选负担可报告、可解释。
+- **Failure Interpretation**：若误报不可控或结果只在单一轮换成立，H2降为失败分析；不能把开放词汇命名能力直接等同于open-world发现。
+- **Output**：Open-Environment Baseline Table、Known/Unknown审计、误报案例。
 - **Priority**：MUST-RUN。
 
-## B4 完整消融与简洁性检查
+## B4 轨道上下文风险告警与可信复检
 
-- **Hypothesis**：H1–H3涉及的差异可被分别隔离，且不存在为了维持“大系统”而保留的无作用组件。
-- **Independent Variable**：Semantic、Geometry、Unknown、Uncertainty及几何坐标形式的删除/替换。
-- **Control**：主干、优化预算、种子、split和评价保持一致。
-- **Baseline**：各空间表示；Unknown-only、Geometry-only、简单融合、条件化融合；未校准/校准。仅在H2/H3通过前置门后定义Full Model。
-- **Dataset/Split**：主split加至少两组Unknown轮换；随机性显著时默认3 seeds。
-- **Metrics**：风险Macro-F1/高风险Recall、开放集指标、ECE/Brier、参数与时延。
-- **Success Criterion**：关键组件作用方向跨seed/split一致；Full相对更简单变体的收益足以支持复杂度。
-- **Failure Interpretation**：删除组件无损时移除该组件并缩小论文主张，不添加更多模块补救。
-- **Output**：Core Ablation Table、组件效应图。
+- **Hypothesis**：简单轨道运行区域/侵界关系可以减少“检测到但不危险”的告警；风险概率校准可能进一步改善人工复检排序。
+- **Independent Variable**：Detection-only、track zone/boundary、distance/overlap、可选归一化表示；未校准/校准。
+- **Control**：固定YOLO/未知候选结果、风险标签、训练预算和split；轨道真值与预测结果分开报告。
+- **Baseline**：Detection confidence alarm、类别规则、track-zone rule、boundary/distance rule、最小融合；Temperature Scaling只作辅助。
+- **Dataset/Split**：主split及Known/Unknown分组；风险标注协议冻结。
+- **Metrics**：高风险Recall、AUPRC、Macro-F1、每图告警数/误报、ECE/Brier/NLL、top-k review hit rate。
+- **Success Criterion**：轨道上下文相对Detection-only降低无关告警且不明显牺牲高风险Recall；校准只有改善概率质量或复检收益才保留。
+- **Failure Interpretation**：空间表示差异只作为消融；归一化无优势则采用最简单zone/boundary规则；校准无实际收益则删除。
+- **Output**：Risk Alarm Table、空间/风险消融、Review Queue结果。
 - **Priority**：MUST-RUN。
 
 ## B5 鲁棒性、泛化、效率与失败诊断
 
-- **Hypothesis**：H1在真实或可信匹配的高度、分辨率和轻度视角变化下具有边界清晰的优势；blur/brightness只用于感知误差诊断，不作为几何不变性主证据。
-- **Independent Variable**：真实/可信成像条件、感知退化、Unknown类别轮换、可用时的第二数据集。
+- **Hypothesis**：YOLO主基线、保留的最小改动、开放候选和风险告警在关键铁路UAV条件下具有可描述的性能边界。
+- **Independent Variable**：目标尺寸/高度、分辨率、模糊、亮度、遮挡、场景、Unknown轮换和可用第二数据集。
 - **Control**：固定生成参数、原图映射、模型与评价流程。
-- **Baseline**：B2全部空间表示；通过前置门的条件化模型与最强简单基线。
+- **Baseline**：原始YOLO11、保留的YOLO改动、开放候选、Detection-only与最小风险告警。
 - **Dataset/Split**：冻结测试集的受控副本；第二数据集仅在许可与标签映射完成后使用。
-- **Metrics**：各任务指标下降率、几何波动、FPS、latency、GPU memory、Params、FLOPs。
+- **Metrics**：检测/未知/风险指标下降率、FPS、latency、GPU memory、Params、FLOPs；几何波动仅作风险环节诊断。
 - **Success Criterion**：明确优势区间与失效点；所有效率测量可由硬件和批量设置复现。
 - **Failure Interpretation**：若退化改变标签语义或产生伪影，该实验无效；若无第二数据集，只主张受控鲁棒性，不主张跨域泛化。
 - **Output**：Robustness Table、Generalization Results、Failure Analysis。
@@ -91,9 +92,9 @@
 | Milestone | 目标 | 主要Runs | Stop/Go Gate | 成本 | 风险与处理 |
 |---|---|---|---|---|---|
 | M0 Sanity | 数据、标签、指标、最小过拟合正确 | R000–R002 | 泄漏为0且手算指标一致才继续 | 低 | 先修数据/评价，不跑大实验 |
-| M1 Baselines | 固定检测与开放环境基线 | R003–R006 | 至少两个检测家族可复现 | 中 | 上游失败则缩小主张 |
-| M2 H1 Pilot | 解析与空间表示比较 | R007–R011 | H1相对现有表示有可重复信号才继续H2/H3 | 中高 | H1失败则停止扩大系统并重构论文 |
-| M3 Conditional Tests | 仅对通过前置门的H2/H3做关键对照 | R012–R017 | 作用跨seed/split一致 | 高 | 无作用组件直接删除 |
+| M1 YOLO Baseline | 固定YOLO规模、速度和失败分层 | R003–R007 | YOLO主基线可复现且失败类型可信 | 中 | 基线失败则不做下游 |
+| M2 YOLO Decision | 运行一个错误驱动的最小改动 | R008–R010 | 相对原始/简单扩算基线有稳定价值才保留 | 中高 | 无收益则回退原始YOLO |
+| M3 Open/Risk Value | 分别检验未知候选和风险告警增量 | R011–R017 | 每个模块独立增加决策价值 | 高 | 无作用模块直接删除 |
 | M4 Polish | 鲁棒性、效率、失败与写作 | R018–R023 | 表图可回链且结论不越界 | 中 | 冻结后不扩张范围 |
 
 ## Compute and Data Budget
@@ -105,7 +106,9 @@
 ## Final Checklist
 
 - [ ] 最近工作差异表完成，未把已发表组成写成创新。
-- [ ] 主表首先回答H1；H2/H3未通过门槛时已删除或降级。
+- [ ] 主表首先回答YOLO基线、失败模式和最小改动；开放环境与风险告警分别报告增量。
+- [ ] RT-DETR只作参考，没有挤占YOLO主线预算。
+- [ ] 没有同时堆叠多个YOLO改动；每项改变可单独归因。
 - [ ] 数据与增强泄漏审计为0。
 - [ ] 新颖性由删除研究隔离。
 - [ ] 简洁性得到辩护，无作用组件被删除。

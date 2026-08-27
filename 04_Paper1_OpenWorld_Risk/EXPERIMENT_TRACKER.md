@@ -7,23 +7,23 @@
 | R000 | M0 | 数据审计与哈希泄漏检查 | Audit | A/B/C | overlap count | MUST | TODO |  |  |
 | R001 | M0 | 标签/可视化检查 | Data pipeline | toy | manual QA | MUST | TODO |  |  |
 | R002 | M0 | 指标手算与小样本过拟合 | Evaluator + toy model | toy | exact match/loss | MUST | TODO |  |  |
-| R003 | M1 | 闭集检测基线 | YOLO11 | main | mAP50–95, Recall | MUST | TODO |  |  |
-| R004 | M1 | 第二检测基线 | RT-DETR | main | mAP50–95, Recall | MUST | TODO |  |  |
-| R005 | M1 | 开放词汇基线 | YOLO-World | A/B/C | Unknown + detection | MUST | TODO |  |  |
-| R006 | M1 | 开放词汇基线 | Grounding DINO | A/B/C | Unknown + detection | MUST | TODO |  |  |
-| R007 | M2 | 铁路分割 | SegFormer或冻结备选 | main | mIoU, Dice | MUST | TODO |  |  |
-| R008 | M2 | 空间表示真值几何比较 | pixel/centerline/boundary/metric/local-width/BEV | matched scenes | variance, rank, monotonicity | MUST | TODO |  | 普通缩放不得冒充高度变化 |
-| R009 | M2 | 轨道预测误差传播 | GT geometry vs predicted geometry | matched scenes | geometry error, risk degradation | MUST | TODO |  |  |
-| R010 | M2 | H1风险预测比较 | all spatial representations | scene/height split | AUPRC, high-risk Recall, shift drop | MUST | TODO |  |  |
-| R011 | M2 | H1重复与决策门 | strongest baselines | scene/height split | effect mean/std | MUST | TODO |  | H1无稳定信号则停止扩大H2/H3 |
-| R012 | M3 | H2条件化融合 | unknown×clearance vs simple fusion | A/B/C | unknown high-risk AUPRC/Recall | MUST | TODO |  | 仅H1通过后运行 |
-| R013 | M3 | H2反解释 | Unknown-only/Geometry-only/random Unknown | A/B/C | false alarms, AUPRC | MUST | TODO |  |  |
-| R014 | M3 | H3风险事件校准 | before/after TS | A/B/C | ECE/Brier/NLL/top-k hit | MUST | TODO |  | 仅作辅助可靠性验证 |
-| R015 | M3 | 最小通过系统 | 仅保留有效组件 | A/B/C | all retained metrics | MUST | TODO |  | 不默认存在Full Model |
+| R003 | M1 | YOLO主基线 | YOLO11n | main | mAP50–95, size-stratified Recall, FPS | MUST | TODO |  |  |
+| R004 | M1 | YOLO规模对照 | YOLO11s/m | main | accuracy-speed-memory | MUST | TODO |  | 选择一个后续固定规模 |
+| R005 | M1 | 第二家族参考 | RT-DETR | main | mAP50–95, Recall, FPS | SHOULD | TODO |  | 仅交叉验证，不决定主线 |
+| R006 | M1 | YOLO开放词汇参考 | YOLO-World | A/B/C | known/unknown detection | MUST | TODO |  | 与闭集YOLO分开解释预训练差异 |
+| R007 | M1 | YOLO失败分层 | frozen YOLO baseline | main | size/height/occlusion/background errors | MUST | TODO |  | 决定R008唯一候选改动 |
+| R008 | M2 | YOLO最小铁路适配 | one preregistered change | main | small/hazard Recall + efficiency | MUST | TODO |  | 只能选择一个改动方向 |
+| R009 | M2 | YOLO改动反解释 | original/equal-compute/control | main | effect vs cost | MUST | TODO |  | 排除尺寸/epoch/参数扩张 |
+| R010 | M2 | YOLO关键重复 | retained variants seeds 2/3 | main | mean/std | MUST | TODO |  | 无稳定收益则CUT改动 |
+| R011 | M3 | 开放集/异常候选基线 | one verified baseline | A/B/C | Unknown Recall, FPR | MUST | TODO |  |  |
+| R012 | M3 | 开放环境增量 | closed YOLO vs candidate supplement | A/B/C | known/unknown + candidate load | MUST | TODO |  |  |
+| R013 | M3 | 轨道解析/运行区域 | one frozen parser | main | mIoU/Dice/zone quality | MUST | TODO |  | 只服务风险告警 |
+| R014 | M3 | 风险告警增量 | detection/category/zone/distance | A/B/C | high-risk AUPRC/Recall, alarms/image | MUST | TODO |  | 几何表示为支撑消融 |
+| R015 | M3 | 风险校准/复检 | before/after TS | A/B/C | ECE/Brier/NLL/top-k hit | SHOULD | TODO |  | 无实际收益则CUT |
 | R016 | M3 | 重复性 | Key variants seed 2 | main | mean/std | MUST | TODO |  |  |
 | R017 | M3 | 重复性 | Key variants seed 3 | main | mean/std | MUST | TODO |  |  |
 | R018 | M4 | 模糊/亮度 | Full + baselines | main | degradation curves | MUST | TODO |  |  |
-| R019 | M4 | 匹配高度/分辨率/轻度视角变化 | retained variants + all geometry baselines | matched scenes | stability and risk curves | MUST | TODO |  | 记录真实复采/重投影/仅图像退化的证据等级 |
+| R019 | M4 | 尺寸/高度/分辨率/视角变化 | YOLO + retained modules | stratified scenes | detection/open/risk degradation | MUST | TODO |  | 几何稳定性只作风险诊断 |
 | R020 | M4 | 效率 | Key systems | main | FPS/latency/memory | MUST | TODO |  |  |
 | R021 | M4 | 失败分析 | Key systems | main | error taxonomy | MUST | TODO |  |  |
 | R022 | M4 | 跨数据集 | Full + baseline | external | task metrics | NICE | TODO |  | 仅许可与映射完成后 |

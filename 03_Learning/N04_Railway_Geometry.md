@@ -4,7 +4,7 @@
 
 ## 1. Why
 
-理解并公平比较像素、中心线、轨道边界、标准轨距物理距离、局部宽度归一化和BEV等铁路空间表示。中心线和归一化几何已有先例，本模块学习目标不是“发明坐标”，而是判断每种表示的前提、稳定性和误差来源。
+理解如何用轨道区域、边界、距离或可选归一化量，把YOLO检测结果转换为侵界风险。中心线和归一化几何已有先例，本模块不再主导Paper 1，只负责选择最简单可靠的风险关系并解释误差。
 
 请填写：如果不掌握本模块，Paper 1或后续论文最可能出现什么错误？
 
@@ -39,7 +39,7 @@
 
 ## 6. Code
 
-实现raw pixel、centerline、track-boundary、metric-gauge和local-width-normalized表示并生成对比图；相机标定可用时再加入Homography/BEV。
+先实现track-zone overlap和boundary/distance两种最低成本表示；仅在数据与标定条件允许时比较metric-gauge、local-width-normalized或BEV，不要求为Paper 1实现全部几何方法。
 
 - 代码或Notebook位置：
 - 环境与版本：
@@ -54,7 +54,7 @@
 
 ## 8. Paper Connection
 
-Paper 1核心假设H1与空间表示比较协议；向Paper 2输出经实验证据选择的空间表示，而不是预设归一化方案胜出。
+Paper 1的RQ3/H3支撑模块：比较Detection-only与简单轨道上下文告警。空间表示稳定性只作消融/鲁棒性分析；向Paper 2输出经证据选择的表示。
 
 - 对应论文模块：
 - 本模块输出给谁：
@@ -111,7 +111,7 @@ Paper 1核心假设H1与空间表示比较协议；向Paper 2输出经实验证�
 
 ## 14. Mini Experiment
 
-先用解析推导和合成相似变换做sanity check，再在匹配物理场景中比较raw pixel、centerline、boundary、metric-gauge、local-width normalization及可用BEV。分开报告真值轨道几何和预测轨道几何，防止分割误差混入表示比较。
+固定YOLO预测，比较Detection-only、track-zone overlap和boundary/distance告警的高风险Recall与每图误报。若归一化表示有数据条件，再作为可选消融；分开报告真值与预测轨道几何。
 
 - Hypothesis：
 - Independent Variable：

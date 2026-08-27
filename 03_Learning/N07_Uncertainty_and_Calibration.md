@@ -56,7 +56,7 @@
 
 ## 8. Paper Connection
 
-Paper 1辅助假设H3：仅检验校准高风险事件概率是否改善独立测试集概率质量或top-k复检命中率；为Paper 6主动感知保留接口。
+Paper 1辅助问题RQ4/H4：仅检验校准高风险事件概率是否改善独立测试集概率质量或top-k复检命中率；为Paper 6主动感知保留接口。
 
 - 对应论文模块：
 - 本模块输出给谁：
@@ -110,7 +110,7 @@ Paper 1辅助假设H3：仅检验校准高风险事件概率是否改善独立�
 
 ## 14. Mini Experiment
 
-在固定验证集拟合温度，在独立测试集比较ECE、Brier、NLL、高风险Recall和top-k review hit rate。若只改善ECE而不改善概率质量或复检动作，记录为诊断结果，不把H3列为贡献。
+在固定验证集拟合温度，在独立测试集比较ECE、Brier、NLL、高风险Recall和top-k review hit rate。若只改善ECE而不改善概率质量或复检动作，记录为诊断结果，不把H4列为贡献。
 
 - Hypothesis：
 - Independent Variable：

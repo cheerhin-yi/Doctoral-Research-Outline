@@ -55,7 +55,7 @@
 
 ## 8. Paper Connection
 
-Paper 1的H1下游风险评价及H2条件扩展。风险模型首先用于检验空间表示是否稳定支持风险预测，不作为大而全的新架构。
+Paper 1的RQ3/H3：固定YOLO/未知候选结果，检验轨道运行区域或简单侵界关系是否相对Detection-only提高风险告警价值，不构造大而全的新风险网络。
 
 - 对应论文模块：
 - 本模块输出给谁：
@@ -109,7 +109,7 @@ Paper 1的H1下游风险评价及H2条件扩展。风险模型首先用于检验
 
 ## 14. Mini Experiment
 
-固定对象类别和真实物理侵界关系，改变空间表示和成像条件；检查风险变化究竟来自表示稳定性、轨道分割误差还是类别捷径。加入现有距离/区域风险基线。
+固定YOLO预测，比较Detection-confidence告警、类别规则、track-zone、boundary/distance和最小融合；报告高风险Recall、AUPRC、每图告警数，并检查风险是否只是记住类别。
 
 - Hypothesis：
 - Independent Variable：

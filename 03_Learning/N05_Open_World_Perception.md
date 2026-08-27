@@ -56,7 +56,7 @@
 
 ## 8. Paper Connection
 
-Paper 1的H2条件扩展和必要基线。只有`unknownness × clearance violation`相对Unknown-only、Geometry-only和简单融合跨类别轮换稳定改善时，H2才保留。
+Paper 1的RQ2/H2第二主线：在闭集YOLO11之外，评价YOLO-World或一个开放集/异常候选基线能补充多少未见危险，以及增加多少误报和复检负担。
 
 - 对应论文模块：
 - 本模块输出给谁：
@@ -113,7 +113,7 @@ Paper 1的H2条件扩展和必要基线。只有`unknownness × clearance violat
 
 ## 14. Mini Experiment
 
-构造三组类别轮换并验证哈希无交叉；在小样本上比较Unknown-only、Geometry-only、简单融合和`unknownness × clearance violation`，主要检查误报定义和评价代码，不预设H2成立。
+构造三组类别轮换并验证哈希无交叉；比较YOLO11 closed-set、YOLO-World和一个可用开放候选基线的Known Recall、Unknown Recall、FPR与每图候选数，不把开放词汇命名直接当成open-world发现。
 
 - Hypothesis：
 - Independent Variable：
