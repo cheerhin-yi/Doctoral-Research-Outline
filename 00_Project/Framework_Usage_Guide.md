@@ -249,16 +249,16 @@ W10是创新复核节点，指第10个研究周，不是日历中的第10周。
 
 ## 10. Paper 1目录怎么使用
 
-| 文件 | 作用 | 什么时候更新 |
-|---|---|---|
-| [Project Charter](../04_Paper1_OpenWorld_Risk/Project_Charter.md) | 固定问题、主张、反主张、范围和完成标准 | 研究边界变化时 |
-| [Dataset Audit](../04_Paper1_OpenWorld_Risk/Dataset_Audit.md) | 数据来源、许可、结构、重复和泄漏审计 | 获取或变更数据时 |
-| [Known/Unknown Protocol](../04_Paper1_OpenWorld_Risk/Known_Unknown_Protocol.md) | 冻结开放环境划分和评价规则 | 开放集实验前；测试后不得追指标改划分 |
-| [Risk Annotation Protocol](../04_Paper1_OpenWorld_Risk/Risk_Annotation_Protocol.md) | 定义风险等级、证据和边界案例 | 标注前及一致性复核时 |
-| [Experiment Plan](../04_Paper1_OpenWorld_Risk/EXPERIMENT_PLAN.md) | 将C1、C2和反主张连接到B1–B5证据块 | 新增或删除核心实验前 |
-| [Experiment Tracker](../04_Paper1_OpenWorld_Risk/EXPERIMENT_TRACKER.md) | 管理R000–R023的优先级和状态 | 每次Run状态变化时 |
-| [Paper Outline](../04_Paper1_OpenWorld_Risk/PAPER_OUTLINE.md) | 论文写作骨架 | 有证据后逐段填充 |
-| `Interfaces/` | 向Paper 2/3输出几何、风险、未知性和不确定性语义 | 接口语义变化时；当前不虚构字段标准 |
+| 文件                                                                                  | 作用                           | 什么时候更新             |
+| ----------------------------------------------------------------------------------- | ---------------------------- | ------------------ |
+| [Project Charter](../04_Paper1_OpenWorld_Risk/Project_Charter.md)                   | 固定问题、主张、反主张、范围和完成标准          | 研究边界变化时            |
+| [Dataset Audit](../04_Paper1_OpenWorld_Risk/Dataset_Audit.md)                       | 数据来源、许可、结构、重复和泄漏审计           | 获取或变更数据时           |
+| [Known/Unknown Protocol](../04_Paper1_OpenWorld_Risk/Known_Unknown_Protocol.md)     | 冻结开放环境划分和评价规则                | 开放集实验前；测试后不得追指标改划分 |
+| [Risk Annotation Protocol](../04_Paper1_OpenWorld_Risk/Risk_Annotation_Protocol.md) | 定义风险等级、证据和边界案例               | 标注前及一致性复核时         |
+| [Experiment Plan](../04_Paper1_OpenWorld_Risk/EXPERIMENT_PLAN.md)                   | 将C1、C2和反主张连接到B1–B5证据块        | 新增或删除核心实验前         |
+| [Experiment Tracker](../04_Paper1_OpenWorld_Risk/EXPERIMENT_TRACKER.md)             | 管理R000–R023的优先级和状态           | 每次Run状态变化时         |
+| [Paper Outline](../04_Paper1_OpenWorld_Risk/PAPER_OUTLINE.md)                       | 论文写作骨架                       | 有证据后逐段填充           |
+| `Interfaces/`                                                                       | 向Paper 2/3输出几何、风险、未知性和不确定性语义 | 接口语义变化时；当前不虚构字段标准  |
 
 ## 11. 单次实验的完整记录流程
 

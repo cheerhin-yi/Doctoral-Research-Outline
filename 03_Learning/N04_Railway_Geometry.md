@@ -4,7 +4,7 @@
 
 ## 1. Why
 
-把不稳定的像素距离转换为相对铁路方向和宽度的风险几何。
+理解并公平比较像素、中心线、轨道边界、标准轨距物理距离、局部宽度归一化和BEV等铁路空间表示。中心线和归一化几何已有先例，本模块学习目标不是“发明坐标”，而是判断每种表示的前提、稳定性和误差来源。
 
 请填写：如果不掌握本模块，Paper 1或后续论文最可能出现什么错误？
 
@@ -23,7 +23,7 @@
 
 ## 4. Minimal Math
 
-必须掌握：d_norm=d(object,centerline)/railway_width，以及坐标投影和误差传播的基本思想。
+必须掌握：`d_norm=(x_object-c(y))/w(y)`、标准轨距换算、坐标投影和误差传播。能推导该比值在局部相似缩放/平移下消去尺度项，同时明确这不能证明其对任意透视、弯道、道岔或分割误差保持不变。
 
 - 公式：
 - 符号与单位：
@@ -39,7 +39,7 @@
 
 ## 6. Code
 
-实现Pixel Geometry与Railway-Normalized Geometry并生成对比图。
+实现raw pixel、centerline、track-boundary、metric-gauge和local-width-normalized表示并生成对比图；相机标定可用时再加入Homography/BEV。
 
 - 代码或Notebook位置：
 - 环境与版本：
@@ -48,13 +48,13 @@
 
 ## 7. Railway Example
 
-比较不同高度、分辨率和弯道下同一障碍物的风险位置表示。
+优先比较同一障碍物、同一物理侵界位置在不同真实/可信高度、分辨率和轻度视角下的表示；普通图像缩放只能验证缩放性质，不能代替无人机高度变化。
 
 请画出或描述数据流，并说明普通场景结论为何不能直接迁移到铁路UAV。
 
 ## 8. Paper Connection
 
-Paper 1主张C1；向Paper 2输出空间约束。
+Paper 1核心假设H1与空间表示比较协议；向Paper 2输出经实验证据选择的空间表示，而不是预设归一化方案胜出。
 
 - 对应论文模块：
 - 本模块输出给谁：
@@ -66,8 +66,8 @@ Paper 1主张C1；向Paper 2输出空间约束。
 
 | Title | Year | Venue | 解决问题 | 我必须读的章节 | 核验链接 |
 |---|---:|---|---|---|---|
-| 待核验 |  |  |  |  |  |
-| 待核验 |  |  |  |  |  |
+| Railway Intrusion Risk Quantification with Track Semantic Segmentation and Spatiotemporal Features | 2025 | Sensors | 使用标准轨距和轨道中心横向距离量化风险 | 高：轨距/中心距离已发表 | https://pmc.ncbi.nlm.nih.gov/articles/PMC12431379/ |
+| Spatial Relation Reasoning Based on Keypoints for Railway Intrusion Detection and Risk Assessment | 2026 | Applied Sciences | 使用轨道边界、关键点和横向距离分级风险 | 高：轨道相对风险已发表 | https://www.mdpi.com/2076-3417/16/6/3026 |
 
 ## 10. Recent Papers
 
@@ -103,12 +103,15 @@ Paper 1主张C1；向Paper 2输出空间约束。
 - [ ] 何时必须升级到相机标定或世界坐标？
   - 我的回答：
   - 证据或例子：
+- [ ] 为什么“数学上缩放不变”不等于“真实UAV跨高度稳定”？
+  - 我的回答：
+  - 证据或例子：
 
 新增问题：
 
 ## 14. Mini Experiment
 
-模拟缩放与模糊，比较像素距离和归一化距离的稳定性。
+先用解析推导和合成相似变换做sanity check，再在匹配物理场景中比较raw pixel、centerline、boundary、metric-gauge、local-width normalization及可用BEV。分开报告真值轨道几何和预测轨道几何，防止分割误差混入表示比较。
 
 - Hypothesis：
 - Independent Variable：

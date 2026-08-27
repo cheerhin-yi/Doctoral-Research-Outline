@@ -4,7 +4,7 @@
 
 ## 1. Why
 
-将对象类别升级为语义、几何、未知性和上下文共同决定的铁路运行风险。
+学习如何定义和验证铁路高风险事件，而不是默认“语义+几何+未知性”拼接就是创新。重点识别类别捷径、侵界条件、错误成本以及最近工作已经覆盖的距离风险分级。
 
 请填写：如果不掌握本模块，Paper 1或后续论文最可能出现什么错误？
 
@@ -55,7 +55,7 @@
 
 ## 8. Paper Connection
 
-Paper 1风险基线、未知感知风险和消融。
+Paper 1的H1下游风险评价及H2条件扩展。风险模型首先用于检验空间表示是否稳定支持风险预测，不作为大而全的新架构。
 
 - 对应论文模块：
 - 本模块输出给谁：
@@ -67,8 +67,8 @@ Paper 1风险基线、未知感知风险和消融。
 
 | Title | Year | Venue | 解决问题 | 我必须读的章节 | 核验链接 |
 |---|---:|---|---|---|---|
-| 待核验 |  |  |  |  |  |
-| 待核验 |  |  |  |  |  |
+| UAV imagery based potential safety hazard evaluation for high-speed railroad using Real-time instance segmentation | 2023 | Advanced Engineering Informatics | UAV铁路危险物距离分级 | 高：UAV+距离风险已发表 | https://www.sciencedirect.com/science/article/pii/S1474034622002774 |
+| Spatial Relation Reasoning Based on Keypoints for Railway Intrusion Detection and Risk Assessment | 2026 | Applied Sciences | 轨道关系、运动状态与九级风险 | 高：空间风险推理已有直接工作 | https://www.mdpi.com/2076-3417/16/6/3026 |
 
 ## 10. Recent Papers
 
@@ -109,7 +109,7 @@ Paper 1风险基线、未知感知风险和消融。
 
 ## 14. Mini Experiment
 
-用小型人工样例检查几何变化是否导致符合协议的风险变化。
+固定对象类别和真实物理侵界关系，改变空间表示和成像条件；检查风险变化究竟来自表示稳定性、轨道分割误差还是类别捷径。加入现有距离/区域风险基线。
 
 - Hypothesis：
 - Independent Variable：

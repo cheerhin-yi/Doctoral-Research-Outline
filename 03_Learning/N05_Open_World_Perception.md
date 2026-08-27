@@ -4,7 +4,7 @@
 
 ## 1. Why
 
-严格区分未知发现、开放词汇识别与异常检测，建立无泄漏评价。
+严格区分未知发现、开放词汇识别与异常检测，建立无泄漏评价；同时认识到通用OWOD和铁路开放集异物检测已有工作，Paper 1不能把“检测未知类别”本身作为创新。
 
 请填写：如果不掌握本模块，Paper 1或后续论文最可能出现什么错误？
 
@@ -56,7 +56,7 @@
 
 ## 8. Paper Connection
 
-Paper 1开放环境基线与未知感知风险模块。
+Paper 1的H2条件扩展和必要基线。只有`unknownness × clearance violation`相对Unknown-only、Geometry-only和简单融合跨类别轮换稳定改善时，H2才保留。
 
 - 对应论文模块：
 - 本模块输出给谁：
@@ -68,8 +68,8 @@ Paper 1开放环境基线与未知感知风险模块。
 
 | Title | Year | Venue | 解决问题 | 我必须读的章节 | 核验链接 |
 |---|---:|---|---|---|---|
-| 待核验 |  |  |  |  |  |
-| 待核验 |  |  |  |  |  |
+| ROSD: Railway intrusion object generalized detection via Open-Set Detection | 2026 | Advanced Engineering Informatics | 铁路场景开放集异物检测直接近邻 | 高：铁路open-set已发表 | https://www.sciencedirect.com/science/article/abs/pii/S1474034625011218 |
+| OW-OVD: Unified Open World and Open Vocabulary Object Detection | 2025 | CVPR | 统一开放世界与开放词汇检测 | 中：通用方法基线 | https://openaccess.thecvf.com/content/CVPR2025/html/Xi_OW-OVD_Unified_Open_World_and_Open_Vocabulary_Object_Detection_CVPR_2025_paper.html |
 
 ## 10. Recent Papers
 
@@ -105,12 +105,15 @@ Paper 1开放环境基线与未知感知风险模块。
 - [ ] 随机train/test为何不能支持Open-World主张？
   - 我的回答：
   - 证据或例子：
+- [ ] 未知为什么不等于危险，什么clearance条件才使未知度与风险相关？
+  - 我的回答：
+  - 证据或例子：
 
 新增问题：
 
 ## 14. Mini Experiment
 
-构造三组类别轮换，验证训练文件列表和哈希无交叉。
+构造三组类别轮换并验证哈希无交叉；在小样本上比较Unknown-only、Geometry-only、简单融合和`unknownness × clearance violation`，主要检查误报定义和评价代码，不预设H2成立。
 
 - Hypothesis：
 - Independent Variable：

@@ -4,7 +4,7 @@
 
 ## 1. Why
 
-避免把检测confidence误当作风险可信度，并为主动感知提供触发信号。
+避免把检测confidence误当作风险概率，并学习如何评价复检排序可靠性。校准和风险不确定性已有成熟近邻工作，在Paper 1中默认是辅助可靠性实验，不是独立创新。
 
 请填写：如果不掌握本模块，Paper 1或后续论文最可能出现什么错误？
 
@@ -56,7 +56,7 @@
 
 ## 8. Paper Connection
 
-Paper 1支持主张C2，并为Paper 6主动感知提供接口。
+Paper 1辅助假设H3：仅检验校准高风险事件概率是否改善独立测试集概率质量或top-k复检命中率；为Paper 6主动感知保留接口。
 
 - 对应论文模块：
 - 本模块输出给谁：
@@ -68,8 +68,8 @@ Paper 1支持主张C2，并为Paper 6主动感知提供接口。
 
 | Title | Year | Venue | 解决问题 | 我必须读的章节 | 核验链接 |
 |---|---:|---|---|---|---|
-| 待核验 |  |  |  |  |  |
-| 待核验 |  |  |  |  |  |
+| Uncertainty-Aware Vision-based Risk Object Identification via Conformal Risk Tube Prediction | 2026 | arXiv | calibrated risk score、risk uncertainty和下游安全决策 | 高：风险校准/不确定性已覆盖 | https://arxiv.org/abs/2603.23919 |
+| Can We Trust You? On Calibration of a Probabilistic Object Detector for Autonomous Driving | 2019 | arXiv | 安全场景概率检测器校准 | 中：校准基础近邻 | https://arxiv.org/abs/1909.12358 |
 
 ## 10. Recent Papers
 
@@ -110,7 +110,7 @@ Paper 1支持主张C2，并为Paper 6主动感知提供接口。
 
 ## 14. Mini Experiment
 
-在固定验证集拟合温度，在独立测试集比较校准前后指标。
+在固定验证集拟合温度，在独立测试集比较ECE、Brier、NLL、高风险Recall和top-k review hit rate。若只改善ECE而不改善概率质量或复检动作，记录为诊断结果，不把H3列为贡献。
 
 - Hypothesis：
 - Independent Variable：

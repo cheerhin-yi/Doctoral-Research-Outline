@@ -1,39 +1,36 @@
 # Innovation Ledger
 
-以下均为候选创新和待验证假设，不是已证实贡献。
+以下均为待验证假设或系统接口，不是已证实贡献。2026-08-27最近工作审计后，I01–I03均已降级：不得把既有技术组成单独宣称为创新。
 
-## I01 Railway-Normalized Geometry
+## I01 UAV成像变化下的铁路空间表示稳定性
 
-- **Candidate Innovation**：以铁路方向、中心线和局部宽度归一化表达对象空间关系。
-- **Closest Prior Work**：待研究周W01/W10核验3–5篇。
-- **Existing Work**：待核验。
-- **Remaining Gap**：是否缺少面向开放环境风险、并在UAV尺度退化下验证的铁路坐标表达。
-- **Our Hypothesis**：归一化铁路几何比像素距离在尺度和高度样退化下更稳定。
-- **Method**：Track Mask→Centerline/Width→longitudinal/lateral/overlap/scale。
-- **Evidence**：Pixel vs Railway Geometry受控比较、误差传播和风险消融。
-- **Novelty Risk**：Medium（待文献核验）。
+- **Contribution Type**：候选实验发现与比较协议，不是新坐标系。
+- **Closest Prior Work**：Wu et al. (2023) UAV铁路危险物距离分级；铁路风险量化工作使用轨道中心/标准轨距；Ning et al. (2026)使用轨道边界关键点和横向距离；CMF-Net使用轨道中心线距离衰减先验。详见`../01_Literature/Paper1_Novelty_Audit_2026-08-27.md`。
+- **Already Published**：轨道中心线/边界作为参照、目标到轨道距离、标准轨距换算、距离风险分级均不能再称创新。
+- **Remaining Gap**：是否缺少同一物理场景下，针对UAV跨高度、跨分辨率和轻度视角扰动，对pixel、centerline、track-boundary、metric-gauge、local-width-normalized及可用BEV表示进行受控比较。
+- **Our Hypothesis H1**：局部轨道宽度归一化横向侵界量在上述变化下波动更小，并更稳定预测高风险事件。
+- **Evidence**：同场景复采或可信重投影；feature variance、rank/monotonic stability、风险AUPRC/高风险Recall、跨条件性能下降；轨道分割误差传播。
+- **Novelty Risk**：High。只有严格实验发现和比较协议可能保留；禁止宣称“首次提出铁路归一化几何”。
 
-## I02 Unknown-Aware Hazard Perception
+## I02 条件化未知高风险识别
 
-- **Candidate Innovation**：对象语义未知时仍利用铁路空间关系判断风险。
-- **Closest Prior Work**：待核验3–5篇。
-- **Existing Work**：待核验开放集检测、铁路风险量化和空间关系方法的交集。
-- **Remaining Gap**：未知发现是否真正进入风险推理而非只做检测评价。
-- **Our Hypothesis**：Unknownness+Geometry在未知类别上提升高风险识别。
-- **Method**：Semantic/Unknown score与Railway Geometry融合。
-- **Evidence**：已知/未知分组结果、no Unknown与随机Unknown对照。
-- **Novelty Risk**：High（研究周W10必须复核）。
+- **Contribution Type**：候选条件规律/评估发现，不是开放集检测器创新。
+- **Closest Prior Work**：通用OWOD、开放世界道路危险检测，以及ROSD铁路开放集异物检测；铁路几何风险推理也已有工作。
+- **Already Published**：发现未见类别、铁路开放集异物检测、利用轨道关系判断侵入风险均已有近邻工作。
+- **Remaining Gap**：未知度是否只有在发生clearance violation时才应提高风险，以及这种条件化关系能否跨未知类别轮换稳定成立。
+- **Our Hypothesis H2**：`unknownness × normalized clearance violation`比unknownness-only、geometry-only和简单拼接更可靠地识别未知高风险事件。
+- **Evidence**：严格held-out category轮换；Unknownness-only、Geometry-only、简单融合和随机Unknown对照；未知高风险AUPRC/Recall、误报和top-k复检命中率。
+- **Novelty Risk**：High。H1未成立或铁路开放集最近工作已覆盖同一设定时，降为附加分析或删除。
 
-## I03 Uncertainty-Aware Risk Reasoning
+## I03 高风险事件概率校准
 
-- **Candidate Innovation**：对风险输出单独校准，并表达可用于主动感知的认知不确定性。
-- **Closest Prior Work**：待核验3–5篇。
-- **Existing Work**：待核验风险校准和铁路不确定性工作。
-- **Remaining Gap**：检测分数是否被错误当作风险可信度，以及铁路风险输出是否缺少校准。
-- **Our Hypothesis**：独立校准能改善风险概率可靠性，并识别需要复核的高风险高不确定样本。
-- **Method**：Temperature Scaling、ECE、Brier、Reliability Diagram。
-- **Evidence**：校准前后测试集比较与失败案例。
-- **Novelty Risk**：Medium。
+- **Contribution Type**：辅助可靠性验证，不作为独立方法创新。
+- **Closest Prior Work**：安全检测器校准和不确定性感知风险识别已有成熟工作，近期工作已报告calibrated risk scores与risk uncertainty。
+- **Already Published**：Temperature Scaling、ECE、Brier、风险概率校准和风险不确定性本身均非创新。
+- **Remaining Gap**：在本任务定义下，校准高风险事件概率是否改善人工复检排序；该问题只有在风险标签和部署动作清晰时才有意义。
+- **Our Hypothesis H3**：验证集拟合的风险校准可改善Brier/NLL/ECE和top-k review hit rate，但不保证改善检测精度。
+- **Evidence**：独立验证/测试、分布漂移分层、校准前后复检排序与失败案例。
+- **Novelty Risk**：High。默认只作为Paper 1完整性实验；没有新设定或形式保证时不列为核心贡献。
 
 ## I04 Risk Semantic Representation
 
@@ -48,6 +45,7 @@
 
 ## 更新规则
 
-- 新颖性风险为High时优先重新设计或削弱主张。
+- 新颖性风险为High时优先收缩为可证伪finding、降为辅助实验或删除。
+- “使用了某个模块”不等于创新；只有相对最近工作的剩余差异及其证据才能进入论文贡献列表。
 - 每次更新记录日期、触发文献/实验ID和变更理由。
 - 代码投入不是保留创新的理由；证据与研究缺口才是。
