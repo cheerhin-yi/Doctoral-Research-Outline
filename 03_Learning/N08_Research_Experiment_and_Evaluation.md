@@ -50,7 +50,7 @@
 
 ## 7. Railway Example
 
-验证铁路归一化几何时必须控制检测器、划分和退化强度。
+验证H1时必须控制检测器、划分、物理侵界关系和成像条件，并比较raw pixel、centerline、boundary、metric-gauge、local-width-normalized及可用BEV；普通图像缩放不能冒充真实飞行高度变化。
 
 请画出或描述数据流，并说明普通场景结论为何不能直接迁移到铁路UAV。
 
