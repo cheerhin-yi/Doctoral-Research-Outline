@@ -9,7 +9,7 @@
 ## 从这里开始
 
 1. 第一次使用先阅读[当前框架详细使用说明](00_Project/Framework_Usage_Guide.md)，了解研究周、笔记、文献、实验和检查的完整填写方法。
-2. 阅读[博士研究总计划](00_Project/Master_Plan.md)、[Paper 1方向校准说明](00_Project/Paper1_Research_Alignment.md)、[七篇论文路线图](00_Project/Roadmap.md)和[Paper 1最近工作与新颖性审计](01_Literature/Paper1_Novelty_Audit_2026-08-27.md)，先明确YOLO主线、配套模块和不能重复宣称的已有工作。
+2. 阅读[博士研究总计划](00_Project/Master_Plan.md)、[与导师讨论提纲](00_Project/Advisor_Discussion_Brief.md)、[Paper 1方向校准说明](00_Project/Paper1_Research_Alignment.md)、[七篇论文路线图](00_Project/Roadmap.md)和[Paper 1最近工作与新颖性审计](01_Literature/Paper1_Novelty_Audit_2026-08-27.md)，先明确YOLO主线、投稿定位、配套模块和不能重复宣称的已有工作。
 3. 在[Paper 1十六个研究周弹性计划](00_Project/Paper1_16_Week_Weekly_Plan.md)中找到当前研究周，每次有空时选择一个MUST任务推进，不要求当天完成。
 4. 在对应的[研究周学习记录](00_Project/Weekly_Notes/)记录实际会话、证据和复述；MUST完成并通过检查后再进入下一研究周。
 5. 实验前先登记[实验计划](04_Paper1_OpenWorld_Risk/EXPERIMENT_PLAN.md)，运行后更新[实验跟踪表](04_Paper1_OpenWorld_Risk/EXPERIMENT_TRACKER.md)和[运行索引](13_Experiment_Log/Run_Index.md)。
