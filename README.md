@@ -10,16 +10,16 @@
 
 1. 先阅读[当前框架详细使用说明](00_Project/Framework_Usage_Guide.md)和[总体实施入口](00_Project/PrePaper_Bridge_Implementation_README.md)。
 2. 阅读[博士研究总计划](00_Project/Master_Plan.md)、[七篇论文与前置/桥接路线图](00_Project/Roadmap.md)和[学习框架导航](03_Learning/README.md)，确认当前只做前置论文A。
-3. 从[重启学习计划](00_Project/Restarted_Learning_Plan_2026-08-28.md)和[20周执行清单](00_Project/PrePaper_20_Week_Execution_Backlog.md)找到当前周；当前为第1周。
+3. 从[20周执行清单](00_Project/PrePaper_20_Week_Execution_Backlog.md)找到当前周；当前为第1周。
 4. 本周先更新[前置论文文献与期刊矩阵](00_Project/PrePaper_Literature_and_Venue_Matrix.md)，完成20篇证据矩阵和A—Paper 1—M1创新重叠图。
 5. 正式实验前在[前置论文实验注册表](00_Project/PrePaper_Experiment_Registry.csv)登记；运行后再同步[运行索引](13_Experiment_Log/Run_Index.md)。
-6. 原[Paper 1十六周计划](00_Project/Paper1_16_Week_Weekly_Plan.md)和[旧周记](00_Project/Weekly_Notes/)当前为暂停资料，不作为本阶段进度入口。
+6. Paper 1旧学习体系已移出活动框架；未来恢复Paper 1时根据A/B结果重新制定计划。
 
 ## 目录导航
 
 | 目录 | 用途 |
 |---|---|
-| `00_Project` | 当前20周计划、未来Paper 1弹性周计划、周记录、检查与原始需求 |
+| `00_Project` | 当前20周计划、项目章程、接口、检查规则和原始需求 |
 | `01_Literature` | 文献矩阵、阅读笔记和检索记录 |
 | `02_Innovation` | 创新台账与新颖性风险 |
 | `03_Learning` | [N01–N16学习框架导航](03_Learning/README.md)与结构化笔记；当前仅N07/N08激活，N01–N04/N06按A需要限定启用，其余暂停 |
