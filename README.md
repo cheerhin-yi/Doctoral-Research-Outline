@@ -4,16 +4,16 @@
 
 > Communication-Aware + Risk-Aware + Uncertainty-Aware
 
-当前唯一实验主任务是 **Paper 1：以YOLO为核心的铁路无人机开放环境危险感知与风险告警**。计划按16个“研究周”依次推进，不绑定固定日历日期；一个研究周可跨越多个自然周。YOLO11承担实时已知危险检测和铁路小目标能力主线；开放词汇/开放集方法补充未见危险候选；轨道解析与侵界几何把检测结果转成风险告警；校准只负责输出可信度。Paper 2–7只维护知识接口与研究依赖，不启动大规模实验。
+当前唯一活动任务是 **前置论文A：飞行条件感知风险校准**。学习计划自2026-08-28重新从第1周计时，每周投入8–10小时；前置论文B、Paper 1、桥接M1、Paper 2、桥接M2和Paper 6按门槛串行启动。原Paper 1十六周计划及周记保留为未来恢复Paper 1时使用，当前不得据此启动开放世界、三维、VoI、主动视点或多无人机实验。
 
 ## 从这里开始
 
-1. 第一次使用先阅读[当前框架详细使用说明](00_Project/Framework_Usage_Guide.md)，了解研究周、笔记、文献、实验和检查的完整填写方法。
-2. 阅读[博士研究总计划](00_Project/Master_Plan.md)、[学习框架导航](03_Learning/README.md)、[与导师讨论提纲](00_Project/Advisor_Discussion_Brief.md)、[Paper 1方向校准说明](00_Project/Paper1_Research_Alignment.md)、[七篇论文路线图](00_Project/Roadmap.md)和[Paper 1最近工作与新颖性审计](01_Literature/Paper1_Novelty_Audit_2026-08-27.md)，先明确当前必学模块、延后模块、YOLO主线和不能重复宣称的已有工作。
-3. 在[Paper 1十六个研究周弹性计划](00_Project/Paper1_16_Week_Weekly_Plan.md)中找到当前研究周，每次有空时选择一个MUST任务推进，不要求当天完成。
-4. 在对应的[研究周学习记录](00_Project/Weekly_Notes/)记录实际会话、证据和复述；MUST完成并通过检查后再进入下一研究周。
-5. 实验前先登记[实验计划](04_Paper1_OpenWorld_Risk/EXPERIMENT_PLAN.md)，运行后更新[实验跟踪表](04_Paper1_OpenWorld_Risk/EXPERIMENT_TRACKER.md)和[运行索引](13_Experiment_Log/Run_Index.md)。
-6. 达到研究周完成门后提交检查；Codex按[检查量表](00_Project/Review_Rubric.md)生成评审文件并更新[研究周状态](00_Project/Weekly_Status.md)。
+1. 先阅读[当前框架详细使用说明](00_Project/Framework_Usage_Guide.md)和[总体实施入口](00_Project/PrePaper_Bridge_Implementation_README.md)。
+2. 阅读[博士研究总计划](00_Project/Master_Plan.md)、[七篇论文与前置/桥接路线图](00_Project/Roadmap.md)和[学习框架导航](03_Learning/README.md)，确认当前只做前置论文A。
+3. 从[重启学习计划](00_Project/Restarted_Learning_Plan_2026-08-28.md)和[20周执行清单](00_Project/PrePaper_20_Week_Execution_Backlog.md)找到当前周；当前为第1周。
+4. 本周先更新[前置论文文献与期刊矩阵](00_Project/PrePaper_Literature_and_Venue_Matrix.md)，完成20篇证据矩阵和A—Paper 1—M1创新重叠图。
+5. 正式实验前在[前置论文实验注册表](00_Project/PrePaper_Experiment_Registry.csv)登记；运行后再同步[运行索引](13_Experiment_Log/Run_Index.md)。
+6. 原[Paper 1十六周计划](00_Project/Paper1_16_Week_Weekly_Plan.md)和[旧周记](00_Project/Weekly_Notes/)当前为暂停资料，不作为本阶段进度入口。
 
 ## 目录导航
 
