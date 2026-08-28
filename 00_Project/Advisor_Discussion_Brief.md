@@ -55,12 +55,12 @@ Paper 1当前唯一实验主任务是：以YOLO检测已知危险，以开放词
 
 > UAV Image → YOLO Known-Hazard Detection → Unknown Candidate Supplement → Track Context → Risk Alarm → Reliability / Review Queue
 
-| 研究问题 | 论文角色 | 最小证据 | 失败时处理 |
-|---|---|---|---|
-| RQ1：YOLO在铁路UAV危险检测中的能力、失败模式及最小适配 | 核心主线 | YOLO11n/s/m；尺寸/高度/场景分层；一个改动的公平消融；FPS/FLOPs | 改动无稳定收益则保留原始YOLO与失败分析，不继续堆模块 |
-| RQ2：开放候选能否补充YOLO闭集盲区 | 第二主线 | 至少两组Known/Unknown轮换；Unknown Recall、FPR和候选负担 | 误报不可控则降为失败分析或附录 |
-| RQ3：轨道上下文能否把检测变成更有用的风险告警 | 系统价值 | Detection-only与zone/boundary/distance比较；高风险Recall、AUPRC、每图告警数 | 采用最简单可靠规则；归一化几何只作可选消融 |
-| RQ4：风险概率校准能否改善人工复检排序 | 辅助验证 | 独立验证集；ECE/Brier/NLL和top-k复检命中率 | 无实际收益则删除 |
+| 研究问题                             | 论文角色 | 最小证据                                                          | 失败时处理                        |
+| -------------------------------- | ---- | ------------------------------------------------------------- | ---------------------------- |
+| RQ1：YOLO在铁路UAV危险检测中的能力、失败模式及最小适配 | 核心主线 | YOLO11n/s/m；尺寸/高度/场景分层；一个改动的公平消融；FPS/FLOPs                    | 改动无稳定收益则保留原始YOLO与失败分析，不继续堆模块 |
+| RQ2：开放候选能否补充YOLO闭集盲区             | 第二主线 | 至少两组Known/Unknown轮换；Unknown Recall、FPR和候选负担                   | 误报不可控则降为失败分析或附录              |
+| RQ3：轨道上下文能否把检测变成更有用的风险告警         | 系统价值 | Detection-only与zone/boundary/distance比较；高风险Recall、AUPRC、每图告警数 | 采用最简单可靠规则；归一化几何只作可选消融        |
+| RQ4：风险概率校准能否改善人工复检排序             | 辅助验证 | 独立验证集；ECE/Brier/NLL和top-k复检命中率                                | 无实际收益则删除                     |
 
 ## 5. 与已有工作的边界
 
