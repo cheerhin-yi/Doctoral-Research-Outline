@@ -20,7 +20,7 @@
 | 项目方向 | [Master Plan](Master_Plan.md)、[七论文路线图](Roadmap.md) | 与老师讨论方向、判断工作是否偏离主线时 | 研究边界、论文关系、阶段决策 |
 | 当前进度 | [弹性研究周计划](Paper1_16_Week_Weekly_Plan.md)、[研究周状态表](Weekly_Status.md) | 选择当前节点、查看下一节点时 | 当前研究周、状态、遗留问题 |
 | 日常执行 | [16份研究周模板](Weekly_Notes/) | 每次学习、阅读、实验和复盘时 | 实际工作、时长、证据、下一最小动作 |
-| 系统学习 | [N01–N16学习笔记](../03_Learning/) | 学到一个新概念或技能时 | 自己的理解、公式、代码、铁路例子、自测 |
+| 系统学习 | [学习框架导航与N01–N16笔记](../03_Learning/README.md) | 当前研究周触发学习任务时；后续模块达到启动条件后 | 自己的理解、公式、代码、铁路例子、自测 |
 | 文献证据 | [文献矩阵](../01_Literature/Literature_Matrix.md)、[检索记录](../01_Literature/Search_Log.md)、[单篇阅读模板](../01_Literature/Reading_Notes/Paper_Reading_Template.md) | 搜索、筛选和精读论文时 | 可核验元数据、方法、局限、创新冲突 |
 | 创新判断 | [Innovation Ledger](../02_Innovation/Innovation_Ledger.md) | 新文献、新实验或主张变化时 | 最近工作、剩余缺口、假设、证据和风险 |
 | Paper 1研究 | [Paper 1目录](../04_Paper1_OpenWorld_Risk/) | 数据、协议、实验和写作全过程 | 可复现的主张—证据链 |
@@ -191,7 +191,7 @@
 
 ## 7. N01–N16学习笔记怎么填写
 
-学习笔记不是一次性教材，而是随研究逐步生长的知识库。只填写当前任务需要的部分，不要求先把整篇笔记补满。
+先查看[学习框架导航](../03_Learning/README.md)。学习笔记不是一次性教材，而是随研究逐步生长的知识库。当前只激活Paper 1所需的N01–N08，并由研究周决定具体笔记；N09–N16服务Paper 3–7，在对应论文达到启动条件前不学习、不实验，也不算欠账。只填写当前任务需要的部分，不要求先把整篇笔记补满。
 
 | 章节 | 应填写什么 | 合格标准 |
 |---|---|---|
@@ -335,11 +335,11 @@ Codex按[Review Rubric](Review_Rubric.md)评分：
 
 讨论前不需要展示整个仓库，优先准备五项：
 
-1. [研究周状态表](Weekly_Status.md)：当前在哪个节点、用了多久、最大阻塞是什么；
-2. 当前研究周模板：已经产生哪些证据；
-3. [Paper 1方向校准](Paper1_Research_Alignment.md)与[Project Charter](../04_Paper1_OpenWorld_Risk/Project_Charter.md)：YOLO角色、RQ1–RQ4、已发表组成和反解释；
-4. [Paper 1新颖性审计](../01_Literature/Paper1_Novelty_Audit_2026-08-27.md)与[Innovation Ledger](../02_Innovation/Innovation_Ledger.md)：已有边界、YOLO候选改动和系统增量风险；
-5. Experiment Tracker或关键表图：YOLO基线/改动是否可靠，未知候选和风险告警是否分别值得保留。
+1. [导师讨论提纲](Advisor_Discussion_Brief.md)：前三篇论文关系、Paper 1定位、期刊条件和待决策问题；
+2. [研究周状态表](Weekly_Status.md)：当前在哪个节点、用了多久、最大阻塞是什么；
+3. 当前研究周模板：已经产生哪些证据；
+4. [Paper 1方向校准](Paper1_Research_Alignment.md)与[Project Charter](../04_Paper1_OpenWorld_Risk/Project_Charter.md)：YOLO角色、RQ1–RQ4、已发表组成和反解释；
+5. [Paper 1新颖性审计](../01_Literature/Paper1_Novelty_Audit_2026-08-27.md)、[Innovation Ledger](../02_Innovation/Innovation_Ledger.md)及关键实验表图：已有边界、候选改动、系统增量和证据风险。
 
 讨论结论要写回对应文件：方向变化写Project Charter，创新变化写Innovation Ledger，实验变化写Experiment Plan/Tracker，时间与优先级变化写当前研究周模板。
 
@@ -380,7 +380,7 @@ Codex按[Review Rubric](Review_Rubric.md)评分：
 
 ### 学完一个概念时
 
-> 我已经填写N04中关于铁路归一化横向距离的理解和公式。请检查概念、符号、前提和铁路示例，但不要替我编写“My Understanding”。
+> 我已经填写N02中关于YOLO多尺度检测和小目标漏检的理解，并记录了铁路UAV失败样例。请检查概念、指标、因果解释和最小验证练习，但不要替我编写“My Understanding”。
 
 ### 准备实验时
 

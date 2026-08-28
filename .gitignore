@@ -38,5 +38,6 @@ secrets/
 # 编辑器与系统文件
 .vscode/
 .idea/
+.obsidian/workspace.json
 .DS_Store
 Thumbs.db
