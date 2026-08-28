@@ -21,6 +21,9 @@
 - [封闭线路实飞采集规范](./PrePaper_Field_Collection_Protocol.md)
 - [20周执行清单](./PrePaper_20_Week_Execution_Backlog.md)
 - [实验注册表](./PrePaper_Experiment_Registry.csv)
+- [当前学习框架导航](../03_Learning/README.md)
+- [文献与候选期刊矩阵](./PrePaper_Literature_and_Venue_Matrix.md)
+- [投稿与返修清单](./PrePaper_Submission_and_Revision_Checklist.md)
 
 ## 完成定义
 
