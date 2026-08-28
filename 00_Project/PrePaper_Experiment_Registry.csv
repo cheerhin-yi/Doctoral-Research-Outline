@@ -1,10 +1,10 @@
 experiment_id,workstream,research_question,dataset_version,split_version,method,baseline_or_proposed,primary_metric,random_seeds,status,artifact_path,notes
-A-E01,PrePaper-A,Freeze detection baseline,TBD,TBD,YOLO baseline,baseline,mAP|Recall|FPR,"0;1;2",not_started,,
-A-E02,PrePaper-A,Compare calibration methods,TBD,TBD,Global and conditional calibration,baseline_and_proposed,ECE|Brier|NLL,"0;1;2",not_started,,
-A-E03,PrePaper-A,Test worst-view reliability,TBD,TBD,Viewpoint-stratified evaluation,proposed,worst_group_ECE,"0;1;2",not_started,,
-A-E04,PrePaper-A,Compare risk operating points,TBD,TBD,Matched-recall thresholding,baseline_and_proposed,FPR_at_fixed_recall,"0;1;2",not_started,,
-A-E05,PrePaper-A,Ablate conditioning variables,TBD,TBD,Feature ablation,proposed,ECE_delta,"0;1;2",not_started,,
-A-E06,PrePaper-A,Evaluate observation validity,TBD,TBD,Selective prediction,proposed,AURC|risk_coverage,"0;1;2",not_started,,
+A-E01,PrePaper-A,Freeze detection baseline,TBD,TBD,Frozen detector audit,baseline,mAP|Recall|FPR,not_applicable,not_started,,No detector innovation
+A-E02,PrePaper-A,Compare calibration families,TBD,TBD,Uncalibrated|global parametric|isotonic|conditional,baseline_and_proposed,ECE|Brier|NLL,"pilot_0;retained_0;1;2_if_stochastic",not_started,,Maximum three baseline families
+A-E03,PrePaper-A,Test worst-view reliability,TBD,TBD,Viewpoint-stratified evaluation,proposed,worst_group_ECE,scene_bootstrap,not_started,,Supports A1
+A-E04,PrePaper-A,Compare risk operating points,TBD,TBD,Matched-recall thresholding,baseline_and_proposed,FPR_at_fixed_recall,scene_bootstrap,not_started,,Supports A2
+A-E05,PrePaper-A,Ablate conditioning variables,TBD,TBD,Feature ablation,proposed,ECE_delta,"pilot_0;retained_0;1;2_if_stochastic",not_started,,Decision experiment
+A-E06,PrePaper-A,Evaluate observation validity,TBD,TBD,Selective prediction,diagnostic,AURC|risk_coverage,scene_bootstrap,not_started,,Supporting diagnostic not third claim
 B-E01,PrePaper-B,Establish first-pass baseline,TBD,TBD,First view only,baseline,FNR|AUPRC,"0;1;2",not_started,,
 B-E02,PrePaper-B,Establish close-view reference,TBD,TBD,Fixed reinspection view only,baseline,FNR|AUPRC,"0;1;2",not_started,,
 B-E03,PrePaper-B,Test naive fusion,TBD,TBD,Probability average,baseline,FNR|AUPRC,"0;1;2",not_started,,

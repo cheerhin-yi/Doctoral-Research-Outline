@@ -2,6 +2,6 @@
 
 | Run ID | 日期 | Claim/Block | Config | Split | Seed | Status | Raw Metrics | Log | Decision |
 |---|---|---|---|---|---:|---|---|---|---|
-| R000 |  | B1/M0 |  |  |  | TODO |  |  |  |
+| A-R000 |  | A1/E0 |  |  |  | TODO |  |  | 指标与划分Sanity |
 
-以 `04_Paper1_OpenWorld_Risk/EXPERIMENT_TRACKER.md` 为计划源；本表登记真实运行证据。
+以 `00_Project/PrePaper_Experiment_Registry.csv` 为当前计划源；本表只登记真实运行证据。Paper 1的Tracker处于暂停状态。
