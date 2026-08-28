@@ -1,0 +1,17 @@
+experiment_id,workstream,research_question,dataset_version,split_version,method,baseline_or_proposed,primary_metric,random_seeds,status,artifact_path,notes
+A-E01,PrePaper-A,Freeze detection baseline,TBD,TBD,YOLO baseline,baseline,mAP|Recall|FPR,"0;1;2",not_started,,
+A-E02,PrePaper-A,Compare calibration methods,TBD,TBD,Global and conditional calibration,baseline_and_proposed,ECE|Brier|NLL,"0;1;2",not_started,,
+A-E03,PrePaper-A,Test worst-view reliability,TBD,TBD,Viewpoint-stratified evaluation,proposed,worst_group_ECE,"0;1;2",not_started,,
+A-E04,PrePaper-A,Compare risk operating points,TBD,TBD,Matched-recall thresholding,baseline_and_proposed,FPR_at_fixed_recall,"0;1;2",not_started,,
+A-E05,PrePaper-A,Ablate conditioning variables,TBD,TBD,Feature ablation,proposed,ECE_delta,"0;1;2",not_started,,
+A-E06,PrePaper-A,Evaluate observation validity,TBD,TBD,Selective prediction,proposed,AURC|risk_coverage,"0;1;2",not_started,,
+B-E01,PrePaper-B,Establish first-pass baseline,TBD,TBD,First view only,baseline,FNR|AUPRC,"0;1;2",not_started,,
+B-E02,PrePaper-B,Establish close-view reference,TBD,TBD,Fixed reinspection view only,baseline,FNR|AUPRC,"0;1;2",not_started,,
+B-E03,PrePaper-B,Test naive fusion,TBD,TBD,Probability average,baseline,FNR|AUPRC,"0;1;2",not_started,,
+B-E04,PrePaper-B,Test confidence fusion,TBD,TBD,Confidence weighting,baseline,FNR|AUPRC,"0;1;2",not_started,,
+B-E05,PrePaper-B,Test track-aligned fusion,TBD,TBD,Track consistency and uncertainty weighting,proposed,FNR|AUPRC|Brier,"0;1;2",not_started,,
+B-E06,PrePaper-B,Ablate consistency components,TBD,TBD,Component ablation,proposed,FNR_delta,"0;1;2",not_started,,
+B-E07,PrePaper-B,Test simple fixed trigger,TBD,TBD,Risk and validity rule,auxiliary,reinspection_rate|hazard_recall,"0;1;2",not_started,,
+M1-E01,Bridge-M1,Compare point measurement baselines,TBD,TBD,Pixel|gauge|homography|camera model,baseline,MAE|RMSE,"0;1;2",blocked,,Requires Paper 1 interface
+M1-E02,Bridge-M1,Validate uncertainty propagation,TBD,TBD,Monte Carlo plus calibration,proposed,coverage|interval_width,"0;1;2",blocked,,Requires Paper 1 interface
+M2-E01,Bridge-M2,Compare reinspection triggers,TBD,TBD,Never|always|random|single variable|VoI,baseline_and_proposed,hazard_recall|reinspection_rate,"0;1;2",blocked,,Requires Paper 1 and M1
