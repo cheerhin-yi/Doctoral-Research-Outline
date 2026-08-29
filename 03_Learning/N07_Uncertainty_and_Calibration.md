@@ -1,56 +1,143 @@
 # N07 不确定性与校准
 
-**状态**：ACTIVE / MUST  
-**服务主张**：A1最差视角可靠性；A2固定危险Recall下误报与观测有效性。
+> 状态：未开始｜最近复习：待填写｜对应研究周：见弹性研究周计划
 
-## 1. 必须理解
+## 1. Why
 
-- confidence、概率、风险与不确定性的区别；
-- 独立训练集、校准集和测试集各自用途；
-- NLL、Brier score、ECE和可靠性图；
-- 温度缩放、逻辑校准和等距回归的假设；
-- 全局校准、分组校准和条件校准；
-- 最差组ECE及平均指标掩盖子组失效的问题；
-- 高度、云台角、目标像素尺寸、模糊度和轨道位置的条件作用；
-- selective prediction、risk–coverage与`observation_valid`。
+避免把检测confidence误当作风险概率，并学习如何评价复检排序可靠性。校准和风险不确定性已有成熟近邻工作，在Paper 1中默认是辅助可靠性实验，不是独立创新。
 
-## 2. 最少数学
+请填写：如果不掌握本模块，Paper 1或后续论文最可能出现什么错误？
 
-必须能写出并解释：
+## 2. Intuition
 
-- 二分类或多分类NLL；
-- Brier score；
-- 分箱ECE及其对分箱方案的敏感性；
-- 温度缩放`softmax(z/T)`；
-- 条件校准器`p_cal=g(p_raw, h, angle, size, blur, d_norm)`。
+不用公式，用不超过200字向同学解释“不确定性与校准”是什么。至少给出一个铁路无人机场景。
 
-每个公式都要记录输入、输出、范围、拟合数据和失效条件。
+## 3. Core Concepts
 
-## 3. 强基线
+- [ ] Predictive uncertainty：用自己的话解释，并写一个反例或失败条件。
+- [ ] Aleatoric与Epistemic区别：用自己的话解释，并写一个反例或失败条件。
+- [ ] Entropy：用自己的话解释，并写一个反例或失败条件。
+- [ ] Calibration：用自己的话解释，并写一个反例或失败条件。
+- [ ] Temperature Scaling：用自己的话解释，并写一个反例或失败条件。
+- [ ] ECE与Brier Score：用自己的话解释，并写一个反例或失败条件。
+- [ ] Reliability Diagram：用自己的话解释，并写一个反例或失败条件。
+- [ ] 分布外失效：用自己的话解释，并写一个反例或失败条件。
 
-最多保留三类基线家族：
+## 4. Minimal Math
 
-1. 未校准输出；
-2. 全局参数校准：温度缩放/逻辑校准；
-3. 非参数校准：等距回归。
+必须掌握：熵、Brier Score、ECE分箱和温度缩放。
 
-条件校准是待验证方法。深度集成、贝叶斯网络和MC Dropout当前删除。
+- 公式：
+- 符号与单位：
+- 公式表达的直觉：
+- 适用前提：
+- 失效条件：
 
-## 4. 学习练习
+## 5. Input / Output
 
-1. 在10–20个样本上手算NLL、Brier和ECE；
-2. 在小型预测表上拟合温度缩放；
-3. 生成总体和一个飞行条件子组的可靠性图；
-4. 解释一个“总体改善但最差组恶化”的反例。
+输入为未校准logits/概率与真实标签；输出为校准参数、校准概率和可靠性指标。
 
-## 5. 完成门
+请补充输入、输出、形状/单位、必需假设和异常状态。
 
-- 能在不看资料时解释四个核心指标；
-- 能说明为何测试集不能拟合校准参数；
-- 能说明条件校准与普通后处理的区别；
-- 有手算、代码输出和失败案例；
-- 不把校准算法本身宣称为创新。
+## 6. Code
 
-## 6. 输出接口
+实现Temperature Scaling、ECE、Brier和Reliability Diagram。
 
-`known_class_probability, calibrated_risk, view_uncertainty, observation_valid`
+- 代码或Notebook位置：
+- 环境与版本：
+- 最小运行命令：
+- 输出证据：
+
+## 7. Railway Example
+
+高风险且高不确定的疑似滑坡应触发复核，而非直接作确定结论。
+
+请画出或描述数据流，并说明普通场景结论为何不能直接迁移到铁路UAV。
+
+## 8. Paper Connection
+
+Paper 1辅助问题RQ4/H4：仅检验校准高风险事件概率是否改善独立测试集概率质量或top-k复检命中率；为Paper 6主动感知保留接口。
+
+- 对应论文模块：
+- 本模块输出给谁：
+- 仍未冻结的接口：
+
+## 9. Classic Papers
+
+仅在核验原文后填写。
+
+| Title | Year | Venue | 解决问题 | 我必须读的章节 | 核验链接 |
+|---|---:|---|---|---|---|
+| Uncertainty-Aware Vision-based Risk Object Identification via Conformal Risk Tube Prediction | 2026 | arXiv | calibrated risk score、risk uncertainty和下游安全决策 | 高：风险校准/不确定性已覆盖 | https://arxiv.org/abs/2603.23919 |
+| Can We Trust You? On Calibration of a Probabilistic Object Detector for Autonomous Driving | 2019 | arXiv | 安全场景概率检测器校准 | 中：校准基础近邻 | https://arxiv.org/abs/1909.12358 |
+
+## 10. Recent Papers
+
+范围为2024年至当前；标题、年份、出处和链接全部核验后再移除“待核验”。
+
+| Title | Year | Venue | 与本项目关系 | 新颖性冲突 | 核验链接 |
+|---|---:|---|---|---|---|
+| 待核验 |  |  |  |  |  |
+| 待核验 |  |  |  |  |  |
+
+## 11. My Understanding
+
+- 我现在能独立解释的是：
+- 我最容易混淆的是：
+- 与上次相比，我改变的理解是：
+- 不看资料写出的三句话总结：
+
+## 12. Failure / Limitation
+
+- 数据失效条件：
+- 模型/方法失效条件：
+- 指标可能误导的情况：
+- 铁路部署限制：
+
+## 13. Open Questions
+
+- [ ] 置信度、风险概率和校准后可信度有何区别？
+  - 我的回答：
+  - 证据或例子：
+- [ ] 为什么温度只能在验证集拟合？
+  - 我的回答：
+  - 证据或例子：
+- [ ] ECE下降但任务召回下降意味着什么？
+  - 我的回答：
+  - 证据或例子：
+
+新增问题：
+
+## 14. Mini Experiment
+
+在固定验证集拟合温度，在独立测试集比较ECE、Brier、NLL、高风险Recall和top-k review hit rate。若只改善ECE而不改善概率质量或复检动作，记录为诊断结果，不把H4列为贡献。
+
+- Hypothesis：
+- Independent Variable：
+- Control：
+- Baseline：
+- Dataset/Split：
+- Metrics：
+- Success Criterion：
+- Failure Interpretation：
+- 代码、配置和结果位置：
+
+## 复习卡片
+
+| 卡片 | 正面问题 | 背面答案 | D1 | D3 | D7 | D14 |
+|---|---|---|---|---|---|---|
+| 1 | 本模块最核心概念是什么？ | 待填写 | ☐ | ☐ | ☐ | ☐ |
+| 2 | 最小公式及其前提是什么？ | 待填写 | ☐ | ☐ | ☐ | ☐ |
+| 3 | 它如何服务铁路无人机论文？ | 待填写 | ☐ | ☐ | ☐ | ☐ |
+
+## 自测
+
+- [ ] 置信度、风险概率和校准后可信度有何区别？
+  - 我的回答：
+  - 证据或例子：
+- [ ] 为什么温度只能在验证集拟合？
+  - 我的回答：
+  - 证据或例子：
+- [ ] ECE下降但任务召回下降意味着什么？
+  - 我的回答：
+  - 证据或例子：

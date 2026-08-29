@@ -1,7 +1,5 @@
 # Paper 1 Experiment Tracker
 
-> **PAUSED（2026-08-28）**：不得把本表任何Run改为READY/RUNNING。当前实验状态只在`../00_Project/PrePaper_Experiment_Registry.csv`维护；Paper 1恢复前需重新审计并重编号必要Run。
-
 状态只使用：TODO、READY、RUNNING、FAILED、COMPLETE、CUT。任何COMPLETE必须有配置、日志和原始指标位置。
 
 | Run ID | Milestone | Purpose | System / Variant | Split | Primary Metrics | Priority | Status | Config/Log/Result | Notes |
