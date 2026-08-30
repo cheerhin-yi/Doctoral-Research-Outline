@@ -1,40 +1,59 @@
-# 轨道交通无人机智能巡检与应急响应博士研究框架
+# 轨道交通无人机智能巡检博士研究项目
 
-本仓库用于管理“无线通信与人工智能关键技术”博士研究，以轨道交通无人机巡检与应急响应为长期工程载体。统一主线为：
+本项目围绕“无线通信与人工智能关键技术”，以铁路无人机巡检为统一应用场景，规划七篇相互衔接的论文。
 
-> Communication-Aware + Risk-Aware + Uncertainty-Aware
+## 你现在只需要做什么
 
-当前唯一实验主任务是 **Paper 1：以YOLO为核心的铁路无人机开放环境危险感知与风险告警**。计划按16个“研究周”依次推进，不绑定固定日历日期；一个研究周可跨越多个自然周。YOLO11承担实时已知危险检测和铁路小目标能力主线；开放词汇/开放集方法补充未见危险候选；轨道解析与侵界几何把检测结果转成风险告警；校准只负责输出可信度。Paper 2–7只维护知识接口与研究依赖，不启动大规模实验。
+当前只负责Paper 1研究链，近期先完成一篇实时轻量小目标检测练手论文。现在仍处于共同知识补齐阶段；你已经学习卷积和基本YOLO，下一步不是找数据集，也不是改网络，而是依次完成：
 
-## 从这里开始
+1. YOLO完整检测链、损失、NMS与评价指标；
+2. PyTorch科研训练、调试和可复现性；
+3. closed-set、open-set、open-vocabulary、open-world和异常检测；
+4. 铁路轨道上下文、侵界关系与风险告警；
+5. 对照实验、数据泄漏、统计和不确定性评价。
+6. 小目标多尺度检测、轻量共享检测头和真实速度评价。
 
-1. 第一次使用先阅读[当前框架详细使用说明](00_Project/Framework_Usage_Guide.md)，了解研究周、笔记、文献、实验和检查的完整填写方法。
-2. 阅读[博士研究总计划](00_Project/Master_Plan.md)、[学习框架导航](03_Learning/README.md)、[与导师讨论提纲](00_Project/Advisor_Discussion_Brief.md)、[Paper 1方向校准说明](00_Project/Paper1_Research_Alignment.md)、[七篇论文路线图](00_Project/Roadmap.md)和[Paper 1最近工作与新颖性审计](01_Literature/Paper1_Novelty_Audit_2026-08-27.md)，先明确当前必学模块、延后模块、YOLO主线和不能重复宣称的已有工作。
-3. 在[Paper 1十六个研究周弹性计划](00_Project/Paper1_16_Week_Weekly_Plan.md)中找到当前研究周，每次有空时选择一个MUST任务推进，不要求当天完成。
-4. 在对应的[研究周学习记录](00_Project/Weekly_Notes/)记录实际会话、证据和复述；MUST完成并通过检查后再进入下一研究周。
-5. 实验前先登记[实验计划](04_Paper1_OpenWorld_Risk/EXPERIMENT_PLAN.md)，运行后更新[实验跟踪表](04_Paper1_OpenWorld_Risk/EXPERIMENT_TRACKER.md)和[运行索引](13_Experiment_Log/Run_Index.md)。
-6. 达到研究周完成门后提交检查；Codex按[检查量表](00_Project/Review_Rubric.md)生成评审文件并更新[研究周状态](00_Project/Weekly_Status.md)。
+立即从[当前阶段指南](00_Overview/Current_Stage.md)开始。每次只完成其中一个任务，并把答案写入对应学习笔记。
 
-## 目录导航
+## 项目入口
 
-| 目录 | 用途 |
-|---|---|
-| `00_Project` | 总计划、弹性研究周计划、周记录、检查与原始需求 |
-| `01_Literature` | 文献矩阵、阅读笔记和检索记录 |
-| `02_Innovation` | 创新台账与新颖性风险 |
-| `03_Learning` | [N01–N16学习框架导航](03_Learning/README.md)与结构化笔记；N01–N08按Paper 1研究周激活，N09–N16按后续论文门槛激活 |
-| `04_Paper1_OpenWorld_Risk` | 当前论文的协议、实验、论文提纲和接口 |
-| `05`–`10_Paper*` | 后续六篇论文的研究接口和启动门槛 |
-| `11_Datasets` | 数据元信息与版本说明；不存放大型数据 |
-| `12_Code` | 未来代码结构与复现约定 |
-| `13_Experiment_Log` | 实验运行索引与单次实验模板 |
-| `14_Figures` | 图表清单与生成来源 |
+- [项目总指南](00_Overview/Project_Guide.md)：目录、阶段、工作方式和范围控制；
+- [当前阶段](00_Overview/Current_Stage.md)：现在具体学什么、做什么；
+- [七篇论文路线](00_Overview/Seven_Paper_Roadmap.md)：每篇论文的作用和知识依赖；
+- [Paper 1任务指南](01_Paper1_OpenWorld_Risk/Stage_Guide.md)：从学习、文献、复现、数据、实验到投稿；
+- [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。
+- [实时轻量检测练手论文](01_Paper1_OpenWorld_Risk/PrePaper_Lightweight_Detection/README.md)：独立练手成果，只保留一个检测头改动；
+- [项目参考材料](00_Overview/Reference_Materials/README.md)：博士科研计划书等方向依据。
 
-## 证据规则
+## 文件夹
 
-- 未运行的实验只能写“计划”或“待验证”，不得写成结果。
-- 文献条目在核验标题、作者、年份、出处和链接前标记为“待核验”。
-- 数据划分、随机种子、配置、运行环境和原始指标都必须可追踪。
-- 数据集、模型权重、缓存、令牌和密钥不进入Git。
+| 文件夹 | 内容 | 当前状态 |
+|---|---|---|
+| `00_Overview` | 项目指南、当前阶段和七论文路线 | ACTIVE |
+| `01_Paper1_OpenWorld_Risk` | 当前论文全部研究、笔记、文献、实验和写作文件 | ACTIVE |
+| `02_Paper2_3D_Disaster` | 三维灾害定量评估 | PAUSED |
+| `03_Paper3_Comm_Perception` | 通信受限协同感知 | PAUSED |
+| `04_Paper4_Risk_ISAC` | 风险驱动ISAC | PAUSED |
+| `05_Paper5_Multimodal_Risk` | 多模态风险理解 | PAUSED |
+| `06_Paper6_Active_Inspection` | 主动无人机巡检 | PAUSED |
+| `07_Paper7_MultiUAV_Decision` | 多无人机协同决策 | PAUSED |
 
-原始要求见[项目总说明V3归档](00_Project/项目总说明_V3_原文归档.md)。其中面向GPT的段落已转写为[项目协作指南](00_Project/Collaboration_Guide.md)，仅作为本项目的工作约定。
+## 当前阶段完成前禁止
+
+- 收集、下载或标注正式项目数据；
+- 修改YOLO网络结构；
+- 同时启动Paper 2–7；
+- 学习三维、通信、ISAC、多模态、RL、MARL或GNN；
+- 用“看完课程”代替结构图、手算、代码输出和自己的解释。
+
+## 数据什么时候开始
+
+数据工作放在Paper 1阶段4。在此之前先完成知识门、最近工作审计和小样例技术复现。届时才根据已经冻结的研究主张决定需要什么公开数据、是否需要自采以及怎样划分Known/Unknown和物理场景。
+
+## 项目纪律
+
+- 每篇论文最多两个主要主张；
+- 每项实验必须对应一个主张；
+- 当前只维护当前阶段需要的文件；
+- 后续论文启动时再创建自己的学习、文献、实验和写作子目录；
+- 删除内容可从Git历史恢复，不在项目里保留重复归档。
