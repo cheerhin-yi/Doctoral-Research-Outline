@@ -35,6 +35,8 @@ Paper 1当前处于“阶段1：知识补齐”，不是数据收集阶段。你
 | `07_Paper7_MultiUAV_Decision/` | 多无人机联合决策边界 | 暂停 |
 | `99_Attachments/` | 全项目复用的附件、格式写法和辅助模板 | 需要时查阅 |
 
+设备、数据、场地、人员和合规条件见[博士研究外部条件与资源需求](../99_Attachments/Doctoral_Research_External_Conditions.md)。该附件按论文启动门槛分阶段配置，不要求在Paper 1知识补齐阶段提前采购Paper 2–7设备。
+
 ## 4. 每次研究会话怎么做
 
 1. 打开`00_Overview/Current_Stage.md`，只选一个“下一任务”；

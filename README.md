@@ -24,7 +24,8 @@
 - [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。
 - [实时轻量检测练手论文](01_Paper1_OpenWorld_Risk/PrePaper_Lightweight_Detection/README.md)：独立练手成果，只保留一个检测头改动；
 - [项目参考材料](00_Overview/Reference_Materials/README.md)：博士科研计划书等方向依据。
-- [附件](99_Attachments/Markdown_Math_Syntax_Guide.md)：跨论文复用的模板、写法和辅助材料。
+- [全项目附件](99_Attachments/README.md)：博士研究外部条件、资源需求、模板和写法说明；
+- [外部条件与资源需求](99_Attachments/Doctoral_Research_External_Conditions.md)：无人机、工作站、铁路数据、传感器、通信平台、人员和许可的分阶段配置。
 
 ## 文件夹
 
