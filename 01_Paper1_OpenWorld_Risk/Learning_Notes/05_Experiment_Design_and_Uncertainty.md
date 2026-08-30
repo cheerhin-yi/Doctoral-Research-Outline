@@ -52,6 +52,22 @@ Paper 1必须按物理场景、航次或连续序列分组。以下情况属于�
 - 统计显著不等于实际有用，还要报告Recall提升、告警减少和计算代价；
 - 同一场景中的大量相邻帧不能被当作完全独立样本。
 
+对 $n$ 个独立实验单位的结果 $x_1,\ldots,x_n$，样本均值和样本标准差为：
+
+$$
+\bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i,
+\qquad
+s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2}
+$$
+
+当独立性和分布假设合理时，均值的双侧置信区间可写为：
+
+$$
+\bar{x}\pm t_{1-\alpha/2,\,n-1}\frac{s}{\sqrt{n}}
+$$
+
+这里的 $n$ 必须对应独立场景、航次或独立训练运行，不能把相邻视频帧数直接代入。
+
 ## 不确定性与校准的最低知识
 
 ### 区分
@@ -68,6 +84,34 @@ Paper 1必须按物理场景、航次或连续序列分组。以下情况属于�
 - Brier Score；
 - NLL；
 - top-k人工复核命中率。
+
+将置信度划分为 $M$ 个区间 $B_1,\ldots,B_M$ 时，Expected Calibration Error可写为：
+
+$$
+\operatorname{ECE}
+=
+\sum_{m=1}^{M}\frac{|B_m|}{N}
+\left|
+\operatorname{acc}(B_m)-\operatorname{conf}(B_m)
+\right|
+$$
+
+二分类情况下，Brier Score和Negative Log-Likelihood可写为：
+
+$$
+\operatorname{Brier}
+=
+\frac{1}{N}\sum_{i=1}^{N}(p_i-y_i)^2
+$$
+
+$$
+\operatorname{NLL}
+=
+-\frac{1}{N}\sum_{i=1}^{N}
+\left[y_i\log p_i+(1-y_i)\log(1-p_i)\right]
+$$
+
+其中，$p_i$是预测概率，$y_i\in\{0,1\}$是真实标签。多分类版本需对类别维度求和。
 
 校准在Paper 1中默认是辅助实验。只有它改善概率质量或复核排序才保留，不作为独立创新。
 

@@ -33,6 +33,7 @@ Paper 1当前处于“阶段1：知识补齐”，不是数据收集阶段。你
 | `05_Paper5_Multimodal_Risk/` | 多模态风险理解边界 | 暂停 |
 | `06_Paper6_Active_Inspection/` | 主动复检与下一视点边界 | 暂停 |
 | `07_Paper7_MultiUAV_Decision/` | 多无人机联合决策边界 | 暂停 |
+| `99_Attachments/` | 全项目复用的附件、格式写法和辅助模板 | 需要时查阅 |
 
 ## 4. 每次研究会话怎么做
 

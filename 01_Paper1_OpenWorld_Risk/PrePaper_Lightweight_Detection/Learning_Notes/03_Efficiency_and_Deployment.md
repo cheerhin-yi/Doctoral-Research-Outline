@@ -35,6 +35,28 @@
 - 是否包含NMS：
 - 延迟统计：均值 / 中位数 / P95：
 
+若顺序处理、batch为1，且单帧平均延迟为 $t_{\mathrm{ms}}$ 毫秒，则理论FPS为：
+
+$$
+\operatorname{FPS}=\frac{1000}{t_{\mathrm{ms}}}
+$$
+
+相对基线延迟 $t_{\mathrm{base}}$，新模型延迟 $t_{\mathrm{new}}$ 的加速比与延迟下降比例为：
+
+$$
+S_{\mathrm{latency}}
+=
+\frac{t_{\mathrm{base}}}{t_{\mathrm{new}}}
+$$
+
+$$
+R_{\mathrm{latency}}
+=
+\frac{t_{\mathrm{base}}-t_{\mathrm{new}}}{t_{\mathrm{base}}}\times100\%
+$$
+
+只有计时范围一致时，这些结果才可比较。若包含预处理和NMS，应明确写成端到端延迟。
+
 ## 3. 最小部署层级
 
 按条件从上到下完成，不强制全部做：

@@ -20,13 +20,58 @@
 
 ## 2. 参数量手算
 
-设输入通道为`Cin`、输出通道为`Cout`、卷积核为`K×K`：
+设输入通道为 $C_{\mathrm{in}}$、输出通道为 $C_{\mathrm{out}}$、卷积核为 $K\times K$。以下公式暂不计bias。
 
-- 普通卷积参数量：
-- 深度卷积参数量：
-- 逐点卷积参数量：
-- 深度可分离卷积总参数量：
-- 节省比例：
+普通卷积参数量：
+
+$$
+P_{\mathrm{conv}}
+=
+K^2C_{\mathrm{in}}C_{\mathrm{out}}
+$$
+
+深度卷积和逐点卷积参数量：
+
+$$
+P_{\mathrm{dw}}=K^2C_{\mathrm{in}},
+\qquad
+P_{\mathrm{pw}}=C_{\mathrm{in}}C_{\mathrm{out}}
+$$
+
+深度可分离卷积总参数量及相对节省比例：
+
+$$
+P_{\mathrm{ds}}
+=
+K^2C_{\mathrm{in}}+C_{\mathrm{in}}C_{\mathrm{out}}
+$$
+
+$$
+R_{\mathrm{save}}
+=
+1-\frac{P_{\mathrm{ds}}}{P_{\mathrm{conv}}}
+$$
+
+若三个尺度各自使用完整干路，检测头参数量为：
+
+$$
+P_{\mathrm{independent}}
+=
+\sum_{l\in\{2,3,4\}}
+\left(P_{\mathrm{stem}}^{(l)}+P_{\mathrm{out}}^{(l)}\right)
+$$
+
+若共享干路、保留尺度独立输出层，则为：
+
+$$
+P_{\mathrm{shared}}
+=
+P_{\mathrm{stem}}
++
+\sum_{l\in\{2,3,4\}}P_{\mathrm{out}}^{(l)}
+$$
+
+共享结构是否真正提高速度仍需真实延迟实验，不能仅由参数量公式推出。
 
 选择一组实际通道数完成计算：
 

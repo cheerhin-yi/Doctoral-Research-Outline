@@ -66,11 +66,48 @@ Image[B,3,H,W]
 
 必须掌握：
 
-\[
-Precision=\frac{TP}{TP+FP},\qquad Recall=\frac{TP}{TP+FN}
-\]
+预测框 $B_p$ 与真值框 $B_g$ 的交并比为：
 
-以及IoU、PR曲线、AP、mAP50、mAP50–95、逐类AP、尺寸分层Recall。
+$$
+\operatorname{IoU}(B_p,B_g)
+=
+\frac{|B_p\cap B_g|}{|B_p\cup B_g|}
+$$
+
+Precision、Recall与F1为：
+
+$$
+\operatorname{Precision}=\frac{TP}{TP+FP},
+\qquad
+\operatorname{Recall}=\frac{TP}{TP+FN}
+$$
+
+$$
+F_1
+=
+\frac{2\,\operatorname{Precision}\,\operatorname{Recall}}
+{\operatorname{Precision}+\operatorname{Recall}}
+$$
+
+在类别 $c$ 和IoU阈值 $\tau$ 下，AP可写为PR曲线下面积：
+
+$$
+\operatorname{AP}_{c,\tau}
+=
+\int_{0}^{1} p_{c,\tau}(r)\,\mathrm{d}r
+$$
+
+对 $C$ 个类别取平均：
+
+$$
+\operatorname{mAP}_{\tau}
+=
+\frac{1}{C}\sum_{c=1}^{C}\operatorname{AP}_{c,\tau}
+$$
+
+其中，$TP$、$FP$和$FN$分别表示真正例、假正例和假负例；$p(r)$表示以Recall为横轴时的Precision。实际实现通常采用离散插值而不是直接计算连续积分。
+
+还要理解PR曲线、mAP50、mAP50–95、逐类AP和尺寸分层Recall。mAP50–95通常表示在IoU阈值$0.50,0.55,\ldots,0.95$上计算mAP后再取平均。
 
 Paper 1优先级：
 

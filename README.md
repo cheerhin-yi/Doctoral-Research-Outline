@@ -24,6 +24,7 @@
 - [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。
 - [实时轻量检测练手论文](01_Paper1_OpenWorld_Risk/PrePaper_Lightweight_Detection/README.md)：独立练手成果，只保留一个检测头改动；
 - [项目参考材料](00_Overview/Reference_Materials/README.md)：博士科研计划书等方向依据。
+- [附件](99_Attachments/Markdown_Math_Syntax_Guide.md)：跨论文复用的模板、写法和辅助材料。
 
 ## 文件夹
 
@@ -37,6 +38,7 @@
 | `05_Paper5_Multimodal_Risk` | 多模态风险理解 | PAUSED |
 | `06_Paper6_Active_Inspection` | 主动无人机巡检 | PAUSED |
 | `07_Paper7_MultiUAV_Decision` | 多无人机协同决策 | PAUSED |
+| `99_Attachments` | 全项目共用的附件和写法模板 | REFERENCE |
 
 ## 当前阶段完成前禁止
 
