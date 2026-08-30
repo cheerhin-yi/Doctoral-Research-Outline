@@ -17,6 +17,7 @@
 
 ## 项目入口
 
+- [新聊天交接](00_Overview/Chat_Handoff.md)：当前状态、已确认决定、下一任务和可直接复制的新聊天第一条消息；
 - [项目总指南](00_Overview/Project_Guide.md)：目录、阶段、工作方式和范围控制；
 - [当前阶段](00_Overview/Current_Stage.md)：现在具体学什么、做什么；
 - [七篇论文路线](00_Overview/Seven_Paper_Roadmap.md)：每篇论文的作用和知识依赖；
@@ -31,7 +32,7 @@
 
 | 文件夹 | 内容 | 当前状态 |
 |---|---|---|
-| `00_Overview` | 项目指南、当前阶段和七论文路线 | ACTIVE |
+| `00_Overview` | 新聊天交接、项目指南、当前阶段和七论文路线 | ACTIVE |
 | `01_Paper1_OpenWorld_Risk` | 当前论文全部研究、笔记、文献、实验和写作文件 | ACTIVE |
 | `02_Paper2_3D_Disaster` | 三维灾害定量评估 | PAUSED |
 | `03_Paper3_Comm_Perception` | 通信受限协同感知 | PAUSED |
