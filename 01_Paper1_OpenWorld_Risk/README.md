@@ -1,46 +1,28 @@
 # Paper 1：铁路UAV开放世界危险感知与风险告警
 
-- **状态**：当前唯一活动论文。
-- **当前阶段**：知识补齐，暂不收集项目数据。
-- **当前入口**：[阶段任务指南](Stage_Guide.md)。
+- **状态**：研究计划保留，执行等待练手论文完成。
+- **研究问题与两项暂定主张**：[Research_Plan.md](Research_Plan.md)。
+- **唯一进度表**：[Stage_Guide.md](Stage_Guide.md)。
+- **总项目当前任务**：[Current_Stage.md](../00_Overview/Current_Stage.md)。
 
-## 论文要解决什么
+## 处理链
 
-在铁路无人机图像中，闭集YOLO只能识别训练过的类别。Paper 1研究如何保留YOLO的实时已知危险检测能力，同时发现可能的未知危险，并利用轨道区域判断哪些候选真正值得告警。
+> UAV图像 → 已知目标检测 → 未知候选 → 轨道上下文 → 风险排序 → 可信告警
 
-暂定处理链：
+YOLO结构改动不是Paper 1的默认贡献。练手论文只提供可选的封闭集已知检测基线；Paper 1仍须独立审计开放世界协议、轨道风险价值和数据泄漏。
 
-> UAV图像 → YOLO已知目标 → 未知候选 → 轨道上下文 → 风险排序 → 可信告警
-
-## 暂定两项主张
-
-1. 在严格场景划分和未知类别留出协议下，已知检测＋未知候选能够在可控告警数量下提高危险对象召回率；
-2. 轨道上下文风险排序能够抑制与运行安全无关的候选，并优先呈现侵界危险。
-
-这两项主张必须在最近工作审计后才能冻结。YOLO结构改动不是默认贡献：只有基线错误分析指出明确瓶颈，并且一个最小改动稳定有效时才保留。
-
-## 文件结构
+## 工作文件
 
 | 路径 | 内容 |
 |---|---|
-| [Stage_Guide.md](Stage_Guide.md) | 从学习到投稿的阶段任务和完成门 |
-| [Research_Plan.md](Research_Plan.md) | 科学问题、主张、边界与接口 |
-| [Learning_Notes/](Learning_Notes/README.md) | Paper 1主体必须学习和填写的五份笔记及记录方法 |
-| [Literature/](Literature/README.md) | 按四个主题组织的最近工作、检索和单篇论文笔记 |
-| `Experiments/` | 实验计划与运行跟踪；知识门通过后才执行 |
-| `Writing/` | 论文结构；核心实验冻结后再正式写作 |
+| `Learning_Notes/` | Paper 1专属的开放世界、铁路风险和实验设计笔记 |
+| [Literature_Matrix.md](Literature/Literature_Matrix.md) | 主题、阅读顺序、证据链和冲突 |
+| [Search_Log.md](Literature/Search_Log.md) | 检索式、日期和筛选记录 |
+| [Paper_Note_Template.md](Literature/Paper_Note_Template.md) | 单篇精读模板 |
+| [Experiment_Plan.md](Experiments/Experiment_Plan.md) | 阶段门通过后使用的实验设计 |
+| [Experiment_Tracker.md](Experiments/Experiment_Tracker.md) | 运行记录与论文数字回链 |
+| [Paper_Outline.md](Writing/Paper_Outline.md) | 证据冻结后的写作结构 |
 
-## 当前不要做
+## 硬边界
 
-- 不收集或标注铁路实飞数据；
-- 不同时修改YOLO Backbone、Neck、Head和Loss；
-- 不训练RT-DETR、开放世界大模型或风险网络；
-- 不研究三维重建、无线通信、ISAC、RL或多无人机规划；
-- 不把中心线、距离规则、开放集检测或校准单独宣称为首次创新。
-
-## 向后续论文输出
-
-- 给Paper 2：风险区域、目标/未知状态、轨道关系和测量需求；
-- 给Paper 3：风险语义、未知程度、信息优先级；
-- 给Paper 5：视觉风险与可靠性基线；
-- 给Paper 6/7：风险和不确定性触发字段。
+Paper 1不研究三维重建、通信、ISAC、多模态、下一视点、强化学习、多无人机协同或多个YOLO模块堆叠。Paper 2–7继续`PAUSED`。

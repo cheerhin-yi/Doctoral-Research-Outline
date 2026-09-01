@@ -1,32 +1,54 @@
 # 练手论文文献矩阵
 
-## 1. 论文索引
+本文件统一管理主题问题、阅读顺序、发表载体、证据、同构风险和完成门。检索过程写入[Search_Log.md](Search_Log.md)，单篇精读使用[Paper_Note_Template.md](Paper_Note_Template.md)并保存在对应主题目录。
 
-| ID | 主题 | 年份 | 论文 | 数据 | 核心改动 | 真实延迟 | 与本文关系 | 状态 | 笔记 |
-|---|---|---:|---|---|---|---|---|---|---|
-| L1-01 | 小目标/多尺度 | 2024 | LUD-YOLO | UAV航拍检测数据 | 轻量UAV检测结构 | 有速度结果，口径待精读 | 直接近邻，审计与LSM-Head同构性 | SCREENED | 待创建 |
-| L1-02 | 小目标/多尺度 | 2025 | A Lightweight Small Object Detection Model for UAV Images Based on Deep Semantic Integration | VisDrone、TinyPerson | 高分辨率/P2与多尺度融合 | 待精读 | C0-1直接证据 | SCREENED | 待创建 |
-| L2-01 | 轻量算子 | 2019 | Searching for MobileNetV3 | ImageNet等 | 硬件感知NAS与NetAdapt | 报告硬件延迟 | 轻量设计基础，不是检测头近邻 | SCREENED | 待创建 |
-| L2-02 | 架构/训练 | 2024 | YOLOv9 | COCO等 | PGI与GELAN | 有模型效率结果 | 基线谱系，不直接支持唯一头改动 | SCREENED | 待创建 |
-| L2-03 | 轻量算子 | 2025 | GlimmerNet | UAV应急图像分类 | 分组空洞深度卷积 | 缺少充分真实端侧检测评价 | 可借鉴算子，但任务不是检测 | SCREENED | 待创建 |
-| L2-04 | 轻量YOLO | 2025 | EADI-YOLO | 铁路表面缺陷 | 轻量高效检测模块 | 有效率结果，口径待精读 | 铁路领域近邻，域与任务不一致 | SCREENED | 待创建 |
-| L3-01 | 速度/部署 | 2025 | TakuNet | UAV应急图像分类 | 节能CNN与FP16部署 | Jetson/Raspberry Pi | 部署方法参考，不是检测基线 | SCREENED | 待创建 |
-| L3-02 | 速度/部署 | 2024 | EUAVDet | VisDrone、UAVDT、SeaDronesSee | 轻量UAV检测器 | Jetson Nano实测 | C0-2直接近邻 | SCREENED | 待创建 |
-| L4-01 | 训练效率/复现 | 2026 | Does YOLO Really Need to See Every Training Image in Every Epoch | YOLO训练实验 | 自适应训练样本选择 | 训练加速，不是推理延迟 | 训练成本与公平复现参考 | SCREENED | 待创建 |
+状态：`TODO`未核验；`SCREENED`完成摘要级初筛；`READING`精读中；`DONE`证据已写回；`EXCLUDED`保留排除理由。载体A–D定义见[全项目阅读等级](../../00_Overview/Paper_Reading_Guide.md)。
 
-状态：`TODO`未核验；`SCREENED`已核验摘要；`READING`精读中；`DONE`已形成证据；`EXCLUDED`已记录排除理由。
+## 1. 主题与完成门
 
-## 2. 新颖性冲突表
+| 主题 | 必须回答 | 完成门 |
+|---|---|---|
+| L1 小目标与多尺度 | P2何时稳定增益？移除P5损失什么？ | ≥3篇精读；普通P2与P2–P4公平对照；小目标分层规则 |
+| L2 轻量共享检测头 | 跨尺度共享是否同构？参数减少是否改善真实执行？ | ≥3篇精读；结构冲突表；B2→M唯一变量 |
+| L3 效率与部署 | 参数量、GFLOPs、延迟、FPS如何公平比较？ | ≥3篇精读；固定计时协议；C0-2证据门 |
+| L4 评价与复现 | 小目标/遮挡如何分层？结果如何回链？ | ≥3篇精读；随机性与泄漏规则；Run ID回链 |
 
-| ID | 使用P2 | 移除P5 | 跨尺度共享 | 轻量卷积 | 同时报告AP_small与延迟 | 冲突等级 | 决策 |
+方法冻结总门：至少12篇直接相关工作完成核验，其中最近三年不少于8篇。
+
+## 2. 论文索引与阅读顺序
+
+| ID | 主题 | 年份 | 论文/入口 | 载体 | 优先级 | 状态 | 重点与本文关系 |
+|---|---|---:|---|---|---|---|---|
+| L1-01 | L1 | 2025 | [LUD-YOLO](01_Small_Object_and_Multiscale/LUD-YOLO%20-%20A%20Novel%20Lightweight%20Object%20Detection%20Network%20for%20Unmanned%20Aerial%20Vehicle.pdf) | Information Sciences，A | MUST-1 | SCREENED | UAV轻量检测直接近邻；结构、消融、数据与速度口径 |
+| L1-02 | L1 | 2025 | [BPD-YOLO](01_Small_Object_and_Multiscale/A%20Lightweight%20Small%20Object%20Detection%20Model%20for%20UAV%20Images%20Based%20on%20Deep%20Semantic%20Integration.pdf) | Scientific Reports，B | MUST-2 | SCREENED | P2/高分辨率、多尺度、AP_small和公平基线 |
+| L3-02 | L3 | 2024 | [EUAVDet](03_Efficiency_and_Deployment/EUAVDet%20-%20An%20Efficient%20and%20Lightweight%20Object%20Detector%20for%20UAV%20Aerial%20Images%20with%20an%20Edge-Based%20Computing%20Platform.pdf) | Drones，B | MUST-3 | SCREENED | Jetson Nano、FPS、计时范围和精度—速度权衡 |
+| L2-01 | L2 | 2019 | [MobileNetV3](02_Lightweight_Shared_Head/Searching%20for%20MobileNetV3.pdf) | 当前副本arXiv，C | SHOULD | SCREENED | 硬件感知设计基础，不是共享头直接近邻 |
+| L2-02 | L2 | 2024 | [YOLOv9](02_Lightweight_Shared_Head/YOLOv9%20-%20Learning%20What%20You%20Want%20to%20Learn%20Using%20Programmable%20Gradient%20Information.pdf) | 当前副本arXiv，C | SHOULD | SCREENED | 架构背景，不直接支持唯一头改动 |
+| L2-03 | L2 | 2025 | [GlimmerNet](02_Lightweight_Shared_Head/GlimmerNet%20-%20A%20Lightweight%20Grouped%20Dilated%20Depthwise%20Convolutions%20for%20UAV-Based%20Emergency%20Monitoring.pdf) | arXiv，C | OPTIONAL | SCREENED | 分类任务；只在算子问题时定向阅读 |
+| L2-04 | L2 | 2025 | [EADI-YOLO](02_Lightweight_Shared_Head/EADI-YOLO%20-%20A%20Lightweight%20and%20Efficient%20Model%20for%20Rail%20Surface%20Defect%20Detection.pdf) | Research Square，C | OPTIONAL | SCREENED | 铁路表面缺陷，域与任务不一致 |
+| L3-01 | L3 | 2025 | [TakuNet](03_Efficiency_and_Deployment/TakuNet%20-%20an%20Energy-Efficient%20CNN%20for%20Real-Time%20Inference%20on%20Embedded%20UAV%20Systems%20in%20Emergency%20Response%20Scenarios.pdf) | arXiv，C | OPTIONAL | SCREENED | 分类端侧部署；只参考硬件/FP16口径 |
+| L4-01 | L4 | 2026 | [Does YOLO Really Need to See Every Training Image in Every Epoch](04_Evaluation_and_Reproducibility/Does%20YOLO%20Really%20Need%20to%20See%20Every%20Training%20Image%20in%20Every%20Epoch.pdf) | arXiv，C | OPTIONAL | SCREENED | 训练效率与公平预算，不是推理轻量化 |
+| L1-03 | L1 | 近三年 | P2或高分辨率小目标检测直接近邻 | 待核验 | MUST | TODO | 尺度设计、AP_small、直接基线 |
+| L2-05 | L2 | 近三年 | 跨尺度共享检测头直接近邻 | 待核验 | MUST | TODO | 共享范围、算子、消融与同构风险 |
+| L3-03 | L3 | 近三年 | 真实推理速度评价规范 | 待核验 | MUST | TODO | 预热、同步、batch、计时边界 |
+| L4-02 | L4 | 近三年 | 小目标/遮挡评价与复现规范 | 待核验 | MUST | TODO | 标签定义、统计单位、报告规则 |
+
+## 3. 新颖性冲突表
+
+精读后填写；空白表示未知，不表示没有冲突。
+
+| ID | 使用P2 | 移除P5 | 跨尺度共享 | 轻量卷积 | 同报AP_small与延迟 | 冲突等级 | 决策 |
 |---|---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |  |
+| L1-01 |  |  |  |  |  |  |  |
+| L1-02 |  |  |  |  |  |  |  |
+| L3-02 |  |  |  |  |  |  |  |
+| L2-05 |  |  |  |  |  |  |  |
 
-## 3. 方法冻结前必须回答
+## 4. 方法冻结前必须回答
 
 - [ ] 最近工作是否已有同构的共享P2–P4检测头？
 - [ ] 普通P2的精度收益和速度代价分别多大？
 - [ ] 移除P5在小目标数据上是否有充分依据？
-- [ ] 参数共享是降低参数量，还是也能降低真实延迟？
-- [ ] 哪些工作使用相同数据和YOLO版本，可作为直接对照？
-- [ ] 如果方法差异很小，能否以精度—速度实证为主而不过度声称算法创新？
+- [ ] 参数共享只降低参数量，还是也降低GFLOPs和真实延迟？
+- [ ] 哪些工作使用相同数据和同代YOLO，可作为直接对照？
+- [ ] 如果方法差异很小，能否只主张经严格验证的精度—速度折中？

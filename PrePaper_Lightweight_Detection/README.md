@@ -1,44 +1,26 @@
 # 练手论文：实时轻量小目标检测
 
-- **定位**：独立练手论文，用最少的方法改动经历“选题—复现—实验—写作—投稿—返修”的完整过程。
-- **与七篇主论文的关系**：只为Paper 1提供一个封闭集已知目标检测基线，不计入Paper 1–7，也不改变七篇论文的题目、主张和接口。
-- **当前状态**：学习准备；暂不下载正式数据、不改网络。
-- **唯一方法方向**：把YOLO11n原检测头替换为部署友好的共享轻量P2–P4检测头。
-- **详细执行**：[Stage_Guide.md](Stage_Guide.md)
-- **研究边界**：[Research_Plan.md](Research_Plan.md)
+- **定位**：用一个检测头改动完成“学习—查新—复现—数据—实验—写作—投稿”的独立练习。
+- **当前阶段**：阶段0共同基础；当前任务见[总项目当前阶段](../00_Overview/Current_Stage.md)。
+- **研究问题与边界**：[Research_Plan.md](Research_Plan.md)。
+- **唯一进度表**：[Stage_Guide.md](Stage_Guide.md)。
 
-## 一句话问题
+## 唯一方法方向
 
-普通P2检测头有利于小目标，但会增加高分辨率计算；本论文只研究能否通过P2–P4尺度重配置和检测头参数共享，在较低计算开销下保留或提高小目标检测性能。
+在YOLO11n中把P3–P5检测头替换为部署友好的共享轻量P2–P4检测头（LSM-Head）。Backbone、Loss、标签分配和训练增强保持基线设置，Neck只允许增加输出P2所需的连接。
 
-## 为什么适合作为练手论文
+## 工作文件
 
-- 只修改检测头，不同时改Backbone、Neck、Loss和数据增强；
-- 只使用公开数据，不采集、不标注真实线路数据；
-- 方法采用常规卷积、深度可分离卷积和张量操作，便于实现和导出；
-- 只比较三至四个必要模型，核心表格控制在三张；
-- 遮挡只作为现有标签的分层评价，不提出新的遮挡算法；
-- 部署实验只验证速度，不引入飞行、通信、功耗建模或航迹规划。
-
-## 文件结构
-
-| 路径 | 用途 |
+| 路径 | 内容 |
 |---|---|
-| [Stage_Guide.md](Stage_Guide.md) | 从学习到投稿的顺序和完成门 |
-| [Research_Plan.md](Research_Plan.md) | 问题、方法、主张、实验和止损条件 |
-| [Learning_Notes/](Learning_Notes/README.md) | 三份共同基础和三份专项学习笔记，全部独立保存在本论文目录 |
-| [Literature/](Literature/README.md) | 按四个主题组织的检索日志、矩阵、阅读清单和单篇论文笔记 |
-| [Experiments/](Experiments/Experiment_Plan.md) | 最小实验计划和运行跟踪 |
-| [Writing/](Writing/Paper_Outline.md) | 论文提纲和主张—证据关系 |
+| `Learning_Notes/` | 六份实际学习笔记；顺序由阶段指南规定 |
+| [Literature_Matrix.md](Literature/Literature_Matrix.md) | 阅读顺序、载体、证据、冲突和检索缺口 |
+| [Search_Log.md](Literature/Search_Log.md) | 数据库、检索式、日期和筛选记录 |
+| [Paper_Note_Template.md](Literature/Paper_Note_Template.md) | 单篇精读模板 |
+| [Experiment_Plan.md](Experiments/Experiment_Plan.md) | B0/B1/B2/M及公平条件 |
+| [Experiment_Tracker.md](Experiments/Experiment_Tracker.md) | 每次运行的唯一登记表 |
+| [Paper_Outline.md](Writing/Paper_Outline.md) | 证据冻结后的写作结构 |
 
-## 不进入本论文的内容
+## 硬边界
 
-- 未知目标、开放集、开放词汇和风险告警；
-- 渐进式遮挡增强、复杂注意力、Transformer、蒸馏、剪枝和量化训练；
-- 真实无人机、航线、通信、能源、机载控制和多机协同；
-- 自采铁路数据、三维测量和轨道侵界判断；
-- 多个检测器家族的大规模横向比较。
-
-## 完成定义
-
-完成不是“模型一定优于所有方法”，而是：数据无泄漏、基线可复现、单一改动有公平消融、速度测量可复核、结论不超过实验，并形成一篇可投稿稿件。若核心改动无稳定收益，按止损条件收缩或终止，不继续堆模块。
+本论文不研究开放世界、未知目标、铁路风险推理、通信、三维、多模态、强化学习或多无人机协同；不叠加注意力、损失、增强、蒸馏、剪枝或量化训练。若LSM-Head无稳定收益，按止损条件收缩或终止，不增加第二个模块。
