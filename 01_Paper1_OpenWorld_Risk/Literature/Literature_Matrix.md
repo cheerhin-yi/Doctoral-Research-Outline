@@ -2,14 +2,14 @@
 
 本矩阵只保存“索引＋证据＋与Paper 1的关系”。详细阅读过程写入对应主题目录中的单篇笔记。
 
-## 1. 主题、问题与完成门
+## 1. 主题与状态
 
-| 主题 | 必须回答 | 对应主张 | 完成门 |
-|---|---|---|---|
-| T1 铁路UAV与小目标 | 普通YOLO的可操作瓶颈是什么？结构改动是否必要？ | C1已知检测基础 | ≥5篇精读；失败类型、数据划分、分层指标和效率口径明确 |
-| T2 开放环境检测 | 哪个未知候选基线合适？Known/Unknown如何公平轮换？ | C1未知路径 | ≥5篇精读；主要强基线、轮换原则和误报指标冻结 |
-| T3 轨道上下文与风险 | 简单区域/距离规则是否已经足够？C2真实差异是什么？ | C2 | ≥5篇精读；已有几何组成、最小风险基线和差异明确 |
-| T4 不确定性与评价 | confidence、unknownness、risk和calibration如何区分？ | C1/C2支撑 | ≥3篇精读；统计单位、告警预算和校准去留冻结 |
+| 主题 | 内容 | 对应主张 |
+|---|---|---|
+| T1 | 铁路UAV、YOLO、小目标和实时检测 | C1已知检测基础 |
+| T2 | open-set、open-vocabulary、open-world和未知候选 | C1未知路径 |
+| T3 | 轨道区域、侵界关系和风险告警 | C2 |
+| T4 | 不确定性、校准、告警预算和实验评价 | C1/C2支撑 |
 
 状态：`TODO`未核验；`SCREENED`已核验元数据/摘要；`READING`精读中；`DONE`笔记和矩阵均完成；`EXCLUDED`已记录排除理由。
 
@@ -18,22 +18,17 @@
 | ID | 主题 | 年份 | 论文 | 状态 | 优先级 | 单篇笔记 |
 |---|---|---:|---|---|---|---|
 | T1-01 | T1/T3 | 2023 | UAV imagery based potential safety hazard evaluation for high-speed railroad using Real-time instance segmentation | SCREENED | MUST | 待创建于T1；T3引用同一笔记 |
-| T1-02 | T1 | 近三年 | 铁路UAV小目标检测直接近邻 | TODO | MUST | 待检索 |
-| T1-03 | T1 | 当前 | YOLO11官方或同代检测器方法资料 | TODO | MUST | 待核验 |
 | T1-04 | T1 | 2025 | CSEANet: Cross-Stage Enhanced Aggregation Network for Detecting Surface Bolt Defects in Railway Steel Truss Bridges | SCREENED | MUST | 待创建 |
 | T2-01 | T2 | 2026 | ROSD: Railway intrusion object generalized detection via Open-Set Detection | SCREENED | MUST | 待创建 |
 | T2-02 | T2 | 2021 | Towards Open World Object Detection | SCREENED | MUST | 待创建 |
 | T2-03 | T2 | 2025 | OW-OVD: Unified Open World and Open Vocabulary Object Detection | SCREENED | MUST | 待创建 |
-| T2-04 | T2 | 近三年 | YOLO-World相关原始工作 | TODO | SHOULD | 待检索 |
 | T2-05 | T2 | 2025 | YOLOE: Real-Time Seeing Anything | SCREENED | MUST | 待创建 |
 | T2-06 | T2 | 2025 | YOLO-IOD: Towards Real-Time Incremental Object Detection | SCREENED | SHOULD | 待创建 |
 | T2-07 | T2 | 2026 | NegAS: Negative Label Guided Attention and Scoring for Out-of-Distribution Object Detection with Vision-Language Models | SCREENED | MUST | 待创建 |
 | T3-02 | T3 | 2025 | Railway Intrusion Risk Quantification with Track Semantic Segmentation and Spatiotemporal Features | SCREENED | MUST | 待创建 |
 | T3-03 | T3 | 2026 | Spatial Relation Reasoning Based on Keypoints for Railway Intrusion Detection and Risk Assessment | SCREENED | MUST | 待创建 |
-| T3-04 | T3 | 近三年 | 轨道上下文驱动告警排序直接近邻 | TODO | SHOULD | 待检索 |
 | T4-01 | T4 | 2019 | Can We Trust You? On Calibration of a Probabilistic Object Detector for Autonomous Driving | TODO | SHOULD | 元数据待核验 |
 | T4-02 | T4 | 2026 | Uncertainty-Aware Vision-based Risk Object Identification via Conformal Risk Tube Prediction | TODO | SHOULD | 元数据待核验 |
-| T4-03 | T4 | 近三年 | 场景聚类统计与检测评价方法 | TODO | MUST | 待检索 |
 | T4-04 | T4 | 2026 | Real-Time Source-Free Object Detection | SCREENED | SHOULD | 待创建 |
 
 ## 3. 证据与新颖性矩阵

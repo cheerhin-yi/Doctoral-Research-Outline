@@ -4,17 +4,28 @@
 
 ## 你现在只需要做什么
 
-当前先完成实时轻量小目标检测练手论文，Paper 1随后继续，Paper 2–7保持`PAUSED`。唯一当前任务和完成标准只在[当前阶段](00_Overview/Current_Stage.md)维护。
+当前只负责Paper 1研究链，近期先完成一篇实时轻量小目标检测练手论文。现在仍处于共同知识补齐阶段；你已经学习卷积和基本YOLO，下一步不是找数据集，也不是改网络，而是依次完成：
+
+1. YOLO完整检测链、损失、NMS与评价指标；
+2. PyTorch科研训练、调试和可复现性；
+3. closed-set、open-set、open-vocabulary、open-world和异常检测；
+4. 铁路轨道上下文、侵界关系与风险告警；
+5. 对照实验、数据泄漏、统计和不确定性评价。
+6. 小目标多尺度检测、轻量共享检测头和真实速度评价。
+
+立即从[当前阶段指南](00_Overview/Current_Stage.md)开始。每次只完成其中一个任务，并把答案写入对应学习笔记。
 
 ## 项目入口
 
+- [新聊天交接](00_Overview/Chat_Handoff.md)：当前状态、已确认决定、下一任务和可直接复制的新聊天第一条消息；
 - [项目总指南](00_Overview/Project_Guide.md)：目录、阶段、工作方式和范围控制；
 - [当前阶段](00_Overview/Current_Stage.md)：现在具体学什么、做什么；
 - [七篇论文路线](00_Overview/Seven_Paper_Roadmap.md)：每篇论文的作用和知识依赖；
 - [Paper 1任务指南](01_Paper1_OpenWorld_Risk/Stage_Guide.md)：从学习、文献、复现、数据、实验到投稿；
 - [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。
 - [实时轻量检测练手论文](PrePaper_Lightweight_Detection/README.md)：独立练手成果，只保留一个检测头改动；
-- [论文归档与阅读等级](00_Overview/Paper_Reading_Guide.md)：合并管理发表载体、阅读等级、当前用途和暂缓边界；
+- [已归档论文阅读指南](00_Overview/Paper_Reading_Guide.md)：32篇唯一论文的分类、阅读等级、当前用途和暂缓边界；
+- [论文发表载体与质量再筛选](00_Overview/Publication_Venue_Screening.md)：区分正式强载体、一般正式期刊、预印本、会议、工作坊与学位论文；
 - [项目参考材料](00_Overview/Reference_Materials/README.md)：博士科研计划书等方向依据。
 - [全项目附件](99_Attachments/README.md)：博士研究外部条件、资源需求、模板和写法说明；
 - [外部条件与资源需求](99_Attachments/Doctoral_Research_External_Conditions.md)：无人机、工作站、铁路数据、传感器、通信平台、人员和许可的分阶段配置。
