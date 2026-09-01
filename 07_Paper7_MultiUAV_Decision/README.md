@@ -34,3 +34,10 @@ Paper 7必须组合这些真实模块，不能只在抽象仿真中比较PPO或M
 - 规则、优化和单智能体强基线已建立；
 - 评价环境能报告风险降低、任务完成、时延、能量和通信成本；
 - 只有问题确实需要时才使用MARL或GNN。
+
+## 已归档候选文献
+
+- [Agentic多UAV系统](Literature/01_Agentic_MultiUAV_Systems/)：未来了解LLM与低空移动系统的综述入口；
+- [定向无线Mesh网络](Literature/02_Directional_Mesh_Networks/)：未来按需选读网络设计章节。
+
+两者均是远期背景，不替代多无人机任务分配、优化和MARL直接近邻检索。Paper 7仍为 `PAUSED`。

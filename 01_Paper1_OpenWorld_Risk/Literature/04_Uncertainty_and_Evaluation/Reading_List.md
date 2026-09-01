@@ -14,6 +14,7 @@
 | T4-01 | Can We Trust You? On Calibration of a Probabilistic Object Detector for Autonomous Driving | SHOULD | TODO | 检测器校准、可靠性指标 | 待核验后创建 |
 | T4-02 | Uncertainty-Aware Vision-based Risk Object Identification via Conformal Risk Tube Prediction | SHOULD | TODO | 风险分数、不确定性和安全决策 | 待核验后创建 |
 | T4-03 | 场景聚类统计与检测评价方法 | MUST | TODO | 独立单位、置信区间、效应量 | 待检索 |
+| T4-04 | [Real-Time Source-Free Object Detection](Real-Time%20Source-Free%20Object%20Detection.pdf) | SHOULD | SCREENED | 无源域适应、域偏移、伪标签与实时约束 | 待创建 |
 
 ## 本主题完成门
 

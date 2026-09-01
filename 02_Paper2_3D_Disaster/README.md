@@ -31,4 +31,8 @@ Paper 1提供需要重点测量的风险区域、轨道语义和对象状态，�
 - 获得合规多时相数据或明确采集方案；
 - 能用小样例验证相机几何和测量单位。
 
-启动时再创建本论文的`Learning_Notes/`、`Literature/`、`Experiments/`和`Writing/`，当前不提前建立。
+## 已归档候选文献
+
+用户已有原文已放入[候选文献目录](Literature/01_Railway_Damage_and_3D_Open_Vocabulary/)，只用于保存与筛选：一篇是UAV铁路桥损伤分割背景，一篇是三维开放词汇实例分割背景。它们尚不能支撑“多时相三维定量测量”主张。
+
+正式启动时再建立`Learning_Notes/`、`Experiments/`和`Writing/`并开展系统检索。当前候选文献归档不改变 `PAUSED` 状态。

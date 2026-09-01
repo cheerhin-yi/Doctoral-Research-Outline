@@ -29,3 +29,7 @@ Paper 1告诉系统“哪里危险、哪里不确定”，Paper 2告诉系统“
 - 候选视点与成本模型可验证；
 - 已定义从不复检、全部复检、风险阈值和不确定性阈值基线；
 - 完成主动铁路巡检最近工作审计。
+
+## 已归档候选文献
+
+[UAV-ITS与航迹背景原文](Literature/01_UAV_ITS_and_Trajectory_Background/)提供未来应用背景，但不直接覆盖风险触发复检、Value of Information或Next-Best-View。Paper 6仍为 `PAUSED`。

@@ -4,10 +4,6 @@
 - **当前阶段**：知识补齐，暂不收集项目数据。
 - **当前入口**：[阶段任务指南](Stage_Guide.md)。
 
-## 前置论文
-
-Paper 1目录下单独管理一篇[实时轻量小目标检测练手论文](PrePaper_Lightweight_Detection/README.md)。它只研究一个共享轻量检测头和封闭集已知目标，可为Paper 1提供检测基线，但不改变Paper 1的开放世界风险主张。
-
 ## 论文要解决什么
 
 在铁路无人机图像中，闭集YOLO只能识别训练过的类别。Paper 1研究如何保留YOLO的实时已知危险检测能力，同时发现可能的未知危险，并利用轨道区域判断哪些候选真正值得告警。
@@ -30,7 +26,6 @@ Paper 1目录下单独管理一篇[实时轻量小目标检测练手论文](PreP
 | [Stage_Guide.md](Stage_Guide.md) | 从学习到投稿的阶段任务和完成门 |
 | [Research_Plan.md](Research_Plan.md) | 科学问题、主张、边界与接口 |
 | [Learning_Notes/](Learning_Notes/README.md) | Paper 1主体必须学习和填写的五份笔记及记录方法 |
-| [PrePaper_Lightweight_Detection/](PrePaper_Lightweight_Detection/README.md) | 实时轻量小目标检测练手论文及其独立学习、实验和写作材料 |
 | [Literature/](Literature/README.md) | 按四个主题组织的最近工作、检索和单篇论文笔记 |
 | `Experiments/` | 实验计划与运行跟踪；知识门通过后才执行 |
 | `Writing/` | 论文结构；核心实验冻结后再正式写作 |

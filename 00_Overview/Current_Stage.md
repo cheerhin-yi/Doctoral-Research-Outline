@@ -19,7 +19,7 @@
 
 5. **建立论文实验意识**：阅读[实验设计与不确定性](../01_Paper1_OpenWorld_Risk/Learning_Notes/05_Experiment_Design_and_Uncertainty.md)，为“提高输入分辨率是否改善小目标检测”写一个完整对照实验。
 
-6. **补齐练手论文专项知识**：依次填写[小目标与多尺度检测](../01_Paper1_OpenWorld_Risk/PrePaper_Lightweight_Detection/Learning_Notes/01_Small_Object_and_Multiscale.md)、[轻量共享检测头](../01_Paper1_OpenWorld_Risk/PrePaper_Lightweight_Detection/Learning_Notes/02_Lightweight_Shared_Head.md)和[速度评价与简单部署](../01_Paper1_OpenWorld_Risk/PrePaper_Lightweight_Detection/Learning_Notes/03_Efficiency_and_Deployment.md)；当前只画结构、手算参数量和写计时协议，不修改模型。
+6. **独立完成练手论文学习区**：在[练手论文学习笔记](../PrePaper_Lightweight_Detection/Learning_Notes/README.md)中先完成其独立保存的YOLO、PyTorch和实验设计共同基础，再依次填写小目标与多尺度检测、轻量共享检测头和速度评价与简单部署；当前只画结构、手算参数量和写计时协议，不修改模型。
 
 ## 建议的前12次研究会话
 
@@ -51,9 +51,9 @@
 - [ ] 能区分五种开放环境概念；
 - [ ] 能解释“检测到目标”为什么不等于“铁路高风险”；
 - [ ] 能独立写出一个合格的对照实验；
-- [ ] Paper 1五份共同笔记和练手论文三份专项笔记均留下自己的回答，而不是只复制资料。
+- [ ] Paper 1五份笔记和练手论文六份独立笔记均留下自己的回答，而不是只复制资料或用跨目录链接代替。
 - [ ] 完成检测尺度结构图、参数量手算、共享头草图和公平计时协议。
 
 ## 通过后做什么
 
-先进入[实时轻量检测练手论文](../01_Paper1_OpenWorld_Risk/PrePaper_Lightweight_Detection/Stage_Guide.md)的文献与小样例阶段，完成投稿后再回到[Paper 1阶段任务指南](../01_Paper1_OpenWorld_Risk/Stage_Guide.md)的开放世界研究；仍然不立即收集数据。
+先进入[实时轻量检测练手论文](../PrePaper_Lightweight_Detection/Stage_Guide.md)的文献与小样例阶段，完成投稿后再回到[Paper 1阶段任务指南](../01_Paper1_OpenWorld_Risk/Stage_Guide.md)的开放世界研究；仍然不立即收集数据。

@@ -10,8 +10,6 @@
 | 4 | [铁路上下文与风险](04_Railway_Context_and_Risk.md) | 把检测框转成铁路风险意义 | 风险数据流、标注与几何边界 |
 | 5 | [实验设计与不确定性](05_Experiment_Design_and_Uncertainty.md) | 把想法转成可审稿证据 | 对照实验、失败判据和校准理解 |
 
-实时轻量检测练手论文的专项笔记已移至[PrePaper_Lightweight_Detection/Learning_Notes](../PrePaper_Lightweight_Detection/Learning_Notes/README.md)，避免与Paper 1的开放世界和风险知识混在一起。
-
 ## 每份笔记怎么填写
 
 不要另建零散日记。每次学习直接进入对应文件的“学习记录区”，按下面顺序填写：

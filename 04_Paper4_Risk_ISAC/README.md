@@ -29,3 +29,7 @@ Paper 1提供风险和不确定性，Paper 3提供可计算的通信模型与任
 - 风险如何改变资源价值有明确假设；
 - 铁路动态信道假设经过文献或小规模测量核验；
 - 传统优化基线已经定义。
+
+## 已归档候选文献
+
+[定位—通信与RIS候选原文](Literature/01_Localization_Communication_and_RIS/)用于未来理解联合定位通信、能耗约束和UAV-RIS背景。现有两篇论文均不直接证明“风险驱动ISAC”主张，Paper 4仍为 `PAUSED`。

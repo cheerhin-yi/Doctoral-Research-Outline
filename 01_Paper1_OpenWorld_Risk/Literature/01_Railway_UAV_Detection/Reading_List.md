@@ -14,6 +14,7 @@
 | T1-01 | UAV imagery based potential safety hazard evaluation for high-speed railroad using Real-time instance segmentation | MUST | SCREENED | 数据、铁路解析、危险评价和实时性 | 待创建 |
 | T1-02 | 铁路UAV小目标检测最近工作 | MUST | TODO | 小目标定义、YOLO基线、分层评价 | 待检索 |
 | T1-03 | YOLO11或同代检测器的官方/方法资料 | MUST | TODO | 结构、训练、规模与速度 | 待检索 |
+| T1-04 | [CSEANet](CSEANet%20-%20Cross-Stage%20Enhanced%20Aggregation%20Network%20for%20Detecting%20Surface%20Bolt%20Defects%20in%20Railway%20Steel%20Truss%20Bridges.pdf) | MUST | SCREENED | UAV铁路桥螺栓、小目标、滑窗、聚合结构、消融和速度 | 待创建 |
 
 ## 本主题完成门
 

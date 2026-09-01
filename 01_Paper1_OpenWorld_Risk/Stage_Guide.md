@@ -31,7 +31,7 @@
 
 ### 完成门
 
-以[当前阶段](../00_Overview/Current_Stage.md)中的检查项为准。Paper 1共同知识和练手论文专项知识通过后，优先执行[练手论文阶段指南](PrePaper_Lightweight_Detection/Stage_Guide.md)；练手论文完成投稿后再继续下面的Paper 1开放世界阶段。
+以[当前阶段](../00_Overview/Current_Stage.md)中的Paper 1检查项为准。完成门只判断本目录五份学习笔记，不依赖其他论文目录的执行进度。
 
 ## 阶段2：最近工作与问题冻结
 

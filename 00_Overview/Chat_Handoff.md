@@ -52,7 +52,7 @@
 6. [Paper 1首页](../01_Paper1_OpenWorld_Risk/README.md)；
 7. [Paper 1研究计划](../01_Paper1_OpenWorld_Risk/Research_Plan.md)；
 8. [Paper 1任务指南](../01_Paper1_OpenWorld_Risk/Stage_Guide.md)；
-9. [实时轻量检测练手论文](../01_Paper1_OpenWorld_Risk/PrePaper_Lightweight_Detection/README.md)；
+9. [实时轻量检测练手论文](../PrePaper_Lightweight_Detection/README.md)；
 10. [外部条件与资源需求](../99_Attachments/Doctoral_Research_External_Conditions.md)。
 
 ## 7. 仓库交接纪律
@@ -90,7 +90,7 @@
 6. 01_Paper1_OpenWorld_Risk/README.md
 7. 01_Paper1_OpenWorld_Risk/Research_Plan.md
 8. 01_Paper1_OpenWorld_Risk/Stage_Guide.md
-9. 01_Paper1_OpenWorld_Risk/PrePaper_Lightweight_Detection/README.md
+9. PrePaper_Lightweight_Detection/README.md
 10. 99_Attachments/Doctoral_Research_External_Conditions.md
 
 然后检查当前Git状态和最近5次提交。保留所有用户未提交或未跟踪的文件；尤其不要修改、删除或提交99_Attachments/paper/。
