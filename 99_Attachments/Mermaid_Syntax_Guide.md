@@ -8,12 +8,12 @@ _这里只保留完成本项目知识链、结构、流程和分支图最常用�
 
 Mermaid代码放在Markdown代码块中：
 
-````markdown
+
 ```mermaid
 flowchart LR
     start[开始] --> finish[完成]
 ```
-````
+
 
 - `flowchart LR`：从左到右
 - `flowchart TB`：从上到下
