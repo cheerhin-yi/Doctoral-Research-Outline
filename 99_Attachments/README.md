@@ -6,4 +6,4 @@
 |---|---|---|
 | [博士研究外部条件与资源需求](Doctoral_Research_External_Conditions.md) | 无人机、工作站、铁路数据、传感器、通信平台、人员与合规条件 | 与导师讨论条件、申请设备/数据、制定年度预算时 |
 | [Markdown数学公式写法](Markdown_Math_Syntax_Guide.md) | 统一笔记、实验记录和论文草稿中的公式格式 | 编写含公式的Markdown时 |
-
+| [Mermaid画图语法指南](Mermaid_Syntax_Guide.md) | 知识链、结构、流程、分支和状态图的常用语法 | 在任何学习笔记中自行画图时 |

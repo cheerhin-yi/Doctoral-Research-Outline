@@ -14,8 +14,8 @@
 
 填写[YOLO研究核心](../PrePaper_Lightweight_Detection/Learning_Notes/01_YOLO_Research_Core.md)，留下以下可检查输出：
 
-1. 一张`输入→Backbone→Neck→Head→候选框→NMS→最终预测`结构图；
-2. 一张各阶段输入、输出、张量含义和训练/推理差异表；
+1. 参考[Mermaid画图语法指南](../99_Attachments/Mermaid_Syntax_Guide.md)自行完成`输入→Backbone→Neck→Head→训练/推理分支`结构图；
+2. 沿结构连续记录各阶段的输入、处理、输出、上下游联系和可能错误，形式不限于表格；
 3. 一组IoU、Precision、Recall和NMS手算；
 4. 一段说明mAP50与mAP50–95为何不能互相替代；
 5. 完成笔记末尾闭卷自测，并记录仍不确定的问题。

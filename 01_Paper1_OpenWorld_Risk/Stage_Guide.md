@@ -3,6 +3,8 @@
 <<<<<<< ours
 本文件是Paper 1唯一进度表。Paper 1当前等待练手论文完成；不得从本文件选择任务覆盖[总项目当前任务](../00_Overview/Current_Stage.md)。
 
+所有学习笔记统一按[知识链、必会内容与灵活记录方法](../00_Overview/Learning_Note_Method.md)填写。
+
 ## 前置条件
 
 练手论文中的[YOLO研究核心](../PrePaper_Lightweight_Detection/Learning_Notes/01_YOLO_Research_Core.md)和[PyTorch与可复现性](../PrePaper_Lightweight_Detection/Learning_Notes/02_PyTorch_and_Reproducibility.md)作为共用基础，只维护一份，不在Paper 1目录重复复制。
