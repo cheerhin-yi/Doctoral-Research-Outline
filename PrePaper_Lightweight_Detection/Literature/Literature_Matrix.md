@@ -22,6 +22,7 @@
 | L1-01 | L1 | 2025 | [LUD-YOLO](01_Small_Object_and_Multiscale/LUD-YOLO%20-%20A%20Novel%20Lightweight%20Object%20Detection%20Network%20for%20Unmanned%20Aerial%20Vehicle.pdf) | Information Sciences，A | MUST-1 | SCREENED | UAV轻量检测直接近邻；结构、消融、数据与速度口径 |
 | L1-02 | L1 | 2025 | [BPD-YOLO](01_Small_Object_and_Multiscale/A%20Lightweight%20Small%20Object%20Detection%20Model%20for%20UAV%20Images%20Based%20on%20Deep%20Semantic%20Integration.pdf) | Scientific Reports，B | MUST-2 | SCREENED | P2/高分辨率、多尺度、AP_small和公平基线 |
 | L3-02 | L3 | 2024 | [EUAVDet](03_Efficiency_and_Deployment/EUAVDet%20-%20An%20Efficient%20and%20Lightweight%20Object%20Detector%20for%20UAV%20Aerial%20Images%20with%20an%20Edge-Based%20Computing%20Platform.pdf) | Drones，B | MUST-3 | SCREENED | Jetson Nano、FPS、计时范围和精度—速度权衡 |
+| L3-04 | L3（次关联L1） | 2026 | [AKCMamba-YOLO](03_Efficiency_and_Deployment/AKCMamba-YOLO%20-%20Selective%20State%20Space%20Models%20for%20Real-Time%20Object%20Detection.pdf)；[笔记](03_Efficiency_and_Deployment/L3-04_AKCMamba-YOLO.md) | CVPR，A | SHOULD | SCREENED | YOLOv8 Backbone＋Neck联合引入AKConv、SSM和注意力；铁路行人数据；无P2/共享头/AP_small，测速协议和公开代码对应关系需警惕 |
 | L2-01 | L2 | 2019 | [MobileNetV3](02_Lightweight_Shared_Head/Searching%20for%20MobileNetV3.pdf) | 当前副本arXiv，C | SHOULD | SCREENED | 硬件感知设计基础，不是共享头直接近邻 |
 | L2-02 | L2 | 2024 | [YOLOv9](02_Lightweight_Shared_Head/YOLOv9%20-%20Learning%20What%20You%20Want%20to%20Learn%20Using%20Programmable%20Gradient%20Information.pdf) | 当前副本arXiv，C | SHOULD | SCREENED | 架构背景，不直接支持唯一头改动 |
 | L2-03 | L2 | 2025 | [GlimmerNet](02_Lightweight_Shared_Head/GlimmerNet%20-%20A%20Lightweight%20Grouped%20Dilated%20Depthwise%20Convolutions%20for%20UAV-Based%20Emergency%20Monitoring.pdf) | arXiv，C | OPTIONAL | SCREENED | 分类任务；只在算子问题时定向阅读 |
@@ -42,6 +43,7 @@
 | L1-01 |  |  |  |  |  |  |  |
 | L1-02 |  |  |  |  |  |  |  |
 | L3-02 |  |  |  |  |  |  |  |
+| L3-04 | 否 | 否 | 否 | 否（使用AKConv＋SSM） | 否 | 低 | 保留为强载体架构近邻和实时性证据审计案例，不作为直接方法基线 |
 | L2-05 |  |  |  |  |  |  |  |
 
 ## 4. 方法冻结前必须回答
