@@ -15,7 +15,7 @@
 | [Current_Stage.md](Current_Stage.md) | 当前阶段、唯一任务、完成门和禁止事项 |
 | [Seven_Paper_Roadmap.md](Seven_Paper_Roadmap.md) | 七篇论文的稳定边界、依赖和接口 |
 | [Paper_Reading_Guide.md](Paper_Reading_Guide.md) | 跨项目论文载体、阅读等级和归档边界 |
-| [Learning_Note_Method.md](Learning_Note_Method.md) | 全项目学习笔记的知识链、必会内容与灵活记录规则 |
+| [Learning_Note_Method.md](Learning_Note_Method.md) | 学习、文献、实验、写作的执行顺序与低负担记录方法 |
 | [练手论文](../PrePaper_Lightweight_Detection/README.md) | 当前优先执行的独立练手成果 |
 | [Paper 1](../01_Paper1_OpenWorld_Risk/README.md) | 练手论文完成后的开放世界铁路风险研究 |
 | `02_Paper2_3D_Disaster`—`07_Paper7_MultiUAV_Decision` | 后续论文边界；当前全部`PAUSED` |
