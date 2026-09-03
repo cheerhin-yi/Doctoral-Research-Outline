@@ -23,6 +23,7 @@
 - [Paper 1任务指南](01_Paper1_OpenWorld_Risk/Stage_Guide.md)：从学习、文献、复现、数据、实验到投稿；
 - [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。
 - [实时轻量检测练手论文](PrePaper_Lightweight_Detection/README.md)：独立练手成果，只保留一个检测头改动；
+- [项目英语学习支持线](English_Learning/README.md)：领域英语优先的文献阅读、论文写作与四级计划；
 - [已归档论文阅读指南](00_Overview/Paper_Reading_Guide.md)：32篇唯一论文的分类、阅读等级、当前用途和暂缓边界；
 - [项目参考材料](00_Overview/Reference_Materials/README.md)：博士科研计划书等方向依据。
 - [全项目附件](99_Attachments/README.md)：博士研究外部条件、资源需求、模板和写法说明；
@@ -34,6 +35,7 @@
 |---|---|---|
 | `00_Overview` | 新聊天交接、项目指南、当前阶段和七论文路线 | ACTIVE |
 | `PrePaper_Lightweight_Detection` | 实时轻量小目标检测练手论文及其独立学习、文献、实验和写作材料 | ACTIVE |
+| `English_Learning` | 与当前科研阶段同步的领域英语、论文写作和四级能力支持 | SUPPORT |
 | `01_Paper1_OpenWorld_Risk` | Paper 1开放世界风险研究、笔记、文献、实验和写作文件 | ACTIVE |
 | `02_Paper2_3D_Disaster` | 三维灾害定量评估 | PAUSED |
 | `03_Paper3_Comm_Perception` | 通信受限协同感知 | PAUSED |
