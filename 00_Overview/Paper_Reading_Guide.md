@@ -21,7 +21,7 @@
 
 ## 2. 当前练手论文
 
-详细证据和检索缺口见[练手论文文献矩阵](../PrePaper_Lightweight_Detection/Literature/Literature_Matrix.md)。
+详细证据和检索缺口见[练手论文文献矩阵](../00_PrePaper_Lightweight_Detection/Literature/Literature_Matrix.md)。
 
 | 顺序 | 论文 | 可确认载体 | 等级 | 决策 |
 |---:|---|---|:---:|---|

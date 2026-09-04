@@ -16,8 +16,8 @@
 | [Seven_Paper_Roadmap.md](Seven_Paper_Roadmap.md) | 七篇论文的稳定边界、依赖和接口 |
 | [Paper_Reading_Guide.md](Paper_Reading_Guide.md) | 跨项目论文载体、阅读等级和归档边界 |
 | [Learning_Note_Method.md](Learning_Note_Method.md) | 学习、文献、实验、写作的执行顺序与低负担记录方法 |
-| [练手论文](../PrePaper_Lightweight_Detection/README.md) | 当前优先执行的独立练手成果 |
-| [英语学习支持线](../English_Learning/README.md) | 与当前科研阶段同步的领域英语、写作和四级能力训练；不改变科研任务 |
+| [练手论文](../00_PrePaper_Lightweight_Detection/README.md) | 当前优先执行的独立练手成果 |
+| [英语学习支持线](../90_English_Learning/README.md) | 与当前科研阶段同步的领域英语、写作和四级能力训练；不改变科研任务 |
 | [Paper 1](../01_Paper1_OpenWorld_Risk/README.md) | 练手论文完成后的开放世界铁路风险研究 |
 | `02_Paper2_3D_Disaster`—`07_Paper7_MultiUAV_Decision` | 后续论文边界；当前全部`PAUSED` |
 | `99_Attachments` | 外部条件、格式和参考附件；不是当前任务表 |

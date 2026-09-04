@@ -8,11 +8,11 @@
 - **Paper 1**：保留研究计划；等待练手论文完成后继续专属知识、文献与实验。
 - **Paper 2–7**：`PAUSED`。
 
-阶段依据以[练手论文阶段指南](../PrePaper_Lightweight_Detection/Stage_Guide.md)为准。本文件只维护当前任务，不重复完整路线。
+阶段依据以[练手论文阶段指南](../00_PrePaper_Lightweight_Detection/Stage_Guide.md)为准。本文件只维护当前任务，不重复完整路线。
 
 ## 当前唯一任务：S0-01 YOLO完整检测链
 
-填写[YOLO研究核心](../PrePaper_Lightweight_Detection/Learning_Notes/01_YOLO_Research_Core.md)，留下以下可检查输出：
+填写[YOLO研究核心](../00_PrePaper_Lightweight_Detection/Learning_Notes/01_YOLO_Research_Core.md)，留下以下可检查输出：
 
 1. 参考[Mermaid画图语法指南](../99_Attachments/Mermaid_Syntax_Guide.md)自行完成`输入→Backbone→Neck→Head→训练/推理分支`结构图；
 2. 沿结构连续记录各阶段的输入、处理、输出、上下游联系和可能错误，形式不限于表格；

@@ -2,7 +2,7 @@
 
 ## 前置成果说明
 
-七篇论文编号和总体方向不变。在Paper 1之前增加一篇[实时轻量小目标检测练手论文](../PrePaper_Lightweight_Detection/README.md)，只用于练习完整投稿流程，并可为Paper 1提供封闭集已知目标检测基线；不计入七篇主论文。
+七篇论文编号和总体方向不变。在Paper 1之前增加一篇[实时轻量小目标检测练手论文](../00_PrePaper_Lightweight_Detection/README.md)，只用于练习完整投稿流程，并可为Paper 1提供封闭集已知目标检测基线；不计入七篇主论文。
 
 ## 总体逻辑
 

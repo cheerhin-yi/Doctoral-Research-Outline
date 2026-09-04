@@ -7,7 +7,7 @@
 
 ## 前置条件
 
-练手论文中的[YOLO研究核心](../PrePaper_Lightweight_Detection/Learning_Notes/01_YOLO_Research_Core.md)和[PyTorch与可复现性](../PrePaper_Lightweight_Detection/Learning_Notes/02_PyTorch_and_Reproducibility.md)作为共用基础，只维护一份，不在Paper 1目录重复复制。
+练手论文中的[YOLO研究核心](../00_PrePaper_Lightweight_Detection/Learning_Notes/01_YOLO_Research_Core.md)和[PyTorch与可复现性](../00_PrePaper_Lightweight_Detection/Learning_Notes/02_PyTorch_and_Reproducibility.md)作为共用基础，只维护一份，不在Paper 1目录重复复制。
 
 ## 阶段1：Paper 1专项知识
 

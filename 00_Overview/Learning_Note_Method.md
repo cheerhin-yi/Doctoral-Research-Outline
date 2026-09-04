@@ -312,4 +312,4 @@ Method与Experiments
 - 能说明该知识怎样影响当前论文
 - 所有未确认判断都明确标记为待核验
 
-阶段是否完成以及下一项任务是什么，始终回到[当前阶段](Current_Stage.md)和[练手论文阶段指南](../PrePaper_Lightweight_Detection/Stage_Guide.md)确认。
+阶段是否完成以及下一项任务是什么，始终回到[当前阶段](Current_Stage.md)和[练手论文阶段指南](../00_PrePaper_Lightweight_Detection/Stage_Guide.md)确认。
