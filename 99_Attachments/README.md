@@ -8,3 +8,4 @@
 | [Markdown数学公式写法](Markdown_Math_Syntax_Guide.md) | 统一笔记、实验记录和论文草稿中的公式格式 | 编写含公式的Markdown时 |
 | [Mermaid画图语法指南](Mermaid_Syntax_Guide.md) | 知识链、结构、流程、分支和状态图的常用语法 | 在任何学习笔记中自行画图时 |
 | [Git基本命令速查](Git_Basic_Command_Guide.md) | 查看、暂存、提交、撤销、回退、恢复、分支和远程同步命令 | 管理笔记、代码和实验记录版本时 |
+| [Codex使用指南](Codex_Usage_Guide.md) | 项目指令、任务提示、检查点、上下文压缩、Token、Skills、Plugins和安全边界 | 使用Codex处理本项目任务或准备新任务交接时 |

@@ -24,6 +24,7 @@
 - [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。
 - [实时轻量检测练手论文](00_PrePaper_Lightweight_Detection/README.md)：独立练手成果，只保留一个检测头改动；
 - [项目英语学习支持线](90_English_Learning/README.md)：领域英语优先的文献阅读、论文写作与四级计划；
+- [Codex使用指南](99_Attachments/Codex_Usage_Guide.md)：项目指令、检查点、上下文压缩、Token、Skills和Plugins的使用方法；
 - [已归档论文阅读指南](00_Overview/Paper_Reading_Guide.md)：32篇唯一论文的分类、阅读等级、当前用途和暂缓边界；
 - [项目参考材料](00_Overview/Reference_Materials/README.md)：博士科研计划书等方向依据。
 - [全项目附件](99_Attachments/README.md)：博士研究外部条件、资源需求、模板和写法说明；
