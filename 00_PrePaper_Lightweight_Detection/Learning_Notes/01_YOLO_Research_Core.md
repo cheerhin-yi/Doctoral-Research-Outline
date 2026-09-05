@@ -94,7 +94,7 @@ _沿YOLO结构建立知识链；先记录理解，再集中回答必学问题。
 3. concat将中间图融合，融合的是通道，即通道扩容
 	这样做的原因是。**降低模块计算量和参数量**（CSPNet（Cross Stage Partial Network）思想）；**短路径**保留了**低级别细节特征**，**长路径**则提取了**高级别语义特征**（ELAN（Efficient Layer Aggregation Network）的思想），同时利用低级别细节和高级别语义特征。
 ### 2.3 模块组成
-对应到yolo的yaml文件中的：
+backbone对应到yolo的yaml文件中的：
 ```yaml
 backbone:
   # [from, repeats, module, args]
