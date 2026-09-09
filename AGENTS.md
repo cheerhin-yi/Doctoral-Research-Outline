@@ -91,6 +91,8 @@
 
 ## 7. 使用说明
 
+处理新增论文或每周ChatGPT检索结果时，必须先读 `00_Overview/Literature_Tracking_Workflow.md`、`00_Overview/Literature_Registry.md`、`00_Overview/Innovation_Ledger.md` 及受影响方向的矩阵和研究边界；先审计去重，再归档PASS论文，完成主/次矩阵、必要创新台账四字段和周报同步后才能报告完成。暂停方向允许文献维护，不解除学习与实验阶段门。
+
 Codex、检查点、Token、Skills、Plugins和常用提示方式见：
 
 `99_Attachments/Codex_Usage_Guide.md`

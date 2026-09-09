@@ -20,6 +20,7 @@
 - [项目总指南](00_Overview/Project_Guide.md)：目录、阶段、工作方式和范围控制；
 - [当前阶段](00_Overview/Current_Stage.md)：现在具体学什么、做什么；
 - [七篇论文路线](00_Overview/Seven_Paper_Roadmap.md)：每篇论文的作用和知识依赖；
+- [每周论文审计与归档](00_Overview/Literature_Tracking_Workflow.md)：接收ChatGPT检索结果，先审计去重，再联动各方向文献矩阵、创新台账和周报；
 - [Paper 1任务指南](01_Paper1_OpenWorld_Risk/Stage_Guide.md)：从学习、文献、复现、数据、实验到投稿；
 - [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。
 - [实时轻量检测练手论文](00_PrePaper_Lightweight_Detection/README.md)：独立练手成果，只保留一个检测头改动；
@@ -63,5 +64,5 @@
 - 每篇论文最多两个主要主张；
 - 每项实验必须对应一个主张；
 - 当前只维护当前阶段需要的文件；
-- 后续论文只允许保存已筛选的候选PDF；正式学习笔记、系统检索、实验和写作子目录仍在对应论文启动时创建；
+- 后续论文允许维护审计通过的候选PDF、审计记录、文献矩阵和创新风险索引；正式学习笔记、系统检索、实验和写作子目录仍在对应论文启动时创建；
 - 删除内容可从Git历史恢复，不在项目里保留重复归档。
