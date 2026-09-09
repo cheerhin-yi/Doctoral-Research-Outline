@@ -6,7 +6,7 @@
 *.tar
 *.tar.gz
 *.7z
-
+*.json
 # 模型权重与大文件
 *.pt
 *.pth
