@@ -41,3 +41,6 @@ secrets/
 .obsidian/workspace.json
 .DS_Store
 Thumbs.db
+
+# Obsidian JSON configuration (including plugin subfolders)
+/.obsidian/**/*.json
