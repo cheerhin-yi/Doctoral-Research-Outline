@@ -22,3 +22,11 @@
 - [ ] 能列出铁路UAV检测的主要失败类型；
 - [ ] 明确YOLO改动是否真的需要；
 - [ ] 提取可复用的数据划分、分层指标和效率报告方式。
+## 主线A审计交叉入口（2026-09-10）
+
+仅维护文献，不改变Paper 1阶段门或精读完成数，不复制正文。
+
+- [W-0001 UAV-RSOD主审计](../../../00_Startup_Railway_UAV_Detection/Literature/W-0001_Audit.md)：Reference Only／SCREENED；原图框、来源组与分割用途需数据审计，不作为未知或风险标签。
+- [W-0006 RVGC-YOLO主审计](../../../00_Startup_Railway_UAV_Detection/Literature/W-0006_Audit.md)：Reference Only／SCREENED；已知检测与端侧计时口径参考。
+
+2026-09-10 W-0001来源补证：原图框／来源组仍Unknown；见[唯一补证记录](../../../00_Startup_Railway_UAV_Detection/Experiments/A0-02_Data_Gap_Followup.md)。不据此开启P1学习或实验。

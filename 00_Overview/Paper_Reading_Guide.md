@@ -30,9 +30,13 @@
 
 正式写作前仍须核验DOI、卷期、最终版本和当年学校规则。
 
-## 2. 当前练手论文
+## 2. 练手论文：当前主线A与历史索引
 
-详细证据和检索缺口见[练手论文文献矩阵](../00_PrePaper_Lightweight_Detection/Literature/Literature_Matrix.md)。
+主线A在A0-01优先审计UAV-RSOD、SAHI、QueryDet、ESOD、ROI-Gated SAHI、RVGC-YOLO及补充直接近邻。定向审计PASS不代表用户精读DONE；不解锁模型阶段。具体新记录见主矩阵的主线A审计区。
+
+以下为旧LSM-Head阶段的阅读顺序，保留历史索引，不再作为当前执行顺序。
+
+详细证据和检索缺口见[练手论文文献矩阵](../00_Startup_Railway_UAV_Detection/Literature/Literature_Matrix.md)。
 
 | 顺序 | 论文 | 可确认载体 | 等级 | 决策 |
 |---:|---|---|:---:|---|
@@ -46,7 +50,7 @@
 | 8 | TakuNet | arXiv:2501.05880v3 | C | 了解；分类端侧部署 |
 | 9 | Does YOLO Really Need to See Every Training Image in Every Epoch | arXiv:2603.17684v1 | C | 了解；训练效率而非推理轻量化 |
 
-只有前三篇进入当前阶段2的优先精读序列；阶段0–1完成前不得提前开始。
+上述前三篇是旧阶段2优先序列；当前主线A按其矩阵与阶段指南执行，不再以六份学习笔记通过作为A0审计的前提。
 
 ## 3. Paper 1
 

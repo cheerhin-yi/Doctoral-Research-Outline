@@ -44,3 +44,6 @@ Thumbs.db
 
 # Obsidian JSON configuration (including plugin subfolders)
 /.obsidian/**/*.json
+
+# Reproducible research configuration (contains no credentials)
+!00_Startup_Railway_UAV_Detection/Experiments/baseline_training_spec.json

@@ -114,3 +114,7 @@ Metrics需含关键数值、指标定义/单位、数据划分与比较协议，
 
 | Work ID | Primary Paper | Main Matrix / Audit / Reference | 与本方向的关系 | Innovation / Scope ID | 阶段条件 / Last Checked |
 |---|---|---|---|---|---|
+| W-0001 | P0 | [主审计与正文入口](../../00_Startup_Railway_UAV_Detection/Literature/W-0001_Audit.md)；[P0矩阵](../../00_Startup_Railway_UAV_Detection/Literature/Literature_Matrix.md) | 铁路UAV数据、已知框与轨道分割参考；不提供未知／风险证据 | P1-C1/C2（范围参考） | Reference Only；原阶段门保持；2026-09-10 |
+| W-0006 | P0 | [主审计与正文入口](../../00_Startup_Railway_UAV_Detection/Literature/W-0006_Audit.md)；[P0矩阵](../../00_Startup_Railway_UAV_Detection/Literature/Literature_Matrix.md) | 已知异物轻量基线，计时排除CPU NMS；不支持风险排序 | P1-C1（已知路径参考） | Reference Only；原阶段门保持；2026-09-10 |
+
+2026-09-10 A0-02补证：W-0001的原图检测框与来源分组仍未取得，公开数据适用性保持待核验；见[主归属补证](../../00_Startup_Railway_UAV_Detection/Experiments/A0-02_Data_Gap_Followup.md)。仅维护数据范围参考，P1两项主张与实验阶段门不变。

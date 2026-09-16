@@ -12,12 +12,12 @@
   4. `00_Overview/Seven_Paper_Roadmap.md`
   5. `00_Overview/Paper_Reading_Guide.md`
   6. `00_Overview/Learning_Note_Method.md`
-  7. `00_PrePaper_Lightweight_Detection/README.md`
-  8. `00_PrePaper_Lightweight_Detection/Research_Plan.md`
-  9. `00_PrePaper_Lightweight_Detection/Stage_Guide.md`
-  10. `00_PrePaper_Lightweight_Detection/Literature/Literature_Matrix.md`
-  11. `00_PrePaper_Lightweight_Detection/Experiments/Experiment_Plan.md`
-  12. `00_PrePaper_Lightweight_Detection/Experiments/Experiment_Tracker.md`
+  7. `00_Startup_Railway_UAV_Detection/README.md`
+  8. `00_Startup_Railway_UAV_Detection/Research_Plan.md`
+  9. `00_Startup_Railway_UAV_Detection/Stage_Guide.md`
+  10. `00_Startup_Railway_UAV_Detection/Literature/Literature_Matrix.md`
+  11. `00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md`
+  12. `00_Startup_Railway_UAV_Detection/Experiments/Experiment_Tracker.md`
 - `Paper_Reading_Guide.md`已经承担发表载体筛选和阅读等级职责；练手论文的具体文献状态以`Literature_Matrix.md`为准。
 - 同一任务内已经完整读取且未变化的文件不重复全文读取；先用Git状态确认变化，再复核发生变化或当前任务直接相关的文件。
 - 英语任务额外读取`90_English_Learning/README.md`及对应课程和进度文件；Paper 1任务额外读取`01_Paper1_OpenWorld_Risk/`中的入口、研究计划和阶段指南。
@@ -75,6 +75,8 @@
 
 ## 5. Token与Prompt Cache纪律
 
+- `PROJECT_CONTEXT.md`用于向其他ChatGPT会话同步项目上下文。研究目标、阶段／授权、代码接口、数据／评价协议、实验完成／失败／恢复、关键结果或技术决策发生重要变化时，先更新事实所属文件，再在同一任务收尾同步该文件的日期、摘要、局限和证据链接。保留失败与未核验状态，不复制大量代码或日志；维护上下文不自动授权实验、提交或推送。
+
 - 稳定规则保存在本文件和项目指南中，不在每轮提示中重复粘贴。
 - 同一连续研究任务尽量留在同一个Codex任务中，以追加消息的方式推进；主题或阶段明显变化时，先生成检查点再开启新任务。
 - 每轮提示只写本轮变化、目标、成功标准和新增证据；大型日志、论文或文件使用路径定位，不重复粘贴全文。
@@ -84,10 +86,14 @@
 
 ## 6. Git与文件保护
 
+- 主线A启动项目统一保存在`00_Startup_Railway_UAV_Detection/`。不得向`00_PrePaper_Lightweight_Detection/`写入主线A交付物；该目录保留原学习笔记和历史方案，其中LSM-Head及旧阶段指令不再作为当前执行要求。新学习记录写入新项目目录，旧笔记只按需引用。用户已接受弱化铁路场景，当前VisDrone优先，目录名沿用历史；具体任务以Current_Stage.md为准。
+
 - 未经明确要求，不提交、不推送、不改写Git历史。
 - 不修改或删除`99_Attachments/paper/`。
 - 文件编辑保持最小范围，不顺手整理无关内容。
 - 实验结果、失败记录和用户学习初稿不得因整理而删除。
+
+- 2026-09-11用户明确纠正：主线A中AI的主任务是核心研究问题的创新点论证；学习记录由用户后续完成，不得把用户作答／学习验收设为AI科研推进门。旧学习状态如实保留，不代填、不虚标完成；此条不自动开放模型运行，技术／数据／授权范围要求仍有效。
 
 ## 7. 使用说明
 
