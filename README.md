@@ -16,7 +16,6 @@
 ## 项目入口
 
 - [跨会话项目上下文](PROJECT_CONTEXT.md)：当前目标、代码结构、数据、模型、实验结果、失败记录与下一步边界；重要变化时同步维护。
-
 - [项目总指南](00_Overview/Project_Guide.md)：目录、阶段、工作方式和范围控制；
 - [当前阶段](00_Overview/Current_Stage.md)：现在具体学什么、做什么；
 - [七篇论文路线](00_Overview/Seven_Paper_Roadmap.md)：每篇论文的作用和知识依赖；
