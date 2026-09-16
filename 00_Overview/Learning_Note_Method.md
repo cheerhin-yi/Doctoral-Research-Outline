@@ -202,9 +202,12 @@ _适用于练手论文、Paper 1及以后正式启动论文的学习、文献、
 
 如果只是“看过”“听懂”或复制了标准答案，但不能闭卷复述和验证，该任务仍然未完成。
 
+
+> **2026-09-16：** 核心学习按 [三周计划](../00_Practice_UAV_Aerial_Detection/Completion_Metrics.md) 每日约 5h（4h 科研 + 1h 英语）推进；记录用 [学习记录模板](../00_Practice_UAV_Aerial_Detection/Learning_Notes/Learning_Record_Template.md)。PrePaper 与 Startup 学习内容已合并到 Startup `Learning_Notes/`（00–07 并列）。旧共享头笔记仅作历史候选。验收见 [Completion_Metrics.md](../00_Practice_UAV_Aerial_Detection/Completion_Metrics.md)。
+
 ## 📋 练手论文主线A的阶段顺序
 
-2026-09-10用户已批准调整：先可行性审查，学习按需补齐。具体门见[阶段指南](../00_Startup_Railway_UAV_Detection/Stage_Guide.md)。
+2026-09-10用户已批准调整：先可行性审查，学习按需补齐。具体门见[阶段指南](../00_Practice_UAV_Aerial_Detection/Stage_Guide.md)。
 
 ```text
 A0 直接近邻与公开数据可行性审查
@@ -218,7 +221,7 @@ A0 直接近邻与公开数据可行性审查
 
 A0允许许可核验后的审计下载和只读分析，不运行模型，不补造标注，不冻结训练划分。该例外只适用于当前主线A，不解除Paper 1或Paper 2–7的门禁。
 
-学习沿检测链、切片与坐标合并、原始来源分组与泄漏、端到端测速组织。记录方式、本人复述和最小验证要求保持；S0-01仍未通过。详见[按需知识链](../00_Startup_Railway_UAV_Detection/Learning_Notes/07_Mainline_A_Knowledge_Chain.md)。
+学习沿检测链、切片与坐标合并、原始来源分组与泄漏、端到端测速组织。记录方式、本人复述和最小验证要求保持；S0-01仍未通过。详见[按需知识链](../00_Practice_UAV_Aerial_Detection/Learning_Notes/07_Mainline_A_Knowledge_Chain.md)。
 
 旧共享检测头学习转为历史／可选；旧阶段0–7及B0/B1/B2/M要求已退出执行，原文可查Git历史，不删除已有学习初稿。没有通过学习验收的条目不得标DONE。模型工作前仍需补足其真正依赖的知识，而非以固定笔记数量判断准备程度。
 
@@ -259,4 +262,4 @@ A0允许许可核验后的审计下载和只读分析，不运行模型，不补
 - 能说明该知识怎样影响当前论文
 - 所有未确认判断都明确标记为待核验
 
-阶段是否完成以及下一项任务是什么，始终回到[当前阶段](Current_Stage.md)和[练手论文阶段指南](../00_Startup_Railway_UAV_Detection/Stage_Guide.md)确认。
+阶段是否完成以及下一项任务是什么，始终回到[当前阶段](Current_Stage.md)和[练手论文阶段指南](../00_Practice_UAV_Aerial_Detection/Stage_Guide.md)确认。

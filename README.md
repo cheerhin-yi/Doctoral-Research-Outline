@@ -1,3 +1,5 @@
+> **2026-09-16：** 练手文目录为 [`00_Practice_UAV_Aerial_Detection`](00_Practice_UAV_Aerial_Detection/README.md)。唯一事项：[Current_Stage.md](00_Overview/Current_Stage.md)。学习指标：[Completion_Metrics.md](00_Practice_UAV_Aerial_Detection/Completion_Metrics.md)。缩写：[Abbreviation_Glossary.md](99_Attachments/Abbreviation_Glossary.md)。旧目录归档：[Archive_2026-09-16_PracticePaper](99_Attachments/Archive_2026-09-16_PracticePaper/)。
+
 # 轨道交通无人机智能巡检博士研究项目
 
 更新：2026-09-14。BTD12单机制审查已完成：尺度条件DFL分布统计重评分候选DISMISSED，GFLV2与多变量校准已覆盖核心关系，尚无独立机制差异；这是书面否决，非实测失败。100轮及BTD1–BTD11完成且不重跑。当前返回论文主张与投入方向决策，停止自动候选开发／新模型运行，不创建BTD13。旧区域机制及A0整体HOLD。 见[BTD12审查](00_Startup_Railway_UAV_Detection/Literature/BTD12_Low_Score_Candidate_Review.md)。
@@ -35,8 +37,8 @@
 | 文件夹 | 内容 | 当前状态 |
 |---|---|---|
 | `00_Overview` | 新聊天交接、项目指南、当前阶段和七论文路线 | ACTIVE |
-| `00_Startup_Railway_UAV_Detection` | 实时轻量小目标检测练手论文及其独立学习、文献、实验和写作材料 | ACTIVE |
-| `00_PrePaper_Lightweight_Detection` | 原练手论文学习笔记、文献及历史计划；不写入主线A交付物 | 历史保留／学习参考 |
+| `00_Practice_UAV_Aerial_Detection` | 实时轻量小目标检测练手论文及其独立学习、文献、实验和写作材料 | ACTIVE |
+| `00_PrePaper_Lightweight_Detection`（已归档） | 原练手论文学习笔记、文献及历史计划；不写入主线A交付物 | 历史保留／学习参考 |
 | `90_English_Learning` | 与当前科研阶段同步的领域英语、论文写作和四级能力支持 | SUPPORT |
 | `01_Paper1_OpenWorld_Risk` | Paper 1开放世界风险研究、笔记、文献、实验和写作文件 | ACTIVE |
 | `02_Paper2_3D_Disaster` | 三维灾害定量评估 | PAUSED |

@@ -12,12 +12,12 @@
   4. `00_Overview/Seven_Paper_Roadmap.md`
   5. `00_Overview/Paper_Reading_Guide.md`
   6. `00_Overview/Learning_Note_Method.md`
-  7. `00_Startup_Railway_UAV_Detection/README.md`
-  8. `00_Startup_Railway_UAV_Detection/Research_Plan.md`
-  9. `00_Startup_Railway_UAV_Detection/Stage_Guide.md`
-  10. `00_Startup_Railway_UAV_Detection/Literature/Literature_Matrix.md`
-  11. `00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md`
-  12. `00_Startup_Railway_UAV_Detection/Experiments/Experiment_Tracker.md`
+  7. `00_Practice_UAV_Aerial_Detection/README.md`
+  8. `00_Practice_UAV_Aerial_Detection/Research_Plan.md`
+  9. `00_Practice_UAV_Aerial_Detection/Stage_Guide.md`
+  10. `00_Practice_UAV_Aerial_Detection/Literature/Literature_Matrix.md`
+  11. `00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Plan.md`
+  12. `00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md`
 - `Paper_Reading_Guide.md`已经承担发表载体筛选和阅读等级职责；练手论文的具体文献状态以`Literature_Matrix.md`为准。
 - 同一任务内已经完整读取且未变化的文件不重复全文读取；先用Git状态确认变化，再复核发生变化或当前任务直接相关的文件。
 - 英语任务额外读取`90_English_Learning/README.md`及对应课程和进度文件；Paper 1任务额外读取`01_Paper1_OpenWorld_Risk/`中的入口、研究计划和阶段指南。
@@ -86,7 +86,7 @@
 
 ## 6. Git与文件保护
 
-- 主线A启动项目统一保存在`00_Startup_Railway_UAV_Detection/`。不得向`00_PrePaper_Lightweight_Detection/`写入主线A交付物；该目录保留原学习笔记和历史方案，其中LSM-Head及旧阶段指令不再作为当前执行要求。新学习记录写入新项目目录，旧笔记只按需引用。用户已接受弱化铁路场景，当前VisDrone优先，目录名沿用历史；具体任务以Current_Stage.md为准。
+- 主线A启动项目统一保存在`00_Practice_UAV_Aerial_Detection/`。不得向`99_Attachments/Archive_2026-09-16_PracticePaper/00_PrePaper_Lightweight_Detection/`写入主线A交付物；该目录保留原学习笔记和历史方案，其中LSM-Head及旧阶段指令不再作为当前执行要求。新学习记录写入新项目目录，旧笔记只按需引用。用户已接受弱化铁路场景，当前VisDrone优先，目录名沿用历史；具体任务以Current_Stage.md为准。
 
 - 未经明确要求，不提交、不推送、不改写Git历史。
 - 不修改或删除`99_Attachments/paper/`。
