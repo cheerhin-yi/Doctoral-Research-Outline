@@ -1,6 +1,6 @@
 # 项目缩写与代号映射
 
-更新日期：2026-09-17。  
+更新日期：2026-09-17（增补 Literature 文件名级映射）。  
 本文件解释仓库中常见代号，**不是**进度表。当前唯一事项以 [`00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md) 为准。  
 实验运行细节以 [`00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md`](../00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md) 为准。
 
@@ -157,7 +157,7 @@
 
 | 代号 | 含义 |
 |---|---|
-| W-0001 … | 全局 Work ID（文献注册表中的唯一工作编号） |
+| W-0001 … W-0014 | 全局 Work ID；**完整题名与审计卡路径见 §10.2** |
 | PASS（审计） | 文献身份／证据审计通过，**不等于**你已精读 DONE |
 | SCREENED | 已过初筛／审计用途明确，本人精读未完成 |
 | HOLD | 暂停／未成立／暂不推进 |
@@ -199,5 +199,56 @@
 
 1. 新代号先写进本文件，再在 `Current_Stage`、协议或 Tracker 里使用。  
 2. 新增 **BTD** 号必须同时：登记 Tracker、写 Protocol、更新本表第 5.3 节。  
-3. 避免并行两套缩写（例如不要同时用 BTD／BTD 指同一诊断）。本仓库诊断统一写 **BTD**。  
-4. 数字以对应 `*_Result.md`／Tracker 为准；本表只解释名字，不替代原始报告。
+3. 新增 **`W-xxxx_Audit`／`A0-*Review`／`BTDn_*Review`／`*_HOLD_Review`／`*_Candidate_Review`** 时，必须同步更新 **§10**（短称、完整题名或审查用途、路径）；聊天或笔记里首次使用该短称前也要先入库。  
+4. 避免并行两套缩写（例如不要同时用 BTD／Diag 指同一诊断）。本仓库诊断统一写 **BTD**。  
+5. 数字以对应 `*_Result.md`／Tracker／审计卡正文为准；本表只解释名字，不替代原始报告。
+
+---
+
+## 10. Literature 文件名级代号（审计卡／书面审查）
+
+**纪律：** 凡仓库里出现 `W-xxxx_Audit`、`A0-09_*Review`、`BTD12_*Review` 这类文件名缩写／短称，**必须**在本表登记「短称 → 完整题名／用途 → 路径」。只写 W-0007 或 BTD12 而不写全称，不算完成。
+
+路径根：`00_Practice_UAV_Aerial_Detection/Literature/`（下分 `audits/`、`reviews/`、`matrices/`）。
+
+### 10.1 命名模式
+
+| 文件名模式 | 完整含义 |
+|---|---|
+| `W-xxxx_Audit.md` | **Work 审计卡**：对注册表工作 `W-xxxx` 的身份／版本／近邻冲突书面审计；`PASS`≠精读 `DONE` |
+| `A0-0x_*.md`（Experiments）或 `A0-09_*Review.md`（Literature） | **A0 阶段书面任务／候选审查**；A0-09 专指单机制候选差异与否决审查 |
+| `BTDn_*_Protocol/Result/Analysis.md` | 第 n 次 **BTD** 诊断的协议／结果／分析（见 §5.3） |
+| `BTD12_*Candidate*Review.md` | **BTD12 书面候选审查**（可无模型运行）；结论常为 `DISMISSED` |
+| `*_HOLD_Review.md` | 对某线索的 **HOLD** 书面说明（未赋 Work ID 或暂不推进） |
+| `*_Candidate_Review.md` | 机制／评分候选的可证伪边界与停止条件书面审查 |
+| `Literature_Matrix.md` | 练手文文献矩阵（阅读优先级、证据摘要、创新关系） |
+| `Mainline_A_Prior_Work_Comparison.md` | 主线 A 近邻对照表 |
+| `Search_Log.md` | 检索式与筛选日志 |
+
+### 10.2 `W-xxxx_Audit` → 对应工作（完整信息）
+
+| 短称／文件 | Work ID | 常用短名 | 完整题名（审计卡登记） | 路径 |
+|---|---|---|---|---|
+| `W-0001_Audit` | W-0001 | UAV-RSOD／铁路分割检测数据 | An unmanned aerial vehicle captured dataset for railroad segmentation and obstacle detection | `Literature/audits/W-0001_Audit.md` |
+| `W-0002_Audit` | W-0002 | SAHI | Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection | `Literature/audits/W-0002_Audit.md` |
+| `W-0003_Audit` | W-0003 | QueryDet | QueryDet: Cascaded Sparse Query for Accelerating High-Resolution Small Object Detection | `Literature/audits/W-0003_Audit.md` |
+| `W-0004_Audit` | W-0004 | ESOD | ESOD: Efficient Small Object Detection on High-Resolution Images | `Literature/audits/W-0004_Audit.md` |
+| `W-0005_Audit` | W-0005 | ROI-Gated SAHI | ROI-Gated SAHI: Content-Adaptive Slicing-Based Inference for Efficient Object Detection | `Literature/audits/W-0005_Audit.md` |
+| `W-0006_Audit` | W-0006 | RVGC-YOLO | Integrated Visual Sensing and Efficient Deep Learning for UAV-Based Track Foreign Object Detection | `Literature/audits/W-0006_Audit.md` |
+| `W-0007_Audit` | W-0007 | MRU-YOLO | MRU-YOLO（边际效用引导的选择性局部回看；审计卡以方法短称为题） | `Literature/audits/W-0007_Audit.md` |
+| `W-0008_Audit` | W-0008 | DZN | Dynamic Zoom-in Network for Fast Object Detection in Large Images | `Literature/audits/W-0008_Audit.md` |
+| `W-0009_Audit` | W-0009 | AutoFocus | AutoFocus: Efficient Multi-Scale Inference | `Literature/audits/W-0009_Audit.md` |
+| `W-0010_Audit` | W-0010 | TIDE | TIDE: A General Toolbox for Identifying Object Detection Errors | `Literature/audits/W-0010_Audit.md` |
+| `W-0011_Audit` | W-0011 | NWD | A Normalized Gaussian Wasserstein Distance for Tiny Object Detection | `Literature/audits/W-0011_Audit.md` |
+| `W-0012_Audit` | W-0012 | Adaptive NMS | Adaptive NMS: Refining Pedestrian Detection in a Crowd | `Literature/audits/W-0012_Audit.md` |
+| `W-0013_Audit` | W-0013 | GFLV2 | Generalized Focal Loss V2: Learning Reliable Localization Quality Estimation for Dense Object Detection | `Literature/audits/W-0013_Audit.md` |
+| `W-0014_Audit` | W-0014 | Multivariate Conf. Calib. | Multivariate Confidence Calibration for Object Detection | `Literature/audits/W-0014_Audit.md` |
+
+### 10.3 书面审查文件（完整信息）
+
+| 短称／文件 | 完整含义 | 结论摘要（以正文为准） | 路径 |
+|---|---|---|---|
+| `A0-09_Candidate_Review`／A0-09 | A0-09：单机制候选差异与否决审查（熵／成本归一等定向检索后的候选处置） | 旧候选路线书面否决边界保留；细节见正文 | `Literature/reviews/A0-09_Candidate_Review.md` |
+| `BTD12_Low_Score_Candidate_Review`／BTD12 审查 | BTD12：尺度条件 DFL 分布统计重评分候选的书面审查 | 候选 **DISMISSED**（近邻已覆盖核心关系；非实测失败） | `Literature/reviews/BTD12_Low_Score_Candidate_Review.md` |
+| `ViCrop_Det_HOLD_Review`／ViCrop-Det | ViCrop-Det 线索 HOLD 审查（内部信号免训练裁剪近邻） | **HOLD**；未赋 Work ID、未当 PASS 正文 | `Literature/reviews/ViCrop_Det_HOLD_Review.md` |
+| `Weak_Response_Candidate_Review`／弱响应候选 | 跨层／跨尺度弱响应选区评分候选的可证伪边界审查 | 曾 **PROPOSED**，后弱响应 v0.1 转 **HOLD**；以正文与实验诊断为准 | `Literature/reviews/Weak_Response_Candidate_Review.md` |
