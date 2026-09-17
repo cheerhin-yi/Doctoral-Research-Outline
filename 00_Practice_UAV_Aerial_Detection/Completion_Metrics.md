@@ -3,7 +3,6 @@
 本文件是**关卡总门**：某一关全部达标后，才开始下一关。不按「每天做完多少任务」推进。
 
 **块内笔记写法与过关检查**见：
-- [`Learning_Notes/NOTE_FORMAT.md`](Learning_Notes/NOTE_FORMAT.md)
 - [`Learning_Check_Baseline.md`](Learning_Check_Baseline.md)（助手维护；查笔记**第二部分**）
 
 验收：闭卷复述／手算／必答证据；**不得代填**。状态：`TODO` → `LEARNING` → `REVIEWING` → `PASSED`／`REPEAT`。

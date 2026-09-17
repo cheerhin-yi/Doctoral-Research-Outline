@@ -7,7 +7,7 @@
 权威关系：
 - 当前科研唯一事项仍以 `00_Overview/Current_Stage.md` 为准（EI 稿等）。
 - 学习推进以本文件 + `Completion_Metrics.md` 为准。
-- 笔记写法见 `Learning_Notes/NOTE_FORMAT.md`。
+- 笔记写法：每篇分「第一部分知识链教材」与「第二部分个人记录」；过关只查第二部分。
 
 判定：`TODO` → `LEARNING` → `REVIEWING` → `PASSED` / `REPEAT`。  
 助手**不得代填**用户作答；可只写「助手检查区」。
