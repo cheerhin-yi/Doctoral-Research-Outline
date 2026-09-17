@@ -1,3 +1,6 @@
+> **格式迁移（2026-09-17）：** 本文件尚未完全改写成「第一部分知识链＋第二部分记录」。学习本块前请先读 [`NOTE_FORMAT.md`](NOTE_FORMAT.md) 与 [`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md)。记录请仍按知识链节点整理；也可要求助手先把本文件改成与 `01`／`02` 相同结构再开始。
+>
+
 # 01 小目标与多尺度检测学习笔记
 
 _统一记录方法见[项目学习笔记统一记录方法](../../00_Overview/Learning_Note_Method.md)。以下内容必须掌握，其他内容沿知识链按需补充。_
