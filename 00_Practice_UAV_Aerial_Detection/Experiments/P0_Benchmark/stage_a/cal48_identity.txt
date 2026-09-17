@@ -1,0 +1,8 @@
+path=11_Datasets\processed\VisDrone\BT1\full_data_v2\cal48.txt
+sha256=b0e27b1dc10d952a927597022a1fe0cfa52714d45a89e4c3f36880c2a4a68e7f
+n_lines=48
+n_images=48
+n_labels=48
+n_annotations=48
+first3=D:/Doctoral-Research-Outline/11_Datasets/processed/VisDrone/BT1/full_data_v2/images/cal48/0000289_00801_d_0000815.jpg|D:/Doctoral-Research-Outline/11_Datasets/processed/VisDrone/BT1/full_data_v2/images/cal48/0000277_02001_d_0000549.jpg|D:/Doctoral-Research-Outline/11_Datasets/processed/VisDrone/BT1/full_data_v2/images/cal48/0000291_00201_d_0000869.jpg
+last3=D:/Doctoral-Research-Outline/11_Datasets/processed/VisDrone/BT1/full_data_v2/images/cal48/0000244_04000_d_0000009.jpg|D:/Doctoral-Research-Outline/11_Datasets/processed/VisDrone/BT1/full_data_v2/images/cal48/0000193_01876_d_0000113.jpg|D:/Doctoral-Research-Outline/11_Datasets/processed/VisDrone/BT1/full_data_v2/images/cal48/0000342_00393_d_0000244.jpg

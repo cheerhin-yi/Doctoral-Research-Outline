@@ -1,0 +1,18 @@
+python 3.12.14 | packaged by conda-forge | (main, Sep  2 2026, 23:18:20) [MSC v.1944 64 bit (AMD64)]
+executable H:\Conda\envs\UAV_BT1\python.exe
+torch 2.7.1+cu126
+torchvision 0.22.1+cu126
+Creating new Ultralytics Settings v0.0.6 file  
+View Ultralytics Settings with 'yolo settings' or at 'C:\Users\ChHao\AppData\Roaming\Ultralytics\settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+ultralytics 8.4.90
+cv2 5.0.0
+numpy 2.5.2
+sahi MISSING ModuleNotFoundError No module named 'sahi'
+PIL 12.3.0
+cuda_available True
+torch_cuda 12.6
+cudnn 90701
+device_count 1
+device0 NVIDIA GeForce GTX 1660 SUPER
+platform Windows-11-10.0.26200-SP0

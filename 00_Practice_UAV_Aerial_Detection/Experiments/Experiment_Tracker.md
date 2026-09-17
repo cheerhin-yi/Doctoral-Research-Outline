@@ -1,5 +1,16 @@
 # 练手论文实验跟踪表
 
+
+## P0 Benchmark Stage A (P0-BENCH-A-ENV-20260917-01)
+
+| Run ID | Stage | Goal | Hardware | Env | Status | Artifacts |
+|---|---|---|---|---|---|---|
+| P0-BENCH-A-ENV-20260917-01 | A | Env & SHA freeze for P0 five-method benchmark | GTX 1660 SUPER | H:/Conda/envs/UAV_BT1 | DONE / PASS | [Freeze report](P0_Benchmark_Environment_Freeze.md); `P0_Benchmark/stage_a/` |
+
+Notes: weight SHA match; cal48 n=48 frozen; sahi missing (M5 blocker); 4090 not present (B–D unified latency blocker on this host). No training. Stage B not started.
+
+---
+
 正式实验当前全部`BLOCKED`。2026-09-10切换主线A：下表为未运行的LSM-Head历史预案，**不再作为当前执行方案**；旧阶段号和B模型定义不触发执行，不复用旧Run ID。A0-01未产生任何训练或检测推理运行记录。新增运行前必须通过主线A阶段门并填写假设、唯一变量、数据版本、seed、硬件和停止条件。
 
 | Run ID | 阶段 | 模型 | 目的 | 数据/版本 | Seed | 主要指标 | 状态 | 结果位置/备注 |

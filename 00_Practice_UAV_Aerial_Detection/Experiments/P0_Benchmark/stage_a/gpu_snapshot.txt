@@ -1,0 +1,5 @@
+timestamp=2026-09-17T12:44:05.6609022+08:00
+GPU 0: NVIDIA GeForce GTX 1660 SUPER (UUID: GPU-43b14c17-b685-e8ad-ab90-abc0d70fca06)
+--- query ---
+index, name, uuid, memory.total [MiB], driver_version, power.limit [W], clocks.current.sm [MHz], mig.mode.current
+0, NVIDIA GeForce GTX 1660 SUPER, GPU-43b14c17-b685-e8ad-ab90-abc0d70fca06, 6144 MiB, 591.86, 125.00 W, 300 MHz, [N/A]

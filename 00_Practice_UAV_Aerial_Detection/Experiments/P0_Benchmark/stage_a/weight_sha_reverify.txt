@@ -1,0 +1,9 @@
+expected=bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533
+path=11_Datasets\processed\VisDrone\BT1\BT1-LOCAL-20260913-01\train\weights\last.pt
+size=5457882
+sha256=bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533
+match=True
+path=11_Datasets\processed\VisDrone\BT1\BTD1-CAL48-20260913-01\baseline_archive\BT1-LOCAL-20260913-01\train\weights\last.pt
+size=5457882
+sha256=bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533
+match=True

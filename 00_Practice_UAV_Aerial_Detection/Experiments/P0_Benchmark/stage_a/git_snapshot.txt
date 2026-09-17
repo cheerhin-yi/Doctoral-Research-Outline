@@ -1,0 +1,8 @@
+HEAD=604aeec623f2b9483906bb0bc06c317ad07a026a
+short=604aeec
+branch=main
+--- status -sb ---
+## main...origin/main
+?? 00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/
+--- porcelain ---
+?? 00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/
