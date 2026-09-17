@@ -1,15 +1,15 @@
 # 2026-09-14：BTD10定向审计
 
 - Batch ID：2026-09-14-BTD10；日期／时区：2026-09-14，Asia/Shanghai。
-- 输入：BTD9后的研究问题重审；检索可追溯范围见[Search Log](../../00_Startup_Railway_UAV_Detection/Literature/Search_Log.md)。非七方向每周全量检索，不推进其成功覆盖日期。
+- 输入：BTD9后的研究问题重审；检索可追溯范围见[Search Log](../../00_Practice_UAV_Aerial_Detection/Literature/matrices/Search_Log.md)。非七方向每周全量检索，不推进其成功覆盖日期。
 - Batch Status：COMPLETE（本批处置与联动完成，不代表HOLD证据补齐）。
 - 工作级候选8项：新增PASS 3，版本更新0，重复0，HOLD 5，REJECT 0；合计8。既有W-0002–W-0009仅复用，不计新增输入；一般检索噪声不计审计论文。
 
 | 输入 | 工作／来源 | Work ID | 处置与原因 | 归属／后续条件 |
 |---|---|---|---|---|
-| BTD10-01 | TIDE，2008.08115 | W-0010 | PASS；[审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0010_Audit.md) | P0；错误分解参考，SCREENED |
-| BTD10-02 | NWD，2110.13389v2 | W-0011 | PASS；[审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0011_Audit.md) | P0；小框度量直接近邻，SCREENED |
-| BTD10-03 | Adaptive NMS，1904.03629v1 | W-0012 | PASS；[审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0012_Audit.md) | P0；密度抑制直接近邻，SCREENED |
+| BTD10-01 | TIDE，2008.08115 | W-0010 | PASS；[审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0010_Audit.md) | P0；错误分解参考，SCREENED |
+| BTD10-02 | NWD，2110.13389v2 | W-0011 | PASS；[审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0011_Audit.md) | P0；小框度量直接近邻，SCREENED |
+| BTD10-03 | Adaptive NMS，1904.03629v1 | W-0012 | PASS；[审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0012_Audit.md) | P0；密度抑制直接近邻，SCREENED |
 | BTD10-04 | [Detecting tiny objects in aerial images: A normalized Wasserstein distance and a new benchmark](https://arxiv.org/abs/2206.13996) | N/A | HOLD；NWD身份页明确扩展关系，但扩展贡献及是否独立工作未审清 | 不拆分计数／拼接结果；若选定位路线再审全文与版本 |
 | BTD10-05 | [Tiny Object Detection via Normalized Gaussian Label Assignment and Multi-Scale Hybrid Attention](https://www.mdpi.com/2072-4292/18/3/396)，10.3390/rs18030396 | N/A | HOLD；官方身份及方法片段已核，2026-01-24；完整实验／消融／计时未审完 | 分类定位联合筛选的近期挑战；选路线一前必须补审，不能称未有近邻 |
 | BTD10-06 | [ContextTiny-Net: An Ultra-Tiny Object Detection Network for UAV Aerial Images in Urban Scenarios](https://www.mdpi.com/2073-8994/18/7/1145) | N/A | HOLD；仅检索线索，元数据／全文未核 | 仅在与确定机制直接相关时补审，不用搜索摘要归因提升 |
@@ -39,13 +39,13 @@ I-2026-09-14-BTD10-01/02/03已回链[台账](../Innovation_Ledger.md)与[预案]
 ## 2026-09-14-BTD12：单机制直接近邻审查
 
 - Batch ID：2026-09-14-BTD12；2026-09-14，Asia/Shanghai；Batch Status：COMPLETE。
-- 输入：BTD11后一个低分机制审查；[实际检索日志](../../00_Startup_Railway_UAV_Detection/Literature/Search_Log.md)。非全领域穷尽检索，不更新七方向覆盖日期。
+- 输入：BTD11后一个低分机制审查；[实际检索日志](../../00_Practice_UAV_Aerial_Detection/Literature/matrices/Search_Log.md)。非全领域穷尽检索，不更新七方向覆盖日期。
 - 工作级候选4项：新PASS 2、HOLD 2、版本更新0、重复0、REJECT 0。既有文献复用和搜索噪声不计输入。
 
 | 输入 | 工作／来源 | Work ID | 处置与原因 | 用途／后续条件 |
 |---|---|---|---|---|
-| BTD12-01 | GFLV2，2011.12885v1 | W-0013 | PASS；[审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0013_Audit.md) | P0，分布质量评分直接近邻，SCREENED |
-| BTD12-02 | Multivariate Confidence Calibration，2004.13546v1 | W-0014 | PASS；[审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0014_Audit.md) | P0，框尺寸条件校准直接近邻，SCREENED |
+| BTD12-01 | GFLV2，2011.12885v1 | W-0013 | PASS；[审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0013_Audit.md) | P0，分布质量评分直接近邻，SCREENED |
+| BTD12-02 | Multivariate Confidence Calibration，2004.13546v1 | W-0014 | PASS；[审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0014_Audit.md) | P0，框尺寸条件校准直接近邻，SCREENED |
 | BTD12-03 | [Generalized Focal Loss: Learning Qualified and Distributed Bounding Boxes for Dense Object Detection](https://arxiv.org/abs/2006.04388) | N/A | HOLD；源码引用／GFLV2前作线索，未独立全文审计 | 若另行实施分布质量方法，再核版本和完整协议；非新PASS |
 | BTD12-04 | [Confidence Calibration for Object Detection and Segmentation](https://arxiv.org/abs/2202.12785) | N/A | HOLD；后续章节与W-0014的扩展／独立关系未审清 | 不自动分配新ID或拼接结果；如选工程校准路线再审 |
 
@@ -55,4 +55,4 @@ I-2026-09-14-BTD10-01/02/03已回链[台账](../Innovation_Ledger.md)与[预案]
 
 联动核验：两项各有唯一工作／版本参考、审计、19字段主矩阵和影响记录；PASS与SCREENED分开；本地链接及编号检查通过。HOLD未计新增，未虚报用户阅读完成。无模型训练／推理、保护附件或旧学习目录修改，无提交／推送。
 
-交付：[BTD12报告](../../00_Startup_Railway_UAV_Detection/Literature/BTD12_Low_Score_Candidate_Review.md)。下一项为论文主张与投入方向决策；本批已触发停止条件，不自动创建BTD13或新机制实验。
+交付：[BTD12报告](../../00_Practice_UAV_Aerial_Detection/Literature/reviews/BTD12_Low_Score_Candidate_Review.md)。下一项为论文主张与投入方向决策；本批已触发停止条件，不自动创建BTD13或新机制实验。

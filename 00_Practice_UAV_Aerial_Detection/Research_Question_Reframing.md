@@ -66,7 +66,7 @@
 
 ## 7. 依据与本轮范围
 
-依据现有[A0-05](Experiments/A0-05_VisDrone_File_Audit.md)、[A0-08](Experiments/A0-08_Feasibility_Decision.md)、[A0-09](Literature/A0-09_Candidate_Review.md)，没有新增论文审计或修改PASS／HOLD／阅读状态。2026-09-11仅回查[VisDrone官方说明](https://github.com/VisDrone/VisDrone-Dataset#download)：test-dev标签公开且允许用于论文；这不证明来源独立，也不改变本提案首轮只做开发诊断的限制。未下载数据、安装环境、执行评价或模型。
+依据现有[A0-05](Experiments/A0-05_VisDrone_File_Audit.md)、[A0-08](Experiments/A0-08_Feasibility_Decision.md)、[A0-09](Literature/reviews/A0-09_Candidate_Review.md)，没有新增论文审计或修改PASS／HOLD／阅读状态。2026-09-11仅回查[VisDrone官方说明](https://github.com/VisDrone/VisDrone-Dataset#download)：test-dev标签公开且允许用于论文；这不证明来源独立，也不改变本提案首轮只做开发诊断的限制。未下载数据、安装环境、执行评价或模型。
 
 采用scientific-critical-thinking技能区分观察与解释、探索与确认、候选否决与整个研究方向不可行。Paper 1两项主张、七篇路线和Paper 2–7 PAUSED保持不变。
 

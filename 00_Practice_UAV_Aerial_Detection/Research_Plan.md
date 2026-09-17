@@ -41,7 +41,7 @@ P0 **不再追求独立新机制**；近程只写 EI 对比／协议稿。旧机
 | P0-A-C1 | 同整帧预算下，区域计算分配能否优于整图、增大输入、均匀切片及简单区域选择？ | 同预算无稳定收益，或直接近邻已覆盖且无增量 | HOLD |
 | P0-A-C2 | 能否控制区域选择引入的漏检，并满足声明的整帧预算协议？ | 区域获取开销抵消收益、未选区漏检过多或回退造成超时 | HOLD |
 
-沿用 ID 只作历史追踪，**不再指导当前 EI 稿主实验叙事**。近邻与风险见 [近邻比较](Literature/Mainline_A_Prior_Work_Comparison.md) 和 [创新台账](../00_Overview/Innovation_Ledger.md)。
+沿用 ID 只作历史追踪，**不再指导当前 EI 稿主实验叙事**。近邻与风险见 [近邻比较](Literature/matrices/Mainline_A_Prior_Work_Comparison.md) 和 [创新台账](../00_Overview/Innovation_Ledger.md)。
 
 
 ## 3. 当前阶段与数据门

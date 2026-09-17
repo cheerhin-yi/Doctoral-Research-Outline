@@ -40,7 +40,7 @@ Paper 1保留已知／未知危险候选、轨道上下文排序、固定告警�
 | 位置 | 职责 |
 |---|---|
 | `00_Overview/` | 当前阶段、路线、文献注册表、创新台账、周审计与工作规范 |
-| `00_Startup_Railway_UAV_Detection/Literature/` | 直接近邻审计、候选及否决报告；主矩阵管理阅读和审计状态 |
+| `00_Practice_UAV_Aerial_Detection/Literature/` | 直接近邻审计、候选及否决报告；主矩阵管理阅读和审计状态 |
 | `00_Startup_Railway_UAV_Detection/Experiments/` | 数据审计、标签转换、训练／恢复、诊断／测速／独立校核脚本、协议及结果报告 |
 | `00_Startup_Railway_UAV_Detection/Learning_Notes/` | 新学习记录；不以研究审计替代本人掌握证据 |
 | `00_Startup_Railway_UAV_Detection/Writing/` | 写作提纲和投稿适用性待核验项，尚无获验证的新方法稿件 |

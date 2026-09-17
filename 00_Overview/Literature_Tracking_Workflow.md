@@ -63,7 +63,7 @@ Publication Status使用 `preprint / accepted / early access / published / withd
 
 | Related Paper | 主问题/边界 | 实际目录 |
 |---|---|---|
-| P0 | UAV航拍已知小目标、时间预算约束局部计算、真实速度；VisDrone优先，铁路及共享头为历史 | `00_Startup_Railway_UAV_Detection/Literature/` |
+| P0 | UAV航拍已知小目标、时间预算约束局部计算、真实速度；VisDrone优先，铁路及共享头为历史 | `00_Practice_UAV_Aerial_Detection/Literature/`（`matrices/` / `audits/` / `reviews/`） |
 | P1 | 已知/未知危险候选、轨道上下文、可信告警 | `01_Paper1_OpenWorld_Risk/Literature/` |
 | P2 | 多时相三维灾害测量、侵界量与误差 | `02_Paper2_3D_Disaster/Literature/` |
 | P3 | 带宽/时延约束下风险语义传输与协同感知 | `03_Paper3_Comm_Perception/Literature/` |

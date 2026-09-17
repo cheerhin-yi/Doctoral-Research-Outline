@@ -111,4 +111,4 @@ BTD11-ERROR-20260914-01结果：READY→RUNNING→DONE，缓存审计及独立�
 
 ## BTD12：单机制方案与否决审查（2026-09-14，非实验运行）
 
-书面任务DONE；[报告](../Literature/BTD12_Low_Score_Candidate_Review.md)。RQ-BTD12-1尺度条件DFL分布重评分DISMISSED，原因是独立新颖性依据不足，非实测失败。静态核查已有源文件及公开文献，W-0013/14审计联动完成；无模型加载／训练／推理，无新增实验Run ID。100轮及BTD1–BTD11不重跑，下一项为论文主张与投入方向决策，不自动创建BTD13或执行报告中的条件性工程验证。
+书面任务DONE；[报告](../Literature/reviews/BTD12_Low_Score_Candidate_Review.md)。RQ-BTD12-1尺度条件DFL分布重评分DISMISSED，原因是独立新颖性依据不足，非实测失败。静态核查已有源文件及公开文献，W-0013/14审计联动完成；无模型加载／训练／推理，无新增实验Run ID。100轮及BTD1–BTD11不重跑，下一项为论文主张与投入方向决策，不自动创建BTD13或执行报告中的条件性工程验证。

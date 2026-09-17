@@ -12,7 +12,7 @@
 | [`Learning_Notes/`](Learning_Notes/) | 当前学习教材与记录模板 |
 | [`Research_Plan.md`](Research_Plan.md) | 问题与边界 |
 | [`Experiments/`](Experiments/) | 已有实验协议／结果（默认不重跑） |
-| [`Literature/`](Literature/) | 文献矩阵与审计 |
+| [`Literature/`](Literature/) | 矩阵／审计／审查（见 `Literature/README.md`） |
 | [`Writing/`](Writing/) | 写作提纲 |
 
 缩写释义：[`99_Attachments/Abbreviation_Glossary.md`](../99_Attachments/Abbreviation_Glossary.md)

@@ -38,7 +38,7 @@
 
 W-0008的CVF网页工具访问失败后，经普通HTTPS读取正式PDF，并以arXiv、Crossref核对身份；正文只登记稳定CVF链接。MRU本轮HTML限流，复用既有审计，不宣称新版本补审。SRENet：Selective region enlargement network for fast object detection in high resolution images，Neurocomputing 462:402–411（2021），DOI 10.1016/j.neucom.2021.08.015；[出版社入口](https://www.sciencedirect.com/science/article/pii/S0925231221011991)摘要显示顺序放大关系，全文实验未核验，作者信息本批Unknown，保留HOLD且不分配Work ID。
 
-已存在的ClusDet／DMNet／AutoFocus／GOIS／ASAHI等HOLD未重开。未穷尽付费库、非英文和引用网络；当前候选差异不足，不等于证明完全同构或无人做过。见[候选结论](A0-09_Candidate_Review.md)、[W-0008审计](W-0008_Audit.md)和[周报](../../00_Overview/Weekly_Literature_Audits/Weekly_Literature_Audit_2026-09-10.md)。本批止损，返回用户方向决策。
+已存在的ClusDet／DMNet／AutoFocus／GOIS／ASAHI等HOLD未重开。未穷尽付费库、非英文和引用网络；当前候选差异不足，不等于证明完全同构或无人做过。见[候选结论](../reviews/A0-09_Candidate_Review.md)、[W-0008审计](../audits/W-0008_Audit.md)和[周报](../../00_Overview/Weekly_Literature_Audits/Weekly_Literature_Audit_2026-09-10.md)。本批止损，返回用户方向决策。
 
 ## 2026-09-12-N1：创新候选定向查新
 
@@ -68,9 +68,9 @@ W-0008的CVF网页工具访问失败后，经普通HTTPS读取正式PDF，并以
 
 工作级处置：AutoFocus原A10 HOLD完成全文补审后首次PASS为W-0009（唯一arXiv v2正文）；ViCrop-Det新增HOLD线索（公开HTML已读，版本／数据与FPS口径待澄清）；ASAHI2026原A14仅复核arXiv身份，继续HOLD，不与2023 ASAHI按缩写合并。其他返回结果未作为有效近邻进入审计，不由搜索噪声产生Work ID。
 
-直接访问证据与段落定位见[W-0009](W-0009_Audit.md)、[ViCrop-Det HOLD](ViCrop_Det_HOLD_Review.md)。既有SAHI／QueryDet／ESOD／ROI-Gated／MRU／DZN证据用于比较，不记新论文或新版本。没有新增PDF、模型运行或效果结果。
+直接访问证据与段落定位见[W-0009](../audits/W-0009_Audit.md)、[ViCrop-Det HOLD](../reviews/ViCrop_Det_HOLD_Review.md)。既有SAHI／QueryDet／ESOD／ROI-Gated／MRU／DZN证据用于比较，不记新论文或新版本。没有新增PDF、模型运行或效果结果。
 
-novelty-check要求的独立反驳子任务因额度失败，没有取得结果或重试；不能声称外部／跨模型复核通过。该限制连同近期工作未穷尽的限制保留在[候选报告](Weak_Response_Candidate_Review.md)中。
+novelty-check要求的独立反驳子任务因额度失败，没有取得结果或重试；不能声称外部／跨模型复核通过。该限制连同近期工作未穷尽的限制保留在[候选报告](../reviews/Weak_Response_Candidate_Review.md)中。
 
 
 ## 2026-09-14-BTD10：强基线后的问题重审

@@ -9,13 +9,13 @@
 
 | Input ID | 工作与一手入口 | Work ID | 处置 | 主／次方向 | 审计／正文 | 再查条件 |
 |---|---|---|---|---|---|---|
-| A01 | UAV-RSOD；10.1038/s41597-024-03952-3 | W-0001 | 新增PASS | P0／P1数据参考 | [主审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0001_Audit.md) | 原图框、来源分组与数据独立性未通过，见数据报告 |
-| A02 | SAHI；2202.06934v5 | W-0002 | 新增PASS | P0／无 | [主审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0002_Audit.md) | 未来公平切片基线，当前不运行 |
-| A03 | QueryDet；2103.09136v2 | W-0003 | 新增PASS | P0／无 | [主审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0003_Audit.md) | 稀疏计算与完整计时边界 |
-| A04 | ESOD；2407.16424v2 | W-0004 | 新增PASS | P0／无 | [主审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0004_Audit.md) | 切片／前景计算直接冲突 |
-| A05 | ROI-Gated SAHI；2608.23923v1 | W-0005 | 新增PASS，预印本 | P0／无 | [主审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0005_Audit.md) | 保留全体COCO128负结果与校准问题 |
-| A06 | RVGC-YOLO；10.1109/jsen.2026.3667586 | W-0006 | 新增PASS | P0／P1已知路径 | [主审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0006_Audit.md) | 作者接受稿，非逐字确认VoR；速度排除NMS |
-| A07 | MRU-YOLO；10.3390/rs18162680 | W-0007 | 新增PASS | P0／无 | [主审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0007_Audit.md) | 固定K、效用排序与全局保护已有；毫秒保证未建立 |
+| A01 | UAV-RSOD；10.1038/s41597-024-03952-3 | W-0001 | 新增PASS | P0／P1数据参考 | [主审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0001_Audit.md) | 原图框、来源分组与数据独立性未通过，见数据报告 |
+| A02 | SAHI；2202.06934v5 | W-0002 | 新增PASS | P0／无 | [主审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0002_Audit.md) | 未来公平切片基线，当前不运行 |
+| A03 | QueryDet；2103.09136v2 | W-0003 | 新增PASS | P0／无 | [主审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0003_Audit.md) | 稀疏计算与完整计时边界 |
+| A04 | ESOD；2407.16424v2 | W-0004 | 新增PASS | P0／无 | [主审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0004_Audit.md) | 切片／前景计算直接冲突 |
+| A05 | ROI-Gated SAHI；2608.23923v1 | W-0005 | 新增PASS，预印本 | P0／无 | [主审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0005_Audit.md) | 保留全体COCO128负结果与校准问题 |
+| A06 | RVGC-YOLO；10.1109/jsen.2026.3667586 | W-0006 | 新增PASS | P0／P1已知路径 | [主审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0006_Audit.md) | 作者接受稿，非逐字确认VoR；速度排除NMS |
+| A07 | MRU-YOLO；10.3390/rs18162680 | W-0007 | 新增PASS | P0／无 | [主审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0007_Audit.md) | 固定K、效用排序与全局保护已有；毫秒保证未建立 |
 | A08 | [ClusDet](https://arxiv.org/abs/1904.08008) | N/A | HOLD，未完成全文实验审计 | 拟P0 | 只留候选，无正文归档 | 补划分、计时与区域召回 |
 | A09 | [DMNet](https://arxiv.org/abs/2004.05520) | N/A | HOLD，未完成全文实验审计 | 拟P0 | 同上 | 核验workshop版本与密度区域机制 |
 | A10 | [AutoFocus](https://arxiv.org/abs/1812.01600) | N/A | HOLD，未完成全文实验审计 | 拟P0 | 同上 | 核验FocusPixels/Chips与合并失败 |
@@ -25,7 +25,7 @@
 | A14 | [ASAHI 2026线索](https://arxiv.org/abs/2604.19233) | N/A | HOLD，身份／版本与全文待核验 | 拟P0 | 不与2023 ASAHI凭缩写合并 | 核对题名作者、关系、全文与实际日期 |
 | A15 | [Altitude-Aware Dynamic Tiling](https://arxiv.org/abs/2511.19728) | N/A | HOLD，已查作者版本身份，未全文审计 | 拟P0 | 作者列OCEANS2025，DOI10.1109/OCEANS58557.2025.11104659 | 核验高度信息成本及切片协议；不扩展救援任务 |
 
-全部PASS主矩阵：[P0文献矩阵](../../00_Startup_Railway_UAV_Detection/Literature/Literature_Matrix.md)；唯一正文及版本：[注册表](../Literature_Registry.md)。HOLD只有候选定位，不计新增正式记录。
+全部PASS主矩阵：[P0文献矩阵](../../00_Practice_UAV_Aerial_Detection/Literature/matrices/Literature_Matrix.md)；唯一正文及版本：[注册表](../Literature_Registry.md)。HOLD只有候选定位，不计新增正式记录。
 
 ## 本批结论与影响
 
@@ -37,7 +37,7 @@ W-0001至W-0007均Must Read，但Reading Status为SCREENED，未代替用户精�
 
 用户授权本批切换研究计划及A0阶段；不是文献审计自行放宽边界。旧LSM-Head及六个未运行P编号保留为历史。下一项唯一任务为A0-02补核原始数据证据，成功条件／止损见数据报告。国奖与分区[适用性仍待核验](../../00_Startup_Railway_UAV_Detection/Writing/Journal_Eligibility_Check.md)。
 
-检索式与范围见[Search Log](../../00_Startup_Railway_UAV_Detection/Literature/Search_Log.md)及[比较表](../../00_Startup_Railway_UAV_Detection/Literature/Mainline_A_Prior_Work_Comparison.md)。未穷尽Web of Science/Scopus及引用网络，不作“无人做过”结论；暂不继续扩展检索，避免额外消耗。
+检索式与范围见[Search Log](../../00_Practice_UAV_Aerial_Detection/Literature/matrices/Search_Log.md)及[比较表](../../00_Practice_UAV_Aerial_Detection/Literature/matrices/Mainline_A_Prior_Work_Comparison.md)。未穷尽Web of Science/Scopus及引用网络，不作“无人做过”结论；暂不继续扩展检索，避免额外消耗。
 
 ## 联动验收
 
@@ -80,7 +80,7 @@ W-0001至W-0007均Must Read，但Reading Status为SCREENED，未代替用户精�
 
 ## 候选审查批次2026-09-11-A0-09
 
-[单候选审查](../../00_Startup_Railway_UAV_Detection/Literature/A0-09_Candidate_Review.md)已交付。六条定向检索式见[日志](../../00_Startup_Railway_UAV_Detection/Literature/Search_Log.md)，选入处置3项：新增PASS 1（W-0008 DZN）、新增HOLD线索1（SRENet，10.1016/j.neucom.2021.08.015，出版社摘要可访问、全文实验未审）、既有重复／复用1（W-0007 MRU）。新增版本0、仓库PDF 0；注册表当前累计8个PASS工作。此前HOLD不重开，不把本批数字冒充整个领域检索总数。
+[单候选审查](../../00_Practice_UAV_Aerial_Detection/Literature/reviews/A0-09_Candidate_Review.md)已交付。六条定向检索式见[日志](../../00_Practice_UAV_Aerial_Detection/Literature/matrices/Search_Log.md)，选入处置3项：新增PASS 1（W-0008 DZN）、新增HOLD线索1（SRENet，10.1016/j.neucom.2021.08.015，出版社摘要可访问、全文实验未审）、既有重复／复用1（W-0007 MRU）。新增版本0、仓库PDF 0；注册表当前累计8个PASS工作。此前HOLD不重开，不把本批数字冒充整个领域检索总数。
 
 W-0008正式CVF全文10页核验完成；其顺序收益／成本选区、历史置零和熵／贪心对照已覆盖广义组件，但不能据此声称新检测结果重估所有剩余区域的精确形态已完全同构。当前候选仍不足以建立独立差异，状态DISMISSED，触发A0-08止损，暂缓方法实现。保留VisDrone及无人机／实时性／小目标范围，下一动作是用户审阅方向决策，不自动创建A0-10。
 
@@ -88,18 +88,18 @@ W-0008正式CVF全文10页核验完成；其顺序收益／成本选区、历史
 
 ## 候选审查补充批次2026-09-12-N1
 
-本批接续未完成创新审查，检索跨09-11至09-12，北京时间；17条实际查询见[日志](../../00_Startup_Railway_UAV_Detection/Literature/Search_Log.md)。复用已有审计，不重做数据、评价或接口检查；这是P0定向查新，不声明七方向本周全覆盖或推进其覆盖日期。
+本批接续未完成创新审查，检索跨09-11至09-12，北京时间；17条实际查询见[日志](../../00_Practice_UAV_Aerial_Detection/Literature/matrices/Search_Log.md)。复用已有审计，不重做数据、评价或接口检查；这是P0定向查新，不声明七方向本周全覆盖或推进其覆盖日期。
 
 | 输入／身份 | 去重与处置 | 原文、缺口及再查条件 |
 |---|---|---|
-| A10 AutoFocus，1812.01600；Mahyar Najibi、Bharat Singh、Larry S. Davis | 旧HOLD首次PASS，新增W-0009；非新发表、非版本更新 | [全文审计](../../00_Startup_Railway_UAV_Detection/Literature/W-0009_Audit.md)，ICCV2019、arXiv v2唯一技术正文；粗响应选区和可恢复目标诊断已覆盖 |
-| ViCrop-Det，2604.26806；Hui Wang、Hongze Li、Wei Chen、Xiaojin Zhang | 新增HOLD线索1，无Work ID、无正文归档 | [实名审查](../../00_Startup_Railway_UAV_Detection/Literature/ViCrop_Det_HOLD_Review.md)：内部信号免训练裁剪已有；v1／HTML日期关系、VisDrone样本数、文表FPS不一致待官方版本或代码澄清，非认定虚假 |
+| A10 AutoFocus，1812.01600；Mahyar Najibi、Bharat Singh、Larry S. Davis | 旧HOLD首次PASS，新增W-0009；非新发表、非版本更新 | [全文审计](../../00_Practice_UAV_Aerial_Detection/Literature/audits/W-0009_Audit.md)，ICCV2019、arXiv v2唯一技术正文；粗响应选区和可恢复目标诊断已覆盖 |
+| ViCrop-Det，2604.26806；Hui Wang、Hongze Li、Wei Chen、Xiaojin Zhang | 新增HOLD线索1，无Work ID、无正文归档 | [实名审查](../../00_Practice_UAV_Aerial_Detection/Literature/reviews/ViCrop_Det_HOLD_Review.md)：内部信号免训练裁剪已有；v1／HTML日期关系、VisDrone样本数、文表FPS不一致待官方版本或代码澄清，非认定虚假 |
 | A14 ASAHI2026，2604.19233 | 既有HOLD身份页复核1，无Work ID | arXiv v1 2026-04-21；未完成方法与协议全文审计，继续HOLD；不得与2023 ASAHI合并 |
 | W-0002/3/4/5/7/8 | 既有PASS证据复用，不计新增 | 对照已登记的切片、query、objectness、门控、收益与顺序成本机制；不刷新未重审工作的Last Audited |
 
 计数：首次PASS 1（旧HOLD升级）；新HOLD线索1；既有HOLD身份复核1；论文版本更新0；新增本地PDF 0。注册表当前9项PASS，阅读均未因本批成为本人精读DONE。旧A10/A14处置行保留原批次历史，以本节为当前补充。
 
-结论：[跨尺度同类弱响应候选](../../00_Startup_Railway_UAV_Detection/Literature/Weak_Response_Candidate_Review.md)保留PROPOSED、High风险；通用免训练内部信号裁剪不是空白，精确跨层局部判据能否优于低阈值／P3-only尚无实证。旧A0-09保持DISMISSED。I-2026-09-12-N1-01联动P0-A-C1/C2四字段、固定评分对照及停止条件；没有新模块或性能承诺。
+结论：[跨尺度同类弱响应候选](../../00_Practice_UAV_Aerial_Detection/Literature/reviews/Weak_Response_Candidate_Review.md)保留PROPOSED、High风险；通用免训练内部信号裁剪不是空白，精确跨层局部判据能否优于低阈值／P3-only尚无实证。旧A0-09保持DISMISSED。I-2026-09-12-N1-01联动P0-A-C1/C2四字段、固定评分对照及停止条件；没有新模块或性能承诺。
 
 联动：W-0009审计／唯一正文／注册表与版本历史／主矩阵、HOLD审查、近邻比较、创新台账、检索日志、当前入口及实验预案已同步。无必要P1／暂停方向交叉更新，无新模型Run ID。独立反驳子任务因额度失败，未收到审查结果；主任务原文判断不冒充外部复核。
 

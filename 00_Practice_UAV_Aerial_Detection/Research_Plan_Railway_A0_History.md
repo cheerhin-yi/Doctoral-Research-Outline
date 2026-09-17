@@ -23,7 +23,7 @@
 | P0-A-C1 | 相同整帧时间预算下，局部计算分配能否比整图、加大输入、均匀切片及简单走廊裁剪检出更多已知小障碍物？ | 公平对照无收益；直接近邻已覆盖且无可信增量 |
 | P0-A-C2 | 能否在预算内控制区域选择引入的漏检，得到可复核的覆盖—耗时折中？ | 区域获取与合并代价抵消收益；走廊外漏检无法控制；回退导致超时 |
 
-两项属于同一计算分配机制的效果与失败边界，不是两个独立模块。现有SAHI、QueryDet、ESOD、ROI-Gated SAHI及补查MRU-YOLO已经覆盖若干局部／稀疏计算机制；“铁路应用”“裁剪后放大”“阈值回退”不自动构成创新。证据以[近邻比较](Literature/Mainline_A_Prior_Work_Comparison.md)和[创新台账](../00_Overview/Innovation_Ledger.md)为准。
+两项属于同一计算分配机制的效果与失败边界，不是两个独立模块。现有SAHI、QueryDet、ESOD、ROI-Gated SAHI及补查MRU-YOLO已经覆盖若干局部／稀疏计算机制；“铁路应用”“裁剪后放大”“阈值回退”不自动构成创新。证据以[近邻比较](Literature/matrices/Mainline_A_Prior_Work_Comparison.md)和[创新台账](../00_Overview/Innovation_Ledger.md)为准。
 
 ## 4. 首批任务 A0-01（已交付，HOLD）
 

@@ -4,7 +4,7 @@
 
 ## 1. 来源、许可与原包
 
-一手来源：[Zenodo记录](https://zenodo.org/records/12606374)、[记录API](https://zenodo.org/api/records/12606374)、[DataCite登记](https://api.datacite.org/dois/10.5281/zenodo.12606374)、[数据论文审计W-0001](../Literature/W-0001_Audit.md)。记录DOI为10.5281/zenodo.12606374，概念DOI为12606373；记录标记Version 1、revision 6，API显示其为最新记录。文件名V1/V2分别表示分割与增强检测用途，不是两个Zenodo记录版本。
+一手来源：[Zenodo记录](https://zenodo.org/records/12606374)、[记录API](https://zenodo.org/api/records/12606374)、[DataCite登记](https://api.datacite.org/dois/10.5281/zenodo.12606374)、[数据论文审计W-0001](../Literature/audits/W-0001_Audit.md)。记录DOI为10.5281/zenodo.12606374，概念DOI为12606373；记录标记Version 1、revision 6，API显示其为最新记录。文件名V1/V2分别表示分割与增强检测用途，不是两个Zenodo记录版本。
 
 许可：CC BY 4.0（Zenodo与DataCite一致），允许按署名等许可条件开展研究；论文许可不代替数据许可。登记Issued=2024-07-01，记录创建／修改2024-07-04；采集日期2020-09-15。上午网络多次超时，恢复后完成下载，不使用来源不明镜像。
 
@@ -96,6 +96,6 @@ python 00_Startup_Railway_UAV_Detection/Experiments/analyze_uav_rsod.py
 
 2026-09-10续接更新：下方保留A0-01交付时的下一步记录。现[A0-02公开补证](A0-02_Data_Gap_Followup.md)已完成，未取得缺失的原图框、映射和来源组，HOLD不变；当前下一项已推进为A0-03作者数据询问信审阅，草稿未发送。
 
-**暂缓方法实现。** 许可、文件完整性和V2数值标签门通过；原图框、独立评测、小目标证据与走廊可部署性未通过。结合[近邻比较](../Literature/Mainline_A_Prior_Work_Comparison.md)的High风险，目前不能给出“继续基线训练”的结论。
+**暂缓方法实现。** 许可、文件完整性和V2数值标签门通过；原图框、独立评测、小目标证据与走廊可部署性未通过。结合[近邻比较](../Literature/matrices/Mainline_A_Prior_Work_Comparison.md)的High风险，目前不能给出“继续基线训练”的结论。
 
 下一项唯一任务：**A0-02：核验主线A原始数据缺口是否可补齐**。先以本报告中的315原图框、原始视频／航次／增强映射和独立小目标数量清单核查官方补充资料；若需向作者求证，先准备可审阅询问信，未经用户明确授权不发送。成功标准是取得可信原始标注与来源证据，或确认在当前公开资源条件下无法补齐并维持暂缓。不得自动换B/C、补标或通过模块堆叠绕过。

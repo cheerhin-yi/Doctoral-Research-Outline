@@ -7,7 +7,7 @@
 最新状态（2026-09-12）：用户改为本机先跑；BT1-LOCAL-20260912-01已完成3轮并正常暂停，固定样例与恢复包核验已交付。第4轮接续已核验通过，下一项从第5轮继续，Kaggle验证不再阻塞本地工作。以Current_Stage及BT1_Local_First_Segment_Result.md为准。
 
 2026-09-12最新执行约定：只先用Kaggle，每轮保存恢复包、每5轮保留副本、默认约60分钟轮末暂停并封存平台输出；Kaggle额度耗尽且旧会话停止后才转Colab续训。目前Kaggle手机验证未完成，尚无云端模型训练。此约定替代旧“二选一／不允许恢复”描述；本机完成项不重跑，详见当前阶段与BT1交接报告。
-日期：2026-09-12；版本BT-1。**方案已形成，执行待批准；本轮没有安装、转换真实数据或运行模型。** 本文件只为[弱响应候选](../Literature/Weak_Response_Candidate_Review.md)取得一组可追溯的普通权重，不证明候选有效，不开放正式实验。参数的机器可读版本见[baseline_training_spec.json](baseline_training_spec.json)。
+日期：2026-09-12；版本BT-1。**方案已形成，执行待批准；本轮没有安装、转换真实数据或运行模型。** 本文件只为[弱响应候选](../Literature/reviews/Weak_Response_Candidate_Review.md)取得一组可追溯的普通权重，不证明候选有效，不开放正式实验。参数的机器可读版本见[baseline_training_spec.json](baseline_training_spec.json)。
 
 ## 1. 此次训练要解决什么
 

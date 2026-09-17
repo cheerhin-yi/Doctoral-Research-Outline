@@ -15,7 +15,7 @@
   7. `00_Practice_UAV_Aerial_Detection/README.md`
   8. `00_Practice_UAV_Aerial_Detection/Research_Plan.md`
   9. `00_Practice_UAV_Aerial_Detection/Stage_Guide.md`
-  10. `00_Practice_UAV_Aerial_Detection/Literature/Literature_Matrix.md`
+  10. `00_Practice_UAV_Aerial_Detection/Literature/matrices/Literature_Matrix.md`
   11. `00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Plan.md`
   12. `00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md`
 - `Paper_Reading_Guide.md`已经承担发表载体筛选和阅读等级职责；练手论文的具体文献状态以`Literature_Matrix.md`为准。

@@ -36,7 +36,7 @@
 
 以下为旧LSM-Head阶段的阅读顺序，保留历史索引，不再作为当前执行顺序。
 
-详细证据和检索缺口见[练手论文文献矩阵](../00_Startup_Railway_UAV_Detection/Literature/Literature_Matrix.md)。
+详细证据和检索缺口见[练手论文文献矩阵](../00_Practice_UAV_Aerial_Detection/Literature/matrices/Literature_Matrix.md)。
 
 | 顺序 | 论文 | 可确认载体 | 等级 | 决策 |
 |---:|---|---|:---:|---|
@@ -54,7 +54,7 @@
 
 ## 3. Paper 1
 
-详细证据见[Paper 1文献矩阵](../01_Paper1_OpenWorld_Risk/Literature/Literature_Matrix.md)。
+详细证据见[Paper 1文献矩阵](../01_Paper1_OpenWorld_Risk/Literature/matrices/Literature_Matrix.md)。
 
 | 论文 | 可确认载体 | 等级 | 决策 |
 |---|---|:---:|---|
