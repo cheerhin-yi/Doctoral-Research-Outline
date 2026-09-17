@@ -1,6 +1,19 @@
 # 练手论文实验跟踪表
 
 
+## P0 Benchmark Stage B (P0-BENCH-B-TIMING-20260917-01) — READY
+
+| Run ID | Stage | Goal | Hardware | Env | Status | Artifacts |
+|---|---|---|---|---|---|---|
+| P0-BENCH-B-TIMING-20260917-01 | B | cal48 x 5 methods x 3 timing (pipeline bring-up) | GTX 1660 SUPER | H:/Conda/envs/UAV_BT1 | READY | P0_Benchmark/stage_b/P0-BENCH-B-TIMING-20260917-01/ |
+
+Hypothesis: bring up end-to-end timing path on local GPU; formal 4090 table deferred.
+Frozen: weight SHA bc42d54e..., cal48, conf=0.25, DensK1 from BTD8, SAHI 640/0.25.
+Stopping: finish 48 images x methods x 3 or FAILED.
+
+---
+
+
 ## P0 Benchmark Stage A (P0-BENCH-A-ENV-20260917-01)
 
 | Run ID | Stage | Goal | Hardware | Env | Status | Artifacts |
