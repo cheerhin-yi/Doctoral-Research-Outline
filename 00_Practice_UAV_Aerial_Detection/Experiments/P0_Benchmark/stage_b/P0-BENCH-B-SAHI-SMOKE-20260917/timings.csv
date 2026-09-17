@@ -1,0 +1,4 @@
+﻿image,index,method,rep,n_dets,total_ms,n_windows,selected,consistent_with_rep0,global_ms,local_ms,merge_ms
+0000289_00801_d_0000815.jpg,0,SAHI640,0,43,671.1200999998255,-1,[],,,,
+0000289_00801_d_0000815.jpg,0,SAHI640,1,43,406.25010000076145,-1,[],True,,,
+0000289_00801_d_0000815.jpg,0,SAHI640,2,43,384.7514999943087,-1,[],True,,,
