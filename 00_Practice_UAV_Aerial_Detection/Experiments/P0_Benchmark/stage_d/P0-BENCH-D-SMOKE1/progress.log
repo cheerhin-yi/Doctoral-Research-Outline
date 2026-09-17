@@ -1,0 +1,57 @@
+2026-09-17 14:14:09 SHA OK weight=bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533 zip=b28a94b06dfd9e36ce77ff8155fb82b9d2c030f198a76105933bd56c6ea6a68d
+2026-09-17 14:14:09 extracting D:\Doctoral-Research-Outline\11_Datasets\raw\VisDrone\ultralytics\VisDrone2019-DET-test-dev.zip -> D:\Doctoral-Research-Outline\11_Datasets\processed\VisDrone\P0_Benchmark\test-dev
+2026-09-17 14:14:11 n_images=1 ann_dir=D:\Doctoral-Research-Outline\11_Datasets\processed\VisDrone\P0_Benchmark\test-dev\VisDrone2019-DET-test-dev\annotations
+2026-09-17 14:14:15 1/1 0000006_00159_d_0000001.jpg
+2026-09-17 14:14:15 {
+  "F640": {
+    "tp": 37,
+    "fp": 10,
+    "precision": 0.7872340425531915,
+    "small_gt": 36,
+    "small_tp": 10,
+    "small_recall": 0.2777777777777778,
+    "n_images": 1,
+    "mean_ms": 19.011399999726564
+  },
+  "F1280": {
+    "tp": 44,
+    "fp": 25,
+    "precision": 0.6376811594202898,
+    "small_gt": 36,
+    "small_tp": 17,
+    "small_recall": 0.4722222222222222,
+    "n_images": 1,
+    "mean_ms": 43.47289999714121
+  },
+  "DensK1": {
+    "tp": 47,
+    "fp": 27,
+    "precision": 0.6351351351351351,
+    "small_gt": 36,
+    "small_tp": 20,
+    "small_recall": 0.5555555555555556,
+    "n_images": 1,
+    "mean_ms": 38.422600002377294
+  },
+  "UnifAll": {
+    "tp": 48,
+    "fp": 45,
+    "precision": 0.5161290322580645,
+    "small_gt": 36,
+    "small_tp": 22,
+    "small_recall": 0.6111111111111112,
+    "n_images": 1,
+    "mean_ms": 137.51259999116883
+  },
+  "SAHI640": {
+    "tp": 35,
+    "fp": 47,
+    "precision": 0.4268292682926829,
+    "small_gt": 36,
+    "small_tp": 13,
+    "small_recall": 0.3611111111111111,
+    "n_images": 1,
+    "mean_ms": 528.7176999991061
+  }
+}
+2026-09-17 14:14:15 DONE wall_seconds=6.4
