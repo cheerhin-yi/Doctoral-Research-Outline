@@ -1,0 +1,630 @@
+==================== AGENTS.md ====================
+# 博士研究项目 Codex 执行与上下文管理规则
+
+本文件适用于整个仓库。它只规定Codex的执行、上下文和交接方式，不改变各论文研究计划、阶段门或主张。
+
+## 1. 事实来源与读取顺序
+
+- 当前仓库文件是唯一事实来源；聊天摘要和检查点只用于导航，不能覆盖仓库事实。
+- 每个新任务开始时，先完整读取以下当前有效文件：
+  1. `README.md`
+  2. `00_Overview/Project_Guide.md`
+  3. `00_Overview/Current_Stage.md`
+  4. `00_Overview/Seven_Paper_Roadmap.md`
+  5. `00_Overview/Paper_Reading_Guide.md`
+  6. `00_Overview/Learning_Note_Method.md`
+  7. `00_Practice_UAV_Aerial_Detection/README.md`
+  8. `00_Practice_UAV_Aerial_Detection/Research_Plan.md`
+  9. `00_Practice_UAV_Aerial_Detection/Stage_Guide.md`
+  10. `00_Practice_UAV_Aerial_Detection/Literature/Literature_Matrix.md`
+  11. `00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Plan.md`
+  12. `00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md`
+- `Paper_Reading_Guide.md`已经承担发表载体筛选和阅读等级职责；练手论文的具体文献状态以`Literature_Matrix.md`为准。
+- 同一任务内已经完整读取且未变化的文件不重复全文读取；先用Git状态确认变化，再复核发生变化或当前任务直接相关的文件。
+- 英语任务额外读取`90_English_Learning/README.md`及对应课程和进度文件；Paper 1任务额外读取`01_Paper1_OpenWorld_Risk/`中的入口、研究计划和阶段指南。
+- 读取完成后检查Git状态和最近提交。用户未提交及未跟踪内容一律保留，不覆盖用户已有代码、数据、笔记或实验结果。
+
+## 2. 一次只推进一个可检查任务
+
+每轮开始先说明：
+
+- 当前阶段；
+- 本轮唯一任务；
+- 成功标准；
+- 本轮明确不做什么。
+
+阶段指南没有允许时，不下载数据、不训练模型、不修改网络。发现练手论文与Paper 1或七篇论文规划冲突时，只报告冲突，不自行扩大研究问题。
+
+每轮完成后报告：
+
+- 修改文件；
+- 验证结果；
+- 仍存风险；
+- 下一项最小任务。
+
+## 3. 检查点规则
+
+检查点是供人阅读的任务摘要，不是系统内部上下文压缩，也不是新的事实来源。
+
+在以下任一时机生成一次检查点：
+
+- 连续完成3个可检查任务后；
+- 当前研究阶段即将切换时；
+- 准备开启新Codex任务时；
+- 用户明确要求“生成检查点”时；
+- 系统压缩后发现任务状态、约束或证据可能丢失时。
+
+检查点只保留：
+
+1. 总目标和明确边界；
+2. 当前阶段与唯一任务；
+3. 已完成事项及证据位置；
+4. 修改文件和Git状态；
+5. 已验证结果；
+6. 关键决定及理由；
+7. 未解决问题和风险；
+8. 下一项唯一任务及成功标准。
+
+检查点不保留闲聊、重复说明、已被替代的方案、冗长工具输出或未经核验的推测。除非用户明确要求，不为检查点单独创建文件。
+
+## 4. 压缩后的恢复规则
+
+- Codex系统上下文压缩由运行环境管理，不能把“输出一份摘要”声称为已经执行系统压缩。
+- 压缩或新任务续接后，先读取`Current_Stage.md`、检查Git状态，再核对检查点中的文件、运行编号和完成结论。
+- 已有检查点与仓库冲突时，以仓库和Git证据为准，并报告差异。
+- 不因为上下文压缩重复已经验证完成的工作；如果证据不可定位，则把该事项降级为“待核验”，不能猜测为已完成。
+
+## 5. Token与Prompt Cache纪律
+
+- `PROJECT_CONTEXT.md`用于向其他ChatGPT会话同步项目上下文。研究目标、阶段／授权、代码接口、数据／评价协议、实验完成／失败／恢复、关键结果或技术决策发生重要变化时，先更新事实所属文件，再在同一任务收尾同步该文件的日期、摘要、局限和证据链接。保留失败与未核验状态，不复制大量代码或日志；维护上下文不自动授权实验、提交或推送。
+
+- 稳定规则保存在本文件和项目指南中，不在每轮提示中重复粘贴。
+- 同一连续研究任务尽量留在同一个Codex任务中，以追加消息的方式推进；主题或阶段明显变化时，先生成检查点再开启新任务。
+- 每轮提示只写本轮变化、目标、成功标准和新增证据；大型日志、论文或文件使用路径定位，不重复粘贴全文。
+- 不为提高缓存命中率故意填充无用内容。
+- 不无故频繁切换模型、推理强度、输出格式或工具集合。
+- 压缩会缩短上下文，但可能暂时降低Prompt Cache命中率；只在里程碑、上下文压力或交接需要时使用，不按固定时间频繁总结。
+
+## 6. Git与文件保护
+
+- 主线A启动项目统一保存在`00_Practice_UAV_Aerial_Detection/`。不得向`99_Attachments/Archive_2026-09-16_PracticePaper/00_PrePaper_Lightweight_Detection/`写入主线A交付物；该目录保留原学习笔记和历史方案，其中LSM-Head及旧阶段指令不再作为当前执行要求。新学习记录写入新项目目录，旧笔记只按需引用。用户已接受弱化铁路场景，当前VisDrone优先，目录名沿用历史；具体任务以Current_Stage.md为准。
+
+- 未经明确要求，不提交、不推送、不改写Git历史。
+- 不修改或删除`99_Attachments/paper/`。
+- 文件编辑保持最小范围，不顺手整理无关内容。
+- 实验结果、失败记录和用户学习初稿不得因整理而删除。
+
+- 2026-09-11用户明确纠正：主线A中AI的主任务是核心研究问题的创新点论证；学习记录由用户后续完成，不得把用户作答／学习验收设为AI科研推进门。旧学习状态如实保留，不代填、不虚标完成；此条不自动开放模型运行，技术／数据／授权范围要求仍有效。
+
+## 7. 使用说明
+
+处理新增论文或每周ChatGPT检索结果时，必须先读 `00_Overview/Literature_Tracking_Workflow.md`、`00_Overview/Literature_Registry.md`、`00_Overview/Innovation_Ledger.md` 及受影响方向的矩阵和研究边界；先审计去重，再归档PASS论文，完成主/次矩阵、必要创新台账四字段和周报同步后才能报告完成。暂停方向允许文献维护，不解除学习与实验阶段门。
+
+Codex、检查点、Token、Skills、Plugins和常用提示方式见：
+
+`99_Attachments/Codex_Usage_Guide.md`
+
+
+==================== 00_Overview\Current_Stage.md ====================
+# 当前阶段与唯一事项
+
+更新：2026-09-16（Asia/Shanghai）。
+
+本文件是全项目**唯一当前事项入口**：同时覆盖**学习**与**论文实验**。后续随学习验收与实验授权更新本页。
+
+| 入口 | 路径 |
+|---|---|
+| 练手文目录 | [`00_Practice_UAV_Aerial_Detection/`](../00_Practice_UAV_Aerial_Detection/README.md) |
+| 学习完成指标 | [`Completion_Metrics.md`](../00_Practice_UAV_Aerial_Detection/Completion_Metrics.md) |
+| 旧目录归档 | [`Archive_2026-09-16_PracticePaper/`](../99_Attachments/Archive_2026-09-16_PracticePaper/) |
+| 缩写映射 | [`Abbreviation_Glossary.md`](../99_Attachments/Abbreviation_Glossary.md) |
+
+---
+
+## 当前唯一事项
+
+1. **学习：** 按 `Completion_Metrics.md` 从关卡 **L0** 起推进；**指标达标后才进入下一关**，不按每日任务数推进。  
+2. **实验：** **HOLD**——不新训模型、不创建 BTD13、不重跑已完成的 100 轮／BTD1–12；结果保留在练手目录 `Experiments/` 与归档中。  
+3. **主张 × 投入方向：** 待学习关卡 **L4** 通过后再决策。  
+4. **英语：** 并行 CET-4（目标 2026-12，考试日待确认）＋领域英语，跟随当前关卡；见 [`90_English_Learning/`](../90_English_Learning/README.md)。
+
+本阶段成功标准：L0 按完成指标通过并留下本人证据；实验侧无违规新跑。
+
+---
+
+## 练手文边界
+
+题目：**面向无人机航拍的时间预算约束小目标检测**。  
+单目 RGB、无人机视角、已知类别二维小目标；轨道走廊退出方法前提。  
+Paper 1 主张保留；Paper 2–7 **PAUSED**。LSM-Head 为历史候选，非当前默认实现。
+
+---
+
+## 学习关卡进度
+
+以 `Completion_Metrics.md` 为准；变更时同步改本表。
+
+| 关卡 | 内容 | 状态 |
+|---|---|---|
+| L0 | 检测链与指标 | TODO |
+| L1 | 可复现与实验设计 | TODO |
+| L2 | 小目标／多尺度／轻量（历史候选） | TODO |
+| L3 | 切片／时间预算／数据评价纪律 | TODO |
+| L4 | 文献边界与可证伪实验卡 | TODO |
+
+---
+
+## 实验资产（默认只读）
+
+100 轮 YOLO11n 基线及 BTD1–BTD12 已完成；A0 整体 HOLD。  
+BTD12：尺度条件 DFL 重评分 **DISMISSED**（书面否决）。  
+详见 `00_Practice_UAV_Aerial_Detection/Experiments/`。
+
+---
+
+## 禁止（当前）
+
+未在本页授权前：训练、改网络、部署、新建诊断编号、启动 Paper 2–7。  
+不以「看过／AI 讲过」代替完成指标。  
+不删除归档或已有负结果记录。
+
+---
+
+## 下一步
+
+完成 L0 → 更新本页进度 → 开始 L1。  
+L0–L4 全部通过后，再开主张×投入方向与三个月实验讨论，并改写本页实验事项。
+
+
+==================== 00_Overview\Innovation_Ledger.md ====================
+# 候选创新台账
+
+本台账用于[每周文献审计](Literature_Tracking_Workflow.md)的证据联动，不替代研究计划，不确认创新成立，不增加主张。初始化日期2026-09-07；下列已有工作判断仅转录当前仓库矩阵，未在本轮重新核验原文。新论文通过审计后，所有直接受影响条目必须更新四个英文命名字段并追加变化记录。
+
+2026-09-10变更：用户授权P0切换主线A。旧P0-C0-1/2及其历史证据保留，下面对应两行四字段是旧判断，不再指导执行。P1两项主张及P2–7状态不变。
+
+## 候选创新与来源
+
+| Innovation ID | Related Paper | 候选主张/范围 | 原始依据 | 状态 |
+|---|---|---|---|---|
+| P0-C0-1 | P0 | 共享轻量P2–P4检测头的精度—计算折中 | [研究计划](../00_PrePaper_Lightweight_Detection/Research_Plan.md) C0-1 | 历史方案：2026-09-10退出执行，未验证 |
+| P0-C0-2 | P0 | 理论轻量化转化为真实推理速度 | [研究计划](../00_PrePaper_Lightweight_Detection/Research_Plan.md) C0-2 | 历史方案：2026-09-10退出执行，未验证 |
+| P0-A-C1 | P0 | 同整帧时间预算下提高无人机航拍已知小目标检出 | [主线A计划](../00_Startup_Railway_UAV_Detection/Research_Plan.md) | 当前区域机制HOLD；BTD9强基线挑战成立，未形成替代创新 |
+| P0-A-C2 | P0 | 区域选择漏检与端到端预算控制 | 同一计算分配机制的失败边界 | HOLD；非独立创新，不再自动扩展旧选区方案 |
+| P1-C1 | P1 | 已知＋未知双路径在固定告警预算下提高危险召回 | [研究计划](../01_Paper1_OpenWorld_Risk/Research_Plan.md) C1 | 暂定，执行等待练手论文 |
+| P1-C2 | P1 | 轨道上下文风险排序提高告警决策价值 | [研究计划](../01_Paper1_OpenWorld_Risk/Research_Plan.md) C2 | 暂定，执行等待练手论文 |
+
+## 创新证据与风险
+
+| Innovation ID | Closest Prior Work | Existing Work | Remaining Gap | Novelty Risk | Evidence / Last Updated |
+|---|---|---|---|---|---|
+| P0-C0-1 | L1-01 LUD-YOLO；L1-02 BPD-YOLO；共享头直接近邻仍待补 | 已有UAV轻量化和高分辨率检测；精确共享范围未核验 | 待确认是否已有同构共享P2–P4头；B1→B2→M能否隔离收益 | Unknown；不能因尚未查到而判断低风险 | [练手矩阵](../00_PrePaper_Lightweight_Detection/Literature/Literature_Matrix.md)；2026-09-07，仓库转录 |
+| P0-C0-2 | L3-02 EUAVDet；真实速度规范待补 | 已有边缘设备FPS证据，不能只比GFLOPs | 固定硬件、输入、batch和计时边界下，共享头是否改善延迟仍待验证 | Unknown；部署测速本身不是默认创新 | [练手矩阵](../00_PrePaper_Lightweight_Detection/Literature/Literature_Matrix.md)；2026-09-07，仓库转录 |
+| P0-A-C1 | W-0002–W-0009区域近邻；W-0011小框度量；W-0013分布质量／W-0014条件校准；BCDet HOLD | 区域收益排序、小框度量已有；分布统计质量评分及尺寸条件校准亦已有 | BTD11低分GT修复补559仅为诊断；BTD12具体评分式没有已证独立机制差异，DISMISSED；新论文主张待决，不自动再试 | High；旧区域机制HOLD，新评分候选否决，换检测器或拟合形式不足以支持新颖 | [BTD12](../00_Startup_Railway_UAV_Detection/Literature/BTD12_Low_Score_Candidate_Review.md)；2026-09-14 |
+| P0-A-C2 | W-0005/7/8/9；W-0010诊断参考、W-0012后处理近邻 | 全局保护、有限片数与回退已有；错误分解、密度自适应NMS已有 | 完整计时已做，当前区域路线无优势；缺F1280 NMS前轨迹，最终输出无法确证误删；BTD11已完成缓存筛查；35图截断，41个高GT重叠小目标不足以直接确证NMS瓶颈 | High；HOLD，预算计时或密度调阈值本身不是新机制 | [BTD10](../00_Startup_Railway_UAV_Detection/Research_Question_Reassessment_BTD10.md)、[W-0012](../00_Startup_Railway_UAV_Detection/Literature/W-0012_Audit.md)；2026-09-14 |
+| P1-C1 | T2-01 ROSD；T2-02/T2-03强基线；T2-07未知路径候选；W-0001/W-0006仅已知检测参考 | 铁路开放集检测、通用开放世界及VLM OOD已有工作 | 固定告警预算下铁路危险召回仍待核验；W-0001/W-0006不提供未知／告警证据 | High（沿用原风险；2026-09-10补入已知路径参考，未改变主张） | [Paper 1矩阵](../01_Paper1_OpenWorld_Risk/Literature/Literature_Matrix.md)；2026-09-10增补边界，保留2026-09-07旧证据 |
+| P1-C2 | T1-01、T3-02、T3-03；W-0001仅分割数据参考 | 轨道距离、边界、危险分级和风险量化已有直接工作 | 未知候选＋轨道上下文＋告警排序增量仍待核验；W-0001分割真值不提供风险标注 | High（沿用原风险；2026-09-10只补数据边界） | [Paper 1矩阵](../01_Paper1_OpenWorld_Risk/Literature/Literature_Matrix.md)；2026-09-10增补边界，保留2026-09-07旧证据 |
+
+Novelty Risk统一用 `Low / Medium / High / Unknown`，附理由、证据及核验日期；新版本不得静默抹掉旧风险结论。Closest Prior Work可以列多个工作ID；旧ID需带方向，不能跨矩阵裸引用。Remaining Gap要写可被证伪的差异，不写笼统的“效果更好”。
+
+主线A额外约束（W-0007）：MRU已有边际效用Top-K与全局保护；效用学习相对同预算密度选择的AP差只有0.035个百分点（两数据集），不能把局部观察总收益归因排序器。毫秒预算及走廊先验尚需独立证据，不能作为当然创新。
+
+## 暂停方向边界观察
+
+下列ID只是边界观察项，不是候选创新；Closest Innovation应写 `N/A（尚未定义候选创新；观察P2-SCOPE等）`。若新文献影响其方向，更新对应行；正式启动且用户确定主张后才创建创新ID，每篇最多两项。
+
+| Scope ID | 方向依据 | Closest Prior Work | Existing Work | Remaining Gap | Novelty Risk |
+|---|---|---|---|---|---|
+| P2-SCOPE | [P2三维灾害定量](../02_Paper2_3D_Disaster/README.md) | 未审计 | 已存损伤分割/三维分割背景，非定量测量证据 | 尚未定义候选创新 | Unknown；PAUSED |
+| P3-SCOPE | [P3通信受限感知](../03_Paper3_Comm_Perception/README.md) | 未审计 | 已存通信综述/边缘传输背景 | 尚未定义候选创新 | Unknown；PAUSED |
+| P4-SCOPE | [P4风险ISAC](../04_Paper4_Risk_ISAC/README.md) | 未审计 | 已存定位通信/RIS背景，非风险驱动证明 | 尚未定义候选创新 | Unknown；PAUSED |
+| P5-SCOPE | [P5多模态风险](../05_Paper5_Multimodal_Risk/README.md) | 未审计 | 已存视觉退化背景，非多模态证据 | 尚未定义候选创新 | Unknown；PAUSED |
+| P6-SCOPE | [P6主动巡检](../06_Paper6_Active_Inspection/README.md) | 未审计 | 已存UAV-ITS/航迹背景，非风险复检证据 | 尚未定义候选创新 | Unknown；PAUSED |
+| P7-SCOPE | [P7多机决策](../07_Paper7_MultiUAV_Decision/README.md) | 未审计 | 已存Agentic/网络背景，非任务分配直接证据 | 尚未定义候选创新 | Unknown；PAUSED |
+
+## 文献影响与待决动作
+
+本批2026-09-10-Mainline-A产生如下真实文献影响；这些是审查／预案，不是实验结果。每个影响ID一行。
+
+| Impact ID / Batch | Work ID / Audit | Innovation or Scope ID | Changed Fields / Risk Before → After | 边界原条款与建议 | 最小验证：假设、唯一变量、指标、停止条件 | Target Experiment Plan / Entry | Status / Stage Gate | Decision / Run ID / Outcome |
+|---|---|---|---|---|---|---|---|---|
+| I-2026-09-10-Mainline-A-01 | [W-0001](../00_Startup_Railway_UAV_Detection/Literature/W-0001_Audit.md) | P0-A-C1/C2；P1-C1/C2（范围） | 四字段；P0 Unknown→High（批次综合）；P1 High→High | 旧LSM退出执行；Partial：任务已有，预算机制未覆盖 | 见该审计最小验证；固定策略变量，报告小目标/区域漏检/整帧成本；无增量或数据不成立则停 | [A2-DIAG](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md)；A0数据审计 | BLOCKED（模型）；A0静态审查允许 | 用户已选A，仅审查；Run ID=N/A，未运行 |
+| I-2026-09-10-Mainline-A-02 | [W-0002](../00_Startup_Railway_UAV_Detection/Literature/W-0002_Audit.md) | P0-A-C1/C2 | 四字段；P0 Unknown→High（批次综合）；P1 High→High | 旧LSM退出执行；Partial：裁剪放大及融合已有 | 见该审计最小验证；固定策略变量，报告小目标/区域漏检/整帧成本；无增量或数据不成立则停 | [A2-DIAG](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md) | BLOCKED（模型）；A0静态审查允许 | 用户已选A，仅审查；Run ID=N/A，未运行 |
+| I-2026-09-10-Mainline-A-03 | [W-0003](../00_Startup_Railway_UAV_Detection/Literature/W-0003_Audit.md) | P0-A-C1/C2 | 四字段；P0 Unknown→High（批次综合）；P1 High→High | 旧LSM退出执行；Partial：粗定位后精计算已有 | 见该审计最小验证；固定策略变量，报告小目标/区域漏检/整帧成本；无增量或数据不成立则停 | [A2-DIAG](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md) | BLOCKED（模型）；A0静态审查允许 | 用户已选A，仅审查；Run ID=N/A，未运行 |
+| I-2026-09-10-Mainline-A-04 | [W-0004](../00_Startup_Railway_UAV_Detection/Literature/W-0004_Audit.md) | P0-A-C1/C2 | 四字段；P0 Unknown→High（批次综合）；P1 High→High | 旧LSM退出执行；Direct（广义区域节算机制）；具体铁路方案未核实 | 见该审计最小验证；固定策略变量，报告小目标/区域漏检/整帧成本；无增量或数据不成立则停 | [A2-DIAG](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md) | BLOCKED（模型）；A0静态审查允许 | 用户已选A，仅审查；Run ID=N/A，未运行 |
+| I-2026-09-10-Mainline-A-05 | [W-0005](../00_Startup_Railway_UAV_Detection/Literature/W-0005_Audit.md) | P0-A-C1/C2 | 四字段；P0 Unknown→High（批次综合）；P1 High→High | 旧LSM退出执行；Direct：区域筛选、局部精检及阈值回退已有 | 见该审计最小验证；固定策略变量，报告小目标/区域漏检/整帧成本；无增量或数据不成立则停 | [A2-DIAG](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md) | BLOCKED（模型）；A0静态审查允许 | 用户已选A，仅审查；Run ID=N/A，未运行 |
+| I-2026-09-10-Mainline-A-06 | [W-0006](../00_Startup_Railway_UAV_Detection/Literature/W-0006_Audit.md) | P0-A-C1/C2；P1-C1（已知路径） | 四字段；P0 Unknown→High（批次综合）；P1 High→High | 旧LSM退出执行；Partial：任务与轻量部署已有；无显式走廊ROI | 见该审计最小验证；固定策略变量，报告小目标/区域漏检/整帧成本；无增量或数据不成立则停 | [A2-DIAG](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md) | BLOCKED（模型）；A0静态审查允许 | 用户已选A，仅审查；Run ID=N/A，未运行 |
+
+| I-2026-09-10-Mainline-A-07 | [W-0007](../00_Startup_Railway_UAV_Detection/Literature/W-0007_Audit.md) | P0-A-C1/C2 | 四字段；High→High，补充更直接预算/效用先例 | 固定K、边际效用、全局保护已有；不复制多模块 | 同检测器/融合只换选择策略；对照密度TopK，测小目标召回及完整延迟；无增量或数据不足则停 | [A2-DIAG](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md) | BLOCKED，等待A0 | Run ID=N/A，未运行 |
+
+状态：`PROPOSED / BLOCKED / READY / IMPLEMENTED / DISMISSED`。只有阶段允许且方案决定明确时才更新实验计划；只有真实运行才填写Run ID。High风险必须提出核验或主张收缩建议，不能通过自动增加模块规避。
+
+## A0-02补证影响
+
+I-2026-09-10-A0-02-01：W-0001 → P0-A-C1/C2及P1数据边界。Closest Prior Work／Existing Work沿用上表已审计机制；Remaining Gap新增官方入口仍未补齐原图框和来源分组；Novelty Risk保持High，不因数据补证降低。最小动作是取得可复核作者资料并重审原图配对、来源组与小目标数量，无法取得则继续HOLD。目标：[实验计划](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md)保持BLOCKED；Run ID=N/A。P1仅补数据适用范围，主张不变。
+
+## 用户范围决定：2026-09-10-A0-04
+
+沿用P0-A-C1/C2并更新上表四字段：保留无人机、实时性、小目标，VisDrone优先；原轨道先验差异与UAV-RSOD数据门退为历史，不再要求等作者回复。旧判断仍由A0-01/A0-02审计和铁路版计划回链。风险High→High；下一项A0-05静态数据审计，方法／模型BLOCKED，Run ID=N/A。Paper 1及七篇路线不变。
+
+## 数据补证2026-09-10-A0-05
+
+未新增论文；P0-A-C1/C2的Closest Prior Work与Existing Work沿用既有近邻；Remaining Gap从文件未知推进为共享场景、忽略区评价与副本身份待确认。Novelty Risk保持High；284,915个标签层小框不证明算法创新或独立物理实例数。见[完整审计](../00_Startup_Railway_UAV_Detection/Experiments/A0-05_VisDrone_File_Audit.md)。下一项A0-06协议审查；模型BLOCKED，Run ID=N/A。
+
+## 协议补证2026-09-11-A0-06
+
+P0-A-C1/C2：Closest Prior Work与Existing Work沿用现有近邻；Remaining Gap进一步明确为评价器兼容性、真实预算下增量及共享场景限制，协议提案不证明这些缺口已解决；Novelty Risk仍High。见[A0-06草案](../00_Startup_Railway_UAV_Detection/Experiments/A0-06_Evaluation_Protocol_Draft.md)。下一项A0-07仅核验评价工具，模型BLOCKED，Run ID=N/A。无新增文献，Paper 1主张及暂停方向不变。
+
+## 评价核验2026-09-11-A0-07
+
+P0-A-C1/C2的Closest Prior Work与Existing Work不变；Remaining Gap中评价语义获得24个Python构造样例支持，原版数值兼容仍待交叉运行，数据来源和机制增量门未关闭；Novelty Risk仍High。见[A0-07报告](../00_Startup_Railway_UAV_Detection/Experiments/A0-07_Evaluator_Semantics_Check.md)。此为评价审计，不是创新或模型性能证据；下一项A0-08评测方案与剩余门审查，模型BLOCKED、Run ID=N/A。
+
+## 可行性决策2026-09-11-A0-08
+
+P0-A-C1/C2的Closest Prior Work与Existing Work沿用既有审计；Remaining Gap的首要研究问题是撤去铁路先验后尚无具体可区分机制，计时规范或评价修正不能独立构成算法贡献；Novelty Risk保持High。评测选择原版兼容＋小目标诊断，来源与运行兼容未通过。见[A0-08决策](../00_Startup_Railway_UAV_Detection/Experiments/A0-08_Feasibility_Decision.md)。下一项A0-09只审查一个候选及否决条件，不能自动叠加模块；无新文献、无模型Run ID。
+
+## 候选否决影响2026-09-11-A0-09
+
+I-2026-09-11-A0-09-01：新增[W-0008](../00_Startup_Railway_UAV_Detection/Literature/W-0008_Audit.md) → P0-A-C1/C2。上表四字段已同步：Closest Prior Work加入DZN；Existing Work补顺序收益选区、历史置零、像素成本和熵／贪心对照；Remaining Gap尚不能支持具体熵反馈／成本归一化候选的独立差异；Novelty Risk High→High。当前候选DISMISSED，广义研究问题保留。
+
+最小可证伪对照仅作记录：固定检测器、候选、融合及同一时间准入器，对照初始排序、只抑制已处理区、实际结果反馈重排；同时检查片数控制与时间控制。若优势只来自更多片、融合或准入器，则否决反馈主张。目标[实验计划](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md)仍BLOCKED；没有执行，Run ID=N/A。当前停止自动扩展，交回用户方向决策，不启用RL或新增模块。P1与暂停方向无必要交叉更新。
+
+## I-2026-09-12-N1-01：弱响应候选的保留范围
+
+2026-09-14 BTD9强基线否决证据：F1280小TP1312、FP839，超过密度单片1172/1051与GT最佳1223/1038，实际时间亦优于密度。存在互补目标但GT逐图动作选择仅再增33，不支持直接包装为路由创新。暂缓当前区域排序机制，停止自动扩展实验。Closest Prior Work/Existing Work不变；Remaining Gap先退回研究问题重审，明确当前有限动作配置被强简单基线覆盖的范围及未解问题，不由互补集合推出新颖性；Novelty Risk High，v0.1 HOLD。见[报告](../00_Startup_Railway_UAV_Detection/Experiments/BTD9_F1280_Result.md)。无新文献/推理/训练，注册表和矩阵不变。下一项BTD10仅论证至多两个可证伪切入点，尚未执行。
+
+2026-09-14 BTD8：单片GT上界对密度净增51小TP（+1.875pp），仅为有限动作诊断。密度K1均值37.36ms但20.83%帧次超重新校准40ms参考；F1280更快（27.33ms），效果尚未分析。暂缓新机制投入，下一项BTD9缓存强基线效果对照。Closest Prior Work/Existing Work不变；Remaining Gap先检查简单提高整图分辨率是否已覆盖单片选择上界，GT上界不证明新信号/同预算优势；Novelty Risk High，v0.1 HOLD。见[报告](../00_Startup_Railway_UAV_Detection/Experiments/BTD8_Single_Crop_Result.md)。本批cal48实际推理计时，无新训练/文献；注册表和矩阵状态不变。
+
+2026-09-14 BTD7审查：105去重残差中26未覆盖、67覆盖未检出、12合并/匹配变化。固定第一片后的GT最佳第二片仅净增26小TP（+0.956pp），所查弱响应及第一片反馈计数未显示超越密度的排序证据；暂缓第二片重排作为唯一创新。Closest Prior Work/Existing Work仍为既有收益排序、顺序处理及历史抑制；Remaining Gap转为先确认预算能容纳的单片动作及其选择上界，不能从GT oracle推出实际信号或新颖性；Novelty Risk High，v0.1 HOLD。见[报告](../00_Startup_Railway_UAV_Detection/Experiments/BTD7_Conditional_Recovery_Result.md)。01归档失败与02接续均保留，无新文献、训练或推理；文献注册表/矩阵不变。下一项BTD8尚未运行。
+
+2026-09-14 BTD6完整时间复测：3000次输出与BTD4逐值一致；固定两片平均约51.2ms、约99%帧次超过重新校准的40ms参考。工程实现更快仍不支持同预算优越，去重仅作强简单对照。Closest Prior Work/Existing Work不变；Remaining Gap仍是有限计算下条件新增检出价值，下一项BTD7核验去重剩余105个可恢复小GT及全窗口反例，区分推理可得信号与GT诊断上界；Novelty Risk High，弱响应v0.1 HOLD。见[结果](../00_Startup_Railway_UAV_Detection/Experiments/BTD6_Pipeline_Result.md)。无新增文献/训练；本次为既有规则实际推理与计时，文献注册表和矩阵状态不变。
+
+2026-09-13 BTD5工程校核：有限构造/真实缓存输出完全一致，公共CPU合并平均约27ms降至6.27/6.57ms；不产生论文创新或整帧预算通过证据，资源协议偏差见[报告](../00_Startup_Railway_UAV_Detection/Experiments/BTD5_NMS_Result.md)。Closest Prior Work/Existing Work不变；Remaining Gap仍是完整预算内条件新增检出价值的可观测性，下一项BTD6须先校核真实流程并重新校准参考T；Novelty Risk High，弱响应v0.1 HOLD。无新论文、训练或推理，文献注册表与矩阵状态不变。
+
+2026-09-13 BTD4预留开发验证：diag500固定去重规则净增273小GT、Recall+1.15pp，图像配对区间[+0.75,+1.56]pp；保留为强简单对照，不认定创新。两方法平均约90ms，约89%帧次超过相对T=61ms；预算仍未通过，公共结果合并约27ms。Closest Prior Work/Existing Work不变；Remaining Gap须在共用后处理合理实现和完整预算下重新判断条件新增价值，不能将去重或代码加速当创新；Novelty Risk High，跨尺度v0.1仍HOLD。见[报告](../00_Startup_Railway_UAV_Detection/Experiments/BTD4_Diag500_Result.md)。无新文献或训练，下一项公共后处理等价校核。
+
+2026-09-13 BTD3简单对照更新：去重密度在cal48净增23个小GT、Recall+0.85个百分点，但逐图7/34/7且图像自助差区间跨0。保留为简单对照，不升级创新状态。Closest Prior Work/Existing Work仍沿用既有收益排序、覆盖抑制；Remaining Gap仍是条件新增检出价值的可观测性，先冻结两简单规则在diag500配对验证，不从48图继续加项；Novelty Risk=High，跨尺度v0.1=HOLD。见[结果](../00_Startup_Railway_UAV_Detection/Experiments/BTD3_Dedup_Density_Result.md)。无新论文、无训练或推理运行。
+
+2026-09-13 BTD2缓存归因补记：密度残差129=77中心未覆盖+42覆盖但局部失败+10融合/匹配变化；77中66存在较大新增粗预测覆盖的未选恢复窗口，提示独立Top2的重复计数，但零新增粗框的重叠视图也有恢复反例。Closest Prior Work/Existing Work沿用MRU-YOLO收益排序、DZN历史抑制；Remaining Gap收窄为已选区域条件下新增检出价值能否由推理可得信号识别，先以简单去重密度排除；Novelty Risk=High，v0.1继续HOLD，不新增创新主张。见[归因报告](../00_Startup_Railway_UAV_Detection/Experiments/BTD2_Density_Miss_Analysis.md)。无新论文或模型运行。
+
+2026-09-13实证更新：候选v0.1 **PROPOSED→HOLD**，新颖性风险High不变。BTD1-CAL48-20260913-01完成cal48固定对照：558个可恢复小GT，候选恢复336、P3-only338、密度429，未证明跨尺度额外选择价值。Closest Prior Work仍为既有MRU-YOLO/AutoFocus等；Existing Work仍覆盖响应选区与局部复检；Remaining Gap改为简单密度遗漏的可恢复目标是否具有额外推理可得信息，当前公式未解决；Novelty Risk不因实跑下降。见[实证报告](../00_Startup_Railway_UAV_Detection/Experiments/BT1_Cal48_Miss_Diagnosis.md)。下一项只读缓存归因密度遗漏的129个目标；不改公式、不训练、不自动增加模块。以下保留候选提出时依据，无新论文审计或阅读状态变化。
+
+W-0009及[ViCrop-Det HOLD](../00_Startup_Railway_UAV_Detection/Literature/ViCrop_Det_HOLD_Review.md) → P0-A-C1/C2 → High保持。AutoFocus已覆盖粗尺度响应选区和可恢复GT诊断，ViCrop-Det已提出内部信号免训练裁剪；HOLD不代表可以忽略其冲突。旧A0-09否决结论保留。
+
+[本批候选](../00_Startup_Railway_UAV_Detection/Literature/Weak_Response_Candidate_Review.md)只保留跨层空间／类别对应增加弱响应判别力这一可证伪假设。唯一变化为选区评分，固定权重、窗口、片数及融合；比较低阈值／匹配峰数／P3-only／原始跨层乘积／移位P4。指标为可恢复小GT检出、整体AP／误检、完整耗时及超预算比例。若简单替代解释收益、对应打乱仍等效或费用抵消收益则停止；不得增加模块挽救。
+
+目标[Experiment_Plan](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md)的N1候选诊断条款；PROPOSED，模型运行BLOCKED，Run ID=N/A（未执行）。下一步仅制定受限普通YOLO11n训练执行方案，使后续模型观察服务这一候选；无个人学习验收门。P1／暂停方向无必要交叉变更。
+
+## 2026-09-14-BTD10：主张收缩与问题观察
+
+旧主张ID仅维持证据追踪；本批不新增P0-C3等创新主张。RQ-BTD10-1（定位／置信度失配）和RQ-BTD10-2（密集实例／重复框区分）只是问题观察，前者优先筛查、后者HOLD。BTD11后仍无可用信息差异则停止当前探索，不能把学习任务或无穷调参替代创新论证。
+
+| Impact ID | Work ID | 影响项／四字段变化 | 最小变量与指标／停止条件 | 目标／状态／Run ID |
+|---|---|---|---|---|
+| I-2026-09-14-BTD10-01 | W-0010 | P0-A-C1/C2证据解释；Closest补TIDE、Existing错误分解已有、Gap本项目适配未证、Risk High不变 | 同缓存分别修复一种错误，统计变化；不相加oracle，语义不兼容则停止 | [BTD11](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md)预案；未执行／N/A |
+| I-2026-09-14-BTD10-02 | W-0011 | P0-A-C1主张收缩／RQ1；Closest NWD、Existing小框度量已有、Gap本机失配瓶颈未知、Risk High | 固定预测检查定位／低分空间；无空间不开发新损失，有空间也不自动训练 | 同BTD11；新机制实现BLOCKED／N/A |
+| I-2026-09-14-BTD10-03 | W-0012 | P0-A-C2边界／RQ2；Closest Adaptive NMS、Existing密度抑制已有、Gap原始删除轨迹缺失、Risk High | 当前仅检查邻接线索；未来固定原候选对照单一抑制规则，阈值即可解释则否决 | 同BTD11；原始模型取证未安排／N/A |
+
+旧历史段落中的PROPOSED、未测等只反映当时状态，以本批主表为准。未修改P1创新四字段或P2–P7边界。
+
+## 2026-09-14-BTD11：错误结构实证回链
+
+[BTD11报告](../00_Startup_Railway_UAV_Detection/Experiments/BTD11_Error_Structure_Result.md)已完成。P0-A-C1/C2旧机制仍HOLD；RQ-BTD10-1收窄为低分真目标／假框判别的方案观察，RQ-BTD10-2不优先。Closest Prior Work保持W-0010/11/12及既有区域近邻；Existing Work仍包括错误分解、度量与密度抑制；Remaining Gap由“错误未分解”更新为“低分恢复空间已见，但可推理取得的信息差异及近邻外机制未知”；Novelty Risk High不变。
+
+低分GT修复补559只是诊断；普通阈值.10补312而FP839→2170。不能把单调标定、换阈值或GT容量作为新方法。下一项BTD12仅一个方案与否决审查，无差异即停止候选开发。无新增文献／新创新ID、P1或暂停方向变更。
+
+## 2026-09-14-BTD12：单机制否决
+
+RQ-BTD12-1仅为审查对象，不是新创新主张ID；状态DISMISSED（书面新颖性否决，非实测失败）。Closest Prior Work=W-0013/14；Existing Work=分布质量评分与框尺度条件校准；Remaining Gap=尚无超出两者的独立可证伪关系；Novelty Risk=High。P0-A-C1主表四字段已更新，P0-A-C2与P1–P7不变。
+
+| Impact ID | Work ID | 影响项／四字段变化 | 最小变量与指标／停止条件 | 目标／状态／Run ID |
+|---|---|---|---|---|
+| I-2026-09-14-BTD12-01 | W-0013 | P0-A-C1与RQ-BTD12-1；Closest新增GFLV2，Existing分布质量评分，Gap无独立关系，Risk High | 固定框池的分布信息组；固定FP召回/AP/完整耗时，现成评分解释收益则否决 | [BTD12计划](../00_Startup_Railway_UAV_Detection/Experiments/Experiment_Plan.md)；候选DISMISSED，无实验／N/A |
+| I-2026-09-14-BTD12-02 | W-0014 | 同项；Closest条件校准，Existing尺寸条件评分，Gap组合式无独立证据，Risk High | 隔离校准与评价，先比较无分布类别/尺寸校准；仅校准误差改善不算检出贡献 | 同BTD12计划；候选DISMISSED，无实验／N/A |
+
+[审查报告](../00_Startup_Railway_UAV_Detection/Literature/BTD12_Low_Score_Candidate_Review.md)保留条件性工程验证边界，但没有安排该实验。当前返回论文主张与投入方向决策，不自动创建BTD13，不恢复旧选区或加模块。
+
+
+==================== PROJECT_CONTEXT.md ====================
+> **路径更新 2026-09-16：** 活跃练手目录改为 `00_Practice_UAV_Aerial_Detection/`；旧 `00_PrePaper_*`／`00_Startup_*` 在 `99_Attachments/Archive_2026-09-16_PracticePaper/`。当前事项以 `00_Overview/Current_Stage.md` 为准。
+
+# 项目上下文：博士研究与主线A启动论文
+
+最后核验：2026-09-15。用途：将本文件提供给另一个ChatGPT会话，使其理解目标、现有实现、证据和下一步边界。本文是仓库事实的摘要与导航，不替代研究计划、运行记录或原始产物；与源文件不一致时重新核验，不按旧摘要执行。路径均相对仓库根目录；没有仓库访问权限的会话只能基于本摘要讨论，不能声称已经检查原始文件。
+
+## 1. 当前结论与唯一待办
+
+**当前为主线A的A0内受限开发探索，A0整体HOLD；100轮普通YOLO11n训练及BTD1–BTD11已完成，BTD12书面审查已完成并否决具体候选。尚无已成立的新方法创新或正式独立测试结论。**
+
+当前唯一事项是供用户／导师审阅的“论文主张与投入方向决策”：是否继续追求同方向的独立新机制，或另行接受有明确应用贡献的现成方法研究。后一条尚未获选。成功标准是明确贡献定位与范围，再决定最小后续工作。
+
+在该决定前停止自动候选开发、新模型运行及进一步拆分诊断；不创建BTD13，不重跑100轮或既有诊断，不恢复云端训练。正式A2/A3/A4、test-dev模型评价、网络修改和部署未开放。学习作答不作为AI科研推进门，技术／数据／授权范围仍有效。
+
+权威入口：[当前阶段](00_Overview/Current_Stage.md)、[主线A研究计划](00_Startup_Railway_UAV_Detection/Research_Plan.md)、[阶段指南](00_Startup_Railway_UAV_Detection/Stage_Guide.md)、[BTD12决定](00_Startup_Railway_UAV_Detection/Literature/BTD12_Low_Score_Candidate_Review.md)。
+
+## 2. 研究目标与历史转向
+
+博士项目以铁路无人机巡检为总体应用场景，七篇论文依次研究：危险感知→三维灾害量化→通信受限风险共享→通感资源分配→多模态风险理解→主动复检→多无人机联合决策。当前只推进Paper 1研究链，Paper 2–7保持PAUSED。
+
+Paper 1前先做一篇独立启动／练手论文，不计入七篇主论文。当前题目为“面向无人机航拍的时间预算约束小目标检测”。研究边界：单目RGB、无人机视角、已知类别二维小目标检测；关注固定整帧时间预算下的局部高分辨率计算分配。铁路走廊已退出方法前提，目录名称沿用历史；不能用VisDrone结果推断铁路安全效果。
+
+原区域机制的两项候选问题P0-A-C1/C2是：同预算能否优于整图／增大输入／均匀切片／简单选择，以及能否控制选区漏检与超时。二者均HOLD、未成立。每篇最多两项主要主张，不以增加注意力、损失、增强、蒸馏、剪枝等模块弥补证据不足。
+
+重要历史变化：
+
+- 早期LSM-Head共享轻量P2–P4头及B0/B1/B2/M对照已退出执行；没有这些模型的实验结果。旧P000/P001/P010/P011/P020/P021均未运行、BLOCKED，不复用编号。
+- 2026-09-10转主线A可行性审查，后接受VisDrone优先及弱化铁路前提。UAV-RSOD退出当前关键路径。
+- 2026-09-11明确AI主任务为核心问题的创新论证；用户学习由本人后续完成。S0-01仍未通过，不代填、不虚标完成。
+- 2026-09-12批准受限普通基线；云端受阻后改本机。2026-09-13批准连续接续至100轮，已实际完成。
+- 2026-09-14强简单基线与近邻审查促使当前机制暂缓，回到贡献定位决策。
+
+Paper 1保留已知／未知危险候选、轨道上下文排序、固定告警预算危险召回和可信复核方向；候选主张仍待审计与验证，本轮没有启动其开放世界实验。稳定路线见[七篇论文路线](00_Overview/Seven_Paper_Roadmap.md)。
+
+## 3. 仓库与代码结构
+
+本仓库是研究文档加独立实验脚本，不是已封装的训练平台。当前主线A交付统一进入`00_Startup_Railway_UAV_Detection/`；旧目录`00_PrePaper_Lightweight_Detection/`仅保留学习初稿、文献和历史方案。
+
+| 位置 | 职责 |
+|---|---|
+| `00_Overview/` | 当前阶段、路线、文献注册表、创新台账、周审计与工作规范 |
+| `00_Startup_Railway_UAV_Detection/Literature/` | 直接近邻审计、候选及否决报告；主矩阵管理阅读和审计状态 |
+| `00_Startup_Railway_UAV_Detection/Experiments/` | 数据审计、标签转换、训练／恢复、诊断／测速／独立校核脚本、协议及结果报告 |
+| `00_Startup_Railway_UAV_Detection/Learning_Notes/` | 新学习记录；不以研究审计替代本人掌握证据 |
+| `00_Startup_Railway_UAV_Detection/Writing/` | 写作提纲和投稿适用性待核验项，尚无获验证的新方法稿件 |
+| `11_Datasets/raw/VisDrone/` | 原始ZIP和评价工具等，Git忽略 |
+| `11_Datasets/processed/VisDrone/` | 数据转换、审计、预测、权重、日志、运行证据，Git忽略 |
+| `01_Paper1_OpenWorld_Risk/`、`02_...`至`07_...` | 主论文计划与材料；不从当前诊断自动启动后续研究 |
+
+主要代码均在主线A的`Experiments/`：
+
+| 文件 | 实际作用 |
+|---|---|
+| `acquire_visdrone.py`、`fetch_visdrone_mirror.py`、`analyze_visdrone.py` | 原包获取和文件／标注／重复审计；历史UAV-RSOD另有审计脚本 |
+| `convert_visdrone_labels.py`、`check_label_adapter.py` | 原八字段标注到YOLO标签的转换及构造校核，保留排除原因 |
+| `prepare_bt1_data.py` | 核验固定train/val ZIP SHA，生成训练和cal48清单、原标注副本及转换日志；拒绝覆盖已有输出 |
+| `baseline_training_spec.json` | BT-1固定配置；不是启动文件，内部平台／进度字段部分过时，实际以运行resolved_args和状态为准 |
+| `run_bt1.py`、`bt1_checkpoint.py` | 普通YOLO11n训练包装、环境／资源检查、轮末恢复包及接续；支持continuous；不是新网络 |
+| `BT1_Cloud_Training.ipynb` | 历史云端交接入口；不代表云端训练已发生 |
+| `check_visdrone_semantics.py`、`run_official_octave_check.m` | 评价语义构造检查和原版代码有限兼容交叉核验 |
+| `diagnose_bt1.py`、`summarize_bt1_diagnosis.py` | BTD1归档、全图／切片预测、弱响应候选与简单对照、小目标匹配 |
+| `analyze_density_residuals.py`、`compare_dedup_density.py` | BTD2/3缓存残差与去重密度对照 |
+| `run_diag500_pair.py`、`fast_stable_nms.py`、`check_fast_nms.py`、`run_fast_pipeline.py` | BTD4–6两规则实测、公共NMS等价加速和整帧复测 |
+| `analyze_conditional_recovery.py`、`finalize_conditional_recovery.py` | BTD7残差、条件收益及失败后的接续归档 |
+| `check_single_crop.py`、`compare_f1280_cache.py` | BTD8/9单片上界、时间测量及F1280缓存强基线比较 |
+| `analyze_f1280_errors.py`、`verify_f1280_errors.py` | BTD11缓存错误分解、独立最大匹配证书和GT修复重评 |
+| `verify_*.py`、`test_bt1_*.py` | 对应运行的输出、集合守恒、等价性、恢复与语义校核；不能等同创新通过 |
+
+普通推理链：图像→固定YOLO11n→全图预测／可选局部窗口→坐标还原→公共去重→忽略区和匹配评价。原局部池使用原图640窗口、步长512；选择策略和片数按各协议固定。缓存分析脚本与真正加载模型的运行分开登记，缓存分析耗时不能称检测速度。
+
+## 4. 数据集、划分与评价口径
+
+VisDrone2019-DET已完成8,629图文件级审计：train 6,471、val 548、test-dev 1,610。三组均可解码，图像标注对应且CRC通过。原包来自Ultralytics公开维护者副本；val与发布方ZIP字节一致，train/test-dev与作者原包逐字身份仍Unknown。学术用途已有审计依据，完整许可／商业使用范围未独立确认。
+
+十类顺序：pedestrian、people、bicycle、car、van、truck、tricycle、awning-tricycle、bus、motor；原类别1–10映射YOLO索引0–9。原八字段标签保留。3条train零高度异常已定位，原文件未改；普通训练转换不具备区域级ignore，删除正标签并不等于屏蔽该区域的负监督。
+
+| 集合 | 已有用途 | 不能怎样解释 |
+|---|---|---|
+| train6471 | BT-1单seed普通训练 | 不能声称来源严格独立、训练ignore已解决 |
+| cal48 | val按SHA256(`diag-v1:`＋图像文件名)排序取前48；训练监控与反复开发 | 不是独立测试或新评分器拟合后的独立评估集 |
+| diag500 | val其余500图；BTD4/6已用于规则验证／测速 | 已属开发证据，不再冒称未接触测试集 |
+| test-dev1610 | 已做静态数据审计，拟保留最终模型评价 | 未开展模型评价；静态审计不等于完全未看过数据 |
+| test-challenge | 无本项目可用公开真值记录 | 不假设可本地评价 |
+
+未发现跨split字节或RGB精确重复，但有34对跨split近重复候选和人工确认的共享场景线索。文件名前缀不是已确认的航次／城市ID；来源组Unknown，不能宣称跨场景独立泛化。
+
+UAV-RSOD历史审计HOLD：原图检测框与增强来源映射仍不足，有split重复问题；作者询问信只是未发送草稿，当前不阻塞VisDrone。见[VisDrone审计](00_Startup_Railway_UAV_Detection/Experiments/A0-05_VisDrone_File_Audit.md)、[UAV-RSOD审计](00_Startup_Railway_UAV_Detection/Experiments/Data_Feasibility_Audit.md)。
+
+评价必须区分：
+
+- 原生训练监控AP：Ultralytics验证器在cal48得到，不冒充VisDrone官方兼容AP。
+- 官方评价语义：工具包提交`005445782213e20cb91bc50a597db3dd949e749a`，忽略区域、排序、类别汇总和maxDets均有特定行为。Python构造24/24与Octave原版有限兼容交叉24/24、差异0；不是MATLAB全域验证或真实模型官方AP结果。
+- BTD小目标诊断：有效GT按既定ignore处理，原图面积0<w×h<1024；固定conf=.25、匹配IoU=.5、公共NMS IoU=.5及每图最多500框。cal48有2720小GT、3619全尺寸有效GT；表内FP如无另注均为全尺寸FP，不能与小TP组成Precision。
+- 时间包含各协议规定的处理链，必须回链具体运行边界。40ms为F1280测得的相对参考，不是业务硬期限；均值、p95、超限率不得混用，也不宣称真实机载部署。
+
+## 5. 模型与训练身份
+
+普通YOLO11n P3–P5，COCO预训练初始化后适配VisDrone十类；未实施LSM-Head，未改Backbone、Loss或候选专用模块。
+
+- 环境：Windows，独立Conda `H:/Conda/envs/UAV_BT1`；Python3.12、Ultralytics8.4.90（提交`07958a70205d1388612bd00f8a2f32cf769d8fed`）、torch2.7.1+cu126、torchvision0.22.1。
+- 训练：GTX1660SUPER 6GiB，imgsz640、batch4、FP32／amp=false、seed0、SGD、100轮。详细超参数看固定JSON及运行快照；诊断通常batch1、FP32。
+- 三段连续覆盖1–3、4、5–100，无缺轮／重复；合计约14.99小时墙钟。断点恢复已核验，不声称与单进程不中断训练逐位等价。
+- 固定取第100轮末轮EMA `last.pt`，不按cal48最佳值选模；框架best及末尾对best的验证输出不替代末轮指标。
+- 权重：`11_Datasets/processed/VisDrone/BT1/BT1-LOCAL-20260913-01/train/weights/last.pt`。
+- SHA256：`bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533`（本次实际复核一致）。
+
+训练和推理框架在外部Conda环境，不是仓库自带；迁移不能只复制脚本后假定环境相同。
+
+## 6. 已完成运行与主要结果
+
+完整编号、协议和状态见[实验跟踪表](00_Startup_Railway_UAV_Detection/Experiments/Experiment_Tracker.md)。以下均为受限开发证据；执行PASS不代表正式门通过。
+
+| 任务／运行 | 实际完成与结论 |
+|---|---|
+| BT1-SMOKE-20260912-01 | 4图1轮、batch1，148.75秒，训练／保存／重载／P3/P4读取PASS；权重不可用作基线 |
+| BT1-LOCAL-20260912-01、02及20260913-01 | 连续完成100轮。末轮cal48原生Precision=.46533、Recall=.34912、mAP50=.34101、mAP50–95=.18591；无正式独立测试 |
+| BTD1-CAL48-20260913-01 | 2720小GT中558个全图漏检可被局部恢复；弱响应候选恢复336，P3-only338，密度429；v0.1转HOLD |
+| BTD2-DENSITY-20260913-01 | 密度遗漏129个可恢复GT：77未覆盖中心、42覆盖但局部未检出、10合并／匹配变化 |
+| BTD3-DEDUP-20260913-01 | cal48去重密度相对原密度小TP1259→1282（补54／丢31），Recall46.29%→47.13%；FP1233→1249；图像配对区间跨0，不能称稳定增益 |
+| BTD4-DIAG500-20260913-01 | 23708小GT；密度／去重小TP11129／11402，净+273、Recall+1.15个百分点。均值90.89／90.21ms；相对61ms参考超限89.80%／89.00%，预算失败 |
+| BTD5-NMS-20260913-01 | 115构造＋432缓存组逐行等价，9504次计时无差异；公共合并约27ms降至约6–7ms。工程加速非创新；资源偏差见下一节 |
+| BTD6-PIPELINE-20260913-01 | 新NMS完整流程3000次输出与BTD4逐值相同；均值51.23／51.25ms，p95 82.63／82.90ms；重校40ms参考超限98.80%／99.07%，预算仍失败 |
+| BTD7-RESIDUAL-20260914-01／02 | 01归档失败，02接续完成。105残差为26未覆盖、67覆盖未检出、12合并／匹配；GT最佳第二片1308对去重1282仅净+26，不支持继续第二片重排为唯一创新 |
+| BTD8-SINGLE-20260914-01 | cal48密度单片1172，GT最佳单片1223；密度K1均值37.36ms、p95 64.51ms，40ms超限20.83%；尾部预算未通过 |
+| BTD9-F1280-20260914-01 | 复用BTD8预测比较，F1280比实际单片更准且更快；当前区域机制HOLD，详见下表 |
+| BTD10 | 书面研究重审，无实验Run ID；定位／分数失配和密集后处理只是观察问题，未形成新创新 |
+| BTD11-ERROR-20260914-01 | 仅缓存分析，1408小FN和839FP完成分解；5.23秒，144最大匹配证书及修复重评通过，无模型调用 |
+| BTD12 | 书面单机制审查，无实验Run ID；尺度条件DFL分布重评分因缺独立创新依据DISMISSED，非实测失败 |
+
+cal48同口径关键比较（conf=.25、IoU=.5）：
+
+| 配置 | 小TP／2720 | 小Recall | 全尺寸FP | 平均整帧／p95 ms |
+|---|---:|---:|---:|---|
+| F640全图 | 840 | 30.88% | 576 | 本批无可直接比较时间 |
+| F640＋密度单片K1 | 1172 | 43.09% | 1051 | 37.36／64.51 |
+| F640＋GT最佳单片 | 1223 | 44.96% | 1038 | 无可部署选择器时间 |
+| F1280全图 | 1312 | 48.24% | 839 | 27.33／41.44 |
+
+F1280仍有6.94%帧次超过40ms参考，不能称硬实时通过。GT逐图选择F1280或最佳单片最多1345小TP，仅比始终F1280净增33；GT最佳单片独有169个目标不等于能净增169。以上不否定所有切片方法，仅限制当前模型、窗口和开发样本上的机制主张。
+
+BTD11低分空间：阈值.25→.10小TP1312→1624，但FP839→2170（+1331）。独立GT修复分数／定位／类别分别补559／142／198，均不丢原小TP；不能相加，也不是可部署方法收益。低分同类IoU符合证据涉及564个漏检；分数修复最大一对一容量560、实际重评559，不混用这些数量。35/48图已截断到500框，缺NMS前轨迹和原始分布，不能推断完全无响应或NMS误删因果。
+
+核心证据：[100轮归档](00_Startup_Railway_UAV_Detection/Experiments/BT1_100_Epoch_Archive.md)、[BTD6](00_Startup_Railway_UAV_Detection/Experiments/BTD6_Pipeline_Result.md)、[BTD9](00_Startup_Railway_UAV_Detection/Experiments/BTD9_F1280_Result.md)、[BTD11](00_Startup_Railway_UAV_Detection/Experiments/BTD11_Error_Structure_Result.md)。
+
+## 7. 失败、否决与恢复记录
+
+- **实际工程失败**：BTD7-01因NumPy int64的JSON序列化失败而归档中断，计算中间集合已保存。BTD7-02只接续归档及缺失统计并通过校核，01保留FAILED和failure.txt，不改写成从未失败。
+- **资源协议偏差**：BTD5未强制实施1GiB内存守卫，单次私有内存1.089GiB、峰值未知；不能称全协议合规。BTD7-01资源样本未落盘、峰值未知；02补有离散采样，不能追补01峰值。
+- **效果／预算负结果**：弱响应v0.1不优于简单密度或P3-only；去重两片虽提高召回，BTD4/6整帧预算未通过；BTD8单片尾部预算未通过；BTD9简单F1280超过当前GT单片上界。
+- **书面否决**：A0-09熵反馈／成本归一化候选DISMISSED；BTD12尺度条件DFL分布评分DISMISSED。前者受顺序收益／成本近邻覆盖，后者受GFLV2分布质量估计和多变量尺寸条件校准覆盖；不是对应新模型训练失败，也不是穷尽全领域。
+- **平台／数据准备阻塞**：Kaggle手机验证未完成，Colab在安装前Python版本检查失败；无云端模型训练。官方train/test-dev下载配额受限后使用维护者副本。A0-05曾因输入尚未组装而静态审计失败，失败目录保留；不算模型失败。
+- **暂停不等于失败**：BT1前两段按安排暂停，之后已正确接续到100轮。旧LSM-Head实验未运行，不写成失败实验。
+
+## 8. 重要技术决定与未解决问题
+
+1. 固定末轮EMA、单检测器和统一后处理隔离变量；F1280必须作为后续机制面对的强简单基线，不把分辨率增加或公共NMS加速包装为创新。
+2. 区域选择不能用GT；oracle仅离线界定空间。GT修复、缓存分析、实际推理和正式测试分开陈述。
+3. 数据来源组Unknown、训练区域ignore偏差、单seed及cal48反复开发限制仍在；diag500也是开发证据。尚无多种子、独立场景或最终test-dev结果。
+4. 当前未找到推理可得、能有效区分低分真小目标和假框且超出直接近邻的新信息机制；“存在GT恢复空间”不能替代这一缺口。
+5. W-0001–W-0014为主矩阵已有审计记录；PASS表示审计通过，用户阅读仍SCREENED而非DONE。SAHI、QueryDet、ESOD、ROI-Gated SAHI、MRU-YOLO、Dynamic Zoom-in、AutoFocus及GFLV2等已有覆盖不能忽略。本文只汇总仓库审计，不重新核验外部文献。
+6. 用户接受中科院小类三区或JCR三区；二者不等价，具体期刊、学院／参评年度和国奖认可仍待核验。没有已确认投稿载体或录用保证。
+7. 无Jetson、TensorRT、真实无人机或机载功耗验证成果。不得从桌面GPU结果推断真实机载可用。
+
+## 9. 迁移、Git与证据可用性
+
+2026-09-15本轮开始时：分支main，HEAD为`fb2d58d8829985a329b0dcb6284bcb8696616e84`；本地origin/main引用相同，本轮未联网刷新远端。**工作区不干净**：README、AGENTS、多个Overview文件及其他已有文件有修改；整个主线A目录和周审计目录尚未跟踪。这些是此前工作，不归因于本次文档任务；不能用旧提交号代表当前实验代码版本，应查运行内脚本快照与SHA。
+
+数据、权重、ZIP和大部分JSON默认被忽略；`baseline_training_spec.json`有显式例外。`.obsidian` JSON已取消跟踪并保留本地。仅克隆GitHub不会取得当前未提交的主线A，更不会取得被忽略的训练数据和实验产物；迁移需要另行保存相应目录、固定环境及哈希清单。本文不代替备份，本次未提交或上传。
+
+原始运行根：`11_Datasets/processed/VisDrone/BT1/<Run ID>/`。关键资产：
+
+- `BT1-LOCAL-20260913-01/train/weights/last.pt`：固定末轮权重。
+- `BTD1-CAL48-20260913-01/baseline_archive/epochs_001_100.csv`：100轮合并记录。
+- `BTD1-CAL48-20260913-01/BT1_100epochs_evidence.zip`：归档包，SHA256 `9419bf3cc870b1e7c940a7075d0092acf11d65711b19165f0d2ea6486cad21b0`，已有报告核验；本次未重新计算此包哈希。它位于同一磁盘，不是异地备份。
+- BTD1–BTD9及BTD11运行目录：预测、逐图集合、统计、协议／代码快照、输入输出SHA和校核；BTD7两次运行均保留。
+
+本次核验范围：完整读取当前入口和实验跟踪，检查关键脚本与报告，定位已有运行目录；实算末轮权重SHA、读取100轮CSV末行、BTD11 status与verification文件，与摘要一致。没有重新运行模型、实验或全量校核，也没有重新逐个计算全部产物哈希。其他历史PASS按对应已保存报告陈述。
+
+部分README、Stage_Guide、Experiment_Plan和配置内保留“未运行100轮”“下一项云端训练”“diag500未访问”等历史文字；最新页首和实际结果已明确替代。不要据此重跑。Seven_Paper_Roadmap的前置论文链接仍指旧目录；当前主线A位置以AGENTS及Current_Stage为准。本轮不顺手重写这些历史材料。
+
+## 10. 后续维护规则
+
+每次目标／边界／阶段或授权变化，数据／划分／指标／模型／代码接口变化，运行完成／失败／恢复，关键负结果或技术决定出现时，在同一次任务收尾更新本文件；无需等待用户重复要求。先更新事实所属的计划、跟踪表或结果报告，再修改这里的对应摘要、日期和证据链接。
+
+保持简明：只保留理解与接续必要的身份、结论、局限及路径，不复制大量代码、日志或文献正文。过时计划明确标为历史；失败保留；未验证写Unknown／待核验；不把PASS、HOLD、DISMISSED混为同一含义。每次更新复核本地链接、数字的集合／单位和Git状态；不因维护本文自动提交、推送、开启实验或安排后台任务。
+
+接手会话先读本文，再读Current_Stage和AGENTS并检查Git；按需要打开实际证据。没有用户／导师新的方向决定前，只支持当前决定所需的材料整理与讨论，不自动创建新候选或运行任务。
+
+
+==================== 00_Practice_UAV_Aerial_Detection\Research_Plan.md ====================
+# 练手论文研究计划：无人机航拍主线A
+
+更新：2026-09-14。BTD12单机制审查已完成：尺度条件DFL分布统计重评分候选DISMISSED，GFLV2与多变量校准已覆盖核心关系，尚无独立机制差异；这是书面否决，非实测失败。100轮及BTD1–BTD11完成且不重跑。当前返回论文主张与投入方向决策，停止自动候选开发／新模型运行，不创建BTD13。旧区域机制及A0整体HOLD。 见[BTD12审查](Literature/BTD12_Low_Score_Candidate_Review.md)。
+
+详细证据以[当前阶段](../00_Overview/Current_Stage.md)为准；下方未同步的旧准入措辞只记录历史前提，不触发重复执行。
+
+## 1. 当前问题与边界
+
+**面向无人机航拍的时间预算约束小目标检测。** 在固定整帧处理时间内，分配局部高分辨率计算，提高已知小目标检出，控制区域选择漏检与超时。保留无人机、实时性和小目标；实时性需实机完整测速证明，不预设FPS。
+
+单目RGB、无人机视角、已知类别二维检测。轨道走廊不再是输入或计算分配前提，不要求铁路障碍物标签，不由通用航拍结果推断铁路安全效果。未知发现、风险决策、通信、三维、多模态、强化学习、多机协同均不开展；不增加注意力、损失、增强、蒸馏或剪枝等第二项改动。七篇论文路线、Paper 1两项主张及Paper 2–7暂停状态保持。
+
+## 2. 原区域机制的两个问题（HOLD，保留追踪）
+
+| ID | 候选问题 | 可证伪条件 |
+|---|---|---|
+| P0-A-C1 | 同整帧预算下，区域计算分配能否优于整图、增大输入、均匀切片及简单区域选择？ | 同预算无稳定收益，或直接近邻已覆盖且无增量 |
+| P0-A-C2 | 能否控制区域选择引入的漏检，并满足声明的整帧预算协议？ | 区域获取开销抵消收益、未选区漏检过多或回退造成超时 |
+
+沿用ID以追踪范围调整；两项是同一机制的效果与失败边界，均未成立。已有SAHI、QueryDet、ESOD、ROI-Gated SAHI、MRU-YOLO覆盖局部／稀疏计算与若干选择机制，High风险不变。撤去轨道先验后要重新证明剩余差异；不能以换成VisDrone命名创新。见[近邻比较](Literature/Mainline_A_Prior_Work_Comparison.md)和[创新台账](../00_Overview/Innovation_Ledger.md)。
+
+## 3. 当前阶段与数据门
+
+仍为A0，整体HOLD。按用户批准的受限开发路径，本机100轮普通基线及cal48固定对照已完成。当前跨尺度弱响应v0.1转HOLD，后处理等价校核、单片上界及整图1280对照均已完成。BTD10两项替代切入点仅为问题观察，尚未改变原机制主张或开放新的训练／损失／结构修改。BTD11已完成，低分输出存在可见空间但尚无可实现区分方法；BTD12已完成并否决具体评分候选；下一项为论文主张与投入方向决策。学习作答不是执行门。
+
+优先VisDrone2019-DET，核实train/val/test-dev的实际来源、版本、学术使用条件、校验值、图像与原始检测标签；统计有效框、忽略区域、类别、小目标尺寸及跨split重复／来源信息。test-dev拟保留最终评测，不能用于策略或checkpoint选择；test-challenge无公开真值，不假设可本地评价。
+
+原包存入被忽略的`11_Datasets/raw/VisDrone/`，处理产物存`11_Datasets/processed/VisDrone/`。保留原始八字段标注，不用测试标签指导选区。原先“不把score=0或忽略区直接转成普通背景”的要求，在[训练接口报告](Experiments/Training_Interface_Audit.md)中已查明标准框架的限制：不能声称删除正标签保留了区域忽略；普通基线准备提案须披露负监督偏差并统一各对照，严格忽略训练方案尚未落实，训练协议仍未冻结。当前允许静态审计和人工输入的无模型接口核验，不允许训练、检测推理、网络修改、部署、补标或冻结训练划分。
+
+## 4. 后续阶段
+
+正式路线仍为A0通过后进入A1必要知识与协议、A2基线诊断、A3单机制、A4正式实验、A5写作。2026-09-11已选受限探索路径例外：可在A0内准备诊断，满足专项准入条件后才允许val开发观察，不能据此宣布A0整体或正式实验门通过。见[阶段指南](Stage_Guide.md)及[专项准入](Experiments/Diagnostic_Admission_Review.md)。
+
+完整耗时包括区域获取、裁剪缩放、传输、全部检测、坐标还原与合并；报告均值、p95与超预算比例。轻量性以实际计算和资源成本检查，不限定必须设计轻量网络，也不以GFLOPs替代真实速度。
+
+## 5. 停止条件与投稿要求
+
+标签不可取得、评价协议不可信、小目标证据不足或方法已被覆盖时，暂缓实现。数据获取与方法新颖性是两个独立门；不因官方数据可下载就启动训练。不自动转向其他方向或增加模块。
+
+用户已接受中科院小类三区或JCR三区作为候选投稿范围；两体系不等价。西南交通大学国家奖学金认可、学院／参评年度及具体分区版本仍待核验，不承诺期刊、提升幅度或录用。
+
+## 6. 历史材料
+
+[铁路版主线A计划](Research_Plan_Railway_A0_History.md)只作历史记录，其任务和走廊要求不再指导当前执行。UAV-RSOD的A0-01/A0-02保持原有HOLD；A0-03询问信未发送，已退出当前关键路径。LSM-Head及六个旧P编号仍退出执行，不复用编号；所有原学习记录及失败／未运行证据保留。
+
+
+==================== 00_Practice_UAV_Aerial_Detection\Stage_Guide.md ====================
+> **2026-09-16：** 当前执行以 [Current_Stage.md](../00_Overview/Current_Stage.md) 与 [Completion_Metrics.md](Completion_Metrics.md) 为准。下文保留历史阶段门叙述，不自动触发重跑。
+
+# 主线A阶段指南
+
+更新：2026-09-14。BTD12单机制审查已完成：尺度条件DFL分布统计重评分候选DISMISSED，GFLV2与多变量校准已覆盖核心关系，尚无独立机制差异；这是书面否决，非实测失败。100轮及BTD1–BTD11完成且不重跑。当前返回论文主张与投入方向决策，停止自动候选开发／新模型运行，不创建BTD13。旧区域机制及A0整体HOLD。 见[BTD12审查](Literature/BTD12_Low_Score_Candidate_Review.md)。
+
+详细证据以[当前阶段](../00_Overview/Current_Stage.md)为准；下方未同步的旧准入措辞只记录历史前提，不触发重复执行。
+
+2026-09-12历史平台约定（已由本机执行及100轮完成状态替代）：只先用Kaggle，每轮保存恢复包、每5轮保留副本、默认约60分钟轮末暂停并封存平台输出；Kaggle额度耗尽且旧会话停止后才转Colab续训。目前Kaggle手机验证未完成，尚无云端模型训练。此约定替代旧“二选一／不允许恢复”描述；本机完成项不重跑，详见当前阶段与BT1交接报告。
+更新：2026-09-12。用户已批准BT-1并指定Conda本机小参数预检后转云端；本机预检PASS。下一项恢复云端账号连接并运行普通基线，已授权范围不再次确认；受限例外见本文件末节。
+
+## A0：可行性审查
+
+授权：研究计划调整；直接近邻全文审计；许可核验后的VisDrone审计下载及只读分析；投稿适用性核验；用人工构造框进行无模型的评价工具核验，不读取真实测试数据作调参。
+禁止：模型训练、检测推理实验、网络修改、部署、补标、冻结训练划分。
+
+完成交付：
+- 入口、研究计划、实验预案、写作提纲和创新台账一致；
+- 直接近邻有原文定位，明确已覆盖机制和未证实差异；
+- 数据来源／许可／版本／校验／标注／来源独立性／小目标数量／选区输入条件有证据或Unknown；
+- 给出继续／暂缓结论和单一后续任务。
+
+**交付完整不等于可行性通过。** 任一关键门缺证据则保持HOLD，补证据，不进入A1后的模型工作。停止条件见[研究计划](Research_Plan.md)第5节。
+
+## A0内受限探索路径（2026-09-11用户选择）
+
+在来源组Unknown时按已批准BT-1及2026-09-13漏检诊断例外执行受限探索。100轮与cal48诊断均已完成；当前v0.1候选HOLD，密度归因与去重对照已完成，diag500验证已完成；下一项为公共后处理等价校核。一般A0模型禁止条款不撤销上述已授权、已完成运行；正式A2/A3、test-dev、网络修改和部署未开放。
+
+实际val开发诊断必须先满足[专项准入](Experiments/Diagnostic_Admission_Review.md)中的评价、权重、检测环境、固定清单与运行登记条件，再由证据将运行状态置READY。当前条件未齐，禁止检测推理。来源例外仅限受限开发配对观察，不构成来源门PASS；禁止据此开展正式训练、test-dev模型评价、网络修改或部署。正式论文主张及来源审查仍按原门执行。与上述一般A0顺序冲突时，仅此受限条款优先。
+
+## A1：诊断协议与辅助学习（A0通过后）
+
+学习支持线按需提供检测链、切片回映、数据泄漏、评价与计时材料，用户后续完成。S0-01状态保持未通过，但不作为AI执行本项目科研的门；技术协议正确性由可复核证据验证。
+
+本阶段只规划最小复现／基线诊断的固定条件。确认环境、原始来源分组、校准集与测试集隔离、实际硬件预算。学习索引见[主线A按需知识链](Learning_Notes/07_Mainline_A_Knowledge_Chain.md)。
+
+## A2：基线诊断（未开放）
+
+登记新Run ID后才允许最小代码复现和模型运行；是否需要训练依据冻结协议，不能默认启动正式训练。比较整图、提高分辨率、均匀切片、简单区域选择、直接近邻；分清选择损失与检测器损失，完整记录整帧耗时。
+
+完成门：确定实际瓶颈；有同预算公平证据；有可被证伪的差异。如果简单基线已足够、无增量或无法独立评测，暂缓。不得为了实现而实现。
+
+## A3：单一机制冻结与最小实现（未开放）
+
+依据A2证据冻结一个计算分配机制和最多两项主张，再确定最小实现、对照和止损条件。LSM-Head、额外模块、B/C方向不会自动重新启用。
+
+## A4：正式实验与结果分析（未开放）
+
+冻结数据、训练／推理协议和测试集；多次运行及按来源组评估不确定性；报告精度、漏检、区域覆盖、延迟分布及失败边界。所有数字回链Run ID。
+
+## A5：写作与投稿（未开放）
+
+证据冻结后写作；核验学院／年度成果认定、期刊分区版本及排除名单。不得预设录用结果。
+
+## 历史学习与实验状态
+
+S0-01 YOLO完整检测链：**未通过**。已有输入、Backbone等用户初稿保留，IoU/Precision/Recall/NMS手算与闭卷验收未完成。其他学习笔记不因换方向变为DONE。
+
+旧阶段0–7、六笔记前置门、LSM-Head与B0/B1/B2/M流程已由本指南替代，不再约束当前A0审计；其原文保留在Git历史。P000至P021中的六条旧记录全部未运行、BLOCKED并退出执行。
+
+## 2026-09-12用户明确批准的BT-1执行例外
+
+用户批准方案，指定独立Conda环境、本机可调低参数（batch1）先跑通，再连接Colab或Kaggle运行云端基线。本次授权优先于历史禁止及待批准描述；本机仅最小预检，完整训练转云端。数据来源／ignore局限已随BT-1披露，学习不是执行门。不包含付费购买、test-dev评价或新增网络模块。以Current_Stage和实际运行跟踪为准。
+
+
