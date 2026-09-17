@@ -2,6 +2,9 @@
 
 本台账用于[每周文献审计](Literature_Tracking_Workflow.md)的证据联动，不替代研究计划，不确认创新成立，不增加主张。初始化日期2026-09-07；下列已有工作判断仅转录当前仓库矩阵，未在本轮重新核验原文。新论文通过审计后，所有直接受影响条目必须更新四个英文命名字段并追加变化记录。
 
+
+2026-09-16变更：用户采用近程 EI 会议稿路线。新增 P0-EI-C1／P0-EI-C2（PROPOSED，非新算法）。P0-A-C1／C2 保持 HOLD。不删除旧行。
+
 2026-09-10变更：用户授权P0切换主线A。旧P0-C0-1/2及其历史证据保留，下面对应两行四字段是旧判断，不再指导执行。P1两项主张及P2–7状态不变。
 
 ## 候选创新与来源
@@ -12,6 +15,8 @@
 | P0-C0-2 | P0 | 理论轻量化转化为真实推理速度 | [研究计划](../00_PrePaper_Lightweight_Detection/Research_Plan.md) C0-2 | 历史方案：2026-09-10退出执行，未验证 |
 | P0-A-C1 | P0 | 同整帧时间预算下提高无人机航拍已知小目标检出 | [主线A计划](../00_Startup_Railway_UAV_Detection/Research_Plan.md) | 当前区域机制HOLD；BTD9强基线挑战成立，未形成替代创新 |
 | P0-A-C2 | P0 | 区域选择漏检与端到端预算控制 | 同一计算分配机制的失败边界 | HOLD；非独立创新，不再自动扩展旧选区方案 |
+| P0-EI-C1 | P0 | 固定 YOLO11n 与已声明预算口径下，整图1280比当前密度单片更准且更快（协议／对比，非新算法） | [Mainline_A_Current](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md)；cal48／F1280／密度单片已有证据 | PROPOSED；2026-09-16 采用；指导近程 EI 稿 |
+| P0-EI-C2 | P0 | 区域分配可恢复空间≠可部署增益；须同时报告超时率与选择漏检（协议／对比，非新算法） | 同上；BTD1–7、BTD11；GT 选择净增33 | PROPOSED；2026-09-16 采用；指导近程 EI 稿 |
 | P1-C1 | P1 | 已知＋未知双路径在固定告警预算下提高危险召回 | [研究计划](../01_Paper1_OpenWorld_Risk/Research_Plan.md) C1 | 暂定，执行等待练手论文 |
 | P1-C2 | P1 | 轨道上下文风险排序提高告警决策价值 | [研究计划](../01_Paper1_OpenWorld_Risk/Research_Plan.md) C2 | 暂定，执行等待练手论文 |
 
@@ -23,6 +28,8 @@
 | P0-C0-2 | L3-02 EUAVDet；真实速度规范待补 | 已有边缘设备FPS证据，不能只比GFLOPs | 固定硬件、输入、batch和计时边界下，共享头是否改善延迟仍待验证 | Unknown；部署测速本身不是默认创新 | [练手矩阵](../00_PrePaper_Lightweight_Detection/Literature/Literature_Matrix.md)；2026-09-07，仓库转录 |
 | P0-A-C1 | W-0002–W-0009区域近邻；W-0011小框度量；W-0013分布质量／W-0014条件校准；BCDet HOLD | 区域收益排序、小框度量已有；分布统计质量评分及尺寸条件校准亦已有 | BTD11低分GT修复补559仅为诊断；BTD12具体评分式没有已证独立机制差异，DISMISSED；新论文主张待决，不自动再试 | High；旧区域机制HOLD，新评分候选否决，换检测器或拟合形式不足以支持新颖 | [BTD12](../00_Startup_Railway_UAV_Detection/Literature/BTD12_Low_Score_Candidate_Review.md)；2026-09-14 |
 | P0-A-C2 | W-0005/7/8/9；W-0010诊断参考、W-0012后处理近邻 | 全局保护、有限片数与回退已有；错误分解、密度自适应NMS已有 | 完整计时已做，当前区域路线无优势；缺F1280 NMS前轨迹，最终输出无法确证误删；BTD11已完成缓存筛查；35图截断，41个高GT重叠小目标不足以直接确证NMS瓶颈 | High；HOLD，预算计时或密度调阈值本身不是新机制 | [BTD10](../00_Startup_Railway_UAV_Detection/Research_Question_Reassessment_BTD10.md)、[W-0012](../00_Startup_Railway_UAV_Detection/Literature/W-0012_Audit.md)；2026-09-14 |
+| P0-EI-C1 | 整图高分辨率与切片／选区近邻（仓库已有审计） | 本仓库 cal48 上 F1280 与密度单片对照已完成 | 会议披露口径、4090 同口径时间表是否补测、test-dev 终评是否需要 | Medium；主张是协议比较不是新检测头 | [Mainline_A_Current](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md)；2026-09-16 |
+| P0-EI-C2 | 预算／选区失败边界类近邻 | BTD 诊断已显示可恢复空间与超时／漏检张力 | 不得把 oracle／低分修复写成方法精度；须联合报告超时率与选择漏检 | Medium；失败边界主张 | 同上；2026-09-16 |
 | P1-C1 | T2-01 ROSD；T2-02/T2-03强基线；T2-07未知路径候选；W-0001/W-0006仅已知检测参考 | 铁路开放集检测、通用开放世界及VLM OOD已有工作 | 固定告警预算下铁路危险召回仍待核验；W-0001/W-0006不提供未知／告警证据 | High（沿用原风险；2026-09-10补入已知路径参考，未改变主张） | [Paper 1矩阵](../01_Paper1_OpenWorld_Risk/Literature/Literature_Matrix.md)；2026-09-10增补边界，保留2026-09-07旧证据 |
 | P1-C2 | T1-01、T3-02、T3-03；W-0001仅分割数据参考 | 轨道距离、边界、危险分级和风险量化已有直接工作 | 未知候选＋轨道上下文＋告警排序增量仍待核验；W-0001分割真值不提供风险标注 | High（沿用原风险；2026-09-10只补数据边界） | [Paper 1矩阵](../01_Paper1_OpenWorld_Risk/Literature/Literature_Matrix.md)；2026-09-10增补边界，保留2026-09-07旧证据 |
 
