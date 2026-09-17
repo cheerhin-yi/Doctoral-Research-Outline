@@ -150,3 +150,4 @@ BTD11-ERROR-20260914-01结果：READY→RUNNING→DONE，缓存审计及独立�
 
 | P0-BENCH-D-TESTDEV-20260917-01 | D | VisDrone test-dev one-shot x5 methods (Ultralytics-mirror local GT; VisDrone-compatible eval; NOT official leaderboard) | GTX 1660 SUPER | H:/Conda/envs/UAV_BT1 | DONE / PASS | Experiments/P0_Benchmark/stage_d/P0-BENCH-D-TESTDEV-20260917-01/ |
 | P0-BENCH-E-UAVDT-20260917-01 | E | UAVDT external one-shot (optional) | GTX 1660 SUPER | H:/Conda/envs/UAV_BT1 | BLOCKED — UAVDT absent on host; mapping pre-registered | Experiments/P0_Benchmark/stage_e/ |
+| P0-BENCH-F-TESTDEV-20260917-01 | F | Image-level Wilcoxon+bootstrap+Holm on Stage D test-dev | GTX 1660 SUPER (stats only) | H:/Conda/envs/UAV_BT1 | DONE / PASS | Experiments/P0_Benchmark/stage_f/P0-BENCH-F-TESTDEV-20260917-01/; P0_Benchmark_StageF_Paired_Stats_Report.md |
