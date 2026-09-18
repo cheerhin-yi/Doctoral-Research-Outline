@@ -1,19 +1,20 @@
 # Stage E — External validation channel decision
 
-- **Date:** 2026-09-17 Asia/Shanghai
-- **E_STATUS: BLOCKED**
-- **Reason:** Target external set **UAVDT** is **not present** on this machine under 11_Datasets/ (raw/processed/external scanned; no UAVDT tree/ZIP).
-- **Not used as substitute:** UAV-RSOD remains **A0-02 HOLD** (augmented package only; original 315-image GT/mapping Unknown). Using it would violate Stage E discipline and prior HOLD.
-- **No scatter-search** of new datasets in this step (protocol + memory).
-- **No download** executed (needs explicit path or download authorization).
-- **No inference / no metrics** until channel READY.
+- **Date:** 2026-09-18 Asia/Shanghai
+- **E_STATUS: READY**
+- **Unblocked by:** Author UAVDT pack on `G:\Schloar Data\UAVDT\` layout PASS (50 sequences / 40735 frames / 50 `*_gt_whole.txt`).
+- **Weight:** frozen VisDrone `last.pt` SHA256 `bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533` — **no** UAVDT fine-tune.
+- **Mapping:** `class_mapping_preregister.json` FROZEN before any Stage E scores.
+- **Ignore policy (frozen):** do **not** invent VisDrone-style ignore masks; official `*_gt_ignore.txt` not applied.
+- **Evaluator:** VisDrone-compatible `prepare_gt`/`match_gt` on mapped vehicle subset — **not** official UAVDT MATLAB AP / not SOTA.
 
-## What READY requires
+## READY gates (checked 2026-09-18)
 
-1. Legal local UAVDT DET images + GT (or user-authorized download + SHA freeze), and
-2. Frozen VisDrone→UAVDT class mapping **before** any predictions (see class_mapping_preregister.json), and
-3. Same frozen last.pt (no fine-tune), five methods one-shot, VisDrone-compatible matcher on mapped subset only.
+1. Local UAVDT DET images + whole GT — PASS
+2. Frozen VisDrone→UAVDT class mapping before predictions — PASS
+3. Same frozen last.pt, five methods one-shot — authorized; runner `run_stage_e_oneshot.py`
 
-## Intention of Stage E (when unblocked)
+## Smoke (2026-09-18)
+- PASS P0-BENCH-E-UAVDT-20260918-01 max-images=24 wall≈58s
+- Methods F640/F1280/DensK1/UnifAll/SAHI640 all produced metrics
 
-Trend check under domain shift for frozen strategies — **not** UAVDT SOTA claim.
