@@ -1,5 +1,20 @@
 # 练手论文实验跟踪表
 
+## P0 Benchmark Stage E (P0-BENCH-E-UAVDT-20260918-FULL) — DONE / PASS
+
+| Run ID | Stage | Goal | Hardware | Env | Status | Artifacts |
+|---|---|---|---|---|---|---|
+| P0-BENCH-E-UAVDT-20260918-FULL | E | UAVDT external one-shot ×5 methods (frozen VisDrone `last.pt` + frozen class map; VisDrone-compatible matcher; not official MATLAB AP) | GTX 1660 SUPER | H:/Conda/envs/UAV_BT1 | DONE / PASS | `P0_Benchmark/stage_e/P0-BENCH-E-UAVDT-20260918-FULL/`; [Stage E report](P0_Benchmark/P0_Benchmark_StageE_UAVDT_Report.md) |
+| P0-BENCH-E-UAVDT-20260918-01 | E | smoke 24 images before full | GTX 1660 SUPER | H:/Conda/envs/UAV_BT1 | DONE / PASS | `P0_Benchmark/stage_e/P0-BENCH-E-UAVDT-20260918-01/` |
+
+Hypothesis: coarse protocol trend (F640 weakest small_recall; higher-res/tiling lifts recall at precision/cost) transfers VisDrone→UAVDT under frozen weights.
+Frozen: weight SHA `bc42d54e...`, mapping `class_mapping_preregister.json` FROZEN_PRE_RESULTS, conf=0.25, IoU=0.5, small=`0<w*h<1024`, ignore not invented.
+Headline small_recall: F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708 (n=40735, wall≈4.76h).
+Cross-set: trend consistent with Stage D; five-method rank not fully stable (UnifAll topped D; F1280 tops E).
+Stopping: one-shot full eval DONE; no train; no mapping edit.
+
+---
+
 
 ## P0 Benchmark Stage C (P0-BENCH-C-CAL48-20260917-01)
 
