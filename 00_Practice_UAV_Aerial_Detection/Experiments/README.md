@@ -1,29 +1,39 @@
-# Experiments（练手文）
+# Experiments（论文实验区）
 
-**默认只读／HOLD：** 不新训、不新建 BTD 编号、不改网络。已有结果与脚本保留作证据。
+> 规则（强制）：按 **论文槽位** 组织：`papers/<PaperID>/`。  
+> 根目录禁止堆积脚本、诊断 MD、notebook、预测缓存。  
+> 当前活跃：`papers/P0_EI/`。
 
-## 分类索引（文件仍在本目录，避免打断相对链接）
+## 目录层级
 
-### 计划与跟踪
-- `Experiment_Plan.md` · `Experiment_Tracker.md`
-- `Restricted_Baseline_Training_Plan.md` · `Diagnostic_Admission_Review.md`
+```text
+Experiments/
+  README.md
+  00_Index.md
+  _templates/
+  papers/
+    P0_EI/
+      00_freeze/
+      01_visdrone_main/
+      02_paired_stats/
+      03_cross_uavdt/
+      04_timing/
+      05_packaging/
+```
 
-### A0 可行性／数据／评价
-- `A0-01` … `A0-08`（书面任务）
-- `Data_Feasibility_Audit.md` · `VisDrone_Feasibility_Audit.md`
-- `Label_Adapter_Check.md` · `Training_Interface_Audit.md` · `Weight_Source_Audit.md`
-- `Official_Runtime_Crosscheck.md`
+## 每篇论文实验槽最低要求
 
-### BT1 基线训练
-- 文档：`BT1_*.md`
-- 脚本：`run_bt1.py` · `prepare_bt1_data.py` · `bt1_checkpoint.py` · `diagnose_bt1.py` · `preview_bt1.py` · `summarize_bt1_diagnosis.py` · `test_bt1_*.py` · `BT1_Cloud_Training.ipynb` · `baseline_training_spec.json`
+| 子目录 | 放什么 |
+|---|---|
+| `00_freeze/` | 权重哈希、环境、类别映射、方法定义 |
+| `01_*_main/` | 主数据集终评报告 + `data/summary.json` 等 |
+| `02_stats/` | 统计检验（若有） |
+| `03_cross_*` / `04_timing/` / `05_packaging/` | 按主张增减；命名保持语义清晰 |
 
-### BTD 诊断（2–9、11）
-- 协议／结果：`BTD*_*.md`
-- 相关脚本：`analyze_*.py` · `compare_*.py` · `run_diag500_pair.py` · `run_fast_pipeline.py` · `verify_*.py` · `check_*.py` · `fast_stable_nms.py` · `finalize_conditional_recovery.py` 等
+## 明确删除/迁出的类型（本清理已执行）
 
-### 数据获取
-- `acquire_visdrone.py` · `fetch_visdrone_mirror.py` · `convert_visdrone_labels.py` · `analyze_visdrone.py` · `analyze_uav_rsod.py` · `audit_uav_rsod.py` · `check_uav_rsod_sources.py`
-- `run_official_octave_check.m`
+- BT1 / BTD* 训练与诊断过程文、A0 可行性长文、根目录分析脚本与 notebook  
+- `P0_Benchmark/**/preds/*.npy`、smoke 跑、Ultralytics cache、`__pycache__`  
+- 解释性选包指南、已撤销训练轨长文  
 
-缩写见 [`../../99_Attachments/Abbreviation_Glossary.md`](../../99_Attachments/Abbreviation_Glossary.md)。
+上述内容在：`_Archive_20260923_PreP0_Cleanup/Experiments/`。

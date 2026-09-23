@@ -1,0 +1,20 @@
+{
+  "run_id": "P0-BENCH-B-TIMING-20260917-01",
+  "weight": "D:\\Doctoral-Research-Outline\\11_Datasets\\processed\\VisDrone\\BT1\\BT1-LOCAL-20260913-01\\train\\weights\\last.pt",
+  "weight_sha256": "bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533",
+  "cal_list": "D:\\Doctoral-Research-Outline\\11_Datasets\\processed\\VisDrone\\BT1\\full_data_v2\\cal48.txt",
+  "cal_sha256": "b0e27b1dc10d952a927597022a1fe0cfa52714d45a89e4c3f36880c2a4a68e7f",
+  "conf_keep": 0.25,
+  "iou_nms": 0.5,
+  "max_det": 500,
+  "methods": [
+    "F640",
+    "F1280",
+    "DensK1",
+    "UnifAll",
+    "SAHI640"
+  ],
+  "reps": 3,
+  "timing_boundary": "decoded_image_to_final_eval_ready_dets_with_cuda_sync",
+  "hardware_role": "pipeline_bringup_on_local_GPU; formal 4090 table later"
+}

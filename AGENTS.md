@@ -17,7 +17,7 @@
   9. `00_Practice_UAV_Aerial_Detection/Stage_Guide.md`
   10. `00_Practice_UAV_Aerial_Detection/Literature/matrices/Literature_Matrix.md`
   11. `00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Plan.md`
-  12. `00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md`
+  12. `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md`
 - `Paper_Reading_Guide.md`已经承担发表载体筛选和阅读等级职责；练手论文的具体文献状态以`Literature_Matrix.md`为准。
 - 同一任务内已经完整读取且未变化的文件不重复全文读取；先用Git状态确认变化，再复核发生变化或当前任务直接相关的文件。
 - 英语任务额外读取`90_English_Learning/README.md`及对应课程和进度文件；Paper 1任务额外读取`01_Paper1_OpenWorld_Risk/`中的入口、研究计划和阶段指南。

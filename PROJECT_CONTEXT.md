@@ -109,7 +109,7 @@ UAV-RSOD历史审计HOLD：原图检测框与增强来源映射仍不足，有sp
 
 ## 6. 已完成运行与主要结果
 
-完整编号、协议和状态见[实验跟踪表](00_Startup_Railway_UAV_Detection/Experiments/Experiment_Tracker.md)。以下均为受限开发证据；执行PASS不代表正式门通过。
+完整编号、协议和状态见[实验跟踪表](00_Startup_Railway_UAV_Detection/Experiments/papers/P0_EI/Run_Index.md)。以下均为受限开发证据；执行PASS不代表正式门通过。
 
 | 任务／运行 | 实际完成与结论 |
 |---|---|

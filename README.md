@@ -2,7 +2,7 @@
 
 # 轨道交通无人机智能巡检博士研究项目
 
-更新：2026-09-14。BTD12单机制审查已完成：尺度条件DFL分布统计重评分候选DISMISSED，GFLV2与多变量校准已覆盖核心关系，尚无独立机制差异；这是书面否决，非实测失败。100轮及BTD1–BTD11完成且不重跑。当前返回论文主张与投入方向决策，停止自动候选开发／新模型运行，不创建BTD13。旧区域机制及A0整体HOLD。 见[BTD12审查](00_Practice_UAV_Aerial_Detection/Literature/reviews/BTD12_Low_Score_Candidate_Review.md)。
+更新：2026-09-14。BTD12单机制审查已完成：尺度条件DFL分布统计重评分候选DISMISSED，GFLV2与多变量校准已覆盖核心关系，尚无独立机制差异；这是书面否决，非实测失败。100轮及BTD1–BTD11完成且不重跑。当前返回论文主张与投入方向决策，停止自动候选开发／新模型运行，不创建BTD13。旧区域机制及A0整体HOLD。 见[BTD12审查](00_Practice_UAV_Aerial_Detection/Literature/papers/P0_EI/BTD12_Low_Score_Candidate_Review.md)。
 
 详细证据以[当前阶段](00_Overview/Current_Stage.md)为准；下方未同步的旧准入措辞只记录历史前提，不触发重复执行。
 

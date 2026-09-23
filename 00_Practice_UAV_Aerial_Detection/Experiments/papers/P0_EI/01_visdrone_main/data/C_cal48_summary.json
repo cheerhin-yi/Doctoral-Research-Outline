@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "split": "cal48_development_evidence",
+  "n_images": 48,
+  "F640": {
+    "tp": 1492,
+    "fp": 576,
+    "precision": 0.7214700193423598,
+    "small_tp": 840,
+    "small_gt": 2720,
+    "small_recall": 0.3088235294117647
+  },
+  "F1280": {
+    "tp": 2010,
+    "fp": 839,
+    "precision": 0.7055107055107055,
+    "small_tp": 1312,
+    "small_gt": 2720,
+    "small_recall": 0.4823529411764706
+  },
+  "DensK1": {
+    "tp": 1857,
+    "fp": 1051,
+    "precision": 0.6385832187070152,
+    "small_tp": 1172,
+    "small_gt": 2720,
+    "small_recall": 0.4308823529411765
+  },
+  "UnifAll": {
+    "tp": 2110,
+    "fp": 1572,
+    "precision": 0.5730581205866377,
+    "small_tp": 1367,
+    "small_gt": 2720,
+    "small_recall": 0.5025735294117647
+  },
+  "SAHI640": {
+    "tp": 1345,
+    "fp": 1928,
+    "precision": 0.410937977390773,
+    "small_tp": 749,
+    "small_gt": 2720,
+    "small_recall": 0.27536764705882355
+  }
+}

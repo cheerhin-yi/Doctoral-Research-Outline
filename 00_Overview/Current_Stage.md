@@ -1,5 +1,8 @@
 # 当前阶段（唯一入口）
 
+> **目录纪律（2026-09-23）**：文献与实验仅按 papers/<PaperID>/ 槽位填写。P0 入口：Literature/papers/P0_EI/、Experiments/papers/P0_EI/。旧材料见 ARCHIVE_NOTE.md。
+
+
 更新：2026-09-20（Asia/Shanghai）。
 
 本文件是全项目**唯一当前事项入口**。与源文件冲突时，以本页与 [`Research_Question_Decision_2026-09-16.md`](../00_Practice_UAV_Aerial_Detection/Research_Question_Decision_2026-09-16.md) 为准。
@@ -8,7 +11,7 @@
 |---|---|
 | 练手现行目录 | [`00_Practice_UAV_Aerial_Detection/`](../00_Practice_UAV_Aerial_Detection/README.md) |
 | 主线 A 当前执行 | [`Mainline_A_Current.md`](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md) |
-| P0 Benchmark | [`Experiments/P0_Benchmark/`](../00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/) |
+| P0 Benchmark | [`Experiments/papers/P0_EI/`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/) |
 | UAVDT（G 盘） | `G:\Schloar Data\UAVDT\`（布局 PASS：50 序列／40735 帧／50×`*_gt_whole.txt`） |
 | T4 过程目录（G 盘，仅历史过程件） | `G:\Schloar Data\P0_T4_Train\`（**训练轨已撤回**，不再开训） |
 
@@ -29,7 +32,7 @@ Paper 2–7 仍 **PAUSED**。机制主张 P0-A-* 仍 **HOLD**。
 | 项 | 状态 |
 |---|---|
 | A–D／F（冻结 `last.pt`，1660SUPER） | **PASS** |
-| E UAVDT 五方法同权推理＋评估 | **DONE／PASS**（`P0-BENCH-E-UAVDT-20260918-FULL`，40735 图；报告 [`P0_Benchmark_StageE_UAVDT_Report.md`](../00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/P0_Benchmark_StageE_UAVDT_Report.md)） |
+| E UAVDT 五方法同权推理＋评估 | **DONE／PASS**（`P0-BENCH-E-UAVDT-20260918-FULL`，40735 图；报告 [`P0_Benchmark_StageE_UAVDT_Report.md`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/P0_Benchmark_StageE_UAVDT_Report.md)） |
 | T4／Kaggle 训练轨 | **已撤回**；无新权重 |
 | 4090 正式时序 | 仍缺；与 1660 分列披露 |
 

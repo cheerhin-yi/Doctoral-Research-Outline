@@ -1,0 +1,24 @@
+{
+  "run_id": "P0-BENCH-D-TESTDEV-20260917-01",
+  "decided_at": "2026-09-17T14:14:35",
+  "channel": "READY Case1+Case3 Ultralytics-mirror test-dev local GT + VisDrone-compatible Stage-C matcher",
+  "not_official_leaderboard": true,
+  "methods": [
+    "F640",
+    "F1280",
+    "DensK1",
+    "UnifAll",
+    "SAHI640"
+  ],
+  "conf": 0.25,
+  "iou": 0.5,
+  "small": "0<w*h<1024",
+  "weight_sha256": "bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533",
+  "zip_sha256": "b28a94b06dfd9e36ce77ff8155fb82b9d2c030f198a76105933bd56c6ea6a68d",
+  "script_sha256": "ec55719d57f9fccee4da97f24fe1b4dd3534aa3729a9f52e8dadd8d42173ae5a",
+  "git_head": "cb406b5c209e6af3007216a949f065837cb6cba4",
+  "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+  "python": "H:\\Conda\\envs\\UAV_BT1\\python.exe",
+  "n_images": 1610,
+  "one_shot": true
+}

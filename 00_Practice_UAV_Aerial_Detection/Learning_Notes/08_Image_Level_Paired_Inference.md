@@ -1,7 +1,7 @@
 # 08 图级配对推断（Stage F 配套）
 
 > 关卡：L3 强相关／L4 前置｜过关只查**第二部分**  
-> 对齐产物：`Experiments/P0_Benchmark_StageF_Paired_Stats_Report.md`（Run `P0-BENCH-F-TESTDEV-20260917-01`）
+> 对齐产物：`Experiments/papers/P0_EI_StageF_Paired_Stats_Report.md`（Run `P0-BENCH-F-TESTDEV-20260917-01`）
 
 ---
 

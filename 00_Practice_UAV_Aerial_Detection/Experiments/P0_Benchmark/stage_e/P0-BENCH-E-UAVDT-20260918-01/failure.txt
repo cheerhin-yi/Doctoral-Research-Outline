@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "D:\Doctoral-Research-Outline\00_Practice_UAV_Aerial_Detection\Experiments\P0_Benchmark\stage_e\run_stage_e_oneshot.py", line 260, in main
-    log(f"{i+1}/{n_images} {seq}/{path.name}")
-  File "D:\Doctoral-Research-Outline\00_Practice_UAV_Aerial_Detection\Experiments\P0_Benchmark\stage_e\run_stage_e_oneshot.py", line 186, in log
-    print(line, flush=True)
-OSError: [Errno 22] Invalid argument

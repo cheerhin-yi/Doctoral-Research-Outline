@@ -1,0 +1,65 @@
+{
+  "registered_at": "2026-09-17T15:28:36",
+  "status": "FROZEN_PRE_RESULTS",
+  "source_dataset": "VisDrone2019-DET (model trained / Stage D protocol)",
+  "target_dataset": "UAVDT DET (intended Stage E external)",
+  "target_presence_on_host": false,
+  "weight_policy": "reuse frozen last.pt only; no fine-tune on UAVDT",
+  "eval_scope": "only semantically comparable vehicle classes; others ignored in both GT and preds",
+  "uavdt_classes_official_det": [
+    "car",
+    "truck",
+    "bus"
+  ],
+  "visdrone_yolo_names_0index": {
+    "0": "pedestrian",
+    "1": "people",
+    "2": "bicycle",
+    "3": "car",
+    "4": "van",
+    "5": "truck",
+    "6": "tricycle",
+    "7": "awning-tricycle",
+    "8": "bus",
+    "9": "motor"
+  },
+  "mapping_visdrone_yolo_id_to_uavdt": {
+    "3": {
+      "visdrone": "car",
+      "uavdt": "car",
+      "uavdt_id": 0
+    },
+    "4": {
+      "visdrone": "van",
+      "uavdt": "car",
+      "uavdt_id": 0,
+      "note": "van merged into car (common cross-benchmark practice)"
+    },
+    "5": {
+      "visdrone": "truck",
+      "uavdt": "truck",
+      "uavdt_id": 1
+    },
+    "8": {
+      "visdrone": "bus",
+      "uavdt": "bus",
+      "uavdt_id": 2
+    }
+  },
+  "excluded_visdrone_yolo_ids": {
+    "0": "pedestrian",
+    "1": "people",
+    "2": "bicycle",
+    "6": "tricycle",
+    "7": "awning-tricycle",
+    "9": "motor"
+  },
+  "matching_rules_frozen": {
+    "conf_keep": 0.25,
+    "iou_match": 0.5,
+    "small_def": "0 < w*h < 1024 in original image pixels",
+    "ignore_regions": "UAVDT has no VisDrone-style ignore; do not invent ignore masks",
+    "unit_of_analysis_for_Stage_F_later": "image"
+  },
+  "change_policy": "mapping locked until user explicitly re-opens Stage E mapping gate; may not be edited after seeing model scores"
+}

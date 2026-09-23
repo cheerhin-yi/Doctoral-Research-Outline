@@ -1,2 +1,0 @@
-sahi_installed=False
-note=Stage B M5-only blocker; Stage A can PASS with disclosure

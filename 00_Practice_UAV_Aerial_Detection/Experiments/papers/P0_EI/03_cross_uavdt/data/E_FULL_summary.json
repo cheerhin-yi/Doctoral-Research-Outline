@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "run_id": "P0-BENCH-E-UAVDT-20260918-FULL",
+  "label": "VisDrone-compatible matcher on UAVDT DET with frozen VisDrone->UAVDT mapping (transfer trend check; not UAVDT SOTA / not official MATLAB AP)",
+  "evaluator": "diagnose_bt1.prepare_gt+match_gt after VisDrone->UAVDT pred remap; official *_gt_ignore.txt not applied (frozen matching_rules: do not invent ignore masks)",
+  "n_images": 40735,
+  "conf": 0.25,
+  "iou": 0.5,
+  "small_def": "0<w*h<1024 original image space; score>0 GT",
+  "weight_sha256": "bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533",
+  "mapping": "class_mapping_preregister.json FROZEN",
+  "methods": {
+    "F640": {
+      "tp": 623956,
+      "fp": 826262,
+      "precision": 0.4302497969270827,
+      "small_gt": 493861,
+      "small_tp": 349664,
+      "small_recall": 0.7080210828552973,
+      "n_images": 40735,
+      "mean_ms": 16.737519847793735
+    },
+    "F1280": {
+      "tp": 671489,
+      "fp": 1134085,
+      "precision": 0.371897800920926,
+      "small_gt": 493861,
+      "small_tp": 391579,
+      "small_recall": 0.7928931419974447,
+      "n_images": 40735,
+      "mean_ms": 33.08099388486551
+    },
+    "DensK1": {
+      "tp": 658280,
+      "fp": 1236148,
+      "precision": 0.34748219515336554,
+      "small_gt": 493861,
+      "small_tp": 378871,
+      "small_recall": 0.7671612052784083,
+      "n_images": 40735,
+      "mean_ms": 32.96948507180509
+    },
+    "UnifAll": {
+      "tp": 668237,
+      "fp": 1346758,
+      "precision": 0.33163208841709285,
+      "small_gt": 493861,
+      "small_tp": 386393,
+      "small_recall": 0.7823922115737019,
+      "n_images": 40735,
+      "mean_ms": 47.17674575427023
+    },
+    "SAHI640": {
+      "tp": 648364,
+      "fp": 1188553,
+      "precision": 0.3529631442248071,
+      "small_gt": 493861,
+      "small_tp": 375203,
+      "small_recall": 0.7597340142266751,
+      "n_images": 40735,
+      "mean_ms": 163.99895947956506
+    }
+  },
+  "wall_seconds": 17149.163135799998,
+  "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+  "python": "3.12.14 | packaged by conda-forge | (main, Sep  2 2026, 23:18:20) [MSC v.1944 64 bit (AMD64)]",
+  "max_images": 0,
+  "save_preds": false
+}

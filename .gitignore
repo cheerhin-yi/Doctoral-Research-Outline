@@ -47,3 +47,13 @@ Thumbs.db
 
 # Reproducible research configuration (contains no credentials)
 !00_Startup_Railway_UAV_Detection/Experiments/baseline_training_spec.json
+
+# Local pre-cleanup dumps (npy/smoke/BT diagnostics); not paper evidence
+00_Practice_UAV_Aerial_Detection/_Archive_*/
+
+
+# Allow paper-slot experiment evidence JSON (global *.json ignore above)
+!00_Practice_UAV_Aerial_Detection/Experiments/papers/
+!00_Practice_UAV_Aerial_Detection/Experiments/papers/*/
+!00_Practice_UAV_Aerial_Detection/Experiments/papers/**/
+!00_Practice_UAV_Aerial_Detection/Experiments/papers/**/*.json

@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "run_id": "P0-BENCH-D-TESTDEV-20260917-01",
+  "label": "VisDrone-compatible evaluator on Ultralytics-mirror test-dev local GT (not official leaderboard AP)",
+  "evaluator": "diagnose_bt1.prepare_gt+match_gt (VisDrone-compatible; not official server)",
+  "n_images": 1610,
+  "conf": 0.25,
+  "iou": 0.5,
+  "small_def": "0<w*h<1024 original image space; score>0 GT",
+  "weight_sha256": "bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533",
+  "zip_sha256": "b28a94b06dfd9e36ce77ff8155fb82b9d2c030f198a76105933bd56c6ea6a68d",
+  "methods": {
+    "F640": {
+      "tp": 28346,
+      "fp": 13911,
+      "precision": 0.6708001041247604,
+      "small_gt": 50431,
+      "small_tp": 12042,
+      "small_recall": 0.2387817017310781,
+      "n_images": 1610,
+      "mean_ms": 17.397455217516317
+    },
+    "F1280": {
+      "tp": 37767,
+      "fp": 18160,
+      "precision": 0.6752910043449497,
+      "small_gt": 50431,
+      "small_tp": 20194,
+      "small_recall": 0.4004283079851679,
+      "n_images": 1610,
+      "mean_ms": 33.720060931679555
+    },
+    "DensK1": {
+      "tp": 35662,
+      "fp": 23075,
+      "precision": 0.607147113403817,
+      "small_gt": 50431,
+      "small_tp": 18133,
+      "small_recall": 0.3595605877337352,
+      "n_images": 1610,
+      "mean_ms": 34.06050763970931
+    },
+    "UnifAll": {
+      "tp": 41705,
+      "fp": 39695,
+      "precision": 0.5123464373464374,
+      "small_gt": 50431,
+      "small_tp": 22751,
+      "small_recall": 0.4511312486367512,
+      "n_images": 1610,
+      "mean_ms": 112.20607180142036
+    },
+    "SAHI640": {
+      "tp": 26086,
+      "fp": 46632,
+      "precision": 0.3587282378503259,
+      "small_gt": 50431,
+      "small_tp": 11016,
+      "small_recall": 0.2184370724356051,
+      "n_images": 1610,
+      "mean_ms": 373.2336533540587
+    }
+  },
+  "wall_seconds": 1128.1228712999873,
+  "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+  "python": "3.12.14 | packaged by conda-forge | (main, Sep  2 2026, 23:18:20) [MSC v.1944 64 bit (AMD64)]"
+}
