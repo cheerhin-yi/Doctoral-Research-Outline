@@ -22,3 +22,10 @@
 - 单目 RGB、无人机视角、已知类别二维小目标；轨道走廊退出方法前提。
 - LSM-Head／旧区域机制为历史候选或 HOLD，不是默认要实现的创新。
 - 每篇最多两个主张；未在 `Current_Stage` 授权前不新训模型、不建新诊断编号。
+
+## Literature and writing (2026-09-23)
+
+- Matrix: `Literature/Literature_Matrix.md` (themes T1-T4)
+- Two-paper plan: `Writing/P0_Two_Paper_Plan_2026-09-22.md`\r
+- Paper-1 outline: `Writing/P0_EI_Outline.md`\r
+- Evidence slots: `Experiments/papers/P0_EI/`\r
