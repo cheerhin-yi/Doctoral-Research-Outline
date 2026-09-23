@@ -95,6 +95,21 @@
 2. 从 Stage D 或 E 各指定一类失败例槽位，写四要素草稿（无图也可先写检索条件）。  
 3. 用附录清单做一次自检：当前仓库缺哪 2 项？哪 2 项已具备？
 
+### 已落地包装产物（Part A 交叉链接）
+
+路径：../Experiments/papers/P0_EI/05_packaging/
+
+| 文件 | 说明 |
+|---|---|
+| Neighbor_Protocol_Table.md | 近邻协议表（D/E 分面） |
+| Failure_Boundary_Cases.md | 四类边界例（含 D 抽样 image_id） |
+| Reproducibility_Appendix.md | 可复现附录勾选清单 |
+| Timing_4090_Table.md | 仍 pending（授权 Run G） |
+
+第二部分（我的记录）仍由本人填写；助手不代填。
+
+---
+
 ### 必答题
 
 1. 为什么近邻表比「五方法总排名表」更适合本篇 EI 贡献句？  
