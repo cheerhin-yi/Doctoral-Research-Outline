@@ -15,7 +15,7 @@
 | [`Literature/`](Literature/) | 矩阵／审计／审查（见 `Literature/README.md`） |
 | [`Writing/`](Writing/) | 写作提纲 |
 
-缩写释义：[`99_Attachments/Abbreviation_Glossary.md`](../99_Attachments/Abbreviation_Glossary.md)
+缩写释义：[`99_Attachments/Abbreviation_Glossary.md`](Abbreviation_Glossary.md)
 
 ## 硬边界（摘要）
 

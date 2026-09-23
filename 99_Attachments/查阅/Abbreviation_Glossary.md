@@ -1,7 +1,7 @@
 # 项目缩写与代号映射
 
 更新日期：2026-09-17（增补 Literature 文件名级映射）。  
-本文件解释仓库中常见代号，**不是**进度表。当前唯一事项以 [`00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md) 为准。  
+本文件解释仓库中常见代号，**不是**进度表。当前唯一事项以 [`00_Overview/Current_Stage.md`](Current_Stage.md) 为准。  
 实验运行细节以 [`00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md`](../00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md) 为准。
 
 阅读约定：

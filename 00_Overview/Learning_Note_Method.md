@@ -16,7 +16,7 @@ _适用于练手论文、Paper 1及以后正式启动论文的学习、文献、
 - 一个算例
 - 一个尚未解决的问题
 
-公式、结构图和大表格不要求反复手敲。画图时查[Mermaid画图语法指南](../99_Attachments/Mermaid_Syntax_Guide.md)；需要写公式时查[Markdown数学公式写法](../99_Attachments/Markdown_Math_Syntax_Guide.md)。
+公式、结构图和大表格不要求反复手敲。画图时查[Mermaid画图语法指南](Mermaid_Syntax_Guide.md)；需要写公式时查[Markdown数学公式写法](Markdown_Math_Syntax_Guide.md)。
 ## 🎯 方法目标
 
 本方法只解决三个问题：
@@ -172,7 +172,7 @@ _适用于练手论文、Paper 1及以后正式启动论文的学习、文献、
 - **源码**：只记录文件位置、关键输入输出、观察结果和它验证了什么，不复制大段代码
 - **论文内容**：只记录与本项目问题直接相关的证据，不逐段翻译
 
-画图需要查语法时使用[Mermaid画图语法指南](../99_Attachments/Mermaid_Syntax_Guide.md)，公式需要排版时使用[Markdown数学公式写法](../99_Attachments/Markdown_Math_Syntax_Guide.md)。这些都是按需工具，不是学习任务。
+画图需要查语法时使用[Mermaid画图语法指南](Mermaid_Syntax_Guide.md)，公式需要排版时使用[Markdown数学公式写法](Markdown_Math_Syntax_Guide.md)。这些都是按需工具，不是学习任务。
 
 ### 最小证据的选择
 
