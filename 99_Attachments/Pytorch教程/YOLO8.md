@@ -1,4 +1,4 @@
-分三大块组成。[[万字详解YOLOv8网络结构Backboneneckhead以及Conv、Bottleneck、C2f、SPPF、Detect等模块]]
+分三大块组成。[[万字详解YOLOv8网络结构]]
 
 ## Backbone 特征提取
 基本组成是使用一系列卷积和反卷积层。基本使用如下。
