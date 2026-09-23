@@ -1,5 +1,8 @@
 # 主线 A 当前执行页（近中远）
 
+> **2026-09-23 效力更新：** 近程执行以 [`Writing/P0_Two_Paper_Plan_2026-09-22.md`](Writing/P0_Two_Paper_Plan_2026-09-22.md) 与 [`Writing/P0_EI_Outline.md`](Writing/P0_EI_Outline.md) 为准；文献区已改为主题矩阵（见 `Literature/README.md`）。下文保留历史近中远叙述，冲突时以上述 Writing 为准。
+
+
 更新：2026-09-16（Asia/Shanghai）。  
 效力：本页与 [`Research_Question_Decision_2026-09-16.md`](Research_Question_Decision_2026-09-16.md) 覆盖旧机制追逐任务；历史实验结论不改写。
 

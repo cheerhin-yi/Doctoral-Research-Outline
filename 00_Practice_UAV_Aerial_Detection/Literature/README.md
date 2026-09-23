@@ -1,29 +1,25 @@
-# Literature（论文文献区）
+# Literature（练习论文 · 主题文献区）
 
-> 规则（强制）：本目录**只**按「论文槽位」组织。每篇待投/在写论文一个子目录：`papers/<PaperID>/`。  
-> 禁止把过程性长审计、候选路线评审、搜索流水账堆在根目录。  
-> 当前唯一活跃槽位：`papers/P0_EI/`（冻结权重推理协议对比，EI 会议稿）。
+结构对齐 `01_Paper1_OpenWorld_Risk/Literature`：**第一层是主题文件夹**，不是论文槽位堆砌。
 
-## 目录层级
+## 主题一览
 
-```text
-Literature/
-  README.md                 ← 本规则
-  00_Index.md               ← 全部论文槽位总表
-  _templates/               ← 新开论文时复制
-  papers/
-    P0_EI/
-      README.md
-      related_work_matrix.md
-      notes/                ← 与本篇 related work 直接相关的篇级笔记
-```
+| 主题 | 文件夹 | 主要回答的问题 | 支撑主张 |
+|---|---|---|---|
+| T1 切片／分块推理 | [01_Slicing_Inference](01_Slicing_Inference/Reading_List.md) | 切片如何改小目标可见性与代价 | Related Work 主近邻 |
+| T2 高分辨／高效 SOD | [02_HighRes_Efficient_SOD](02_HighRes_Efficient_SOD/Reading_List.md) | 别人改网络还是只改推理 | 划界：本篇只改协议 |
+| T3 多尺度／局部放大 | [03_Multiscale_Zoom_Inference](03_Multiscale_Zoom_Inference/Reading_List.md) | 推理预算与前向次数怎么报 | DensK1／放大叙事对照 |
+| T4 航拍基准与评测 | [04_Aerial_Benchmarks_Eval](04_Aerial_Benchmarks_Eval/Reading_List.md) | VisDrone／UAVDT 口径与表轴 | Stage D／E／F 写法 |
 
-## 准入 / 不准入
+## 根目录文件
 
-| 准入 | 不准入 |
-|---|---|
-| 本篇拟引用或对照的文献笔记 | 已否决候选方法的长评审 |
-| 一篇一篇的对比矩阵（短） | 与当前主张无关的数据集专项审计流水 |
-| 检索结论摘要（可附在 matrix） | 重复的过程日志 |
+- [Literature_Matrix.md](Literature_Matrix.md) — 全主题必读／选读总表与证据摘要
+- [Coarse_Reading_Notes.md](Coarse_Reading_Notes.md) — 粗读学习笔记（主题级，不替代篇笔记）
+- [Paper_Note_Template.md](Paper_Note_Template.md) — 单篇笔记模板（三样：问题句／表轴／边界）
+- 各主题下：`Reading_List.md`、`notes/`、`pdfs/`（PDF 放入对应 `pdfs/`，清单里登记）
 
-历史材料已迁至：`_Archive_20260923_PreP0_Cleanup/Literature/`（不参与正文写作）。
+## 纪律
+
+1. 正式引用前核 DOI／会议页；预印本与正式版不一致时以正式版为准。  
+2. 长审计过程文不进本目录（旧 `papers/P0_EI/notes/*_Audit.md` 已归档）。  
+3. 后续新主题：新建 `0N_ThemeName/`，并同步 Matrix 与本 README 表。  
