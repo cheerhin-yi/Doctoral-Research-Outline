@@ -1,4 +1,5 @@
 > **2026-09-16：** 练手文目录为 [`00_Practice_UAV_Aerial_Detection`](00_Practice_UAV_Aerial_Detection/README.md)。唯一事项：[Current_Stage.md](00_Overview/Current_Stage.md)。学习指标：[Completion_Metrics.md](00_Practice_UAV_Aerial_Detection/Completion_Metrics.md)。缩写：[Abbreviation_Glossary.md](Abbreviation_Glossary.md)。旧目录归档：[Archive_2026-09-16_PracticePaper](99_Attachments/Archive_2026-09-16_PracticePaper/)。
+> **文件总目录：** [`FILE_CATALOG.md`](FILE_CATALOG.md)（含 P0_EI 图表 ↔ 基准数据对照）。
 
 # 轨道交通无人机智能巡检博士研究项目
 

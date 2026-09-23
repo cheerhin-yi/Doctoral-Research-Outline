@@ -7,6 +7,7 @@
 - 当前仓库文件是唯一事实来源；聊天摘要和检查点只用于导航，不能覆盖仓库事实。
 - 每个新任务开始时，先完整读取以下当前有效文件：
   1. `README.md`
+  1b. `FILE_CATALOG.md`（文件总目录与 P0_EI 图↔数据对照；按需查阅，非每轮全文必读）
   2. `00_Overview/Project_Guide.md`
   3. `00_Overview/Current_Stage.md`
   4. `00_Overview/Seven_Paper_Roadmap.md`
