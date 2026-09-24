@@ -171,3 +171,11 @@ Experiments/papers/P0_EI/
 | 既有备忘（保留） | `AB_Independent_Publication_Boundary.md` · `AB_Direction_Judgment_With_Literature_2026-09-24.md` · `Paper1_Dataset_Feasibility_Memo.md` · `Paper1_Direction_Worth_Judgment_2026-09-24.md` |
 
 **命名说明：** A 使用 `08_RailUAV_SOD`（`02`–`07` 已为 Paper2–7）；B 继续使用既有 `01_Paper1_OpenWorld_Risk`。
+
+## Venue / claim policy (2026-09-24)
+
+| 路径 | 说明 |
+|---|---|
+| `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` | **权威**：JCR 主尺；主张强/中 + Q2/Q3 保底；A 部件族弹性；不改 ACTIVE=P0_EI |
+| `00_Overview/Venue_Quartile_Policy_2026-09-22.md` | 旧文件，已改为指向上述权威稿 |
+| `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` | A 部件族采集难度 ↔ 工作/venue 上下限（占位表） |

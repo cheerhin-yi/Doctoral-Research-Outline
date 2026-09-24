@@ -25,3 +25,7 @@
 
 - B = 原七篇中的 Paper 1（开放世界风险）。  
 - A = 独立数据文预备包（编号 `08_`，因 `02`–`07` 已占用 Paper2–7）；**不**计入七篇主论文替代关系，也不并入 B 充贡献。
+
+## Global venue / claim policy pointer (2026-09-24)
+
+See [`Venue_and_Claim_Policy_JCR_2026-09-24.md`](Venue_and_Claim_Policy_JCR_2026-09-24.md). JCR primary; claim tiers + A part-family elasticity; **A/B independence unchanged**. Does not unlock A/B or change ACTIVE=P0_EI.
