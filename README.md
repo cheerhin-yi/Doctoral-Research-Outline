@@ -23,6 +23,7 @@
 - [当前阶段](00_Overview/Current_Stage.md)：现在具体学什么、做什么；
 - [七篇论文路线](00_Overview/Seven_Paper_Roadmap.md)：每篇论文的作用和知识依赖；
 - [Venue/Claim 政策 · JCR-primary](00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md)：分区主尺与 A/B 主张梯子（**不**改变 ACTIVE=P0_EI）；
+- [2026-09-24 讨论产物索引](00_Overview/INDEX_Discussion_Products_2026-09-24.md)：全局政策 / A·B 边界 / 案头预备路径（**不**改变 ACTIVE=P0_EI）；
 - [每周论文审计与归档](00_Overview/Literature_Tracking_Workflow.md)：接收ChatGPT检索结果，先审计去重，再联动各方向文献矩阵、创新台账和周报；
 - [Paper 1任务指南](01_Paper1_OpenWorld_Risk/Stage_Guide.md)：从学习、文献、复现、数据、实验到投稿；
 - [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。

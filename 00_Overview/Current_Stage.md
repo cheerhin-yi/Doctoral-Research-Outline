@@ -84,3 +84,5 @@ F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708。跨集
 ## Venue / Claim 政策指针（案头 · 2026-09-24）
 
 见 [`Venue_and_Claim_Policy_JCR_2026-09-24.md`](Venue_and_Claim_Policy_JCR_2026-09-24.md)。**不**改变上表 ACTIVE=P0_EI；A/B 仍 IDLE/PREP。
+
+讨论产物总索引（政策 / 边界 / A·B 案头 / catalog）：[`INDEX_Discussion_Products_2026-09-24.md`](INDEX_Discussion_Products_2026-09-24.md)。**仅指针**；**不**改写上表、**不**解锁 A/B 采集或训练。

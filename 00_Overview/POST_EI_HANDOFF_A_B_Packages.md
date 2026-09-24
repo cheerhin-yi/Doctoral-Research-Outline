@@ -34,3 +34,9 @@
 - **JCR-primary**（不以 CAS/中科院为主尺）；旧「三区」→ **JCR Q3**。  
 - 主张 **强 / 中 / 弱** 梯子；地板 = 相关论文 **JCR Q2 或 Q3**。  
 - **不**因本政策改变 IDLE，**不**授权新 ACTIVE。
+
+## 讨论产物总索引（2026-09-24）
+
+案头政策 / A·B 边界 / 预备产物路径一览：[`INDEX_Discussion_Products_2026-09-24.md`](INDEX_Discussion_Products_2026-09-24.md)。
+
+**仅指针**；**不**改变本页解锁规则，**不**将 A/B 升为 ACTIVE。

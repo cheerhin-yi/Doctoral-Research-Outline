@@ -2,9 +2,9 @@
 
 > **用途：** 维护型总目录，标明关键保险柜文件位置及其对应关系（尤其：近期 P0_EI 对照图的基准数据落点）。  
 > **原则：** 只收录已扫描确认存在的路径；不枚举 `11_Datasets` 像素树 / Ultralytics 全量文件。  
-> **更新：** 2026-09-23（Asia/Shanghai）
+> **更新：** 2026-09-24（Asia/Shanghai）
 
-快速入口：[`README.md`](README.md) · [`00_Overview/Current_Stage.md`](00_Overview/Current_Stage.md) · [`P0_EI/Run_Index.md`](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md) · [figures/](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/figures/)
+快速入口：[`README.md`](README.md) · [`00_Overview/Current_Stage.md`](00_Overview/Current_Stage.md) · [`00_Overview/INDEX_Discussion_Products_2026-09-24.md`](00_Overview/INDEX_Discussion_Products_2026-09-24.md)（当日政策/边界/A·B案头） · [`P0_EI/Run_Index.md`](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md) · [figures/](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/figures/)
 
 ---
 
@@ -65,6 +65,22 @@
 
 ---
 
+## 3b. 2026-09-24 全局政策 + A/B 案头指针（讨论产物）
+
+> **不**改变唯一 ACTIVE=**P0_EI**；A/B 仍 **IDLE/PREP**；**不**解锁采集/训练。  
+> **总索引（权威入口）：** [`00_Overview/INDEX_Discussion_Products_2026-09-24.md`](00_Overview/INDEX_Discussion_Products_2026-09-24.md)
+
+| 角色 | 权威路径 |
+|---|---|
+| **policy** | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`（JCR-primary + claim ladder）；旧稿镜像 `Venue_Quartile_Policy_2026-09-22.md` |
+| **boundary** | `01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md` · `AB_Direction_Judgment_With_Literature_2026-09-24.md` · `Paper1_Direction_Worth_Judgment_2026-09-24.md` |
+| **A prep** | `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` · `08_RailUAV_SOD/POST_EI_HANDOFF.md` · `Writing/` 案头草案簇；Learning_Notes 课程计划 `_PLAN_Learning_Notes_Curriculum_2026-09-24.md` → **pending**（sibling） |
+| **B prep** | `01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md` · `Literature/Literature_Matrix_Addendum_2026-09-24.md` · `POST_EI_HANDOFF.md` · `Writing/B_OpenWorld_Risk_Outline.md` |
+| **catalog** | 本文件 + `00_Overview/POST_EI_HANDOFF_A_B_Packages.md` + 上列 INDEX |
+
+细目与 `.bak` 列示见 INDEX；下方 §4–§7 **P0_EI 图表/证据骨架保持不变**。文末「Paper1 / Post-EI / 案头 / JCR」各节为同日增量明细，与本表互指。
+
+---
 ## 4. P0_EI 图表 ↔ 基准数据对照表
 
 相对根前缀：`00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/`
