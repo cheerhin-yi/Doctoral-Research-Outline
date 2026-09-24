@@ -1,21 +1,109 @@
-# 学习检查基准（A · 轻量）
+# 学习检查基准（A · RailUAV-SOD · 助手维护）
 
-助手维护。用户闭卷复述 / 必答证据；**不得代填**。
+路径：`08_RailUAV_SOD/Learning_Check_Baseline.md`  
+更新日期：2026-09-24（Asia/Shanghai）。  
+维护者：助手。用户完成某块笔记**第二部分**后提交检查；**未达标不得进入下一块／下一关**。
 
-## L0 必答（示例）
+权威关系：
+- 当前科研唯一事项：`00_Overview/Current_Stage.md`（**P0_EI**；A 包 IDLE/PREP）。
+- 学习推进：本文件 + `Completion_Metrics.md`。
+- 写法：笔记分「第一部分应知」与「第二部分我的记录」；过关只查第二部分。
+- A/B：检查时若出现告警预算/风险排序当 A 主结果 → **REPEAT** 并指向 AB Boundary。
 
-1. 为何不能写「首个 UAV 铁路数据集」？至少点名 UAV-RSOD 与 RFDD 各一句。
-2. Sci Data 审稿人主要看什么？与 TITS/TIM 方法刊有何不同？
-3. A 的主结果数字应是哪几类（加速比/一致性/基线表/合成曲线），哪些数字属于 B？
+判定：`TODO` → `LEARNING` → `REVIEWING` → `PASSED` / `REPEAT`。  
+助手**不得代填**用户作答。
 
-## L1 必答
+---
 
-1. 双引擎（文本提示 vs 视觉提示）各自失败模式可能是什么？
-2. D4 式计时审计至少要报告哪些量？
+## 0. 总规则
 
-## L2 必答
+1. 检查对象：对应笔记**第二部分**。  
+2. 第一部分是教材，抄写不等于通过。  
+3. 必须能**沿知识链闭卷串讲**。  
+4. 练习要有可复查证据。  
+5. 必答题保留初稿；空白或明显代写 → `REPEAT`。  
+6. 关卡顺序 L0→L4；铁路 FOUNDATION（01–03）对非铁路背景用户**不可跳过**。  
+7. 学习通过 **≠** 采集/训练授权。
 
-1. fidelity–utility 曲线横纵坐标建议如何定义？
-2. 合成数据混入测试集为何必须披露？
+---
 
-状态：`TODO` → `LEARNING` → `REVIEWING` → `PASSED`／`REPEAT`。
+## 1. 块顺序
+
+| 顺序 | 笔记 | 关卡 | 状态 |
+|---|---|---|---|
+| 0 | `00_Knowledge_Map.md` | 导航 | 不过关 |
+| 1 | `01_Railway_Track_Structure_Basics.md` | L0 | TODO |
+| 2 | `02_Fasteners_Joints_and_Visible_Parts.md` | L0 | TODO |
+| 3 | `03_Defect_Types_and_Inspection_Language.md` | L0 | TODO |
+| 4 | `04_UAV_Railway_Viewpoint_and_Visibility.md` | L1 | TODO |
+| 5 | `05_Dataset_Paper_Craft_SciData.md` | L1 | TODO |
+| 6 | `06_OVD_AutoLabel_and_Timing_Audit.md` | L2 | TODO |
+| 7 | `07_Synthetic_Audit_Fidelity_Utility.md` | L2 | TODO |
+| 8 | `08_Aerial_SOD_Baselines_and_Metrics.md` | L3 | TODO |
+| 9 | `09_Mainline_A_Knowledge_Chain.md` | L3/L4 | TODO |
+
+旧 stub 文件名（`01_Dataset_Paper_Craft` 等）已废弃，勿再检查。
+
+---
+
+## 2. 分块检查清单
+
+### 2.1 `01`（L0）
+
+知识链：轨→枕→道床→轨距→UAV 可见层→排除项。  
+通过：横切草图、俯视指认、三类排除、必答初稿；不背未引标准数值充专家。
+
+### 2.2 `02`（L0）
+
+知识链：扣件→联结件→轨下可见件→可选/排除→RFDD 重叠→难度/发表地板。  
+通过：部件族表、vs RFDD 一句（无「首个」）、Speculation 取舍、必答。
+
+### 2.3 `03`（L0）
+
+知识链：part→defect→D0–D5→主 mAP vs 单独报。  
+通过：弹条 D0/D1/D3 外观定义、D4 vs 脏污规则、不冒充国标声明、必答。
+
+### 2.4 `04`（L1）
+
+知识链：航高→角度→GSD→像素覆盖→断崖→遮挡→vs 近景→隔离。  
+通过：GSD 估算、vs 近景两句、D5 原因三条、必答；不把笔记当飞行许可。
+
+### 2.5 `05`（L1）
+
+知识链：数据文卖点→Sci Data 结构→近邻增量→梯子→停止条件。  
+通过：四段各一行、合格/不合格摘要句、弱档决策、必答；venue 不虚构 IF。
+
+### 2.6 `06`（L2）
+
+知识链：预标注→双引擎→修正→计时→五类指标。  
+通过：D4 流程图、误差模式字段、违规告警句改写、必答；主指标无告警预算。
+
+### 2.7 `07`（L2）
+
+知识链：稀缺→合成诱惑→披露+曲线→混测纪律→收缩。  
+通过：vs RailFOD23 句、曲线解读、刷分红旗、必答。
+
+### 2.8 `08`（L3）
+
+知识链：冻结协议→同协议基线→指标/忽略区→Validation 写法。  
+通过：空表表头、合规/违规句、稀缺 vs 合成并列披露意识、必答；未跑训练亦可过概念关。
+
+### 2.9 `09`（L3/L4）
+
+知识链：端到端主链 + A/B 结果拆分 + BLOCKED 采集。  
+通过：主链图、A/B 对照表、删 B 引用演练、自采受阻降档（不并入 B）、必答；确认 ACTIVE 仍为 P0_EI。
+
+---
+
+## 3. 检查记录（追加，勿删旧行）
+
+| 日期 | 笔记 | 判定 | 主要缺口／补学指令 | 检查者 |
+|---|---|---|---|---|
+| （尚无） |  |  |  |  |
+
+---
+
+## 4. 变更规则
+
+- 改知识链或通过标准：先改本文件，再改对应笔记第一部分，并在第 3 节留行。  
+- 2026-09-24：按 Practice 双部模式重建 A 侧 Learning_Notes（铁路 FOUNDATION + 双审计）；废弃旧四份 stub 文件名。

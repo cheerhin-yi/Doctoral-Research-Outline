@@ -20,7 +20,7 @@
 | [`Literature/`](Literature/) | 主题矩阵与阅读清单 |
 | [`Writing/`](Writing/) | Sci Data 取向提纲 |
 | [`Experiments/`](Experiments/) | 实验槽位（空壳占位，禁跑） |
-| [`Learning_Notes/`](Learning_Notes/) | 路线知识图 stub |
+| [`Learning_Notes/`](Learning_Notes/) | 学习脚手架（铁路 FOUNDATION + 双审计；见内 README 阅读顺序） |
 
 独立边界权威：[`../01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md`](../01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md)
 
@@ -39,4 +39,4 @@
 |---|---|
 | 中位 | *Scientific Data* |
 | 上限 | Sci Data 顺利 / NeurIPS Evaluations & Datasets（冲刺，须双审计写清） |
-| 下限 | Electronics / Sensors（无审计或与 RFDD/UAV 扣件重叠时） |
+| 下限 | **JCR Q2/Q3 related**（Electronics / Sensors 同档；无审计或与 RFDD/UAV 扣件重叠时） |

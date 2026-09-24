@@ -1,6 +1,6 @@
 # 主线当前执行页：RailUAV-SOD（A）
 
-更新：2026-09-24 晚（Asia/Shanghai）。  
+更新：2026-09-24 晚（Asia/Shanghai）· Learning_Notes 脚手架已加厚。  
 效力：预备叙述；与 `Current_Stage` 冲突时以 **Current_Stage** 为准。  
 包状态：**PREP / IDLE**。
 
@@ -14,7 +14,7 @@
 
 | 时段 | 做什么 | 不做 |
 |---|---|---|
-| **近**（P0_EI 收口前） | 文献划界加厚、A1 草稿、提纲 | 不采集、不训练、不开主 Run |
+| **近**（P0_EI 收口前） | 文献划界加厚、A1 草稿、提纲、**Learning_Notes L0–L1** | 不采集、不训练、不开主 Run |
 | **中**（再授权后） | A0→A1 正式冻结；再谈 A2 | 不抢 B 告警主实验 |
 | **远** | A3–A5 审计/基线/**Sci Data** 中位稿；弱则 **JCR Q2/Q3 related** | 不把告警预算写入 A 主张；不并入 B |
 
@@ -37,6 +37,7 @@ A-C1 / A-C2 · **PROPOSED · IDLE**（见 `Research_Plan.md`）。
 | 合成披露清单 | **DONE** · `Writing/Synthetic_Disclosure_Checklist.md` |
 | 采集协议草稿（FUTURE） | **DONE** · `Writing/Collection_Protocol_Draft.md`（未授权） |
 | Sci Data 披露模板桩 | **DONE** · `Writing/SciData_Disclosure_Template_Stub.md` |
+| Learning_Notes 脚手架（铁路 FOUNDATION + 双审计双部笔记） | **DONE** · `Learning_Notes/`（01–09；旧 thin stub 见 `_archive_thin_2026-09-24/`） |
 | A0 可行性正式通过 / 采集 | **剩余 · 未授权** |
 
 ## 6. 成功标准（预备阶段）

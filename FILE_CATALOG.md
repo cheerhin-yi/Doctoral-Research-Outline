@@ -234,3 +234,25 @@ Experiments/papers/P0_EI/
 | `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` | **新建** 族×难度×工作/发表上下限 |
 | `08_RailUAV_SOD/Research_Plan.md` / `Mainline_Current.md` / `Writing/RailUAV_SOD_Outline.md` | **更新** Sci Data 主轨 + JCR Q2/Q3 fallback |
 | `PROJECT_CONTEXT.md` | **更新** 分区口径短注 |
+## A Learning_Notes 脚手架加厚（2026-09-24 夜）
+
+> 状态仍为包 **PREP/IDLE**；未改 `Current_Stage.md` 唯一 ACTIVE=P0_EI。
+
+| 路径 | 说明 |
+|---|---|
+| `08_RailUAV_SOD/Learning_Notes/README.md` | **重写** 阅读顺序 + L0–L4 完成门 |
+| `08_RailUAV_SOD/Learning_Notes/00_Knowledge_Map.md` | **扩展** Practice 风格统一地图（节点 ID） |
+| `08_RailUAV_SOD/Learning_Notes/01_Railway_Track_Structure_Basics.md` | **新建** 轨道结构 FOUNDATION |
+| `08_RailUAV_SOD/Learning_Notes/02_Fasteners_Joints_and_Visible_Parts.md` | **新建** 扣件/接头/可见件 + RFDD 重叠 |
+| `08_RailUAV_SOD/Learning_Notes/03_Defect_Types_and_Inspection_Language.md` | **新建** D0–D5 工作码（非冒充国标） |
+| `08_RailUAV_SOD/Learning_Notes/04_UAV_Railway_Viewpoint_and_Visibility.md` | **新建** UAV 视角与尺度断崖 |
+| `08_RailUAV_SOD/Learning_Notes/05_Dataset_Paper_Craft_SciData.md` | **新建**（替旧 `01_Dataset_Paper_Craft` stub） |
+| `08_RailUAV_SOD/Learning_Notes/06_OVD_AutoLabel_and_Timing_Audit.md` | **新建**（替旧 `02_OVD_AutoLabel`） |
+| `08_RailUAV_SOD/Learning_Notes/07_Synthetic_Audit_Fidelity_Utility.md` | **新建**（替旧 `03_Synthetic_Audit`） |
+| `08_RailUAV_SOD/Learning_Notes/08_Aerial_SOD_Baselines_and_Metrics.md` | **新建**（替旧 `04_Aerial_SOD_Baselines`） |
+| `08_RailUAV_SOD/Learning_Notes/09_Mainline_A_Knowledge_Chain.md` | **新建** A 端到端主链 |
+| `08_RailUAV_SOD/Learning_Notes/Learning_Record_Template.md` | **更新** Practice 级模板 |
+| `08_RailUAV_SOD/Completion_Metrics.md` | **更新** L0–L4 对齐新笔记 |
+| `08_RailUAV_SOD/Learning_Check_Baseline.md` | **更新** 分块检查清单 |
+| `08_RailUAV_SOD/Mainline_Current.md` / `POST_EI_HANDOFF.md` | **短更** Learning_Notes 脚手架 DONE |
+| `00_Overview/Discussion_Extras_Index_2026-09-24.md` | **新建** 近期 A/B 政策/判断/案头文件索引 |

@@ -1,6 +1,6 @@
 # Post-EI 交接：RailUAV-SOD（A）预备包
 
-更新：2026-09-24（Asia/Shanghai）
+更新：2026-09-24（Asia/Shanghai）· Learning_Notes 脚手架已填
 
 ## 本包是什么
 
@@ -38,5 +38,7 @@
 5. `Writing/Collection_Protocol_Draft.md`（**FUTURE**）。  
 6. `Writing/SciData_Disclosure_Template_Stub.md`。  
 7. `Mainline_Current.md` / `Completion_Metrics.md` / `Research_Plan.md` §7。
+8. `Learning_Notes/`：**DONE** 加厚（`00` 地图 + 铁路 FOUNDATION `01`–`04` + `05`–`09` 数据文/双审计/主链；Completion_Metrics / Learning_Check_Baseline 已对齐 L0–L4）。
+
 
 **未做：** 采集、训练、Current_Stage ACTIVE 变更、虚构 DOI/指标。
