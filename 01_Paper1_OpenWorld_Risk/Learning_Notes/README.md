@@ -1,34 +1,15 @@
-# Paper 1学习笔记使用说明
+# Learning_Notes（B · Paper1）
 
-全项目统一采用[知识链、必会内容与灵活记录方法](../../00_Overview/Learning_Note_Method.md)。本文件只说明Paper 1的学习顺序，不再规定必须使用表格。
+| 文件 | 用途 |
+|---|---|
+| [`../Completion_Metrics.md`](../Completion_Metrics.md) | 关卡总门 |
+| [`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md) | 检查基准 |
+| `01_YOLO_Research_Core.md` | 检测基础（可与 P0 共用认知） |
+| `02_PyTorch_and_Reproducibility.md` | 可复现 |
+| `03_Open_World_Perception.md` | 开放世界（阶段①） |
+| `04_Railway_Context_and_Risk.md` | 轨道风险（阶段①） |
+| `05_Experiment_Design_and_Uncertainty.md` | 实验设计（阶段①） |
+| `00_Knowledge_Map_B.md` | 路线知识图（新建） |
+| `Learning_Record_Template.md` | 当日备忘（新建） |
 
-## 当前顺序
-
-| 顺序 | 笔记 | 当前作用 | 完成后得到什么 |
-|---:|---|---|---|
-| 1 | [YOLO研究核心](01_YOLO_Research_Core.md) | 从基础YOLO补到论文级检测理解 | 结构图、指标手算、错误分类 |
-| 2 | [PyTorch与可复现性](02_PyTorch_and_Reproducibility.md) | 能独立运行、检查和复现实验 | 训练流程、复现清单、泄漏意识 |
-| 3 | [开放世界感知](03_Open_World_Perception.md) | 建立Known/Unknown和开放环境边界 | 概念表、类别轮换和评价方案 |
-| 4 | [铁路上下文与风险](04_Railway_Context_and_Risk.md) | 把检测框转成铁路风险意义 | 风险数据流、标注与几何边界 |
-| 5 | [实验设计与不确定性](05_Experiment_Design_and_Uncertainty.md) | 把想法转成可审稿证据 | 对照实验、失败判据和校准理解 |
-
-## 每份笔记怎么填写
-
-不要另建零散日记。每次学习直接进入对应文件的“学习记录区”，按下面顺序填写：
-
-1. 在“学习会话记录”新增一行，写日期、资料和本次范围；
-2. 在“核心概念笔记”中用自己的话填写，不复制定义；
-3. 图、公式或代码写在对应位置，过长内容只记录文件链接；
-4. 不理解的问题进入“疑问清单”，解决后补证据和结论；
-5. 如果理解发生变化，记录“原理解→修正后理解”；
-6. 最后闭卷回答自测并写三句话总结。
-
-## 什么算有效笔记
-
-- 能脱离资料复述；
-- 至少包含一个铁路UAV例子；
-- 记录适用条件或失败情况；
-- 有一项可检查证据：手算、图、代码输出或论文证据；
-- 写明尚未理解的地方，而不是把空白误认为完成。
-
-仅复制课程内容、粘贴模型结构、收藏链接或勾选任务，不算完成。
+学习不替代 `Current_Stage` 实验门；IDLE 期内以阅读与笔记为主。

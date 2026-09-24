@@ -26,13 +26,14 @@
 |---|---|---|
 | `00_Overview/` | 跨会话交接、当前阶段、七篇路线、文献流程与模板 | ACTIVE |
 | `00_Practice_UAV_Aerial_Detection/` | 练手主线：文献主题树、Learning_Notes、Writing、P0_EI 证据 | ACTIVE |
-| `01_Paper1_OpenWorld_Risk/` | Paper 1 开放世界风险：计划/阶段/文献/笔记 | ACTIVE |
+| `01_Paper1_OpenWorld_Risk/` | Paper 1 / B 开放世界风险：Practice 同构预备包 + 既有备忘 | IDLE/PREP（Post-EI；ACTIVE 仍为 P0） |
 | `02_Paper2_3D_Disaster/` | 三维灾后场景 | PAUSED |
 | `03_Paper3_Comm_Perception/` | 通感协同感知 | PAUSED |
 | `04_Paper4_Risk_ISAC/` | 风险感知 ISAC | PAUSED |
 | `05_Paper5_Multimodal_Risk/` | 多模态风险感知 | PAUSED |
 | `06_Paper6_Active_Inspection/` | 主动式无人机巡检 | PAUSED |
 | `07_Paper7_MultiUAV_Decision/` | 多无人机协同决策 | PAUSED |
+| `08_RailUAV_SOD/` | 论文 A · RailUAV-SOD 数据/管线/审计预备包 | IDLE/PREP（Post-EI） |
 | `11_Datasets/` | 数据根：`raw/` · `processed/` · `external/`（**不展开像素/权重树**） | ACTIVE（数据仓） |
 | `90_English_Learning/` | 与当前阶段同步的英语/听力/写作节奏 | SUPPORT |
 | `99_Attachments/` | 全项目附件、教程、查阅材料、归档 | REFERENCE |
@@ -154,3 +155,19 @@ Experiments/papers/P0_EI/
 
 | `01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md` | A/B 独立发表边界：贡献与结果互不绑定（2026-09-24 用户口径） |
 | `01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md` | A/B 分轨方向判断（文献依据·未来可UAV·独立发表） |
+
+## Post-EI A/B 预备包（2026-09-24）
+
+| 路径 | 说明 |
+|---|---|
+| `00_Overview/POST_EI_HANDOFF_A_B_Packages.md` | A/B 解锁纪律与登记 |
+| `00_Overview/Current_Stage.md` § Post-EI 预备包登记 | IDLE 表；ACTIVE 仍为 P0_EI |
+| `08_RailUAV_SOD/` | A 全树：Research_Plan / Stage_Guide / Literature / Writing / Experiments / Learning_Notes |
+| `08_RailUAV_SOD/POST_EI_HANDOFF.md` | A 侧交接 |
+| `01_Paper1_OpenWorld_Risk/` 扩展 | B 补齐 Mainline_Current、Completion_Metrics、Experiments/papers/B_*、Writing 提纲等 |
+| `01_Paper1_OpenWorld_Risk/POST_EI_HANDOFF.md` | B 侧交接 |
+| `01_Paper1_OpenWorld_Risk/Stage_Guide.md` | **干净稿**替换原冲突标记版 |
+| `01_Paper1_OpenWorld_Risk/Literature/Literature_Matrix_Addendum_2026-09-24.md` | SRLF/Meng/conformal 等划界增补 |
+| 既有备忘（保留） | `AB_Independent_Publication_Boundary.md` · `AB_Direction_Judgment_With_Literature_2026-09-24.md` · `Paper1_Dataset_Feasibility_Memo.md` · `Paper1_Direction_Worth_Judgment_2026-09-24.md` |
+
+**命名说明：** A 使用 `08_RailUAV_SOD`（`02`–`07` 已为 Paper2–7）；B 继续使用既有 `01_Paper1_OpenWorld_Risk`。

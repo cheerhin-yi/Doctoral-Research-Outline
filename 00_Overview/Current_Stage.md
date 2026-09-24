@@ -64,3 +64,20 @@ F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708。跨集
 1. **EI 包装：** 近邻协议对标表＋跨集一致／不一致厚写＋失败／边界例＋协议附录（与四区最小增量 1–4 重合）。
 2. **可选：** 4090 正式时序表（正文时序只用 4090；D／E 精度表保留；1660 可注 pipeline validation）。
 3. **不默认：** 同质第三集；新模块／重训。
+
+
+---
+
+## Post-EI 预备包登记（IDLE · 2026-09-24）
+
+> **纪律：** 下表 **不**改变上文「当前唯一事项」。唯一 ACTIVE 仍为 **P0_EI 包装增量**。预备包在再授权前保持 IDLE。
+
+| 代号 | 路径 | 状态 | 说明 |
+|---|---|---|---|
+| P0_EI | `00_Practice_UAV_Aerial_Detection/` | **ACTIVE** | 当前唯一执行 |
+| A · RailUAV-SOD | [`../08_RailUAV_SOD/`](../08_RailUAV_SOD/README.md) | **IDLE / PREP** | Post-EI 数据文预备包；禁采集/训练 |
+| B · Paper1 | [`../01_Paper1_OpenWorld_Risk/`](../01_Paper1_OpenWorld_Risk/README.md) | **IDLE / PREP** | Post-EI 方法文预备包；禁 Stage ④ |
+| Paper 2–7 | `02_`…`07_` | **PAUSED** | 不变 |
+
+交接说明：[`POST_EI_HANDOFF_A_B_Packages.md`](POST_EI_HANDOFF_A_B_Packages.md)
+

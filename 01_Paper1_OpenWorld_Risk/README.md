@@ -1,28 +1,56 @@
-# Paper 1：铁路UAV开放世界危险感知与风险告警
+# Paper 1：铁路UAV开放世界危险感知与风险告警（论文 B）
 
-- **状态**：研究计划保留，执行等待练手论文完成。
-- **研究问题与两项暂定主张**：[Research_Plan.md](Research_Plan.md)。
-- **唯一进度表**：[Stage_Guide.md](Stage_Guide.md)。
-- **总项目当前任务**：[Current_Stage.md](../00_Overview/Current_Stage.md)。
+目录名：`01_Paper1_OpenWorld_Risk`  
+论文代号：**B / Paper1 OpenWorld Risk**（与 RailUAV-SOD「A」独立发表）
+
+> **状态：PREP / IDLE（Post-EI 预备包）** — 研究路线脚手架已按 Practice 架构补齐；**不是** Stage ④ / 采集 / 训练授权。  
+> 当前全仓库唯一 ACTIVE 仍是 **P0_EI**（见 [`../00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md)）。  
+> 解锁条件：P0_EI 收口后由 `Current_Stage.md` **书面再授权**。
+
+## 你需要看的文件
+
+| 文件 | 用途 |
+|---|---|
+| [`../00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md) | **唯一当前事项** |
+| [`POST_EI_HANDOFF.md`](POST_EI_HANDOFF.md) | Post-EI 解锁说明 |
+| [`Research_Plan.md`](Research_Plan.md) | 问题与 C1/C2 |
+| [`Stage_Guide.md`](Stage_Guide.md) | 阶段门（干净稿 · IDLE） |
+| [`Mainline_Current.md`](Mainline_Current.md) | 近/中/远 |
+| [`Completion_Metrics.md`](Completion_Metrics.md) | 学习关卡 |
+| [`Literature/`](Literature/) | 主题矩阵 |
+| [`Writing/`](Writing/) | 提纲 |
+| [`Experiments/`](Experiments/) | 实验槽（IDLE） |
+| [`Learning_Notes/`](Learning_Notes/) | 知识块 |
+
+## 已有备忘（保留，勿删）
+
+| 文件 | 说明 |
+|---|---|
+| [`AB_Independent_Publication_Boundary.md`](AB_Independent_Publication_Boundary.md) | A/B 贡献与结果互不绑定 |
+| [`AB_Direction_Judgment_With_Literature_2026-09-24.md`](AB_Direction_Judgment_With_Literature_2026-09-24.md) | 分轨方向/档位（含附录界变） |
+| [`Paper1_Dataset_Feasibility_Memo.md`](Paper1_Dataset_Feasibility_Memo.md) | 数据集前置可行性 |
+| [`Paper1_Direction_Worth_Judgment_2026-09-24.md`](Paper1_Direction_Worth_Judgment_2026-09-24.md) | 方向再评估 |
+
+A 侧预备包：[`../08_RailUAV_SOD/`](../08_RailUAV_SOD/README.md)
 
 ## 处理链
 
-> UAV图像 → 已知目标检测 → 未知候选 → 轨道上下文 → 风险排序 → 可信告警
+> UAV图像 → 已知目标检测 → 未知候选 → 轨道上下文 → 风险排序 → 可信告警（固定告警预算）
 
-YOLO结构改动不是Paper 1的默认贡献。练手论文只提供可选的封闭集已知检测基线；Paper 1仍须独立审计开放世界协议、轨道风险价值和数据泄漏。
-
-## 工作文件
-
-| 路径 | 内容 |
-|---|---|
-| `Learning_Notes/` | Paper 1专属的开放世界、铁路风险和实验设计笔记 |
-| [Literature_Matrix.md](Literature/Literature_Matrix.md) | 主题、阅读顺序、证据链和冲突 |
-| [Search_Log.md](Literature/Search_Log.md) | 检索式、日期和筛选记录 |
-| [Paper_Note_Template.md](Literature/Paper_Note_Template.md) | 单篇精读模板 |
-| [Experiment_Plan.md](Experiments/Experiment_Plan.md) | 阶段门通过后使用的实验设计 |
-| [Experiment_Tracker.md](Experiments/Experiment_Tracker.md) | 运行记录与论文数字回链 |
-| [Paper_Outline.md](Writing/Paper_Outline.md) | 证据冻结后的写作结构 |
+YOLO 结构改动不是默认贡献。A 的数据集**不是** B 的必要条件；B 可用公开/代理数据讲完 C1/C2。
 
 ## 硬边界
 
-Paper 1不研究三维重建、通信、ISAC、多模态、下一视点、强化学习、多无人机协同或多个YOLO模块堆叠。Paper 2–7继续`PAUSED`。
+- **C1**：已知 + 未知双路径，在**固定告警预算**下提高危险召回。  
+- **C2**：轨道上下文风险排序提高告警决策价值。  
+- 划界：SRLF、Meng、conformal risk control、false-novelty budget、UAV-OOD 滤波——须写出增量，忌同构「又一篇未知检出」。  
+- 不研究三维重建、通信、ISAC、多模态、下一视点、RL/多机。  
+- 未授权前：不采集、不新训、不开正式主表 Run。
+
+## 投稿锚（计划，非承诺）
+
+| 档 | 目标 |
+|---|---|
+| 中位 | TIM / Measurement（JCR 三区应用向） |
+| 上限 | TITS / TIM（双路径+预算+轨旁风险齐全） |
+| 下限 | Drones / Access（近似 UAV-OOD / YOLO+启发式时） |
