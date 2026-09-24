@@ -1,4 +1,4 @@
-# 2026-09-24 讨论产物目录索引
+﻿# 2026-09-24 讨论产物目录索引
 
 > **用途：** 汇总当日全局政策、A/B 独立边界与案头预备产物，便于交接检索。  
 > **纪律：** **不**改变 `Current_Stage.md` 唯一 ACTIVE=**P0_EI**；A/B 仍 **IDLE/PREP**；**不**解锁采集/训练。  
@@ -18,7 +18,7 @@
 | Paper1 方向值不值得判断 | [`../01_Paper1_OpenWorld_Risk/Paper1_Direction_Worth_Judgment_2026-09-24.md`](../01_Paper1_OpenWorld_Risk/Paper1_Direction_Worth_Judgment_2026-09-24.md) | boundary | **authoritative** |
 | 部件族采集难度 × venue 上下限 | [`../08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md`](../08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md) | A prep | **authoritative** |
 | A Post-EI 交接 | [`../08_RailUAV_SOD/POST_EI_HANDOFF.md`](../08_RailUAV_SOD/POST_EI_HANDOFF.md) | A prep | **authoritative** |
-| A Learning_Notes 课程计划 | [`../08_RailUAV_SOD/Learning_Notes/_PLAN_Learning_Notes_Curriculum_2026-09-24.md`](../08_RailUAV_SOD/Learning_Notes/_PLAN_Learning_Notes_Curriculum_2026-09-24.md) | A prep | **pending**（sibling worker；本稿撰写时尚未落地） |
+| A Learning_Notes 课程计划 | [`../08_RailUAV_SOD/Learning_Notes/_PLAN_Learning_Notes_Curriculum_2026-09-24.md`](../08_RailUAV_SOD/Learning_Notes/_PLAN_Learning_Notes_Curriculum_2026-09-24.md) | A prep | **landed** (`ef4594c`)（sibling worker；本稿撰写时尚未落地） |
 | A Taxonomy / D4 / 合成披露 / 采集协议 / SciData stub | `08_RailUAV_SOD/Writing/`（`Taxonomy_Draft.md` 等） | A prep | **authoritative**（案头；未授权采集） |
 | B Claim 冻结 C1/C2 | [`../01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md`](../01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md) | B prep | **authoritative** |
 | B 文献矩阵增补 | [`../01_Paper1_OpenWorld_Risk/Literature/Literature_Matrix_Addendum_2026-09-24.md`](../01_Paper1_OpenWorld_Risk/Literature/Literature_Matrix_Addendum_2026-09-24.md) | B prep | **authoritative** |
@@ -43,7 +43,7 @@
 ### A prep（RailUAV-SOD · IDLE）
 - 案头核心：`PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` + `Writing/` 草案簇
 - 交接：`08_RailUAV_SOD/POST_EI_HANDOFF.md`
-- Learning_Notes 课程架构计划：**pending** → `_PLAN_Learning_Notes_Curriculum_2026-09-24.md`（若 sibling 已写入则以上表链接为准）
+- Learning_Notes 课程架构计划：**landed** (`ef4594c`) → `_PLAN_Learning_Notes_Curriculum_2026-09-24.md`（若 sibling 已写入则以上表链接为准）
 
 ### B prep（Paper1 · IDLE）
 - Claim / 文献增补 / 提纲 / `POST_EI_HANDOFF.md`
