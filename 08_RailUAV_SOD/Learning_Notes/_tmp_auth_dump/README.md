@@ -68,4 +68,4 @@
 | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` | `05`、`09` |
 | `AB_Independent_Publication_Boundary.md` | 全部笔记禁止泄漏 B 告警主张 |
 
-样板结构对齐：Practice [`02_PyTorch_and_Reproducibility.md`](../../00_Practice_UAV_Aerial_Detection/Learning_Notes/02_PyTorch_and_Reproducibility.md) 双部写法（第一部分应知教材 + 第二部分 R1–R6 我的记录；过关只查第二部分）+ [`Learning_Note_Method.md`](../../00_Overview/Learning_Note_Method.md)。
+样板结构对齐：[`00_Practice_UAV_Aerial_Detection/Learning_Notes/`](../../00_Practice_UAV_Aerial_Detection/Learning_Notes/README.md)（如 `04_Small_Object`、`07_Mainline`）。
