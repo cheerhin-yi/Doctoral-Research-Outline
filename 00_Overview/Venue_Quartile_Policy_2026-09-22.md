@@ -1,10 +1,11 @@
-# Venue quartile policy (2026-09-22) — superseded pointer
+# Venue quartile policy (2026-09-22)
 
-> **Superseded for default reading on 2026-09-24.**  
-> Authoritative policy: [`Venue_and_Claim_Policy_JCR_2026-09-24.md`](Venue_and_Claim_Policy_JCR_2026-09-24.md).
+This repo treats **JCR** as the only default journal-quartile vocabulary in paper plans.
 
-Historical note (2026-09-22): this repo already treated **JCR** as the default journal-quartile vocabulary; CAS was not the default. The 2026-09-24 update **reaffirms JCR as primary**, allows CAS only as auxiliary mention, adds **claim-tier flexibility** (strong/mid + weaker JCR Q2/Q3 floor), and records **Paper A part-family elasticity** by collection difficulty.
-
-Does **not** change sole ACTIVE = **P0_EI**.
+- Conferences: use the current CCF recommended list at submission time; EI indexing is descriptive, not a substitute for CCF.
+- Journals: JCR Q1-Q4. CAS partitions are not the default here.
+- Whether the school accepts CCF / EI / JCR remains **Unknown** until confirmed in writing.
 
 Related: `00_Practice_UAV_Aerial_Detection/Writing/P0_Two_Paper_Plan_2026-09-22.md`.
+
+**2026-09-24 更新：** 现行加厚政策见 [`Venue_and_Claim_Policy_JCR_2026-09-24.md`](Venue_and_Claim_Policy_JCR_2026-09-24.md)（JCR-primary + claim ladder + Q2/Q3 floor）。本短文仍有效，冲突时以 2026-09-24 文件为准。

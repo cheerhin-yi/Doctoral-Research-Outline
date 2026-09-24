@@ -8,7 +8,13 @@
 2. 双引擎 OVD 半自动预标注的**受控效率审计**（人时、修错、一致性）。  
 3. 合成缺陷的 **fidelity–utility 审计协议**（比例–性能曲线 + 披露清单）。
 
-## 建议结构（Sci Data 取向）
+## Venue 梯子（不定死）
+
+- **中位主轨：** Sci Data（数据刊）。  
+- **弱 fallback：** 部件族/审计收缩后的 **相关** 方法应用文 → **JCR Q2 或 Q3**。  
+- 详见 PartFamily 分析与全局 Venue 政策。
+
+## 建议结构（Sci Data 取向 · 中位）
 
 1. **Background & Summary** — 缺口=UAV×小部件×真缺陷+可审计标注/合成；点名 UAV-RSOD/RFDD/RailFOD23/DART 已覆盖点。  
 2. **Methods** — 采集协议；taxonomy；双引擎预标注；D4 计时；合成审计；伦理与许可。  

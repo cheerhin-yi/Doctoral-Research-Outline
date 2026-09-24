@@ -24,3 +24,19 @@
 1. 把本目录 `Mainline_Current.md` 状态改为 A0 可行性；
 2. 按 `Stage_Guide.md` A0 完成近邻全文审计与许可核验计划；
 3. 再谈采集协议——**不是**先飞再补故事。
+
+---
+
+## 案头预备日志 · 2026-09-24 晚
+
+已填（保持 PREP/IDLE，未授权采集/训练）：
+
+1. `Literature/Literature_Matrix.md` §5：A0 近邻已覆盖/未证实缺口/A增量。  
+2. `Writing/Taxonomy_Draft.md`（超越扣件-only）。  
+3. `Writing/Annotation_Timing_Protocol_D4_Draft.md`。  
+4. `Writing/Synthetic_Disclosure_Checklist.md`。  
+5. `Writing/Collection_Protocol_Draft.md`（**FUTURE**）。  
+6. `Writing/SciData_Disclosure_Template_Stub.md`。  
+7. `Mainline_Current.md` / `Completion_Metrics.md` / `Research_Plan.md` §7。
+
+**未做：** 采集、训练、Current_Stage ACTIVE 变更、虚构 DOI/指标。

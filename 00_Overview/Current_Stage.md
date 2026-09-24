@@ -68,18 +68,6 @@ F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708。跨集
 
 ---
 
-## Global venue / claim policy (2026-09-24)
-
-> **Does not change** the sole ACTIVE item above (**P0_EI** packaging). Vocabulary and claim/venue planning only.
-
-- Authoritative: [`Venue_and_Claim_Policy_JCR_2026-09-24.md`](Venue_and_Claim_Policy_JCR_2026-09-24.md)
-- SCI quartile **primary = JCR**; CAS optional secondary mention only
-- Claims: keep strong/mid; allow weaker **JCR Q2/Q3 floor** path
-- Paper A part families: elastic by collection difficulty; record work/venue bounds (`../08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md`)
-- A/B independent publication boundary: unchanged
-
----
-
 ## Post-EI 预备包登记（IDLE · 2026-09-24）
 
 > **纪律：** 下表 **不**改变上文「当前唯一事项」。唯一 ACTIVE 仍为 **P0_EI 包装增量**。预备包在再授权前保持 IDLE。
@@ -93,3 +81,6 @@ F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708。跨集
 
 交接说明：[`POST_EI_HANDOFF_A_B_Packages.md`](POST_EI_HANDOFF_A_B_Packages.md)
 
+## Venue / Claim 政策指针（案头 · 2026-09-24）
+
+见 [`Venue_and_Claim_Policy_JCR_2026-09-24.md`](Venue_and_Claim_Policy_JCR_2026-09-24.md)。**不**改变上表 ACTIVE=P0_EI；A/B 仍 IDLE/PREP。

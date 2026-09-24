@@ -172,10 +172,49 @@ Experiments/papers/P0_EI/
 
 **命名说明：** A 使用 `08_RailUAV_SOD`（`02`–`07` 已为 Paper2–7）；B 继续使用既有 `01_Paper1_OpenWorld_Risk`。
 
-## Venue / claim policy (2026-09-24)
+## A/B 案头预备新增（2026-09-24 晚）
+
+> 状态仍为各包 **PREP/IDLE**；未改 `00_Overview/Current_Stage.md` 唯一 ACTIVE=P0_EI。
+
+### B · `01_Paper1_OpenWorld_Risk/`
 
 | 路径 | 说明 |
 |---|---|
-| `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` | **权威**：JCR 主尺；主张强/中 + Q2/Q3 保底；A 部件族弹性；不改 ACTIVE=P0_EI |
-| `00_Overview/Venue_Quartile_Policy_2026-09-22.md` | 旧文件，已改为指向上述权威稿 |
-| `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` | A 部件族采集难度 ↔ 工作/venue 上下限（占位表） |
+| `Writing/Claim_Freeze_C1_C2.md` | **新建** C1/C2 案头冻结卡（精确句/范围/判据/近邻划界） |
+| `Literature/Literature_Matrix_Addendum_2026-09-24.md` | **加厚** Practice 列式（已覆盖/缺口/增量） |
+| `Learning_Notes/03_Open_World_Perception.md` | **加厚** Stage ① 可核对知识块 |
+| `Learning_Notes/04_Railway_Context_and_Risk.md` | **加厚** |
+| `Learning_Notes/05_Experiment_Design_and_Uncertainty.md` | **加厚** |
+| `Writing/B_OpenWorld_Risk_Outline.md` | **扩展** Intro + Related Work 骨架 |
+| `Research_Plan.md` / `Mainline_Current.md` / `Completion_Metrics.md` / `POST_EI_HANDOFF.md` | **更新** 冻结指针与案头清单 |
+
+### A · `08_RailUAV_SOD/`
+
+| 路径 | 说明 |
+|---|---|
+| `Literature/Literature_Matrix.md` §5 | **加厚** A0 已覆盖/未证实缺口/A增量 |
+| `Writing/Taxonomy_Draft.md` | **新建** 部件×缺陷（超越扣件-only） |
+| `Writing/Annotation_Timing_Protocol_D4_Draft.md` | **新建** D4 受控人时协议 |
+| `Writing/Synthetic_Disclosure_Checklist.md` | **新建** 合成 fidelity–utility 披露 |
+| `Writing/Collection_Protocol_Draft.md` | **新建 FUTURE** 采集协议（需 Current_Stage 授权） |
+| `Writing/SciData_Disclosure_Template_Stub.md` | **新建** Sci Data 披露模板桩 |
+| `Research_Plan.md` / `Mainline_Current.md` / `Completion_Metrics.md` / `POST_EI_HANDOFF.md` | **更新** |
+
+## JCR Venue / Claim 政策更新（2026-09-24）
+
+> **不**改变唯一 ACTIVE=P0_EI；A/B 仍 IDLE/PREP。主尺 = **JCR**；主张强/中/弱；地板 = 相关论文 **JCR Q2/Q3**。
+
+| 路径 | 说明 |
+|---|---|
+| `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` | **新建** 全局 JCR-primary + claim ladder 政策 |
+| `00_Overview/Venue_Quartile_Policy_2026-09-22.md` | **指针更新** → 以 2026-09-24 文件为准 |
+| `00_Overview/POST_EI_HANDOFF_A_B_Packages.md` | **更新** venue 表述 + 政策指针 |
+| `01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md` | **更新** 弱 fallback W1–W3（不定死） |
+| `01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md` | **更新** 「三区」→ JCR Qx；主张梯子 |
+| `01_Paper1_OpenWorld_Risk/Research_Plan.md` | **更新** venue/claim ladder |
+| `01_Paper1_OpenWorld_Risk/Writing/B_OpenWorld_Risk_Outline.md` | **更新** 不定死 + venue 一句 |
+| `01_Paper1_OpenWorld_Risk/Mainline_Current.md` | **更新** JCR 表述 |
+| `08_RailUAV_SOD/Writing/Taxonomy_Draft.md` | **扩展** §7 部件族采集难度排序 |
+| `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` | **新建** 族×难度×工作/发表上下限 |
+| `08_RailUAV_SOD/Research_Plan.md` / `Mainline_Current.md` / `Writing/RailUAV_SOD_Outline.md` | **更新** Sci Data 主轨 + JCR Q2/Q3 fallback |
+| `PROJECT_CONTEXT.md` | **更新** 分区口径短注 |

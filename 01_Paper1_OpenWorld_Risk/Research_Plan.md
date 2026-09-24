@@ -3,17 +3,21 @@
 更新：2026-09-24。  
 效力：主张仍以本文件为准；**执行门**以 `Current_Stage.md` 为准（当前唯一 ACTIVE=P0_EI，本包 IDLE）。  
 独立边界：[`AB_Independent_Publication_Boundary.md`](AB_Independent_Publication_Boundary.md)  
-方向判断：[`AB_Direction_Judgment_With_Literature_2026-09-24.md`](AB_Direction_Judgment_With_Literature_2026-09-24.md)
+方向判断：[`AB_Direction_Judgment_With_Literature_2026-09-24.md`](AB_Direction_Judgment_With_Literature_2026-09-24.md)  
+Venue/Claim 政策：[`../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`](../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md)（**JCR-primary**；主张强/中/弱；地板 JCR Q2/Q3）
 
 ## 1. 问题锚点
 
 铁路 UAV 图像存在小目标、远距离、遮挡、复杂背景和类别无法穷举等问题。普通检测器回答「像什么」，巡检系统还要回答「是否侵入轨道、是否值得优先复核」。
 
-暂定研究问题：
+研究问题（案头冻结，见 Claim_Freeze）：
 
 > 能否以 YOLO 为实时已知目标检测主干，用未知候选补充闭集盲区，再通过轨道上下文与**固定告警预算**把大量候选转成低漏报、可复核、可派发的危险告警？
 
 ## 2. 主张图
+
+> C1/C2 措辞：**DESK-FROZEN · IDLE**（详见 `Writing/Claim_Freeze_C1_C2.md`）。实验未授权。
+
 
 | 主张 | 最低可信证据 | 失败时如何处理 |
 |---|---|---|
@@ -32,6 +36,22 @@
 | false-novelty budget（如 q≈20%） | 补轨旁风险层与派单，否则难冲 TITS 中上 |
 | PCA-HBOS 等 UAV OOD | 与纯 OOD 滤波划界 |
 | Cao TITS 侵界综述；TIM OID 综述 | 场景合法性；挑战条目对表 |
+
+### 案头冻结（2026-09-24 晚）
+
+精确主张句、Out-of-scope、成功/失败判据与近邻差异表见：[`Writing/Claim_Freeze_C1_C2.md`](Writing/Claim_Freeze_C1_C2.md)。  
+状态：**DESK-FROZEN · IDLE**（措辞冻结；**不**授权采集/训练/主 Run）。
+
+### 主张梯子与 venue（不定死 · 2026-09-24）
+
+| 档 | 主张 | Venue（JCR） |
+|---|---|---|
+| 强 | C1+C2 满血 | TITS/TIM 上限（quartile **Unknown**，以当年 JCR 为准） |
+| **中（target）** | Claim_Freeze DESK-FROZEN C1/C2 | **JCR Q2–Q3** 应用刊（TIM/Measurement 同档） |
+| 弱 fallback | W1 单路径+预算 / W2 Known-only 风险排序 / W3 协议文 | **相关论文 JCR Q2 或 Q3（floor）** |
+
+详见 `Writing/Claim_Freeze_C1_C2.md` fallback 节。旧称「三区应用刊」一律改为 **JCR Q3**（中位带表述为 Q2–Q3）。
+
 
 ## 3. YOLO 在论文中的角色
 

@@ -22,3 +22,17 @@
 ## 解锁后建议第一动作
 
 按干净 `Stage_Guide.md` 从阶段①知识与阶段②文献冻结推进；数据建立仅在阶段④且再授权后。
+
+---
+
+## 案头预备日志 · 2026-09-24 晚
+
+已填（保持 PREP/IDLE，未授权采集/训练）：
+
+1. `Writing/Claim_Freeze_C1_C2.md`：C1/C2 精确句、范围、成败判据、近邻划界。  
+2. `Literature/Literature_Matrix_Addendum_2026-09-24.md`：按 Practice 列式加厚（Cao/TIM OID/OWOD/OSOD/SRLF/Meng/conformal/false-novelty/PCA-HBOS/Sensors/YOLO-World 等）。  
+3. `Learning_Notes/03–05`：Stage ① 可核对知识块。  
+4. `Writing/B_OpenWorld_Risk_Outline.md`：Intro + Related Work 差异化骨架。  
+5. `Mainline_Current.md` / `Completion_Metrics.md`：近案头清单与进度。
+
+**未做：** 正式实验、Current_Stage ACTIVE 变更、发明 DOI/指标。

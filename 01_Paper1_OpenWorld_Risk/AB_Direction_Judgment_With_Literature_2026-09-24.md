@@ -4,6 +4,7 @@
 > **口径**：A（RailUAV-SOD）与 B（Paper1）分开发表，贡献与主结果互不绑定。  
 > **性质**：文献依据下的可行性判断；不授权 Stage ④；不改变 P0_EI 为唯一 ACTIVE。  
 > **日期**：2026-09-24
+> **Venue/Claim 政策（2026-09-24 晚更新）：** [`../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`](../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md) —— **JCR-primary**；主张强/中/弱梯子；地板 = 相关论文 **JCR Q2/Q3**；**不定死**单一 claim。
 
 ---
 
@@ -11,8 +12,8 @@
 
 | 论文 | 值不值得做 | 总体难度 | 现实发表中位 | 上限 | 下限 |
 |---|---|---|---|---|---|
-| **A 数据/管线/协议** | **值得**（须收窄主张） | **中高**（数据与审计硬） | *Scientific Data* 类数据刊，小修–中修 | Sci Data 顺利接收；NeurIPS D&B **冲刺、不稳** | 无真实缺陷/规模不够 → Data in Brief / 技术报告 / 暂缓；**不可**并入 B 充贡献 |
-| **B 开放世界风险方法** | **值得**（须钉告警预算+风险层） | **中高**（协议与竞争硬） | JCR **三区**应用刊（TIM / Measurement / 同档 TITS 应用向） | TITS 正文（须相对 SRLF 等有清晰增量） | 做成「又一篇未知检出」→ 拒稿或掉到会议/弱刊 |
+| **A 数据/管线/协议** | **值得**（须收窄主张） | **中高**（数据与审计硬） | *Scientific Data*（数据刊主轨），小修–中修 | Sci Data 顺利；NeurIPS D&B **冲刺、不稳** | 弱范围 → **相关** 方法/应用 **JCR Q2/Q3（floor）** 或 Data in Brief / 暂缓；**不可**并入 B |
+| **B 开放世界风险方法** | **值得**（须钉告警预算+风险层） | **中高**（协议与竞争硬） | **JCR Q2–Q3** 应用刊（TIM / Measurement / 同档；以当年 JCR 为准） | TITS/TIM 上限（TITS/TIM 精确 quartile **Unknown**，以当年 JCR 为准） | 弱 fallback 仍瞄准 **相关 JCR Q2/Q3**；做成「又一篇未知检出」→ 低于 floor |
 
 两篇都**可以发到你们原先瞄准的档次带**，但都不是「躺着中」；A 的生死在真实缺陷与可复现发布，B 的生死在告警预算曲线与和 SRLF 划界。
 
@@ -57,11 +58,12 @@
 
 | 档 | 工作条件（须同时满足） | 对应发表位置 |
 |---|---|---|
-| **上限** | 自采 UAV 达标（建议数千级有效图，含真实缺陷）；双引擎效率有受控人时（建议完成 D4 量级）；合成审计曲线完整；许可与可下载发布清晰；主张写「小部件×真实缺陷+效率审计+合成审计」 | *Scientific Data* 顺利；**冲** NeurIPS Datasets & Benchmarks（铁路专项 D&B 先例少，不稳，当冲刺） |
-| **中位（应作为计划锚）** | 真实缺陷够用、规模中等、效率与基线表扎实、披露完整 | *Scientific Data* 一轮或两轮大修后接收 |
-| **下限** | 缺陷不足 / 大量合成未审计 / 规模明显弱于 UAV-RSOD 叙事 / 只有代理数据 | *Data in Brief* / 领域数据短文 / arXiv+GitHub；**或暂缓 A，绝不并入 B** |
+| **上限（强）** | 自采 UAV 达标（建议数千级有效图，含真实缺陷）；双引擎效率有受控人时（建议完成 D4 量级）；合成审计曲线完整；许可与可下载发布清晰；主张写「小部件×真实缺陷+效率审计+合成审计」 | *Scientific Data* 顺利；**冲** NeurIPS Datasets & Benchmarks（铁路专项 D&B 先例少，不稳，当冲刺） |
+| **中位（target · 计划锚）** | 真实缺陷够用、规模中等、效率与基线表扎实、披露完整 | *Scientific Data* 一轮或两轮大修后接收（**数据刊主轨**） |
+| **弱 fallback（floor）** | 部件族按采集难度收缩；审计变薄但仍有协议/基线；真实缺陷偏少但诚实披露 | **相关** 方法/应用论文 **JCR Q2 或 Q3**（Sensors/Electronics 同档；不虚构 IF） |
+| **不可接受** | 缺陷不足硬称基准 / 大量合成未审计 / 只有代理数据 / 「首个」叙事 | *Data in Brief* / 技术报告 / 暂缓；**绝不并入 B** |
 
-**结论**：在「未来可 UAV」前提下，**A 发到 Sci Data 带是真实可达的中位目标**；NeurIPS D&B 是加分冲刺，不是保底。
+**结论**：在「未来可 UAV」前提下，**A 发到 Sci Data 带是真实可达的中位目标**；NeurIPS D&B 是加分冲刺。较弱范围预先设计为 **JCR Q2/Q3 相关论文（floor）**，而非 Sci Data 全有或全无。部件族难度详见 `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md`。
 
 ---
 
@@ -105,11 +107,12 @@
 
 | 档 | 工作条件 | 对应发表位置 |
 |---|---|---|
-| **上限** | UAV 主表数据扎实；危险召回–告警预算曲线完整；未知支路与风险层删除均显著变弱；≥2 组 Unknown 轮换；Related Work 正面拆解 SRLF/Meng/Cao 综述挑战 | **IEEE TITS** 正文（难但有先例路径） |
-| **中位（应作为计划锚）** | 主张冻结清晰；主证据 4–5 块按 Research_Plan；指标以危险召回/告警负担为主 | **IEEE TIM / Measurement / 同档应用刊（JCR 三区为主，视当年分区）** |
-| **下限** | 协议泄漏、无预算曲线、与 SRLF 同构、堆 YOLO 模块 | 拒稿；或掉到一般 EI 会议/弱开源刊——**对博士正式 Paper1 不合格** |
+| **上限（强）** | UAV 主表数据扎实；危险召回–告警预算曲线完整；未知支路与风险层删除均显著变弱；≥2 组 Unknown 轮换；Related Work 正面拆解 SRLF/Meng/Cao 综述挑战 | **IEEE TITS** / **TIM** 正文（TITS/TIM 精确 quartile **Unknown**，以当年 JCR 为准；难但有先例路径） |
+| **中位（target · 计划锚）** | 主张冻结清晰；主证据 4–5 块按 Research_Plan；指标以危险召回/告警负担为主 | **IEEE TIM / Measurement / 同档应用刊（JCR Q2–Q3，以当年 JCR 为准）** |
+| **弱 fallback（floor）** | 单路径+预算；或 Known-only 风险排序；或协议文（见 Claim_Freeze fallback W1–W3） | **相关论文仍瞄准 JCR Q2 或 Q3** |
+| **不可接受** | 协议泄漏、无预算曲线、与 SRLF 同构、堆 YOLO 模块 | 拒稿；或弱开源刊——**低于 floor，不作 Paper1 主成果** |
 
-**结论**：在「未来可 UAV」前提下，**B 发到三区应用刊是合理中位**；TITS 是上限冲刺；保底不是「一定能发」，而是「做对协议才有中位，做错协议连下限都难看」。
+**结论**：在「未来可 UAV」前提下，**B 发到 JCR Q2–Q3 应用刊是合理中位**；TITS/TIM 是上限冲刺（quartile 以当年 JCR 为准）。**弱 fallback 不定死强主张**，但仍设计为可达 **JCR Q2/Q3 related**；做错协议（无预算/同构 SRLF）则低于 floor。
 
 ---
 
@@ -127,8 +130,8 @@
 2. **难吗？** 两篇都是中高：A 难在真实缺陷与审计；B 难在协议与和 SRLF 划界。  
 3. **真能发到上述论文吗？**  
    - A → **Sci Data：可以作为中位目标**（UAV 落地+真实缺陷+效率+审计）；NeurIPS D&B 仅冲刺。  
-   - B → **三区应用刊：可以作为中位目标**；TITS 为上限。  
-4. **做差会怎样？** A 掉到数据短文或暂缓；B 若做成未知检测器则难以达到正式 Paper1 标准。
+   - B → **JCR Q2–Q3 应用刊：可以作为中位目标**；TITS/TIM 为上限（quartile Unknown）。弱 fallback 仍保 **JCR Q2/Q3 related**。  
+4. **做差会怎样？** A：按部件族难度落到 **JCR Q2/Q3 related** 或暂缓（不并入 B）；B：启用 Claim_Freeze W1–W3；若做成无预算未知检测器则 **低于 floor**。
 
 ---
 
@@ -139,6 +142,19 @@
 - **现在**：继续 P0_EI；本判断与 `AB_Independent_Publication_Boundary.md` 一并存档。
 
 ---
+
+
+
+---
+
+## 六、主张梯子（强 / 中 / 弱）一览 · 2026-09-24
+
+| 论文 | 强 | 中（target） | 弱 fallback（floor=JCR Q2/Q3 related） |
+|---|---|---|---|
+| **A** | 多族+真缺陷+双审计 → Sci Data 顺利 / 冲刺 D&B | Sci Data 数据刊主轨 | 族收缩/审计薄 → JCR Q2/Q3 方法应用相关；见 PartFamily 分析 |
+| **B** | C1+C2 满血 → TITS/TIM 上限 | C1/C2 DESK-FROZEN → JCR Q2–Q3 | W1 单路径+预算 / W2 Known-only 风险排序 / W3 协议文 → 仍 JCR Q2/Q3 related |
+
+**不定死：** 中位主张是计划锚，不是唯一允许的成功形态。
 
 ## 附录：文献增量导致的界变（2026-09-24 晚）
 
@@ -155,10 +171,11 @@
 | **NeurIPS 2026 Evaluations & Datasets Call**（收 evaluation protocols / audits） | 若把双审计写成评价科学主贡献，**上界略上抬**可投 E&D；只交数据+基线则不升 |
 | RailFOD23 已覆盖合成异物 | 合成增量仅当 **fidelity–utility 对照审计** 才抬界 |
 
-**A 修订后上下限**  
-- **上**：Sci Data / NeurIPS E&D —— UAV 小部件×真缺陷 **且** 双审计相对 RFDD/DART/RailFOD23 划界清楚  
-- **中**：Sci Data（审计扎实）**或** 强 Sensors（有 UAV 真缺陷+基线但审计弱）  
-- **下**：Electronics/Sensors 方法+小数据 —— 无审计、与 RFDD/UAV 扣件重叠  
+**A 修订后上下限（JCR-primary + claim ladder）**  
+- **强/上**：Sci Data / NeurIPS E&D —— UAV 小部件×真缺陷 **且** 双审计相对 RFDD/DART/RailFOD23 划界清楚  
+- **中**：Sci Data（审计扎实；**数据刊主轨**）  
+- **弱 fallback / floor**：有 UAV 真缺陷+基线但审计弱 → **JCR Q2/Q3** 相关应用/方法（Sensors 同档等）；Electronics/Sensors-like 小数据无审计 = 贴近 floor 下沿  
+- **不可接受**：无审计硬冲 Sci Data「首个」叙事；并入 B  
 
 ### B 界变
 
@@ -169,10 +186,11 @@
 | PCA-HBOS UAV OOD（*Drones* 等） | B **下位**更拥挤；须靠轨旁风险排序+固定预算派单与纯 OOD 滤波划界 |
 | UMB / OW-OVD / RUNA（顶会 OWOD） | **不改** 上中下分档；只强化勿冲 CV 顶会 |
 
-**B 修订后上下限**  
-- **上**：TITS/TIM —— 双路径+固定预算+轨旁风险排序三者齐全且有现场/准现场指标  
-- **中**：TIM/Measurement —— 缺一（常见缺预算派单或风险层）  
-- **下**：Drones/Access —— 近似 UAV-OOD / YOLO+启发式  
+**B 修订后上下限（JCR-primary + claim ladder）**  
+- **强/上**：TITS/TIM —— 双路径+固定预算+轨旁风险排序三者齐全（TITS/TIM quartile **Unknown**，以当年 JCR 为准）  
+- **中**：TIM/Measurement 等 **JCR Q2–Q3** —— 中位证据包（见 Claim_Freeze）  
+- **弱 fallback / floor**：W1–W3 相关论文仍 **JCR Q2/Q3**  
+- **不可接受**：Drones/Access 式纯 OOD / YOLO+启发式冒充 Paper1 主成果  
 
 ### Cross
 

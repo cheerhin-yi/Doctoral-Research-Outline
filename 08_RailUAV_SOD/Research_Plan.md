@@ -3,7 +3,9 @@
 更新：2026-09-24。  
 效力：预备计划；**执行以 `Current_Stage.md` 再授权为准**。  
 独立边界：[`../01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md`](../01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md)  
-方向判断：[`../01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md`](../01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md)
+方向判断：[`../01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md`](../01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md)  
+Venue/Claim 政策：[`../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`](../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md)  
+部件族难度×发表界：[`Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md`](Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md)
 
 ## 1. 当前问题与边界
 
@@ -57,3 +59,22 @@
 ## 6. 停止条件
 
 真实缺陷不足、许可不可发布、效率审计无法受控、与 RFDD/DART 无法划界时：暂缓或降档，不并入 B。
+
+## 7. A0 案头加厚（2026-09-24 晚 · 仍 IDLE）
+
+- 近邻「已覆盖 / 未证实缺口 / A增量」见 `Literature/Literature_Matrix.md` §5。  
+- A1 草稿（**不采集**）：`Writing/Taxonomy_Draft.md`、`Annotation_Timing_Protocol_D4_Draft.md`、`Synthetic_Disclosure_Checklist.md`、`Collection_Protocol_Draft.md`（FUTURE）、`SciData_Disclosure_Template_Stub.md`。  
+- Taxonomy 注意：RFDD 扣件重叠 → **细类须超越扣件-only**。  
+- Collection_Protocol 标 FUTURE，须 `Current_Stage` 书面授权后方可执行。
+
+
+## 8. 主张梯子与 venue（不定死 · 2026-09-24）
+
+| 档 | 工作/主张 | Venue |
+|---|---|---|
+| 强 | 多族 UAV + 真缺陷 + 双审计 | Sci Data 顺利；冲刺 NeurIPS D&B/E&D |
+| **中（target）** | UAV×小部件×真缺陷 + 可审计效率/合成 | **主轨：数据刊 Sci Data** |
+| 弱 fallback | 按采集难度收缩部件族；审计变薄但仍有协议/基线 | **相关** 方法/应用 **JCR Q2 或 Q3（floor）** |
+
+- 部件族**可按采集难度增减**（见 `Writing/Taxonomy_Draft.md` §7 与 PartFamily 分析）。  
+- Sci Data 未达时，**不**并入 B；改投 JCR Q2/Q3 related 或暂缓。

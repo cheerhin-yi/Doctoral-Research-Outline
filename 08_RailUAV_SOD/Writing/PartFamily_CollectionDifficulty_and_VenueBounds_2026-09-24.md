@@ -1,26 +1,86 @@
-# Paper A · Part-family collection difficulty and venue bounds (2026-09-24)
+# 部件族采集难度与发表上下限分析（A · 2026-09-24）
 
-> **Status:** Repo mirror slot for the global policy in `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` §3.  
-> **Does NOT** authorize collection/training; A remains IDLE/PREP. Sole ACTIVE = P0_EI.  
-> **A/B independence:** unchanged — see `01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md`.
+> **效力：** 案头分析；**不**授权采集/训练；A 仍 **IDLE/PREP**。  
+> **不**改变唯一 ACTIVE=P0_EI。  
+> 政策：[`../../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`](../../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md)  
+> Taxonomy：[`Taxonomy_Draft.md`](Taxonomy_Draft.md)  
+> 日期：2026-09-24（Asia/Shanghai）
 
-## Policy requirements (fill when A is unlocked)
+---
 
-1. List candidate part families and **collection difficulty** (easy / mid / hard) with evidence sources.
-2. For each **include** and **exclude** choice, state:
-   - work **upper bound** (what the paper can claim);
-   - work **lower bound** (what must still be true if family is dropped);
-   - venue **upper / lower bound** under **JCR** (primary), CAS optional as secondary note.
-3. Keep an explicit **JCR Q2 / Q3 floor-related** path if the strong family set cannot be collected.
+## 0. 口径
 
-## Working table (placeholder)
+1. **主轨：** 数据刊 *Scientific Data*（Nature portfolio 数据刊；常与 JCR「应用刊」分轨讨论）。  
+2. **Fallback 地板：** 较弱范围仍应支撑 **相关** 方法/应用论文发到 **JCR Q2 或 Q3**（不虚构 IF；分区以当年 JCR 为准）。  
+3. **CAS/中科院** 不作主尺。  
+4. 标注 **Speculation** 的候选族未经现场核验，仅供增族决策参考。  
+5. A/B 独立：本分析**不**把 B 的告警主张写入 A 发表条件。
 
-| Part family | Collect difficulty | In/Out | Work upper | Work lower | Venue upper (JCR) | Venue floor (JCR) | Notes |
-|---|---|---|---|---|---|---|---|
-| _TBD_ | | | | | | Q2/Q3 path | Fill after unlock |
+---
 
-## Cross-links
+## 1. 已列入 Taxonomy 草稿的族
 
-- Global policy: `../../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`
-- A outline: `RailUAV_SOD_Outline.md`
-- Handoff: `../POST_EI_HANDOFF.md`
+| 族 | 采集难度 | 工作下限（仍可成文） | 工作上限（冲刺包） | 发表下限（JCR/数据刊） | 发表中位 | 发表上限 |
+|---|---|---|---|---|---|---|
+| **扣件系统**（扣件/弹条/螺母螺栓/垫圈） | **低–中** | UAV 视角扣件+封闭集基线；弱/无双审计 | 多细类+真实缺陷+人时/合成双审计 | **JCR Q3** 相关方法/应用（Electronics/Sensors 同档）；难称 Sci Data 中位 | 有 UAV 真缺陷+基线但审计偏弱 → 强 Sensors 同档 **或** 薄 Sci Data 风险 | 纳入多族叙事后贡献 Sci Data 中上 |
+| **联结件**（鱼尾板、接头螺栓） | **中–高** | 少量可见联结件作「非扣件」证据桶 | 联结件真实缺陷可统计披露 | 仅作扣件附属标签 → 不单独抬界 | 支撑「超越扣件-only」→ Sci Data 中位更稳 | 稀缺缺陷披露完整可抬 Sci Data 叙事 |
+| **轨下基础可见件**（轨距块/垫板/道钉等） | **中** | 1–2 类可见件对照 | 多地区约定+映射表 | 地区差异未说明 → 审稿风险 | 多元化部件族 → Sci Data 中位 | 与扣件/联结件并列的完整 taxonomy |
+| **轨旁/轨面附属（可选）** | **中–高** | 不作主类，仅负例/忽略 | 清晰协议下的可选类 | 与异物混淆未协议 → 伤可信度 | 可选类披露 → 不伤主叙事 | 一般不单独决定上限 |
+| **排除：接触网异物 / 人员车厢主类** | — | 不进 A 主贡献 | — | 误纳入 → 与 RailFOD23 叙事冲突，**下调** | 排除正确 → 保持 Sci Data 数据刊焦点 | — |
+
+### 扣件-only 风险（显式）
+
+- RFDD（Sci Data 2026）已占高铁扣件全景+计量学缺陷 → **禁止**「首个扣件缺陷集」。  
+- **Fasteners-only + 弱审计** → 工作/发表 **下限**：相关 **JCR Q3**（Electronics/Sensors-like）；**不是** Sci Data 中位保底。  
+- 要回到 Sci Data 中位：必须 **UAV 视角硬切** + **非扣件族或等价差异** + **效率/合成审计**（见 AB 判断附录）。
+
+---
+
+## 2. 尚未纳入的候选族（Speculation）
+
+| 候选（Speculation） | 采集难度 | 工作下限 | 工作上限 | 发表下限 | 发表中位影响 | 发表上限影响 |
+|---|---|---|---|---|---|---|
+| 鱼尾板缺陷细类加深 | 中–高 | 标签存在即可 | 真实裂纹/缺失可统计 | 无真实缺陷 → 不抬界 | 强化非扣件 → Sci Data 更稳 | 稀缺缺陷披露可作加分 |
+| Clips / 弹条姿态细分 | 低–中 | 并入扣件族 | 姿态一致性协议 | 过细难一致 → 伤 Kappa | 小幅丰富扣件轴 | 单独不足以上 Sci Data |
+| 绝缘子底座（UAV 可见时） | **高** | 不可见则不纳入 | 可见线路上的小样本+披露 | 硬采失败则放弃 | 若成功 → 强「多族」证据 | 高难度成功可抬上限叙事 |
+| 道砟/轨枕表面宏观缺陷 | 中–高 | 与 RSD_UAV 映射后少量类 | 宏观缺陷可审计子集 | 与「小部件 SOD」张力未写清 → 伤焦点 | 谨慎纳入可扩覆盖 | 过大易漂成轨面缺陷另一篇 |
+| 排水/侧沟破损（可选） | 高 | 不纳入 | 可选稀缺类 | 任务漂移风险 | 通常不进中位包 | 不建议冲上限靠它 |
+| 声屏障连接件等 | 高 | 不纳入 | 仅当可与 ANBI 等划界 | 近邻占坑 → 新颖性低 | 可选 | 不作为上限支柱 |
+
+**增族决策规则（案头）：** 优先增「中等难度、UAV 稳定可见、能写映射表」的族；高难度族允许 **稀缺披露 / 延后**，用较弱范围保住 **JCR Q2/Q3 related** floor，而不是为 Sci Data 赌全有或全无。
+
+---
+
+## 3. 组合包：工作上下限 ↔ 发表上下限
+
+| 组合包 | 工作内容 | 发表带 |
+|---|---|---|
+| **P-弱（floor 设计）** | 扣件为主（±1 个非扣件点缀）；基线表有；审计薄或仅 checklist | **相关** 方法/应用文 **JCR Q2 或 Q3（floor）**；Sci Data 不作为承诺 |
+| **P-中（target）** | 扣件 + 联结件和/或轨下可见件；真实缺陷够用；D4 人时 + 合成曲线之一扎实、另一可披露 | **主轨 Sci Data**（一轮/两轮大修后） |
+| **P-强（upper）** | 多族 UAV + 真实缺陷可统计 + 双审计扎实 + 许可/下载清晰；相对 RFDD/DART/UAV-RSOD/RailFOD23 划界表完备 | Sci Data 顺利；**冲刺** NeurIPS D&B/E&D（不稳，Non-default） |
+| **不可接受** | 仅代理数据 / 无真实缺陷硬称基准 / 无审计却写「首个」 | 低于 floor；暂缓 A，**禁止并入 B** |
+
+---
+
+## 4. 与 Sci Data vs JCR 应用刊的映射（小心表述）
+
+| 轨道 | 适用 | 表述 |
+|---|---|---|
+| **数据刊 Sci Data** | P-中 / P-强 | A **primary track** |
+| **JCR Q2–Q3 方法/应用** | P-弱；或 P-中审计不足时的 **related papers** | Fallback；可写 Sensors/Electronics **同档**，**不虚构**当年 quartile |
+| **JCR Q1 冲刺** | 一般不作为 A 数据文主承诺 | 若衍生成方法短文，另开边界，且仍独立于 B |
+
+---
+
+## 5. 对 Taxonomy / Research_Plan 的含义
+
+1. Taxonomy **可以**按采集难度增减族；增减须回写本表与 `Taxonomy_Draft.md` §7。  
+2. Research_Plan 中位锚 = **Sci Data**；同时文档化 **JCR Q2/Q3 related** fallback。  
+3. 本文件更新 ≠ 开工；采集仍须 `Current_Stage` 书面授权。
+
+## 6. 自检
+
+- [x] 未改 ACTIVE=P0_EI  
+- [x] 未软化 A/B 独立  
+- [x] 未伪造 IF；TITS/TIM 等未写入本 A 主轨为必投  
+- [x] Speculation 已标记  

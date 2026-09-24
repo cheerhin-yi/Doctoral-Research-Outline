@@ -22,6 +22,7 @@
 - [项目总指南](00_Overview/Project_Guide.md)：目录、阶段、工作方式和范围控制；
 - [当前阶段](00_Overview/Current_Stage.md)：现在具体学什么、做什么；
 - [七篇论文路线](00_Overview/Seven_Paper_Roadmap.md)：每篇论文的作用和知识依赖；
+- [Venue/Claim 政策 · JCR-primary](00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md)：分区主尺与 A/B 主张梯子（**不**改变 ACTIVE=P0_EI）；
 - [每周论文审计与归档](00_Overview/Literature_Tracking_Workflow.md)：接收ChatGPT检索结果，先审计去重，再联动各方向文献矩阵、创新台账和周报；
 - [Paper 1任务指南](01_Paper1_OpenWorld_Risk/Stage_Guide.md)：从学习、文献、复现、数据、实验到投稿；
 - [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。
@@ -41,13 +42,14 @@
 | `00_Practice_UAV_Aerial_Detection` | 实时轻量小目标检测练手论文及其独立学习、文献、实验和写作材料 | ACTIVE |
 | `00_PrePaper_Lightweight_Detection`（已归档） | 原练手论文学习笔记、文献及历史计划；不写入主线A交付物 | 历史保留／学习参考 |
 | `90_English_Learning` | 与当前科研阶段同步的领域英语、论文写作和四级能力支持 | SUPPORT |
-| `01_Paper1_OpenWorld_Risk` | Paper 1开放世界风险研究、笔记、文献、实验和写作文件 | ACTIVE |
+| `01_Paper1_OpenWorld_Risk` | Paper 1 / B 开放世界风险预备包 | IDLE/PREP（Post-EI；ACTIVE 仍为 P0_EI） |
 | `02_Paper2_3D_Disaster` | 三维灾害定量评估 | PAUSED |
 | `03_Paper3_Comm_Perception` | 通信受限协同感知 | PAUSED |
 | `04_Paper4_Risk_ISAC` | 风险驱动ISAC | PAUSED |
 | `05_Paper5_Multimodal_Risk` | 多模态风险理解 | PAUSED |
 | `06_Paper6_Active_Inspection` | 主动无人机巡检 | PAUSED |
 | `07_Paper7_MultiUAV_Decision` | 多无人机协同决策 | PAUSED |
+| `08_RailUAV_SOD` | 论文 A · RailUAV-SOD 数据/管线/审计预备包 | IDLE/PREP（Post-EI） |
 | `99_Attachments` | 全项目共用的附件和写法模板 | REFERENCE |
 
 ## 当前阶段完成前禁止
