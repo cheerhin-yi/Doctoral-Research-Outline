@@ -144,3 +144,13 @@ Experiments/papers/P0_EI/
 ---
 
 *本文件为人工维护主目录；图 ↔ 数据表（§4）是权威对照，再生脚本不得发明指标。*
+
+## Paper1 新增文档（2026-09-24）
+
+| 路径 | 说明 |
+|---|---|
+| `01_Paper1_OpenWorld_Risk/Paper1_Dataset_Feasibility_Memo.md` | 数据集前置可行性备忘（非开工单） |
+| `01_Paper1_OpenWorld_Risk/Paper1_Direction_Worth_Judgment_2026-09-24.md` | 未来可 UAV 采线下的方向/难度/发表再评估 |
+
+| `01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md` | A/B 独立发表边界：贡献与结果互不绑定（2026-09-24 用户口径） |
+| `01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md` | A/B 分轨方向判断（文献依据·未来可UAV·独立发表） |
