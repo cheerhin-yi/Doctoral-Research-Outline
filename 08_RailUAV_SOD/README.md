@@ -12,7 +12,6 @@
 | 文件 | 用途 |
 |---|---|
 | [`../00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md) | **唯一当前事项**（本包不得覆盖） |
-| [`POST_EI_HANDOFF.md`](POST_EI_HANDOFF.md) | Post-EI 解锁说明与禁令 |
 | [`Research_Plan.md`](Research_Plan.md) | 问题、主张、与 B 边界 |
 | [`Stage_Guide.md`](Stage_Guide.md) | 阶段门（全部 IDLE，直至再授权） |
 | [`Mainline_Current.md`](Mainline_Current.md) | 近/中/远与执行效力 |
@@ -24,6 +23,26 @@
 
 独立边界权威：[`../01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md`](../01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md)
 
+## 🔒 解锁条件与禁令（2026-09-26 由原 POST_EI_HANDOFF 并入）
+
+**解锁条件**（全部满足，本包才可从 IDLE 改为执行）：
+
+1. `../00_Overview/Current_Stage.md` 中 P0_EI 包装事项收口，或用户书面切换当前阶段。
+2. 本页或 `Current_Stage.md` 出现 **「授权启动 08_RailUAV_SOD / A0」** 字样。
+3. A/B 独立边界仍有效（见 `AB_Independent_Publication_Boundary.md`）：A 与 B 分开发表，可互相引用，但不得互为必要条件。
+
+**解锁前禁止：**
+
+- UAV 正式采集、大规模标注外包、正式训练、主表 Run。
+- 把本包状态写成 ACTIVE。
+- 把 B 的告警实验写进 A 的主结果。
+- 静默「解决」其他目录 `Stage_Guide.md` 的合并冲突。
+
+**解锁后第一动作：**
+
+1. 把本目录 `Mainline_Current.md` 的状态改为 A0 可行性。
+2. 按 `Stage_Guide.md` 的 A0 完成近邻全文审计与许可核验计划。
+3. 然后再谈采集协议。顺序是先论证、后飞行，不是先飞再补故事。
 ## 硬边界（摘要）
 
 - **卖点**：UAV 视角 × 铁路小部件 × 真实缺陷 + 双引擎 OVD 半自动标注的受控效率审计 + 合成 fidelity–utility 审计协议。

@@ -12,7 +12,6 @@
 | 文件 | 用途 |
 |---|---|
 | [`../00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md) | **唯一当前事项** |
-| [`POST_EI_HANDOFF.md`](POST_EI_HANDOFF.md) | Post-EI 解锁说明 |
 | [`Research_Plan.md`](Research_Plan.md) | 问题与 C1/C2 |
 | [`Stage_Guide.md`](Stage_Guide.md) | 阶段门（干净稿 · IDLE） |
 | [`Mainline_Current.md`](Mainline_Current.md) | 近/中/远 |
@@ -39,6 +38,22 @@ A 侧预备包：[`../08_RailUAV_SOD/`](../08_RailUAV_SOD/README.md)
 
 YOLO 结构改动不是默认贡献。A 的数据集**不是** B 的必要条件；B 可用公开/代理数据讲完 C1/C2。
 
+## 🔒 解锁条件与禁令（2026-09-26 由原 POST_EI_HANDOFF 并入）
+
+**解锁条件：**
+
+1. P0_EI 包装收口，或用户书面切换 `../00_Overview/Current_Stage.md`。
+2. 本页或 `Current_Stage.md` 出现「授权启动 01_Paper1 / 阶段①或④」类字样。
+3. A/B 独立边界仍有效：B **不**等待 A 中稿；A 与 B 可互相引用，但不得互为必要条件。
+
+**解锁前禁止：**
+
+- Stage ④ 数据采集与正式训练。
+- 把本目录标成 ACTIVE。
+- 把 A 的标注效率或合成曲线写成 B 的主证据。
+- 静默合并其他目录的冲突稿。
+
+**解锁后第一动作：** 按干净的 `Stage_Guide.md`，从阶段①知识和阶段②文献冻结推进；数据建立只在阶段④、且再次授权后进行。
 ## 硬边界
 
 - **C1**：已知 + 未知双路径，在**固定告警预算**下提高危险召回。  

@@ -74,9 +74,9 @@
 |---|---|
 | **policy** | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`（JCR-primary + claim ladder）；旧稿镜像 `Venue_Quartile_Policy_2026-09-22.md` |
 | **boundary** | `01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md` · `AB_Direction_Judgment_With_Literature_2026-09-24.md` · `Paper1_Direction_Worth_Judgment_2026-09-24.md` |
-| **A prep** | `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` · `08_RailUAV_SOD/POST_EI_HANDOFF.md` · `Writing/` 案头草案簇；Learning_Notes 课程计划 `_PLAN_Learning_Notes_Curriculum_2026-09-24.md` → **pending**（sibling） |
-| **B prep** | `01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md` · `Literature/Literature_Matrix_Addendum_2026-09-24.md` · `POST_EI_HANDOFF.md` · `Writing/B_OpenWorld_Risk_Outline.md` |
-| **catalog** | 本文件 + `00_Overview/POST_EI_HANDOFF_A_B_Packages.md` + 上列 INDEX |
+| **A prep** | `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` · `Writing/` 案头草案簇；Learning_Notes 课程计划 `_PLAN_Learning_Notes_Curriculum_2026-09-24.md` → **pending**（sibling） |
+| **B prep** | `01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md` · `Literature/Literature_Matrix_Addendum_2026-09-24.md` · `Writing/B_OpenWorld_Risk_Outline.md` |
+| **catalog** | 本文件 + 上列 INDEX |
 
 细目与 `.bak` 列示见 INDEX；下方 §4–§7 **P0_EI 图表/证据骨架保持不变**。文末「Paper1 / Post-EI / 案头 / JCR」各节为同日增量明细，与本表互指。
 
@@ -176,12 +176,9 @@ Experiments/papers/P0_EI/
 
 | 路径 | 说明 |
 |---|---|
-| `00_Overview/POST_EI_HANDOFF_A_B_Packages.md` | A/B 解锁纪律与登记 |
 | `00_Overview/Current_Stage.md` § Post-EI 预备包登记 | IDLE 表；ACTIVE 仍为 P0_EI |
 | `08_RailUAV_SOD/` | A 全树：Research_Plan / Stage_Guide / Literature / Writing / Experiments / Learning_Notes |
-| `08_RailUAV_SOD/POST_EI_HANDOFF.md` | A 侧交接 |
 | `01_Paper1_OpenWorld_Risk/` 扩展 | B 补齐 Mainline_Current、Completion_Metrics、Experiments/papers/B_*、Writing 提纲等 |
-| `01_Paper1_OpenWorld_Risk/POST_EI_HANDOFF.md` | B 侧交接 |
 | `01_Paper1_OpenWorld_Risk/Stage_Guide.md` | **干净稿**替换原冲突标记版 |
 | `01_Paper1_OpenWorld_Risk/Literature/Literature_Matrix_Addendum_2026-09-24.md` | SRLF/Meng/conformal 等划界增补 |
 | 既有备忘（保留） | `AB_Independent_Publication_Boundary.md` · `AB_Direction_Judgment_With_Literature_2026-09-24.md` · `Paper1_Dataset_Feasibility_Memo.md` · `Paper1_Direction_Worth_Judgment_2026-09-24.md` |
@@ -202,7 +199,7 @@ Experiments/papers/P0_EI/
 | `Learning_Notes/04_Railway_Context_and_Risk.md` | **加厚** |
 | `Learning_Notes/05_Experiment_Design_and_Uncertainty.md` | **加厚** |
 | `Writing/B_OpenWorld_Risk_Outline.md` | **扩展** Intro + Related Work 骨架 |
-| `Research_Plan.md` / `Mainline_Current.md` / `Completion_Metrics.md` / `POST_EI_HANDOFF.md` | **更新** 冻结指针与案头清单 |
+| `Research_Plan.md` / `Mainline_Current.md` / `Completion_Metrics.md` | **更新** 冻结指针与案头清单 |
 
 ### A · `08_RailUAV_SOD/`
 
@@ -214,7 +211,7 @@ Experiments/papers/P0_EI/
 | `Writing/Synthetic_Disclosure_Checklist.md` | **新建** 合成 fidelity–utility 披露 |
 | `Writing/Collection_Protocol_Draft.md` | **新建 FUTURE** 采集协议（需 Current_Stage 授权） |
 | `Writing/SciData_Disclosure_Template_Stub.md` | **新建** Sci Data 披露模板桩 |
-| `Research_Plan.md` / `Mainline_Current.md` / `Completion_Metrics.md` / `POST_EI_HANDOFF.md` | **更新** |
+| `Research_Plan.md` / `Mainline_Current.md` / `Completion_Metrics.md` | **更新** |
 
 ## JCR Venue / Claim 政策更新（2026-09-24）
 
@@ -224,7 +221,6 @@ Experiments/papers/P0_EI/
 |---|---|
 | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` | **新建** 全局 JCR-primary + claim ladder 政策 |
 | `00_Overview/Venue_Quartile_Policy_2026-09-22.md` | **指针更新** → 以 2026-09-24 文件为准 |
-| `00_Overview/POST_EI_HANDOFF_A_B_Packages.md` | **更新** venue 表述 + 政策指针 |
 | `01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md` | **更新** 弱 fallback W1–W3（不定死） |
 | `01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md` | **更新** 「三区」→ JCR Qx；主张梯子 |
 | `01_Paper1_OpenWorld_Risk/Research_Plan.md` | **更新** venue/claim ladder |
@@ -254,5 +250,5 @@ Experiments/papers/P0_EI/
 | `08_RailUAV_SOD/Learning_Notes/Learning_Record_Template.md` | **更新** Practice 级模板 |
 | `08_RailUAV_SOD/Completion_Metrics.md` | **更新** L0–L4 对齐新笔记 |
 | `08_RailUAV_SOD/Learning_Check_Baseline.md` | **更新** 分块检查清单 |
-| `08_RailUAV_SOD/Mainline_Current.md` / `POST_EI_HANDOFF.md` | **短更** Learning_Notes 脚手架 DONE |
+| `08_RailUAV_SOD/Mainline_Current.md` | **短更** Learning_Notes 脚手架 DONE |
 | `00_Overview/Discussion_Extras_Index_2026-09-24.md` | **新建** 近期 A/B 政策/判断/案头文件索引 |

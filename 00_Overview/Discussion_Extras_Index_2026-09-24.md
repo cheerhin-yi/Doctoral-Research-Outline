@@ -13,7 +13,6 @@
 |---|---|
 | `Venue_and_Claim_Policy_JCR_2026-09-24.md` | JCR-primary + 主张强/中/弱梯子；地板 Q2/Q3 related |
 | `Venue_Quartile_Policy_2026-09-22.md` | 旧文；以 2026-09-24 政策为准 |
-| `POST_EI_HANDOFF_A_B_Packages.md` | A/B 预备包解锁纪律 |
 | `Current_Stage.md` | 唯一 ACTIVE 入口（含 Post-EI IDLE 登记） |
 | `Learning_Note_Method.md` | 学习笔记统一方法 |
 
@@ -27,7 +26,6 @@
 | `Paper1_Dataset_Feasibility_Memo.md` | 数据集前置可行性（非开工单） |
 | `Writing/Claim_Freeze_C1_C2.md` | B 主张冻结卡 + 弱 fallback |
 | `Literature/Literature_Matrix_Addendum_2026-09-24.md` | B 侧划界增补 |
-| `POST_EI_HANDOFF.md` | B 侧交接 |
 
 ## 08_RailUAV_SOD（A · 案头预备）
 
@@ -41,7 +39,7 @@
 | `Writing/SciData_Disclosure_Template_Stub.md` | Sci Data 披露模板桩 |
 | `Literature/Literature_Matrix.md` §5 | A0 近邻已覆盖/缺口/增量 |
 | `Learning_Notes/` | 本索引同日加厚的学习脚手架 |
-| `POST_EI_HANDOFF.md` / `Mainline_Current.md` | A 侧交接与近案头清单 |
+| `Mainline_Current.md` | A 侧近案头清单 |
 
 ## 使用方式
 

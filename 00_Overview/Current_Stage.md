@@ -1,6 +1,6 @@
 # 当前阶段（唯一入口）
 
-> **目录纪律（2026-09-23）**：文献与实验仅按 papers/<PaperID>/ 槽位填写。P0 入口：Literature/papers/P0_EI/、Experiments/papers/P0_EI/。旧材料见 ARCHIVE_NOTE.md。
+> **目录纪律（2026-09-23）**：文献与实验仅按 papers/<PaperID>/ 槽位填写。P0 入口：Literature/papers/P0_EI/、Experiments/papers/P0_EI/。
 
 
 更新：2026-09-20（Asia/Shanghai）。
@@ -78,8 +78,6 @@ F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708。跨集
 | A · RailUAV-SOD | [`../08_RailUAV_SOD/`](../08_RailUAV_SOD/README.md) | **IDLE / PREP** | Post-EI 数据文预备包；禁采集/训练 |
 | B · Paper1 | [`../01_Paper1_OpenWorld_Risk/`](../01_Paper1_OpenWorld_Risk/README.md) | **IDLE / PREP** | Post-EI 方法文预备包；禁 Stage ④ |
 | Paper 2–7 | `02_`…`07_` | **PAUSED** | 不变 |
-
-交接说明：[`POST_EI_HANDOFF_A_B_Packages.md`](POST_EI_HANDOFF_A_B_Packages.md)
 
 ## Venue / Claim 政策指针（案头 · 2026-09-24）
 

@@ -80,4 +80,3 @@ DESK-FROZEN 强/中措辞保留；fallback **不**覆盖冻结卡成功判据，
 | `01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md` | B 强/中冻结 + 弱 fallback |
 | `01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md` | A/B 上下限与文献界变（JCR 口径） |
 | `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` | A 部件族采集难度 × 工作/发表界 |
-| `POST_EI_HANDOFF_A_B_Packages.md` | 解锁纪律 |
