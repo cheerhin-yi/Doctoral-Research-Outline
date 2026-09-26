@@ -1,12 +1,20 @@
 # Learning_Notes（A · RailUAV-SOD）
 
-按 **数据文 + 双审计** 路线分块学习。面向**非铁路专家**：先打铁路可见结构基础，再学数据集论文工艺与审计。  
-主题笔记统一两部分：
+按 **数据文 + 双审计** 路线分块学习。面向**非铁路专家**：先打铁路可见结构基础，再学数据集论文工艺与审计。
 
-1. **第一部分：应知** — 学习目标、知识链、链上说明、练习、必答  
-2. **第二部分：我的记录** — 按同一条链填写理解／证据／必答；**过关只查这里**
+主题笔记结构对齐 Practice [`01_YOLO_Research_Core.md`](../../00_Practice_UAV_Aerial_Detection/Learning_Notes/01_YOLO_Research_Core.md)（**不是** Practice `02` 双部 R1–R6）：
 
-> **编号权威（已锁定 2026-09-24）：** [`_PLAN_Learning_Notes_Curriculum_2026-09-24.md`](_PLAN_Learning_Notes_Curriculum_2026-09-24.md)。本 README 与 `01`–`09` 文件名已与课表对齐；**应知已写成可自学正文；我的记录仍留空给你填。**编号/关卡/边界仍锁定；不以过程报告充数。
+1. **🎯 必须掌握** — 2–4 项核心；各含复述要求 + 验证方式  
+2. **🔗 主题知识链** — 一条链 + 四追问  
+3. **✍️ 灵活学习记录** — 短会话模板（空白）  
+4. **📚 按结构填写知识链** — 每节点机制讲解 + 空白追问/要点  
+5. **✅ 必学问题** — 编号题 + 空白「我的回答」  
+6. **🎯 最小完成证据** — 勾选清单  
+7. **🚫 当前边界** / **📋 完成评审**
+
+过关看：已填节点追问、必学问题初稿、最小完成证据勾选、能闭卷串讲知识链（详见 [`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md) + [`../Completion_Metrics.md`](../Completion_Metrics.md)）。助手**不得代填**。
+
+> **编号权威（已锁定 2026-09-24）：** [`_PLAN_Learning_Notes_Curriculum_2026-09-24.md`](_PLAN_Learning_Notes_Curriculum_2026-09-24.md)。本 README 与 `01`–`09` 文件名已与课表对齐；骨架已改为 YOLO01 单文件工作笔记；填写位仍留空给你填。编号/关卡/边界仍锁定。
 > **状态纪律：** 本目录学习 ≠ 授权采集/训练。包状态仍为 **PREP / IDLE**；全库唯一 ACTIVE 仍是 **P0_EI**（见 [`../../00_Overview/Current_Stage.md`](../../00_Overview/Current_Stage.md)）。
 > **A/B 边界：** 笔记中不写告警预算、危情召回、可派发告警为主贡献（属 B）。见 [`../../01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md`](../../01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md)。
 
@@ -45,15 +53,15 @@
 
 | 门 | 条件 | 才能做什么 |
 |---|---|---|
-| L0 | `01`+`02`+`03` 第二部分均 `PASSED` | 进入视角与数据文工艺 |
+| L0 | `01`+`02`+`03` 均 `PASSED` | 进入视角与数据文工艺 |
 | L1 | `04`+`05` `PASSED` | 进入双审计主题 |
 | L2 | `06`+`07` `PASSED` | 进入基线与主链 |
 | L3 | `08` `PASSED` + `09` 主链练习完成 | 进入 L4 主张/划界自检 |
-| L4 | `09` 必答与划界自检 `PASSED` | 讨论 A1 冻结措辞；**仍不**解锁采集/训练 |
+| L4 | `09` 必学问题与划界自检 `PASSED` | 讨论 A1 冻结措辞；**仍不**解锁采集/训练 |
 
 1. 先读本 README、`Learning_Check_Baseline`、`Current_Stage`。  
 2. 铁路 FOUNDATION 块（`01`→`03`）优先；用户不熟铁路域时**禁止跳过**。  
-3. 每块第二部分自评后交给助手检查；`PASSED` 再进下一块。  
+3. 每块自评后交给助手检查（看填写位与闭卷串讲）；`PASSED` 再进下一块。  
 4. 学习关卡 **不**替代实验门，也 **不**因补笔记而授权采集/训练。
 
 ## 与案头材料对齐
@@ -68,4 +76,4 @@
 | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` | `05`、`09` |
 | `AB_Independent_Publication_Boundary.md` | 全部笔记禁止泄漏 B 告警主张 |
 
-样板结构对齐：Practice [`02_PyTorch_and_Reproducibility.md`](../../00_Practice_UAV_Aerial_Detection/Learning_Notes/02_PyTorch_and_Reproducibility.md) 双部写法（第一部分应知教材 + 第二部分 R1–R6 我的记录；过关只查第二部分）+ [`Learning_Note_Method.md`](../../00_Overview/Learning_Note_Method.md)。
+样板结构对齐：Practice [`01_YOLO_Research_Core.md`](../../00_Practice_UAV_Aerial_Detection/Learning_Notes/01_YOLO_Research_Core.md)（必须掌握→知识链→按段拆解→必学问题；图标要求）+ [`Learning_Note_Method.md`](../../00_Overview/Learning_Note_Method.md)。
