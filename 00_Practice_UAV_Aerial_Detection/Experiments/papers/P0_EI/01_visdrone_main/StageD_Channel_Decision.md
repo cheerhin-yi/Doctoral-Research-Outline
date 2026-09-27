@@ -2,7 +2,7 @@
 
 ## Decision: READY (Case 1 + Case 3)
 
-- **Case 1 (legal local GT):** Ultralytics assets mirror `VisDrone2019-DET-test-dev.zip` includes images + annotations (1610). Audited in A0-05; SHA registered there.
+- **Case 1 (legal local GT):** Ultralytics assets mirror `VisDrone2019-DET-test-dev.zip` includes images + annotations (1610). Audited in A0-05 (`../00_freeze/provenance/A0-05_VisDrone_File_Audit.md`); SHA registered there.
 - **Case 3 (repo evaluator):** Same VisDrone-compatible path as Stage C (`diagnose_bt1.prepare_gt` + `match_gt`) + official toolkit archive present under `11_Datasets/processed/VisDrone/`.
 - **Not Case 2:** Official challenge server / Drive package not used (historical acquisition error; no live submission).
 

@@ -104,7 +104,7 @@
 
 ## 9. 助手评估区（Assistant assessment）
 
-> 由助手按 [ASSESSMENT_PROTOCOL.md](../ASSESSMENT_PROTOCOL.md) 填写。用户可不填。助手不得改写第 3–5 节初稿。
+> 由助手按评估协议填写。用户可不填。助手不得改写第 3–5 节初稿。
 
 | 字段 | 内容 |
 |---|---|

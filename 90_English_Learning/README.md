@@ -3,7 +3,7 @@
 更新日期：2026-09-16  
 本目录草案对齐：**每天约 1 小时**，目标 **2026 年 12 月 CET-4**（**请确认官方考试日期与报名**），并与科研 LEARNING-CORE 同步。
 
-详细日程见上级 [Completion_Metrics.md](../Completion_Metrics.md)。  
+详细日程见上级 Completion_Metrics.md。  
 个人作答与测试只写入 [Progress_Log.md](Progress_Log.md)。状态默认 `TODO`；**不编造基线测验成绩或已通过结果**。
 
 本线**不改变**科研唯一阶段门，也不等于论文研究方向。
@@ -49,7 +49,7 @@
 |---|---|
 | 本 README | 入口、规则、模块顺序 |
 | [Progress_Log.md](Progress_Log.md) | 本人作答、测试、CET 分项、状态 |
-| [../Completion_Metrics.md](../Completion_Metrics.md) | 至 12 月完整日程与模块必答题 |
+| ../Completion_Metrics.md | 至 12 月完整日程与模块必答题 |
 | 原仓库 `Domain_English_Lessons.md`（若仍保留） | 可继续作题库；新日程以并行计划为准 |
 
 同一事实只留一处：课程/题干在课程或并行计划；作答只在 Progress_Log。

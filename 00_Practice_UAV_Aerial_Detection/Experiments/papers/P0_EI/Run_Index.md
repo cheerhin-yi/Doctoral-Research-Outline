@@ -8,8 +8,9 @@
 | D | P0-BENCH-D-TESTDEV-20260917-01 | VisDrone 主精度 | `01_visdrone_main/data/D_*` |
 | E | P0-BENCH-E-UAVDT-20260918-FULL | 跨集外推 | `03_cross_uavdt/data/E_*` |
 | F | P0-BENCH-F-TESTDEV-20260917-01 | 图级配对 | `02_paired_stats/data/F_*` |
+| G | P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01 | 4090 正式时序（**未跑**；UAVDT 可选） | 待写 `04_timing/Timing_4090_Table.md`（与 1660 分表） |
 
-Smoke / 失败短跑 / `.npy` 预测未迁入论文槽（仅存 Archive 或已丢弃策略见 Experiments README）。
+Smoke / 失败短跑 / `.npy` 预测不进证据槽（原始输出留在 Git 忽略的 `11_Datasets` 或运行目录）。冻结件的来源记录见 `00_freeze/provenance/`。
 
 注（2026-09-27）：
 - `00_freeze/stage_e_config_freeze.json` 内 `run_id` 为 smoke `P0-BENCH-E-UAVDT-20260918-01`（24 图）；全量终跑为 **`P0-BENCH-E-UAVDT-20260918-FULL`**。冻结 JSON 不改。

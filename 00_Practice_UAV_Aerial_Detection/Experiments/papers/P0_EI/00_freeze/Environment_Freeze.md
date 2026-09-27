@@ -111,7 +111,7 @@ Locked summary: window 640; candidate grid yields 240 windows; density from coar
 
 - conf=0.25, IoU=0.50, batch=1
 - small: 0 < w*h < 1024 original pixels
-- VisDrone ignore/class/match: A0-07 / Label Adapter (`stage_a/evaluator_notes.md`)
+- VisDrone ignore/class/match: A0-07 / Label Adapter (`stage_a/evaluator_notes.md`; source records `provenance/A0-07_Evaluator_Semantics_Check.md`, `provenance/Label_Adapter_Check.md`)
 - Name Ultralytics-native AP separately from VisDrone-compatible evaluator
 
 ## Timing boundary (registered for B; not run)

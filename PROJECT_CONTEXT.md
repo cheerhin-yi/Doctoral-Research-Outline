@@ -1,4 +1,4 @@
-> **路径更新 2026-09-16：** 活跃练手目录改为 `00_Practice_UAV_Aerial_Detection/`；旧 `00_PrePaper_*`／`00_Startup_*` 在 `99_Attachments/Archive_2026-09-16_PracticePaper/`。当前事项以 `00_Overview/Current_Stage.md` 为准。
+> **路径更新 2026-09-16：** 活跃练手目录改为 `00_Practice_UAV_Aerial_Detection/`；旧 `00_PrePaper_*`／`00_Startup_*` 已于 2026-09-27 删除（Git 历史保留；P0 冻结件所需来源记录已移入 `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/00_freeze/provenance/`）。当前事项以 `00_Overview/Current_Stage.md` 为准。
 
 # 项目上下文：博士研究与主线A启动论文
 
@@ -10,7 +10,7 @@
 
 **当前唯一待办：撰写 P0 EI 会议稿，并选定 2027 年会期。** 主张仅 P0-EI-C1／P0-EI-C2（PROPOSED）。旧 P0-A-C1／C2 保持 HOLD（历史追踪）。Paper 1 两项主张与 Paper 2–7 保持 PAUSED。
 
-权威入口：[当前阶段](00_Overview/Current_Stage.md)、[主线A当前](00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md)、[2026-09-16决定](00_Practice_UAV_Aerial_Detection/Research_Question_Decision_2026-09-16.md)、[研究计划](00_Practice_UAV_Aerial_Detection/Research_Plan.md)、[阶段指南](00_Practice_UAV_Aerial_Detection/Stage_Guide.md)。
+权威入口：[当前阶段](00_Overview/Current_Stage.md)、[主线A当前](00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md)、2026-09-16决定、[研究计划](00_Practice_UAV_Aerial_Detection/Research_Plan.md)、阶段指南。
 
 允许整理已有表成稿；若缺同口径 4090 时间表或一次 test-dev 终评，须先登记 Run ID。禁止新训练、改网络、用未采集高原数据占位写结果。不把 VisDrone 写成铁路安全或高原泛化；不承诺期刊录用。
 
@@ -85,7 +85,7 @@ VisDrone2019-DET已完成8,629图文件级审计：train 6,471、val 548、test-
 
 未发现跨split字节或RGB精确重复，但有34对跨split近重复候选和人工确认的共享场景线索。文件名前缀不是已确认的航次／城市ID；来源组Unknown，不能宣称跨场景独立泛化。
 
-UAV-RSOD历史审计HOLD：原图检测框与增强来源映射仍不足，有split重复问题；作者询问信只是未发送草稿，当前不阻塞VisDrone。见[VisDrone审计](00_Startup_Railway_UAV_Detection/Experiments/A0-05_VisDrone_File_Audit.md)、[UAV-RSOD审计](00_Startup_Railway_UAV_Detection/Experiments/Data_Feasibility_Audit.md)。
+UAV-RSOD历史审计HOLD：原图检测框与增强来源映射仍不足，有split重复问题；作者询问信只是未发送草稿，当前不阻塞VisDrone。见[VisDrone审计](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/00_freeze/provenance/A0-05_VisDrone_File_Audit.md)、UAV-RSOD审计。
 
 评价必须区分：
 
@@ -109,7 +109,7 @@ UAV-RSOD历史审计HOLD：原图检测框与增强来源映射仍不足，有sp
 
 ## 6. 已完成运行与主要结果
 
-完整编号、协议和状态见[实验跟踪表](00_Startup_Railway_UAV_Detection/Experiments/papers/P0_EI/Run_Index.md)。以下均为受限开发证据；执行PASS不代表正式门通过。
+完整编号、协议和状态见[实验跟踪表](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md)。以下均为受限开发证据；执行PASS不代表正式门通过。
 
 | 任务／运行 | 实际完成与结论 |
 |---|---|
@@ -141,7 +141,7 @@ F1280仍有6.94%帧次超过40ms参考，不能称硬实时通过。GT逐图选�
 
 BTD11低分空间：阈值.25→.10小TP1312→1624，但FP839→2170（+1331）。独立GT修复分数／定位／类别分别补559／142／198，均不丢原小TP；不能相加，也不是可部署方法收益。低分同类IoU符合证据涉及564个漏检；分数修复最大一对一容量560、实际重评559，不混用这些数量。35/48图已截断到500框，缺NMS前轨迹和原始分布，不能推断完全无响应或NMS误删因果。
 
-核心证据：[100轮归档](00_Startup_Railway_UAV_Detection/Experiments/BT1_100_Epoch_Archive.md)、[BTD6](00_Startup_Railway_UAV_Detection/Experiments/BTD6_Pipeline_Result.md)、[BTD9](00_Startup_Railway_UAV_Detection/Experiments/BTD9_F1280_Result.md)、[BTD11](00_Startup_Railway_UAV_Detection/Experiments/BTD11_Error_Structure_Result.md)。
+核心证据：[100轮归档](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/00_freeze/provenance/BT1_100_Epoch_Archive.md)、BTD6、BTD9、BTD11。
 
 ## 7. 失败、否决与恢复记录
 

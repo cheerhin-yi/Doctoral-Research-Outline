@@ -1,78 +1,77 @@
 # 当前阶段（唯一入口）
 
-> **目录纪律（2026-09-23）**：文献与实验仅按 papers/<PaperID>/ 槽位填写。P0 入口：Literature/papers/P0_EI/、Experiments/papers/P0_EI/。
+更新：2026-09-27（Asia/Shanghai）。ACTIVE 不变：**P0_EI**。
 
-
-更新：2026-09-20（Asia/Shanghai）；2026-09-27 修链、同步包装状态与 UAVDT 路径（ACTIVE 不变）。
-
-本文件是全项目**唯一当前事项入口**。与源文件冲突时，以本页与 [`Mainline_A_Current.md`](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md) 为准（原 `Research_Question_Decision_2026-09-16.md` 已于 commit `c97f263` 删除，其研究问题／主张 ID／近中远内容由 `Mainline_A_Current.md` §3–§5 与 `Research_Plan.md` §1–§2 承载）。
+本文件是全项目**唯一当前事项入口**。研究问题、实验设置与 C1／C2 主张全文见 [`Research_Plan.md`](../00_Practice_UAV_Aerial_Detection/Research_Plan.md)；近中远边界见 [`Mainline_A_Current.md`](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md)。
 
 | 入口 | 路径 |
 |---|---|
 | 练手现行目录 | [`00_Practice_UAV_Aerial_Detection/`](../00_Practice_UAV_Aerial_Detection/README.md) |
-| 主线 A 当前执行 | [`Mainline_A_Current.md`](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md) |
-| P0 Benchmark | [`Experiments/papers/P0_EI/`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/) |
-| UAVDT（G 盘） | `G:\Schloar Data\P0\UAVDT\`（2026-09-27 核实存在，50×`*_gt_whole.txt`；Stage E 运行时路径为 `G:\Schloar Data\UAVDT\`，已迁移；布局 PASS：50 序列／40735 帧） |
-| T4 过程目录（G 盘，仅历史过程件） | `G:\Schloar Data\P0_T4_Train\`（**训练轨已撤回**，不再开训；2026-09-27 核查：该目录已不在 G 盘） |
+| 研究计划（主张全文） | [`Research_Plan.md`](../00_Practice_UAV_Aerial_Detection/Research_Plan.md) |
+| P0 证据槽 | [`Experiments/papers/P0_EI/`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md)（Run 索引） |
+| 论文概况与实验内容（导读） | [`P0_EI_Paper_Overview_and_Experiments.md`](../00_Practice_UAV_Aerial_Detection/P0_EI_Paper_Overview_and_Experiments.md) |
+| UAVDT（G 盘） | `G:\Schloar Data\P0\UAVDT\`（2026-09-27 核实：50 序列 `*_gt_whole.txt`／40735 帧；Stage E 运行时路径 `G:\Schloar Data\UAVDT\` 已迁移） |
 
 ---
 
 ## 当前唯一事项
 
-**Stage A–F 均 PASS；EI 包装增量（近邻协议对标表＋失败／边界例＋可复现附录＋图 1–5）已完成（2026-09-27 核）。下一可检查事项：① 4090 正式时序（Run G，结果单独写 `Timing_4090_Table.md`，不与 1660 合并）；② 稿件正文（按 `Writing/P0_EI_Outline.md`）。叙事保持「冻结权重上的推理协议对比」，不新训、不改映射、不开 Paper 2–7。**
+**Stage A–F 全部 PASS；EI 包装（近邻协议对标表＋失败／边界例＋可复现附录＋图 1–5）已完成；C1／C2 已按 Stage B–F 结果改为终稿措辞（2026-09-27）。下一步：① 4090 正式时序（Run G，结果单独写 `Timing_4090_Table.md`，不与 1660 合并）；② 稿件正文（按 `Writing/P0_EI_Outline.md`）。叙事保持「冻结权重上的推理协议对比」，不新训、不改映射、不开 Paper 2–7。**
 
-用户于 2026-09-18 明确撤回 T4 真训练授权。Kaggle V1 Failed，**未产生任何新权重**。本地冻结权重未被改写。
-
-Paper 2–7 仍 **PAUSED**。机制主张 P0-A-* 仍 **HOLD**。
+T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本地冻结权重未被改写。Paper 2–7 仍 **PAUSED**；机制主张 P0-A-* 仍 **HOLD**。
 
 ---
 
 ## 进度
 
-| 项 | 状态 |
-|---|---|
-| A–D／F（冻结 `last.pt`，1660SUPER） | **PASS** |
-| E UAVDT 五方法同权推理＋评估 | **DONE／PASS**（`P0-BENCH-E-UAVDT-20260918-FULL`，40735 图；报告 [`StageE_UAVDT_Report.md`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/03_cross_uavdt/StageE_UAVDT_Report.md)） |
-| EI 包装增量 | **DONE**（[`05_packaging/`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/README.md)：近邻表／失败例／复现附录／图 1–5） |
-| T4／Kaggle 训练轨 | **已撤回**；无新权重 |
-| 4090 正式时序 | 仍缺；与 1660 分列披露 |
+| 项 | Run ID | 状态 |
+|---|---|---|
+| A 冻结（权重／环境／协议定义） | `P0-BENCH-A-ENV-20260917-01` | **PASS** |
+| B 1660 流水线计时（cal48） | `P0-BENCH-B-TIMING-20260917-01` | **PASS** |
+| C cal48 精度（开发证据） | `P0-BENCH-C-CAL48-20260917-01` | **PASS** |
+| D VisDrone test-dev 一次性终评 | `P0-BENCH-D-TESTDEV-20260917-01` | **PASS** |
+| E UAVDT 跨集（40735 帧） | `P0-BENCH-E-UAVDT-20260918-FULL` | **PASS**（[`StageE_UAVDT_Report.md`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/03_cross_uavdt/StageE_UAVDT_Report.md)） |
+| F 图级配对统计 | `P0-BENCH-F-TESTDEV-20260917-01` | **PASS** |
+| EI 包装 | — | **DONE**（[`Neighbor_Protocol_Table.md`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/Neighbor_Protocol_Table.md)、失败例、复现附录、图 1–5） |
+| C1／C2 主张措辞 | — | **FINAL**（2026-09-27，仅依据 Stage B–F；见 Research_Plan §3） |
+| G 4090 正式时序 | `P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01` | **未跑**；结果单列 |
+| 稿件正文 | — | **未开始** |
 
 ### 冻结权重（未改）
 
 - 路径：`11_Datasets/processed/VisDrone/BT1/BT1-LOCAL-20260913-01/train/weights/last.pt`
-- SHA256：`bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533`
-- Stage E 运行内复核：与冻结 SHA 一致
+- SHA256：`bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533`（Stage B／D／E 运行内复核一致）
+- 五协议：`F640`／`F1280`／`DensK1`／`UnifAll`／`SAHI640`
 
-五方法协议名：`F640`／`F1280`／`DensK1`／`UnifAll`／`SAHI640`（磁盘名可能略异，以 Tracker／`summary.json` 为准）。
+### 主张（终稿措辞摘要）
 
-### Stage E 主数字（small_recall）
-
-F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708。跨集粗趋势（F640 最弱；高分／切块抬召回、付精度代价）与 Stage D 一致；五方法排序不完全稳定——主张写「协议改权衡」，不写「通论排序」。
+- **C1：** F1280 比 DensK1 更准（VisDrone test-dev small recall +0.0409，95% CI [0.0355, 0.0462]；precision +0.0681），1660 上时延统计上不可区分（Wilcoxon p = 0.235）；不主张"更快"。
+- **C2：** 选区／覆盖协议只移动召回–精度–时延权衡：VisDrone 上 UnifAll small recall 最高但时延约 3.3×、精度下降；SAHI640 在两集上均被 F1280 支配；UAVDT 排序为 F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708。
+- **范围：** 仅 1660 计时；匹配器 precision／small recall，不是 AP；单一冻结权重。
 
 ---
 
 ## 实验门（当前）
 
 - **禁止**新训／微调／改网络／开 Paper 2–7，除非本页再次书面授权。
-- 类别映射保持 FROZEN；不得因看到 E 分数回改映射。
-- 终表／Run 记录进仓库 `Experiments/`；1660 时序≠正式 4090 表。
+- 类别映射保持 FROZEN；不得因看到分数回改映射或 conf。
+- 终表／Run 记录进仓库 `Experiments/papers/P0_EI/`；1660 时序≠正式 4090 表。
 - 第三方 UAVDT 子集（含已拒 Kaggle JSON 包）禁止作主库。
 
 ---
 
 ## 下一步
 
-1. ~~**EI 包装**~~ **已完成（2026-09-27 核）：** 近邻协议对标表／失败·边界例／可复现附录／图 1–5 见 `Experiments/papers/P0_EI/05_packaging/`。
-2. **4090 正式时序表：** Run G（`P0-BENCH-G-4090-*`，见 `05_packaging/Next_Authorized_Runs.md`）；结果单独写 `Timing_4090_Table.md`，**不与 1660 合并**；正文时序只用 4090，1660 注 pipeline validation。
-3. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草；导读见 [`P0_EI_Paper_Overview_and_Experiments.md`](../00_Practice_UAV_Aerial_Detection/P0_EI_Paper_Overview_and_Experiments.md)。
+1. **4090 正式时序表：** 按已登记 Run G（`P0-BENCH-G-4090-SMOKE/CAL48/TESTDEV-20260920-01`，UAVDT 可选）在 4090 机上跑；结果单独写 `Experiments/papers/P0_EI/04_timing/Timing_4090_Table.md`，**不与 1660 合并**；正文时序只用 4090，1660 注 pipeline validation。
+2. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草，主张只用 C1／C2 终稿措辞。
+3. **会期：** 选定 2027 年 EI 会期（主跟踪 ICIP 2027 全文）并写入本页。
 4. **不默认：** 同质第三集；新模块／重训。
-
 
 ---
 
 ## Post-EI 预备包登记（IDLE · 2026-09-24）
 
-> **纪律：** 下表 **不**改变上文「当前唯一事项」。唯一 ACTIVE 仍为 **P0_EI 包装增量**。预备包在再授权前保持 IDLE。
+> **纪律：** 下表 **不**改变上文「当前唯一事项」。唯一 ACTIVE 仍为 **P0_EI**（当前工作：4090 时序表与稿件正文）。预备包在再授权前保持 IDLE。
 
 | 代号 | 路径 | 状态 | 说明 |
 |---|---|---|---|

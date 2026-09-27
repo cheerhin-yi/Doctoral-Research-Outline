@@ -1,14 +1,5 @@
-# 练手文历史目录归档（2026-09-16）
+# 练手文历史目录归档（2026-09-16；2026-09-27 清理）
 
-两个旧工作目录已**整夹移入**本归档（保留全部内容，不是删除）：
+2026-09-27：旧练手目录 `00_PrePaper_Lightweight_Detection/`、`00_Startup_Railway_UAV_Detection/`、`00_Startup_Railway_UAV_Detection_Experiments/` 已删除（未被当前证据引用；全文保留在 Git 历史，最后存在于 commit `e47f5a9`）。P0 冻结件仍需的 6 份来源记录已移入 `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/00_freeze/provenance/`。
 
-| 原仓库路径 | 现位置 |
-|---|---|
-| `00_PrePaper_Lightweight_Detection/` | `./00_PrePaper_Lightweight_Detection/` |
-| `00_Startup_Railway_UAV_Detection/` | `./00_Startup_Railway_UAV_Detection/` |
-
-当前活跃练手目录：[`00_Practice_UAV_Aerial_Detection/`](../../00_Practice_UAV_Aerial_Detection/)。
-
-说明：`00_Startup_Railway_UAV_Detection_Experiments/` 若仍在，为更早一次仅实验副本；完整 Startup 以本目录整夹为准。  
-`90_English_Learning_before_2026-09-16/` 为英语入口改写前备份。  
-`11_Datasets` 未因归档重复拷贝。
+本目录仅剩 `90_English_Learning_before_2026-09-16/`（英语入口改写前备份，与练手论文无关，未处理）。

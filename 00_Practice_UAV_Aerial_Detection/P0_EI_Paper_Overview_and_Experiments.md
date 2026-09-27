@@ -13,7 +13,7 @@
 
 | 项 | 内容 | 来源 |
 |---|---|---|
-| 现有工作题目 | **面向无人机航拍的时间预算约束小目标检测** | `PR/Research_Plan.md` §1、`PR/Mainline_A_Current.md` §3（原文"题目仍可叫"） |
+| 现有工作题目 | **面向无人机航拍的时间预算约束小目标检测** | `PR/Research_Plan.md` §1（"工作题目"） |
 | 目录 README 标题 | 练手论文：无人机航拍时间预算约束小目标检测 | `PR/README.md` |
 | 建议英文工作题（**本文建议，未登记，待用户确认**） | *Inference Protocol Matters: An Experimental Evaluation of Resolution and Slicing Protocols for UAV Small-Object Detection with a Frozen Detector* | — |
 
@@ -26,25 +26,25 @@
 
 ### 1.3 研究问题
 
-原文（`PR/Research_Plan.md` §1，执行效力）：
+研究问题（`PR/Research_Plan.md` §1）：
 
-> 在固定检测器、固定后处理与声明的整帧时间核算下，**整图 640、整图 1280、密度单片与均匀切片**对 VisDrone 小目标的召回、误检和超时率如何比较？失败条件是什么？
+> 在同一冻结检测器、同一后处理门槛下，只改变推理协议（输入分辨率／是否切片／切哪些片），航拍小目标的召回、精度与端到端时延如何权衡？何时增益只是来自分辨率或覆盖范围？
 
-P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
-
-> 冻结 VisDrone 训练权重，比较五个推理协议（F640／F1280／DensK1／UnifAll／SAHI640）在航拍小目标上的**召回–精度–代价**；VisDrone 做主评测，UAVDT 做外推；统计单位是**图像**，做配对检验。
+落到实验上：冻结 VisDrone 训练权重，比较五个推理协议（F640／F1280／DensK1／UnifAll／SAHI640）在航拍小目标上的**召回–精度–代价**；VisDrone 做主评测，UAVDT 做外推；统计单位是**图像**，做配对检验。
 
 其中 SAHI640 是作为"工程切片族"的近邻协议加入的（`P0_EI/00_freeze/Environment_Freeze.md` 五方法表 M5）。
 
-### 1.4 核心主张 C1／C2（按原文登记）
+### 1.4 核心主张 C1／C2（终稿措辞，2026-09-27；仅依据 Stage B–F）
 
-| ID              | 原文主张                                               | 状态                          | 当初依据（历史，默认不重跑）                                                                                         | 来源                                                       |
-| --------------- | -------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| **P0-EI-C1**    | 在本项目固定 YOLO11n 与已声明预算口径下，**整图 1280 比当前密度单片更准且更快**。 | PROPOSED（协议／对比主张，非新算法）      | cal48，conf=.25，IoU=.5，2720 个小 GT；F1280 小 TP 1312，27.33／41.44 ms；密度单片 1172，37.36／64.51 ms；GTX1660SUPER。 | `PR/Research_Plan.md` §2.1、`PR/Mainline_A_Current.md` §4 |
-| **P0-EI-C2**    | **区域分配存在可恢复空间，但不等于可部署增益**；必须同时报告超时率与选择漏检。          | PROPOSED（协议／对比主张，非新算法）      | BTD1–BTD7、BTD11；逐图用 GT 在 F1280 与最佳单片之间选择，仅净增 33。**禁止**把 GT oracle 或低分修复写成方法精度。                         | 同上                                                       |
-| P0-A-C1／P0-A-C2 | 旧区域机制主张                                            | **HOLD**（只作历史追踪，不指导本稿主实验叙事） | —                                                                                                      | `PR/Research_Plan.md` §2.2                               |
+| ID | 主张 | 证据（Run ID → 文件） |
+|---|---|---|
+| **P0-EI-C1** | 在单一冻结 YOLO11n 权重与 conf 0.25／IoU 0.5 匹配口径下，VisDrone test-dev 上 F1280 比 DensK1 **更准**：small recall +0.0409（图级 bootstrap 95% CI [0.0355, 0.0462]），precision +0.0681（CI [0.0631, 0.0731]）；两者在 GTX 1660 SUPER 上的时延**统计上不可区分**（逐图 Wilcoxon p = 0.235，逐图中位差 +0.25 ms，均值差 −0.34 ms）。不主张"更快"。 | `P0-BENCH-F-TESTDEV-20260917-01` → `02_paired_stats/data/F_summary.json`；`P0-BENCH-D-TESTDEV-20260917-01` → `D_TESTDEV_summary.json`；`P0-BENCH-B-TIMING-20260917-01` → `B_TIMING_summary.json` |
+| **P0-EI-C2** | 选区／覆盖协议只移动召回–精度–时延权衡，没有跨数据集通用的最优协议：VisDrone 上 UnifAll small recall 最高（0.4511，比 F1280 高 0.0507），但时延约 3.3×（112.2 vs 33.7 ms）且精度下降（0.5123 vs 0.6753）；本冻结设置下 SAHI640 在两集上均被 F1280 支配；UAVDT 上排序改为 F1280 > UnifAll > DensK1 > SAHI640 > F640。 | D／F 同上；`P0-BENCH-E-UAVDT-20260918-FULL` → `03_cross_uavdt/data/E_FULL_summary.json` |
+| P0-A-C1／P0-A-C2 | 旧区域机制主张 | **HOLD**，不指导本稿 |
 
-> ✅ **口径差异已于 2026-09-27 修正：** `P0_EI/05_packaging/Neighbor_Protocol_Table.md` §C 原来把 C1／C2 写成"分辨率／有效像素轴""选区／覆盖轴"，现已按 Research_Plan 原文对齐，轴的说法保留为括注。C1"更快"一项已在 `Research_Plan.md` §2.1 和 `Mainline_A_Current.md` §4 加了 2026-09-27 核注；**主张原文没改**，是否改写由用户决定。第五节仍按原文逐条核对证据。
+**适用范围：** ① 时延仅来自 GTX 1660 SUPER（4090 Run G 未跑，将单列）；② 指标是本项目匹配器的 precision／small recall，不是 AP；③ 单一冻结权重；④ 配对检验只覆盖 VisDrone test-dev，UAVDT 只有聚合值。
+
+**修订记录：** 2026-09-27 由"整图 1280 比密度单片更准且更快""区域分配存在可恢复空间，但不等于可部署增益"改为上表措辞；旧 BTD8／BTD1–BTD11 依据退出主张（Git 历史保留）。主张全文与证据细节见 `PR/Research_Plan.md` §3。
 
 ### 1.5 贡献点（按 `PR/Writing/P0_EI_Outline.md`，并按已有证据细化）
 
@@ -72,11 +72,11 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 
 | 项 | 口径 | 来源 |
 |---|---|---|
-| 本篇目标 | **EI 会议**；不承诺录用；不是中科院二区／Trans | `PR/Research_Plan.md` §1、§5 |
+| 本篇目标 | **EI 会议**；不承诺录用 | `PR/Research_Plan.md` §1 |
 | 主跟踪会议 | **ICIP 2027 全文**（目录惯例为 CCF-C，投稿前核对 CCF 第七版）；备选 ACCV／ICPR 全文；不把 CCF-B（ICME／ICASSP）当第一目标；Workshop／短文通常不算目录会议 | `PR/Writing/P0_Two_Paper_Plan_2026-09-22.md` |
 | 分区主尺 | 期刊用 **JCR-primary**（Q1–Q4）；会议按投稿时的 CCF 推荐目录；**EI 索引只是描述项**，不替代 CCF／JCR | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` §1 |
 | 第二篇（另授权） | 统一时间预算下的协议选择 + 一条受限推理切片；出口 **JCR Q2 应用／系统刊**；启动条件是五协议逐图 oracle 上界足够 | `P0_Two_Paper_Plan_2026-09-22.md` |
-| 会期 | Mainline §8 要求"选定 2027 年 EI 会期并写入 Current_Stage"——**待补**（Current_Stage 目前未写具体会期／截稿日） | `PR/Mainline_A_Current.md` §8 |
+| 会期 | Mainline §7 要求"选定 2027 年 EI 会期并写入 Current_Stage"——**待补**（Current_Stage 目前未写具体会期／截稿日） | `PR/Mainline_A_Current.md` §7 |
 
 > 注：`Venue_and_Claim_Policy_JCR_2026-09-24.md` 的正文只有 A／B 两篇的 claim×venue 梯子，**没有 P0 专条**。"P0 以 EI 为先"来自 Research_Plan 与两篇安排；该政策文件对 P0 只起到"会议看 CCF、期刊看 JCR"这一总口径的作用。
 
@@ -91,10 +91,10 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 | Stage D VisDrone test-dev | PASS · `P0-BENCH-D-TESTDEV-20260917-01` | `P0_EI/01_visdrone_main/` |
 | Stage E UAVDT 外推 | DONE／PASS · `P0-BENCH-E-UAVDT-20260918-FULL` | `P0_EI/03_cross_uavdt/` |
 | Stage F 图级配对 | PASS · `P0-BENCH-F-TESTDEV-20260917-01` | `P0_EI/02_paired_stats/` |
-| EI 包装（近邻表／失败例／复现附录／图 1–5） | **已填** | `P0_EI/05_packaging/README.md` |
-| 4090 正式时序 | **缺**（`Timing_4090_Table.md` pending；Run G 尚未跑） | `P0_EI/05_packaging/Next_Authorized_Runs.md` |
+| EI 包装（近邻表／失败例／复现附录／图 1–5） | **已填** | `P0_EI/05_packaging/` |
+| 4090 正式时序 | **缺**（`Timing_4090_Table.md` pending；Run G 尚未跑） | `PR/Research_Plan.md` §4 |
 | 稿件正文／PDF | **缺**：`PR/` 下没有 `.tex`／`.pdf`／`.docx`，只有提纲 `PR/Writing/P0_EI_Outline.md` | 本文扫描 |
-| 学习侧（Part B 等） | 由用户自己完成；按 `PR/Research_Plan.md` §3，"学习作答不是执行门" | — |
+| 学习侧（Part B 等） | 由用户自己完成；不是实验执行门 | — |
 
 ---
 
@@ -104,7 +104,7 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 
 | 项 | 值 | 来源 |
 |---|---|---|
-| 检测器 | YOLO11n（Research_Plan C1 原文"固定 YOLO11n"）；VisDrone 本地训练 BT1，100 轮 | `PR/Research_Plan.md` §2.1、§3 |
+| 检测器 | YOLO11n；VisDrone 本地训练 BT1，100 轮（seed 0，640，SGD） | `PR/Research_Plan.md` §2、`P0_EI/00_freeze/provenance/BT1_100_Epoch_Archive.md` |
 | 主权重 | `11_Datasets/processed/VisDrone/BT1/BT1-LOCAL-20260913-01/train/weights/last.pt` | `P0_EI/00_freeze/Environment_Freeze.md` |
 | 归档副本 | `11_Datasets/processed/VisDrone/BT1/BTD1-CAL48-20260913-01/baseline_archive/BT1-LOCAL-20260913-01/train/weights/last.pt` | 同上 |
 | **SHA256** | **`bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533`**（两份均 match=True） | `P0_EI/00_freeze/weight_sha_reverify.txt` |
@@ -134,7 +134,7 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 |---|---|---|
 | 精度与流水线计时（B／C／D／E） | **NVIDIA GeForce GTX 1660 SUPER ×1**，6144 MiB，驱动 591.86，功耗上限 125 W，UUID `GPU-43b14c17-…` | `P0_EI/00_freeze/gpu_snapshot.txt` |
 | Stage B 峰值显存 | 159038464 bytes（约 151.7 MiB） | `P0_EI/04_timing/data/B_TIMING_summary.json` |
-| 正式时序 | **RTX 4090：尚未跑**。Run ID 已登记：`P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01`（UAVDT 可选） | `P0_EI/05_packaging/Next_Authorized_Runs.md` |
+| 正式时序 | **RTX 4090：尚未跑**。Run ID 已登记：`P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01`（UAVDT 可选） | `PR/Research_Plan.md` §4 |
 | 纪律 | 1660 数字只算 pipeline validation；正文时序表只用 4090；**两者不能进同一张表** | `Current_Stage.md`、`Environment_Freeze.md` |
 
 ### 2.4 数据集
@@ -218,7 +218,7 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 6. **recall_all**（本文派生）= TP / valid_gt，只作补充。
 7. Stage E 先把预测按冻结映射改成 UAVDT 的 3 类，再用同一个匹配器；UAVDT 不使用 ignore。
 
-**⚠ 与 AP 的区别（成稿中必须明确写出）：** 这里只用**单一置信度阈值 0.25**、单一 IoU 0.5 算 precision／recall，**没有**对 PR 曲线积分。所以它**不是** COCO AP、**不是** VisDrone 官方排行榜 AP、**不是** UAVDT 官方 MATLAB AP。Ultralytics 原生 AP ≠ VisDrone 兼容 AP（`Environment_Freeze.md`"Evaluation gates"、`PR/Research_Plan.md` §2.1 口径）。
+**⚠ 与 AP 的区别（成稿中必须明确写出）：** 这里只用**单一置信度阈值 0.25**、单一 IoU 0.5 算 precision／recall，**没有**对 PR 曲线积分。所以它**不是** COCO AP、**不是** VisDrone 官方排行榜 AP、**不是** UAVDT 官方 MATLAB AP。Ultralytics 原生 AP ≠ VisDrone 兼容 AP（`Environment_Freeze.md`"Evaluation gates"、`PR/Research_Plan.md` §2 口径）。
 
 **时延：** `mean_ms` 是每图平均端到端时延。Stage B 另外报告 median、std、p90／p95／p99、每图 3 次中位数的均值和 p95；**超预算率 `budget_violation_rate[T]`** = "每图 3 次中位数 > T ms"的图像比例，T 取 10／15／20／25／30／40／50／75／100。**40 ms 只是相对参考，不是业务硬期限。**
 
@@ -273,7 +273,7 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 | SAHI640 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.979 |
 
 - **结论：** 在 1660 上，F1280 与 DensK1 的时延是**同一量级**（均值 33.15 vs 35.34 ms，p95 38.73 vs 43.20 ms）。在 T=40 ms 这个相对参考下，DensK1 有 2.1% 的图像超时，F1280 为 0。UnifAll 约为 F1280 的 3 倍，SAHI640 约为 10 倍。三次重复的输出全部一致。
-- **与历史数字的差别：** C1 原始依据中的 1660 数字（F1280 27.33／41.44 ms；DensK1 37.36／64.51 ms，来自 BTD8）和本次 Stage B 的数字不同。两者的计时实现与轮次不同，成稿时应**只引用 Stage B（或 4090）**，BTD8 的数字只作历史说明。
+- **与历史数字的差别：** 旧版 C1 依据（已弃用）中的 1660 数字（F1280 27.33／41.44 ms；DensK1 37.36／64.51 ms，来自 BTD8）和本次 Stage B 的数字不同。两者的计时实现与轮次不同，成稿时应**只引用 Stage B（或 4090）**，BTD8 的数字只作历史说明。
 - **证据：** `P0_EI/04_timing/StageB_Timing_Report.md`、`data/B_TIMING_summary.json`、`B_TIMING_timings.csv`、`B_TIMING_protocol.json`；图 4。
 
 ### Stage C — cal48 精度（开发证据，非主表）
@@ -291,7 +291,7 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 | UnifAll | 2110 | 1572 | 0.5731 | 1367 | 0.5026 |
 | SAHI640 | 1345 | 1928 | 0.4109 | 749 | 0.2754 |
 
-- **结论：** DensK1 的 small_tp=1172 与 BTD8 锁定值一致（实现核对通过）。F1280 的小召回高于 DensK1（0.482 vs 0.431），与 C1 的历史依据（1312 vs 1172）一致。**cal48 不能称作独立测试集。**
+- **结论：** DensK1 的 small_tp=1172 与 BTD8 锁定值一致（实现核对通过）。F1280 的小召回高于 DensK1（0.482 vs 0.431），与旧版 C1 依据（BTD8／BTD9 cal48：1312 vs 1172）一致。**cal48 不能称作独立测试集。**
 - **证据：** `P0_EI/01_visdrone_main/StageC_Cal48_Dev_Report.md`、`data/C_cal48_metrics.csv`。
 
 ### Stage D — VisDrone test-dev 五协议一次性终评（主精度表）
@@ -419,8 +419,6 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 
 数据来源：D 取自 `D_TESTDEV_summary.json` 与 `F_bootstrap_deltas.csv`（Run `P0-BENCH-D-TESTDEV-20260917-01`／`P0-BENCH-F-TESTDEV-20260917-01`），E 取自 `E_FULL_summary.json`（Run `P0-BENCH-E-UAVDT-20260918-FULL`）。
 
-> ✅ **已于 2026-09-27 修正原表：** `Neighbor_Protocol_Table.md` A、B 两表的所有行都已按"后 − 前"从 summary JSON 重新计算。修正内容：① SAHI640 两行原来按"前 − 后"填写（符号反了）；② 三处舍入：D DensK1→UnifAll 的 Δsmall_recall +0.0915→+0.0916，E F640→F1280 的 Δprecision −0.0583→−0.0584、Δms +16.4→+16.3；③ E SAHI640→UnifAll 的 Δprecision 原值 −0.0214 在两种符号约定下都对不上，重算为 −0.0213（UnifAll 精度低于 SAHI640）。本文初版照抄了原表的三处舍入值，并把 E 的这个精度差误写成 +0.0214，上表已一并更正。
-
 ### 4.2 失败／边界例（`Failure_Boundary_Cases.md`）
 
 每例四要素：协议｜Image ID 或检索规则｜现象｜不外推的边界句。ID 都是在 Stage D 冻结 CSV 上按规则检索得到的。
@@ -452,16 +450,16 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 
 ---
 
-## 五、主张—证据对照表
+## 五、主张—证据对照表（终稿）
 
-| 主张（原文或拆分） | 证据（数字 + 来源） | 强度 | 注意事项／建议措辞 |
+| 主张（拆分） | 证据（数字 + 来源） | 强度 | 措辞限定 |
 |---|---|---|---|
-| **C1-a：F1280 比 DensK1 更准** | D：Δsmall recall +0.0409，CI [0.0355, 0.0462]，Wilcoxon p=2.997e-28；Δprecision +0.0681 [0.0631, 0.0731]（`F_summary.json`，F-run）。cal48：1312 vs 1172 小 TP（`C_cal48_summary.json`）。E：small recall 0.793 vs 0.767，precision 0.372 vs 0.347（`E_FULL_summary.json`） | **强**（D，配对统计）／**中**（E，只有 pooled，没有配对检验） | 指标是匹配器 precision／small_recall（conf 0.25 单阈值），不是 AP；cal48 只是开发证据 |
-| **C1-b：F1280 比 DensK1 更快** | B（1660 cal48）：mean 33.15 vs 35.34，p95 38.73 vs 43.20；T=40 超时率 0 vs 0.021（`B_TIMING_summary.json`）。D（单次运行）：Δmean −0.34 ms，CI [−0.66, −0.01]，但时延 Wilcoxon p=0.235，逐图中位差 +0.25 ms（`F_summary.json`）。E：mean 33.08 vs 32.97（DensK1 略快） | **弱** | 只有 1660 数据；三个来源方向不一致。**建议改写为："在同量级时延下（1660），F1280 比 DensK1 更准"**；等 4090 正式表出来后再决定是否保留"更快" |
-| **C2：区域分配有可恢复空间，但不等于可部署增益；必须同时报告超时率与选择漏检** | 可恢复空间：DensK1→UnifAll 在 D 上 Δsmall recall +0.0916 [0.0866, 0.0966]（`F_bootstrap_deltas.csv`），E 上 +0.0152。代价：D 上 Δprecision −0.0948、Δms +78.1；B 中 T=40 超时率 DensK1 0.021 vs UnifAll 1.000，T=100 时 UnifAll 仍为 0.729（`B_TIMING_summary.json`）。历史：GT oracle 选择仅净增 33（BTD，`Research_Plan.md`，不在 P0_EI data 中） | **中** | "选择漏检"（未选区域中漏掉的目标）在 P0_EI 数据槽中**没有单独的表** → **待补**（可以引用 BTD 历史结果，或基于现有逐图 CSV 做描述性统计；不做新推理）。GT oracle 不能写成方法精度 |
-| 分辨率抬小召回（近邻表 C1 的说法） | F640→F1280：D +0.1616 [0.1559, 0.1675]，精度差 CI 跨 0；E +0.0849（精度 −0.0584） | **强**（D）／**中**（E） | 权衡面依赖数据域（E 上精度下降） |
-| 边界主张：协议改变权衡，但没有通用排序 | D 排序 UnifAll > F1280 > DensK1 > F640 > SAHI640；E 排序 F1280 > UnifAll > DensK1 > SAHI640 > F640（`StageE_UAVDT_Report.md` §4） | **强**（作为边界） | 写成负结果或边界，不能写成"C1／C2 失败" |
-| SAHI640 在本冻结设置下代价效益最差 | D：0.2184／0.3587／373 ms；E：0.760／0.353／164 ms；B：mean 317 ms | **中** | 只适用于 sahi 默认后处理（GREEDYNMM／IOS，含整图标准预测）+ 统一 finalize；不能推广到 SAHI 族 |
+| **C1-a：F1280 比 DensK1 更准** | D：Δsmall recall +0.0409，CI [0.0355, 0.0462]，Wilcoxon p=2.997e-28（N=1499）；Δprecision +0.0681 [0.0631, 0.0731]（`F_summary.json`，`P0-BENCH-F-TESTDEV-20260917-01`）。E：small recall 0.793 vs 0.767，precision 0.372 vs 0.347（`E_FULL_summary.json`） | **强**（D，配对统计）／**中**（E，只有聚合值） | 匹配器 precision／small_recall（conf 0.25 单阈值），不是 AP |
+| **C1-b：两者时延不可区分（1660）** | D 单次：Δmean −0.34 ms [−0.66, −0.01]，逐图 Wilcoxon p=0.235，逐图中位差 +0.25 ms（`F_summary.json`）；B：mean 33.15 vs 35.34，p95 38.73 vs 43.20（`B_TIMING_summary.json`）；E：mean 33.08 vs 32.97 | **中** | 只写"时延相当／统计上不可区分"，不写"更快"；仅 1660 |
+| **C2-a：UnifAll 在 VisDrone 上 small recall 最高，但付精度与时延** | D：0.4511；相对 F1280 +0.0507 [0.0464, 0.0551]、Δprecision −0.1629、112.2 vs 33.7 ms（≈3.3×）；相对 DensK1 +0.0916 [0.0866, 0.0966]、Δprecision −0.0948（`F_bootstrap_deltas.csv`）；B：T=40 ms 超时率 1.000 | **强**（D） | 只针对本冻结权重与网格 |
+| **C2-b：SAHI640 被 F1280 支配（本冻结设置）** | D：0.2184／0.3587／373 ms vs 0.4004／0.6753／33.7 ms；E：0.760／0.353／164 ms vs 0.793／0.372／33.1 ms | **强**（两集同向） | 只适用于 sahi 默认后处理（GREEDYNMM／IOS，含整图标准预测）+ 统一 finalize；不推广到 SAHI 族 |
+| **C2-c：跨集排序改变** | D 排序 UnifAll > F1280 > DensK1 > F640 > SAHI640；E 排序 F1280 > UnifAll > DensK1 > SAHI640 > F640（`StageE_UAVDT_Report.md` §4） | **强**（作为边界） | 写成边界，不写"通用排序" |
+| 背景：分辨率抬小召回 | F640→F1280：D +0.1616 [0.1559, 0.1675]，精度差 CI 跨 0；E +0.0849（精度 −0.0584） | **强**（D）／**中**（E） | 权衡面依赖数据域 |
 
 ---
 
@@ -469,56 +467,33 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 
 ### 6.1 4090 正式时序（必须单列）
 
-- 待跑：`P0-BENCH-G-4090-SMOKE-20260920-01` → `…-CAL48-…` → `…-TESTDEV-…`（UAVDT 可选）（`Next_Authorized_Runs.md`）。
+- 待跑：`P0-BENCH-G-4090-SMOKE-20260920-01` → `…-CAL48-…` → `…-TESTDEV-…`（UAVDT 可选）。
 - 结果**只写进** `P0_EI/04_timing/` 下独立的 `Timing_4090_Table.md`（目前 pending），**不能和 1660 合并成一行或一张表**。正文时序只用 4090；D／E 精度表保持不变；1660 标注为 pipeline validation。
-- 4090 表是 C1-b"更快"能否保留的关键证据。
 
 ### 6.2 稿件／PDF
 
 - `PR/` 下目前**没有稿件正文或 PDF**，只有提纲 `PR/Writing/P0_EI_Outline.md`（6 节结构）。
-- 会期没有写进 `Current_Stage.md`（Mainline §8 成功标准 1）→ 待补；主跟踪会议为 ICIP 2027 全文，截稿日需核实。
+- 会期没有写进 `Current_Stage.md`（Mainline §7 成功标准 1）→ 待补；主跟踪会议为 ICIP 2027 全文，截稿日需核实。
 - 文献：`Literature_Matrix.md` 的 9 篇都是 SCREENED，MUST 篇 PDF 待放入各主题的 `pdfs/`；ClusDet 等书目需补 DOI。
 
 ### 6.3 可选增强（不引入新算法、不新推理、不训练；都需要按 Current_Stage 纪律另行确认）
 
 1. **Stage E 图级配对统计**：只用现有 `E_FULL_per_image_metrics.csv`，套用 Stage F 的方法（需另登记 Run ID）。
-2. **"选择漏检"描述表**：补 C2 的另一半证据（依据 BTD 历史或现有逐图 CSV）。
-3. **超预算率曲线图**：从 `B_TIMING_summary.json` 已有的 `budget_violation_rate` 画 T–超时率曲线（4090 出来后另画一张，不叠加）。
-4. **recall_all 列和 n_dets 列**：本文已派生，可作补充表。
-5. 把 C1 的措辞按第五节建议改写，并统一近邻表和 Research_Plan 对 C1／C2 的说法。
+2. **超预算率曲线图**：从 `B_TIMING_summary.json` 已有的 `budget_violation_rate` 画 T–超时率曲线（4090 出来后另画一张，不叠加）。
+3. **recall_all 列和 n_dets 列**：本文已派生，可作补充表。
 
-### 6.4 发现的文档不一致及处理状态（2026-09-27 更新）
+### 6.4 已知开放项
 
-> 用户已批准修正。下表标出每项是"已修"（附改动的文件）还是"open"（附原因）。所有数值结果都没有改动；冻结的 JSON 都没有改动；ACTIVE 仍为 P0_EI。
-
-| # | 不一致 | 状态 | 改动文件／说明 |
-|---|---|---|---|
-| 1 | C1／C2 措辞：近邻表 §C 写成"分辨率轴""选区覆盖轴"，与 Research_Plan 原文不一致 | **已修** | `05_packaging/Neighbor_Protocol_Table.md` §C：按 Research_Plan §2.1 原文对齐，轴的说法保留为括注 |
-| 2 | C1"更快"不被 1660 上的 B／D／E／F 数据支持；BTD8 的历史数字已被 Stage B 取代 | **已加核注；主张措辞仍 open** | `PR/Research_Plan.md` §2.1、`PR/Mainline_A_Current.md` §4 各加一条 2026-09-27 核注（引用数字和文件）。改写为"时延相当下更准"还是等 4090 表，由用户决定 |
-| 3 | 近邻表 SAHI 两行的符号与表头约定相反 | **已修** | `Neighbor_Protocol_Table.md`：A、B 两表全部按"后 − 前"从 JSON 重算；另外修了 3 处舍入和 E SAHI→UnifAll 的 Δprecision（−0.0214→−0.0213）；文末附修订记录 |
-| 4 | 失效链接 `Research_Question_Decision_2026-09-16.md`（已于 commit `c97f263` 删除）和 `P0_Benchmark_StageE_UAVDT_Report.md` | **已修** | `00_Overview/Current_Stage.md`（改指 `Mainline_A_Current.md`／`03_cross_uavdt/StageE_UAVDT_Report.md` 并加说明）；同一失效链接也在 `PR/Research_Plan.md`、`PR/Mainline_A_Current.md`、`PR/Stage_Guide.md` 中修了 |
-| 5 | Current_Stage 的下一步仍写"EI 包装" | **已修** | `Current_Stage.md`：包装标为 DONE（进度表加一行），下一步改为 ① 4090 时序（单独成表）② 稿件正文；ACTIVE 表没动。同步修了 `Experiments/00_Index.md` 和 `Writing/P0_EI_Outline.md` 中过时的"包装待补" |
-| 6 | 运行脚本不在 HEAD 中 | **已修** | 从 `bad0f8b` 恢复 5 个脚本；Stage B／D／E／F 报告末尾各加路径说明；`00_freeze/Environment_Freeze.md` 加 stage_a 路径说明；`Experiments/README.md` 登记例外；`Reproducibility_Appendix.md` §10 列出脚本和 SHA；`FILE_CATALOG.md` §6 加一行 |
-| 7 | Run_Index 中 Stage C 写"cal48" | **已修** | `Run_Index.md`：C → `P0-BENCH-C-CAL48-20260917-01`（A 也补为 `P0-BENCH-A-ENV-20260917-01`） |
-| 8 | `stage_e_config_freeze.json` 带的是 smoke 的 run_id | **已加注** | `Run_Index.md` 注、`StageE_UAVDT_Report.md` §8；冻结 JSON 有意不改 |
-| 9 | UAVDT 路径变了 | **已修** | `Current_Stage.md`、`03_cross_uavdt/StageE_Channel_Decision.md`、`StageE_UAVDT_Report.md` §8（新路径 `G:\Schloar Data\P0\UAVDT`，已核实存在）；冻结 JSON 保留旧路径 |
-| 10 | 类别映射 md 第 7、18 行有控制字符 | **已修** | `00_freeze/Class_Mapping_Preregister.md`：只修文本编码，恢复 truck／bus／van 字样，文末加注；映射本身没改 |
-| 11 | "双 4090"与"本机只有 1660"的关系没说明 | **已加注** | `PR/Mainline_A_Current.md` §1 |
-| 12 | 运行时的 sahi 版本没有冻结 | **open** | 运行时版本已经无法事后确认；`Reproducibility_Appendix.md` §10 只记录了事后看到的 0.11.32，并注明它不是运行时证据 |
-| 附 | venue 政策没有 P0 专节 | **已修** | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` 新增 §8，只放指向 Research_Plan 和两篇安排的指针，不做新决定 |
-| 附 | Current_Stage 登记的 T4 目录 `G:\Schloar Data\P0_T4_Train\` 已不存在 | **已加注** | `Current_Stage.md` |
-
-**仍然 open 的其他发现（不在原来 12 项里，本次没改）：**
-- `PR/Research_Plan.md` 的历史段落里还有几个失效链接：`Literature/matrices/Mainline_A_Prior_Work_Comparison.md`、`Experiments/Training_Interface_Audit.md`、`Experiments/Diagnostic_Admission_Review.md`、`Research_Plan_Railway_A0_History.md`。它们都属于 HOLD 的历史叙述，重构时被归档或删除，应该改指哪里需要用户确认。
-- `PR/Experiments/README.md` 说归档位于 `_Archive_20260923_PreP0_Cleanup/Experiments/`，但仓库里找不到这个目录，可能在仓库外或已被删除，需要用户确认。
+- 运行时 sahi 版本未冻结：`Reproducibility_Appendix.md` §10 只记录事后看到的 0.11.32，不是运行时证据。
+- `stage_e_config_freeze.json` 内 `run_id` 为 smoke 值，全量终跑 ID 以 `P0-BENCH-E-UAVDT-20260918-FULL` 为准（JSON 有意不改，见 `Run_Index.md`）。
+- 修订记录（2026-09-27）：修正近邻表符号与舍入；恢复运行脚本；C1／C2 改为终稿措辞；删除冗余索引与过程说明文件（Git 历史保留）。
 
 ### 6.5 下一步可检查事项（按优先级）
 
-1. ~~修正第 6.4 节中的文档错误~~ 已完成（2026-09-27），只剩 #2 的措辞决定和 #12。
-2. 在 4090 机器上按 Run G 登记并跑正式时序 → 写 `Timing_4090_Table.md`（单列）。
-3. 按第五节建议统一 C1／C2 措辞，按提纲开始写正文（Intro／Protocols & Evaluation／Results／Failure & Boundaries）。
-4. 选定会期并写入 Current_Stage（由用户操作）。
-5. 可选：Stage E 配对统计、选择漏检表（只做分析）。
+1. 在 4090 机器上按 Run G 登记并跑正式时序 → 写 `Timing_4090_Table.md`（单列）。
+2. 按提纲与第一节 C1／C2 终稿措辞写正文（Intro／Protocols & Evaluation／Results／Failure & Boundaries）。
+3. 选定会期并写入 Current_Stage（由用户操作）。
+4. 可选：Stage E 配对统计（只做分析）。
 
 ---
 
@@ -528,17 +503,17 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 |---|---|
 | 唯一当前事项 | `00_Overview/Current_Stage.md` |
 | 发表／主张政策 | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` |
-| 练手入口／计划 | `PR/README.md` · `PR/Research_Plan.md` · `PR/Mainline_A_Current.md` · `PR/Stage_Guide.md` |
+| 练手入口／计划 | `PR/README.md` · `PR/Research_Plan.md` · `PR/Mainline_A_Current.md` |
 | 写作 | `PR/Writing/P0_EI_Outline.md` · `PR/Writing/P0_Two_Paper_Plan_2026-09-22.md` |
 | 文献 | `PR/Literature/Literature_Matrix.md`（T1 切片／T2 高分高效 SOD／T3 多尺度放大／T4 航拍基准） |
-| 证据槽入口 | `P0_EI/README.md` · `P0_EI/Run_Index.md` |
-| Stage A 冻结 | `P0_EI/00_freeze/Environment_Freeze.md` · `weight_sha_reverify.txt` · `DensK1_Definition.md` · `class_mapping_preregister.json` · `Class_Mapping_Preregister.md` · `stage_d_config_freeze.json` · `stage_e_config_freeze.json` · `env_snapshot.txt` · `gpu_snapshot.txt` · `git_snapshot.txt` · `pip_freeze.txt` · `script_sha256.txt` |
+| Run 索引 | `P0_EI/Run_Index.md` |
+| Stage A 冻结 | `P0_EI/00_freeze/Environment_Freeze.md` · `weight_sha_reverify.txt` · `DensK1_Definition.md` · `class_mapping_preregister.json` · `Class_Mapping_Preregister.md` · `stage_d_config_freeze.json` · `stage_e_config_freeze.json` · `env_snapshot.txt` · `gpu_snapshot.txt` · `git_snapshot.txt` · `pip_freeze.txt` · `script_sha256.txt` · `provenance/`（权重训练记录、VisDrone 文件审计、评价语义、DensK1 来源） |
 | Stage B | `P0_EI/04_timing/StageB_Timing_Report.md` · `data/B_TIMING_summary.json` · `B_TIMING_timings.csv` · `B_TIMING_protocol.json` |
 | Stage C／D | `P0_EI/01_visdrone_main/StageC_Cal48_Dev_Report.md` · `StageD_TestDev_Report.md` · `StageD_Channel_Decision.md` · `data/C_cal48_summary.json` · `C_cal48_metrics.csv` · `D_TESTDEV_summary.json` · `D_TESTDEV_per_image_metrics.csv` · `D_TESTDEV_status.json` |
 | Stage E | `P0_EI/03_cross_uavdt/StageE_UAVDT_Report.md` · `StageE_Channel_Decision.md` · `data/E_FULL_summary.json` · `E_FULL_per_image_metrics.csv` · `E_FULL_status.json` |
 | Stage F | `P0_EI/02_paired_stats/StageF_Paired_Stats_Report.md` · `data/F_summary.json` · `F_wilcoxon_recall_small.csv` · `F_bootstrap_deltas.csv` · `F_status.json` |
-| 包装 | `P0_EI/05_packaging/README.md` · `Neighbor_Protocol_Table.md` · `Failure_Boundary_Cases.md` · `Reproducibility_Appendix.md` · `Next_Authorized_Runs.md` |
+| 包装 | `P0_EI/05_packaging/Neighbor_Protocol_Table.md` · `Failure_Boundary_Cases.md` · `Reproducibility_Appendix.md` |
 | 图 | `P0_EI/05_packaging/figures/fig1_visdrone_metrics.png` … `fig5_stageF_deltas.png` · `FIGURES.md` · `generate_plots.py` |
 | 图↔数据总表 | `FILE_CATALOG.md` §4 |
-| 运行脚本（历史 commit） | `git show bad0f8b:00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py`；`…/Experiments/diagnose_bt1.py` |
+| 运行脚本 | `PR/Experiments/P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py` · `PR/Experiments/diagnose_bt1.py` |
 | 冻结权重 | `11_Datasets/processed/VisDrone/BT1/BT1-LOCAL-20260913-01/train/weights/last.pt`（SHA `bc42d54e…5533`） |

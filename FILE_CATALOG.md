@@ -2,7 +2,7 @@
 
 > **用途：** 维护型总目录，标明关键保险柜文件位置及其对应关系（尤其：近期 P0_EI 对照图的基准数据落点）。  
 > **原则：** 只收录已扫描确认存在的路径；不枚举 `11_Datasets` 像素树 / Ultralytics 全量文件。  
-> **更新：** 2026-09-24（Asia/Shanghai）
+> **更新：** 2026-09-27（Asia/Shanghai）
 
 快速入口：[`README.md`](README.md) · [`00_Overview/Current_Stage.md`](00_Overview/Current_Stage.md) · [`00_Overview/INDEX_Discussion_Products_2026-09-24.md`](00_Overview/INDEX_Discussion_Products_2026-09-24.md)（当日政策/边界/A·B案头） · [`P0_EI/Run_Index.md`](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md) · [figures/](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/figures/)
 
@@ -42,7 +42,7 @@
 | `.trash/` | 本地回收 | 不收录 |
 | `AGENTS.md` / `PROJECT_CONTEXT.md` / `README.md` | 执行规则 / 跨会话上下文 / 仓库入口 | ACTIVE |
 
-历史练手目录（`00_PrePaper_*` / `00_Startup_*`）已迁入 `99_Attachments/Archive_2026-09-16_PracticePaper/`（见 README 顶注）。
+历史练手目录（`00_PrePaper_*` / `00_Startup_*`）已于 2026-09-27 删除（Git 历史保留）；P0 冻结件所需来源记录见 `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/00_freeze/provenance/`。
 
 ---
 
@@ -53,7 +53,7 @@
 | 当前唯一事项 | `00_Overview/Current_Stage.md` |
 | 项目指南 / 七篇路线 | `00_Overview/Project_Guide.md` · `00_Overview/Seven_Paper_Roadmap.md` |
 | 练手入口 | `00_Practice_UAV_Aerial_Detection/README.md` |
-| 练手研究计划 / 阶段 | `00_Practice_UAV_Aerial_Detection/Research_Plan.md` · `Stage_Guide.md` |
+| 练手研究计划（C1／C2 终稿主张） / 近中远 | `00_Practice_UAV_Aerial_Detection/Research_Plan.md` · `Mainline_A_Current.md` |
 | 学习笔记 | `00_Practice_UAV_Aerial_Detection/Learning_Notes/`（含 `11_EI_Packaging_Neighbor_Failure_Repro.md` 等） |
 | 文献矩阵 ↔ 主题夹 | `00_Practice_UAV_Aerial_Detection/Literature/Literature_Matrix.md` ↔ `01_Slicing_Inference/` … `04_Aerial_Benchmarks_Eval/` |
 | 写作大纲 / 双文计划 | `00_Practice_UAV_Aerial_Detection/Writing/P0_EI_Outline.md` · `P0_Two_Paper_Plan_2026-09-22.md` |
@@ -62,7 +62,7 @@
 | Run 索引 | `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md` |
 | Packaging 叙事 | `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/`（含 `Neighbor_Protocol_Table.md`） |
 | 对照图 | `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/figures/` |
-| 缩写表（实测路径） | `99_Attachments/查阅/Abbreviation_Glossary.md`（根目录 `Abbreviation_Glossary.md` 链接目前缺失实体） |
+| 缩写表 | `99_Attachments/查阅/Abbreviation_Glossary.md` |
 
 ---
 
@@ -102,9 +102,9 @@
 
 ```text
 Experiments/papers/P0_EI/
-  README.md
   Run_Index.md
   00_freeze/          权重 SHA、环境冻结、类别映射、DensK1 定义、config freeze
+    provenance/       冻结件来源记录（权重训练、VisDrone 文件审计、评价语义、BTD8）
   01_visdrone_main/   Stage C/D（cal48 + VisDrone test-dev）+ data/
   02_paired_stats/    Stage F 图级配对 + data/
   03_cross_uavdt/     Stage E UAVDT + data/
@@ -117,11 +117,12 @@ Experiments/papers/P0_EI/
 | 阶段夹 | 关键文件 |
 |---|---|
 | `00_freeze/` | `Environment_Freeze.md` · `weight_sha_reverify.txt` · `Class_Mapping_Preregister.md` · `class_mapping_preregister.json` · `DensK1_Definition.md` · `stage_d_config_freeze.json` · `stage_e_config_freeze.json` · `script_sha256.txt` · `pip_freeze.txt` · `env_snapshot.txt` · `git_snapshot.txt` · `gpu_snapshot.txt` |
+| `00_freeze/provenance/` | `BT1_100_Epoch_Archive.md` · `A0-05_VisDrone_File_Audit.md` · `A0-07_Evaluator_Semantics_Check.md` · `Label_Adapter_Check.md` · `BTD8_Single_Crop_Protocol.md` · `BTD8_Single_Crop_Result.md` |
 | `01_visdrone_main/` | `StageD_TestDev_Report.md` · `StageC_Cal48_Dev_Report.md` · `StageD_Channel_Decision.md` · `data/D_TESTDEV_summary.json` · `D_TESTDEV_per_image_metrics.csv` · `D_TESTDEV_status.json` · `C_cal48_summary.json` · `C_cal48_metrics.csv` |
 | `02_paired_stats/` | `StageF_Paired_Stats_Report.md` · `data/F_summary.json` · `F_bootstrap_deltas.csv` · `F_wilcoxon_recall_small.csv` · `F_status.json` |
 | `03_cross_uavdt/` | `StageE_UAVDT_Report.md` · `StageE_Channel_Decision.md` · `data/E_FULL_summary.json` · `E_FULL_per_image_metrics.csv` · `E_FULL_status.json` |
 | `04_timing/` | `StageB_Timing_Report.md` · `data/B_TIMING_summary.json` · `B_TIMING_timings.csv` · `B_TIMING_protocol.json` |
-| `05_packaging/` | `Neighbor_Protocol_Table.md` · `Failure_Boundary_Cases.md` · `Reproducibility_Appendix.md` · `Next_Authorized_Runs.md` · `README.md` · `figures/` |
+| `05_packaging/` | `Neighbor_Protocol_Table.md` · `Failure_Boundary_Cases.md` · `Reproducibility_Appendix.md` · `figures/` |
 
 ### 冻结权重落点（来自 `00_freeze/Environment_Freeze.md`，本目录不存 `.pt`）
 
@@ -143,9 +144,9 @@ Experiments/papers/P0_EI/
 | 缩写表 | `99_Attachments/查阅/Abbreviation_Glossary.md` |
 | 文献登记 / 周审 | `00_Overview/Literature_Registry.md` · `Literature_Tracking_Workflow.md` · `Weekly_Literature_Audits/` |
 | Paper 1 | `01_Paper1_OpenWorld_Risk/README.md` · `Stage_Guide.md` · `Research_Plan.md` |
-| 实验入口 README | `00_Practice_UAV_Aerial_Detection/Experiments/README.md` |
+| 练手目录索引（含 Experiments 目录说明） | `00_Practice_UAV_Aerial_Detection/README.md` |
 | P0 运行代码（2026-09-27 从 `bad0f8b` 恢复） | `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py` · `Experiments/diagnose_bt1.py`（SHA 见 `P0_EI/05_packaging/Reproducibility_Appendix.md` §10） |
-| 执行读取序 | 根目录 `AGENTS.md` §1（其中 `Literature/matrices/Literature_Matrix.md` 与 `Experiments/Experiment_Plan.md` 当前**不存在**；实测矩阵在 `Literature/Literature_Matrix.md`） |
+| 执行读取序 | 根目录 `AGENTS.md` §1（2026-09-27 已改为现存路径） |
 
 ---
 
@@ -157,7 +158,7 @@ Experiments/papers/P0_EI/
 | `.obsidian/` · `.trash/` | 编辑器 / 回收站 |
 | `11_Datasets/raw/**` 与 processed 下图像/标签像素树 | 只记文件夹用途；权重仅记 freeze 文档中的路径与 SHA |
 | `Ultralytics/` 全量源码与缓存 | 工具依赖，非论文证据 |
-| 大权重 `.pt` / `.npy` 预测缓存 / smoke 失败桶 | 证据仓规则见 `P0_EI/README.md`；SHA 以 `00_freeze/` 为准 |
+| 大权重 `.pt` / `.npy` 预测缓存 / smoke 失败桶 | 证据槽规则见 `00_Practice_UAV_Aerial_Detection/README.md`；SHA 以 `00_freeze/` 为准 |
 | 无关脏工作区文件 | 例如未跟踪的 `99_Attachments/Pytorch教程/YOLO8.md`——不纳入本目录维护提交 |
 
 ---

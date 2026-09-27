@@ -1,70 +1,80 @@
-# 练手论文研究计划：无人机航拍主线A
+# 练手论文研究计划：P0_EI（冻结检测器上的推理协议对比）
 
-更新：2026-09-16。**已采用决定**见 [Mainline_A_Current.md](Mainline_A_Current.md)（原 `Research_Question_Decision_2026-09-16.md` 已于 commit `c97f263` 删除，其内容已并入 Mainline §3–§5 与本页 §1–§2；2026-09-27 修链）。  
-P0 **不再追求独立新机制**；近程只写 EI 对比／协议稿。旧机制主张 HOLD。A2–A4 新机制实验未开放；A5 仅对本 EI 稿有限开放。  
-100 轮及 BTD1–BTD12 完成且默认不重跑；不创建 BTD13。详细证据与唯一待办以 [当前阶段](../00_Overview/Current_Stage.md) 为准。
+更新：2026-09-27（Asia/Shanghai）。当前事项与授权以 [`../00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md) 为准；唯一 ACTIVE = **P0_EI**。  
+本页只写当前实际实验内容与结果主张；旧版 A0 铁路路线、训练接口审计、诊断准入、BTD1–BTD12 过程叙述已移除（见 Git 历史）。
 
-## 1. 当前问题与边界（执行效力）
+## 1. 研究问题与边界
 
-在固定检测器、固定后处理与声明的整帧时间核算下，**整图 640、整图 1280、密度单片与均匀切片**对 VisDrone 小目标的召回、误检和超时率如何比较？失败条件是什么？
+**问题：** 在同一冻结检测器、同一后处理门槛下，只改变推理协议（输入分辨率／是否切片／切哪些片），航拍小目标的召回、精度与端到端时延如何权衡？何时增益只是来自分辨率或覆盖范围？
 
-- 题目仍可叫：面向无人机航拍的时间预算约束小目标检测。
-- 边界：单目 RGB、无人机视角、已知类别二维小目标。
-- **轨道走廊不是本篇方法前提。**
-- 不把 VisDrone 结果写成铁路安全或高原泛化。
-- 每篇最多两项主张。禁止用注意力／损失／蒸馏／剪枝／新检测头补证据。
-- 本阶段目标是 **EI 会议**，不承诺期刊录用，不是中科院二区／Trans。
-- 近／中／远与资源边界见 [Mainline_A_Current.md](Mainline_A_Current.md)。
+- 工作题目：面向无人机航拍的时间预算约束小目标检测（成稿拟改为"推理协议对比／experimental evaluation"口径）。
+- 论文类型：EI 会议对比／协议稿，**不是新检测器、不是新模块**；摘要写 experimental evaluation，不写 we propose。
+- 边界：单目 RGB、无人机视角、已知类别二维小目标；轨道走廊不是方法前提；不把 VisDrone 结果写成铁路安全或高原泛化。
+- 每篇最多两项主张；禁止用注意力／损失／蒸馏／剪枝／新检测头补证据；旧区域机制主张 P0-A-C1／C2 保持 **HOLD**。
+- 目标：EI 会议（主跟踪 ICIP 2027 全文，见 [`Writing/P0_Two_Paper_Plan_2026-09-22.md`](Writing/P0_Two_Paper_Plan_2026-09-22.md)）；不承诺录用。
 
-七篇论文总路线叙事保留；Paper 1 两项主张与 Paper 2–7 保持 **PAUSED**。
+## 2. 实验设置（已冻结）
 
-## 2. 主张表
+| 项 | 内容 | 来源 |
+|---|---|---|
+| 检测器／权重 | YOLO11n，VisDrone train 本地训练 100 轮（BT1）；`11_Datasets/processed/VisDrone/BT1/BT1-LOCAL-20260913-01/train/weights/last.pt`，SHA256 `bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533` | `Experiments/papers/P0_EI/00_freeze/Environment_Freeze.md`、`weight_sha_reverify.txt`、`00_freeze/provenance/BT1_100_Epoch_Archive.md` |
+| 五协议 | F640（整图 640）／F1280（整图 1280）／DensK1（整图 640 + 密度最高单片）／UnifAll（整图 640 + 同网格全部 640 窗口）／SAHI640（sahi 默认切片） | `00_freeze/Environment_Freeze.md`、`00_freeze/DensK1_Definition.md` |
+| 评价口径 | 本项目 VisDrone 兼容匹配器（`diagnose_bt1.prepare_gt`／`match_gt`）；conf=0.25、IoU=0.5；报告 precision 与 small recall（small：原图 0<w·h<1024）；**不是 AP** | `00_freeze/Environment_Freeze.md`、`00_freeze/provenance/A0-07_Evaluator_Semantics_Check.md` |
+| 数据 | VisDrone2019-DET test-dev（Ultralytics 镜像本地 GT，1610 图）主评测；cal48 开发集；UAVDT DET（40735 帧，VisDrone→UAVDT 映射分前冻结）跨集 | `01_visdrone_main/StageD_Channel_Decision.md`、`00_freeze/class_mapping_preregister.json` |
+| 硬件 | 全部 Stage 在 GTX 1660 SUPER 上完成；4090 正式时序未跑 | `00_freeze/gpu_snapshot.txt` |
+| 代码 | `Experiments/P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py`、`Experiments/diagnose_bt1.py`（SHA 见复现附录 §10） | `Experiments/papers/P0_EI/05_packaging/Reproducibility_Appendix.md` |
 
-### 2.1 会议主张（新 ID，当前执行）
+## 3. 会议主张（终稿措辞，2026-09-27；仅依据 Stage B–F）
 
 | ID | 主张 | 状态 |
 |---|---|---|
-| P0-EI-C1 | 在本项目固定 YOLO11n 与已声明预算口径下，整图 1280 比当前密度单片更准且更快。 | PROPOSED（协议／对比，非新算法） |
-| P0-EI-C2 | 区域分配存在可恢复空间，但不等于可部署增益；必须同时报告超时率与选择漏检。 | PROPOSED（协议／对比，非新算法） |
+| **P0-EI-C1** | 在单一冻结 YOLO11n 权重与 conf 0.25／IoU 0.5 匹配口径下，VisDrone test-dev 上整图 1280（F1280）比密度单片（DensK1）**更准**：small recall +0.0409（图级 bootstrap 95% CI [0.0355, 0.0462]），precision +0.0681（CI [0.0631, 0.0731]）；两者在 GTX 1660 SUPER 上的时延**统计上不可区分**。不主张"更快"。 | SUPPORTED（Stage B/D/F） |
+| **P0-EI-C2** | 选区／覆盖协议只移动召回–精度–时延权衡，没有跨数据集通用的最优协议：VisDrone 上全覆盖切片 UnifAll small recall 最高，但时延约 3.3×、精度下降；本冻结设置下 SAHI640 被 F1280 支配；UAVDT 上排序改变（F1280 居首）。 | SUPPORTED（Stage B/D/E/F） |
 
-依据（已有，默认不重跑）：
+### 3.1 C1 证据
 
-- **P0-EI-C1：** cal48，conf=.25，IoU=.5，2720 小 GT；F1280 小 TP 1312、27.33／41.44 ms；密度单片 1172、37.36／64.51 ms。硬件为当时的 GTX1660SUPER。若补 4090 测速必须单列表，禁止与 1660 混表。
-  - **2026-09-27 核注（不改主张原文）：** 现有 1660 证据**不支持** F1280 相对 DensK1 的时延优势：Stage B（`P0-BENCH-B-TIMING-20260917-01`，cal48）均值 33.15 vs 35.34 ms、p95 38.73 vs 43.20 ms（同量级）；Stage D/F（`P0-BENCH-D-TESTDEV-20260917-01` / `P0-BENCH-F-TESTDEV-20260917-01`）单次时延 Δmean −0.34 ms [95% CI −0.66, −0.01]，逐图 Wilcoxon p=0.235，逐图中位差 +0.25 ms（F1280 略慢）；Stage E（`P0-BENCH-E-UAVDT-20260918-FULL`）均值 33.08 vs 32.97 ms（DensK1 略快）。来源：`Experiments/papers/P0_EI/04_timing/data/B_TIMING_summary.json`、`Experiments/papers/P0_EI/02_paired_stats/data/F_summary.json`、`Experiments/papers/P0_EI/03_cross_uavdt/data/E_FULL_summary.json`。上方 BTD8 历史数字（27.33 vs 37.36 ms）已被 Stage B 取代，只作历史。「更准」部分仍成立（Stage F：Δsmall recall +0.0409，95% CI [0.0355, 0.0462]）。**待决（用户研究决定）：** 改写为「时延相当（同量级）下更准」，或等 4090 正式时序表后再定。
-- **P0-EI-C2：** BTD1–BTD7、BTD11；GT 逐图在 F1280 与最佳单片间选择仅净增 33。禁止把 GT oracle 或低分修复写成方法精度。
+- **精度（Stage F，`P0-BENCH-F-TESTDEV-20260917-01`，`Experiments/papers/P0_EI/02_paired_stats/data/F_summary.json` → `primary_bootstrap`／`primary_wilcoxon_recall_small`）：** F1280 − DensK1：Δsmall recall +0.0409 [0.0355, 0.0462]；逐图 Wilcoxon p = 3.0e-28（N = 1499 张含小 GT 图）；Δprecision +0.0681 [0.0631, 0.0731]。聚合值（Stage D，`P0-BENCH-D-TESTDEV-20260917-01`，`01_visdrone_main/data/D_TESTDEV_summary.json`）：small recall 0.4004 vs 0.3596，precision 0.6753 vs 0.6071。
+- **时延（1660）：** Stage F 单次时延逐图 Wilcoxon p = 0.235，逐图中位差 +0.25 ms（F1280 略慢），均值差 −0.34 ms（bootstrap CI [−0.66, −0.01]，约为均值的 1%）；Stage B（`P0-BENCH-B-TIMING-20260917-01`，cal48 48 图 × 3 次，`04_timing/data/B_TIMING_summary.json`）均值 33.15 vs 35.34 ms、p95 38.73 vs 43.20 ms。结论只写"时延相当／不可区分"，不写"更快"。
+- **跨集同向（描述性，无配对检验）：** Stage E（`P0-BENCH-E-UAVDT-20260918-FULL`，`03_cross_uavdt/data/E_FULL_summary.json`）small recall 0.7929 vs 0.7672，precision 0.3719 vs 0.3475，均值 33.1 vs 33.0 ms。
 
-口径：40 ms 只是相对参考；原生 Ultralytics AP ≠ VisDrone 官方兼容 AP；小目标为原图面积 \(0<w\times h<1024\)；来源组 Unknown、无区域级 ignore、cal48／diag500 属开发证据，会议稿必须披露。
+### 3.2 C2 证据
 
-### 2.2 原区域机制主张（HOLD，历史追踪）
+- **UnifAll（VisDrone，Stage D/F）：** small recall 0.4511，为五协议最高；相对 F1280 Δsmall recall +0.0507 [0.0464, 0.0551]、Δprecision −0.1629（0.5123 vs 0.6753）、单次均值 112.2 vs 33.7 ms（≈3.3×）；相对 DensK1 Δsmall recall +0.0916 [0.0866, 0.0966]、Δprecision −0.0948。Stage B：UnifAll 均值 96.4 ms，T = 40 ms 相对参考下超时率 1.00（F1280 0，DensK1 0.021）。来源 `F_summary.json` → `bootstrap_all`、`B_TIMING_summary.json`。
+- **SAHI640 被 F1280 支配（本冻结设置：sahi 默认后处理 + 统一 finalize）：** VisDrone small recall 0.2184 vs 0.4004、precision 0.3587 vs 0.6753、373.2 vs 33.7 ms（F1280 − SAHI640：+0.1820 [0.1735, 0.1908]／+0.3166）；UAVDT 0.7597 vs 0.7929、0.3530 vs 0.3719、164.0 vs 33.1 ms。
+- **跨集排序（small recall）：** VisDrone UnifAll 0.451 > F1280 0.400 > DensK1 0.360 > F640 0.239 > SAHI640 0.218；UAVDT F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708。UAVDT 上 UnifAll 时延比降为 1.43×（47.2 vs 33.1 ms）。跨集重排写作主张边界，不写"通用排序"。
+- 近邻单轴差分见 `Experiments/papers/P0_EI/05_packaging/Neighbor_Protocol_Table.md`。
 
-| ID | 候选问题 | 可证伪条件 | 状态 |
+### 3.3 适用范围（成稿必须披露）
+
+1. **硬件：** 所有时延仅来自 GTX 1660 SUPER（Stage B 为 3 次重复计时；Stage D/E 为单次运行计时）；4090 正式时序（Run G）尚未跑，出来后单独成表，不与 1660 合并。
+2. **指标：** 本项目匹配器的 precision／small recall（单一 conf 0.25、IoU 0.5），**不是** COCO／VisDrone 排行榜 AP，也不是 UAVDT 官方 MATLAB 评测；test-dev 为 Ultralytics 镜像本地 GT。
+3. **模型：** 单一冻结权重（YOLO11n，seed 0），未跨检测器、权重或训练种子；不能外推为"对所有检测器成立"。
+4. **统计：** 配对检验只覆盖 VisDrone test-dev（Stage F）；UAVDT 只有聚合值；cal48 为开发证据；不含选择漏检表或 GT oracle 数字。
+
+### 3.4 修订记录
+
+- 2026-09-27：C1 由"更准且更快"改为"时延统计不可区分下更准"；C2 由"区域分配存在可恢复空间……必须同时报告超时率与选择漏检"改为仅依据 Stage B–F 的选区／覆盖权衡陈述；旧 BTD8／BTD1–BTD11 依据退出主张（Git 历史保留）。
+
+## 4. 实验进度
+
+| Stage | Run ID | 状态 | 证据目录（`Experiments/papers/P0_EI/`） |
 |---|---|---|---|
-| P0-A-C1 | 同整帧预算下，区域计算分配能否优于整图、增大输入、均匀切片及简单区域选择？ | 同预算无稳定收益，或直接近邻已覆盖且无增量 | HOLD |
-| P0-A-C2 | 能否控制区域选择引入的漏检，并满足声明的整帧预算协议？ | 区域获取开销抵消收益、未选区漏检过多或回退造成超时 | HOLD |
+| A 冻结 | `P0-BENCH-A-ENV-20260917-01` | PASS | `00_freeze/` |
+| B 1660 计时 | `P0-BENCH-B-TIMING-20260917-01` | PASS | `04_timing/` |
+| C cal48 精度（开发） | `P0-BENCH-C-CAL48-20260917-01` | PASS | `01_visdrone_main/` |
+| D VisDrone test-dev | `P0-BENCH-D-TESTDEV-20260917-01` | PASS | `01_visdrone_main/` |
+| E UAVDT 跨集 | `P0-BENCH-E-UAVDT-20260918-FULL` | PASS | `03_cross_uavdt/` |
+| F 图级配对统计 | `P0-BENCH-F-TESTDEV-20260917-01` | PASS | `02_paired_stats/` |
+| EI 包装 | — | DONE（近邻表、失败／边界例、复现附录、图 1–5） | `05_packaging/` |
+| G 4090 正式时序 | `P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01`（UAVDT 可选） | 未跑 | 结果单独写 `04_timing/Timing_4090_Table.md` |
+| 稿件正文 | — | 未开始 | `Writing/P0_EI_Outline.md` |
 
-沿用 ID 只作历史追踪，**不再指导当前 EI 稿主实验叙事**。近邻与风险见 [近邻比较](Literature/matrices/Mainline_A_Prior_Work_Comparison.md) 和 [创新台账](../00_Overview/Innovation_Ledger.md)。
+## 5. 剩余工作
 
+1. **4090 正式时序（Run G）：** 按已登记 Run ID 跑，单独成表；正文时序用 4090，1660 标注为 pipeline validation。4090 结果不改变 C1 的"更准"部分；只有在 4090 上也做配对检验后才能重新讨论时延表述。
+2. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草；导读与全部数字见 [`P0_EI_Paper_Overview_and_Experiments.md`](P0_EI_Paper_Overview_and_Experiments.md)。
+3. 会期与截稿日待用户确认后写入 Current_Stage。
 
-## 3. 当前阶段与数据门
+## 6. 禁止事项
 
-仍为A0，整体HOLD。按用户批准的受限开发路径，本机100轮普通基线及cal48固定对照已完成。当前跨尺度弱响应v0.1转HOLD，后处理等价校核、单片上界及整图1280对照均已完成。BTD10两项替代切入点仅为问题观察，尚未改变原机制主张或开放新的训练／损失／结构修改。BTD11已完成，低分输出存在可见空间但尚无可实现区分方法；BTD12已完成并否决具体评分候选；2026-09-16 已采用决定：近程转为 P0 EI 会议稿（P0-EI-C1／C2）；学习作答不是执行门。
-
-优先VisDrone2019-DET，核实train/val/test-dev的实际来源、版本、学术使用条件、校验值、图像与原始检测标签；统计有效框、忽略区域、类别、小目标尺寸及跨split重复／来源信息。test-dev拟保留最终评测，不能用于策略或checkpoint选择；test-challenge无公开真值，不假设可本地评价。
-
-原包存入被忽略的`11_Datasets/raw/VisDrone/`，处理产物存`11_Datasets/processed/VisDrone/`。保留原始八字段标注，不用测试标签指导选区。原先“不把score=0或忽略区直接转成普通背景”的要求，在[训练接口报告](Experiments/Training_Interface_Audit.md)中已查明标准框架的限制：不能声称删除正标签保留了区域忽略；普通基线准备提案须披露负监督偏差并统一各对照，严格忽略训练方案尚未落实，训练协议仍未冻结。当前允许静态审计和人工输入的无模型接口核验，不允许训练、检测推理、网络修改、部署、补标或冻结训练划分。
-
-## 4. 后续阶段
-
-正式路线仍为A0通过后进入A1必要知识与协议、A2基线诊断、A3单机制、A4正式实验、A5写作。2026-09-11已选受限探索路径例外：可在A0内准备诊断，满足专项准入条件后才允许val开发观察，不能据此宣布A0整体或正式实验门通过。见[阶段指南](Stage_Guide.md)及[专项准入](Experiments/Diagnostic_Admission_Review.md)。
-
-完整耗时包括区域获取、裁剪缩放、传输、全部检测、坐标还原与合并；报告均值、p95与超预算比例。轻量性以实际计算和资源成本检查，不限定必须设计轻量网络，也不以GFLOPs替代真实速度。
-
-## 5. 停止条件与投稿要求
-
-标签不可取得、评价协议不可信、小目标证据不足或方法已被覆盖时，暂缓实现。数据获取与方法新颖性是两个独立门；不因官方数据可下载就启动训练。不自动转向其他方向或增加模块。
-
-历史记录：用户曾接受中科院小类三区或 JCR 三区作为候选范围（两体系不等价）。**2026-09-16 决定：本阶段目标是 EI 会议，不是中科院二区／Trans；不承诺录用。** 西南交通大学国家奖学金认可、学院／参评年度及具体分区版本仍待核验。
-
-## 6. 历史材料
-
-[铁路版主线A计划](Research_Plan_Railway_A0_History.md)只作历史记录，其任务和走廊要求不再指导当前执行。UAV-RSOD的A0-01/A0-02保持原有HOLD；A0-03询问信未发送，已退出当前关键路径。LSM-Head及六个旧P编号仍退出执行，不复用编号；所有原学习记录及失败／未运行证据保留。
+新训练／微调；改 backbone、loss、检测头；看分后改类别映射或 conf；重复使用 test-dev 选策略；1660 与 4090 混表；把 VisDrone 结果写成铁路或高原结论；开 Paper 2–7。

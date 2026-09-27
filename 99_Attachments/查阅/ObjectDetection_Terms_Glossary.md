@@ -13,7 +13,7 @@ AIGC:
 
 更新日期：2026-09-23（初版，覆盖已读仓库文档中出现的术语，并扩充后续论文会用到的词汇）。
 
-**分工说明**：本文件聚焦**目标检测领域**的名词与缩写（含英文全称、中文含义、在本仓库中的用法），与 [`Abbreviation_Glossary.md`](Abbreviation_Glossary.md)（项目内部代号：BT／BTD／A0／W-xxxx／P0-EI 等）互补。项目内部代号速查见本文件 **§12**；实验运行细节以 [`Experiment_Tracker.md`](../00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md) 为准。
+**分工说明**：本文件聚焦**目标检测领域**的名词与缩写（含英文全称、中文含义、在本仓库中的用法），与 [`Abbreviation_Glossary.md`](Abbreviation_Glossary.md)（项目内部代号：BT／BTD／A0／W-xxxx／P0-EI 等）互补。项目内部代号速查见本文件 **§12**；实验运行细节以 `Experiment_Tracker.md` 为准。
 
 **阅读约定**：`[项目内]` 标记表示该词已在仓库文件（PROJECT_CONTEXT／Current_Stage／实验报告等）中出现并对应具体用法；`[扩展]` 表示尚未出现、为后续论文（RailUAV-SOD 基准、开放词汇标注管线、Paper 1 开放世界风险感知）预留的词汇。
 

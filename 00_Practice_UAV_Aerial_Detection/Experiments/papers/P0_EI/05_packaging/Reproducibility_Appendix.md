@@ -60,7 +60,7 @@ NMS：BTD5 风格 CPU NMS，类间独立，IoU>0.5，max500（DensK1/UnifAll 融
 | 用途 | GPU | 状态 |
 |---|---|---|
 | D/E 精度 + B 流水线时序 | **GTX 1660 SUPER** | 已跑（本附录数字） |
-| 正式统一时序表 | **RTX 4090** | **尚未跑** → 见 `Next_Authorized_Runs.md`；正文不得用 1660 冒充 4090；`Timing_4090_Table.md` 保持 pending |
+| 正式统一时序表 | **RTX 4090** | **尚未跑** → Run G `P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01`；正文不得用 1660 冒充 4090；`Timing_4090_Table.md` 保持 pending |
 
 - [x] 硬件分列（4090 标 TODO）
 
@@ -72,7 +72,7 @@ NMS：BTD5 风格 CPU NMS，类间独立，IoU>0.5，max500（DensK1/UnifAll 融
 | D VisDrone | `P0-BENCH-D-TESTDEV-20260917-01` | PASS |
 | E UAVDT | `P0-BENCH-E-UAVDT-20260918-FULL` | PASS |
 | F Paired | `P0-BENCH-F-TESTDEV-20260917-01` | PASS |
-| G 4090 | `P0-BENCH-G-4090-*`（见 Next_Authorized） | **NOT YET** |
+| G 4090 | `P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01` | **NOT YET** |
 
 - [x] Run ID 列表
 

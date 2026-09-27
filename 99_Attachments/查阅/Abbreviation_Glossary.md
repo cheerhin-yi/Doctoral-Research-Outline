@@ -1,8 +1,8 @@
 # 项目缩写与代号映射
 
 更新日期：2026-09-17（增补 Literature 文件名级映射）。  
-本文件解释仓库中常见代号，**不是**进度表。当前唯一事项以 [`00_Overview/Current_Stage.md`](Current_Stage.md) 为准。  
-实验运行细节以 [`00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md`](../00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md) 为准。
+本文件解释仓库中常见代号，**不是**进度表。当前唯一事项以 [`00_Overview/Current_Stage.md`](../../00_Overview/Current_Stage.md) 为准。  
+实验运行细节以 `00_Practice_UAV_Aerial_Detection/Experiments/Experiment_Tracker.md` 为准。
 
 阅读约定：
 - **BT** = Baseline Training（基线训练）
@@ -64,8 +64,8 @@
 
 | 代号 | 含义 | 状态（2026-09-16） |
 |---|---|---|
-| **P0-EI-C1** | 固定 YOLO11n 与已声明预算口径下，整图 1280 比当前密度单片更准且更快（协议／对比，非新算法） | PROPOSED（近程 EI 稿） |
-| **P0-EI-C2** | 区域分配存在可恢复空间 ≠ 可部署增益；须同时报告超时率与选择漏检 | PROPOSED（近程 EI 稿） |
+| **P0-EI-C1** | 单一冻结 YOLO11n 下 F1280 比 DensK1 更准，1660 上时延统计上不可区分（协议／对比，非新算法；见 Research_Plan §3） | SUPPORTED（2026-09-27 终稿措辞） |
+| **P0-EI-C2** | 选区／覆盖协议只移动召回–精度–时延权衡；无跨集通用最优协议（见 Research_Plan §3） | SUPPORTED（2026-09-27 终稿措辞） |
 | **P0-A-C1** | 同整帧预算下，区域／局部高分辨率分配能否优于整图、升分辨率、均匀切片或简单选区？ | HOLD（历史机制主张） |
 | **P0-A-C2** | 能否控制选区引入的漏检，并满足声明的整帧预算协议？ | HOLD（历史机制主张） |
 | P0-C0-1／P0-C0-2 | 更早 LSM-Head 练手主张 | 历史，已退出执行 |

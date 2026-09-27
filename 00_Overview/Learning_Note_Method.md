@@ -16,7 +16,7 @@ _适用于练手论文、Paper 1及以后正式启动论文的学习、文献、
 - 一个算例
 - 一个尚未解决的问题
 
-公式、结构图和大表格不要求反复手敲。画图时查[Mermaid画图语法指南](Mermaid_Syntax_Guide.md)；需要写公式时查[Markdown数学公式写法](Markdown_Math_Syntax_Guide.md)。
+公式、结构图和大表格不要求反复手敲。画图时查[Mermaid画图语法指南](../99_Attachments/查阅/Mermaid_Syntax_Guide.md)；需要写公式时查[Markdown数学公式写法](../99_Attachments/查阅/Markdown_Math_Syntax_Guide.md)。
 ## 🎯 方法目标
 
 本方法只解决三个问题：
@@ -172,7 +172,7 @@ _适用于练手论文、Paper 1及以后正式启动论文的学习、文献、
 - **源码**：只记录文件位置、关键输入输出、观察结果和它验证了什么，不复制大段代码
 - **论文内容**：只记录与本项目问题直接相关的证据，不逐段翻译
 
-画图需要查语法时使用[Mermaid画图语法指南](Mermaid_Syntax_Guide.md)，公式需要排版时使用[Markdown数学公式写法](Markdown_Math_Syntax_Guide.md)。这些都是按需工具，不是学习任务。
+画图需要查语法时使用[Mermaid画图语法指南](../99_Attachments/查阅/Mermaid_Syntax_Guide.md)，公式需要排版时使用[Markdown数学公式写法](../99_Attachments/查阅/Markdown_Math_Syntax_Guide.md)。这些都是按需工具，不是学习任务。
 
 ### 最小证据的选择
 
@@ -207,7 +207,7 @@ _适用于练手论文、Paper 1及以后正式启动论文的学习、文献、
 
 ## 📋 练手论文主线A的阶段顺序
 
-2026-09-10用户已批准调整：先可行性审查，学习按需补齐。具体门见[阶段指南](../00_Practice_UAV_Aerial_Detection/Stage_Guide.md)。
+2026-09-10用户已批准调整：先可行性审查，学习按需补齐。具体门见[当前阶段](Current_Stage.md)。
 
 ```text
 A0 直接近邻与公开数据可行性审查
@@ -262,4 +262,4 @@ A0允许许可核验后的审计下载和只读分析，不运行模型，不补
 - 能说明该知识怎样影响当前论文
 - 所有未确认判断都明确标记为待核验
 
-阶段是否完成以及下一项任务是什么，始终回到[当前阶段](Current_Stage.md)和[练手论文阶段指南](../00_Practice_UAV_Aerial_Detection/Stage_Guide.md)确认。
+阶段是否完成以及下一项任务是什么，始终回到[当前阶段](Current_Stage.md)和[练手论文研究计划](../00_Practice_UAV_Aerial_Detection/Research_Plan.md)确认。

@@ -1,9 +1,9 @@
-> **2026-09-16：** 练手文目录为 [`00_Practice_UAV_Aerial_Detection`](00_Practice_UAV_Aerial_Detection/README.md)。唯一事项：[Current_Stage.md](00_Overview/Current_Stage.md)。学习指标：[Completion_Metrics.md](00_Practice_UAV_Aerial_Detection/Completion_Metrics.md)。缩写：[Abbreviation_Glossary.md](Abbreviation_Glossary.md)。旧目录归档：[Archive_2026-09-16_PracticePaper](99_Attachments/Archive_2026-09-16_PracticePaper/)。
+> **2026-09-16：** 练手文目录为 [`00_Practice_UAV_Aerial_Detection`](00_Practice_UAV_Aerial_Detection/README.md)。唯一事项：[Current_Stage.md](00_Overview/Current_Stage.md)。学习指标：[Completion_Metrics.md](00_Practice_UAV_Aerial_Detection/Completion_Metrics.md)。缩写：[Abbreviation_Glossary.md](99_Attachments/查阅/Abbreviation_Glossary.md)。旧练手目录已删除（Git 历史保留）。
 > **文件总目录：** [`FILE_CATALOG.md`](FILE_CATALOG.md)（含 P0_EI 图表 ↔ 基准数据对照）。
 
 # 轨道交通无人机智能巡检博士研究项目
 
-更新：2026-09-14。BTD12单机制审查已完成：尺度条件DFL分布统计重评分候选DISMISSED，GFLV2与多变量校准已覆盖核心关系，尚无独立机制差异；这是书面否决，非实测失败。100轮及BTD1–BTD11完成且不重跑。当前返回论文主张与投入方向决策，停止自动候选开发／新模型运行，不创建BTD13。旧区域机制及A0整体HOLD。 见[BTD12审查](00_Practice_UAV_Aerial_Detection/Literature/papers/P0_EI/BTD12_Low_Score_Candidate_Review.md)。
+更新：2026-09-14。BTD12单机制审查已完成：尺度条件DFL分布统计重评分候选DISMISSED，GFLV2与多变量校准已覆盖核心关系，尚无独立机制差异；这是书面否决，非实测失败。100轮及BTD1–BTD11完成且不重跑。当前返回论文主张与投入方向决策，停止自动候选开发／新模型运行，不创建BTD13。旧区域机制及A0整体HOLD。 见BTD12审查。
 
 详细证据以[当前阶段](00_Overview/Current_Stage.md)为准；下方未同步的旧准入措辞只记录历史前提，不触发重复执行。
 
@@ -12,7 +12,7 @@
 
 ## 你现在只需要做什么
 
-当前练手论文主线A：**面向无人机航拍的时间预算约束小目标检测**。100轮普通基线及cal48漏检诊断已完成，当前候选暂缓。单片预算/上界及F1280强基线对照均已完成；当前区域排序机制暂缓，BTD10重审及BTD11筛查已完成；BTD12已完成并否决本候选；下一项为论文主张与投入方向决策；见[诊断报告](00_Startup_Railway_UAV_Detection/Experiments/BT1_Cal48_Miss_Diagnosis.md)。
+当前练手论文主线A：**面向无人机航拍的时间预算约束小目标检测**。100轮普通基线及cal48漏检诊断已完成，当前候选暂缓。单片预算/上界及F1280强基线对照均已完成；当前区域排序机制暂缓，BTD10重审及BTD11筛查已完成；BTD12已完成并否决本候选；下一项为论文主张与投入方向决策；见诊断报告。
 
 从[当前阶段](00_Overview/Current_Stage.md)开始。S0-01仍未通过；方向调整不代表学习完成。LSM-Head退出当前执行方案，历史依据、学习初稿和未运行记录保留。
 
@@ -27,13 +27,13 @@
 - [每周论文审计与归档](00_Overview/Literature_Tracking_Workflow.md)：接收ChatGPT检索结果，先审计去重，再联动各方向文献矩阵、创新台账和周报；
 - [Paper 1任务指南](01_Paper1_OpenWorld_Risk/Stage_Guide.md)：从学习、文献、复现、数据、实验到投稿；
 - [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。
-- [主线A练手论文](00_Startup_Railway_UAV_Detection/README.md)：固定整帧时间预算下分配局部高分辨率计算；
+- 主线A练手论文：固定整帧时间预算下分配局部高分辨率计算；
 - [项目英语学习支持线](90_English_Learning/README.md)：领域英语优先的文献阅读、论文写作与四级计划；
-- [Codex使用指南](Codex_Usage_Guide.md)：项目指令、检查点、上下文压缩、Token、Skills和Plugins的使用方法；
+- [Codex使用指南](99_Attachments/查阅/Codex_Usage_Guide.md)：项目指令、检查点、上下文压缩、Token、Skills和Plugins的使用方法；
 - [论文阅读指南](00_Overview/Paper_Reading_Guide.md)：历史材料和新审计文献的阅读等级、当前用途及边界；
 - [项目参考材料](00_Overview/Reference_Materials/README.md)：博士科研计划书等方向依据。
 - [全项目附件](99_Attachments/README.md)：博士研究外部条件、资源需求、模板和写法说明；
-- [外部条件与资源需求](Doctoral_Research_External_Conditions.md)：无人机、工作站、铁路数据、传感器、通信平台、人员和许可的分阶段配置。
+- [外部条件与资源需求](99_Attachments/事件/Doctoral_Research_External_Conditions.md)：无人机、工作站、铁路数据、传感器、通信平台、人员和许可的分阶段配置。
 
 ## 文件夹
 
@@ -64,7 +64,7 @@
 
 ## 数据什么时候开始
 
-主线A允许学术用途核验后的VisDrone审计下载，原包存入被忽略的`11_Datasets/raw/VisDrone/`，处理产物存`11_Datasets/processed/VisDrone/`。本批不冻结训练划分、不运行模型。后续按[主线A阶段门](00_Startup_Railway_UAV_Detection/Stage_Guide.md)执行。UAV-RSOD及询问信保留历史证据，不再阻塞当前优先审计。
+主线A允许学术用途核验后的VisDrone审计下载，原包存入被忽略的`11_Datasets/raw/VisDrone/`，处理产物存`11_Datasets/processed/VisDrone/`。本批不冻结训练划分、不运行模型。后续按主线A阶段门执行。UAV-RSOD及询问信保留历史证据，不再阻塞当前优先审计。
 
 ## 项目纪律
 
