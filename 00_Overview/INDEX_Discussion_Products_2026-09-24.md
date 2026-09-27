@@ -53,12 +53,7 @@
 
 | 路径 | 备注 |
 |---|---|
-| `FILE_CATALOG.md.bak_before_AB_prep_20260924` | 案头预备前备份 |
-| `00_Overview/Current_Stage.md.bak_before_AB_prep_20260924` | AB 预备前 |
-| `00_Overview/Current_Stage.md.bak_20260917` | 历史 |
-| `00_Overview/Current_Stage.md.bak_before_B_20260917` | 历史 |
-| `00_Overview/Current_Stage.md.bak_before_E_20260920` | 历史 |
-| `00_Overview/Current_Stage.md.bak_before_revert_infer_20260918` | 历史 |
+| ~~`FILE_CATALOG.md.bak_*`、`00_Overview/Current_Stage.md.bak_*`（5 个）~~ | 2026-09-27 按用户指示删除；内容在 git 历史中可查 |
 | `01_Paper1_OpenWorld_Risk/Stage_Guide.md.bak_conflict_20260924` | 冲突稿备份 |
 | Practice 下 | **无** `.bak`（本次扫描） |
 
