@@ -65,7 +65,7 @@ _沿YOLO结构建立知识链；先记录理解，再集中回答必学问题。
 
 **P3/P4/P5：** 小/中/大目标小/中/大目标
 
-**Detect Head：** 分类+定位
+**Detect Head：** 分类+定位 
 
 > **补充（助手 2026-09-27）**
 >
@@ -130,7 +130,7 @@ _沿YOLO结构建立知识链；先记录理解，再集中回答必学问题。
 2. BatchNorm2d层：归一化[[6 正则化Regularization]]
 3. SiLU激活函数:关键特性是它允许平滑的梯度
 4. **瓶颈块Bottleneck Block**
-	1. 基本思想：残差块[[99_Attachments/Archive_2026-09-16_PracticePaper/00_PrePaper_Lightweight_Detection/Learning_Notes/00_ResNet_Core]]，每个Bottleneck Block也是残差卷积，输出一个映射
+	1. 基本思想：残差块[[10_ResNet_Core]]，每个Bottleneck Block也是残差卷积，输出一个映射
 	2. 本质：每个Bottleneck Block是**3×3 → 3×3** 卷积，通过两个卷积把维度配置到想要的某个值，在配置项里面可以应用经典的**分组卷积、深度可分离卷积**等等，也可以配置最后的输出是否进行跳跃链接（残差配置）
 
 > **更正（助手 2026-09-27）**
