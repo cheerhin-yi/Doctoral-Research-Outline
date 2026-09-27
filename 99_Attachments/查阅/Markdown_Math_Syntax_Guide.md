@@ -69,16 +69,16 @@ GitHub也支持下面的写法，但本项目优先使用`$$...$$`，以便与�
 
 ## 希腊字母与常用符号
 
-| 名称 | 源码 | 显示 | 名称 | 源码 | 显示 |
-|---|---|---|---|---|---|
-| alpha | `$\alpha$` | $\alpha$ | beta | `$\beta$` | $\beta$ |
-| gamma | `$\gamma$` | $\gamma$ | delta | `$\delta$` | $\delta$ |
-| lambda | `$\lambda$` | $\lambda$ | mu | `$\mu$` | $\mu$ |
-| sigma | `$\sigma$` | $\sigma$ | tau | `$\tau$` | $\tau$ |
-| 大写Sigma | `$\Sigma$` | $\Sigma$ | epsilon | `$\varepsilon$` | $\varepsilon$ |
-| 无穷 | `$\infty$` | $\infty$ | 正负 | `$\pm$` | $\pm$ |
-| 乘号 | `$\times$` | $\times$ | 点乘 | `$\cdot$` | $\cdot$ |
-| 交集 | `$A\cap B$` | $A\cap B$ | 并集 | `$A\cup B$` | $A\cup B$ |
+| 名称      | 源码          | 显示        | 名称      | 源码              | 显示            |
+| ------- | ----------- | --------- | ------- | --------------- | ------------- |
+| alpha   | `$\alpha$`  | $\alpha$  | beta    | `$\beta$`       | $\beta$       |
+| gamma   | `$\gamma$`  | $\gamma$  | delta   | `$\delta$`      | $\delta$      |
+| lambda  | `$\lambda$` | $\lambda$ | mu      | `$\mu$`         | $\mu$         |
+| sigma   | `$\sigma$`  | $\sigma$  | tau     | `$\tau$`        | $\tau$        |
+| 大写Sigma | `$\Sigma$`  | $\Sigma$  | epsilon | `$\varepsilon$` | $\varepsilon$ |
+| 无穷      | `$\infty$`  | $\infty$  | 正负      | `$\pm$`         | $\pm$         |
+| 乘号      | `$\times$`  | $\times$  | 点乘      | `$\cdot$`       | $\cdot$       |
+| 交集      | `$A\cap B$` | $A\cap B$ | 并集      | `$A\cup B$`     | $A\cup B$     |
 
 ## 多行公式
 
