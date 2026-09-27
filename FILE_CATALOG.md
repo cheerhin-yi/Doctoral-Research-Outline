@@ -57,6 +57,7 @@
 | 学习笔记 | `00_Practice_UAV_Aerial_Detection/Learning_Notes/`（含 `11_EI_Packaging_Neighbor_Failure_Repro.md` 等） |
 | 文献矩阵 ↔ 主题夹 | `00_Practice_UAV_Aerial_Detection/Literature/Literature_Matrix.md` ↔ `01_Slicing_Inference/` … `04_Aerial_Benchmarks_Eval/` |
 | 写作大纲 / 双文计划 | `00_Practice_UAV_Aerial_Detection/Writing/P0_EI_Outline.md` · `P0_Two_Paper_Plan_2026-09-22.md` |
+| 练手论文概况与实验内容（详细版） | `00_Practice_UAV_Aerial_Detection/P0_EI_Paper_Overview_and_Experiments.md`（2026-09-27；汇总导读，数字均指向 P0_EI data/ 与 Run ID） |
 | P0_EI 证据仓 | `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/` |
 | Run 索引 | `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md` |
 | Packaging 叙事 | `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/`（含 `Neighbor_Protocol_Table.md`） |

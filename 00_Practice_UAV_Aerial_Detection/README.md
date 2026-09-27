@@ -10,6 +10,7 @@
 | [`../00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md) | **唯一当前事项**（学习＋实验都在这里更新） |
 | [`Completion_Metrics.md`](Completion_Metrics.md) | **学习完成指标**（过关才进下一关） |
 | [`Learning_Notes/`](Learning_Notes/) | 当前学习教材与记录模板 |
+| [`P0_EI_Paper_Overview_and_Experiments.md`](P0_EI_Paper_Overview_and_Experiments.md) | **练手论文基本情况与实验内容（详细版，2026-09-27）**：题目/主张/边界/五协议/Stage A–F 结果/EI 包装/主张—证据表/待办 |
 | [`Research_Plan.md`](Research_Plan.md) | 问题与边界 |
 | [`Experiments/`](Experiments/) | 已有实验协议／结果（默认不重跑） |
 | [`Literature/`](Literature/) | 矩阵／审计／审查（见 `Literature/README.md`） |
