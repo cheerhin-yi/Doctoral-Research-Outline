@@ -1,0 +1,10 @@
+flowchart LR
+    X["输入 c1×20×20"] --> CV1["cv1 · 1×1 Conv<br/>通道减半 c1/2"]
+    CV1 --> M1["MaxPool 5×5<br/>stride 1 · padding 2"]
+    M1 --> M2["MaxPool 5×5"]
+    M2 --> M3["MaxPool 5×5"]
+    CV1 --> CAT["Concat 4 份<br/>通道 2·c1"]
+    M1 --> CAT
+    M2 --> CAT
+    M3 --> CAT
+    CAT --> CV2["cv2 · 1×1 Conv<br/>输出 c2"]
