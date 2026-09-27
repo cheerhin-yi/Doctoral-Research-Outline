@@ -1,6 +1,6 @@
 # 练手论文研究计划：无人机航拍主线A
 
-更新：2026-09-16。**已采用决定**见 [Research_Question_Decision_2026-09-16.md](Research_Question_Decision_2026-09-16.md) 与 [Mainline_A_Current.md](Mainline_A_Current.md)。  
+更新：2026-09-16。**已采用决定**见 [Mainline_A_Current.md](Mainline_A_Current.md)（原 `Research_Question_Decision_2026-09-16.md` 已于 commit `c97f263` 删除，其内容已并入 Mainline §3–§5 与本页 §1–§2；2026-09-27 修链）。  
 P0 **不再追求独立新机制**；近程只写 EI 对比／协议稿。旧机制主张 HOLD。A2–A4 新机制实验未开放；A5 仅对本 EI 稿有限开放。  
 100 轮及 BTD1–BTD12 完成且默认不重跑；不创建 BTD13。详细证据与唯一待办以 [当前阶段](../00_Overview/Current_Stage.md) 为准。
 
@@ -30,6 +30,7 @@ P0 **不再追求独立新机制**；近程只写 EI 对比／协议稿。旧机
 依据（已有，默认不重跑）：
 
 - **P0-EI-C1：** cal48，conf=.25，IoU=.5，2720 小 GT；F1280 小 TP 1312、27.33／41.44 ms；密度单片 1172、37.36／64.51 ms。硬件为当时的 GTX1660SUPER。若补 4090 测速必须单列表，禁止与 1660 混表。
+  - **2026-09-27 核注（不改主张原文）：** 现有 1660 证据**不支持** F1280 相对 DensK1 的时延优势：Stage B（`P0-BENCH-B-TIMING-20260917-01`，cal48）均值 33.15 vs 35.34 ms、p95 38.73 vs 43.20 ms（同量级）；Stage D/F（`P0-BENCH-D-TESTDEV-20260917-01` / `P0-BENCH-F-TESTDEV-20260917-01`）单次时延 Δmean −0.34 ms [95% CI −0.66, −0.01]，逐图 Wilcoxon p=0.235，逐图中位差 +0.25 ms（F1280 略慢）；Stage E（`P0-BENCH-E-UAVDT-20260918-FULL`）均值 33.08 vs 32.97 ms（DensK1 略快）。来源：`Experiments/papers/P0_EI/04_timing/data/B_TIMING_summary.json`、`Experiments/papers/P0_EI/02_paired_stats/data/F_summary.json`、`Experiments/papers/P0_EI/03_cross_uavdt/data/E_FULL_summary.json`。上方 BTD8 历史数字（27.33 vs 37.36 ms）已被 Stage B 取代，只作历史。「更准」部分仍成立（Stage F：Δsmall recall +0.0409，95% CI [0.0355, 0.0462]）。**待决（用户研究决定）：** 改写为「时延相当（同量级）下更准」，或等 4090 正式时序表后再定。
 - **P0-EI-C2：** BTD1–BTD7、BTD11；GT 逐图在 F1280 与最佳单片间选择仅净增 33。禁止把 GT oracle 或低分修复写成方法精度。
 
 口径：40 ms 只是相对参考；原生 Ultralytics AP ≠ VisDrone 官方兼容 AP；小目标为原图面积 \(0<w\times h<1024\)；来源组 Unknown、无区域级 ignore、cal48／diag500 属开发证据，会议稿必须披露。

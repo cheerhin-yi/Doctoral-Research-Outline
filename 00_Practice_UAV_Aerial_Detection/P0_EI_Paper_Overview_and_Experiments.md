@@ -44,7 +44,7 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 | **P0-EI-C2** | **区域分配存在可恢复空间，但不等于可部署增益**；必须同时报告超时率与选择漏检。 | PROPOSED（协议／对比主张，非新算法） | BTD1–BTD7、BTD11；逐图用 GT 在 F1280 与最佳单片之间选择，仅净增 33。**禁止**把 GT oracle 或低分修复写成方法精度。 | 同上 |
 | P0-A-C1／P0-A-C2 | 旧区域机制主张 | **HOLD**（只作历史追踪，不指导本稿主实验叙事） | — | `PR/Research_Plan.md` §2.2 |
 
-> ⚠ **口径差异（需成稿前统一）：** `P0_EI/05_packaging/Neighbor_Protocol_Table.md` §C 把 C1 写成"分辨率／有效像素轴"，把 C2 写成"选区／覆盖轴"。这个说法比上表原文更宽、更偏"机制轴"，和 Research_Plan 的原文措辞不一致。第五节"主张—证据对照表"按**原文措辞**逐条核对证据，并给出建议改写。
+> ✅ **口径差异已于 2026-09-27 修正：** `P0_EI/05_packaging/Neighbor_Protocol_Table.md` §C 原来把 C1／C2 写成"分辨率／有效像素轴""选区／覆盖轴"，现已按 Research_Plan 原文对齐，轴的说法保留为括注。C1"更快"一项已在 `Research_Plan.md` §2.1 和 `Mainline_A_Current.md` §4 加了 2026-09-27 核注；**主张原文没改**，是否改写由用户决定。第五节仍按原文逐条核对证据。
 
 ### 1.5 贡献点（按 `PR/Writing/P0_EI_Outline.md`，并按已有证据细化）
 
@@ -123,10 +123,10 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 | OS | Windows-11-10.0.26200-SP0 | 同上 |
 | sahi | Stage A 时**未安装**（M5 blocker，已披露），之后安装。本文 2026-09-27 核查环境中是 `sahi-0.11.32.dist-info`。**运行当时的 sahi 版本没有写进冻结件 → 待补**（应补进 `00_freeze/` 的 pip 快照） | `Environment_Freeze.md`；本文核查 |
 | Stage D 脚本 SHA／git head | `script_sha256=ec55719d57f9fccee4da97f24fe1b4dd3534aa3729a9f52e8dadd8d42173ae5a`；`git_head=cb406b5c209e6af3007216a949f065837cb6cba4` | `P0_EI/00_freeze/stage_d_config_freeze.json` |
-| 运行脚本 | `run_stage_b_timing.py`、`run_stage_d_oneshot.py`、`run_stage_e_oneshot.py`、`run_stage_f_paired_stats.py`、`diagnose_bt1.py`（`prepare_gt`／`match_gt`／`nms`／`axis_windows`） | 见下方 ⚠ |
+| 运行脚本 | `run_stage_b_timing.py`、`run_stage_d_oneshot.py`、`run_stage_e_oneshot.py`、`run_stage_f_paired_stats.py`、`diagnose_bt1.py`（`prepare_gt`／`match_gt`／`nms`／`axis_windows`） | 见下方说明 |
 | 图再生 | `P0_EI/05_packaging/figures/generate_plots.py`（只读四个 summary JSON） | `figures/FIGURES.md` |
 
-> ⚠ **复现缺口：** 上面这些运行脚本**不在当前 HEAD 的工作树里**。它们原来放在 `PR/Experiments/P0_Benchmark/stage_*/`，目录重构后被移除，但在 git 提交 `bad0f8b` 中仍然可以取回（`git show bad0f8b:00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_b/run_stage_b_timing.py` 等）。`diagnose_bt1.py` 另有一份副本在 `11_Datasets/processed/VisDrone/BT1/BTD1-CAL48-20260913-01/diagnose_bt1.py`，但**没有核对**它和运行时版本是否逐字节一致。第 2.5 节的协议细节就是从 `bad0f8b` 中的脚本读出来的。
+> ✅ **复现缺口已于 2026-09-27 补上：** 这些运行脚本在目录重构（commit `efba65e`）时被删除，现已从 commit `bad0f8b` 按原路径恢复：`PR/Experiments/P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py` 和 `PR/Experiments/diagnose_bt1.py`（只有代码）。核对结果：`diagnose_bt1.py` 的 blob SHA256 与 `00_freeze/script_sha256.txt` 的登记值一致；`run_stage_d_oneshot.py` 与 `stage_d_config_freeze.json` 的 `script_sha256` 一致（详见 `05_packaging/Reproducibility_Appendix.md` §10）。`11_Datasets/.../BTD1-CAL48-20260913-01/diagnose_bt1.py` 是更早的版本，和运行时版本**不一致**，不要用它。第 2.5 节的协议细节就是从这些脚本读出来的。
 
 ### 2.3 硬件
 
@@ -163,7 +163,7 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 | 项 | 值 | 来源 |
 |---|---|---|
 | 数据 | 作者版 UAVDT DET：50 个序列／**40735** 帧／50 个 `*_gt_whole.txt`（布局 PASS） | `P0_EI/03_cross_uavdt/StageE_UAVDT_Report.md` §1 |
-| 本机路径 | 文档登记为 `G:\Schloar Data\UAVDT\`。**本文核查时实际位于 `G:\Schloar Data\P0\UAVDT`**（帧数仍是 40735） | `Current_Stage.md`／`stage_e_config_freeze.json`；本文核查 |
+| 本机路径 | **`G:\Schloar Data\P0\UAVDT`**（2026-09-27 核实，40735 帧、50 个 gt_whole）。运行时登记的路径是 `G:\Schloar Data\UAVDT\`，冻结的 `stage_e_config_freeze.json` 里仍是这个旧路径，有意不改。Current_Stage 和 Stage E 文档已更新 | `Current_Stage.md`、`StageE_Channel_Decision.md`、`StageE_UAVDT_Report.md` §8 |
 | 分辨率（抽样） | 每 1000 帧抽 1 帧，共 41 帧：39 帧 1024×540，2 帧 960×540 | 本文抽样 |
 | 评测类别 | 只评车辆可比子集：car／truck／bus | `class_mapping_preregister.json` |
 | 小目标 GT | **493861** | `E_FULL_summary.json` |
@@ -412,14 +412,14 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 
 | 轴（前 → 后） | VisDrone D：Δsmall_recall／Δprecision／Δms | UAVDT E：Δsmall_recall／Δprecision／Δms | 判读 |
 |---|---|---|---|
-| 分辨率：F640 → F1280 | +0.1616／+0.0045／+16.3 | +0.0849／−0.0583／+16.4 | 两集都是召回升；D 上精度基本持平，E 上精度下降 → 权衡面依赖数据域 |
-| 选区→全覆盖：DensK1 → UnifAll | +0.0915／−0.0948／+78.1 | +0.0152／−0.0159／+14.2 | 覆盖增加抬高召回，代价是精度和时延；D 上更陡 |
-| 工程切片 vs 整图高分：F1280 → SAHI640（按"后 − 前"重写） | −0.1820／−0.3166／+339.5 | −0.0332／−0.0189／+130.9 | 本冻结设置下 SAHI640 相对 F1280 召回更低、精度更低、更慢 |
-| 同为切片族：SAHI640 → UnifAll（按"后 − 前"重写） | +0.2327／+0.1536／−261.0 | +0.0227／+0.0214／−116.8 | 本设置下 UnifAll 召回和精度都更高，而且更快 |
+| 分辨率：F640 → F1280 | +0.1616／+0.0045／+16.3 | +0.0849／−0.0584／+16.3 | 两集都是召回升；D 上精度基本持平，E 上精度下降 → 权衡面依赖数据域 |
+| 选区→全覆盖：DensK1 → UnifAll | +0.0916／−0.0948／+78.1 | +0.0152／−0.0159／+14.2 | 覆盖增加抬高召回，代价是精度和时延；D 上更陡 |
+| 工程切片 vs 整图高分：SAHI640 → F1280 | +0.1820／+0.3166／−339.5 | +0.0332／+0.0189／−130.9 | 由 SAHI640 换成 F1280：召回↑、精度↑、时延大幅下降；即本冻结设置下 SAHI640 三项都不如 F1280 |
+| 同为切片族：SAHI640 → UnifAll | +0.2327／+0.1536／−261.0 | +0.0227／−0.0213／−116.8 | D：UnifAll 召回和精度都更高，而且更快；E：UnifAll 召回更高、更快，但**精度略低** |
 
 数据来源：D 取自 `D_TESTDEV_summary.json` 与 `F_bootstrap_deltas.csv`（Run `P0-BENCH-D-TESTDEV-20260917-01`／`P0-BENCH-F-TESTDEV-20260917-01`），E 取自 `E_FULL_summary.json`（Run `P0-BENCH-E-UAVDT-20260918-FULL`）。
 
-> ⚠ **符号不一致：** 原表 A、B 两节表头写"读法（后 − 前）"，但"SAHI640 → F1280"和"SAHI640 → UnifAll"两行实际是按"**前 − 后**"（SAHI 减另一方）填的，例如 D 上 SAHI→UnifAll 原表写 −0.2327／−0.1536／+261.0。本文上表已统一按"后 − 前"重写，数值用 summary JSON 核对过。**建议修正原表**（本文没有改原表）。
+> ✅ **已于 2026-09-27 修正原表：** `Neighbor_Protocol_Table.md` A、B 两表的所有行都已按"后 − 前"从 summary JSON 重新计算。修正内容：① SAHI640 两行原来按"前 − 后"填写（符号反了）；② 三处舍入：D DensK1→UnifAll 的 Δsmall_recall +0.0915→+0.0916，E F640→F1280 的 Δprecision −0.0583→−0.0584、Δms +16.4→+16.3；③ E SAHI640→UnifAll 的 Δprecision 原值 −0.0214 在两种符号约定下都对不上，重算为 −0.0213（UnifAll 精度低于 SAHI640）。本文初版照抄了原表的三处舍入值，并把 E 的这个精度差误写成 +0.0214，上表已一并更正。
 
 ### 4.2 失败／边界例（`Failure_Boundary_Cases.md`）
 
@@ -436,7 +436,7 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 
 清单已全部勾选：权重路径 + SHA、五协议配置（imgsz／crop／overlap／conf／IoU／NMS）、映射版本与冻结状态、评价器声明、split 与图像数（D 1610／E 40735／B 48×3／F 1610）、硬件分列（4090 标为 TODO）、Run ID 列表（G 为 NOT YET）、硬禁令。
 
-本文核查后建议**补充**的复现项：① 把 `bad0f8b` 中的 `run_stage_*.py` 和 `diagnose_bt1.py` 放回证据槽（或写明从哪个 commit 取回）；② 登记运行时的 sahi 版本和 SAHI 默认后处理参数；③ `stage_e_config_freeze.json` 的 `run_id` 写的是 smoke 的 `…-01`，需注明全量运行是 `…-FULL`；④ UAVDT 的实际路径已变为 `G:\Schloar Data\P0\UAVDT`。
+本文核查后建议补充的复现项及状态（2026-09-27）：① 运行脚本 → **已恢复**（附录 §10）；② sahi 运行时版本 → **open**（无法事后确认；附录 §10 只记录了事后看到的 0.11.32 和默认后处理参数）；③ `stage_e_config_freeze.json` 的 smoke run_id → **已加注**（`Run_Index.md`、Stage E 报告 §8；JSON 未改）；④ UAVDT 路径 → **已更新**（Current_Stage、Stage E 文档）。
 
 ### 4.4 图 1–5（`05_packaging/figures/`，由 `generate_plots.py` 从 summary JSON 现场再生）
 
@@ -459,7 +459,7 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 | **C1-a：F1280 比 DensK1 更准** | D：Δsmall recall +0.0409，CI [0.0355, 0.0462]，Wilcoxon p=2.997e-28；Δprecision +0.0681 [0.0631, 0.0731]（`F_summary.json`，F-run）。cal48：1312 vs 1172 小 TP（`C_cal48_summary.json`）。E：small recall 0.793 vs 0.767，precision 0.372 vs 0.347（`E_FULL_summary.json`） | **强**（D，配对统计）／**中**（E，只有 pooled，没有配对检验） | 指标是匹配器 precision／small_recall（conf 0.25 单阈值），不是 AP；cal48 只是开发证据 |
 | **C1-b：F1280 比 DensK1 更快** | B（1660 cal48）：mean 33.15 vs 35.34，p95 38.73 vs 43.20；T=40 超时率 0 vs 0.021（`B_TIMING_summary.json`）。D（单次运行）：Δmean −0.34 ms，CI [−0.66, −0.01]，但时延 Wilcoxon p=0.235，逐图中位差 +0.25 ms（`F_summary.json`）。E：mean 33.08 vs 32.97（DensK1 略快） | **弱** | 只有 1660 数据；三个来源方向不一致。**建议改写为："在同量级时延下（1660），F1280 比 DensK1 更准"**；等 4090 正式表出来后再决定是否保留"更快" |
 | **C2：区域分配有可恢复空间，但不等于可部署增益；必须同时报告超时率与选择漏检** | 可恢复空间：DensK1→UnifAll 在 D 上 Δsmall recall +0.0916 [0.0866, 0.0966]（`F_bootstrap_deltas.csv`），E 上 +0.0152。代价：D 上 Δprecision −0.0948、Δms +78.1；B 中 T=40 超时率 DensK1 0.021 vs UnifAll 1.000，T=100 时 UnifAll 仍为 0.729（`B_TIMING_summary.json`）。历史：GT oracle 选择仅净增 33（BTD，`Research_Plan.md`，不在 P0_EI data 中） | **中** | "选择漏检"（未选区域中漏掉的目标）在 P0_EI 数据槽中**没有单独的表** → **待补**（可以引用 BTD 历史结果，或基于现有逐图 CSV 做描述性统计；不做新推理）。GT oracle 不能写成方法精度 |
-| 分辨率抬小召回（近邻表 C1 的说法） | F640→F1280：D +0.1616 [0.1559, 0.1675]，精度差 CI 跨 0；E +0.0849（精度 −0.0583） | **强**（D）／**中**（E） | 权衡面依赖数据域（E 上精度下降） |
+| 分辨率抬小召回（近邻表 C1 的说法） | F640→F1280：D +0.1616 [0.1559, 0.1675]，精度差 CI 跨 0；E +0.0849（精度 −0.0584） | **强**（D）／**中**（E） | 权衡面依赖数据域（E 上精度下降） |
 | 边界主张：协议改变权衡，但没有通用排序 | D 排序 UnifAll > F1280 > DensK1 > F640 > SAHI640；E 排序 F1280 > UnifAll > DensK1 > SAHI640 > F640（`StageE_UAVDT_Report.md` §4） | **强**（作为边界） | 写成负结果或边界，不能写成"C1／C2 失败" |
 | SAHI640 在本冻结设置下代价效益最差 | D：0.2184／0.3587／373 ms；E：0.760／0.353／164 ms；B：mean 317 ms | **中** | 只适用于 sahi 默认后处理（GREEDYNMM／IOS，含整图标准预测）+ 统一 finalize；不能推广到 SAHI 族 |
 
@@ -487,26 +487,34 @@ P0_EI 证据槽把它落成可执行的问题（`P0_EI/README.md`"主张"）：
 4. **recall_all 列和 n_dets 列**：本文已派生，可作补充表。
 5. 把 C1 的措辞按第五节建议改写，并统一近邻表和 Research_Plan 对 C1／C2 的说法。
 
-### 6.4 发现的文档不一致（本文只记录，未修改源文件）
+### 6.4 发现的文档不一致及处理状态（2026-09-27 更新）
 
-| # | 不一致 | 位置 | 建议 |
+> 用户已批准修正。下表标出每项是"已修"（附改动的文件）还是"open"（附原因）。所有数值结果都没有改动；冻结的 JSON 都没有改动；ACTIVE 仍为 P0_EI。
+
+| # | 不一致 | 状态 | 改动文件／说明 |
 |---|---|---|---|
-| 1 | C1／C2 措辞：Research_Plan 写"F1280 更准且更快"／"区域分配有空间但不等于可部署增益"；近邻表 §C 写成"分辨率轴"／"选区覆盖轴" | `PR/Research_Plan.md` §2.1 vs `05_packaging/Neighbor_Protocol_Table.md` §C | 成稿前统一，以原文 ID 为准 |
-| 2 | C1"更快"：历史 BTD8 数字（27.33 vs 37.36 ms）与 Stage B（33.15 vs 35.34）、Stage D（p=0.235）、Stage E（DensK1 略快）不一致 | Research_Plan vs B／D／E／F 数据 | 改写 C1，或等 4090 |
-| 3 | 近邻表中 SAHI 两行按"前 − 后"填，表头却写"后 − 前" | `Neighbor_Protocol_Table.md` A、B 两节 | 修正符号 |
-| 4 | Current_Stage 链接 `Research_Question_Decision_2026-09-16.md` 与 `P0_EI/P0_Benchmark_StageE_UAVDT_Report.md`，两个文件在磁盘上都不存在（实际报告是 `03_cross_uavdt/StageE_UAVDT_Report.md`） | `00_Overview/Current_Stage.md`、`PR/Research_Plan.md`、`PR/Mainline_A_Current.md` | 修链接（本文遵守纪律未改 Current_Stage） |
-| 5 | Current_Stage 的"当前唯一事项"仍写"下一可检查事项：EI 包装增量"（更新日期 2026-09-20），但 `05_packaging` 的三件都已填好 | `Current_Stage.md` vs `05_packaging/README.md` | 由用户决定是否更新 |
-| 6 | 各 Stage 报告里的产物路径指向 `Experiments/P0_Benchmark/…`，该目录已不在工作树中（运行脚本只在 git `bad0f8b` 中） | Stage B／D／E／F 报告 | 补脚本，或注明取回的 commit |
-| 7 | Stage C Run ID：报告写 `P0-BENCH-C-CAL48-20260917-01`，Run_Index 写"cal48" | `StageC_Cal48_Dev_Report.md` vs `Run_Index.md` | 统一 |
-| 8 | `stage_e_config_freeze.json` 的 run_id 是 smoke 的 `…-01`，全量运行是 `…-FULL` | `00_freeze/` | 加注释 |
-| 9 | UAVDT 路径：文档写 `G:\Schloar Data\UAVDT\`，实际在 `G:\Schloar Data\P0\UAVDT` | Current_Stage、Stage E | 更新路径说明 |
-| 10 | `Class_Mapping_Preregister.md` 第 7 行和第 18 行混入了控制字符（`\t`、`\b`、`\v` 把 truck／bus／van 的首字母吞掉了，显示为乱码）；JSON 版本是正确的 | `00_freeze/Class_Mapping_Preregister.md` | 以 JSON 为准，修 md |
-| 11 | Mainline §1 写"可用算力：双 4090 服务器"，而所有已跑实验都在 1660 上，冻结文件也写本机只有 1660 | `Mainline_A_Current.md` vs `Environment_Freeze.md` | 这不是矛盾，但需说明 4090 在另一台机器上 |
-| 12 | 运行当时的 sahi 版本没有冻结（Stage A 时尚未安装） | `00_freeze/` | 补登记 |
+| 1 | C1／C2 措辞：近邻表 §C 写成"分辨率轴""选区覆盖轴"，与 Research_Plan 原文不一致 | **已修** | `05_packaging/Neighbor_Protocol_Table.md` §C：按 Research_Plan §2.1 原文对齐，轴的说法保留为括注 |
+| 2 | C1"更快"不被 1660 上的 B／D／E／F 数据支持；BTD8 的历史数字已被 Stage B 取代 | **已加核注；主张措辞仍 open** | `PR/Research_Plan.md` §2.1、`PR/Mainline_A_Current.md` §4 各加一条 2026-09-27 核注（引用数字和文件）。改写为"时延相当下更准"还是等 4090 表，由用户决定 |
+| 3 | 近邻表 SAHI 两行的符号与表头约定相反 | **已修** | `Neighbor_Protocol_Table.md`：A、B 两表全部按"后 − 前"从 JSON 重算；另外修了 3 处舍入和 E SAHI→UnifAll 的 Δprecision（−0.0214→−0.0213）；文末附修订记录 |
+| 4 | 失效链接 `Research_Question_Decision_2026-09-16.md`（已于 commit `c97f263` 删除）和 `P0_Benchmark_StageE_UAVDT_Report.md` | **已修** | `00_Overview/Current_Stage.md`（改指 `Mainline_A_Current.md`／`03_cross_uavdt/StageE_UAVDT_Report.md` 并加说明）；同一失效链接也在 `PR/Research_Plan.md`、`PR/Mainline_A_Current.md`、`PR/Stage_Guide.md` 中修了 |
+| 5 | Current_Stage 的下一步仍写"EI 包装" | **已修** | `Current_Stage.md`：包装标为 DONE（进度表加一行），下一步改为 ① 4090 时序（单独成表）② 稿件正文；ACTIVE 表没动。同步修了 `Experiments/00_Index.md` 和 `Writing/P0_EI_Outline.md` 中过时的"包装待补" |
+| 6 | 运行脚本不在 HEAD 中 | **已修** | 从 `bad0f8b` 恢复 5 个脚本；Stage B／D／E／F 报告末尾各加路径说明；`00_freeze/Environment_Freeze.md` 加 stage_a 路径说明；`Experiments/README.md` 登记例外；`Reproducibility_Appendix.md` §10 列出脚本和 SHA；`FILE_CATALOG.md` §6 加一行 |
+| 7 | Run_Index 中 Stage C 写"cal48" | **已修** | `Run_Index.md`：C → `P0-BENCH-C-CAL48-20260917-01`（A 也补为 `P0-BENCH-A-ENV-20260917-01`） |
+| 8 | `stage_e_config_freeze.json` 带的是 smoke 的 run_id | **已加注** | `Run_Index.md` 注、`StageE_UAVDT_Report.md` §8；冻结 JSON 有意不改 |
+| 9 | UAVDT 路径变了 | **已修** | `Current_Stage.md`、`03_cross_uavdt/StageE_Channel_Decision.md`、`StageE_UAVDT_Report.md` §8（新路径 `G:\Schloar Data\P0\UAVDT`，已核实存在）；冻结 JSON 保留旧路径 |
+| 10 | 类别映射 md 第 7、18 行有控制字符 | **已修** | `00_freeze/Class_Mapping_Preregister.md`：只修文本编码，恢复 truck／bus／van 字样，文末加注；映射本身没改 |
+| 11 | "双 4090"与"本机只有 1660"的关系没说明 | **已加注** | `PR/Mainline_A_Current.md` §1 |
+| 12 | 运行时的 sahi 版本没有冻结 | **open** | 运行时版本已经无法事后确认；`Reproducibility_Appendix.md` §10 只记录了事后看到的 0.11.32，并注明它不是运行时证据 |
+| 附 | venue 政策没有 P0 专节 | **已修** | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` 新增 §8，只放指向 Research_Plan 和两篇安排的指针，不做新决定 |
+| 附 | Current_Stage 登记的 T4 目录 `G:\Schloar Data\P0_T4_Train\` 已不存在 | **已加注** | `Current_Stage.md` |
+
+**仍然 open 的其他发现（不在原来 12 项里，本次没改）：**
+- `PR/Research_Plan.md` 的历史段落里还有几个失效链接：`Literature/matrices/Mainline_A_Prior_Work_Comparison.md`、`Experiments/Training_Interface_Audit.md`、`Experiments/Diagnostic_Admission_Review.md`、`Research_Plan_Railway_A0_History.md`。它们都属于 HOLD 的历史叙述，重构时被归档或删除，应该改指哪里需要用户确认。
+- `PR/Experiments/README.md` 说归档位于 `_Archive_20260923_PreP0_Cleanup/Experiments/`，但仓库里找不到这个目录，可能在仓库外或已被删除，需要用户确认。
 
 ### 6.5 下一步可检查事项（按优先级）
 
-1. （需用户确认）修正第 6.4 节中的 #3、#4、#10 这类纯文档错误，不改数字。
+1. ~~修正第 6.4 节中的文档错误~~ 已完成（2026-09-27），只剩 #2 的措辞决定和 #12。
 2. 在 4090 机器上按 Run G 登记并跑正式时序 → 写 `Timing_4090_Table.md`（单列）。
 3. 按第五节建议统一 C1／C2 措辞，按提纲开始写正文（Intro／Protocols & Evaluation／Results／Failure & Boundaries）。
 4. 选定会期并写入 Current_Stage（由用户操作）。

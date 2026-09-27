@@ -5,6 +5,8 @@
 - **Scope:** Stage A only (no training, no Stage B)
 - **A_STATUS: PASS**
 
+> **路径说明（2026-09-27；冻结内容未改）：** 下文 `Experiments/P0_Benchmark/stage_a/*` 证据已迁入本目录 `papers/P0_EI/00_freeze/`：`weight_sha_reverify.txt`、`env_snapshot.txt`、`git_snapshot.txt`、`gpu_snapshot.txt`、`pip_freeze.txt`、`script_sha256.txt`；`densk1_definition_extract.md` → `DensK1_Definition.md`。`cal48_identity.txt`、`evaluator_notes.md`、`sahi_status.txt` 未迁入，仅存于 commit `bad0f8b`（`git show bad0f8b:00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_a/<file>`）。
+
 ## Weight
 
 | Item | Value |

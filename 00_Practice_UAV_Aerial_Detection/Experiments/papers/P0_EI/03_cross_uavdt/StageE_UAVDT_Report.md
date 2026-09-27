@@ -85,3 +85,12 @@ Optional / EI packaging: formal **4090** timing table (1660 latency stays pipeli
 - Not official UAVDT MATLAB AP / not leaderboard SOTA.
 - Not a new detector or training recipe.
 - 1660 `mean_ms` is on-device wall for this run, not the formal paper latency table.
+
+---
+
+## 8. Record notes (2026-09-27; no result changed)
+
+- **Run ID in freeze file:** `../00_freeze/stage_e_config_freeze.json` carries `run_id = P0-BENCH-E-UAVDT-20260918-01` (the 24-image smoke). The full run reported here is **`P0-BENCH-E-UAVDT-20260918-FULL`**. The frozen JSON is intentionally left unchanged.
+- **UAVDT location:** now `G:\Schloar Data\P0\UAVDT\` (verified 2026-09-27: 50 `*_gt_whole.txt`); `G:\Schloar Data\UAVDT\` was the path at run time (kept in the frozen JSON).
+- **Artifacts:** `stage_e/...` paths above are the original run dirs (not in repo); summary/CSV/status are in `data/E_FULL_*`; `stage_e/config_freeze.json` → `../00_freeze/stage_e_config_freeze.json`; `stage_e/channel_decision.md` → `StageE_Channel_Decision.md`.
+- **Runner** restored from commit `bad0f8b`: `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_e/run_stage_e_oneshot.py`.

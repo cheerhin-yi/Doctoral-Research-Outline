@@ -144,6 +144,7 @@ Experiments/papers/P0_EI/
 | 文献登记 / 周审 | `00_Overview/Literature_Registry.md` · `Literature_Tracking_Workflow.md` · `Weekly_Literature_Audits/` |
 | Paper 1 | `01_Paper1_OpenWorld_Risk/README.md` · `Stage_Guide.md` · `Research_Plan.md` |
 | 实验入口 README | `00_Practice_UAV_Aerial_Detection/Experiments/README.md` |
+| P0 运行代码（2026-09-27 从 `bad0f8b` 恢复） | `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py` · `Experiments/diagnose_bt1.py`（SHA 见 `P0_EI/05_packaging/Reproducibility_Appendix.md` §10） |
 | 执行读取序 | 根目录 `AGENTS.md` §1（其中 `Literature/matrices/Literature_Matrix.md` 与 `Experiments/Experiment_Plan.md` 当前**不存在**；实测矩阵在 `Literature/Literature_Matrix.md`） |
 
 ---

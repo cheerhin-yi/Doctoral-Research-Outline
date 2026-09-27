@@ -61,3 +61,7 @@ Do **not** treat these numbers as official VisDrone challenge leaderboard AP.
 - 00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_d/P0-BENCH-D-TESTDEV-20260917-01/status.json
 - Experiments/P0_Benchmark/stage_d/channel_decision.md
 - Experiments/P0_Benchmark/stage_d/config_freeze.json
+
+## Path note (2026-09-27)
+- Artifacts above now live in this folder: `data/D_TESTDEV_summary.json`, `data/D_TESTDEV_per_image_metrics.csv`, `data/D_TESTDEV_status.json`; `stage_d/config_freeze.json` → `../00_freeze/stage_d_config_freeze.json`; `stage_d/channel_decision.md` → `StageD_Channel_Decision.md`. `preds/*.npy` were not retained.
+- Runner restored from commit `bad0f8b`: `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_d/run_stage_d_oneshot.py` (blob SHA256 = `script_sha256` in `stage_d_config_freeze.json`).

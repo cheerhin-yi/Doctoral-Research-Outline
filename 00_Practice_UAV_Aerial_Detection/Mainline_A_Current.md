@@ -4,7 +4,7 @@
 
 
 更新：2026-09-16（Asia/Shanghai）。  
-效力：本页与 [`Research_Question_Decision_2026-09-16.md`](Research_Question_Decision_2026-09-16.md) 覆盖旧机制追逐任务；历史实验结论不改写。
+效力：本页（原与 `Research_Question_Decision_2026-09-16.md` 共同生效；该文件已于 commit `c97f263` 删除，内容已并入本页 §3–§5，2026-09-27 修链）覆盖旧机制追逐任务；历史实验结论不改写。
 
 目录说明：现行目录为 `00_Practice_UAV_Aerial_Detection/`（原 `00_Startup_Railway_UAV_Detection/` 已归档）。
 
@@ -12,7 +12,7 @@
 
 ## 1. 资源边界（已确认）
 
-- 当前可用算力：**双 4090 服务器**。
+- 当前可用算力：**双 4090 服务器**。（2026-09-27 注：4090 在另一台服务器；本地执行机为 GTX 1660 SUPER，P0 Stage A–F 均在 1660 上完成，见 `Experiments/papers/P0_EI/00_freeze/Environment_Freeze.md`；4090 正式时序 Run G 尚未跑。）
 - **尚不具备**：高原铁路无人机数据集、自主航线、多机协同巡防。不得当作本篇实验条件或结果占位。
 - 3000 m 指**线路高程**，不是相对轨面航高。
 
@@ -53,6 +53,8 @@
 ### 依据（已有，默认不重跑）
 
 **P0-EI-C1：** cal48，conf=.25，IoU=.5，2720 小 GT；F1280 小 TP 1312、27.33 / 41.44 ms；密度单片 1172、37.36 / 64.51 ms。硬件为当时的 **GTX1660SUPER**。若补 4090 测速，必须**单列表**，禁止与 1660 混表。
+
+> **2026-09-27 核注（不改主张原文）：** 现有 1660 证据**不支持** F1280 相对 DensK1 的时延优势：Stage B（`P0-BENCH-B-TIMING-20260917-01`，cal48）均值 33.15 vs 35.34 ms、p95 38.73 vs 43.20 ms（同量级）；Stage D/F（`P0-BENCH-D-TESTDEV-20260917-01` / `P0-BENCH-F-TESTDEV-20260917-01`）单次时延 Δmean −0.34 ms [95% CI −0.66, −0.01]，逐图 Wilcoxon p=0.235，逐图中位差 +0.25 ms（F1280 略慢）；Stage E（`P0-BENCH-E-UAVDT-20260918-FULL`）均值 33.08 vs 32.97 ms（DensK1 略快）。来源：`Experiments/papers/P0_EI/04_timing/data/B_TIMING_summary.json`、`Experiments/papers/P0_EI/02_paired_stats/data/F_summary.json`、`Experiments/papers/P0_EI/03_cross_uavdt/data/E_FULL_summary.json`。上方 BTD8 历史数字（27.33 vs 37.36 ms）已被 Stage B 取代，只作历史。「更准」部分仍成立（Stage F：Δsmall recall +0.0409，95% CI [0.0355, 0.0462]）。**待决（用户研究决定）：** 改写为「时延相当（同量级）下更准」，或等 4090 正式时序表后再定。
 
 **P0-EI-C2：** BTD1–BTD7、BTD11；GT 逐图在 F1280 与最佳单片间选择仅净增 33。禁止把 GT oracle 或低分修复写成方法精度。
 

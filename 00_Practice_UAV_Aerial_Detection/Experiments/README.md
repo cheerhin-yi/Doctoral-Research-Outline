@@ -37,3 +37,7 @@ Experiments/
 - 解释性选包指南、已撤销训练轨长文  
 
 上述内容在：`_Archive_20260923_PreP0_Cleanup/Experiments/`。
+
+## 例外：P0_Benchmark 运行代码（2026-09-27）
+
+为使 `papers/P0_EI/05_packaging/Reproducibility_Appendix.md` 属实，从 commit `bad0f8b` 按原路径恢复**仅代码**：`P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py` 与根目录 `diagnose_bt1.py`（前者的 import 依赖，路径不可移）。不恢复预测、输出目录或 smoke 结果。

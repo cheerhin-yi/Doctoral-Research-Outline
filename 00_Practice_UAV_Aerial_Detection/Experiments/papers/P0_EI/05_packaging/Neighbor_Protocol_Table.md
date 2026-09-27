@@ -12,9 +12,9 @@ Weight SHA256: `bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533
 | Pair（轴） | Δsmall_recall | Δprecision | Δmean_ms | 同机 | 读法（后 − 前） |
 |---|---:|---:|---:|---|---|
 | Resolution: F640 → F1280 | **+0.1616** | +0.0045 | +16.3 | 1660 SUPER | 抬有效分辨率 → 小目标召回明显升；精度几乎持平；时延约翻倍 |
-| Selection: DensK1 → UnifAll | **+0.0915** | −0.0948 | +78.1 | 1660 SUPER | 全覆盖切片抬召回，付精度与时延 |
-| Slicing vs full-res: SAHI640 → F1280 | **−0.1820**（SAHI−F1280）| −0.3166 | +339.5 | 1660 SUPER | 本冻结 SAHI640 相对 F1280：召回更低、精度更低、时延高一个数量级 |
-| （可选）SAHI640 → UnifAll | −0.2327 | −0.1536 | +261.0 | 1660 SUPER | 同为切片族：UnifAll 召回更高且更快（本设置） |
+| Selection: DensK1 → UnifAll | **+0.0916** | −0.0948 | +78.1 | 1660 SUPER | 全覆盖切片抬召回，付精度与时延 |
+| Slicing vs full-res: SAHI640 → F1280 | **+0.1820** | +0.3166 | −339.5 | 1660 SUPER | 由 SAHI640 换成 F1280：召回↑、精度↑、时延降约一个数量级（即本冻结 SAHI640 相对 F1280 三项均劣） |
+| （可选）SAHI640 → UnifAll | +0.2327 | +0.1536 | −261.0 | 1660 SUPER | 同为切片族：由 SAHI640 换成 UnifAll，召回↑、精度↑且更快（本设置） |
 
 基线绝对值（便于核对，非排名表）：
 
@@ -36,12 +36,12 @@ Run: `P0-BENCH-F-TESTDEV-20260917-01` · primary: **F1280 vs DensK1**
 
 Run: `P0-BENCH-E-UAVDT-20260918-FULL` PASS · n=40735 · 冻结 VisDrone→UAVDT 映射 · **非**官方 UAVDT MATLAB AP（趋势检验）
 
-| Pair（轴） | Δsmall_recall | Δprecision | Δmean_ms | 同机 |
+| Pair（轴）（Δ = 后 − 前） | Δsmall_recall | Δprecision | Δmean_ms | 同机 |
 |---|---:|---:|---:|---|
-| F640 → F1280 | **+0.0849** | −0.0583 | +16.4 | 1660 SUPER |
+| F640 → F1280 | **+0.0849** | −0.0584 | +16.3 | 1660 SUPER |
 | DensK1 → UnifAll | **+0.0152** | −0.0159 | +14.2 | 1660 SUPER |
-| SAHI640 → F1280 | −0.0332 | −0.0189 | +130.9 | 1660 SUPER |
-| （可选）SAHI640 → UnifAll | −0.0227 | −0.0214 | +116.8 | 1660 SUPER |
+| SAHI640 → F1280 | +0.0332 | +0.0189 | −130.9 | 1660 SUPER |
+| （可选）SAHI640 → UnifAll | +0.0227 | −0.0213 | −116.8 | 1660 SUPER |
 
 基线绝对值：
 
@@ -55,8 +55,10 @@ Run: `P0-BENCH-E-UAVDT-20260918-FULL` PASS · n=40735 · 冻结 VisDrone→UAVDT
 
 ## C. 主张支持与边界（短）
 
-**C1（分辨率/有效像素）**：D 上 F640→F1280 小召回 +0.16 而精度几乎不变，支持「抬有效分辨率改变小目标召回–代价权衡」；E 上同向召回升但精度下降，说明权衡面依赖域。  
-**C2（选区/覆盖）**：DensK1→UnifAll 在 D/E 均为召回升、精度降（D 上更陡），支持「覆盖↑常抬召回并付精度/时延」；不支持「某一选区协议通论最优」。  
+> 2026-09-27：本节 C1/C2 措辞已按 `Research_Plan.md` §2.1 原文对齐；原「分辨率/有效像素」「选区/覆盖」保留为括注（相关旋钮轴）。
+
+**P0-EI-C1**（原文：在本项目固定 YOLO11n 与已声明预算口径下，整图 1280 比当前密度单片更准且更快；相关轴：分辨率/有效像素）：「更准」由 Stage F 主配对支持——D 上 F1280−DensK1 Δsmall_recall +0.0409，95% CI [0.0355, 0.0462] 不跨 0，Δprecision +0.0681；E 上同向（0.7929 vs 0.7672）。「更快」在 1660 上**未获支持**（D 单次 Δmean −0.34 ms、Wilcoxon p=0.235；E 均值 33.1 vs 33.0 ms），见 `Research_Plan.md` §2.1 的 2026-09-27 核注，待 4090 表或用户改写。背景轴：D 上 F640→F1280 小召回 +0.16 而精度几乎不变；E 上同向召回升但精度下降，说明权衡面依赖域。  
+**P0-EI-C2**（原文：区域分配存在可恢复空间，但不等于可部署增益；必须同时报告超时率与选择漏检；相关轴：选区/覆盖）：DensK1→UnifAll 在 D/E 均为召回升、精度降（D 上更陡），说明单片选区之外仍有可恢复召回；但代价是精度与时延（D +78.1 ms；Stage B 1660 上 T=40 ms 超时率 DensK1 0.021 vs UnifAll 1.000），即「可恢复 ≠ 可部署」。不支持「某一选区协议通论最优」；选择漏检表仍待补。  
 **名次不稳作边界**：D 上 small-recall 粗序 UnifAll > F1280 > DensK1；E 上 F1280 > UnifAll > DensK1。跨集名次重排是**主张边界**（协议改权衡 ≠ 找两集通吃第一名），不是 C1/C2 失败。
 
 ## D. 指针
@@ -65,3 +67,5 @@ Run: `P0-BENCH-E-UAVDT-20260918-FULL` PASS · n=40735 · 冻结 VisDrone→UAVDT
 - E 聚合 / 逐图：`../03_cross_uavdt/data/E_FULL_summary.json`、`E_FULL_per_image_metrics.csv`  
 - F 配对：`../02_paired_stats/data/F_summary.json`、`F_bootstrap_deltas.csv`  
 - B 1660 计时（cal48）：`../04_timing/data/B_TIMING_summary.json`（F640~18.6 / F1280~33.2 / DensK1~35.3 / UnifAll~96.4 / SAHI640~317 ms）— **勿与 4090 混表**；4090 见 `Next_Authorized_Runs.md`（尚未跑）。
+
+> 修订记录（2026-09-27）：A/B 两表全部行按「后 − 前」由 `D_TESTDEV_summary.json` / `E_FULL_summary.json` 重算。修正：SAHI640 两行原按「前 − 后」填写（符号反）；D DensK1→UnifAll Δsmall_recall +0.0915→+0.0916（舍入）；E F640→F1280 Δprecision −0.0583→−0.0584、Δmean_ms +16.4→+16.3（舍入）；E SAHI640→UnifAll Δprecision 原 −0.0214 在两种符号约定下均不符，重算为 −0.0213（UnifAll 精度低于 SAHI640）。其余单元与 JSON 一致。§C 措辞与 Research_Plan 对齐。

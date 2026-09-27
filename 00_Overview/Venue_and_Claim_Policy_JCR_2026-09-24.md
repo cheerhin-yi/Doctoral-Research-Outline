@@ -80,3 +80,12 @@ DESK-FROZEN 强/中措辞保留；fallback **不**覆盖冻结卡成功判据，
 | `01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md` | B 强/中冻结 + 弱 fallback |
 | `01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md` | A/B 上下限与文献界变（JCR 口径） |
 | `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` | A 部件族采集难度 × 工作/发表界 |
+
+---
+
+## 8. P0（练手 EI 稿）指针（2026-09-27 补；无新决定）
+
+- P0 为 **EI 会议优先**：本阶段目标是 EI 会议，不承诺录用，不是中科院二区／Trans（`00_Practice_UAV_Aerial_Detection/Research_Plan.md` §1、§5）。
+- 会议出口：主跟踪 **ICIP 2027 全文**（目录惯例为 CCF-C，投稿前核 CCF 第七版）；备选 ACCV／ICPR 全文；不以 CCF-B（ICME／ICASSP）为第一目标（`00_Practice_UAV_Aerial_Detection/Writing/P0_Two_Paper_Plan_2026-09-22.md`）。
+- 口径：会议按投稿时 CCF 目录，EI 为描述项（本文件 §1.5）；P0 第二篇（另授权）出口为 JCR Q2 应用／系统刊（同上两篇安排）。
+- 本节仅指针，**不**改变 ACTIVE=P0_EI，不新增 venue 决定。

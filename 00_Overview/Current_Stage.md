@@ -3,23 +3,23 @@
 > **目录纪律（2026-09-23）**：文献与实验仅按 papers/<PaperID>/ 槽位填写。P0 入口：Literature/papers/P0_EI/、Experiments/papers/P0_EI/。
 
 
-更新：2026-09-20（Asia/Shanghai）。
+更新：2026-09-20（Asia/Shanghai）；2026-09-27 修链、同步包装状态与 UAVDT 路径（ACTIVE 不变）。
 
-本文件是全项目**唯一当前事项入口**。与源文件冲突时，以本页与 [`Research_Question_Decision_2026-09-16.md`](../00_Practice_UAV_Aerial_Detection/Research_Question_Decision_2026-09-16.md) 为准。
+本文件是全项目**唯一当前事项入口**。与源文件冲突时，以本页与 [`Mainline_A_Current.md`](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md) 为准（原 `Research_Question_Decision_2026-09-16.md` 已于 commit `c97f263` 删除，其研究问题／主张 ID／近中远内容由 `Mainline_A_Current.md` §3–§5 与 `Research_Plan.md` §1–§2 承载）。
 
 | 入口 | 路径 |
 |---|---|
 | 练手现行目录 | [`00_Practice_UAV_Aerial_Detection/`](../00_Practice_UAV_Aerial_Detection/README.md) |
 | 主线 A 当前执行 | [`Mainline_A_Current.md`](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md) |
 | P0 Benchmark | [`Experiments/papers/P0_EI/`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/) |
-| UAVDT（G 盘） | `G:\Schloar Data\UAVDT\`（布局 PASS：50 序列／40735 帧／50×`*_gt_whole.txt`） |
-| T4 过程目录（G 盘，仅历史过程件） | `G:\Schloar Data\P0_T4_Train\`（**训练轨已撤回**，不再开训） |
+| UAVDT（G 盘） | `G:\Schloar Data\P0\UAVDT\`（2026-09-27 核实存在，50×`*_gt_whole.txt`；Stage E 运行时路径为 `G:\Schloar Data\UAVDT\`，已迁移；布局 PASS：50 序列／40735 帧） |
+| T4 过程目录（G 盘，仅历史过程件） | `G:\Schloar Data\P0_T4_Train\`（**训练轨已撤回**，不再开训；2026-09-27 核查：该目录已不在 G 盘） |
 
 ---
 
 ## 当前唯一事项
 
-**Stage E 已 DONE／PASS。下一可检查事项：EI 包装增量（近邻协议对标表＋失败／边界例＋可复现附录；正式 4090 时序表可选、分列）。叙事保持「冻结权重上的推理协议对比」，不新训、不改映射、不开 Paper 2–7。**
+**Stage A–F 均 PASS；EI 包装增量（近邻协议对标表＋失败／边界例＋可复现附录＋图 1–5）已完成（2026-09-27 核）。下一可检查事项：① 4090 正式时序（Run G，结果单独写 `Timing_4090_Table.md`，不与 1660 合并）；② 稿件正文（按 `Writing/P0_EI_Outline.md`）。叙事保持「冻结权重上的推理协议对比」，不新训、不改映射、不开 Paper 2–7。**
 
 用户于 2026-09-18 明确撤回 T4 真训练授权。Kaggle V1 Failed，**未产生任何新权重**。本地冻结权重未被改写。
 
@@ -32,7 +32,8 @@ Paper 2–7 仍 **PAUSED**。机制主张 P0-A-* 仍 **HOLD**。
 | 项 | 状态 |
 |---|---|
 | A–D／F（冻结 `last.pt`，1660SUPER） | **PASS** |
-| E UAVDT 五方法同权推理＋评估 | **DONE／PASS**（`P0-BENCH-E-UAVDT-20260918-FULL`，40735 图；报告 [`P0_Benchmark_StageE_UAVDT_Report.md`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/P0_Benchmark_StageE_UAVDT_Report.md)） |
+| E UAVDT 五方法同权推理＋评估 | **DONE／PASS**（`P0-BENCH-E-UAVDT-20260918-FULL`，40735 图；报告 [`StageE_UAVDT_Report.md`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/03_cross_uavdt/StageE_UAVDT_Report.md)） |
+| EI 包装增量 | **DONE**（[`05_packaging/`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/README.md)：近邻表／失败例／复现附录／图 1–5） |
 | T4／Kaggle 训练轨 | **已撤回**；无新权重 |
 | 4090 正式时序 | 仍缺；与 1660 分列披露 |
 
@@ -61,9 +62,10 @@ F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708。跨集
 
 ## 下一步
 
-1. **EI 包装：** 近邻协议对标表＋跨集一致／不一致厚写＋失败／边界例＋协议附录（与四区最小增量 1–4 重合）。
-2. **可选：** 4090 正式时序表（正文时序只用 4090；D／E 精度表保留；1660 可注 pipeline validation）。
-3. **不默认：** 同质第三集；新模块／重训。
+1. ~~**EI 包装**~~ **已完成（2026-09-27 核）：** 近邻协议对标表／失败·边界例／可复现附录／图 1–5 见 `Experiments/papers/P0_EI/05_packaging/`。
+2. **4090 正式时序表：** Run G（`P0-BENCH-G-4090-*`，见 `05_packaging/Next_Authorized_Runs.md`）；结果单独写 `Timing_4090_Table.md`，**不与 1660 合并**；正文时序只用 4090，1660 注 pipeline validation。
+3. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草；导读见 [`P0_EI_Paper_Overview_and_Experiments.md`](../00_Practice_UAV_Aerial_Detection/P0_EI_Paper_Overview_and_Experiments.md)。
+4. **不默认：** 同质第三集；新模块／重训。
 
 
 ---

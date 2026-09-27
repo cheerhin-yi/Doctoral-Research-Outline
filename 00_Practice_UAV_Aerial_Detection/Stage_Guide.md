@@ -5,7 +5,7 @@
 # 主线A阶段指南
 
 更新：2026-09-16。BTD12 单机制审查已完成：尺度条件 DFL 分布统计重评分候选 DISMISSED（书面否决，非实测失败）。100 轮及 BTD1–BTD11 完成且不重跑；不创建 BTD13。  
-旧区域机制（P0-A-C1／C2）及 A0 对独立新机制：**HOLD**。近程写作主张为 **P0-EI-C1／C2**。见 [决定](Research_Question_Decision_2026-09-16.md)。
+旧区域机制（P0-A-C1／C2）及 A0 对独立新机制：**HOLD**。近程写作主张为 **P0-EI-C1／C2**。见 [Mainline_A_Current.md](Mainline_A_Current.md)（原决定文件 `Research_Question_Decision_2026-09-16.md` 已于 commit `c97f263` 删除，内容并入 Mainline §3–§5；2026-09-27 修链）。
 
 详细证据以 [当前阶段](../00_Overview/Current_Stage.md) 为准；下方未同步的旧准入措辞只记录历史前提，不触发重复执行。
 

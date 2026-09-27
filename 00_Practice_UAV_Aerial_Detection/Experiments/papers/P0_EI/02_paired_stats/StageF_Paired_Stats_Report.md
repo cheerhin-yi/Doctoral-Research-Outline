@@ -75,3 +75,7 @@ Stage D timings are one-shot on GTX 1660 SUPER. Formal 4090 multi-rep latency re
 - `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_f/P0-BENCH-F-TESTDEV-20260917-01/summary.json`
 - `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_f/P0-BENCH-F-TESTDEV-20260917-01/wilcoxon_recall_small.csv`
 - `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_f/P0-BENCH-F-TESTDEV-20260917-01/bootstrap_deltas.csv`
+
+## Path note (2026-09-27)
+- Source CSV now at `../01_visdrone_main/data/D_TESTDEV_per_image_metrics.csv`; artifacts at `data/F_summary.json`, `data/F_wilcoxon_recall_small.csv`, `data/F_bootstrap_deltas.csv`.
+- Runner restored from commit `bad0f8b`: `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_f/run_stage_f_paired_stats.py`.

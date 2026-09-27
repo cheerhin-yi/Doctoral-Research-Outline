@@ -88,3 +88,19 @@ NMS：BTD5 风格 CPU NMS，类间独立，IoU>0.5，max500（DensK1/UnifAll 融
 - Freeze：`../00_freeze/`  
 - D：`../01_visdrone_main/` · E：`../03_cross_uavdt/` · F：`../02_paired_stats/` · B：`../04_timing/`  
 - 近邻表 / 失败例：同目录 `Neighbor_Protocol_Table.md`、`Failure_Boundary_Cases.md`
+
+## 10. 运行代码（2026-09-27 从 commit `bad0f8b` 恢复）
+
+目录重构（commit `efba65e`，2026-09-23）曾删除以下脚本；现按原路径恢复（仅代码，不含预测/输出）。SHA256 为 git blob 内容（LF）；Windows 工作树因 `core.autocrlf=true` 可能为 CRLF。
+
+| 路径（相对 `00_Practice_UAV_Aerial_Detection/`） | SHA256（blob） | 核对 |
+|---|---|---|
+| `Experiments/diagnose_bt1.py` | `53bedab8aa7cba7eac915968d761201c6cb4946e585433c3e7c4ccc89a16267d` | = `00_freeze/script_sha256.txt` 登记值 ✓ |
+| `Experiments/P0_Benchmark/stage_b/run_stage_b_timing.py` | `f00ac0c35240dd799a78fef96eb53681b4b3f5eee5dea62d7ecc61b1913c9983` | 无冻结登记值可比（Stage A 后编写） |
+| `Experiments/P0_Benchmark/stage_d/run_stage_d_oneshot.py` | `ec55719d57f9fccee4da97f24fe1b4dd3534aa3729a9f52e8dadd8d42173ae5a` | = `00_freeze/stage_d_config_freeze.json` 的 `script_sha256` ✓ |
+| `Experiments/P0_Benchmark/stage_e/run_stage_e_oneshot.py` | `b02dddfde9cb72c366e948ce8e20e60436cd3818244d27010501aeb1c4fab728` | 无冻结登记值可比（Stage A 后编写） |
+| `Experiments/P0_Benchmark/stage_f/run_stage_f_paired_stats.py` | `63ec6ee59f7a633c60b1ad4d8a983fab128f70828cfacb96a99d318896b2abb9` | 无冻结登记值可比（Stage A 后编写） |
+
+- 依赖：`run_stage_{d,e}` import `stage_b/run_stage_b_timing.py`；三者均 import `Experiments/diagnose_bt1.py`（`EXP = parents[2]`，故 `diagnose_bt1.py` 必须留在 `Experiments/` 根）。
+- 原运行输出目录 `Experiments/P0_Benchmark/stage_*/<RUN_ID>/`（含 `preds/*.npy`）不在仓库；论文用 summary/CSV 已在各 Stage `data/`。
+- **sahi 版本：** 运行时版本未冻结（Stage A 时尚未安装）。2026-09-27 环境中为 `sahi 0.11.32`——仅为事后记录，**不能**证明即运行时版本（open）。

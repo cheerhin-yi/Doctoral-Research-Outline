@@ -3,6 +3,7 @@
 - **Date:** 2026-09-18 Asia/Shanghai
 - **E_STATUS: READY**
 - **Unblocked by:** Author UAVDT pack on `G:\Schloar Data\UAVDT\` layout PASS (50 sequences / 40735 frames / 50 `*_gt_whole.txt`).
+- **Path note (2026-09-27):** the pack now lives at `G:\Schloar Data\P0\UAVDT\` (verified: 50 `*_gt_whole.txt`); `G:\Schloar Data\UAVDT\` was the path at run time and stays unchanged in the frozen `stage_e_config_freeze.json`.
 - **Weight:** frozen VisDrone `last.pt` SHA256 `bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533` — **no** UAVDT fine-tune.
 - **Mapping:** `class_mapping_preregister.json` FROZEN before any Stage E scores.
 - **Ignore policy (frozen):** do **not** invent VisDrone-style ignore masks; official `*_gt_ignore.txt` not applied.

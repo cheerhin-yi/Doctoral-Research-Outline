@@ -22,3 +22,7 @@
 - 40 ms is NOT treated as a 1660/4090 business deadline; budget grid reported in summary.json.
 - Predictions for rep0 saved under preds/ for Stage C.
 - Do not mix these 1660 numbers with future 4090 fairness tables.
+
+## Path note (2026-09-27)
+- Runner restored from commit `bad0f8b`: `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_b/run_stage_b_timing.py` (+ `Experiments/diagnose_bt1.py`).
+- The raw run dir `P0_Benchmark/stage_b/P0-BENCH-B-TIMING-20260917-01/` (incl. `preds/`) is not in the repo; summary/timings/protocol are in `data/B_TIMING_*`.

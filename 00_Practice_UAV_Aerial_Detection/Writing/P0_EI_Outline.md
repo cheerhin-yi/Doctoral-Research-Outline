@@ -29,7 +29,7 @@
 | 配对统计 | `../Experiments/papers/P0_EI/02_paired_stats/` |
 | UAVDT | `../Experiments/papers/P0_EI/03_cross_uavdt/` |
 | 1660 时序 | `../Experiments/papers/P0_EI/04_timing/` |
-| 近邻表／失败例／复现（待补） | `../Experiments/papers/P0_EI/05_packaging/` |
+| 近邻表／失败例／复现（已填；4090 时序表待补） | `../Experiments/papers/P0_EI/05_packaging/` |
 
 ## 本篇不做
 
