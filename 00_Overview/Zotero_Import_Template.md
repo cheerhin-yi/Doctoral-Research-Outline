@@ -1,14 +1,21 @@
-# 精读笔记：{{citekey}}
 
-复制到当前方向 `Literature/notes/{{citekey}}.md`。自己的话，数字标节/表/页。空着写 `Unknown`。
+# 精读笔记：{{citekey}}
 
 ## 题目
 
+{{title}}
+
 ## 作者 / 年 / Venue
+
+{% for c in creators %}{{c.lastName}}{% if not loop.last %}, {% endif %}{% endfor %} / {{date | format("YYYY")}} / {{publicationTitle or proceedingsTitle or university}}
 
 ## DOI 或 arXiv
 
+{% if DOI %}https://doi.org/{{DOI}}{% endif %}{% if extra %} {{extra}}{% endif %}
+
 ## Zotero
+
+[打开条目]({{desktopURI}}) {% if pdfZoteroLink %}[打开 PDF]({{pdfZoteroLink}}){% endif %}
 
 ## 为什么读
 
@@ -96,3 +103,10 @@ None / Partial / Direct / Unknown
 ## 一句结论
 
 ## 未解决
+
+
+{% persist "annotations" %} 
+## 划线与批注
+
+{% for a in annotations %}
+- p.{{a.pageLabel}} {% if a.color %}({{a.color}}) {% endif %}{{a.annotatedText}} {% if a.comment %} 注：{{a.comment}} {% endif %}{% endfor %} {% endpersist %}
