@@ -10,7 +10,7 @@
 | 研究计划（主张全文） | [`Research_Plan.md`](../00_Practice_UAV_Aerial_Detection/Research_Plan.md) |
 | P0 证据槽 | [`Experiments/papers/P0_EI/`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md)（Run 索引） |
 | 论文概况与实验内容（导读） | [`P0_EI_Paper_Overview_and_Experiments.md`](../00_Practice_UAV_Aerial_Detection/P0_EI_Paper_Overview_and_Experiments.md) |
-| UAVDT（G 盘） | `G:\Schloar Data\P0\UAVDT\`（2026-09-27 核实：50 序列 `*_gt_whole.txt`／40735 帧；Stage E 运行时路径 `G:\Schloar Data\UAVDT\` 已迁移） |
+| UAVDT（G 盘） | `G:\\Schloar Data\\P0\\UAVDT\\`（2026-09-27 核实：50 序列 `*_gt_whole.txt`／40735 帧；Stage E 运行时路径 `G:\\Schloar Data\\UAVDT\\` 已迁移） |
 
 ---
 
@@ -83,5 +83,7 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 ## Venue / Claim 政策指针（案头 · 2026-09-24）
 
 见 [`Venue_and_Claim_Policy_JCR_2026-09-24.md`](Venue_and_Claim_Policy_JCR_2026-09-24.md)。**不**改变上表 ACTIVE=P0_EI；A/B 仍 IDLE/PREP。
+
+信息学院学位分（2021 细则对照，案头）：[`SWJTU_Info_College_Degree_Credit_Note_2026-09-28.md`](SWJTU_Info_College_Degree_Credit_Note_2026-09-28.md)。学术博士：普通 EI／CCF-C **不计分**；正常评阅最低线为两篇可计 15 分的 SCI 二区（或一区）；「3 篇高水平」仅提前答辩。
 
 讨论产物总索引（政策 / 边界 / A·B 案头 / catalog）：[`INDEX_Discussion_Products_2026-09-24.md`](INDEX_Discussion_Products_2026-09-24.md)。**仅指针**；**不**改写上表、**不**解锁 A/B 采集或训练。

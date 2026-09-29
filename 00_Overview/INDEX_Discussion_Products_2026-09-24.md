@@ -12,6 +12,7 @@
 | 产物 | 路径 | 角色 | 状态 |
 |---|---|---|---|
 | Venue / Claim 政策（JCR-primary + claim ladder） | [`Venue_and_Claim_Policy_JCR_2026-09-24.md`](Venue_and_Claim_Policy_JCR_2026-09-24.md) | policy | **authoritative** |
+| 信息学院学位创新成果分备忘 | [`SWJTU_Info_College_Degree_Credit_Note_2026-09-28.md`](SWJTU_Info_College_Degree_Credit_Note_2026-09-28.md) | policy | **desk · 2026-09-28** |
 | Venue quartile 旧稿（重定向） | [`Venue_Quartile_Policy_2026-09-22.md`](Venue_Quartile_Policy_2026-09-22.md) | policy | **mirror**（以 09-24 文件为准） |
 | A/B 独立发表边界 | [`../01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md`](../01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md) | boundary | **authoritative** |
 | A/B 分轨方向判断（文献） | [`../01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md`](../01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md) | boundary | **authoritative** |
@@ -31,6 +32,7 @@
 
 ### policy
 - 主尺：`Venue_and_Claim_Policy_JCR_2026-09-24.md`（JCR-primary；强/中/弱；地板 JCR Q2/Q3）
+- 学位分备忘：`SWJTU_Info_College_Degree_Credit_Note_2026-09-28.md`（学术博士：EI／CCF-C 不计分；两篇 SCI 二区=正常评阅最低线）
 - 旧稿镜像：`Venue_Quartile_Policy_2026-09-22.md` → 冲突时以 09-24 为准
 
 ### boundary
