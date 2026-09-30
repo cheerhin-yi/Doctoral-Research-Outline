@@ -5,7 +5,7 @@
 | 主题 | 文件夹 | 主要问题 | 主张 |
 |---|---|---|---|
 | T1 铁路UAV与小目标 | [01_Railway_UAV_Detection](01_Railway_UAV_Detection/Reading_List.md) | 已知检测瓶颈 | C1 基础 |
-| T2 开放环境检测 | [02_Open_World_Detection](02_Open_World_Detection/Reading_List.md) | 未知候选与误报 | C1 |
+| T2 开放环境检测 | [02_Open_World_Detection](02_Open_World_Detection/Reading_List.md) | 未知候选与误报 | C1。结论页 [OpenWorld_C1C2.md](02_Open_World_Detection/OpenWorld_C1C2.md) |
 | T3 轨道上下文与风险 | [03_Track_Context_and_Risk](03_Track_Context_and_Risk/Reading_List.md) | 侵界与排序 | C2 |
 | T4 不确定性与评价 | [04_Uncertainty_and_Evaluation](04_Uncertainty_and_Evaluation/Reading_List.md) | 预算、校准、可信度 | C1/C2 |
 

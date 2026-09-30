@@ -13,6 +13,7 @@
 
 ## 根目录文件
 
+- [P0_C1C2.md](P0_C1C2.md) — 当前稿与后续稿能用的全文结论
 - [Literature_Matrix.md](Literature_Matrix.md) — 全主题必读／选读总表与证据摘要
 - [Coarse_Reading_Notes.md](Coarse_Reading_Notes.md) — 粗读学习笔记（主题级，不替代篇笔记）
 - [Paper_Note_Template.md](Paper_Note_Template.md) — 单篇笔记模板（三样：问题句／表轴／边界）
