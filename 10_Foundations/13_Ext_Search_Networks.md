@@ -2,18 +2,28 @@
 
 层：扩展。当前阶段不读。路径或任务顺序再打开。
 
-参考：Hart, Nilsson, Raphael. A Formal Basis for the Heuristic Determination of Minimum Cost Paths. *IEEE Trans. Systems Science and Cybernetics*, 1968. https://doi.org/10.1109/TSSC.1968.300136
+参考：Hart, Nilsson, Raphael. A Formal Basis for the Heuristic Determination of Minimum Cost Paths. IEEE Trans. Systems Science and Cybernetics, 1968. https://doi.org/10.1109/TSSC.1968.300136
 
-## 必学
+## 图、节点、边、代价
 
-图 $G=(V,E)$。$V$ 是节点，$E$ 是边。边代价 $c(u,v)\ge 0$。$g(n)$ 是从起点到 $n$ 的已付代价。启发式 $h(n)$ 是从 $n$ 到目标的估计，不能高估才保证最优。
+图由节点和边组成。节点可以是位置或任务。边是允许的一步。代价是走这条边要付的数，要求非负，例如距离或时间。
+
+已付代价是从起点沿当前路径走到这个节点已经花掉的数。它不是估计，是已经发生的。
+
+## 启发式
+
+启发式是从当前节点到目标还要花多少的估计。它必须不高于真实剩余代价，A\* 才保证找到最优。直线距离常用作这个估计，因为直线不会长过实际道路。
+
+## A\* 和 Dijkstra
 
 $$
 f(n)=g(n)+h(n)
 $$
 
-A\* 每次扩展 $f$ 最小的节点。Dijkstra 是 $h(n)=0$ 的特例，只按已付代价扩。
+$n$ 是当前节点。 $g(n)$ 是已付代价。 $h(n)$ 是启发式。 $f(n)$ 是总估计。A\* 每次扩展总估计最小的节点。
+
+Dijkstra 是启发式恒为 0 的特例，只按已付代价扩展。没有方向信息时用它。有可低估的方向信息时，A\* 少扩展一些节点。
 
 ## 查阅
 
-RRT：连续空间随机树，不是网格 A\*。匈牙利法：二分图最小代价匹配，用于分配而不是寻路。
+RRT 在连续空间里随机长树，不是网格上的 A\*。匈牙利法是二分图最小代价匹配，用于把任务分配给飞机，不是寻路。
