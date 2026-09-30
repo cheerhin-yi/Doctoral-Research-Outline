@@ -9,7 +9,7 @@
 | 梯度、softmax、交叉熵、学习率 | [`03_Calculus_for_Training.md`](03_Calculus_for_Training.md) |
 | 精度、召回、置信区间 | [`04_Probability_Detection.md`](04_Probability_Detection.md) |
 | 泊松、中断概率 | [`05_Probability_Networks.md`](05_Probability_Networks.md) |
-| \(h\)、路径损耗、SNR、\(N_0\) | [`06_Channel.md`](06_Channel.md) |
+| $h$、路径损耗、SNR、$N_0$ | [`06_Channel.md`](06_Channel.md) |
 | 香农容量 | [`07_Information_and_Signal.md`](07_Information_and_Signal.md) |
 | 拉格朗日、约束 | [`08_Optimization.md`](08_Optimization.md) |
 | 内参、外参、深度 | [`09_Camera_Geometry.md`](09_Camera_Geometry.md) |
