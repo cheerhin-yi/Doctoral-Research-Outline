@@ -348,7 +348,7 @@ W₂²(N_a, N_b) = ‖μ_a − μ_b‖₂² + ‖Σ_a^{1/2} − Σ_b^{1/2}‖_F�
 | small_recall       | Small-target recall                        | 小目标召回         | [项目] P0 主指标，见 Stage D/E            |
 | 超时率                | Budget exceed rate                         | 超时率           | [项目] 超过参考时限的帧比例                    |
 | p95                | 95th percentile                            | 95 分位耗时       | [项目] 报告时序分布                        |
-| mean_ms            | Mean milliseconds                          | 平均耗时(毫秒/帧)    | [项目] 1660/4090 分列                  |
+| mean_ms            | Mean milliseconds                          | 平均耗时(毫秒/帧)    | [项目] 1660/5060 Ti 分列                  |
 | GT oracle          | Oracle                                     | 真值上界          | [项目] 仅离线界定空间，不算可部署                 |
 | TIDE               | TIDE: A General Toolbox for Error Analysis | 错误分析工具箱       | [项目] W-0010 审计                     |
 | 错误分解               | Error structure / decomposition            | 错误结构分解        | [项目] BTD11：Cls/Loc/Both、分数/定位/类别   |
@@ -563,7 +563,7 @@ p95          = 排序后第 ⌈0.95·N⌉ 个耗时值       // 95 分位耗时
 |---|---|---|---|
 | GPU | Graphics Processing Unit | 图形处理器 | 训练/推理 |
 | GTX 1660 SUPER | NVIDIA 显卡 | 本机 GPU | [项目] 6GiB，多数 BTD 测速环境 |
-| RTX 4090 | NVIDIA 显卡 | 服务器 GPU | [项目] 双 4090 可用；正式时序表必须与 1660 分列 |
+| RTX 5060 Ti 16GB | NVIDIA 显卡 | 本机 GPU（2026-10-01 起） | [项目] P0 正式时序 Run G 计划在此跑（未跑）；必须与 1660 分列 |
 | VRAM | Video RAM | 显存 | [项目] 6GiB 限制：只能跑小模型 |
 | CUDA | Compute Unified Device Architecture | NVIDIA 并行计算平台 | [项目] torch2.7.1+cu126 |
 | cuDNN | CUDA Deep NN Library | 深度网络加速库 | 依赖项 |

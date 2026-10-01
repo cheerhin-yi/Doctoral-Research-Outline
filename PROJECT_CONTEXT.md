@@ -12,7 +12,7 @@
 
 权威入口：[当前阶段](00_Overview/Current_Stage.md)、[主线A当前](00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md)、2026-09-16决定、[研究计划](00_Practice_UAV_Aerial_Detection/Research_Plan.md)、阶段指南。
 
-允许整理已有表成稿；若缺同口径 4090 时间表或一次 test-dev 终评，须先登记 Run ID。禁止新训练、改网络、用未采集高原数据占位写结果。不把 VisDrone 写成铁路安全或高原泛化；不承诺期刊录用。
+允许整理已有表成稿；若缺同口径 5060 Ti 时间表或一次 test-dev 终评，须先登记 Run ID。禁止新训练、改网络、用未采集高原数据占位写结果。不把 VisDrone 写成铁路安全或高原泛化；不承诺期刊录用。
 
 ## 2. 研究目标与历史转向
 

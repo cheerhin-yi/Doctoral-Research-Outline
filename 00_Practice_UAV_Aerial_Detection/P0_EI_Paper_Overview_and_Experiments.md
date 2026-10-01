@@ -42,7 +42,7 @@
 | **P0-EI-C2** | 选区／覆盖协议只移动召回–精度–时延权衡，没有跨数据集通用的最优协议：VisDrone 上 UnifAll small recall 最高（0.4511，比 F1280 高 0.0507），但时延约 3.3×（112.2 vs 33.7 ms）且精度下降（0.5123 vs 0.6753）；本冻结设置下 SAHI640 在两集上均被 F1280 支配；UAVDT 上排序改为 F1280 > UnifAll > DensK1 > SAHI640 > F640。 | D／F 同上；`P0-BENCH-E-UAVDT-20260918-FULL` → `03_cross_uavdt/data/E_FULL_summary.json` |
 | P0-A-C1／P0-A-C2 | 旧区域机制主张 | **HOLD**，不指导本稿 |
 
-**适用范围：** ① 时延仅来自 GTX 1660 SUPER（4090 Run G 未跑，将单列）；② 指标是本项目匹配器的 precision／small recall，不是 AP；③ 单一冻结权重；④ 配对检验只覆盖 VisDrone test-dev，UAVDT 只有聚合值。
+**适用范围：** ① 时延仅来自 GTX 1660 SUPER（5060 Ti Run G 未跑，将单列）；② 指标是本项目匹配器的 precision／small recall，不是 AP；③ 单一冻结权重；④ 配对检验只覆盖 VisDrone test-dev，UAVDT 只有聚合值。
 
 **修订记录：** 2026-09-27 由"整图 1280 比密度单片更准且更快""区域分配存在可恢复空间，但不等于可部署增益"改为上表措辞；旧 BTD8／BTD1–BTD11 依据退出主张（Git 历史保留）。主张全文与证据细节见 `PR/Research_Plan.md` §3。
 
@@ -62,7 +62,7 @@
 - **不看分后改映射**：VisDrone→UAVDT 类别映射在出分前冻结（FROZEN_PRE_RESULTS）；不看分后改 conf 刷终表。
 - **新机制一律 HOLD**（P0-A-*）；不创建 BTD13；不开 Paper 2–7；Post-EI 的 A（RailUAV-SOD）／B（Paper1）只是 IDLE／PREP。
 - **test-dev 只做一次性终评**，不能用来选策略或选 checkpoint（Stage D `one_shot: true`）。
-- **1660 与 4090 时序分表**，禁止合并成一个"公平"时序表。
+- **1660 与 5060 Ti 时序分表**，禁止合并成一个"公平"时序表。
 - 不把 VisDrone 结果写成铁路安全或高原泛化；轨道走廊**不是**本篇的方法前提。
 - 不把 GT oracle 选择写成方法精度；不声称"两集通吃的统一排序"。
 - 第三方 UAVDT 子集（包括已拒绝的 Kaggle JSON 包）不能当主库。
@@ -92,7 +92,7 @@
 | Stage E UAVDT 外推 | DONE／PASS · `P0-BENCH-E-UAVDT-20260918-FULL` | `P0_EI/03_cross_uavdt/` |
 | Stage F 图级配对 | PASS · `P0-BENCH-F-TESTDEV-20260917-01` | `P0_EI/02_paired_stats/` |
 | EI 包装（近邻表／失败例／复现附录／图 1–5） | **已填** | `P0_EI/05_packaging/` |
-| 4090 正式时序 | **缺**（`Timing_4090_Table.md` pending；Run G 尚未跑） | `PR/Research_Plan.md` §4 |
+| 5060 Ti 正式时序 | **缺**（`Timing_5060Ti_Table.md` pending；Run G 尚未跑） | `PR/Research_Plan.md` §4 |
 | 稿件正文／PDF | **缺**：`PR/` 下没有 `.tex`／`.pdf`／`.docx`，只有提纲 `PR/Writing/P0_EI_Outline.md` | 本文扫描 |
 | 学习侧（Part B 等） | 由用户自己完成；不是实验执行门 | — |
 
@@ -134,8 +134,8 @@
 |---|---|---|
 | 精度与流水线计时（B／C／D／E） | **NVIDIA GeForce GTX 1660 SUPER ×1**，6144 MiB，驱动 591.86，功耗上限 125 W，UUID `GPU-43b14c17-…` | `P0_EI/00_freeze/gpu_snapshot.txt` |
 | Stage B 峰值显存 | 159038464 bytes（约 151.7 MiB） | `P0_EI/04_timing/data/B_TIMING_summary.json` |
-| 正式时序 | **RTX 4090：尚未跑**。Run ID 已登记：`P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01`（UAVDT 可选） | `PR/Research_Plan.md` §4 |
-| 纪律 | 1660 数字只算 pipeline validation；正文时序表只用 4090；**两者不能进同一张表** | `Current_Stage.md`、`Environment_Freeze.md` |
+| 正式时序 | **RTX 5060 Ti 16GB：尚未跑**。Run ID 已登记：`P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01`（UAVDT 可选） | `PR/Research_Plan.md` §4 |
+| 纪律 | 1660 数字只算 pipeline validation；正文时序表只用 5060 Ti；**两者不能进同一张表** | `Current_Stage.md`、`Environment_Freeze.md` |
 
 ### 2.4 数据集
 
@@ -239,7 +239,7 @@
 | 权重 SHA 期望＝实际 | **YES**（两份 last.pt，5457882 bytes） |
 | cal48 清单 | 48 行／48 图／48 标注，没有重采样；SHA `b0e27b1d…8e7f` |
 | git | HEAD `604aeec`（冻结时） |
-| GPU | GTX 1660 SUPER（非 4090 → 正式 4090 表在本机被阻塞，已披露） |
+| GPU | GTX 1660 SUPER（非 4090 → 正式 4090 表在本机被阻塞，已披露；2026-10-01 起本机换为 RTX 5060 Ti 16GB，正式时序改在 5060 Ti 上跑，见 §6.1） |
 | sahi | 缺失 → 当时 M5 被阻塞（后来安装，见 2.2） |
 | 评价门／计时边界／统计单位 | 已登记：conf 0.25、IoU 0.5、small<1024；解码图 → 最终框；统计单位＝图像，主对照 F1280 vs DensK1 |
 
@@ -248,7 +248,7 @@
 
 ### Stage B — 本地 1660 SUPER 流水线计时
 
-- **目的：** 在同一台机器上，按统一计时边界测量五个协议的端到端时延，用于 pipeline 验证。**这不是正式 4090 表。**
+- **目的：** 在同一台机器上，按统一计时边界测量五个协议的端到端时延，用于 pipeline 验证。**这不是正式 5060 Ti 表。**
 - **做法：** cal48 的 48 张 × 5 个协议 × 3 次 = 每个协议 144 条计时；检查每次输出是否与第 0 次一致（atol=1e-5）；保存 rep0 的预测供 Stage C 使用。
 - **Run ID：** `P0-BENCH-B-TIMING-20260917-01` · **PASS**
 
@@ -273,7 +273,7 @@
 | SAHI640 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.979 |
 
 - **结论：** 在 1660 上，F1280 与 DensK1 的时延是**同一量级**（均值 33.15 vs 35.34 ms，p95 38.73 vs 43.20 ms）。在 T=40 ms 这个相对参考下，DensK1 有 2.1% 的图像超时，F1280 为 0。UnifAll 约为 F1280 的 3 倍，SAHI640 约为 10 倍。三次重复的输出全部一致。
-- **与历史数字的差别：** 旧版 C1 依据（已弃用）中的 1660 数字（F1280 27.33／41.44 ms；DensK1 37.36／64.51 ms，来自 BTD8）和本次 Stage B 的数字不同。两者的计时实现与轮次不同，成稿时应**只引用 Stage B（或 4090）**，BTD8 的数字只作历史说明。
+- **与历史数字的差别：** 旧版 C1 依据（已弃用）中的 1660 数字（F1280 27.33／41.44 ms；DensK1 37.36／64.51 ms，来自 BTD8）和本次 Stage B 的数字不同。两者的计时实现与轮次不同，成稿时应**只引用 Stage B（或 5060 Ti）**，BTD8 的数字只作历史说明。
 - **证据：** `P0_EI/04_timing/StageB_Timing_Report.md`、`data/B_TIMING_summary.json`、`B_TIMING_timings.csv`、`B_TIMING_protocol.json`；图 4。
 
 ### Stage C — cal48 精度（开发证据，非主表）
@@ -432,7 +432,7 @@
 
 ### 4.3 复现附录（`Reproducibility_Appendix.md`）
 
-清单已全部勾选：权重路径 + SHA、五协议配置（imgsz／crop／overlap／conf／IoU／NMS）、映射版本与冻结状态、评价器声明、split 与图像数（D 1610／E 40735／B 48×3／F 1610）、硬件分列（4090 标为 TODO）、Run ID 列表（G 为 NOT YET）、硬禁令。
+清单已全部勾选：权重路径 + SHA、五协议配置（imgsz／crop／overlap／conf／IoU／NMS）、映射版本与冻结状态、评价器声明、split 与图像数（D 1610／E 40735／B 48×3／F 1610）、硬件分列（5060 Ti 标为 TODO）、Run ID 列表（G 为 NOT YET）、硬禁令。
 
 本文核查后建议补充的复现项及状态（2026-09-27）：① 运行脚本 → **已恢复**（附录 §10）；② sahi 运行时版本 → **open**（无法事后确认；附录 §10 只记录了事后看到的 0.11.32 和默认后处理参数）；③ `stage_e_config_freeze.json` 的 smoke run_id → **已加注**（`Run_Index.md`、Stage E 报告 §8；JSON 未改）；④ UAVDT 路径 → **已更新**（Current_Stage、Stage E 文档）。
 
@@ -465,10 +465,10 @@
 
 ## 六、局限与待办
 
-### 6.1 4090 正式时序（必须单列）
+### 6.1 5060 Ti 正式时序（必须单列）
 
-- 待跑：`P0-BENCH-G-4090-SMOKE-20260920-01` → `…-CAL48-…` → `…-TESTDEV-…`（UAVDT 可选）。
-- 结果**只写进** `P0_EI/04_timing/` 下独立的 `Timing_4090_Table.md`（目前 pending），**不能和 1660 合并成一行或一张表**。正文时序只用 4090；D／E 精度表保持不变；1660 标注为 pipeline validation。
+- 待跑：`P0-BENCH-G-5060TI-SMOKE-20261001-01` → `…-CAL48-…` → `…-TESTDEV-…`（UAVDT 可选）。
+- 结果**只写进** `P0_EI/04_timing/` 下独立的 `Timing_5060Ti_Table.md`（目前 pending），**不能和 1660 合并成一行或一张表**。正文时序只用 5060 Ti；D／E 精度表保持不变；1660 标注为 pipeline validation。
 
 ### 6.2 稿件／PDF
 
@@ -479,7 +479,7 @@
 ### 6.3 可选增强（不引入新算法、不新推理、不训练；都需要按 Current_Stage 纪律另行确认）
 
 1. **Stage E 图级配对统计**：只用现有 `E_FULL_per_image_metrics.csv`，套用 Stage F 的方法（需另登记 Run ID）。
-2. **超预算率曲线图**：从 `B_TIMING_summary.json` 已有的 `budget_violation_rate` 画 T–超时率曲线（4090 出来后另画一张，不叠加）。
+2. **超预算率曲线图**：从 `B_TIMING_summary.json` 已有的 `budget_violation_rate` 画 T–超时率曲线（5060 Ti 结果出来后另画一张，不叠加）。
 3. **recall_all 列和 n_dets 列**：本文已派生，可作补充表。
 
 ### 6.4 已知开放项
@@ -490,7 +490,7 @@
 
 ### 6.5 下一步可检查事项（按优先级）
 
-1. 在 4090 机器上按 Run G 登记并跑正式时序 → 写 `Timing_4090_Table.md`（单列）。
+1. 在本机 RTX 5060 Ti 16GB 上按 Run G 跑正式时序（计划中，未跑；5060 Ti 为 Blackwell（sm_120），冻结环境 torch 2.7.1+cu126（`00_freeze/pip_freeze.txt`）不支持；2026-10-04 已建 conda 环境 `UAV_BT2`（Python 3.10，torch 2.7.1+cu128，ultralytics／sahi 已装），跑 Run G 前须把该环境快照（pip freeze、nvidia-smi）写入 `00_freeze/` 并登记与冻结环境的差异；权重／协议／评价器不变） → 写 `Timing_5060Ti_Table.md`（单列）。
 2. 按提纲与第一节 C1／C2 终稿措辞写正文（Intro／Protocols & Evaluation／Results／Failure & Boundaries）。
 3. 选定会期并写入 Current_Stage（由用户操作）。
 4. 可选：Stage E 配对统计（只做分析）。

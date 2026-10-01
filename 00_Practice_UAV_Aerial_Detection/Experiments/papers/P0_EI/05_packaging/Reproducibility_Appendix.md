@@ -60,9 +60,9 @@ NMS：BTD5 风格 CPU NMS，类间独立，IoU>0.5，max500（DensK1/UnifAll 融
 | 用途 | GPU | 状态 |
 |---|---|---|
 | D/E 精度 + B 流水线时序 | **GTX 1660 SUPER** | 已跑（本附录数字） |
-| 正式统一时序表 | **RTX 4090** | **尚未跑** → Run G `P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01`；正文不得用 1660 冒充 4090；`Timing_4090_Table.md` 保持 pending |
+| 正式统一时序表 | **RTX 5060 Ti 16GB**（2026-10-01 换卡；取代原计划 4090） | **计划中，尚未跑** → Run G `P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01`；正文不得用 1660 冒充 5060 Ti；`Timing_5060Ti_Table.md` 保持 pending；5060 Ti 为 Blackwell（sm_120），冻结环境 torch 2.7.1+cu126（`00_freeze/pip_freeze.txt`）不支持；2026-10-04 已建 conda 环境 `UAV_BT2`（Python 3.10，torch 2.7.1+cu128，ultralytics／sahi 已装），跑 Run G 前须把该环境快照（pip freeze、nvidia-smi）写入 `00_freeze/` 并登记与冻结环境的差异；权重／协议／评价器不变 |
 
-- [x] 硬件分列（4090 标 TODO）
+- [x] 硬件分列（5060 Ti 标 TODO）
 
 ## 7. Run IDs
 
@@ -72,7 +72,7 @@ NMS：BTD5 风格 CPU NMS，类间独立，IoU>0.5，max500（DensK1/UnifAll 融
 | D VisDrone | `P0-BENCH-D-TESTDEV-20260917-01` | PASS |
 | E UAVDT | `P0-BENCH-E-UAVDT-20260918-FULL` | PASS |
 | F Paired | `P0-BENCH-F-TESTDEV-20260917-01` | PASS |
-| G 4090 | `P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01` | **NOT YET** |
+| G 5060 Ti | `P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01` | **NOT YET** |
 
 - [x] Run ID 列表
 
@@ -81,7 +81,7 @@ NMS：BTD5 风格 CPU NMS，类间独立，IoU>0.5，max500（DensK1/UnifAll 融
 - [x] **无重训** / 无改权重  
 - [x] **无看分后重映射** / 无改 conf 刷终表  
 - [x] **无 Paper 2–7** 内容混入本练习槽成稿  
-- [x] 1660 与 4090 **分表**；禁止混机「公平」时序
+- [x] 1660 与 5060 Ti **分表**；禁止混机「公平」时序
 
 ## 9. 关键证据路径
 

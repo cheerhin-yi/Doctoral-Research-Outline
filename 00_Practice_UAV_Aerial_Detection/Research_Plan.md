@@ -21,7 +21,7 @@
 | 五协议 | F640（整图 640）／F1280（整图 1280）／DensK1（整图 640 + 密度最高单片）／UnifAll（整图 640 + 同网格全部 640 窗口）／SAHI640（sahi 默认切片） | `00_freeze/Environment_Freeze.md`、`00_freeze/DensK1_Definition.md` |
 | 评价口径 | 本项目 VisDrone 兼容匹配器（`diagnose_bt1.prepare_gt`／`match_gt`）；conf=0.25、IoU=0.5；报告 precision 与 small recall（small：原图 0<w·h<1024）；**不是 AP** | `00_freeze/Environment_Freeze.md`、`00_freeze/provenance/A0-07_Evaluator_Semantics_Check.md` |
 | 数据 | VisDrone2019-DET test-dev（Ultralytics 镜像本地 GT，1610 图）主评测；cal48 开发集；UAVDT DET（40735 帧，VisDrone→UAVDT 映射分前冻结）跨集 | `01_visdrone_main/StageD_Channel_Decision.md`、`00_freeze/class_mapping_preregister.json` |
-| 硬件 | 全部 Stage 在 GTX 1660 SUPER 上完成；4090 正式时序未跑 | `00_freeze/gpu_snapshot.txt` |
+| 硬件 | 全部 Stage 在 GTX 1660 SUPER 上完成；5060 Ti 正式时序未跑 | `00_freeze/gpu_snapshot.txt` |
 | 代码 | `Experiments/P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py`、`Experiments/diagnose_bt1.py`（SHA 见复现附录 §10） | `Experiments/papers/P0_EI/05_packaging/Reproducibility_Appendix.md` |
 
 ## 3. 会议主张（终稿措辞，2026-09-27；仅依据 Stage B–F）
@@ -46,7 +46,7 @@
 
 ### 3.3 适用范围（成稿必须披露）
 
-1. **硬件：** 所有时延仅来自 GTX 1660 SUPER（Stage B 为 3 次重复计时；Stage D/E 为单次运行计时）；4090 正式时序（Run G）尚未跑，出来后单独成表，不与 1660 合并。
+1. **硬件：** 所有时延仅来自 GTX 1660 SUPER（Stage B 为 3 次重复计时；Stage D/E 为单次运行计时）；5060 Ti 正式时序（Run G）尚未跑，出来后单独成表，不与 1660 合并。
 2. **指标：** 本项目匹配器的 precision／small recall（单一 conf 0.25、IoU 0.5），**不是** COCO／VisDrone 排行榜 AP，也不是 UAVDT 官方 MATLAB 评测；test-dev 为 Ultralytics 镜像本地 GT。
 3. **模型：** 单一冻结权重（YOLO11n，seed 0），未跨检测器、权重或训练种子；不能外推为"对所有检测器成立"。
 4. **统计：** 配对检验只覆盖 VisDrone test-dev（Stage F）；UAVDT 只有聚合值；cal48 为开发证据；不含选择漏检表或 GT oracle 数字。
@@ -66,15 +66,15 @@
 | E UAVDT 跨集 | `P0-BENCH-E-UAVDT-20260918-FULL` | PASS | `03_cross_uavdt/` |
 | F 图级配对统计 | `P0-BENCH-F-TESTDEV-20260917-01` | PASS | `02_paired_stats/` |
 | EI 包装 | — | DONE（近邻表、失败／边界例、复现附录、图 1–5） | `05_packaging/` |
-| G 4090 正式时序 | `P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01`（UAVDT 可选） | 未跑 | 结果单独写 `04_timing/Timing_4090_Table.md` |
+| G 5060 Ti 正式时序 | `P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01`（UAVDT 可选） | 未跑 | 结果单独写 `04_timing/Timing_5060Ti_Table.md` |
 | 稿件正文 | — | 未开始 | `Writing/P0_EI_Outline.md` |
 
 ## 5. 剩余工作
 
-1. **4090 正式时序（Run G）：** 按已登记 Run ID 跑，单独成表；正文时序用 4090，1660 标注为 pipeline validation。4090 结果不改变 C1 的"更准"部分；只有在 4090 上也做配对检验后才能重新讨论时延表述。
+1. **5060 Ti 正式时序（Run G）：** 2026-10-01 本机已换为 RTX 5060 Ti 16GB，原计划的 4090 时序作废（从未运行）。按已登记 Run ID 跑（计划中，未跑），单独成表；5060 Ti 为 Blackwell（sm_120），冻结环境 torch 2.7.1+cu126（`00_freeze/pip_freeze.txt`）不支持；2026-10-04 已建 conda 环境 `UAV_BT2`（Python 3.10，torch 2.7.1+cu128，ultralytics／sahi 已装），跑 Run G 前须把该环境快照（pip freeze、nvidia-smi）写入 `00_freeze/` 并登记与冻结环境的差异；权重／协议／评价器不变；正文时序用 5060 Ti，1660 标注为 pipeline validation。5060 Ti 结果不改变 C1 的"更准"部分；只有在 5060 Ti 上也做配对检验后才能重新讨论时延表述。
 2. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草；导读与全部数字见 [`P0_EI_Paper_Overview_and_Experiments.md`](P0_EI_Paper_Overview_and_Experiments.md)。
 3. 会期与截稿日待用户确认后写入 Current_Stage。
 
 ## 6. 禁止事项
 
-新训练／微调；改 backbone、loss、检测头；看分后改类别映射或 conf；重复使用 test-dev 选策略；1660 与 4090 混表；把 VisDrone 结果写成铁路或高原结论；开 Paper 2–7。
+新训练／微调；改 backbone、loss、检测头；看分后改类别映射或 conf；重复使用 test-dev 选策略；1660 与 5060 Ti 混表；把 VisDrone 结果写成铁路或高原结论；开 Paper 2–7。

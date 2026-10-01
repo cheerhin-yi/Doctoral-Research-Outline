@@ -10,7 +10,7 @@
 ## 第一篇（近程，已授权执行）
 
 - **类型：** 冻结检测器上的推理协议对照。主张仅 P0-EI-C1／C2。摘要写 experimental evaluation，不写 we propose。
-- **证据：** Stage A–E／F PASS（1660）；正文精度用 D／E。4090 时序按 G 协议补列，与 1660 分列。
+- **证据：** Stage A–E／F PASS（1660）；正文精度用 D／E。5060 Ti 时序按 G 协议补列，与 1660 分列。
 - **出口：** 普通 EI 会议；主跟踪 **ICIP 2027 全文**（目录惯例为 CCF-C，投稿前核 CCF 第七版）。备选 ACCV／ICPR 全文。不把 CCF-B（ICME／ICASSP）当第一目标。Workshop／短文通常不算目录会议。
 - **禁止：** 把决策算法或新切片写进本篇主张。
 
@@ -27,4 +27,4 @@
 
 ## 当前唯一可执行项
 
-4090 机：`P0-BENCH-G-4090-{SMOKE,CAL48,TESTDEV}-20260920-01`（UAVDT 可选）。
+5060 Ti 机：`P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01`（UAVDT 可选）。
