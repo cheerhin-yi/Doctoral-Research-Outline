@@ -16,7 +16,7 @@
 
 ## 当前唯一事项
 
-**Stage A–F 全部 PASS；EI 包装（近邻协议对标表＋失败／边界例＋可复现附录＋图 1–5）已完成；C1／C2 已按 Stage B–F 结果改为终稿措辞（2026-09-27）。Run G 5060 Ti 正式时序已完成（2026-10-06，单列于 `Timing_5060Ti_Table.md`，不与 1660 合并）。下一步：① 决定 C1 时延表述（5060 Ti 上 F1280 显著快于 DensK1，1660 上不可区分；待用户定稿）；② 稿件正文（按 `Writing/P0_EI_Outline.md`）。叙事保持「冻结权重上的推理协议对比」，不新训、不改映射、不开 Paper 2–7。**
+**Stage A–F 全部 PASS；EI 包装（近邻协议对标表＋失败／边界例＋可复现附录＋图 1–5）已完成；C1／C2 已按 Stage B–F 结果改为终稿措辞（2026-09-27）。Run G 5060 Ti 正式时序已完成（2026-10-06，单列于 `Timing_5060Ti_Table.md`，不与 1660 合并）。C1 时延部分已按用户决定改为分 GPU 表述（2026-10-06）。下一步：稿件正文（按 `Writing/P0_EI_Outline.md`）。叙事保持「冻结权重上的推理协议对比」，不新训、不改映射、不开 Paper 2–7。**
 
 T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本地冻结权重未被改写。Paper 2–7 仍 **PAUSED**；机制主张 P0-A-* 仍 **HOLD**。
 
@@ -45,9 +45,9 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 
 ### 主张（终稿措辞摘要）
 
-- **C1：** F1280 比 DensK1 更准（VisDrone test-dev small recall +0.0409，95% CI [0.0355, 0.0462]；precision +0.0681），1660 上时延统计上不可区分（Wilcoxon p = 0.235）；不主张"更快"。
+- **C1：** F1280 比 DensK1 更准（VisDrone test-dev small recall +0.0409，95% CI [0.0355, 0.0462]；precision +0.0681）。时延分 GPU：GTX 1660 SUPER（UAV_BT1）上统计上不可区分（Wilcoxon p = 0.235）；RTX 5060 Ti（UAV_BT2）上 F1280 更快（均值差 −14.01 ms，95% CI [−14.22, −13.80]，p≈3.6e-264，1607／1610 张图；`P0-BENCH-G-5060TI-PAIRED-20261006-01`）。时延排序依赖 CPU／流水线（GPU 利用率约 11%，Ryzen 5 5600G，Windows“平衡”电源计划，未分解）；不写不带 GPU 名称的“更快”。
 - **C2：** 选区／覆盖协议只移动召回–精度–时延权衡：VisDrone 上 UnifAll small recall 最高但时延约 3.3×、精度下降；SAHI640 在两集上均被 F1280 支配；UAVDT 排序为 F1280 0.793 > UnifAll 0.782 > DensK1 0.767 > SAHI640 0.760 > F640 0.708。
-- **范围：** 仅 1660 计时；匹配器 precision／small recall，不是 AP；单一冻结权重。
+- **范围：** 计时分 GPU 单列（1660 SUPER／UAV_BT1；RTX 5060 Ti／UAV_BT2）；匹配器 precision／small recall，不是 AP；单一冻结权重。
 
 ---
 
@@ -62,7 +62,7 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 
 ## 下一步
 
-1. **5060 Ti 正式时序表：** **已完成（2026-10-06）。** Run G（`P0-BENCH-G-5060TI-SMOKE/CAL48/TESTDEV-20261001-01`，配对检验 `P0-BENCH-G-5060TI-PAIRED-20261006-01`）在本机 RTX 5060 Ti 16GB + `F:\Conda\envs\UAV_BT2` 上跑完，四个闸门全部 PASS；结果单列 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`，不与 1660 合并。test-dev one-shot 均值：F640 19.85、F1280 26.25、DensK1 40.26、UnifAll 136.59、SAHI640 507.10 ms；cal48（3 次）均值：19.91／27.43／40.12／114.48／427.50 ms。精度与 1660 冻结记录一致（test-dev 各方法 |Δsmall recall| ≤ 0.014 个百分点）。配对检验：F1280 比 DensK1 快（逐图中位差 −13.32 ms，1607／1610 张更快，p≈3.6e-264），即 C1 中“时延统计上不可区分”只在 1660 上成立；C1 时延措辞如何改由用户决定（C1 的“更准”部分不受影响）。UAVDT 时序可选，未跑。
+1. **5060 Ti 正式时序表：** **已完成（2026-10-06）。** Run G（`P0-BENCH-G-5060TI-SMOKE/CAL48/TESTDEV-20261001-01`，配对检验 `P0-BENCH-G-5060TI-PAIRED-20261006-01`）在本机 RTX 5060 Ti 16GB + `F:\Conda\envs\UAV_BT2` 上跑完，四个闸门全部 PASS；结果单列 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`，不与 1660 合并。test-dev one-shot 均值：F640 19.85、F1280 26.25、DensK1 40.26、UnifAll 136.59、SAHI640 507.10 ms；cal48（3 次）均值：19.91／27.43／40.12／114.48／427.50 ms。精度与 1660 冻结记录一致（test-dev 各方法 |Δsmall recall| ≤ 0.014 个百分点）。配对检验：F1280 比 DensK1 快（逐图中位差 −13.32 ms，1607／1610 张更快，p≈3.6e-264），C1 时延部分已于 2026-10-06 按用户决定改为分 GPU 表述（1660 不可区分；5060 Ti 上 F1280 更快；排序依赖 CPU／流水线），“更准”部分不变。UAVDT 时序可选，未跑。
 2. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草，主张只用 C1／C2 终稿措辞。
 3. **会期：** 选定 2027 年 EI 会期（主跟踪 ICIP 2027 全文）并写入本页。
 4. **不默认：** 同质第三集；新模块／重训。

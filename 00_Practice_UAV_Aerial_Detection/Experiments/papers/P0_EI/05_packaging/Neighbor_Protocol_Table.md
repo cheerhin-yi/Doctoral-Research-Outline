@@ -55,10 +55,10 @@ Run: `P0-BENCH-E-UAVDT-20260918-FULL` PASS · n=40735 · 冻结 VisDrone→UAVDT
 
 ## C. 主张支持与边界（终稿措辞，2026-09-27）
 
-**P0-EI-C1**：在单一冻结 YOLO11n 权重与 conf 0.25／IoU 0.5 匹配口径下，VisDrone test-dev 上 F1280 比 DensK1 更准——Stage F 主配对 Δsmall_recall +0.0409，95% CI [0.0355, 0.0462]，Δprecision +0.0681 [0.0631, 0.0731]；两者在 1660 上的时延统计上不可区分（单次时延逐图 Wilcoxon p=0.235，均值差 −0.34 ms；Stage B 均值 33.15 vs 35.34 ms）。不主张"更快"。E 上同向（small recall 0.7929 vs 0.7672，precision 0.3719 vs 0.3475，33.1 vs 33.0 ms；无配对检验）。背景轴：D 上 F640→F1280 小召回 +0.1616 而精度几乎不变（CI 跨 0）；E 上召回升但精度 −0.0584，权衡面依赖数据域。  
+**P0-EI-C1**：在单一冻结 YOLO11n 权重与 conf 0.25／IoU 0.5 匹配口径下，VisDrone test-dev 上 F1280 比 DensK1 更准——Stage F 主配对 Δsmall_recall +0.0409，95% CI [0.0355, 0.0462]，Δprecision +0.0681 [0.0631, 0.0731]；时延分 GPU：GTX 1660 SUPER（UAV_BT1）上两者统计上不可区分（单次时延逐图 Wilcoxon p=0.235，均值差 −0.34 ms；Stage B 均值 33.15 vs 35.34 ms）；RTX 5060 Ti（UAV_BT2）上 F1280 更快（均值差 −14.01 ms，95% CI [−14.22, −13.80]，p≈3.6e-264，1607／1610 张图；`P0-BENCH-G-5060TI-PAIRED-20261006-01`）。时延排序依赖 CPU／流水线（GPU 利用率约 11%，Ryzen 5 5600G，Windows“平衡”电源计划，未分解）；“更快”须写明 GPU。E 上同向（small recall 0.7929 vs 0.7672，precision 0.3719 vs 0.3475，33.1 vs 33.0 ms；无配对检验）。背景轴：D 上 F640→F1280 小召回 +0.1616 而精度几乎不变（CI 跨 0）；E 上召回升但精度 −0.0584，权衡面依赖数据域。  
 **P0-EI-C2**：选区／覆盖协议只移动召回–精度–时延权衡。D 上 UnifAll 小召回最高（0.4511；相对 F1280 +0.0507，相对 DensK1 +0.0916），代价是精度（0.5123 vs F1280 0.6753）与时延（112.2 vs 33.7 ms，≈3.3×；Stage B T=40 ms 超时率 UnifAll 1.000，F1280 0，DensK1 0.021）；E 上 DensK1→UnifAll 仅 +0.0152 且精度 −0.0159。本冻结设置下 SAHI640 在 D、E 上均被 F1280 支配（上表 SAHI640→F1280 两行三项同向改善）。  
 **名次不稳作边界**：D 上 small-recall 序 UnifAll > F1280 > DensK1 > F640 > SAHI640；E 上 F1280 > UnifAll > DensK1 > SAHI640 > F640。跨集重排写作主张边界，不写"通用排序"。  
-**适用范围**：时延仅 GTX 1660 SUPER；指标为匹配器 precision／small recall（非 AP）；单一冻结权重。主张全文与证据见 `../../../../Research_Plan.md` §3。
+**适用范围**：本表时延列仅 GTX 1660 SUPER（UAV_BT1）；RTX 5060 Ti（UAV_BT2）时延另表 `../04_timing/Timing_5060Ti_Table.md`，不合表；指标为匹配器 precision／small recall（非 AP）；单一冻结权重。主张全文与证据见 `../../../../Research_Plan.md` §3。
 
 ## D. 指针
 

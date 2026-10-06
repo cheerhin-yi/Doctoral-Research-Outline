@@ -30,12 +30,12 @@ P0 **不再追求独立新机制**；旧机制主张 P0-A-C1／C2 保持 **HOLD*
 
 ---
 
-## 4. 会议主张（终稿措辞，2026-09-27）
+## 4. 会议主张（终稿措辞，2026-09-27；C1 时延部分 2026-10-06 改为分 GPU 表述）
 
-- **P0-EI-C1：** 在单一冻结 YOLO11n 权重与 conf 0.25／IoU 0.5 匹配口径下，VisDrone test-dev 上 F1280 比 DensK1 **更准**（small recall +0.0409，95% CI [0.0355, 0.0462]；precision +0.0681），两者在 GTX 1660 SUPER 上的时延统计上不可区分（逐图 Wilcoxon p = 0.235，均值差 −0.34 ms）。不主张"更快"。
+- **P0-EI-C1：** 在单一冻结 YOLO11n 权重与 conf 0.25／IoU 0.5 匹配口径下，VisDrone test-dev 上 F1280 比 DensK1 **更准**（small recall +0.0409，95% CI [0.0355, 0.0462]；precision +0.0681）。时延分 GPU：GTX 1660 SUPER（UAV_BT1）上统计上不可区分（逐图 Wilcoxon p = 0.235，均值差 −0.34 ms）；RTX 5060 Ti（UAV_BT2）上 F1280 更快（均值差 −14.01 ms，95% CI [−14.22, −13.80]，p≈3.6e-264，1607／1610 张图；`P0-BENCH-G-5060TI-PAIRED-20261006-01`）。时延排序依赖 CPU／流水线（GPU 利用率约 11%，Ryzen 5 5600G，Windows“平衡”电源计划，未分解）。
 - **P0-EI-C2：** 选区／覆盖协议只移动召回–精度–时延权衡：VisDrone 上 UnifAll small recall 最高（0.4511），但时延约 3.3×（112.2 vs 33.7 ms）、精度 0.5123 vs 0.6753；SAHI640 在两集上均被 F1280 支配；UAVDT 上排序改为 F1280 > UnifAll > DensK1 > SAHI640 > F640。
-- **适用范围：** 仅 1660 计时；匹配器 precision／small recall，不是 AP；单一冻结权重。
-- 证据、Run ID 与文件见 `Research_Plan.md` §3。修订记录：2026-09-27 由"更准且更快／区域分配存在可恢复空间"改为上述基于 Stage B–F 的措辞。
+- **适用范围：** 计时分 GPU 单列（1660 SUPER／UAV_BT1；RTX 5060 Ti／UAV_BT2）；匹配器 precision／small recall，不是 AP；单一冻结权重。
+- 证据、Run ID 与文件见 `Research_Plan.md` §3。修订记录：2026-09-27 由"更准且更快／区域分配存在可恢复空间"改为上述基于 Stage B–F 的措辞；2026-10-06（用户决定）：C1 时延部分改为分 GPU 表述（1660 SUPER 不可区分；RTX 5060 Ti 上 F1280 更快），并注明时延排序依赖 CPU／流水线；C1 精度部分不变。
 
 禁止用注意力／损失／蒸馏／剪枝／新检测头补证据。
 
@@ -56,7 +56,7 @@ P0 **不再追求独立新机制**；旧机制主张 P0-A-C1／C2 保持 **HOLD*
 | 允许 | 禁止 |
 |---|---|
 | 整理已有表成稿 | 新训练；改 backbone／loss／头 |
-| 按已登记 Run ID 跑一张同口径 5060 Ti 时间表（`P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01`） | 重跑 100 轮；新诊断拆分 |
+| ~~按已登记 Run ID 跑一张同口径 5060 Ti 时间表~~ **已完成（2026-10-06）**：`P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01` + `P0-BENCH-G-5060TI-PAIRED-20261006-01`，见 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md` | 重跑 100 轮；新诊断拆分 |
 | | 用未采集高原数据占位写结果 |
 
 ---

@@ -34,17 +34,17 @@
 
 其中 SAHI640 是作为"工程切片族"的近邻协议加入的（`P0_EI/00_freeze/Environment_Freeze.md` 五方法表 M5）。
 
-### 1.4 核心主张 C1／C2（终稿措辞，2026-09-27；仅依据 Stage B–F）
+### 1.4 核心主张 C1／C2（终稿措辞，2026-09-27；C1 时延部分 2026-10-06 改为分 GPU 表述）
 
 | ID | 主张 | 证据（Run ID → 文件） |
 |---|---|---|
-| **P0-EI-C1** | 在单一冻结 YOLO11n 权重与 conf 0.25／IoU 0.5 匹配口径下，VisDrone test-dev 上 F1280 比 DensK1 **更准**：small recall +0.0409（图级 bootstrap 95% CI [0.0355, 0.0462]），precision +0.0681（CI [0.0631, 0.0731]）；两者在 GTX 1660 SUPER 上的时延**统计上不可区分**（逐图 Wilcoxon p = 0.235，逐图中位差 +0.25 ms，均值差 −0.34 ms）。不主张"更快"。 | `P0-BENCH-F-TESTDEV-20260917-01` → `02_paired_stats/data/F_summary.json`；`P0-BENCH-D-TESTDEV-20260917-01` → `D_TESTDEV_summary.json`；`P0-BENCH-B-TIMING-20260917-01` → `B_TIMING_summary.json` |
+| **P0-EI-C1** | 在单一冻结 YOLO11n 权重与 conf 0.25／IoU 0.5 匹配口径下，VisDrone test-dev 上 F1280 比 DensK1 **更准**：small recall +0.0409（图级 bootstrap 95% CI [0.0355, 0.0462]），precision +0.0681（CI [0.0631, 0.0731]）。时延分 GPU 表述：在 **GTX 1660 SUPER（UAV_BT1）** 上两者时延**统计上不可区分**（逐图 Wilcoxon p = 0.235，均值差 −0.34 ms）；在 **RTX 5060 Ti（UAV_BT2）** 上 **F1280 更快**（均值差 −14.01 ms，95% CI [−14.22, −13.80]，p≈3.6e-264，1607／1610 张图更快；`P0-BENCH-G-5060TI-PAIRED-20261006-01`）。时延排序取决于 CPU／流水线：5060 Ti 运行中 GPU 平均利用率约 11%，CPU 为 Ryzen 5 5600G（Windows“平衡”电源计划），耗时未分解；不写不带 GPU 名称的“更快”。 | `P0-BENCH-F-TESTDEV-20260917-01` → `02_paired_stats/data/F_summary.json`；`P0-BENCH-D-TESTDEV-20260917-01` → `D_TESTDEV_summary.json`；`P0-BENCH-B-TIMING-20260917-01` → `B_TIMING_summary.json`；`P0-BENCH-G-5060TI-PAIRED-20261006-01` → `04_timing/data/G_PAIRED_summary.json`（5060 Ti） |
 | **P0-EI-C2** | 选区／覆盖协议只移动召回–精度–时延权衡，没有跨数据集通用的最优协议：VisDrone 上 UnifAll small recall 最高（0.4511，比 F1280 高 0.0507），但时延约 3.3×（112.2 vs 33.7 ms）且精度下降（0.5123 vs 0.6753）；本冻结设置下 SAHI640 在两集上均被 F1280 支配；UAVDT 上排序改为 F1280 > UnifAll > DensK1 > SAHI640 > F640。 | D／F 同上；`P0-BENCH-E-UAVDT-20260918-FULL` → `03_cross_uavdt/data/E_FULL_summary.json` |
 | P0-A-C1／P0-A-C2 | 旧区域机制主张 | **HOLD**，不指导本稿 |
 
-**适用范围：** ① 上表 C1 时延仅来自 GTX 1660 SUPER；5060 Ti Run G 已跑（2026-10-06），单列于 `04_timing/Timing_5060Ti_Table.md`，在 5060 Ti 上 F1280 显著快于 DensK1（见 §6.1）；② 指标是本项目匹配器的 precision／small recall，不是 AP；③ 单一冻结权重；④ 配对检验只覆盖 VisDrone test-dev，UAVDT 只有聚合值。
+**适用范围：** ① 时延分 GPU 单列：1660 SUPER（UAV_BT1，Stage B–F）与 RTX 5060 Ti（UAV_BT2，Run G，`04_timing/Timing_5060Ti_Table.md`，见 §6.1）不合表；C1 时延结论随 GPU 改变，排序依赖 CPU／流水线；② 指标是本项目匹配器的 precision／small recall，不是 AP；③ 单一冻结权重；④ 配对检验只覆盖 VisDrone test-dev，UAVDT 只有聚合值。
 
-**修订记录：** 2026-09-27 由"整图 1280 比密度单片更准且更快""区域分配存在可恢复空间，但不等于可部署增益"改为上表措辞；旧 BTD8／BTD1–BTD11 依据退出主张（Git 历史保留）。主张全文与证据细节见 `PR/Research_Plan.md` §3。
+**修订记录：** 2026-09-27 由"整图 1280 比密度单片更准且更快""区域分配存在可恢复空间，但不等于可部署增益"改为上表措辞；旧 BTD8／BTD1–BTD11 依据退出主张（Git 历史保留）。2026-10-06（用户决定）：C1 时延部分改为分 GPU 表述（1660 SUPER 不可区分；RTX 5060 Ti 上 F1280 更快），并注明时延排序依赖 CPU／流水线；C1 精度部分不变。主张全文与证据细节见 `PR/Research_Plan.md` §3。
 
 ### 1.5 贡献点（按 `PR/Writing/P0_EI_Outline.md`，并按已有证据细化）
 
@@ -399,7 +399,7 @@
 | DensK1 vs UnifAll | 21 | 1008 | 470 | 0.014 [0.009, 0.021] |
 | DensK1 vs SAHI640 | 1122 | 144 | 233 | 0.748 [0.726, 0.770] |
 
-- **结论：** ① 主比较中，F1280 相对 DensK1 的小召回提升是稳定的（CI 不跨 0，p≈3e-28），精度也更高。② 时延上两者**没有显著差异**（p=0.235），均值上 F1280 只快 0.34 ms，中位数上反而慢 0.25 ms，所以"更快"不能作为主张。③ 次要比较经 Holm 校正后全部显著；F640 vs F1280 的精度差 CI [−0.0110, 0.0018] 跨 0，说明提高分辨率基本**不损失精度**。
+- **结论：** ① 主比较中，F1280 相对 DensK1 的小召回提升是稳定的（CI 不跨 0，p≈3e-28），精度也更高。② 时延上两者**没有显著差异**（p=0.235），均值上 F1280 只快 0.34 ms，中位数上反而慢 0.25 ms，所以在 1660 上"更快"不能作为主张（RTX 5060 Ti 上的配对结果不同，见 §6.1 与 §五 C1-b）。③ 次要比较经 Holm 校正后全部显著；F640 vs F1280 的精度差 CI [−0.0110, 0.0018] 跨 0，说明提高分辨率基本**不损失精度**。
 - **证据：** `P0_EI/02_paired_stats/StageF_Paired_Stats_Report.md`、`data/F_summary.json`、`F_wilcoxon_recall_small.csv`、`F_bootstrap_deltas.csv`、`F_status.json`；图 5。
 
 ---
@@ -455,7 +455,7 @@
 | 主张（拆分） | 证据（数字 + 来源） | 强度 | 措辞限定 |
 |---|---|---|---|
 | **C1-a：F1280 比 DensK1 更准** | D：Δsmall recall +0.0409，CI [0.0355, 0.0462]，Wilcoxon p=2.997e-28（N=1499）；Δprecision +0.0681 [0.0631, 0.0731]（`F_summary.json`，`P0-BENCH-F-TESTDEV-20260917-01`）。E：small recall 0.793 vs 0.767，precision 0.372 vs 0.347（`E_FULL_summary.json`） | **强**（D，配对统计）／**中**（E，只有聚合值） | 匹配器 precision／small_recall（conf 0.25 单阈值），不是 AP |
-| **C1-b：两者时延不可区分（1660）** | D 单次：Δmean −0.34 ms [−0.66, −0.01]，逐图 Wilcoxon p=0.235，逐图中位差 +0.25 ms（`F_summary.json`）；B：mean 33.15 vs 35.34，p95 38.73 vs 43.20（`B_TIMING_summary.json`）；E：mean 33.08 vs 32.97 | **中** | 只写"时延相当／统计上不可区分"，不写"更快"；仅 1660 |
+| **C1-b：时延分 GPU——1660 SUPER 上不可区分；RTX 5060 Ti 上 F1280 更快** | 1660／UAV_BT1：D 单次 Δmean −0.34 ms [−0.66, −0.01]，逐图 Wilcoxon p=0.235，逐图中位差 +0.25 ms（`F_summary.json`）；B：mean 33.15 vs 35.34，p95 38.73 vs 43.20（`B_TIMING_summary.json`）；E：mean 33.08 vs 32.97。5060 Ti／UAV_BT2：Δmean −14.01 ms [−14.22, −13.80]，逐图中位差 −13.32 ms，p≈3.6e-264，1607／1610 张图更快（`G_PAIRED_summary.json`，`P0-BENCH-G-5060TI-PAIRED-20261006-01`）；test-dev 均值 26.25 vs 40.26 ms | **中**（1660）／**强**（5060 Ti，配对） | “更快”必须写明 RTX 5060 Ti；1660 上只写“统计上不可区分”；注明时延排序依赖 CPU／流水线（GPU 利用率约 11%，Ryzen 5 5600G，Windows“平衡”电源计划，未分解） |
 | **C2-a：UnifAll 在 VisDrone 上 small recall 最高，但付精度与时延** | D：0.4511；相对 F1280 +0.0507 [0.0464, 0.0551]、Δprecision −0.1629、112.2 vs 33.7 ms（≈3.3×）；相对 DensK1 +0.0916 [0.0866, 0.0966]、Δprecision −0.0948（`F_bootstrap_deltas.csv`）；B：T=40 ms 超时率 1.000 | **强**（D） | 只针对本冻结权重与网格 |
 | **C2-b：SAHI640 被 F1280 支配（本冻结设置）** | D：0.2184／0.3587／373 ms vs 0.4004／0.6753／33.7 ms；E：0.760／0.353／164 ms vs 0.793／0.372／33.1 ms | **强**（两集同向） | 只适用于 sahi 默认后处理（GREEDYNMM／IOS，含整图标准预测）+ 统一 finalize；不推广到 SAHI 族 |
 | **C2-c：跨集排序改变** | D 排序 UnifAll > F1280 > DensK1 > F640 > SAHI640；E 排序 F1280 > UnifAll > DensK1 > SAHI640 > F640（`StageE_UAVDT_Report.md` §4） | **强**（作为边界） | 写成边界，不写"通用排序" |
@@ -503,7 +503,7 @@
 
 ### 6.5 下一步可检查事项（按优先级）
 
-1. ~~在本机 RTX 5060 Ti 16GB 上按 Run G 跑正式时序~~ **已完成（2026-10-06）**：`Timing_5060Ti_Table.md` 已写（单列）。test-dev 均值 F640 19.85／F1280 26.25／DensK1 40.26／UnifAll 136.59／SAHI640 507.10 ms；精度与 1660 一致（|Δsmall recall| ≤ 0.014 个百分点）；5060 Ti 上 F1280 比 DensK1 显著更快（逐图中位差 −13.32 ms，p≈3.6e-264）。**待用户决定：** C1 时延措辞（现为“1660 上统计不可区分”）是否改为分 GPU 表述；C1 的“更准”部分不变。
+1. ~~在本机 RTX 5060 Ti 16GB 上按 Run G 跑正式时序~~ **已完成（2026-10-06）**：`Timing_5060Ti_Table.md` 已写（单列）。test-dev 均值 F640 19.85／F1280 26.25／DensK1 40.26／UnifAll 136.59／SAHI640 507.10 ms；精度与 1660 一致（|Δsmall recall| ≤ 0.014 个百分点）；5060 Ti 上 F1280 比 DensK1 显著更快（逐图中位差 −13.32 ms，p≈3.6e-264）。C1 时延部分已按用户决定（2026-10-06）改为分 GPU 表述（§1.4、§五）；C1 的“更准”部分不变。
 2. 按提纲与第一节 C1／C2 终稿措辞写正文（Intro／Protocols & Evaluation／Results／Failure & Boundaries）。
 3. 选定会期并写入 Current_Stage（由用户操作）。
 4. 可选：Stage E 配对统计（只做分析）。

@@ -24,17 +24,19 @@
 | 硬件 | Stage A–F 在 GTX 1660 SUPER 上完成；Run G 正式时序在 RTX 5060 Ti 16GB（环境 UAV_BT2）上完成（2026-10-06），单列 | `00_freeze/gpu_snapshot.txt`；`04_timing/Timing_5060Ti_Table.md` |
 | 代码 | `Experiments/P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py`、`Experiments/diagnose_bt1.py`（SHA 见复现附录 §10） | `Experiments/papers/P0_EI/05_packaging/Reproducibility_Appendix.md` |
 
-## 3. 会议主张（终稿措辞，2026-09-27；仅依据 Stage B–F）
+## 3. 会议主张（终稿措辞，2026-09-27；依据 Stage B–F；C1 时延部分 2026-10-06 按 Run G 改为分 GPU 表述）
 
 | ID | 主张 | 状态 |
 |---|---|---|
-| **P0-EI-C1** | 在单一冻结 YOLO11n 权重与 conf 0.25／IoU 0.5 匹配口径下，VisDrone test-dev 上整图 1280（F1280）比密度单片（DensK1）**更准**：small recall +0.0409（图级 bootstrap 95% CI [0.0355, 0.0462]），precision +0.0681（CI [0.0631, 0.0731]）；两者在 GTX 1660 SUPER 上的时延**统计上不可区分**。不主张"更快"。 | SUPPORTED（Stage B/D/F） |
+| **P0-EI-C1** | 在单一冻结 YOLO11n 权重与 conf 0.25／IoU 0.5 匹配口径下，VisDrone test-dev 上 F1280 比 DensK1 **更准**：small recall +0.0409（图级 bootstrap 95% CI [0.0355, 0.0462]），precision +0.0681（CI [0.0631, 0.0731]）。时延分 GPU 表述：在 **GTX 1660 SUPER（UAV_BT1）** 上两者时延**统计上不可区分**（逐图 Wilcoxon p = 0.235，均值差 −0.34 ms）；在 **RTX 5060 Ti（UAV_BT2）** 上 **F1280 更快**（均值差 −14.01 ms，95% CI [−14.22, −13.80]，p≈3.6e-264，1607／1610 张图更快；`P0-BENCH-G-5060TI-PAIRED-20261006-01`）。时延排序取决于 CPU／流水线：5060 Ti 运行中 GPU 平均利用率约 11%，CPU 为 Ryzen 5 5600G（Windows“平衡”电源计划），耗时未分解；不写不带 GPU 名称的“更快”。 | SUPPORTED（Stage B/D/F/G） |
 | **P0-EI-C2** | 选区／覆盖协议只移动召回–精度–时延权衡，没有跨数据集通用的最优协议：VisDrone 上全覆盖切片 UnifAll small recall 最高，但时延约 3.3×、精度下降；本冻结设置下 SAHI640 被 F1280 支配；UAVDT 上排序改变（F1280 居首）。 | SUPPORTED（Stage B/D/E/F） |
 
 ### 3.1 C1 证据
 
 - **精度（Stage F，`P0-BENCH-F-TESTDEV-20260917-01`，`Experiments/papers/P0_EI/02_paired_stats/data/F_summary.json` → `primary_bootstrap`／`primary_wilcoxon_recall_small`）：** F1280 − DensK1：Δsmall recall +0.0409 [0.0355, 0.0462]；逐图 Wilcoxon p = 3.0e-28（N = 1499 张含小 GT 图）；Δprecision +0.0681 [0.0631, 0.0731]。聚合值（Stage D，`P0-BENCH-D-TESTDEV-20260917-01`，`01_visdrone_main/data/D_TESTDEV_summary.json`）：small recall 0.4004 vs 0.3596，precision 0.6753 vs 0.6071。
-- **时延（1660）：** Stage F 单次时延逐图 Wilcoxon p = 0.235，逐图中位差 +0.25 ms（F1280 略慢），均值差 −0.34 ms（bootstrap CI [−0.66, −0.01]，约为均值的 1%）；Stage B（`P0-BENCH-B-TIMING-20260917-01`，cal48 48 图 × 3 次，`04_timing/data/B_TIMING_summary.json`）均值 33.15 vs 35.34 ms、p95 38.73 vs 43.20 ms。结论只写"时延相当／不可区分"，不写"更快"。
+- **时延（1660）：** Stage F 单次时延逐图 Wilcoxon p = 0.235，逐图中位差 +0.25 ms（F1280 略慢），均值差 −0.34 ms（bootstrap CI [−0.66, −0.01]，约为均值的 1%）；Stage B（`P0-BENCH-B-TIMING-20260917-01`，cal48 48 图 × 3 次，`04_timing/data/B_TIMING_summary.json`）均值 33.15 vs 35.34 ms、p95 38.73 vs 43.20 ms。1660 上的结论只写"时延相当／不可区分"。
+- **时延（RTX 5060 Ti，UAV_BT2）：** Run G 配对检验（`P0-BENCH-G-5060TI-PAIRED-20261006-01`，冻结 Stage F 统计函数，`04_timing/data/G_PAIRED_summary.json`）F1280 − DensK1 均值差 −14.01 ms（bootstrap 95% CI [−14.22, −13.80]），逐图中位差 −13.32 ms，Wilcoxon p≈3.6e-264，1607／1610 张图 F1280 更快；Run G test-dev 均值 26.25 vs 40.26 ms，cal48（3 次）27.43 vs 40.12 ms（`04_timing/Timing_5060Ti_Table.md`）。精度与 1660 冻结记录一致（|Δsmall recall| ≤ 0.014 个百分点）。
+- **时延排序依赖 CPU／流水线：** 5060 Ti 运行中 GPU 平均利用率约 11%，CPU 为 Ryzen 5 5600G（Windows“平衡”电源计划），耗时未分解（单次 640 前向约 19 ms、1280 前向约 27 ms 仅为观察）。任何“更快”都必须带 GPU 名称。
 - **跨集同向（描述性，无配对检验）：** Stage E（`P0-BENCH-E-UAVDT-20260918-FULL`，`03_cross_uavdt/data/E_FULL_summary.json`）small recall 0.7929 vs 0.7672，precision 0.3719 vs 0.3475，均值 33.1 vs 33.0 ms。
 
 ### 3.2 C2 证据
@@ -46,7 +48,7 @@
 
 ### 3.3 适用范围（成稿必须披露）
 
-1. **硬件：** 所有时延仅来自 GTX 1660 SUPER（Stage B 为 3 次重复计时；Stage D/E 为单次运行计时）；5060 Ti 正式时序（Run G）已于 2026-10-06 跑完，单独成表（`04_timing/Timing_5060Ti_Table.md`），不与 1660 合并；5060 Ti 上 F1280 比 DensK1 显著更快（逐图中位差 −13.32 ms，p≈3.6e-264），与 1660 上“不可区分”不同，C1 时延措辞待用户决定。
+1. **硬件：** Stage B–F 时延来自 GTX 1660 SUPER（UAV_BT1；Stage B 为 3 次重复计时，Stage D/E 为单次运行计时）；Run G 时延来自 RTX 5060 Ti 16GB（UAV_BT2；2026-10-06），单独成表（`04_timing/Timing_5060Ti_Table.md`），不与 1660 合并。C1 时延结论随 GPU 不同：1660 上不可区分，5060 Ti 上 F1280 更快；排序依赖 CPU／流水线（GPU 利用率约 11%，Ryzen 5 5600G，Windows“平衡”电源计划，未分解）。
 2. **指标：** 本项目匹配器的 precision／small recall（单一 conf 0.25、IoU 0.5），**不是** COCO／VisDrone 排行榜 AP，也不是 UAVDT 官方 MATLAB 评测；test-dev 为 Ultralytics 镜像本地 GT。
 3. **模型：** 单一冻结权重（YOLO11n，seed 0），未跨检测器、权重或训练种子；不能外推为"对所有检测器成立"。
 4. **统计：** 配对检验只覆盖 VisDrone test-dev（Stage F）；UAVDT 只有聚合值；cal48 为开发证据；不含选择漏检表或 GT oracle 数字。
@@ -54,6 +56,7 @@
 ### 3.4 修订记录
 
 - 2026-09-27：C1 由"更准且更快"改为"时延统计不可区分下更准"；C2 由"区域分配存在可恢复空间……必须同时报告超时率与选择漏检"改为仅依据 Stage B–F 的选区／覆盖权衡陈述；旧 BTD8／BTD1–BTD11 依据退出主张（Git 历史保留）。
+- 2026-10-06（用户决定）：C1 时延部分改为分 GPU 表述（1660 SUPER 不可区分；RTX 5060 Ti 上 F1280 更快），并注明时延排序依赖 CPU／流水线；C1 精度部分不变。
 
 ## 4. 实验进度
 
@@ -71,7 +74,7 @@
 
 ## 5. 剩余工作
 
-1. **5060 Ti 正式时序（Run G）：** **已完成（2026-10-06）**，SMOKE／CAL48／TESTDEV／PAIRED 全部 PASS，环境 `F:\Conda\envs\UAV_BT2`，权重／协议／评价器不变；结果单列 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`。精度与 1660 一致（可忽略差异）；5060 Ti 配对检验显示 F1280 比 DensK1 显著更快（逐图中位差 −13.32 ms，p≈3.6e-264），而 1660 上不可区分（p = 0.235）。C1 的“更准”部分不变；时延表述如何改待用户决定。
+1. **5060 Ti 正式时序（Run G）：** **已完成（2026-10-06）**，SMOKE／CAL48／TESTDEV／PAIRED 全部 PASS，环境 `F:\Conda\envs\UAV_BT2`，权重／协议／评价器不变；结果单列 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`。精度与 1660 一致（可忽略差异）；5060 Ti 配对检验显示 F1280 比 DensK1 显著更快（逐图中位差 −13.32 ms，p≈3.6e-264），而 1660 上不可区分（p = 0.235）。C1 已于 2026-10-06 按用户决定改为分 GPU 表述（见 §3）；“更准”部分不变。
 2. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草；导读与全部数字见 [`P0_EI_Paper_Overview_and_Experiments.md`](P0_EI_Paper_Overview_and_Experiments.md)。
 3. 会期与截稿日待用户确认后写入 Current_Stage。
 
