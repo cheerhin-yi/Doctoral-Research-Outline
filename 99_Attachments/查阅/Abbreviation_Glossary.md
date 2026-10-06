@@ -252,3 +252,12 @@
 | `BTD12_Low_Score_Candidate_Review`／BTD12 审查 | BTD12：尺度条件 DFL 分布统计重评分候选的书面审查 | 候选 **DISMISSED**（近邻已覆盖核心关系；非实测失败） | `Literature/reviews/BTD12_Low_Score_Candidate_Review.md` |
 | `ViCrop_Det_HOLD_Review`／ViCrop-Det | ViCrop-Det 线索 HOLD 审查（内部信号免训练裁剪近邻） | **HOLD**；未赋 Work ID、未当 PASS 正文 | `Literature/reviews/ViCrop_Det_HOLD_Review.md` |
 | `Weak_Response_Candidate_Review`／弱响应候选 | 跨层／跨尺度弱响应选区评分候选的可证伪边界审查 | 曾 **PROPOSED**，后弱响应 v0.1 转 **HOLD**；以正文与实验诊断为准 | `Literature/reviews/Weak_Response_Candidate_Review.md` |
+
+### 10.4 P0 Literature 主题编号与写作文件（2026-10-06 增补）
+
+| 短称／文件 | 完整含义 | 路径 |
+|---|---|---|
+| `Tn-NN`（如 `T3-07`） | P0 文献条目编号：`n` = 主题号（1 切片推理／2 高分辨与高效 SOD／3 多尺度、局部放大与密度／聚类／区域引导／4 航拍基准与评测口径／5 检测器出处），`NN` = 主题内序号；与 `W-xxxx` 注册表编号无关 | `00_Practice_UAV_Aerial_Detection/Literature/0n_*/Reading_List.md` |
+| `05_Detector_References`／T5 | 第 5 个文献主题文件夹：被冻结检测器（YOLO11n／Ultralytics）本身的引用出处，不是对照工作 | `00_Practice_UAV_Aerial_Detection/Literature/05_Detector_References/` |
+| 候选文献事实表 | 各主题 `Reading_List.md` 中 2026-10-06 新增的事实表（题目、作者、venue、链接、数据集、检测器、指标、时延硬件、核心做法；末列“与P0关系”由用户填） | 同上；汇总见 `Literature/Literature_Matrix.md` §5 |
+| `P0_EI_Research_Story.md`（Research Story） | P0_EI 科研叙事主文档：按 `99_Attachments/事件/Doctoral-Research-Outline_科研叙事与论文草稿模板.md` 生成；助手预填事实，用户写理解 | `00_Practice_UAV_Aerial_Detection/Writing/P0_EI_Research_Story.md` |

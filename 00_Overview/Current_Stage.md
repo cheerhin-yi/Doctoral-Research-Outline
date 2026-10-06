@@ -11,6 +11,8 @@
 | P0 证据槽 | [`Experiments/papers/P0_EI/`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md)（Run 索引） |
 | 论文概况与实验内容（导读） | [`P0_EI_Paper_Overview_and_Experiments.md`](../00_Practice_UAV_Aerial_Detection/P0_EI_Paper_Overview_and_Experiments.md) |
 | 练手论文完整报告（叙事版，2026-10-06） | [`P0_EI_Full_Report_20261006.md`](../00_Practice_UAV_Aerial_Detection/P0_EI_Full_Report_20261006.md)（背景、时间线、实验构成、全部结果含 Run G–K） |
+| 科研叙事主文档（2026-10-06） | [`P0_EI_Research_Story.md`](../00_Practice_UAV_Aerial_Detection/Writing/P0_EI_Research_Story.md)（助手预填事实；§1／§2／§6／§8／§10 待你写） |
+| 候选文献（2026-10-06，22 篇） | [`Literature_Matrix.md`](../00_Practice_UAV_Aerial_Detection/Literature/Literature_Matrix.md) §5（含建议优先读） |
 | UAVDT（G 盘） | `G:\Schloar Data\P0\UAVDT\`（2026-09-27 核实：50 序列 `*_gt_whole.txt`／40735 帧；Stage E 运行时路径 `G:\Schloar Data\UAVDT\` 已迁移） |
 
 ---
