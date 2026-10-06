@@ -145,7 +145,7 @@ Experiments/papers/P0_EI/
 | 文献矩阵 ↔ 主题文件夹 | `Literature/Literature_Matrix.md` ↔ `Literature/01_Slicing_Inference/` · `02_HighRes_Efficient_SOD/` · `03_Multiscale_Zoom_Inference/` · `04_Aerial_Benchmarks_Eval/` |
 | 写作计划 ↔ 大纲 | `Writing/P0_Two_Paper_Plan_2026-09-22.md` ↔ `Writing/P0_EI_Outline.md` |
 | 缩写表 | `99_Attachments/查阅/Abbreviation_Glossary.md` |
-| 文献登记 / 周审 | `00_Overview/Literature_Registry.md` · `Literature_Tracking_Workflow.md` · `Weekly_Literature_Audits/` |
+| 文献登记 / 周审 | `00_Overview/Literature_Registry.md` · `Literature_Tracking_Workflow.md` |
 | Paper 1 | `01_Paper1_OpenWorld_Risk/README.md` · `Stage_Guide.md` · `Research_Plan.md` |
 | 练手目录索引（含 Experiments 目录说明） | `00_Practice_UAV_Aerial_Detection/README.md` |
 | P0 运行代码（2026-09-27 从 `bad0f8b` 恢复） | `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py` · `Experiments/diagnose_bt1.py`（SHA 见 `P0_EI/05_packaging/Reproducibility_Appendix.md` §10） |

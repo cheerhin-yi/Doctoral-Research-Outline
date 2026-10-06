@@ -11,7 +11,7 @@
 - 论文类型：EI 会议对比／协议稿，**不是新检测器、不是新模块**；摘要写 experimental evaluation，不写 we propose。
 - 边界：单目 RGB、无人机视角、已知类别二维小目标；轨道走廊不是方法前提；不把 VisDrone 结果写成铁路安全或高原泛化。
 - 每篇最多两项主张；禁止用注意力／损失／蒸馏／剪枝／新检测头补证据；旧区域机制主张 P0-A-C1／C2 保持 **HOLD**。
-- 目标：EI 会议（主跟踪 ICIP 2027 全文，见 [`Writing/P0_Two_Paper_Plan_2026-09-22.md`](Writing/P0_Two_Paper_Plan_2026-09-22.md)）；不承诺录用。
+- 目标：首投 **IJCNN 2027**（截稿 2027-01-31）；落选转投 **ICIP 2027**（截稿 2027-03-31）；不承诺录用。
 
 ## 2. 实验设置（已冻结）
 
@@ -76,7 +76,7 @@
 
 1. **5060 Ti 正式时序（Run G）：** **已完成（2026-10-06）**，SMOKE／CAL48／TESTDEV／PAIRED 全部 PASS，环境 `F:\Conda\envs\UAV_BT2`，权重／协议／评价器不变；结果单列 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`。精度与 1660 一致（可忽略差异）；5060 Ti 配对检验显示 F1280 比 DensK1 显著更快（逐图中位差 −13.32 ms，p≈3.6e-264），而 1660 上不可区分（p = 0.235）。C1 已于 2026-10-06 按用户决定改为分 GPU 表述（见 §3）；“更准”部分不变。
 2. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草；导读与全部数字见 [`P0_EI_Paper_Overview_and_Experiments.md`](P0_EI_Paper_Overview_and_Experiments.md)。
-3. 会期与截稿日待用户确认后写入 Current_Stage。
+3. 会期已定（2026-10-06）：首投 IJCNN 2027（2027-01-31），落选转投 ICIP 2027（2027-03-31）。
 
 ## 6. 禁止事项
 

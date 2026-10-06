@@ -1,6 +1,6 @@
 # 当前阶段（唯一入口）
 
-更新：2026-10-06（Asia/Shanghai；Run G 5060 Ti 正式时序已跑完，SMOKE／CAL48／TESTDEV／PAIRED 全部 PASS；2026-10-01 本机 GPU 换为 RTX 5060 Ti 16GB）。ACTIVE 不变：**P0_EI**。总览清理见 [`Cleanup_2026-09-29.md`](Cleanup_2026-09-29.md)，不改变下面的唯一事项。
+更新：2026-10-06（Asia/Shanghai；Run G 5060 Ti 正式时序已跑完，SMOKE／CAL48／TESTDEV／PAIRED 全部 PASS；2026-10-01 本机 GPU 换为 RTX 5060 Ti 16GB）。ACTIVE 不变：**P0_EI**。
 
 本文件是全项目**唯一当前事项入口**。研究问题、实验设置与 C1／C2 主张全文见 [`Research_Plan.md`](../00_Practice_UAV_Aerial_Detection/Research_Plan.md)；近中远边界见 [`Mainline_A_Current.md`](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md)。
 
@@ -68,7 +68,7 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 
 1. **5060 Ti 正式时序表：** **已完成（2026-10-06）。** Run G（`P0-BENCH-G-5060TI-SMOKE/CAL48/TESTDEV-20261001-01`，配对检验 `P0-BENCH-G-5060TI-PAIRED-20261006-01`）在本机 RTX 5060 Ti 16GB + `F:\Conda\envs\UAV_BT2` 上跑完，四个闸门全部 PASS；结果单列 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`，不与 1660 合并。test-dev one-shot 均值：F640 19.85、F1280 26.25、DensK1 40.26、UnifAll 136.59、SAHI640 507.10 ms；cal48（3 次）均值：19.91／27.43／40.12／114.48／427.50 ms。精度与 1660 冻结记录一致（test-dev 各方法 |Δsmall recall| ≤ 0.014 个百分点）。配对检验：F1280 比 DensK1 快（逐图中位差 −13.32 ms，1607／1610 张更快，p≈3.6e-264），C1 时延部分已于 2026-10-06 按用户决定改为分 GPU 表述（1660 不可区分；5060 Ti 上 F1280 更快；排序依赖 CPU／流水线），“更准”部分不变。UAVDT 时序可选，未跑。
 2. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草，主张只用 C1／C2 终稿措辞。
-3. **会期：** 选定 2027 年 EI 会期（主跟踪 ICIP 2027 全文）并写入本页。
+3. **会期：** 已定（2026-10-06）：首投 **IJCNN 2027**（截稿 2027-01-31）；落选转投 **ICIP 2027**（截稿 2027-03-31）。
 4. **不默认：** 同质第三集；新模块／重训。
 
 ---
@@ -88,7 +88,7 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 
 信息学院学位分：[`SWJTU_Info_College_Degree_Credit_Note_2026-09-28.md`](SWJTU_Info_College_Degree_Credit_Note_2026-09-28.md)。学术博士：普通 EI／CCF-C **不计分**；两篇一作 SCI 二区为正常评阅最低线。
 
-投稿 venue 调研（2026-10-06，案头；不改 ACTIVE、不定会期）：[`Venue_Survey_20261006.md`](../00_Practice_UAV_Aerial_Detection/Writing/Venue_Survey_20261006.md)。
+投稿出口（2026-10-06 用户决定：练手不计学位分，CCF-C 优先）：首投 IJCNN 2027（截稿 2027-01-31，≤6 页 IEEE 双栏，03-15 出结果）；落选转投 ICIP 2027（截稿 2027-03-31）。
 
 ## 基础手册应读（2026-09-29）
 

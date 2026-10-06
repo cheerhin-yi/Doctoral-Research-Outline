@@ -33,8 +33,8 @@
 -   研究方向：冻结检测器上的推理协议对比，无人机航拍小目标（`PR/Research_Plan.md` 标题与 §1）
 -   论文类型：`实证`（`PR/Research_Plan.md` §1：“不是新检测器、不是新模块；摘要写 experimental evaluation，不写 we propose”）
 -   当前阶段：Stage A–F、Run G、Run H–K 全部 PASS；稿件正文未开始（`00_Overview/Current_Stage.md`“进度”表）
--   目标期刊/会议：**IJCNN 2027**（IEEE，常规论文 ≤6 页双栏；2027-06-14～18）；落选后转投 **ICIP 2027**（5+1 页，截稿 2027-03-31）（`PR/Writing/Venue_Survey_20261006.md` §7.4 短名单与推荐、[C19]／[C20]；2026-10-06 用户决定，commit `02cab84`）。注：`Current_Stage.md` 与 `Research_Plan.md` 仍写“主跟踪 ICIP 2027”，尚未同步。
--   目标投稿时间：2027-01-31（IJCNN 2027 常规论文截稿；通知 2027-03-15；终稿 2027-04-12）（`Venue_Survey_20261006.md` [C20]）。是否双盲、截止时区 **待补**（同文件 §7.5）。
+-   目标期刊/会议：**IJCNN 2027**（IEEE，常规论文 ≤6 页双栏；2027-06-14～18）；落选后转投 **ICIP 2027**（5+1 页，截稿 2027-03-31）（`00_Overview/Current_Stage.md`「Venue / 学位分」；IJCNN 2027 主页 https://ijcnn.org/2027 ；2026-10-06 用户决定，commit `02cab84`）。`Current_Stage.md` 与 `Research_Plan.md` 已同步（2026-10-06）。
+-   目标投稿时间：2027-01-31（IJCNN 2027 常规论文截稿；通知 2027-03-15；终稿 2027-04-12）（https://ijcnn.org/2027/event-type/important-date ）。是否双盲、截止时区 **待补**。
 -   负责人：余传灏（`99_Attachments/周报记录/2026/9月/余传灏-2026.09.20周报.md` 文件名）
 -   Git commit：写入本文件时仓库 HEAD 为 `02cab84`（2026-10-06，venue survey s7）；本文件自身的提交见 `git log -- PR/Writing/P0_EI_Research_Story.md`。冻结时 HEAD `604aeec`（Stage A，Full Report §4）。
 -   数据版本：
@@ -375,7 +375,7 @@
 -   冻结元数据 `sahi_postprocess: "sahi_default_NMS"` 为误称，实际为 GREEDYNMM／IOS（Run J，`Reproducibility_Appendix.md` §2.1）。
 -   `Environment_Freeze.md` 的“240 windows”是 cal48 48 张图的窗口总数，不是每图窗数（Run J）。
 -   `protocol.json` 的 `hardware_role` 仍写 4090（Full Report §7 第 19 条）。
--   `Run_Index.md` 中 Run K 摘要写“VisDrone 各箱 F1280−DensK1 +0.030～+0.046”；`K_Density_Slices_Report.md` §1 按 valid_gt 为 +0.0218～+0.0460，§2 按 small_gt 为 +0.0265～+0.0449。两处表述 **待核**（本文 §7 用 K 报告原表数字）。
+-   `Run_Index.md` 中 Run K 摘要原写“VisDrone 各箱 F1280−DensK1 +0.030～+0.046”；`K_Density_Slices_Report.md` §1 按 valid_gt 为 +0.0218～+0.0460，§2 按 small_gt 为 +0.0265～+0.0449。**已修正（2026-10-06）**：`Run_Index.md` 已改为按 valid_gt／small_gt 分列，与 K 报告一致（本文 §7 用 K 报告原表数字）。
 
 ## 失败实验
 

@@ -43,7 +43,7 @@
 - **先发一篇小而稳的会议稿。** 研究计划写明本篇目标是 **EI 会议**，不承诺录用（`PR/Research_Plan.md` §1）。
 - **会议选择：** 主跟踪 **ICIP 2027 全文**（目录惯例为 CCF-C，投稿前要按 CCF 第七版核对），备选 ACCV／ICPR 全文；不把 CCF-B（ICME／ICASSP）当第一目标；Workshop／短文通常不算目录会议（`PR/Writing/P0_Two_Paper_Plan_2026-09-22.md`）。
 - **分区口径：** 期刊看 **JCR**（Q1–Q4），会议看投稿时的 **CCF 推荐目录**；“被 EI 收录”只是描述项，不能代替 CCF／JCR（`00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` §1）。该政策文件正文只有 A／B 两篇的梯子，**没有 P0 专条**（导读 §1.7 注）。
-- **2026-10-06 的 venue 调研（案头，不替你选定）：** `PR/Writing/Venue_Survey_20261006.md` 核实 ICIP 2027 截稿日为 **2027-03-31**，CCF 第七版仍为 C 类，学位 0 分；它指出“EI 会议优先”与学位备忘的优化目标不同，建议考虑把主出口改为可计分的 SCI 期刊（推荐顺序：*Drones*、*Journal of Real-Time Image Processing*、ICIP 2027 作练手备选）。这是待你（和导师）决定的事项，本报告不改变现行计划。
+- **2026-10-06 投稿出口（用户决定）：** 练手不计学位分，CCF-C 优先：首投 **IJCNN 2027**（截稿 2027-01-31，≤6 页 IEEE 双栏）；落选转投 **ICIP 2027**（截稿 2027-03-31，CCF 第七版仍为 C 类）。见 `00_Overview/Current_Stage.md`「Venue / 学位分」。
 
 ### 1.3 学位分：为什么这篇“不计分”也要做
 
@@ -902,7 +902,6 @@ Run G 其他配对（5060 Ti／UAV_BT2，N = 1610，均值差 [95% CI]）：F640
 | 当前唯一事项 | `00_Overview/Current_Stage.md` |
 | 主张全文与证据 | `PR/Research_Plan.md` §3 |
 | 查数手册（导读） | `PR/P0_EI_Paper_Overview_and_Experiments.md` |
-| 投稿出口调研 | `PR/Writing/Venue_Survey_20261006.md` |
 | Run 索引（A–K） | `P0_EI/Run_Index.md` |
 | 冻结件 | `P0_EI/00_freeze/`：`Environment_Freeze.md`、`weight_sha_reverify.txt`、`DensK1_Definition.md`、`class_mapping_preregister.json`、`Class_Mapping_Preregister.md`、`stage_d_config_freeze.json`、`stage_e_config_freeze.json`、`env_snapshot*.txt`、`pip_freeze*.txt`、`gpu_snapshot.txt`、`script_sha256.txt`、`Environment_Delta_UAV_BT2_vs_UAV_BT1.md` |
 | 冻结件来源记录 | `P0_EI/00_freeze/provenance/`：BT1 100 轮归档、A0-05 VisDrone 审计、A0-07 评价语义、标签转换核对、BTD8 协议与结果 |
@@ -946,7 +945,7 @@ Run G 其他配对（5060 Ti／UAV_BT2，N = 1610，均值差 [95% CI]）：F640
 | # | 事项 | 必需／可选 | 现状 | 说明 |
 |---|---|---|---|---|
 | 1 | **稿件正文** | **必需** | 未开始（`Current_Stage.md` 进度表）；`PR/` 下没有 `.tex`／`.pdf`／`.docx` | 按 `PR/Writing/P0_EI_Outline.md` 六节：Introduction／Related Work／Protocols & Evaluation／Results／Failure & Boundaries／Conclusion；主张只用 C1／C2 终稿措辞 |
-| 2 | **选定出口（会议或期刊）与截稿日，并写入 Current_Stage** | **必需** | 未定。现行计划主跟踪 ICIP 2027 全文；`PR/Writing/Venue_Survey_20261006.md` 核实其截稿 2027-03-31、CCF-C、学位 0 分，并推荐考虑 *Drones*／*JRTIP* 等可计分期刊 | 由你（和导师）决定；出口决定篇幅（ICIP 2026 版为 5+1 页，装不下全部结果）和第二篇的引用安排 |
+| 2 | **选定出口（会议或期刊）与截稿日，并写入 Current_Stage** | **必需** | 已定（2026-10-06）：首投 IJCNN 2027（截稿 2027-01-31）；落选转投 ICIP 2027（截稿 2027-03-31）；已写入 `Current_Stage.md` | 出口决定篇幅（IJCNN ≤6 页；ICIP 2026 版为 5+1 页，装不下全部结果）和第二篇的引用安排 |
 | 3 | **题目统一** | **必需** | 现有中文题强调“时间预算约束”；导读建议的英文工作题未登记，待你确认 | 摘要写 experimental evaluation |
 | 4 | **文献** | **必需** | `PR/Literature/Literature_Matrix.md` 9 篇都是 SCREENED；MUST 篇 PDF 待放入各主题 `pdfs/`；ClusDet 等需补 DOI | Related Work 只归“推理时增强／切片评测” |
 | 5 | 正文时延表的选择与披露 | **必需** | 两张表都已就绪（1660 Stage B／D；5060 Ti Run G） | 分表呈现，C1 时延按 GPU 分写 |

@@ -19,14 +19,13 @@
 | [Literature_Registry.md](Literature_Registry.md) | 全局工作ID、标识符、版本关系、唯一正文位置与跨方向入口；去重事实源 |
 | 各方向 `Literature/Literature_Matrix.md` | 审计摘要、阅读优先级、创新关系；主归属保存完整记录，其他方向只保存交叉链接 |
 | [Innovation_Ledger.md](Innovation_Ledger.md) | 候选创新的最近工作、尚存缺口、风险及待验证动作 |
-| [Literature_Audit_Template.md](Literature_Audit_Template.md) | 单篇审计证据；区别作者主张、原文结果和Codex推断 |
 | [Weekly_Literature_Audit_Template.md](Weekly_Literature_Audit_Template.md) | 每批输入及处置、周结论、联动完成检查 |
 
 旧论文及矩阵不是本流程已审计的记录。首次遇到旧工作时先匹配旧ID和文件，补审计后采用原位置，不批量迁移、不虚构历史Date Added。不修改或删除 `99_Attachments/paper/`。
 
 ## 2. 每周执行顺序与通过门
 
-1. **接收**：记录实际日期、时区、检索覆盖区间、来源消息/文件、检索式与全部候选；周报命名为 `00_Overview/Weekly_Literature_Audits/Weekly_Literature_Audit_YYYY-MM-DD.md`（该目录首次有真实批次时创建）。同周补充同一报告并保留批次ID，例如 `2026-09-07-B01`。只新增批次条目，不覆盖旧记录；重复输入标记重放。
+1. **接收**：记录实际日期、时区、检索覆盖区间、来源消息/文件、检索式与全部候选；周报命名为 `Weekly_Literature_Audit_YYYY-MM-DD.md`（存放目录在首次有真实批次时创建）。同周补充同一报告并保留批次ID，例如 `2026-09-07-B01`。只新增批次条目，不覆盖旧记录；重复输入标记重放。
 2. **先去重**：按第4节搜索注册表、所有旧矩阵/阅读清单和仓库PDF文件名。已有工作沿用Work ID；未解决身份冲突则 `HOLD`，不归档正文。
 3. **核验身份**：实际访问出版社/会议官方论文页、DOI落地页、arXiv记录或作者正式存储库；核对Title、Authors、DOI/arXiv、各日期和版本。搜索摘要、ChatGPT总结不能单独证明论文存在。优先交叉核验正式页与全文；失败记录访问日期及原因，不推断论文虚假。
 4. **技术审计**：阅读可获得全文，按模板提取问题、数据及划分、方法、创新、关键结果和局限，并记录页码/节/表与来源。文中未报告写 `Not reported`；因未能核实写 `Unknown`；不适用写 `N/A + 理由`，均不可留空冒充完成。综述/理论论文可无数据或实验，但必须记录其论证方式和覆盖边界。

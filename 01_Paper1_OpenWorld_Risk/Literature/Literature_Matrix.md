@@ -99,7 +99,7 @@
 
 ## 每周审计记录（主归属）
 
-执行[审计流程](../../00_Overview/Literature_Tracking_Workflow.md)，使用[审计模板](../../00_Overview/Literature_Audit_Template.md)并联动[全局注册表](../../00_Overview/Literature_Registry.md)和[创新台账](../../00_Overview/Innovation_Ledger.md)。本区每项工作只保留一条当前记录，新版本更新原行并回链版本历史。旧索引保持不动；遇到旧工作时匹配旧ID后补齐本区，不视为新增。旧数据的Date Added未知则写Unknown，不猜测历史日期。
+执行[审计流程](../../00_Overview/Literature_Tracking_Workflow.md)，联动[全局注册表](../../00_Overview/Literature_Registry.md)和[创新台账](../../00_Overview/Innovation_Ledger.md)。本区每项工作只保留一条当前记录，新版本更新原行并回链版本历史。旧索引保持不动；遇到旧工作时匹配旧ID后补齐本区，不视为新增。旧数据的Date Added未知则写Unknown，不猜测历史日期。
 
 下表字段均必填；Unknown必须在审计记录解释缺口，N/A必须有理由。核心身份或技术证据不足时不能PASS。本区当前为空，不代表历史论文已审计。
 
