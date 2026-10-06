@@ -1,0 +1,24 @@
+{
+  "run_id": "P0-BENCH-H-UAVDT-PAIRED-20261006-01",
+  "mode": "check-f",
+  "env": {
+    "python": "3.10.22",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  },
+  "source_csv": "00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/01_visdrone_main/data/D_TESTDEV_per_image_metrics.csv",
+  "reference": "papers/P0_EI/02_paired_stats/data/F_summary.json (UAV_BT1, 2026-09-17)",
+  "frozen_functions_vs_F_summary": {
+    "n_mismatch_exact": 0,
+    "mismatches": [],
+    "max_rel_diff": 0.0
+  },
+  "fast_bootstrap_vs_F_summary": {
+    "n_mismatch_exact": 0,
+    "mismatches_sample": [],
+    "max_rel_diff": 0.0
+  },
+  "fast_vs_frozen_bootstrap_max_rel_diff": 0.0,
+  "wall_seconds_frozen": 66.60701589999371,
+  "wall_seconds_fast": 2.323706499999389
+}

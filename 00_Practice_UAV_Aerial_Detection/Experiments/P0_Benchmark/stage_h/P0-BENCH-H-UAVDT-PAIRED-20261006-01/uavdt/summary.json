@@ -1,0 +1,832 @@
+{
+  "status": "PASS",
+  "run_id": "P0-BENCH-H-UAVDT-PAIRED-20261006-01",
+  "source_csv": "00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/03_cross_uavdt/data/E_FULL_per_image_metrics.csv",
+  "env": {
+    "python": "3.10.22",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  },
+  "note": "Stage F functions (frozen) on UAVDT frames; frame-level tests treat ~40k autocorrelated video frames as independent and overstate significance -> use the sequence cluster bootstrap / sequence-level Wilcoxon for inference.",
+  "image_level": {
+    "unit_of_analysis": "image",
+    "n_images": 40735,
+    "B": 10000,
+    "seed": 20260917,
+    "primary_pair": "F1280_vs_DensK1",
+    "primary_wilcoxon_recall_small": {
+      "statistic": 27332895.5,
+      "w_plus": 59213850.5,
+      "w_minus": 27332895.5,
+      "z": -36.59347683180927,
+      "pvalue": 3.6318864184094417e-293,
+      "n_nonzero": 13156,
+      "n_pairs": 36086,
+      "median_diff": 0.0,
+      "mean_diff": 0.017846863253196014,
+      "pair": "F1280_vs_DensK1",
+      "metric": "recall_small",
+      "n_images_with_small_gt": 36086,
+      "pvalue_holm": null
+    },
+    "primary_bootstrap": {
+      "n_images": 40735,
+      "point": {
+        "small_gt": 493861,
+        "small_recall_a": 0.7928931419974447,
+        "small_recall_b": 0.7671612052784083,
+        "delta_small_recall": 0.025731936719036327,
+        "precision_a": 0.371897800920926,
+        "precision_b": 0.34748219515336554,
+        "delta_precision": 0.024415605767560467,
+        "mean_ms_a": 33.08099388486572,
+        "mean_ms_b": 32.96948507180509,
+        "delta_mean_ms": 0.11150881306062965
+      },
+      "bootstrap": {
+        "B": 10000,
+        "seed": 20260917,
+        "delta_small_recall_ci95": [
+          0.02453780318635641,
+          0.026907141490469712
+        ],
+        "delta_precision_ci95": [
+          0.02392886524131231,
+          0.02490705017448446
+        ],
+        "delta_mean_ms_ci95": [
+          0.05098837535364177,
+          0.17293534318109163
+        ]
+      }
+    },
+    "primary_interpretation": "95% CI for delta small-recall does not cross 0.",
+    "secondary_wilcoxon_recall_small": {
+      "F640_vs_F1280": {
+        "statistic": 22220777.5,
+        "w_plus": 22220777.5,
+        "w_minus": 121523712.5,
+        "z": -77.9074966161096,
+        "pvalue": 0.0,
+        "n_nonzero": 16955,
+        "n_pairs": 36086,
+        "median_diff": 0.0,
+        "mean_diff": -0.05889947503386836,
+        "pair": "F640_vs_F1280",
+        "metric": "recall_small",
+        "n_images_with_small_gt": 36086,
+        "pvalue_holm": 0.0
+      },
+      "F1280_vs_UnifAll": {
+        "statistic": 30981552.5,
+        "w_plus": 42556575.5,
+        "w_minus": 30981552.5,
+        "z": -15.012375588334953,
+        "pvalue": 6.092595265848013e-51,
+        "n_nonzero": 12127,
+        "n_pairs": 36086,
+        "median_diff": 0.0,
+        "mean_diff": 0.003724321686387912,
+        "pair": "F1280_vs_UnifAll",
+        "metric": "recall_small",
+        "n_images_with_small_gt": 36086,
+        "pvalue_holm": 6.092595265848013e-51
+      },
+      "F1280_vs_SAHI640": {
+        "statistic": 47937588.0,
+        "w_plus": 140310318.0,
+        "w_minus": 47937588.0,
+        "z": -59.199235739810604,
+        "pvalue": 0.0,
+        "n_nonzero": 19403,
+        "n_pairs": 36086,
+        "median_diff": 0.0,
+        "mean_diff": 0.06103507100551156,
+        "pair": "F1280_vs_SAHI640",
+        "metric": "recall_small",
+        "n_images_with_small_gt": 36086,
+        "pvalue_holm": 0.0
+      },
+      "DensK1_vs_UnifAll": {
+        "statistic": 1690607.0,
+        "w_plus": 1690607.0,
+        "w_minus": 12623318.0,
+        "z": -48.384729792098575,
+        "pvalue": 0.0,
+        "n_nonzero": 5350,
+        "n_pairs": 36086,
+        "median_diff": 0.0,
+        "mean_diff": -0.014122541566808105,
+        "pair": "DensK1_vs_UnifAll",
+        "metric": "recall_small",
+        "n_images_with_small_gt": 36086,
+        "pvalue_holm": 0.0
+      },
+      "DensK1_vs_SAHI640": {
+        "statistic": 61681805.5,
+        "w_plus": 125306985.5,
+        "w_minus": 61681805.5,
+        "z": -40.981526993233075,
+        "pvalue": 0.0,
+        "n_nonzero": 19338,
+        "n_pairs": 36086,
+        "median_diff": 0.0,
+        "mean_diff": 0.04318820775231554,
+        "pair": "DensK1_vs_SAHI640",
+        "metric": "recall_small",
+        "n_images_with_small_gt": 36086,
+        "pvalue_holm": 0.0
+      }
+    },
+    "wilcoxon_latency_oneshot": {
+      "F1280_vs_DensK1": {
+        "statistic": 410895191.5,
+        "w_plus": 418795288.5,
+        "w_minus": 410895191.5,
+        "z": -1.664306920869656,
+        "pvalue": 0.09605111005466269,
+        "n_nonzero": 40735,
+        "n_pairs": 40735,
+        "median_diff": 0.1695000000836444,
+        "mean_diff": 0.11150881306042076,
+        "pair": "F1280_vs_DensK1",
+        "metric": "total_ms_oneshot",
+        "n_images": 40735,
+        "caveat": "Stage D one-shot timing"
+      },
+      "F640_vs_F1280": {
+        "statistic": 447599.0,
+        "w_plus": 447599.0,
+        "w_minus": 829242881.0,
+        "z": -174.6016405526902,
+        "pvalue": 0.0,
+        "n_nonzero": 40735,
+        "n_pairs": 40735,
+        "median_diff": -15.386500001113745,
+        "mean_diff": -16.34347403707177,
+        "pair": "F640_vs_F1280",
+        "metric": "total_ms_oneshot",
+        "n_images": 40735,
+        "caveat": "Stage D one-shot timing"
+      },
+      "F1280_vs_UnifAll": {
+        "statistic": 10547101.5,
+        "w_plus": 10547101.5,
+        "w_minus": 819143378.5,
+        "z": -170.34633228488593,
+        "pvalue": 0.0,
+        "n_nonzero": 40735,
+        "n_pairs": 40735,
+        "median_diff": -12.760000000525906,
+        "mean_diff": -14.095751869404722,
+        "pair": "F1280_vs_UnifAll",
+        "metric": "total_ms_oneshot",
+        "n_images": 40735,
+        "caveat": "Stage D one-shot timing"
+      },
+      "F1280_vs_SAHI640": {
+        "statistic": 487.0,
+        "w_plus": 487.0,
+        "w_minus": 829689993.0,
+        "z": -174.79002600542722,
+        "pvalue": 0.0,
+        "n_nonzero": 40735,
+        "n_pairs": 40735,
+        "median_diff": -130.52029999926162,
+        "mean_diff": -130.91796559469955,
+        "pair": "F1280_vs_SAHI640",
+        "metric": "total_ms_oneshot",
+        "n_images": 40735,
+        "caveat": "Stage D one-shot timing"
+      },
+      "DensK1_vs_UnifAll": {
+        "statistic": 1327745.5,
+        "w_plus": 1327745.5,
+        "w_minus": 828362734.5,
+        "z": -174.23080103166964,
+        "pvalue": 0.0,
+        "n_nonzero": 40735,
+        "n_pairs": 40735,
+        "median_diff": -13.136300000041956,
+        "mean_diff": -14.207260682465144,
+        "pair": "DensK1_vs_UnifAll",
+        "metric": "total_ms_oneshot",
+        "n_images": 40735,
+        "caveat": "Stage D one-shot timing"
+      },
+      "DensK1_vs_SAHI640": {
+        "statistic": 865.0,
+        "w_plus": 865.0,
+        "w_minus": 829689615.0,
+        "z": -174.78986673955114,
+        "pvalue": 0.0,
+        "n_nonzero": 40735,
+        "n_pairs": 40735,
+        "median_diff": -130.84149999940564,
+        "mean_diff": -131.02947440775998,
+        "pair": "DensK1_vs_SAHI640",
+        "metric": "total_ms_oneshot",
+        "n_images": 40735,
+        "caveat": "Stage D one-shot timing"
+      }
+    },
+    "bootstrap_all": {
+      "F1280_vs_DensK1": {
+        "n_images": 40735,
+        "point": {
+          "small_gt": 493861,
+          "small_recall_a": 0.7928931419974447,
+          "small_recall_b": 0.7671612052784083,
+          "delta_small_recall": 0.025731936719036327,
+          "precision_a": 0.371897800920926,
+          "precision_b": 0.34748219515336554,
+          "delta_precision": 0.024415605767560467,
+          "mean_ms_a": 33.08099388486572,
+          "mean_ms_b": 32.96948507180509,
+          "delta_mean_ms": 0.11150881306062965
+        },
+        "bootstrap": {
+          "B": 10000,
+          "seed": 20260917,
+          "delta_small_recall_ci95": [
+            0.02453780318635641,
+            0.026907141490469712
+          ],
+          "delta_precision_ci95": [
+            0.02392886524131231,
+            0.02490705017448446
+          ],
+          "delta_mean_ms_ci95": [
+            0.05098837535364177,
+            0.17293534318109163
+          ]
+        }
+      },
+      "F640_vs_F1280": {
+        "n_images": 40735,
+        "point": {
+          "small_gt": 493861,
+          "small_recall_a": 0.7080210828552973,
+          "small_recall_b": 0.7928931419974447,
+          "delta_small_recall": -0.08487205914214728,
+          "precision_a": 0.4302497969270827,
+          "precision_b": 0.371897800920926,
+          "delta_precision": 0.0583519960061567,
+          "mean_ms_a": 16.73751984779389,
+          "mean_ms_b": 33.08099388486572,
+          "delta_mean_ms": -16.343474037071832
+        },
+        "bootstrap": {
+          "B": 10000,
+          "seed": 20260917,
+          "delta_small_recall_ci95": [
+            -0.08721032458898122,
+            -0.08252497375166125
+          ],
+          "delta_precision_ci95": [
+            0.057677560276906015,
+            0.05904948213588726
+          ],
+          "delta_mean_ms_ci95": [
+            -16.41100382509281,
+            -16.277841701429534
+          ]
+        }
+      },
+      "F1280_vs_UnifAll": {
+        "n_images": 40735,
+        "point": {
+          "small_gt": 493861,
+          "small_recall_a": 0.7928931419974447,
+          "small_recall_b": 0.7823922115737019,
+          "delta_small_recall": 0.010500930423742713,
+          "precision_a": 0.371897800920926,
+          "precision_b": 0.33163208841709285,
+          "delta_precision": 0.04026571250383315,
+          "mean_ms_a": 33.08099388486572,
+          "mean_ms_b": 47.176745754269945,
+          "delta_mean_ms": -14.095751869404221
+        },
+        "bootstrap": {
+          "B": 10000,
+          "seed": 20260917,
+          "delta_small_recall_ci95": [
+            0.009558171970288144,
+            0.011447389422938927
+          ],
+          "delta_precision_ci95": [
+            0.039768729354805334,
+            0.04075515471096692
+          ],
+          "delta_mean_ms_ci95": [
+            -14.170422545602321,
+            -14.01920753037576
+          ]
+        }
+      },
+      "F1280_vs_SAHI640": {
+        "n_images": 40735,
+        "point": {
+          "small_gt": 493861,
+          "small_recall_a": 0.7928931419974447,
+          "small_recall_b": 0.7597340142266751,
+          "delta_small_recall": 0.03315912777076951,
+          "precision_a": 0.371897800920926,
+          "precision_b": 0.3529631442248071,
+          "delta_precision": 0.01893465669611888,
+          "mean_ms_a": 33.08099388486572,
+          "mean_ms_b": 163.99895947956583,
+          "delta_mean_ms": -130.9179655947001
+        },
+        "bootstrap": {
+          "B": 10000,
+          "seed": 20260917,
+          "delta_small_recall_ci95": [
+            0.03112959935879759,
+            0.03517280422122223
+          ],
+          "delta_precision_ci95": [
+            0.01814818262675557,
+            0.019707844056247398
+          ],
+          "delta_mean_ms_ci95": [
+            -131.26355140057544,
+            -130.57593811249504
+          ]
+        }
+      },
+      "DensK1_vs_UnifAll": {
+        "n_images": 40735,
+        "point": {
+          "small_gt": 493861,
+          "small_recall_a": 0.7671612052784083,
+          "small_recall_b": 0.7823922115737019,
+          "delta_small_recall": -0.015231006295293614,
+          "precision_a": 0.34748219515336554,
+          "precision_b": 0.33163208841709285,
+          "delta_precision": 0.015850106736272684,
+          "mean_ms_a": 32.96948507180509,
+          "mean_ms_b": 47.176745754269945,
+          "delta_mean_ms": -14.20726068246485
+        },
+        "bootstrap": {
+          "B": 10000,
+          "seed": 20260917,
+          "delta_small_recall_ci95": [
+            -0.015837165142093598,
+            -0.014623668771882429
+          ],
+          "delta_precision_ci95": [
+            0.015588047496317571,
+            0.016116829161080697
+          ],
+          "delta_mean_ms_ci95": [
+            -14.262821836685177,
+            -14.15060918319399
+          ]
+        }
+      },
+      "DensK1_vs_SAHI640": {
+        "n_images": 40735,
+        "point": {
+          "small_gt": 493861,
+          "small_recall_a": 0.7671612052784083,
+          "small_recall_b": 0.7597340142266751,
+          "delta_small_recall": 0.00742719105173318,
+          "precision_a": 0.34748219515336554,
+          "precision_b": 0.3529631442248071,
+          "delta_precision": -0.005480949071441588,
+          "mean_ms_a": 32.96948507180509,
+          "mean_ms_b": 163.99895947956583,
+          "delta_mean_ms": -131.02947440776074
+        },
+        "bootstrap": {
+          "B": 10000,
+          "seed": 20260917,
+          "delta_small_recall_ci95": [
+            0.005452406840692564,
+            0.009534063147232963
+          ],
+          "delta_precision_ci95": [
+            -0.006111192962567758,
+            -0.004833566477111021
+          ],
+          "delta_mean_ms_ci95": [
+            -131.37142835258135,
+            -130.69321113017332
+          ]
+        }
+      }
+    },
+    "binary_win_counts": {
+      "F1280_vs_DensK1": {
+        "n": 36086,
+        "a_strictly_better": 9061,
+        "b_strictly_better": 4095,
+        "tie": 22930,
+        "wilson_a_better": {
+          "p": 0.2510946073269412,
+          "lo": 0.24664702604148822,
+          "hi": 0.255595178313324,
+          "n": 36086,
+          "successes": 9061
+        },
+        "mcnemar_chi2_continuity": 1873.7629218607478,
+        "mcnemar_pvalue": 0.0
+      },
+      "F640_vs_F1280": {
+        "n": 36086,
+        "a_strictly_better": 2863,
+        "b_strictly_better": 14092,
+        "tie": 19131,
+        "wilson_a_better": {
+          "p": 0.07933824751981378,
+          "lo": 0.07659426643717956,
+          "hi": 0.08217178367482757,
+          "n": 36086,
+          "successes": 2863
+        },
+        "mcnemar_chi2_continuity": 7435.445827189619,
+        "mcnemar_pvalue": 0.0
+      },
+      "F1280_vs_UnifAll": {
+        "n": 36086,
+        "a_strictly_better": 7230,
+        "b_strictly_better": 4897,
+        "tie": 23959,
+        "wilson_a_better": {
+          "p": 0.20035470819708473,
+          "lo": 0.19625684225474993,
+          "hi": 0.20451636590474495,
+          "n": 36086,
+          "successes": 7230
+        },
+        "mcnemar_chi2_continuity": 448.4393502102746,
+        "mcnemar_pvalue": 1.5767304501598227e-99
+      },
+      "F1280_vs_SAHI640": {
+        "n": 36086,
+        "a_strictly_better": 14075,
+        "b_strictly_better": 5328,
+        "tie": 16683,
+        "wilson_a_better": {
+          "p": 0.39004045890372996,
+          "lo": 0.38501982213455554,
+          "hi": 0.3950845050620482,
+          "n": 36086,
+          "successes": 14075
+        },
+        "mcnemar_chi2_continuity": 3942.303561304953,
+        "mcnemar_pvalue": 0.0
+      },
+      "DensK1_vs_UnifAll": {
+        "n": 36086,
+        "a_strictly_better": 698,
+        "b_strictly_better": 4652,
+        "tie": 30736,
+        "wilson_a_better": {
+          "p": 0.019342681372277338,
+          "lo": 0.01797196857776347,
+          "hi": 0.0208157217511406,
+          "n": 36086,
+          "successes": 698
+        },
+        "mcnemar_chi2_continuity": 2920.7867289719625,
+        "mcnemar_pvalue": 0.0
+      },
+      "DensK1_vs_SAHI640": {
+        "n": 36086,
+        "a_strictly_better": 12119,
+        "b_strictly_better": 7219,
+        "tie": 16748,
+        "wilson_a_better": {
+          "p": 0.3358366125367178,
+          "lo": 0.3309814073125735,
+          "hi": 0.340726766657356,
+          "n": 36086,
+          "successes": 12119
+        },
+        "mcnemar_chi2_continuity": 1241.090133416072,
+        "mcnemar_pvalue": 7.167883343893271e-272
+      }
+    },
+    "method_aggregates": {
+      "DensK1": {
+        "tp": 658280,
+        "fp": 1236148,
+        "precision": 0.34748219515336554,
+        "small_gt": 493861,
+        "small_tp": 378871,
+        "small_recall": 0.7671612052784083,
+        "mean_ms": 32.96948507180509,
+        "median_ms": 32.04370000094059,
+        "n_images": 40735
+      },
+      "F1280": {
+        "tp": 671489,
+        "fp": 1134085,
+        "precision": 0.371897800920926,
+        "small_gt": 493861,
+        "small_tp": 391579,
+        "small_recall": 0.7928931419974447,
+        "mean_ms": 33.08099388486551,
+        "median_ms": 31.456900000193855,
+        "n_images": 40735
+      },
+      "F640": {
+        "tp": 623956,
+        "fp": 826262,
+        "precision": 0.4302497969270827,
+        "small_gt": 493861,
+        "small_tp": 349664,
+        "small_recall": 0.7080210828552973,
+        "mean_ms": 16.737519847793735,
+        "median_ms": 16.142499999659776,
+        "n_images": 40735
+      },
+      "SAHI640": {
+        "tp": 648364,
+        "fp": 1188553,
+        "precision": 0.3529631442248071,
+        "small_gt": 493861,
+        "small_tp": 375203,
+        "small_recall": 0.7597340142266751,
+        "mean_ms": 163.99895947956506,
+        "median_ms": 163.67069999978412,
+        "n_images": 40735
+      },
+      "UnifAll": {
+        "tp": 668237,
+        "fp": 1346758,
+        "precision": 0.33163208841709285,
+        "small_gt": 493861,
+        "small_tp": 386393,
+        "small_recall": 0.7823922115737019,
+        "mean_ms": 47.17674575427023,
+        "median_ms": 44.3621999993411,
+        "n_images": 40735
+      }
+    },
+    "wall_seconds": 28.00668360000418
+  },
+  "sequence_cluster": {
+    "F1280_vs_DensK1": {
+      "n_sequences": 50,
+      "point": {
+        "delta_small_recall": 0.025731936719036327,
+        "delta_precision": 0.024415605767560467,
+        "delta_mean_ms": 0.11150881306041245,
+        "small_recall_a": 0.7928931419974447,
+        "small_recall_b": 0.7671612052784083
+      },
+      "cluster_bootstrap": {
+        "B": 10000,
+        "seed": 20260917,
+        "unit": "sequence",
+        "delta_small_recall_ci95": [
+          0.009979829220158795,
+          0.04033854267899803
+        ],
+        "delta_precision_ci95": [
+          0.016792018198634125,
+          0.03264223775579968
+        ],
+        "delta_mean_ms_ci95": [
+          -0.4950522265598028,
+          0.7039808141365559
+        ]
+      },
+      "sequence_level_wilcoxon_small_recall": {
+        "statistic": 281.0,
+        "w_plus": 944.0,
+        "w_minus": 281.0,
+        "z": -3.292554521219199,
+        "pvalue": 0.0009928164609942787,
+        "n_nonzero": 49,
+        "n_pairs": 49,
+        "median_diff": 0.015041845736258774,
+        "mean_diff": 0.020486435892991647,
+        "n_sequences_with_small_gt": 49
+      },
+      "sequences_a_better": 37,
+      "sequences_b_better": 12,
+      "sequences_tie": 0
+    },
+    "F640_vs_F1280": {
+      "n_sequences": 50,
+      "point": {
+        "delta_small_recall": -0.08487205914214728,
+        "delta_precision": 0.0583519960061567,
+        "delta_mean_ms": -16.343474037071765,
+        "small_recall_a": 0.7080210828552973,
+        "small_recall_b": 0.7928931419974447
+      },
+      "cluster_bootstrap": {
+        "B": 10000,
+        "seed": 20260917,
+        "unit": "sequence",
+        "delta_small_recall_ci95": [
+          -0.12025414010963917,
+          -0.046757886083379024
+        ],
+        "delta_precision_ci95": [
+          0.04794871119209736,
+          0.06919947829262713
+        ],
+        "delta_mean_ms_ci95": [
+          -16.968238342746545,
+          -15.703841330872802
+        ]
+      },
+      "sequence_level_wilcoxon_small_recall": {
+        "statistic": 117.0,
+        "w_plus": 117.0,
+        "w_minus": 1059.0,
+        "z": -4.825704480423511,
+        "pvalue": 1.3950924407745092e-06,
+        "n_nonzero": 48,
+        "n_pairs": 49,
+        "median_diff": -0.04318951684792305,
+        "mean_diff": -0.061321230770819364,
+        "n_sequences_with_small_gt": 49,
+        "pvalue_holm": 5.580369763098037e-06
+      },
+      "sequences_a_better": 7,
+      "sequences_b_better": 41,
+      "sequences_tie": 1
+    },
+    "F1280_vs_UnifAll": {
+      "n_sequences": 50,
+      "point": {
+        "delta_small_recall": 0.010500930423742713,
+        "delta_precision": 0.04026571250383315,
+        "delta_mean_ms": -14.095751869404719,
+        "small_recall_a": 0.7928931419974447,
+        "small_recall_b": 0.7823922115737019
+      },
+      "cluster_bootstrap": {
+        "B": 10000,
+        "seed": 20260917,
+        "unit": "sequence",
+        "delta_small_recall_ci95": [
+          0.0011762168811961123,
+          0.01797400371413643
+        ],
+        "delta_precision_ci95": [
+          0.03273060040924678,
+          0.05026625771924126
+        ],
+        "delta_mean_ms_ci95": [
+          -14.994482799287791,
+          -13.202941707847891
+        ]
+      },
+      "sequence_level_wilcoxon_small_recall": {
+        "statistic": 491.0,
+        "w_plus": 685.0,
+        "w_minus": 491.0,
+        "z": -0.9897566043801674,
+        "pvalue": 0.32229310043677156,
+        "n_nonzero": 48,
+        "n_pairs": 49,
+        "median_diff": 0.004027103042700153,
+        "mean_diff": -0.0001609139026058229,
+        "n_sequences_with_small_gt": 49,
+        "pvalue_holm": 0.32229310043677156
+      },
+      "sequences_a_better": 30,
+      "sequences_b_better": 18,
+      "sequences_tie": 1
+    },
+    "F1280_vs_SAHI640": {
+      "n_sequences": 50,
+      "point": {
+        "delta_small_recall": 0.03315912777076951,
+        "delta_precision": 0.01893465669611888,
+        "delta_mean_ms": -130.9179655946996,
+        "small_recall_a": 0.7928931419974447,
+        "small_recall_b": 0.7597340142266751
+      },
+      "cluster_bootstrap": {
+        "B": 10000,
+        "seed": 20260917,
+        "unit": "sequence",
+        "delta_small_recall_ci95": [
+          0.0038770336846826467,
+          0.07324331664207627
+        ],
+        "delta_precision_ci95": [
+          0.004389903167341613,
+          0.03680698824740047
+        ],
+        "delta_mean_ms_ci95": [
+          -137.5628803867025,
+          -123.97712778940392
+        ]
+      },
+      "sequence_level_wilcoxon_small_recall": {
+        "statistic": 256.0,
+        "w_plus": 969.0,
+        "w_minus": 256.0,
+        "z": -3.541236886870196,
+        "pvalue": 0.0003982558453400232,
+        "n_nonzero": 49,
+        "n_pairs": 49,
+        "median_diff": 0.048576022048690826,
+        "mean_diff": 0.06465702144936979,
+        "n_sequences_with_small_gt": 49,
+        "pvalue_holm": 0.0011947675360200697
+      },
+      "sequences_a_better": 36,
+      "sequences_b_better": 13,
+      "sequences_tie": 0
+    },
+    "DensK1_vs_UnifAll": {
+      "n_sequences": 50,
+      "point": {
+        "delta_small_recall": -0.015231006295293614,
+        "delta_precision": 0.015850106736272684,
+        "delta_mean_ms": -14.207260682465131,
+        "small_recall_a": 0.7671612052784083,
+        "small_recall_b": 0.7823922115737019
+      },
+      "cluster_bootstrap": {
+        "B": 10000,
+        "seed": 20260917,
+        "unit": "sequence",
+        "delta_small_recall_ci95": [
+          -0.023630307638673145,
+          -0.007160341490777698
+        ],
+        "delta_precision_ci95": [
+          0.010643308718732937,
+          0.022074664332514007
+        ],
+        "delta_mean_ms_ci95": [
+          -14.695884210741292,
+          -13.685403624096637
+        ]
+      },
+      "sequence_level_wilcoxon_small_recall": {
+        "statistic": 27.0,
+        "w_plus": 27.0,
+        "w_minus": 963.0,
+        "z": -5.455815026464538,
+        "pvalue": 4.8748720236020535e-08,
+        "n_nonzero": 44,
+        "n_pairs": 49,
+        "median_diff": -0.0054788178100161344,
+        "mean_diff": -0.020647349795597472,
+        "n_sequences_with_small_gt": 49,
+        "pvalue_holm": 2.437436011801027e-07
+      },
+      "sequences_a_better": 4,
+      "sequences_b_better": 40,
+      "sequences_tie": 5
+    },
+    "DensK1_vs_SAHI640": {
+      "n_sequences": 50,
+      "point": {
+        "delta_small_recall": 0.00742719105173318,
+        "delta_precision": -0.005480949071441588,
+        "delta_mean_ms": -131.02947440776,
+        "small_recall_a": 0.7671612052784083,
+        "small_recall_b": 0.7597340142266751
+      },
+      "cluster_bootstrap": {
+        "B": 10000,
+        "seed": 20260917,
+        "unit": "sequence",
+        "delta_small_recall_ci95": [
+          -0.030314847195854158,
+          0.05530250086812712
+        ],
+        "delta_precision_ci95": [
+          -0.017383996805693636,
+          0.008907377514003768
+        ],
+        "delta_mean_ms_ci95": [
+          -137.86854737856095,
+          -123.90986028189597
+        ]
+      },
+      "sequence_level_wilcoxon_small_recall": {
+        "statistic": 354.0,
+        "w_plus": 822.0,
+        "w_minus": 354.0,
+        "z": -2.3949032862463118,
+        "pvalue": 0.01662474973815441,
+        "n_nonzero": 48,
+        "n_pairs": 49,
+        "median_diff": 0.02261259577649044,
+        "mean_diff": 0.044170585556378136,
+        "n_sequences_with_small_gt": 49,
+        "pvalue_holm": 0.03324949947630882
+      },
+      "sequences_a_better": 33,
+      "sequences_b_better": 15,
+      "sequences_tie": 1
+    }
+  },
+  "n_sequences": 50
+}
