@@ -76,7 +76,7 @@
 
 | 角色 | 权威路径 |
 |---|---|
-| **policy** | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`（JCR-primary + claim ladder）；旧稿镜像 `Venue_Quartile_Policy_2026-09-22.md` |
+| **policy** | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`（JCR-primary + claim ladder） |
 | **boundary** | `01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md` · `AB_Direction_Judgment_With_Literature_2026-09-24.md` · `Paper1_Direction_Worth_Judgment_2026-09-24.md` |
 | **A prep** | `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` · `Writing/` 案头草案簇；Learning_Notes 课程计划 `_PLAN_Learning_Notes_Curriculum_2026-09-24.md` → **pending**（sibling） |
 | **B prep** | `01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md` · `Literature/Literature_Matrix_Addendum_2026-09-24.md` · `Writing/B_OpenWorld_Risk_Outline.md` |
@@ -226,7 +226,7 @@ Experiments/papers/P0_EI/
 | 路径 | 说明 |
 |---|---|
 | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` | **新建** 全局 JCR-primary + claim ladder 政策 |
-| `00_Overview/Venue_Quartile_Policy_2026-09-22.md` | **指针更新** → 以 2026-09-24 文件为准 |
+| Venue_Quartile_Policy_2026-09-22（2026-10-06 已删除） | **指针更新** → 以 2026-09-24 文件为准 |
 | `01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md` | **更新** 弱 fallback W1–W3（不定死） |
 | `01_Paper1_OpenWorld_Risk/AB_Direction_Judgment_With_Literature_2026-09-24.md` | **更新** 「三区」→ JCR Qx；主张梯子 |
 | `01_Paper1_OpenWorld_Risk/Research_Plan.md` | **更新** venue/claim ladder |

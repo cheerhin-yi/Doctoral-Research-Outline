@@ -74,7 +74,7 @@
 | 项 | 口径 | 来源 |
 |---|---|---|
 | 本篇目标 | **EI 会议**；不承诺录用 | `PR/Research_Plan.md` §1 |
-| 主跟踪会议 | **ICIP 2027 全文**（目录惯例为 CCF-C，投稿前核对 CCF 第七版）；备选 ACCV／ICPR 全文；不把 CCF-B（ICME／ICASSP）当第一目标；Workshop／短文通常不算目录会议 | `PR/Writing/P0_Two_Paper_Plan_2026-09-22.md` |
+| 投稿会议 | 首投 **IJCNN 2027**（截稿 2027-01-31），落选转投 **ICIP 2027**（截稿 2027-03-31）（2026-10-06 定；均为 CCF-C，投稿前核对 CCF 第七版）；备选 ACCV／ICPR 全文；不把 CCF-B（ICME／ICASSP）当第一目标；Workshop／短文通常不算目录会议 | `PR/Writing/P0_Two_Paper_Plan_2026-09-22.md` |
 | 分区主尺 | 期刊用 **JCR-primary**（Q1–Q4）；会议按投稿时的 CCF 推荐目录；**EI 索引只是描述项**，不替代 CCF／JCR | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` §1 |
 | 第二篇（另授权） | 统一时间预算下的协议选择 + 一条受限推理切片；出口 **JCR Q2 应用／系统刊**；启动条件是五协议逐图 oracle 上界足够 | `P0_Two_Paper_Plan_2026-09-22.md` |
 | 会期 | Mainline §7 要求"选定 2027 年 EI 会期并写入 Current_Stage"——**待补**（Current_Stage 目前未写具体会期／截稿日） | `PR/Mainline_A_Current.md` §7 |
@@ -487,7 +487,7 @@
 ### 6.2 稿件／PDF
 
 - `PR/` 下目前**没有稿件正文或 PDF**，只有提纲 `PR/Writing/P0_EI_Outline.md`（6 节结构）。
-- 会期没有写进 `Current_Stage.md`（Mainline §7 成功标准 1）→ 待补；主跟踪会议为 ICIP 2027 全文，截稿日需核实。
+- 会期已写入 `Current_Stage.md`（2026-10-06；Mainline §7 成功标准 1）：首投 IJCNN 2027（截稿 2027-01-31），落选转投 ICIP 2027（截稿 2027-03-31）。
 - 文献：`Literature_Matrix.md` 的 9 篇都是 SCREENED，MUST 篇 PDF 待放入各主题的 `pdfs/`；ClusDet 等书目需补 DOI。
 
 ### 6.3 可选增强（不引入新算法、不新推理、不训练；都需要按 Current_Stage 纪律另行确认）

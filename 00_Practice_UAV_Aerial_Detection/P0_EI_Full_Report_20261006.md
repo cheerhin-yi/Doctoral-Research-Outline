@@ -41,7 +41,7 @@
 ### 1.2 为什么 “EI 先行”
 
 - **先发一篇小而稳的会议稿。** 研究计划写明本篇目标是 **EI 会议**，不承诺录用（`PR/Research_Plan.md` §1）。
-- **会议选择：** 主跟踪 **ICIP 2027 全文**（目录惯例为 CCF-C，投稿前要按 CCF 第七版核对），备选 ACCV／ICPR 全文；不把 CCF-B（ICME／ICASSP）当第一目标；Workshop／短文通常不算目录会议（`PR/Writing/P0_Two_Paper_Plan_2026-09-22.md`）。
+- **会议选择：** 首投 **IJCNN 2027**（截稿 2027-01-31），落选转投 **ICIP 2027**（截稿 2027-03-31）（2026-10-06 定；均为 CCF-C，投稿前要按 CCF 第七版核对），备选 ACCV／ICPR 全文；不把 CCF-B（ICME／ICASSP）当第一目标；Workshop／短文通常不算目录会议（`PR/Writing/P0_Two_Paper_Plan_2026-09-22.md`）。
 - **分区口径：** 期刊看 **JCR**（Q1–Q4），会议看投稿时的 **CCF 推荐目录**；“被 EI 收录”只是描述项，不能代替 CCF／JCR（`00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` §1）。该政策文件正文只有 A／B 两篇的梯子，**没有 P0 专条**（导读 §1.7 注）。
 - **2026-10-06 投稿出口（用户决定）：** 练手不计学位分，CCF-C 优先：首投 **IJCNN 2027**（截稿 2027-01-31，≤6 页 IEEE 双栏）；落选转投 **ICIP 2027**（截稿 2027-03-31，CCF 第七版仍为 C 类）。见 `00_Overview/Current_Stage.md`「Venue / 学位分」。
 

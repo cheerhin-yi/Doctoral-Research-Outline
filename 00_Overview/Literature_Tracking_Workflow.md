@@ -19,7 +19,6 @@
 | [Literature_Registry.md](Literature_Registry.md) | 全局工作ID、标识符、版本关系、唯一正文位置与跨方向入口；去重事实源 |
 | 各方向 `Literature/Literature_Matrix.md` | 审计摘要、阅读优先级、创新关系；主归属保存完整记录，其他方向只保存交叉链接 |
 | [Innovation_Ledger.md](Innovation_Ledger.md) | 候选创新的最近工作、尚存缺口、风险及待验证动作 |
-| [Weekly_Literature_Audit_Template.md](Weekly_Literature_Audit_Template.md) | 每批输入及处置、周结论、联动完成检查 |
 
 旧论文及矩阵不是本流程已审计的记录。首次遇到旧工作时先匹配旧ID和文件，补审计后采用原位置，不批量迁移、不虚构历史Date Added。不修改或删除 `99_Attachments/paper/`。
 

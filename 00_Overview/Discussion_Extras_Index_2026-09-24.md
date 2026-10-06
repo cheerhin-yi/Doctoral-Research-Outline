@@ -12,7 +12,6 @@
 | 文件 | 角色 |
 |---|---|
 | `Venue_and_Claim_Policy_JCR_2026-09-24.md` | JCR-primary + 主张强/中/弱梯子；地板 Q2/Q3 related |
-| `Venue_Quartile_Policy_2026-09-22.md` | 旧文；以 2026-09-24 政策为准 |
 | `Current_Stage.md` | 唯一 ACTIVE 入口（含 Post-EI IDLE 登记） |
 | `Learning_Note_Method.md` | 学习笔记统一方法 |
 

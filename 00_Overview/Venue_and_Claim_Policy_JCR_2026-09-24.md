@@ -4,7 +4,7 @@
 > **不**授权新 ACTIVE 工作；**不**改变 `Current_Stage.md` 唯一 ACTIVE=**P0_EI**。  
 > A/B 仍为 **IDLE / PREP**；A/B 独立发表边界不变。  
 > 日期：2026-09-24（Asia/Shanghai）  
-> 取代/上位：本文件为 **JCR-primary** 现行政策；旧 [`Venue_Quartile_Policy_2026-09-22.md`](Venue_Quartile_Policy_2026-09-22.md) 仍有效但以本文件为准并加厚 claim ladder。
+> 取代/上位：本文件为 **JCR-primary** 现行政策，取代 2026-09-22 旧分区政策稿（已删除），并加厚 claim ladder。
 
 ---
 
@@ -86,6 +86,6 @@ DESK-FROZEN 强/中措辞保留；fallback **不**覆盖冻结卡成功判据，
 ## 8. P0（练手 EI 稿）指针（2026-09-27 补；无新决定）
 
 - P0 为 **EI 会议优先**：本阶段目标是 EI 会议，不承诺录用，不是中科院二区／Trans（`00_Practice_UAV_Aerial_Detection/Research_Plan.md` §1）。
-- 会议出口：主跟踪 **ICIP 2027 全文**（目录惯例为 CCF-C，投稿前核 CCF 第七版）；备选 ACCV／ICPR 全文；不以 CCF-B（ICME／ICASSP）为第一目标（`00_Practice_UAV_Aerial_Detection/Writing/P0_Two_Paper_Plan_2026-09-22.md`）。
+- 会议出口：首投 **IJCNN 2027**（截稿 2027-01-31），落选转投 **ICIP 2027**（截稿 2027-03-31）（2026-10-06 定；均为 CCF-C，投稿前核 CCF 第七版）；备选 ACCV／ICPR 全文；不以 CCF-B（ICME／ICASSP）为第一目标（`00_Practice_UAV_Aerial_Detection/Writing/P0_Two_Paper_Plan_2026-09-22.md`）。
 - 口径：会议按投稿时 CCF 目录，EI 为描述项（本文件 §1.5）；P0 第二篇（另授权）出口为 JCR Q2 应用／系统刊（同上两篇安排）。
 - 本节仅指针，**不**改变 ACTIVE=P0_EI，不新增 venue 决定。

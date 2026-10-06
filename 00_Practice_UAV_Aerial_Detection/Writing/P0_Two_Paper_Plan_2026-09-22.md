@@ -3,7 +3,7 @@
 日期：2026-09-22。  
 状态：**已采用**。不改变冻结权重与五协议脚本；不授权开训；不把检测头写入关键路径。
 
-分区只认 **JCR**（见 `00_Overview/Venue_Quartile_Policy_2026-09-22.md`；若该文件尚未入库，以学院认定与 Overview 现行政策为准）。学院是否认 CCF／EI／JCR 仍 Unknown。
+分区只认 **JCR**（见 `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`）。学院是否认 CCF／EI／JCR 仍 Unknown。
 
 ---
 
@@ -11,7 +11,7 @@
 
 - **类型：** 冻结检测器上的推理协议对照。主张仅 P0-EI-C1／C2。摘要写 experimental evaluation，不写 we propose。
 - **证据：** Stage A–E／F PASS（1660）；正文精度用 D／E。5060 Ti 时序按 G 协议补列，与 1660 分列。
-- **出口：** 普通 EI 会议；主跟踪 **ICIP 2027 全文**（目录惯例为 CCF-C，投稿前核 CCF 第七版）。备选 ACCV／ICPR 全文。不把 CCF-B（ICME／ICASSP）当第一目标。Workshop／短文通常不算目录会议。
+- **出口：** 首投 **IJCNN 2027**（截稿 2027-01-31），落选转投 **ICIP 2027**（截稿 2027-03-31）（2026-10-06 定；均为 CCF-C，投稿前核 CCF 第七版）。备选 ACCV／ICPR 全文。不把 CCF-B（ICME／ICASSP）当第一目标。Workshop／短文通常不算目录会议。
 - **禁止：** 把决策算法或新切片写进本篇主张。
 
 包装入口：本目录 `P0_EI_Outline.md`；实验证据 `../Experiments/papers/P0_EI/`。
