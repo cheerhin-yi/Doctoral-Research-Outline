@@ -1,0 +1,167 @@
+{
+  "run_id": "P0-BENCH-J-REPRO-20261006-01",
+  "preds_source": "00_Practice_UAV_Aerial_Detection\\Experiments\\P0_Benchmark\\stage_d\\P0-BENCH-G-5060TI-TESTDEV-20261001-01\\preds",
+  "gpu_env": "RTX 5060 Ti / UAV_BT2 (Run G saved preds)",
+  "legend": "green = small GT matched by this method; red = small GT missed; yellow = DensK1 selected window",
+  "selection": "max/min (F1280-DensK1) small_tp; max (UnifAll-SAHI640) small_tp; lowest best-of-3 small recall among images with >=50 small GT; ties by name",
+  "cases": [
+    {
+      "case": 1,
+      "tag": "F1280_wins",
+      "image": "9999938_00000_d_0000210.jpg",
+      "size": "1400x788",
+      "methods": [
+        "F1280",
+        "DensK1"
+      ],
+      "crop_xyxy": [
+        512,
+        0,
+        1152,
+        640
+      ],
+      "small_gt": 325,
+      "small_tp": {
+        "F1280": 88,
+        "DensK1": 47
+      },
+      "densk1_window_xyxy": [
+        760,
+        0,
+        1400,
+        640
+      ],
+      "file": "case1_F1280_wins_9999938_00000_d_0000210.jpg"
+    },
+    {
+      "case": 2,
+      "tag": "F1280_wins",
+      "image": "9999938_00000_d_0000212.jpg",
+      "size": "1400x788",
+      "methods": [
+        "F1280",
+        "DensK1"
+      ],
+      "crop_xyxy": [
+        760,
+        0,
+        1400,
+        640
+      ],
+      "small_gt": 294,
+      "small_tp": {
+        "F1280": 108,
+        "DensK1": 69
+      },
+      "densk1_window_xyxy": [
+        760,
+        0,
+        1400,
+        640
+      ],
+      "file": "case2_F1280_wins_9999938_00000_d_0000212.jpg"
+    },
+    {
+      "case": 3,
+      "tag": "DensK1_wins",
+      "image": "0000073_03155_d_0000004.jpg",
+      "size": "1920x1080",
+      "methods": [
+        "F1280",
+        "DensK1"
+      ],
+      "crop_xyxy": [
+        1024,
+        440,
+        1664,
+        1080
+      ],
+      "small_gt": 59,
+      "small_tp": {
+        "F1280": 23,
+        "DensK1": 38
+      },
+      "densk1_window_xyxy": [
+        1024,
+        440,
+        1664,
+        1080
+      ],
+      "file": "case3_DensK1_wins_0000073_03155_d_0000004.jpg"
+    },
+    {
+      "case": 4,
+      "tag": "DensK1_wins",
+      "image": "0000073_01275_d_0000002.jpg",
+      "size": "1920x1080",
+      "methods": [
+        "F1280",
+        "DensK1"
+      ],
+      "crop_xyxy": [
+        512,
+        440,
+        1152,
+        1080
+      ],
+      "small_gt": 69,
+      "small_tp": {
+        "F1280": 35,
+        "DensK1": 45
+      },
+      "densk1_window_xyxy": [
+        512,
+        440,
+        1152,
+        1080
+      ],
+      "file": "case4_DensK1_wins_0000073_01275_d_0000002.jpg"
+    },
+    {
+      "case": 5,
+      "tag": "SAHI640_loses_same_pixels",
+      "image": "9999938_00000_d_0000121.jpg",
+      "size": "1400x788",
+      "methods": [
+        "UnifAll",
+        "SAHI640"
+      ],
+      "crop_xyxy": [
+        512,
+        0,
+        1152,
+        640
+      ],
+      "small_gt": 176,
+      "small_tp": {
+        "UnifAll": 62,
+        "SAHI640": 10
+      },
+      "densk1_window_xyxy": null,
+      "file": "case5_SAHI640_loses_same_pixels_9999938_00000_d_0000121.jpg"
+    },
+    {
+      "case": 6,
+      "tag": "all_miss",
+      "image": "9999938_00000_d_0000247.jpg",
+      "size": "1400x788",
+      "methods": [
+        "F1280",
+        "UnifAll"
+      ],
+      "crop_xyxy": [
+        760,
+        0,
+        1400,
+        640
+      ],
+      "small_gt": 115,
+      "small_tp": {
+        "F1280": 4,
+        "UnifAll": 7
+      },
+      "densk1_window_xyxy": null,
+      "file": "case6_all_miss_9999938_00000_d_0000247.jpg"
+    }
+  ]
+}

@@ -10,7 +10,7 @@
 
 | 项 | Stage F 原运行（2026-09-17） | 本次 |
 |---|---|---|
-| 环境 | UAV_BT1：Python 3.12.14, numpy 2.5.2, **无 scipy** | UAV_BT2：Python 3.10.22, numpy 2.2.6, scipy 1.15.3 |
+| 环境 | UAV_BT1：Python 3.12.14, numpy 2.5.2；scipy：Stage A 冻结快照未装，09-29 备份为 1.18.1 | UAV_BT2：Python 3.10.22, numpy 2.2.6, scipy 1.15.3 |
 | 统计实现 | 纯 numpy/math（Wilcoxon 为带 tie / continuity 校正的正态近似；bootstrap 为 `np.random.default_rng(SEED)`） | 同一冻结函数；scipy **未被调用**，仅记录版本 |
 
 用冻结函数在 UAV_BT2 上对 `D_TESTDEV_per_image_metrics.csv` 重算 Stage F 全部输出，与 `F_summary.json` 逐键比较：**0 处不一致，最大相对差 0.0**（逐位一致）。另写的向量化 bootstrap（相同 rng 抽样序列，bincount 加权）与冻结 bootstrap 亦逐位一致（max rel diff 0.0；耗时 2.3 s vs 66.6 s），UAVDT 帧级 bootstrap 使用该向量化版本。
