@@ -1,9 +1,10 @@
-flowchart TD
-    A["候选框 8400 个<br/>每个含 4 个坐标 + nc 个类别分数"] --> B["conf 过滤<br/>最大类别分数 ≥ conf 阈值"]
-    B --> C["按类别分组<br/>组内按分数从高到低排序"]
-    C --> D["取当前最高分框 A<br/>放入保留列表"]
-    D --> E["计算 A 与同类其余框的 IoU"]
-    E --> F["删除 IoU 超过阈值的框<br/>Ultralytics 默认 0.7"]
-    F --> G{"同类还有剩余框"}
+flowchart LR
+    A["候选框"] --> B["conf 过滤"]
+    B --> C["按类分组<br/>按分数排序"]
+    C --> D["保留最高分框"]
+    D --> E["删除同类中<br/>IoU 超过 0.7 的框"]
+    E --> G{"还有剩余"}
     G -->|"是"| D
-    G -->|"否"| H["合并各类结果<br/>最多保留 max_det=300 个"]
+    G -->|"否"| H["输出 ≤300 框"]
+    classDef acc fill:#eef4ff,stroke:#7c9fdc,color:#1f2937
+    class D acc

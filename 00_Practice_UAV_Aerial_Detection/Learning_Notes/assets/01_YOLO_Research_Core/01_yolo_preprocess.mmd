@@ -1,8 +1,8 @@
-flowchart TD
-    RAW["原图 H×W×3<br/>尺寸任意 · OpenCV 读入为 BGR"] --> S{"训练还是推理"}
-    S -->|"训练"| AUG["数据增强 仅训练<br/>Mosaic · 随机缩放平移 · HSV · 左右翻转"]
-    AUG --> RS["拼接或缩放到 640×640"]
-    S -->|"推理 / 验证"| LB["Letterbox<br/>等比缩放 + 灰边填充到 640"]
-    RS --> NM["BGR→RGB · HWC→CHW · 像素除以 255"]
-    LB --> NM
-    NM --> T["输入张量 B×3×640×640"]
+flowchart LR
+    A["原图 H×W×3"] -->|"训练"| G["数据增强<br/>Mosaic、仿射、HSV、翻转"]
+    A -->|"推理"| L["Letterbox<br/>等比缩放 + 填充"]
+    G --> P["BGR→RGB、HWC→CHW<br/>像素 ÷255"]
+    L --> P
+    P --> X["B×3×640×640"]
+    classDef acc fill:#eef4ff,stroke:#7c9fdc,color:#1f2937
+    class G acc

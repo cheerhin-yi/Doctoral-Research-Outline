@@ -1,14 +1,12 @@
-flowchart TD
-    I["输入 3×640×640"] --> L0["L0 Conv k3 s2<br/>320×320 · P1/2"]
-    L0 --> L1["L1 Conv k3 s2<br/>160×160 · P2/4"]
-    L1 --> L2["L2 C2f ×3<br/>160×160"]
-    L2 --> L3["L3 Conv k3 s2<br/>80×80 · P3/8"]
-    L3 --> L4["L4 C2f ×6<br/>80×80"]
-    L4 --> L5["L5 Conv k3 s2<br/>40×40 · P4/16"]
-    L5 --> L6["L6 C2f ×6<br/>40×40"]
-    L6 --> L7["L7 Conv k3 s2<br/>20×20 · P5/32"]
-    L7 --> L8["L8 C2f ×3<br/>20×20"]
-    L8 --> L9["L9 SPPF k5<br/>20×20"]
-    L4 -.->|"P3 输出给 Neck"| N["Neck"]
-    L6 -.->|"P4 输出给 Neck"| N
-    L9 -.->|"P5 输出给 Neck"| N
+flowchart LR
+    I["输入<br/>640²"] --> A["L0–L1<br/>Conv s2 ×2<br/>160²"]
+    A --> B["L2<br/>C2f"]
+    B --> C["L3–L4<br/>Conv s2 + C2f<br/>80²"]
+    C --> D["L5–L6<br/>Conv s2 + C2f<br/>40²"]
+    D --> E["L7–L8<br/>Conv s2 + C2f<br/>20²"]
+    E --> F["L9<br/>SPPF<br/>20²"]
+    C -.->|"P3"| N["Neck"]
+    D -.->|"P4"| N
+    F -.->|"P5"| N
+    classDef acc fill:#eef4ff,stroke:#7c9fdc,color:#1f2937
+    class C,D,F acc

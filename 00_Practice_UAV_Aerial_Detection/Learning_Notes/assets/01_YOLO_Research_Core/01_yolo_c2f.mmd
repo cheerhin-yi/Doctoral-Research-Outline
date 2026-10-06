@@ -1,12 +1,14 @@
 flowchart LR
-    X["输入 X<br/>c1×H×W"] --> CV1["cv1 · 1×1 Conv<br/>输出 2c 通道"]
-    CV1 --> SP["按通道对半拆分"]
-    SP -->|"X1 · c 通道"| CAT["Concat<br/>共 2+n 份 × c 通道"]
-    SP -->|"X2 · c 通道"| CAT
-    SP -->|"X2"| B1["Bottleneck 1<br/>3×3 → 3×3 + 残差"]
-    B1 -->|"B1"| CAT
-    B1 --> B2["Bottleneck 2"]
-    B2 -->|"B2"| CAT
-    B2 --> B3["Bottleneck 3"]
-    B3 -->|"B3"| CAT
-    CAT --> CV2["cv2 · 1×1 Conv<br/>输出 c2 通道"]
+    X["输入 c1"] --> V1["cv1 1×1<br/>→ 2c"]
+    V1 --> S["拆分"]
+    S -->|"X1"| C["Concat<br/>(2+n)c"]
+    S -->|"X2"| C
+    S --> B1["Bottleneck"]
+    B1 --> B2["Bottleneck"]
+    B2 --> B3["Bottleneck"]
+    B1 --> C
+    B2 --> C
+    B3 --> C
+    C --> V2["cv2 1×1<br/>→ c2"]
+    classDef acc fill:#eef4ff,stroke:#7c9fdc,color:#1f2937
+    class C acc

@@ -1,0 +1,29 @@
+{
+ "theme": "base",
+ "htmlLabels": false,
+ "themeVariables": {
+  "fontFamily": "'Noto Sans CJK SC','Microsoft YaHei','PingFang SC','Segoe UI',sans-serif",
+  "fontSize": "13px",
+  "background": "#ffffff",
+  "primaryColor": "#ffffff",
+  "primaryTextColor": "#1f2937",
+  "primaryBorderColor": "#9ca3af",
+  "secondaryColor": "#ffffff",
+  "tertiaryColor": "#ffffff",
+  "lineColor": "#9ca3af",
+  "textColor": "#1f2937",
+  "clusterBkg": "#fafafa",
+  "clusterBorder": "#d1d5db",
+  "edgeLabelBackground": "#ffffff"
+ },
+ "flowchart": {
+  "htmlLabels": false,
+  "curve": "basis",
+  "nodeSpacing": 20,
+  "rankSpacing": 28,
+  "padding": 18,
+  "diagramPadding": 6,
+  "useMaxWidth": false
+ },
+ "themeCSS": ".node rect,.node polygon,.node circle{stroke-width:1px;} .flowchart-link{stroke-width:1px;} .edgeLabel text,.edgeLabel{font-size:12px;fill:#6b7280;color:#6b7280;} .cluster-label text{font-size:12px;fill:#6b7280;} .edgeLabel rect{fill:#ffffff !important;opacity:1 !important;} .marker{fill:#9ca3af !important;stroke:#9ca3af !important;}"
+}

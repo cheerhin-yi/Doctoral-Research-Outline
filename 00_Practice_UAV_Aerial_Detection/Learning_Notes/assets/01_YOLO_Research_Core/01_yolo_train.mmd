@@ -1,11 +1,12 @@
-flowchart TD
-    DS["加载数据<br/>图片 + 标签 类别与坐标"] --> AUG["增强 + 缩放到 640<br/>组成 batch B×3×640×640"]
-    AUG --> FW["前向传播<br/>Backbone → Neck → Head"]
-    FW --> RAW["三个检测头输出<br/>80×80 · 40×40 · 20×20"]
-    RAW --> TAL["任务对齐分配器 TAL<br/>选正样本"]
-    DS -->|"GT 框与类别"| TAL
-    TAL --> LS["三个损失加权求和<br/>7.5·CIoU + 0.5·BCE分类 + 1.5·DFL"]
-    RAW --> LS
-    LS --> BW["反向传播<br/>梯度经 Head → Neck → Backbone"]
-    BW --> OP["优化器更新权重"]
-    OP -->|"下一个 batch"| AUG
+flowchart LR
+    D["图片 + 标签"] --> A["增强<br/>组 batch"]
+    A --> F["前向"]
+    F --> O["三尺度输出"]
+    O --> T["TAL 分配"]
+    D -.->|"GT"| T
+    T --> L["损失<br/>CIoU、BCE、DFL"]
+    O --> L
+    L --> B["反向传播"]
+    B --> U["更新权重"]
+    classDef acc fill:#eef4ff,stroke:#7c9fdc,color:#1f2937
+    class T,L acc

@@ -1,7 +1,9 @@
 flowchart LR
-    P["某一尺度特征<br/>C×H×W · H=W=80 / 40 / 20"] --> B1["定位分支<br/>Conv 3×3 → Conv 3×3"]
-    P --> C1["分类分支<br/>Conv 3×3 → Conv 3×3"]
-    B1 --> B2["Conv2d 1×1<br/>输出 4×16=64 通道"]
-    C1 --> C2["Conv2d 1×1<br/>输出 nc 通道"]
-    B2 --> BO["每个格点 l t r b 四条边<br/>各 16 个 bin 的分布"]
-    C2 --> CO["每个格点 nc 个类别 logits<br/>sigmoid 后为类别概率"]
+    F["一个尺度的特征<br/>80² / 40² / 20²"] --> B1["Conv ×2"]
+    F --> C1["Conv ×2"]
+    B1 --> B2["Conv2d → 64"]
+    C1 --> C2["Conv2d → nc"]
+    B2 --> BO["定位：l t r b<br/>各 16 bin"]
+    C2 --> CO["分类：nc 个 logits"]
+    classDef acc fill:#eef4ff,stroke:#7c9fdc,color:#1f2937
+    class BO,CO acc

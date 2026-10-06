@@ -1,10 +1,8 @@
 flowchart LR
-    IN["输入<br/>letterbox 后 B×3×640×640"] --> BB["Backbone<br/>Conv 下采样 + C2f 提取特征 + SPPF 扩大感受野"]
-    BB -->|"P3 · stride 8 · 80×80"| NK["Neck<br/>FPN 深层语义→浅层<br/>PAN 浅层定位→深层"]
-    BB -->|"P4 · stride 16 · 40×40"| NK
-    BB -->|"P5 · stride 32 · 20×20"| NK
-    NK -->|"80×80 小目标"| HD["Detect Head<br/>每尺度 分类分支 + 定位分支"]
-    NK -->|"40×40 中目标"| HD
-    NK -->|"20×20 大目标"| HD
-    HD --> TR["训练<br/>TAL 分配 → CIoU + DFL + BCE"]
-    HD --> INF["推理<br/>解码 → conf 过滤 → NMS"]
+    I["输入 640×640"] --> B["Backbone<br/>Conv、C2f、SPPF"]
+    B -->|"P3 P4 P5"| N["Neck<br/>FPN + PAN"]
+    N --> H["Detect Head<br/>分类 + 定位"]
+    H --> T["训练<br/>分配 + 损失"]
+    H --> R["推理<br/>解码 + NMS"]
+    classDef acc fill:#eef4ff,stroke:#7c9fdc,color:#1f2937
+    class B,N,H acc
