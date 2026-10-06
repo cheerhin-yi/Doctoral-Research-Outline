@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "run_id": "P0-BENCH-G-5060TI-SMOKE-20261001-01",
+  "label": "VisDrone-compatible evaluator on Ultralytics-mirror test-dev local GT (not official leaderboard AP)",
+  "evaluator": "diagnose_bt1.prepare_gt+match_gt (VisDrone-compatible; not official server)",
+  "n_images": 3,
+  "conf": 0.25,
+  "iou": 0.5,
+  "small_def": "0<w*h<1024 original image space; score>0 GT",
+  "weight_sha256": "bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533",
+  "zip_sha256": "b28a94b06dfd9e36ce77ff8155fb82b9d2c030f198a76105933bd56c6ea6a68d",
+  "methods": {
+    "F640": {
+      "tp": 92,
+      "fp": 28,
+      "precision": 0.7666666666666667,
+      "small_gt": 82,
+      "small_tp": 26,
+      "small_recall": 0.3170731707317073,
+      "n_images": 3,
+      "mean_ms": 19.874633333529346
+    },
+    "F1280": {
+      "tp": 114,
+      "fp": 45,
+      "precision": 0.7169811320754716,
+      "small_gt": 82,
+      "small_tp": 47,
+      "small_recall": 0.573170731707317,
+      "n_images": 3,
+      "mean_ms": 35.13423333060928
+    },
+    "DensK1": {
+      "tp": 123,
+      "fp": 50,
+      "precision": 0.7109826589595376,
+      "small_gt": 82,
+      "small_tp": 56,
+      "small_recall": 0.6829268292682927,
+      "n_images": 3,
+      "mean_ms": 41.666666666666664
+    },
+    "UnifAll": {
+      "tp": 125,
+      "fp": 94,
+      "precision": 0.5707762557077626,
+      "small_gt": 82,
+      "small_tp": 59,
+      "small_recall": 0.7195121951219512,
+      "n_images": 3,
+      "mean_ms": 144.55676666693762
+    },
+    "SAHI640": {
+      "tp": 93,
+      "fp": 96,
+      "precision": 0.49206349206349204,
+      "small_gt": 82,
+      "small_tp": 33,
+      "small_recall": 0.4024390243902439,
+      "n_images": 3,
+      "mean_ms": 521.9268000024991
+    }
+  },
+  "wall_seconds": 6.511347099993145,
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "python": "3.10.22 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:15:38) [MSC v.1942 64 bit (AMD64)]"
+}

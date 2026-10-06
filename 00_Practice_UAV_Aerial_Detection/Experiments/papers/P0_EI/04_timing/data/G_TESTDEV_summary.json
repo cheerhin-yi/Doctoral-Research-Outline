@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "run_id": "P0-BENCH-G-5060TI-TESTDEV-20261001-01",
+  "label": "VisDrone-compatible evaluator on Ultralytics-mirror test-dev local GT (not official leaderboard AP)",
+  "evaluator": "diagnose_bt1.prepare_gt+match_gt (VisDrone-compatible; not official server)",
+  "n_images": 1610,
+  "conf": 0.25,
+  "iou": 0.5,
+  "small_def": "0<w*h<1024 original image space; score>0 GT",
+  "weight_sha256": "bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533",
+  "zip_sha256": "b28a94b06dfd9e36ce77ff8155fb82b9d2c030f198a76105933bd56c6ea6a68d",
+  "methods": {
+    "F640": {
+      "tp": 28346,
+      "fp": 13910,
+      "precision": 0.6708159787959106,
+      "small_gt": 50431,
+      "small_tp": 12040,
+      "small_recall": 0.23874204358430332,
+      "n_images": 1610,
+      "mean_ms": 19.84732335386183
+    },
+    "F1280": {
+      "tp": 37768,
+      "fp": 18152,
+      "precision": 0.6753934191702432,
+      "small_gt": 50431,
+      "small_tp": 20195,
+      "small_recall": 0.40044813705855525,
+      "n_images": 1610,
+      "mean_ms": 26.247204782698674
+    },
+    "DensK1": {
+      "tp": 35662,
+      "fp": 23077,
+      "precision": 0.6071264406952791,
+      "small_gt": 50431,
+      "small_tp": 18133,
+      "small_recall": 0.3595605877337352,
+      "n_images": 1610,
+      "mean_ms": 40.256946087120355
+    },
+    "UnifAll": {
+      "tp": 41695,
+      "fp": 39698,
+      "precision": 0.5122676397233177,
+      "small_gt": 50431,
+      "small_tp": 22744,
+      "small_recall": 0.4509924451230394,
+      "n_images": 1610,
+      "mean_ms": 136.59139018630904
+    },
+    "SAHI640": {
+      "tp": 26086,
+      "fp": 46639,
+      "precision": 0.3586937091784118,
+      "small_gt": 50431,
+      "small_tp": 11020,
+      "small_recall": 0.2185163887291547,
+      "n_images": 1610,
+      "mean_ms": 507.0963135403646
+    }
+  },
+  "wall_seconds": 1405.861081199997,
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "python": "3.10.22 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:15:38) [MSC v.1942 64 bit (AMD64)]"
+}

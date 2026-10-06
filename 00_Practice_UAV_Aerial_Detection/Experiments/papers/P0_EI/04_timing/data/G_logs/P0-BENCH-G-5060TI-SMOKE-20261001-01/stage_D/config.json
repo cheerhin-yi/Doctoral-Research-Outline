@@ -1,0 +1,63 @@
+{
+  "run_id": "P0-BENCH-G-5060TI-SMOKE-20261001-01",
+  "stage": "D",
+  "started_local": "2026-10-06T16:24:55+08:00",
+  "python": "F:\\Conda\\envs\\UAV_BT2\\python.exe",
+  "python_version": "3.10.22",
+  "expected_python": "F:\\Conda\\envs\\UAV_BT2\\python.exe",
+  "torch": "2.7.1+cu128",
+  "cuda_runtime": "12.8",
+  "cudnn": 90701,
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "gpu_capability": [
+    12,
+    0
+  ],
+  "weight": "D:\\Doctoral-Research-Outline\\11_Datasets\\processed\\VisDrone\\BT1\\BT1-LOCAL-20260913-01\\train\\weights\\last.pt",
+  "weight_sha256": "bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533",
+  "weight_sha256_expected": "bc42d54e37acaf1f698af487439dc222fa86fb4498623e8cf954df14e0aa5533",
+  "frozen_scripts": {
+    "00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_b/run_stage_b_timing.py": {
+      "sha256_lf": "f00ac0c35240dd799a78fef96eb53681b4b3f5eee5dea62d7ecc61b1913c9983",
+      "git_blob": "5ae22d608e0c9eca2949e75be14f90ea896eb209"
+    },
+    "00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_d/run_stage_d_oneshot.py": {
+      "sha256_lf": "ec55719d57f9fccee4da97f24fe1b4dd3534aa3729a9f52e8dadd8d42173ae5a",
+      "git_blob": "6bf296a0f0b631311c55119512a7c4ae49d1dc6f"
+    },
+    "00_Practice_UAV_Aerial_Detection/Experiments/diagnose_bt1.py": {
+      "sha256_lf": "53bedab8aa7cba7eac915968d761201c6cb4946e585433c3e7c4ccc89a16267d",
+      "git_blob": "c739849aae34b9ef775ab8dc2036ce0f89e4a16a"
+    }
+  },
+  "git_head": "e4f6375d9c1d7e329dd28bb003cf49efe3be2862",
+  "nvidia_smi_gpu": "name, uuid, driver_version, utilization.gpu [%], memory.used [MiB], memory.total [MiB], temperature.gpu, pstate, clocks.current.sm [MHz], clocks.current.memory [MHz], power.draw [W], power.limit [W]\nNVIDIA GeForce RTX 5060 Ti, GPU-1d6d4cde-f073-217b-3867-015abdbd5478, 591.86, 0 %, 2972 MiB, 16311 MiB, 35, P3, 360 MHz, 7001 MHz, 10.60 W, 180.00 W",
+  "nvidia_smi_compute_apps": "pid, process_name, used_gpu_memory [MiB]\n14780, [Insufficient Permissions], [N/A]\n3684, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\CrossDeviceResume.exe, [N/A]\n2780, C:\\Windows\\SystemApps\\Microsoft.LockApp_cw5n1h2txyewy\\LockApp.exe, [N/A]\n12820, C:\\Program Files\\LGHUB\\system_tray\\lghub_system_tray.exe, [N/A]\n10484, C:\\Program Files\\WindowsApps\\28017CharlesMilette.TranslucentTB_2026.2.0.0_x64__v826wp6bftszj\\TranslucentTB.exe, [N/A]\n16664, E:\\Snipaste-2.11.3-x64\\Snipaste.exe, [N/A]\n18656, [Insufficient Permissions], [N/A]\n3824, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\154.0.4258.53\\msedgewebview2.exe, [N/A]\n20032, C:\\Windows\\System32\\ApplicationFrameHost.exe, [N/A]\n10560, C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe, [N/A]\n12844, C:\\Windows\\System32\\ShellHost.exe, [N/A]\n10084, C:\\Program Files\\TeleAgent\\TeleAgent.exe, [N/A]\n8696, E:\\Grok Bot\\Grok Bot.exe, [N/A]\n11768, E:\\Grok Bot\\Grok Bot.exe, [N/A]\n17288, G:\\Zotero\\zotero.exe, [N/A]\n2656, G:\\Zotero\\zotero.exe, [N/A]\n6192, G:\\Zotero\\zotero.exe, [N/A]\n19932, E:\\Obsidian\\Obsidian.exe, [N/A]\n7252, C:\\Windows\\explorer.exe, [N/A]\n15952, C:\\Windows\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe, [N/A]\n8312, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe, [N/A]\n7732, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe, [N/A]\n14684, C:\\Windows\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe, [N/A]\n13688, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\154.0.4258.53\\msedgewebview2.exe, [N/A]\n8128, C:\\Windows\\explorer.exe, [N/A]\n17116, [Insufficient Permissions], [N/A]\n13240, E:\\Weixin\\Weixin.exe, [N/A]\n12700, C:\\Users\\ChHao\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\WeChatAppEx.exe, [N/A]\n19336, E:\\Weixin\\Weixin.exe, [N/A]",
+  "packages": {
+    "numpy": "2.2.6",
+    "ultralytics": "8.4.90",
+    "sahi": "0.11.32",
+    "opencv": "5.0.0",
+    "scipy": "1.15.3"
+  },
+  "checks": {
+    "python_is_UAV_BT2": true,
+    "cuda_available": true,
+    "gpu_is_5060ti": true,
+    "weight_sha_matches_lock": true,
+    "ultralytics_8.4.90": true
+  },
+  "child_cmd": [
+    "F:\\Conda\\envs\\UAV_BT2\\python.exe",
+    "-u",
+    "D:\\Doctoral-Research-Outline\\00_Practice_UAV_Aerial_Detection\\Experiments\\P0_Benchmark\\stage_d\\run_stage_d_oneshot.py",
+    "--run-id",
+    "P0-BENCH-G-5060TI-SMOKE-20261001-01",
+    "--max-images",
+    "3",
+    "--skip-extract"
+  ],
+  "child_output_dir": "00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_d/P0-BENCH-G-5060TI-SMOKE-20261001-01",
+  "note": "SMOKE: 3 test-dev images, all 5 methods, one-shot"
+}

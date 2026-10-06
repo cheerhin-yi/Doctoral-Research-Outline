@@ -1,0 +1,223 @@
+{
+  "mode": "cal48",
+  "run_id": "P0-BENCH-G-5060TI-CAL48-20261001-01",
+  "reference": "C_cal48_metrics.csv + B_TIMING_timings.csv (rep0 n_dets), GTX 1660 SUPER / UAV_BT1",
+  "n_pairs_compared": 240,
+  "missing_pairs": [],
+  "per_method": {
+    "F640": {
+      "pairs": 48,
+      "pairs_with_any_diff": 4,
+      "totals_5060ti": {
+        "n_dets": 2165,
+        "tp": 1491,
+        "fp": 575,
+        "ignored": 0,
+        "small_gt": 2720,
+        "small_tp": 839
+      },
+      "totals_1660": {
+        "n_dets": 2167,
+        "tp": 1492,
+        "fp": 576,
+        "ignored": 0,
+        "small_gt": 2720,
+        "small_tp": 840
+      },
+      "delta_totals": {
+        "n_dets": -2,
+        "tp": -1,
+        "fp": -1,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": -1
+      },
+      "abs_diff_sum": {
+        "n_dets": 4,
+        "tp": 1,
+        "fp": 3,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 1
+      },
+      "small_recall_5060ti": 0.3084558823529412,
+      "small_recall_1660": 0.3088235294117647
+    },
+    "F1280": {
+      "pairs": 48,
+      "pairs_with_any_diff": 2,
+      "totals_5060ti": {
+        "n_dets": 3058,
+        "tp": 2011,
+        "fp": 839,
+        "ignored": 0,
+        "small_gt": 2720,
+        "small_tp": 1313
+      },
+      "totals_1660": {
+        "n_dets": 3057,
+        "tp": 2010,
+        "fp": 839,
+        "ignored": 0,
+        "small_gt": 2720,
+        "small_tp": 1312
+      },
+      "delta_totals": {
+        "n_dets": 1,
+        "tp": 1,
+        "fp": 0,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 1
+      },
+      "abs_diff_sum": {
+        "n_dets": 1,
+        "tp": 1,
+        "fp": 2,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 1
+      },
+      "small_recall_5060ti": 0.4827205882352941,
+      "small_recall_1660": 0.4823529411764706
+    },
+    "DensK1": {
+      "pairs": 48,
+      "pairs_with_any_diff": 5,
+      "totals_5060ti": {
+        "n_dets": 3151,
+        "tp": 1858,
+        "fp": 1049,
+        "ignored": 0,
+        "small_gt": 2720,
+        "small_tp": 1173
+      },
+      "totals_1660": {
+        "n_dets": 3151,
+        "tp": 1857,
+        "fp": 1051,
+        "ignored": 0,
+        "small_gt": 2720,
+        "small_tp": 1172
+      },
+      "delta_totals": {
+        "n_dets": 0,
+        "tp": 1,
+        "fp": -2,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 1
+      },
+      "abs_diff_sum": {
+        "n_dets": 4,
+        "tp": 1,
+        "fp": 4,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 1
+      },
+      "small_recall_5060ti": 0.43125,
+      "small_recall_1660": 0.4308823529411765
+    },
+    "UnifAll": {
+      "pairs": 48,
+      "pairs_with_any_diff": 6,
+      "totals_5060ti": {
+        "n_dets": 4026,
+        "tp": 2109,
+        "fp": 1571,
+        "ignored": 0,
+        "small_gt": 2720,
+        "small_tp": 1366
+      },
+      "totals_1660": {
+        "n_dets": 4027,
+        "tp": 2110,
+        "fp": 1572,
+        "ignored": 0,
+        "small_gt": 2720,
+        "small_tp": 1367
+      },
+      "delta_totals": {
+        "n_dets": -1,
+        "tp": -1,
+        "fp": -1,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": -1
+      },
+      "abs_diff_sum": {
+        "n_dets": 5,
+        "tp": 1,
+        "fp": 5,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 1
+      },
+      "small_recall_5060ti": 0.5022058823529412,
+      "small_recall_1660": 0.5025735294117647
+    },
+    "SAHI640": {
+      "pairs": 48,
+      "pairs_with_any_diff": 5,
+      "totals_5060ti": {
+        "n_dets": 3554,
+        "tp": 1345,
+        "fp": 1930,
+        "ignored": 0,
+        "small_gt": 2720,
+        "small_tp": 749
+      },
+      "totals_1660": {
+        "n_dets": 3553,
+        "tp": 1345,
+        "fp": 1928,
+        "ignored": 0,
+        "small_gt": 2720,
+        "small_tp": 749
+      },
+      "delta_totals": {
+        "n_dets": 1,
+        "tp": 0,
+        "fp": 2,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 0
+      },
+      "abs_diff_sum": {
+        "n_dets": 5,
+        "tp": 0,
+        "fp": 4,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 0
+      },
+      "small_recall_5060ti": 0.27536764705882355,
+      "small_recall_1660": 0.27536764705882355
+    }
+  },
+  "within_run_rep_identical": {},
+  "timings_rep_flags": {
+    "F640": {
+      "rows": 96,
+      "inconsistent": 0
+    },
+    "F1280": {
+      "rows": 96,
+      "inconsistent": 0
+    },
+    "DensK1": {
+      "rows": 96,
+      "inconsistent": 0
+    },
+    "UnifAll": {
+      "rows": 96,
+      "inconsistent": 0
+    },
+    "SAHI640": {
+      "rows": 96,
+      "inconsistent": 0
+    }
+  },
+  "pairs_with_any_diff": 22
+}

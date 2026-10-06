@@ -1,0 +1,201 @@
+{
+  "mode": "testdev",
+  "run_id": "P0-BENCH-G-5060TI-TESTDEV-20261001-01",
+  "reference": "D_TESTDEV_per_image_metrics.csv, GTX 1660 SUPER / UAV_BT1",
+  "n_pairs_compared": 8050,
+  "missing_pairs_count": 0,
+  "missing_pairs_sample": [],
+  "per_method": {
+    "F640": {
+      "pairs": 1610,
+      "pairs_with_any_diff": 49,
+      "totals_5060ti": {
+        "n_dets": 43010,
+        "tp": 28346,
+        "fp": 13910,
+        "ignored": 0,
+        "small_gt": 50431,
+        "small_tp": 12040
+      },
+      "totals_1660": {
+        "n_dets": 43011,
+        "tp": 28346,
+        "fp": 13911,
+        "ignored": 0,
+        "small_gt": 50431,
+        "small_tp": 12042
+      },
+      "delta_totals": {
+        "n_dets": -1,
+        "tp": 0,
+        "fp": -1,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": -2
+      },
+      "abs_diff_sum": {
+        "n_dets": 43,
+        "tp": 18,
+        "fp": 35,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 12
+      },
+      "small_recall_5060ti": 0.23874204358430332,
+      "small_recall_1660": 0.2387817017310781
+    },
+    "F1280": {
+      "pairs": 1610,
+      "pairs_with_any_diff": 71,
+      "totals_5060ti": {
+        "n_dets": 58043,
+        "tp": 37768,
+        "fp": 18152,
+        "ignored": 0,
+        "small_gt": 50431,
+        "small_tp": 20195
+      },
+      "totals_1660": {
+        "n_dets": 58047,
+        "tp": 37767,
+        "fp": 18160,
+        "ignored": 0,
+        "small_gt": 50431,
+        "small_tp": 20194
+      },
+      "delta_totals": {
+        "n_dets": -4,
+        "tp": 1,
+        "fp": -8,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 1
+      },
+      "abs_diff_sum": {
+        "n_dets": 68,
+        "tp": 21,
+        "fp": 58,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 15
+      },
+      "small_recall_5060ti": 0.40044813705855525,
+      "small_recall_1660": 0.4004283079851679
+    },
+    "DensK1": {
+      "pairs": 1610,
+      "pairs_with_any_diff": 74,
+      "totals_5060ti": {
+        "n_dets": 60687,
+        "tp": 35662,
+        "fp": 23077,
+        "ignored": 0,
+        "small_gt": 50431,
+        "small_tp": 18133
+      },
+      "totals_1660": {
+        "n_dets": 60685,
+        "tp": 35662,
+        "fp": 23075,
+        "ignored": 0,
+        "small_gt": 50431,
+        "small_tp": 18133
+      },
+      "delta_totals": {
+        "n_dets": 2,
+        "tp": 0,
+        "fp": 2,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 0
+      },
+      "abs_diff_sum": {
+        "n_dets": 72,
+        "tp": 18,
+        "fp": 60,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 14
+      },
+      "small_recall_5060ti": 0.3595605877337352,
+      "small_recall_1660": 0.3595605877337352
+    },
+    "UnifAll": {
+      "pairs": 1610,
+      "pairs_with_any_diff": 147,
+      "totals_5060ti": {
+        "n_dets": 84686,
+        "tp": 41695,
+        "fp": 39698,
+        "ignored": 0,
+        "small_gt": 50431,
+        "small_tp": 22744
+      },
+      "totals_1660": {
+        "n_dets": 84691,
+        "tp": 41705,
+        "fp": 39695,
+        "ignored": 0,
+        "small_gt": 50431,
+        "small_tp": 22751
+      },
+      "delta_totals": {
+        "n_dets": -5,
+        "tp": -10,
+        "fp": 3,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": -7
+      },
+      "abs_diff_sum": {
+        "n_dets": 143,
+        "tp": 32,
+        "fp": 123,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 25
+      },
+      "small_recall_5060ti": 0.4509924451230394,
+      "small_recall_1660": 0.4511312486367512
+    },
+    "SAHI640": {
+      "pairs": 1610,
+      "pairs_with_any_diff": 156,
+      "totals_5060ti": {
+        "n_dets": 75424,
+        "tp": 26086,
+        "fp": 46639,
+        "ignored": 0,
+        "small_gt": 50431,
+        "small_tp": 11020
+      },
+      "totals_1660": {
+        "n_dets": 75415,
+        "tp": 26086,
+        "fp": 46632,
+        "ignored": 0,
+        "small_gt": 50431,
+        "small_tp": 11016
+      },
+      "delta_totals": {
+        "n_dets": 9,
+        "tp": 0,
+        "fp": 7,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 4
+      },
+      "abs_diff_sum": {
+        "n_dets": 121,
+        "tp": 62,
+        "fp": 137,
+        "ignored": 0,
+        "small_gt": 0,
+        "small_tp": 36
+      },
+      "small_recall_5060ti": 0.2185163887291547,
+      "small_recall_1660": 0.2184370724356051
+    }
+  },
+  "pairs_with_any_diff": 497
+}

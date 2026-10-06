@@ -42,7 +42,7 @@
 | **P0-EI-C2** | 选区／覆盖协议只移动召回–精度–时延权衡，没有跨数据集通用的最优协议：VisDrone 上 UnifAll small recall 最高（0.4511，比 F1280 高 0.0507），但时延约 3.3×（112.2 vs 33.7 ms）且精度下降（0.5123 vs 0.6753）；本冻结设置下 SAHI640 在两集上均被 F1280 支配；UAVDT 上排序改为 F1280 > UnifAll > DensK1 > SAHI640 > F640。 | D／F 同上；`P0-BENCH-E-UAVDT-20260918-FULL` → `03_cross_uavdt/data/E_FULL_summary.json` |
 | P0-A-C1／P0-A-C2 | 旧区域机制主张 | **HOLD**，不指导本稿 |
 
-**适用范围：** ① 时延仅来自 GTX 1660 SUPER（5060 Ti Run G 未跑，将单列）；② 指标是本项目匹配器的 precision／small recall，不是 AP；③ 单一冻结权重；④ 配对检验只覆盖 VisDrone test-dev，UAVDT 只有聚合值。
+**适用范围：** ① 上表 C1 时延仅来自 GTX 1660 SUPER；5060 Ti Run G 已跑（2026-10-06），单列于 `04_timing/Timing_5060Ti_Table.md`，在 5060 Ti 上 F1280 显著快于 DensK1（见 §6.1）；② 指标是本项目匹配器的 precision／small recall，不是 AP；③ 单一冻结权重；④ 配对检验只覆盖 VisDrone test-dev，UAVDT 只有聚合值。
 
 **修订记录：** 2026-09-27 由"整图 1280 比密度单片更准且更快""区域分配存在可恢复空间，但不等于可部署增益"改为上表措辞；旧 BTD8／BTD1–BTD11 依据退出主张（Git 历史保留）。主张全文与证据细节见 `PR/Research_Plan.md` §3。
 
@@ -92,7 +92,7 @@
 | Stage E UAVDT 外推 | DONE／PASS · `P0-BENCH-E-UAVDT-20260918-FULL` | `P0_EI/03_cross_uavdt/` |
 | Stage F 图级配对 | PASS · `P0-BENCH-F-TESTDEV-20260917-01` | `P0_EI/02_paired_stats/` |
 | EI 包装（近邻表／失败例／复现附录／图 1–5） | **已填** | `P0_EI/05_packaging/` |
-| 5060 Ti 正式时序 | **缺**（`Timing_5060Ti_Table.md` pending；Run G 尚未跑） | `PR/Research_Plan.md` §4 |
+| 5060 Ti 正式时序 | **已完成（2026-10-06）**：`Timing_5060Ti_Table.md`（Run G 全部 PASS） | `P0_EI/04_timing/Timing_5060Ti_Table.md` |
 | 稿件正文／PDF | **缺**：`PR/` 下没有 `.tex`／`.pdf`／`.docx`，只有提纲 `PR/Writing/P0_EI_Outline.md` | 本文扫描 |
 | 学习侧（Part B 等） | 由用户自己完成；不是实验执行门 | — |
 
@@ -134,7 +134,7 @@
 |---|---|---|
 | 精度与流水线计时（B／C／D／E） | **NVIDIA GeForce GTX 1660 SUPER ×1**，6144 MiB，驱动 591.86，功耗上限 125 W，UUID `GPU-43b14c17-…` | `P0_EI/00_freeze/gpu_snapshot.txt` |
 | Stage B 峰值显存 | 159038464 bytes（约 151.7 MiB） | `P0_EI/04_timing/data/B_TIMING_summary.json` |
-| 正式时序 | **RTX 5060 Ti 16GB：尚未跑**。Run ID 已登记：`P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01`（UAVDT 可选） | `PR/Research_Plan.md` §4 |
+| 正式时序 | **RTX 5060 Ti 16GB**（UUID `GPU-1d6d4cde-…`，驱动 591.86，环境 UAV_BT2）：Run G `P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01` + `P0-BENCH-G-5060TI-PAIRED-20261006-01` 已跑（2026-10-06，PASS）；峰值显存 209082368 bytes（约 199.4 MiB） | `P0_EI/04_timing/Timing_5060Ti_Table.md` |
 | 纪律 | 1660 数字只算 pipeline validation；正文时序表只用 5060 Ti；**两者不能进同一张表** | `Current_Stage.md`、`Environment_Freeze.md` |
 
 ### 2.4 数据集
@@ -467,8 +467,21 @@
 
 ### 6.1 5060 Ti 正式时序（必须单列）
 
-- 待跑：`P0-BENCH-G-5060TI-SMOKE-20261001-01` → `…-CAL48-…` → `…-TESTDEV-…`（UAVDT 可选）。
-- 结果**只写进** `P0_EI/04_timing/` 下独立的 `Timing_5060Ti_Table.md`（目前 pending），**不能和 1660 合并成一行或一张表**。正文时序只用 5060 Ti；D／E 精度表保持不变；1660 标注为 pipeline validation。
+- **已完成（2026-10-06，RTX 5060 Ti 16GB + `F:\Conda\envs\UAV_BT2`）：** `P0-BENCH-G-5060TI-SMOKE-20261001-01`（PASS）→ `…-CAL48-…`（PASS，精度一致性闸门通过）→ `…-TESTDEV-…`（PASS）→ 配对检验 `P0-BENCH-G-5060TI-PAIRED-20261006-01`（PASS）。UAVDT 时序可选，未跑。
+- 结果**只写进** `P0_EI/04_timing/Timing_5060Ti_Table.md`，**不和 1660 合并成一行或一张表**（该页 §6 有逐列标明 GPU／环境的“仅供参考”并排节）。D／E 精度表保持不变；1660 标注为 pipeline validation。
+
+**表 G（摘录）　RTX 5060 Ti／UAV_BT2 时延（ms）** — 来源 `P0_EI/04_timing/data/G_TIMING_stats.json`
+
+| 协议 | cal48 mean（n=144） | cal48 median | cal48 p90 | test-dev mean（n=1610，one-shot） | test-dev median | test-dev p90 | test-dev 相对 F640（mean 比） |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| F640 | 19.91 | 19.11 | 22.65 | 19.85 | 18.68 | 24.01 | 1.00× |
+| F1280 | 27.43 | 26.57 | 30.55 | 26.25 | 25.03 | 31.15 | 1.32× |
+| DensK1 | 40.12 | 39.22 | 44.74 | 40.26 | 38.35 | 47.31 | 2.03× |
+| UnifAll | 114.48 | 126.95 | 148.14 | 136.59 | 131.44 | 166.04 | 6.88× |
+| SAHI640 | 427.50 | 466.90 | 618.29 | 507.10 | 498.16 | 646.22 | 25.55× |
+
+- **精度一致性：** 与 1660 冻结记录逐图对比，cal48 各方法 |Δsmall_tp| ≤ 1／2720，test-dev ≤ 7／50431（≤ 0.014 个百分点）；只有贴近阈值的个别框不同（GPU 架构／CUDA 12.8／库版本的浮点差异）。C1-a、C2 的精度数字不受影响。
+- **配对时延（5060 Ti）：** F1280 vs DensK1 逐图中位差 −13.32 ms，均值差 −14.01 ms（bootstrap CI [−14.22, −13.80]），F1280 在 1607／1610 张图上更快，Wilcoxon p≈3.6e-264。**1660 上“统计上不可区分”（p = 0.235）在 5060 Ti 上不成立。** 运行中 GPU 平均利用率约 11%，提示该流水线在本机主要受主机端开销限制（每次 640 前向约 19 ms，1280 前向约 27 ms），因此两次 640 前向（DensK1）比一次 1280 前向慢。
 
 ### 6.2 稿件／PDF
 
@@ -490,7 +503,7 @@
 
 ### 6.5 下一步可检查事项（按优先级）
 
-1. 在本机 RTX 5060 Ti 16GB 上按 Run G 跑正式时序（计划中，未跑；计时环境已定：`F:\Conda\envs\UAV_BT2`（2026-10-06 用户决定采用；Python 3.10.22，torch 2.7.1+cu128，ultralytics 8.4.90 与冻结运行同一 pinned zip；冻结环境 UAV_BT1 的 cu126 不支持 5060 Ti 的 sm_120，且已随 H: 盘丢失）；快照与差异见 `00_freeze/Environment_Delta_UAV_BT2_vs_UAV_BT1.md`；权重／协议／评价器不变） → 写 `Timing_5060Ti_Table.md`（单列）。
+1. ~~在本机 RTX 5060 Ti 16GB 上按 Run G 跑正式时序~~ **已完成（2026-10-06）**：`Timing_5060Ti_Table.md` 已写（单列）。test-dev 均值 F640 19.85／F1280 26.25／DensK1 40.26／UnifAll 136.59／SAHI640 507.10 ms；精度与 1660 一致（|Δsmall recall| ≤ 0.014 个百分点）；5060 Ti 上 F1280 比 DensK1 显著更快（逐图中位差 −13.32 ms，p≈3.6e-264）。**待用户决定：** C1 时延措辞（现为“1660 上统计不可区分”）是否改为分 GPU 表述；C1 的“更准”部分不变。
 2. 按提纲与第一节 C1／C2 终稿措辞写正文（Intro／Protocols & Evaluation／Results／Failure & Boundaries）。
 3. 选定会期并写入 Current_Stage（由用户操作）。
 4. 可选：Stage E 配对统计（只做分析）。

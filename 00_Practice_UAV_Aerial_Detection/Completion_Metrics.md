@@ -65,4 +65,4 @@
 ## 与实验阶段
 
 学习关卡**不替代**实验门；实验是否启动只写在 `Current_Stage`。  
-P0 Benchmark A–F 已 PASS，EI 包装已完成；5060 Ti 时序未跑。已有 BT／BTD 默认不重跑。
+P0 Benchmark A–F 已 PASS，EI 包装已完成；Run G 5060 Ti 正式时序已完成（2026-10-06；SMOKE／CAL48／TESTDEV／PAIRED 全部 PASS；test-dev 均值 F640 19.85／F1280 26.25／DensK1 40.26／UnifAll 136.59／SAHI640 507.10 ms；5060 Ti 上 F1280 显著快于 DensK1，p≈3.6e-264；见 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`）。已有 BT／BTD 默认不重跑。

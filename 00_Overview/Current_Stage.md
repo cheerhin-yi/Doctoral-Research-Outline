@@ -1,6 +1,6 @@
 # 当前阶段（唯一入口）
 
-更新：2026-10-01（Asia/Shanghai；本机 GPU 换为 RTX 5060 Ti 16GB，Run G 正式时序由 4090 改为 5060 Ti，计划中未跑）。ACTIVE 不变：**P0_EI**。总览清理见 [`Cleanup_2026-09-29.md`](Cleanup_2026-09-29.md)，不改变下面的唯一事项。
+更新：2026-10-06（Asia/Shanghai；Run G 5060 Ti 正式时序已跑完，SMOKE／CAL48／TESTDEV／PAIRED 全部 PASS；2026-10-01 本机 GPU 换为 RTX 5060 Ti 16GB）。ACTIVE 不变：**P0_EI**。总览清理见 [`Cleanup_2026-09-29.md`](Cleanup_2026-09-29.md)，不改变下面的唯一事项。
 
 本文件是全项目**唯一当前事项入口**。研究问题、实验设置与 C1／C2 主张全文见 [`Research_Plan.md`](../00_Practice_UAV_Aerial_Detection/Research_Plan.md)；近中远边界见 [`Mainline_A_Current.md`](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md)。
 
@@ -16,7 +16,7 @@
 
 ## 当前唯一事项
 
-**Stage A–F 全部 PASS；EI 包装（近邻协议对标表＋失败／边界例＋可复现附录＋图 1–5）已完成；C1／C2 已按 Stage B–F 结果改为终稿措辞（2026-09-27）。下一步：① 5060 Ti 正式时序（Run G，结果单独写 `Timing_5060Ti_Table.md`，不与 1660 合并）；② 稿件正文（按 `Writing/P0_EI_Outline.md`）。叙事保持「冻结权重上的推理协议对比」，不新训、不改映射、不开 Paper 2–7。**
+**Stage A–F 全部 PASS；EI 包装（近邻协议对标表＋失败／边界例＋可复现附录＋图 1–5）已完成；C1／C2 已按 Stage B–F 结果改为终稿措辞（2026-09-27）。Run G 5060 Ti 正式时序已完成（2026-10-06，单列于 `Timing_5060Ti_Table.md`，不与 1660 合并）。下一步：① 决定 C1 时延表述（5060 Ti 上 F1280 显著快于 DensK1，1660 上不可区分；待用户定稿）；② 稿件正文（按 `Writing/P0_EI_Outline.md`）。叙事保持「冻结权重上的推理协议对比」，不新训、不改映射、不开 Paper 2–7。**
 
 T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本地冻结权重未被改写。Paper 2–7 仍 **PAUSED**；机制主张 P0-A-* 仍 **HOLD**。
 
@@ -34,7 +34,7 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 | F 图级配对统计 | `P0-BENCH-F-TESTDEV-20260917-01` | **PASS** |
 | EI 包装 | — | **DONE** |
 | C1／C2 主张措辞 | — | **FINAL**（2026-09-27） |
-| G 5060 Ti 正式时序 | `P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01` | **未跑**；结果单列 |
+| G 5060 Ti 正式时序 | `P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01` + `P0-BENCH-G-5060TI-PAIRED-20261006-01` | **PASS**（2026-10-06）；结果单列 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md` |
 | 稿件正文 | — | **未开始** |
 
 ### 冻结权重（未改）
@@ -62,7 +62,7 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 
 ## 下一步
 
-1. **5060 Ti 正式时序表：** 按 Run G（`P0-BENCH-G-5060TI-SMOKE/CAL48/TESTDEV-20261001-01`，UAVDT 可选）在本机 RTX 5060 Ti 16GB 上跑（计划中，未跑；计时环境已定：`F:\Conda\envs\UAV_BT2`（2026-10-06 用户决定采用；Python 3.10.22，torch 2.7.1+cu128，ultralytics 8.4.90 与冻结运行同一 pinned zip；冻结环境 UAV_BT1 的 cu126 不支持 5060 Ti 的 sm_120，且已随 H: 盘丢失）；快照与差异见 `00_freeze/Environment_Delta_UAV_BT2_vs_UAV_BT1.md`；权重／协议／评价器不变）；结果单独写 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`，**不与 1660 合并**。
+1. **5060 Ti 正式时序表：** **已完成（2026-10-06）。** Run G（`P0-BENCH-G-5060TI-SMOKE/CAL48/TESTDEV-20261001-01`，配对检验 `P0-BENCH-G-5060TI-PAIRED-20261006-01`）在本机 RTX 5060 Ti 16GB + `F:\Conda\envs\UAV_BT2` 上跑完，四个闸门全部 PASS；结果单列 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`，不与 1660 合并。test-dev one-shot 均值：F640 19.85、F1280 26.25、DensK1 40.26、UnifAll 136.59、SAHI640 507.10 ms；cal48（3 次）均值：19.91／27.43／40.12／114.48／427.50 ms。精度与 1660 冻结记录一致（test-dev 各方法 |Δsmall recall| ≤ 0.014 个百分点）。配对检验：F1280 比 DensK1 快（逐图中位差 −13.32 ms，1607／1610 张更快，p≈3.6e-264），即 C1 中“时延统计上不可区分”只在 1660 上成立；C1 时延措辞如何改由用户决定（C1 的“更准”部分不受影响）。UAVDT 时序可选，未跑。
 2. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草，主张只用 C1／C2 终稿措辞。
 3. **会期：** 选定 2027 年 EI 会期（主跟踪 ICIP 2027 全文）并写入本页。
 4. **不默认：** 同质第三集；新模块／重训。

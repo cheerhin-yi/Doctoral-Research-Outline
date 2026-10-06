@@ -1,0 +1,197 @@
+{
+  "status": "PASS",
+  "run_id": "P0-BENCH-G-5060TI-PAIRED-20261006-01",
+  "source_csv": "00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_d/P0-BENCH-G-5060TI-TESTDEV-20261001-01/per_image_metrics.csv",
+  "gpu": "NVIDIA GeForce RTX 5060 Ti (UAV_BT2)",
+  "unit_of_analysis": "image",
+  "primary_pair": "F1280_vs_DensK1",
+  "method": "frozen stage_f functions: wilcoxon_signed_rank (normal approx, tie+continuity), bootstrap_pair B=10000 seed=20260917, holm on secondary",
+  "wilcoxon_latency_oneshot": {
+    "F1280_vs_DensK1": {
+      "statistic": 597.0,
+      "w_plus": 597.0,
+      "w_minus": 1296258.0,
+      "z": -34.72246959202296,
+      "pvalue": 3.609290378388371e-264,
+      "n_nonzero": 1610,
+      "n_pairs": 1610,
+      "median_diff": -13.317900004039984,
+      "mean_diff": -14.009741304421679,
+      "pair": "F1280_vs_DensK1",
+      "metric": "total_ms_oneshot_5060ti",
+      "n_images": 1610,
+      "pvalue_holm": null
+    },
+    "F640_vs_F1280": {
+      "statistic": 17446.0,
+      "w_plus": 17446.0,
+      "w_minus": 1279409.0,
+      "z": -33.819394899040596,
+      "pvalue": 1.0231021780787729e-250,
+      "n_nonzero": 1610,
+      "n_pairs": 1610,
+      "median_diff": -6.098699988797307,
+      "mean_diff": -6.399881428836842,
+      "pair": "F640_vs_F1280",
+      "metric": "total_ms_oneshot_5060ti",
+      "n_images": 1610,
+      "pvalue_holm": 1.0231021780787729e-250
+    },
+    "F1280_vs_UnifAll": {
+      "statistic": 0.0,
+      "w_plus": 0.0,
+      "w_minus": 1296855.0,
+      "z": -34.75446765049342,
+      "pvalue": 1.186524017453488e-264,
+      "n_nonzero": 1610,
+      "n_pairs": 1610,
+      "median_diff": -105.58305000449764,
+      "mean_diff": -110.34418540361037,
+      "pair": "F1280_vs_UnifAll",
+      "metric": "total_ms_oneshot_5060ti",
+      "n_images": 1610,
+      "pvalue_holm": 5.93262008726744e-264
+    },
+    "F1280_vs_SAHI640": {
+      "statistic": 0.0,
+      "w_plus": 0.0,
+      "w_minus": 1296855.0,
+      "z": -34.754467638013274,
+      "pvalue": 1.1865245325228403e-264,
+      "n_nonzero": 1610,
+      "n_pairs": 1610,
+      "median_diff": -471.4530499986722,
+      "mean_diff": -480.84910875766593,
+      "pair": "F1280_vs_SAHI640",
+      "metric": "total_ms_oneshot_5060ti",
+      "n_images": 1610,
+      "pvalue_holm": 5.93262008726744e-264
+    },
+    "DensK1_vs_UnifAll": {
+      "statistic": 0.0,
+      "w_plus": 0.0,
+      "w_minus": 1296855.0,
+      "z": -34.75446764425334,
+      "pvalue": 1.1865242749884473e-264,
+      "n_nonzero": 1610,
+      "n_pairs": 1610,
+      "median_diff": -92.3474500013981,
+      "mean_diff": -96.33444409918869,
+      "pair": "DensK1_vs_UnifAll",
+      "metric": "total_ms_oneshot_5060ti",
+      "n_images": 1610,
+      "pvalue_holm": 5.93262008726744e-264
+    },
+    "DensK1_vs_SAHI640": {
+      "statistic": 0.0,
+      "w_plus": 0.0,
+      "w_minus": 1296855.0,
+      "z": -34.754467638013274,
+      "pvalue": 1.1865245325228403e-264,
+      "n_nonzero": 1610,
+      "n_pairs": 1610,
+      "median_diff": -458.4007000012207,
+      "mean_diff": -466.8393674532443,
+      "pair": "DensK1_vs_SAHI640",
+      "metric": "total_ms_oneshot_5060ti",
+      "n_images": 1610,
+      "pvalue_holm": 5.93262008726744e-264
+    }
+  },
+  "bootstrap_latency": {
+    "F1280_vs_DensK1": {
+      "n_images": 1610,
+      "mean_ms_a": 26.247204782698674,
+      "mean_ms_b": 40.256946087120355,
+      "delta_mean_ms": -14.009741304421679,
+      "delta_mean_ms_ci95": [
+        -14.224977823148903,
+        -13.795101905164962
+      ]
+    },
+    "F640_vs_F1280": {
+      "n_images": 1610,
+      "mean_ms_a": 19.84732335386183,
+      "mean_ms_b": 26.247204782698674,
+      "delta_mean_ms": -6.399881428836842,
+      "delta_mean_ms_ci95": [
+        -6.569368188683036,
+        -6.226527313869246
+      ]
+    },
+    "F1280_vs_UnifAll": {
+      "n_images": 1610,
+      "mean_ms_a": 26.247204782698674,
+      "mean_ms_b": 136.59139018630904,
+      "delta_mean_ms": -110.34418540361037,
+      "delta_mean_ms_ci95": [
+        -111.43737379175437,
+        -109.28430937135187
+      ]
+    },
+    "F1280_vs_SAHI640": {
+      "n_images": 1610,
+      "mean_ms_a": 26.247204782698674,
+      "mean_ms_b": 507.0963135403646,
+      "delta_mean_ms": -480.84910875766593,
+      "delta_mean_ms_ci95": [
+        -486.1584316023592,
+        -475.4223465157268
+      ]
+    },
+    "DensK1_vs_UnifAll": {
+      "n_images": 1610,
+      "mean_ms_a": 40.256946087120355,
+      "mean_ms_b": 136.59139018630904,
+      "delta_mean_ms": -96.33444409918869,
+      "delta_mean_ms_ci95": [
+        -97.37943304481423,
+        -95.27154949477799
+      ]
+    },
+    "DensK1_vs_SAHI640": {
+      "n_images": 1610,
+      "mean_ms_a": 40.256946087120355,
+      "mean_ms_b": 507.0963135403646,
+      "delta_mean_ms": -466.8393674532443,
+      "delta_mean_ms_ci95": [
+        -472.2204874037247,
+        -461.51732254188477
+      ]
+    }
+  },
+  "reference_1660_F": {
+    "F1280_vs_DensK1": {
+      "pvalue": 0.23522338090741926,
+      "median_diff": 0.2546499963500537,
+      "mean_diff": -0.34044670802974925
+    },
+    "F640_vs_F1280": {
+      "pvalue": 1.1865237599187915e-264,
+      "median_diff": -15.900799997325521,
+      "mean_diff": -16.32260571416324
+    },
+    "F1280_vs_UnifAll": {
+      "pvalue": 1.1865242749884473e-264,
+      "median_diff": -76.97349999216385,
+      "mean_diff": -78.48601086974081
+    },
+    "F1280_vs_SAHI640": {
+      "pvalue": 1.1865245325228403e-264,
+      "median_diff": -342.86455000255955,
+      "mean_diff": -339.5135924223791
+    },
+    "DensK1_vs_UnifAll": {
+      "pvalue": 1.1865245325228403e-264,
+      "median_diff": -76.53315000061411,
+      "mean_diff": -78.14556416171105
+    },
+    "DensK1_vs_SAHI640": {
+      "pvalue": 1.1865245325228403e-264,
+      "median_diff": -342.4495500003104,
+      "mean_diff": -339.17314571434935
+    }
+  },
+  "primary_conclusion": "F1280 vs DensK1 latency significantly different at alpha=0.05 (two-sided)",
+  "wall_seconds": 65.63782630000787
+}

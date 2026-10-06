@@ -65,6 +65,6 @@ Run: `P0-BENCH-E-UAVDT-20260918-FULL` PASS · n=40735 · 冻结 VisDrone→UAVDT
 - D 聚合 / 逐图：`../01_visdrone_main/data/D_TESTDEV_summary.json`、`D_TESTDEV_per_image_metrics.csv`  
 - E 聚合 / 逐图：`../03_cross_uavdt/data/E_FULL_summary.json`、`E_FULL_per_image_metrics.csv`  
 - F 配对：`../02_paired_stats/data/F_summary.json`、`F_bootstrap_deltas.csv`  
-- B 1660 计时（cal48）：`../04_timing/data/B_TIMING_summary.json`（F640~18.6 / F1280~33.2 / DensK1~35.3 / UnifAll~96.4 / SAHI640~317 ms）— **勿与 5060 Ti 混表**；5060 Ti 正式时序 Run G（`P0-BENCH-G-5060TI-*`）尚未跑，结果将单列于 `../04_timing/Timing_5060Ti_Table.md`。
+- B 1660 计时（cal48）：`../04_timing/data/B_TIMING_summary.json`（F640~18.6 / F1280~33.2 / DensK1~35.3 / UnifAll~96.4 / SAHI640~317 ms）— **勿与 5060 Ti 混表**；5060 Ti 正式时序 Run G（`P0-BENCH-G-5060TI-*`）已于 2026-10-06 跑完，结果单列于 `../04_timing/Timing_5060Ti_Table.md`（test-dev 均值 F640 19.85 / F1280 26.25 / DensK1 40.26 / UnifAll 136.59 / SAHI640 507.10 ms，RTX 5060 Ti + UAV_BT2）。
 
 > 修订记录（2026-09-27）：A/B 两表全部行按「后 − 前」由 `D_TESTDEV_summary.json` / `E_FULL_summary.json` 重算。修正：SAHI640 两行原按「前 − 后」填写（符号反）；D DensK1→UnifAll Δsmall_recall +0.0915→+0.0916（舍入）；E F640→F1280 Δprecision −0.0583→−0.0584、Δmean_ms +16.4→+16.3（舍入）；E SAHI640→UnifAll Δprecision 原 −0.0214 在两种符号约定下均不符，重算为 −0.0213（UnifAll 精度低于 SAHI640）。其余单元与 JSON 一致。同日 §C 改为基于 Stage B–F 的 C1／C2 终稿措辞（C1 去掉"更快"；C2 改为选区／覆盖权衡陈述）。

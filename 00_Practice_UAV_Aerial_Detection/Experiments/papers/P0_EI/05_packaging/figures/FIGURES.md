@@ -11,6 +11,7 @@
 | fig3 dual small-recall | `fig3_dual_set_small_recall.png` | 同上 D + E（**禁止 pool**） |
 | fig4 1660 timing | `fig4_timing_1660.png` | `04_timing/data/B_TIMING_summary.json` |
 | fig5 Stage F deltas | `fig5_stageF_deltas.png` | `02_paired_stats/data/F_summary.json` |
+| fig4b 5060 Ti timing（Run G，单列） | `fig4b_timing_5060ti.png` | `04_timing/data/G_TIMING_stats.json`（由 `generate_fig4b_timing_5060ti.py` 生成；UAV_BT2；不覆盖 fig4） |
 
 完整对照表见仓库根目录 [`FILE_CATALOG.md`](../../../../../../FILE_CATALOG.md) §4。
 
