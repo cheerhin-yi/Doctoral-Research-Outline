@@ -10,6 +10,7 @@
 | 研究计划（主张全文） | [`Research_Plan.md`](../00_Practice_UAV_Aerial_Detection/Research_Plan.md) |
 | P0 证据槽 | [`Experiments/papers/P0_EI/`](../00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md)（Run 索引） |
 | 论文概况与实验内容（导读） | [`P0_EI_Paper_Overview_and_Experiments.md`](../00_Practice_UAV_Aerial_Detection/P0_EI_Paper_Overview_and_Experiments.md) |
+| 练手论文完整报告（叙事版，2026-10-06） | [`P0_EI_Full_Report_20261006.md`](../00_Practice_UAV_Aerial_Detection/P0_EI_Full_Report_20261006.md)（背景、时间线、实验构成、全部结果含 Run G–K） |
 | UAVDT（G 盘） | `G:\Schloar Data\P0\UAVDT\`（2026-09-27 核实：50 序列 `*_gt_whole.txt`／40735 帧；Stage E 运行时路径 `G:\Schloar Data\UAVDT\` 已迁移） |
 
 ---
@@ -35,6 +36,7 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 | EI 包装 | — | **DONE** |
 | C1／C2 主张措辞 | — | **FINAL**（2026-09-27） |
 | G 5060 Ti 正式时序 | `P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01` + `P0-BENCH-G-5060TI-PAIRED-20261006-01` | **PASS**（2026-10-06）；结果单列 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md` |
+| H–K CPU-only 补充分析（UAVDT 配对／像素–时延／复现附录与裁图／密度切片） | `P0-BENCH-{H-UAVDT-PAIRED,I-PIXLAT,J-REPRO,K-DENSITY}-20261006-01` | **PASS**（2026-10-06；无新推理、无训练；见 `Experiments/papers/P0_EI/Run_Index.md`） |
 | 稿件正文 | — | **未开始** |
 
 ### 冻结权重（未改）

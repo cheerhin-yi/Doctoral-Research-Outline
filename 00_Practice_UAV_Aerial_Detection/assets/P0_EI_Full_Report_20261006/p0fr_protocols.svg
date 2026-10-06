@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="724" height="474" viewBox="0 0 724 474" style="background-color:white" font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC','Segoe UI',sans-serif" font-size="13">
+<rect x="0" y="0" width="724" height="474" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">五种推理协议在一张 1400×788 VisDrone 图上的视图（几何依据：Run I；附录 §2.1）</text>
+<rect x="8" y="32" width="228" height="206" rx="3" fill="#fafafa" stroke="#d1d5db" stroke-width="1" />
+<text x="18" y="50" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">F640</text>
+<rect x="31.0" y="60" width="182.0" height="102.44" rx="0" fill="#ffffff" stroke="#9ca3af" stroke-width="1" />
+<text x="122.0" y="115.22" font-size="12" fill="#6b7280" text-anchor="middle" font-weight="normal">整图</text>
+<text x="18" y="206" font-size="12" fill="#1f2937" text-anchor="start" font-weight="normal">整图缩到 640²（缩放 0.457）</text>
+<text x="18" y="224" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal">1 次前向</text>
+<rect x="244" y="32" width="228" height="206" rx="3" fill="#fafafa" stroke="#d1d5db" stroke-width="1" />
+<text x="254" y="50" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">F1280</text>
+<rect x="267.0" y="60" width="182.0" height="102.44" rx="0" fill="#ffffff" stroke="#9ca3af" stroke-width="1" />
+<text x="358.0" y="115.22" font-size="12" fill="#6b7280" text-anchor="middle" font-weight="normal">整图</text>
+<text x="254" y="206" font-size="12" fill="#1f2937" text-anchor="start" font-weight="normal">整图缩到 1280²（缩放 0.914）</text>
+<text x="254" y="224" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal">1 次前向</text>
+<rect x="480" y="32" width="228" height="206" rx="3" fill="#fafafa" stroke="#d1d5db" stroke-width="1" />
+<text x="490" y="50" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">DensK1</text>
+<rect x="503.0" y="60" width="182.0" height="102.44" rx="0" fill="#ffffff" stroke="#9ca3af" stroke-width="1" />
+<rect x="601.8" y="60.0" width="83.2" height="83.2" rx="0" fill="#fff7e6" stroke="#d4a24c" stroke-width="1" fill-opacity="0.45"/>
+<text x="594.0" y="175.44" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="normal">+ F640 整图</text>
+<text x="490" y="206" font-size="12" fill="#1f2937" text-anchor="start" font-weight="normal">F640 + 框中心最多的 1 个窗</text>
+<text x="490" y="224" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal">2 次前向；窗：原生分辨率</text>
+<rect x="8" y="246" width="228" height="206" rx="3" fill="#fafafa" stroke="#d1d5db" stroke-width="1" />
+<text x="18" y="264" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">UnifAll</text>
+<rect x="31.0" y="274" width="182.0" height="102.44" rx="0" fill="#ffffff" stroke="#9ca3af" stroke-width="1" />
+<rect x="31.0" y="274.0" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<rect x="97.56" y="274.0" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<rect x="129.8" y="274.0" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<rect x="31.0" y="293.24" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<rect x="97.56" y="293.24" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<rect x="129.8" y="293.24" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<text x="122.0" y="389.44" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="normal">+ F640 整图</text>
+<text x="18" y="420" font-size="12" fill="#1f2937" text-anchor="start" font-weight="normal">F640 + 网格全部 6 窗（步长 512）</text>
+<text x="18" y="438" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal">7 次前向；x∈{0,512,760} y∈{0,148}</text>
+<rect x="244" y="246" width="228" height="206" rx="3" fill="#fafafa" stroke="#d1d5db" stroke-width="1" />
+<text x="254" y="264" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">SAHI640</text>
+<rect x="267.0" y="274" width="182.0" height="102.44" rx="0" fill="#ffffff" stroke="#9ca3af" stroke-width="1" />
+<rect x="267.0" y="274.0" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<rect x="329.4" y="274.0" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<rect x="365.8" y="274.0" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<rect x="267.0" y="293.24" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<rect x="329.4" y="293.24" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<rect x="365.8" y="293.24" width="83.2" height="83.2" rx="0" fill="#eef4ff" stroke="#7c9fdc" stroke-width="1" fill-opacity="0.45"/>
+<text x="358.0" y="389.44" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="normal">+ 整图标准预测（切片数&gt;1 时）</text>
+<text x="254" y="420" font-size="12" fill="#1f2937" text-anchor="start" font-weight="normal">sahi 6 片（步长 480）+ 整图</text>
+<text x="254" y="438" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal">7 次前向；x∈{0,480,760} y∈{0,148}</text>
+<rect x="480" y="246" width="228" height="206" rx="3" fill="#ffffff" stroke="#d1d5db" stroke-width="1" />
+<text x="490" y="266" font-size="12" fill="#1f2937" text-anchor="start" font-weight="normal">共同终处理 finalize：</text>
+<text x="490" y="285" font-size="12" fill="#6b7280" text-anchor="start" font-weight="normal">conf ≥ 0.25 → 类内 NMS</text>
+<text x="490" y="304" font-size="12" fill="#6b7280" text-anchor="start" font-weight="normal">IoU &gt; 0.5 → 最多 500 框</text>
+<text x="490" y="323" font-size="12" fill="#6b7280" text-anchor="start" font-weight="normal"></text>
+<text x="490" y="342" font-size="12" fill="#6b7280" text-anchor="start" font-weight="normal">窗口不足 640 时填灰（114）；</text>
+<text x="490" y="361" font-size="12" fill="#6b7280" text-anchor="start" font-weight="normal">SAHI 片不填充、越界贴边；</text>
+<text x="490" y="380" font-size="12" fill="#1f2937" text-anchor="start" font-weight="normal">SAHI 合并 = GREEDYNMM／IOS 0.5</text>
+<text x="490" y="399" font-size="12" fill="#6b7280" text-anchor="start" font-weight="normal">（元数据写“NMS”为误称）</text>
+</svg>

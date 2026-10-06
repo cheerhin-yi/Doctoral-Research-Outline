@@ -9,6 +9,7 @@
 | [`Research_Plan.md`](Research_Plan.md) | 研究问题、实验设置、**C1／C2 终稿主张与证据**、进度与剩余工作 |
 | [`Mainline_A_Current.md`](Mainline_A_Current.md) | 近／中／远边界、资源与 5060 Ti 用途 |
 | [`P0_EI_Paper_Overview_and_Experiments.md`](P0_EI_Paper_Overview_and_Experiments.md) | 论文概况与 Stage A–F 全部数字（导读，逐项注明来源文件与 Run ID） |
+| [`P0_EI_Full_Report_20261006.md`](P0_EI_Full_Report_20261006.md) | 完整报告（叙事版）：背景、Stage 0／A–K 故事线、实验构成、全部结果（含 Run G–K）、局限、投稿待办、术语表；示意图在 `assets/P0_EI_Full_Report_20261006/` |
 | [`Completion_Metrics.md`](Completion_Metrics.md) · [`Learning_Check_Baseline.md`](Learning_Check_Baseline.md) | 学习完成指标与检查基线 |
 | [`Learning_Notes/`](Learning_Notes/README.md) | 学习笔记与记录模板 |
 | [`Literature/`](Literature/README.md) | 文献主题矩阵 T1–T4、阅读清单与笔记 |

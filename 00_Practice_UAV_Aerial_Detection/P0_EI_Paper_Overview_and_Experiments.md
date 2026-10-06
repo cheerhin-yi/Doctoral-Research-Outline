@@ -4,6 +4,7 @@
 > **效力：** 不改变 [`../00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md) 的唯一 ACTIVE = **P0_EI**；与源文件冲突时以源文件（Current_Stage、各 Stage 报告与 `data/*.json`）为准。  
 > **数字纪律：** 表中每个数字都取自磁盘上的 summary JSON／CSV／报告，并注明来源文件与 Run ID。标 **「派生」** 的，是本文从已有逐图 CSV 直接求和／相除得到（没有改动任何源文件）。磁盘上找不到的写 **「待补」**，并说明应从哪里来。  
 > **路径简写：** `PR/` = `00_Practice_UAV_Aerial_Detection/`；`P0_EI/` = `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/`。
+> **叙事伴读（2026-10-06）：** [`P0_EI_Full_Report_20261006.md`](P0_EI_Full_Report_20261006.md)：背景与时间线、术语逐一解释、Run H／I／J／K 结果；本文仍是查数手册。
 
 ---
 
