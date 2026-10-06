@@ -1,0 +1,498 @@
+{
+  "status": "PASS",
+  "run_id": "P0-BENCH-I-PIXLAT-20261006-01",
+  "env": {
+    "python": "3.10.22",
+    "numpy": "2.2.6",
+    "sahi": "0.11.32",
+    "ultralytics": "8.4.90"
+  },
+  "definitions": {
+    "input_px": "pixels of the tensor(s) fed to the network per image, incl. letterbox padding, summed over all forward passes",
+    "content_px": "same but excluding padding (resized image content)",
+    "local_scale": "resize factor applied to image content in the highest-resolution pass (1.0 = native)",
+    "F640/F1280": "model.predict(imgsz, rect=False) -> square imgsz^2",
+    "DensK1": "F640 + 1 window; window 640x640 patch padded with 114, predicted at imgsz 640 rect=False",
+    "UnifAll": "F640 + all build_windows() windows (axis_windows: range(0, max(1,L-640+1), 512) + [max(0,L-640)])",
+    "SAHI640": "sahi.slicing.get_slice_bboxes(slice 640, overlap 0.25) crops, each predicted with ultralytics default rect=True at ckpt imgsz 640 (stride-32 minimal letterbox); + one standard full-image pred when num_slices>1 (sahi perform_standard_pred=True default)",
+    "small_recall_per_input_mpx": "pooled small recall / mean input Mpx per image",
+    "marginal_recall_per_added_mpx": "(small recall - F640 small recall) / (input Mpx - F640 input Mpx)"
+  },
+  "visdrone_testdev": {
+    "image_sizes": {
+      "1400x788": 933,
+      "1400x1050": 274,
+      "1360x765": 167,
+      "1916x1078": 151,
+      "960x540": 49,
+      "1920x1080": 36
+    },
+    "methods": {
+      "F640": {
+        "n_images": 1610,
+        "mean_passes": 1.0,
+        "mean_input_mpx": 0.4096,
+        "mean_content_mpx": 0.2434703105590062,
+        "mean_local_scale": 0.4505992198095541,
+        "small_recall": 0.2387817017310781,
+        "precision": 0.6708001041247604,
+        "small_recall_per_input_mpx": 0.5829631389918899,
+        "mean_ms_1660_UAV_BT1": 17.397455217516317,
+        "ms_per_input_mpx_1660_UAV_BT1": 42.47425590213944,
+        "mean_ms_5060Ti_UAV_BT2": 19.84732335386183,
+        "ms_per_input_mpx_5060Ti_UAV_BT2": 48.455379281889236,
+        "delta_mpx_vs_F640": 0.0,
+        "delta_small_recall_vs_F640": 0.0,
+        "marginal_recall_per_added_mpx": null,
+        "delta_ms_vs_F640_1660_UAV_BT1": 0.0,
+        "marginal_ms_per_added_mpx_1660_UAV_BT1": null,
+        "marginal_recall_per_added_10ms_1660_UAV_BT1": null,
+        "delta_ms_vs_F640_5060Ti_UAV_BT2": 0.0,
+        "marginal_ms_per_added_mpx_5060Ti_UAV_BT2": null,
+        "marginal_recall_per_added_10ms_5060Ti_UAV_BT2": null,
+        "small_recall_runG_rows": 0.23874204358430332
+      },
+      "F1280": {
+        "n_images": 1610,
+        "mean_passes": 1.0,
+        "mean_input_mpx": 1.6384,
+        "mean_content_mpx": 0.9738812422360248,
+        "mean_local_scale": 0.9011984396191082,
+        "small_recall": 0.4004283079851679,
+        "precision": 0.6752910043449497,
+        "small_recall_per_input_mpx": 0.24440204344797842,
+        "mean_ms_1660_UAV_BT1": 33.720060931679555,
+        "ms_per_input_mpx_1660_UAV_BT1": 20.58109187724582,
+        "mean_ms_5060Ti_UAV_BT2": 26.247204782698674,
+        "ms_per_input_mpx_5060Ti_UAV_BT2": 16.020022450377606,
+        "delta_mpx_vs_F640": 1.2288000000000001,
+        "delta_small_recall_vs_F640": 0.16164660625408978,
+        "marginal_recall_per_added_mpx": 0.13154834493334128,
+        "delta_ms_vs_F640_1660_UAV_BT1": 16.322605714163238,
+        "marginal_ms_per_added_mpx_1660_UAV_BT1": 13.283370535614614,
+        "marginal_recall_per_added_10ms_1660_UAV_BT1": 0.09903235370920459,
+        "delta_ms_vs_F640_5060Ti_UAV_BT2": 6.399881428836842,
+        "marginal_ms_per_added_mpx_5060Ti_UAV_BT2": 5.208236839873732,
+        "marginal_recall_per_added_10ms_5060Ti_UAV_BT2": 0.25257750171079113,
+        "small_recall_runG_rows": 0.40044813705855525
+      },
+      "DensK1": {
+        "n_images": 1610,
+        "mean_passes": 2.0,
+        "mean_input_mpx": 0.8192,
+        "mean_content_mpx": 0.6511224844720497,
+        "mean_local_scale": 1.0,
+        "small_recall": 0.3595605877337352,
+        "precision": 0.607147113403817,
+        "small_recall_per_input_mpx": 0.43891673307340723,
+        "mean_ms_1660_UAV_BT1": 34.06050763970931,
+        "ms_per_input_mpx_1660_UAV_BT1": 41.577768114879525,
+        "mean_ms_5060Ti_UAV_BT2": 40.256946087120355,
+        "ms_per_input_mpx_5060Ti_UAV_BT2": 49.141779891504335,
+        "delta_mpx_vs_F640": 0.4096,
+        "delta_small_recall_vs_F640": 0.12077888600265713,
+        "marginal_recall_per_added_mpx": 0.2948703271549246,
+        "delta_ms_vs_F640_1660_UAV_BT1": 16.66305242219299,
+        "marginal_ms_per_added_mpx_1660_UAV_BT1": 40.681280327619604,
+        "marginal_recall_per_added_10ms_1660_UAV_BT1": 0.07248304988934415,
+        "delta_ms_vs_F640_5060Ti_UAV_BT2": 20.409622733258523,
+        "marginal_ms_per_added_mpx_5060Ti_UAV_BT2": 49.82818050111944,
+        "marginal_recall_per_added_10ms_5060Ti_UAV_BT2": 0.059177422131297786,
+        "small_recall_runG_rows": 0.3595605877337352
+      },
+      "UnifAll": {
+        "n_images": 1610,
+        "mean_passes": 7.11055900621118,
+        "mean_input_mpx": 2.9124849689440993,
+        "mean_content_mpx": 2.742459627329193,
+        "mean_local_scale": 1.0,
+        "small_recall": 0.4511312486367512,
+        "precision": 0.5123464373464374,
+        "small_recall_per_input_mpx": 0.15489564871481745,
+        "mean_ms_1660_UAV_BT1": 112.20607180142036,
+        "ms_per_input_mpx_1660_UAV_BT1": 38.52588871629435,
+        "mean_ms_5060Ti_UAV_BT2": 136.59139018630904,
+        "ms_per_input_mpx_5060Ti_UAV_BT2": 46.89857343223621,
+        "delta_mpx_vs_F640": 2.502884968944099,
+        "delta_small_recall_vs_F640": 0.2123495469056731,
+        "marginal_recall_per_added_mpx": 0.08484191224947016,
+        "delta_ms_vs_F640_1660_UAV_BT1": 94.80861658390404,
+        "marginal_ms_per_added_mpx_1660_UAV_BT1": 37.87973389120687,
+        "marginal_recall_per_added_10ms_1660_UAV_BT1": 0.022397705457261607,
+        "delta_ms_vs_F640_5060Ti_UAV_BT2": 116.7440668324472,
+        "marginal_ms_per_added_mpx_5060Ti_UAV_BT2": 46.64380036678171,
+        "marginal_recall_per_added_10ms_5060Ti_UAV_BT2": 0.01818932239275511,
+        "small_recall_runG_rows": 0.4509924451230394
+      },
+      "SAHI640": {
+        "n_images": 1610,
+        "mean_passes": 7.11055900621118,
+        "mean_input_mpx": 2.7553613913043478,
+        "mean_content_mpx": 2.742459627329193,
+        "mean_local_scale": 1.0,
+        "small_recall": 0.2184370724356051,
+        "precision": 0.3587282378503259,
+        "small_recall_per_input_mpx": 0.07927710431196837,
+        "mean_ms_1660_UAV_BT1": 373.2336533540587,
+        "ms_per_input_mpx_1660_UAV_BT1": 135.45724148271358,
+        "mean_ms_5060Ti_UAV_BT2": 507.0963135403646,
+        "ms_per_input_mpx_5060Ti_UAV_BT2": 184.03985594801145,
+        "delta_mpx_vs_F640": 2.3457613913043476,
+        "delta_small_recall_vs_F640": -0.02034462929547301,
+        "marginal_recall_per_added_mpx": -0.008672932111036449,
+        "delta_ms_vs_F640_1660_UAV_BT1": 355.83619813654235,
+        "marginal_ms_per_added_mpx_1660_UAV_BT1": 151.69326234783054,
+        "marginal_recall_per_added_10ms_1660_UAV_BT1": -0.0005717414192826532,
+        "delta_ms_vs_F640_5060Ti_UAV_BT2": 487.24899018650274,
+        "marginal_ms_per_added_mpx_5060Ti_UAV_BT2": 207.71464309742547,
+        "marginal_recall_per_added_10ms_5060Ti_UAV_BT2": -0.00041754071748174913,
+        "small_recall_runG_rows": 0.2185163887291547
+      }
+    }
+  },
+  "uavdt": {
+    "image_sizes": {
+      "1024x540": 38829,
+      "960x540": 1906
+    },
+    "methods": {
+      "F640": {
+        "n_images": 40735,
+        "mean_passes": 1.0,
+        "mean_input_mpx": 0.4096,
+        "mean_content_mpx": 0.2169788064318154,
+        "mean_local_scale": 0.6269495928971809,
+        "small_recall": 0.7080210828552973,
+        "precision": 0.4302497969270827,
+        "small_recall_per_input_mpx": 1.7285670968146907,
+        "mean_ms_1660_UAV_BT1": 16.737519847793735,
+        "ms_per_input_mpx_1660_UAV_BT1": 40.86308556590267,
+        "delta_mpx_vs_F640": 0.0,
+        "delta_small_recall_vs_F640": 0.0,
+        "marginal_recall_per_added_mpx": null,
+        "delta_ms_vs_F640_1660_UAV_BT1": 0.0,
+        "marginal_ms_per_added_mpx_1660_UAV_BT1": null,
+        "marginal_recall_per_added_10ms_1660_UAV_BT1": null
+      },
+      "F1280": {
+        "n_images": 40735,
+        "mean_passes": 1.0,
+        "mean_input_mpx": 1.6384,
+        "mean_content_mpx": 0.866695117221063,
+        "mean_local_scale": 1.2538991857943618,
+        "small_recall": 0.7928931419974447,
+        "precision": 0.371897800920926,
+        "small_recall_per_input_mpx": 0.48394356811367467,
+        "mean_ms_1660_UAV_BT1": 33.08099388486551,
+        "ms_per_input_mpx_1660_UAV_BT1": 20.191036306680605,
+        "delta_mpx_vs_F640": 1.2288000000000001,
+        "delta_small_recall_vs_F640": 0.08487205914214735,
+        "marginal_recall_per_added_mpx": 0.06906905854666938,
+        "delta_ms_vs_F640_1660_UAV_BT1": 16.343474037071772,
+        "marginal_ms_per_added_mpx_1660_UAV_BT1": 13.300353220273252,
+        "marginal_recall_per_added_10ms_1660_UAV_BT1": 0.051930243808404955
+      },
+      "DensK1": {
+        "n_images": 40735,
+        "mean_passes": 2.0,
+        "mean_input_mpx": 0.8192,
+        "mean_content_mpx": 0.5625788064318153,
+        "mean_local_scale": 1.0,
+        "small_recall": 0.7671612052784083,
+        "precision": 0.34748219515336554,
+        "small_recall_per_input_mpx": 0.9364760806621194,
+        "mean_ms_1660_UAV_BT1": 32.96948507180509,
+        "ms_per_input_mpx_1660_UAV_BT1": 40.245953456793316,
+        "delta_mpx_vs_F640": 0.4096,
+        "delta_small_recall_vs_F640": 0.05914012242311095,
+        "marginal_recall_per_added_mpx": 0.14438506450954822,
+        "delta_ms_vs_F640_1660_UAV_BT1": 16.231965224011354,
+        "marginal_ms_per_added_mpx_1660_UAV_BT1": 39.62882134768397,
+        "marginal_recall_per_added_10ms_1660_UAV_BT1": 0.03643435752044806
+      },
+      "UnifAll": {
+        "n_images": 40735,
+        "mean_passes": 3.0,
+        "mean_input_mpx": 1.2288,
+        "mean_content_mpx": 0.9081788064318154,
+        "mean_local_scale": 1.0,
+        "small_recall": 0.7823922115737019,
+        "precision": 0.33163208841709285,
+        "small_recall_per_input_mpx": 0.6367124117624527,
+        "mean_ms_1660_UAV_BT1": 47.17674575427023,
+        "ms_per_input_mpx_1660_UAV_BT1": 38.392533979712105,
+        "delta_mpx_vs_F640": 0.8191999999999999,
+        "delta_small_recall_vs_F640": 0.07437112871840457,
+        "marginal_recall_per_added_mpx": 0.09078506923633371,
+        "delta_ms_vs_F640_1660_UAV_BT1": 30.439225906476494,
+        "marginal_ms_per_added_mpx_1660_UAV_BT1": 37.157258186616815,
+        "marginal_recall_per_added_10ms_1660_UAV_BT1": 0.02443266098385924
+      },
+      "SAHI640": {
+        "n_images": 40735,
+        "mean_passes": 3.0,
+        "mean_input_mpx": 0.9225582639008224,
+        "mean_content_mpx": 0.9081788064318154,
+        "mean_local_scale": 1.0,
+        "small_recall": 0.7597340142266751,
+        "precision": 0.3529631442248071,
+        "small_recall_per_input_mpx": 0.8235078953326124,
+        "mean_ms_1660_UAV_BT1": 163.99895947956506,
+        "ms_per_input_mpx_1660_UAV_BT1": 177.76542240934867,
+        "delta_mpx_vs_F640": 0.5129582639008223,
+        "delta_small_recall_vs_F640": 0.05171293137137778,
+        "marginal_recall_per_added_mpx": 0.10081313629324079,
+        "delta_ms_vs_F640_1660_UAV_BT1": 147.26143963177134,
+        "marginal_ms_per_added_mpx_1660_UAV_BT1": 287.08269267739786,
+        "marginal_recall_per_added_10ms_1660_UAV_BT1": 0.003511641031127121
+      }
+    }
+  },
+  "geometry_by_size": {
+    "960x540": {
+      "F640": {
+        "passes": 1,
+        "input_px": 409600,
+        "content_px": 230400,
+        "local_scale": 0.6666666666666666
+      },
+      "F1280": {
+        "passes": 1,
+        "input_px": 1638400,
+        "content_px": 921600,
+        "local_scale": 1.3333333333333333
+      },
+      "DensK1": {
+        "passes": 2,
+        "input_px": 819200,
+        "content_px": 576000.0,
+        "local_scale": 1.0
+      },
+      "UnifAll": {
+        "passes": 3,
+        "input_px": 1228800,
+        "content_px": 921600,
+        "local_scale": 1.0,
+        "n_windows": 2
+      },
+      "SAHI640": {
+        "passes": 3,
+        "input_px": 942080,
+        "content_px": 921600,
+        "local_scale": 1.0,
+        "n_slices": 2,
+        "standard_pred": true
+      }
+    },
+    "1024x540": {
+      "F640": {
+        "passes": 1,
+        "input_px": 409600,
+        "content_px": 216320,
+        "local_scale": 0.625
+      },
+      "F1280": {
+        "passes": 1,
+        "input_px": 1638400,
+        "content_px": 864000,
+        "local_scale": 1.25
+      },
+      "DensK1": {
+        "passes": 2,
+        "input_px": 819200,
+        "content_px": 561920.0,
+        "local_scale": 1.0
+      },
+      "UnifAll": {
+        "passes": 3,
+        "input_px": 1228800,
+        "content_px": 907520,
+        "local_scale": 1.0,
+        "n_windows": 2
+      },
+      "SAHI640": {
+        "passes": 3,
+        "input_px": 921600,
+        "content_px": 907520,
+        "local_scale": 1.0,
+        "n_slices": 2,
+        "standard_pred": true
+      }
+    },
+    "1360x765": {
+      "F640": {
+        "passes": 1,
+        "input_px": 409600,
+        "content_px": 230400,
+        "local_scale": 0.47058823529411764
+      },
+      "F1280": {
+        "passes": 1,
+        "input_px": 1638400,
+        "content_px": 921600,
+        "local_scale": 0.9411764705882353
+      },
+      "DensK1": {
+        "passes": 2,
+        "input_px": 819200,
+        "content_px": 640000.0,
+        "local_scale": 1.0
+      },
+      "UnifAll": {
+        "passes": 7,
+        "input_px": 2867200,
+        "content_px": 2688000,
+        "local_scale": 1.0,
+        "n_windows": 6
+      },
+      "SAHI640": {
+        "passes": 7,
+        "input_px": 2703360,
+        "content_px": 2688000,
+        "local_scale": 1.0,
+        "n_slices": 6,
+        "standard_pred": true
+      }
+    },
+    "1400x788": {
+      "F640": {
+        "passes": 1,
+        "input_px": 409600,
+        "content_px": 230400,
+        "local_scale": 0.45714285714285713
+      },
+      "F1280": {
+        "passes": 1,
+        "input_px": 1638400,
+        "content_px": 921600,
+        "local_scale": 0.9142857142857143
+      },
+      "DensK1": {
+        "passes": 2,
+        "input_px": 819200,
+        "content_px": 640000.0,
+        "local_scale": 1.0
+      },
+      "UnifAll": {
+        "passes": 7,
+        "input_px": 2867200,
+        "content_px": 2688000,
+        "local_scale": 1.0,
+        "n_windows": 6
+      },
+      "SAHI640": {
+        "passes": 7,
+        "input_px": 2703360,
+        "content_px": 2688000,
+        "local_scale": 1.0,
+        "n_slices": 6,
+        "standard_pred": true
+      }
+    },
+    "1400x1050": {
+      "F640": {
+        "passes": 1,
+        "input_px": 409600,
+        "content_px": 307200,
+        "local_scale": 0.45714285714285713
+      },
+      "F1280": {
+        "passes": 1,
+        "input_px": 1638400,
+        "content_px": 1228800,
+        "local_scale": 0.9142857142857143
+      },
+      "DensK1": {
+        "passes": 2,
+        "input_px": 819200,
+        "content_px": 716800.0,
+        "local_scale": 1.0
+      },
+      "UnifAll": {
+        "passes": 7,
+        "input_px": 2867200,
+        "content_px": 2764800,
+        "local_scale": 1.0,
+        "n_windows": 6
+      },
+      "SAHI640": {
+        "passes": 7,
+        "input_px": 2764800,
+        "content_px": 2764800,
+        "local_scale": 1.0,
+        "n_slices": 6,
+        "standard_pred": true
+      }
+    },
+    "1916x1078": {
+      "F640": {
+        "passes": 1,
+        "input_px": 409600,
+        "content_px": 230400,
+        "local_scale": 0.33402922755741127
+      },
+      "F1280": {
+        "passes": 1,
+        "input_px": 1638400,
+        "content_px": 921600,
+        "local_scale": 0.6680584551148225
+      },
+      "DensK1": {
+        "passes": 2,
+        "input_px": 819200,
+        "content_px": 640000.0,
+        "local_scale": 1.0
+      },
+      "UnifAll": {
+        "passes": 9,
+        "input_px": 3686400,
+        "content_px": 3507200,
+        "local_scale": 1.0,
+        "n_windows": 8
+      },
+      "SAHI640": {
+        "passes": 9,
+        "input_px": 3522560,
+        "content_px": 3507200,
+        "local_scale": 1.0,
+        "n_slices": 8,
+        "standard_pred": true
+      }
+    },
+    "1920x1080": {
+      "F640": {
+        "passes": 1,
+        "input_px": 409600,
+        "content_px": 230400,
+        "local_scale": 0.3333333333333333
+      },
+      "F1280": {
+        "passes": 1,
+        "input_px": 1638400,
+        "content_px": 921600,
+        "local_scale": 0.6666666666666666
+      },
+      "DensK1": {
+        "passes": 2,
+        "input_px": 819200,
+        "content_px": 640000.0,
+        "local_scale": 1.0
+      },
+      "UnifAll": {
+        "passes": 9,
+        "input_px": 3686400,
+        "content_px": 3507200,
+        "local_scale": 1.0,
+        "n_windows": 8
+      },
+      "SAHI640": {
+        "passes": 9,
+        "input_px": 3522560,
+        "content_px": 3507200,
+        "local_scale": 1.0,
+        "n_slices": 8,
+        "standard_pred": true
+      }
+    }
+  }
+}
