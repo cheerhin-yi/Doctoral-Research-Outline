@@ -60,7 +60,7 @@ NMS：BTD5 风格 CPU NMS，类间独立，IoU>0.5，max500（DensK1/UnifAll 融
 | 用途 | GPU | 状态 |
 |---|---|---|
 | D/E 精度 + B 流水线时序 | **GTX 1660 SUPER** | 已跑（本附录数字） |
-| 正式统一时序表 | **RTX 5060 Ti 16GB**（2026-10-01 换卡；取代原计划 4090） | **计划中，尚未跑** → Run G `P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01`；正文不得用 1660 冒充 5060 Ti；`Timing_5060Ti_Table.md` 保持 pending；5060 Ti 为 Blackwell（sm_120），冻结环境 torch 2.7.1+cu126（`00_freeze/pip_freeze.txt`）不支持；2026-10-04 已建 conda 环境 `UAV_BT2`（Python 3.10，torch 2.7.1+cu128，ultralytics／sahi 已装），跑 Run G 前须把该环境快照（pip freeze、nvidia-smi）写入 `00_freeze/` 并登记与冻结环境的差异；权重／协议／评价器不变 |
+| 正式统一时序表 | **RTX 5060 Ti 16GB**（2026-10-01 换卡；取代原计划 4090） | **计划中，尚未跑** → Run G `P0-BENCH-G-5060TI-{SMOKE,CAL48,TESTDEV}-20261001-01`；正文不得用 1660 冒充 5060 Ti；`Timing_5060Ti_Table.md` 保持 pending；计时环境已定：`F:\Conda\envs\UAV_BT2`（2026-10-06 用户决定采用；Python 3.10.22，torch 2.7.1+cu128，ultralytics 8.4.90 与冻结运行同一 pinned zip；冻结环境 UAV_BT1 的 cu126 不支持 5060 Ti 的 sm_120，且已随 H: 盘丢失）；快照与差异见 `00_freeze/Environment_Delta_UAV_BT2_vs_UAV_BT1.md`；权重／协议／评价器不变 |
 
 - [x] 硬件分列（5060 Ti 标 TODO）
 

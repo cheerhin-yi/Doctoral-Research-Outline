@@ -14,7 +14,7 @@
 |---|---|
 | **谁更新** | 维护本仓库的执行代理 / 本人；重大证据变更后同步改本文件 |
 | **何时更新** | 新 stage `PASS`、packaging 叙事变更、新增/再生对照图、顶层目录增减 |
-| **如何再生图** | 见 `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/figures/FIGURES.md`；运行同目录 `generate_plots.py`（`H:\Conda\envs\UAV_BT1\python.exe`） |
+| **如何再生图** | 见 `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/figures/FIGURES.md`；运行同目录 `generate_plots.py`（`F:\Conda\envs\UAV_BT2\python.exe`；原图由已丢失的 `H:\Conda\envs\UAV_BT1` 生成） |
 | **不做什么** | 不据此重训、不改实验配置、不 remap；不把 raw 数据集或权重树展开进本目录 |
 | **Git** | 本文件与 `05_packaging/figures/*` 可随证据提交；勿捎带无关脏文件 |
 

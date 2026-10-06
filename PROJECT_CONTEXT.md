@@ -98,7 +98,7 @@ UAV-RSOD历史审计HOLD：原图检测框与增强来源映射仍不足，有sp
 
 普通YOLO11n P3–P5，COCO预训练初始化后适配VisDrone十类；未实施LSM-Head，未改Backbone、Loss或候选专用模块。
 
-- 环境：Windows，独立Conda `H:/Conda/envs/UAV_BT1`；Python3.12、Ultralytics8.4.90（提交`07958a70205d1388612bd00f8a2f32cf769d8fed`）、torch2.7.1+cu126、torchvision0.22.1。
+- 环境：Windows。冻结运行（Stage A–F）用独立Conda `H:/Conda/envs/UAV_BT1`（Python3.12、Ultralytics8.4.90（提交`07958a70205d1388612bd00f8a2f32cf769d8fed`）、torch2.7.1+cu126、torchvision0.22.1），该环境已随 H: 盘于 2026-10-04 丢失。现用 `F:/Conda/envs/UAV_BT2`（2026-10-06 采用；Python3.10、同一 Ultralytics8.4.90 pinned zip、torch2.7.1+cu128；差异见 `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/00_freeze/Environment_Delta_UAV_BT2_vs_UAV_BT1.md`）。
 - 训练：GTX1660SUPER 6GiB，imgsz640、batch4、FP32／amp=false、seed0、SGD、100轮。详细超参数看固定JSON及运行快照；诊断通常batch1、FP32。
 - 三段连续覆盖1–3、4、5–100，无缺轮／重复；合计约14.99小时墙钟。断点恢复已核验，不声称与单进程不中断训练逐位等价。
 - 固定取第100轮末轮EMA `last.pt`，不按cal48最佳值选模；框架best及末尾对best的验证输出不替代末轮指标。

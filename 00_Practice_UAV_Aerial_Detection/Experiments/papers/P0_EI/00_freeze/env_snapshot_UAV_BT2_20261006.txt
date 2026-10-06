@@ -1,0 +1,33 @@
+timestamp=2026-10-06T16:12:54+08:00
+env=UAV_BT2 (adopted 2026-10-06 for Run G and later reruns)
+python 3.10.22 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:15:38) [MSC v.1942 64 bit (AMD64)]
+executable F:\Conda\envs\UAV_BT2\python.exe
+platform Windows-10-10.0.26200-SP0
+torch 2.7.1+cu128
+torchvision 0.22.1+cu128
+ultralytics 8.4.90
+cv2 5.0.0
+numpy 2.2.6
+sahi 0.11.32
+PIL 12.3.0
+scipy 1.15.3
+matplotlib 3.10.9
+polars 1.44.2
+thop 2.1.6
+ultralytics_direct_url {"archive_info": {"hash": "sha256=c415c540760c1e282fb3caa212ae963fe4c0667633fb9aed113a8ceb261bfa80", "hashes": {"sha256": "c415c540760c1e282fb3caa212ae963fe4c0667633fb9aed113a8ceb261bfa80"}}, "url": "file:///D:/Doctoral-Research-Outline/11_Datasets/processed/VisDrone/BT1/execution_2026-09-12/ultralytics-07958a7.zip"}
+cuda_available True
+torch_cuda 12.8
+cudnn 90701
+device_count 1
+device0 NVIDIA GeForce RTX 5060 Ti capability (12, 0)
+arch_list sm_50,sm_60,sm_61,sm_70,sm_75,sm_80,sm_86,sm_90,sm_100,sm_120
+--- nvidia-smi -L ---
+GPU 0: NVIDIA GeForce RTX 5060 Ti (UUID: GPU-1d6d4cde-f073-217b-3867-015abdbd5478)
+--- nvidia-smi query ---
+index, name, uuid, memory.total [MiB], driver_version, power.limit [W], clocks.max.sm [MHz], pcie.link.gen.max
+0, NVIDIA GeForce RTX 5060 Ti, GPU-1d6d4cde-f073-217b-3867-015abdbd5478, 16311 MiB, 591.86, 180.00 W, 3090 MHz, 3
+--- nvidia-smi (header) ---
+Tue Oct  6 16:13:07 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 591.86                 Driver Version: 591.86         CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+

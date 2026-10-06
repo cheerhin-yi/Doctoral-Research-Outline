@@ -19,7 +19,9 @@
 在本目录执行：
 
 ```text
-H:\Conda\envs\UAV_BT1\python.exe generate_plots.py
+F:\Conda\envs\UAV_BT2\python.exe generate_plots.py
 ```
+
+现有图 1–5 由冻结环境 `H:\Conda\envs\UAV_BT1` 生成（该环境已随 H: 盘于 2026-10-04 丢失）。UAV_BT2 的 matplotlib 为 3.10.9（冻结为 3.11.2），重生成的图样式可能有细微差异，数值不变；见 `../../00_freeze/Environment_Delta_UAV_BT2_vs_UAV_BT1.md`。
 
 脚本读取上级 `P0_EI` 各 stage 的 `*_summary.json`，写出本目录 PNG。勿改硬编码指标；改图先改证据 JSON/报告。

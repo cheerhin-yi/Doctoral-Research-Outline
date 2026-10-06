@@ -62,7 +62,7 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 
 ## 下一步
 
-1. **5060 Ti 正式时序表：** 按 Run G（`P0-BENCH-G-5060TI-SMOKE/CAL48/TESTDEV-20261001-01`，UAVDT 可选）在本机 RTX 5060 Ti 16GB 上跑（计划中，未跑；5060 Ti 为 Blackwell（sm_120），冻结环境 torch 2.7.1+cu126（`00_freeze/pip_freeze.txt`）不支持；2026-10-04 已建 conda 环境 `UAV_BT2`（Python 3.10，torch 2.7.1+cu128，ultralytics／sahi 已装），跑 Run G 前须把该环境快照（pip freeze、nvidia-smi）写入 `00_freeze/` 并登记与冻结环境的差异；权重／协议／评价器不变）；结果单独写 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`，**不与 1660 合并**。
+1. **5060 Ti 正式时序表：** 按 Run G（`P0-BENCH-G-5060TI-SMOKE/CAL48/TESTDEV-20261001-01`，UAVDT 可选）在本机 RTX 5060 Ti 16GB 上跑（计划中，未跑；计时环境已定：`F:\Conda\envs\UAV_BT2`（2026-10-06 用户决定采用；Python 3.10.22，torch 2.7.1+cu128，ultralytics 8.4.90 与冻结运行同一 pinned zip；冻结环境 UAV_BT1 的 cu126 不支持 5060 Ti 的 sm_120，且已随 H: 盘丢失）；快照与差异见 `00_freeze/Environment_Delta_UAV_BT2_vs_UAV_BT1.md`；权重／协议／评价器不变）；结果单独写 `Experiments/papers/P0_EI/04_timing/Timing_5060Ti_Table.md`，**不与 1660 合并**。
 2. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草，主张只用 C1／C2 终稿措辞。
 3. **会期：** 选定 2027 年 EI 会期（主跟踪 ICIP 2027 全文）并写入本页。
 4. **不默认：** 同质第三集；新模块／重训。

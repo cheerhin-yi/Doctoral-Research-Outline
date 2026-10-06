@@ -71,7 +71,7 @@
 
 ## 5. 剩余工作
 
-1. **5060 Ti 正式时序（Run G）：** 2026-10-01 本机已换为 RTX 5060 Ti 16GB，原计划的 4090 时序作废（从未运行）。按已登记 Run ID 跑（计划中，未跑），单独成表；5060 Ti 为 Blackwell（sm_120），冻结环境 torch 2.7.1+cu126（`00_freeze/pip_freeze.txt`）不支持；2026-10-04 已建 conda 环境 `UAV_BT2`（Python 3.10，torch 2.7.1+cu128，ultralytics／sahi 已装），跑 Run G 前须把该环境快照（pip freeze、nvidia-smi）写入 `00_freeze/` 并登记与冻结环境的差异；权重／协议／评价器不变；正文时序用 5060 Ti，1660 标注为 pipeline validation。5060 Ti 结果不改变 C1 的"更准"部分；只有在 5060 Ti 上也做配对检验后才能重新讨论时延表述。
+1. **5060 Ti 正式时序（Run G）：** 2026-10-01 本机已换为 RTX 5060 Ti 16GB，原计划的 4090 时序作废（从未运行）。按已登记 Run ID 跑（计划中，未跑），单独成表；计时环境已定：`F:\Conda\envs\UAV_BT2`（2026-10-06 用户决定采用；Python 3.10.22，torch 2.7.1+cu128，ultralytics 8.4.90 与冻结运行同一 pinned zip；冻结环境 UAV_BT1 的 cu126 不支持 5060 Ti 的 sm_120，且已随 H: 盘丢失）；快照与差异见 `00_freeze/Environment_Delta_UAV_BT2_vs_UAV_BT1.md`；权重／协议／评价器不变；正文时序用 5060 Ti，1660 标注为 pipeline validation。5060 Ti 结果不改变 C1 的"更准"部分；只有在 5060 Ti 上也做配对检验后才能重新讨论时延表述。
 2. **稿件正文：** 按 `Writing/P0_EI_Outline.md` 起草；导读与全部数字见 [`P0_EI_Paper_Overview_and_Experiments.md`](P0_EI_Paper_Overview_and_Experiments.md)。
 3. 会期与截稿日待用户确认后写入 Current_Stage。
 

@@ -572,7 +572,7 @@ p95          = 排序后第 ⌈0.95·N⌉ 个耗时值       // 95 分位耗时
 | ultralytics | Ultralytics YOLO 库 | YOLO 工具链 | [项目] 8.4.90 |
 | ONNX | Open Neural Network Exchange | 模型交换格式 | 部署转换 |
 | TensorRT | TensorRT | 推理加速 | 部署优化 |
-| Conda | Conda 环境 | 虚拟环境 | [项目] `H:/Conda/envs/UAV_BT1` |
+| Conda | Conda 环境 | 虚拟环境 | [项目] 冻结运行用 `H:/Conda/envs/UAV_BT1`（已丢失）；现用 `F:/Conda/envs/UAV_BT2` |
 | RSS / GiB | Resident Set Size / Gibibyte | 常驻内存/二进制吉字节 | 资源守卫口径 |
 | NumPy | NumPy | 数值计算库 | 缓存分析 |
 | SHA256 | Secure Hash Algorithm 256 | 哈希校验 | 权重/数据指纹（bc42d54e...） |
@@ -587,7 +587,7 @@ p95          = 排序后第 ⌈0.95·N⌉ 个耗时值       // 95 分位耗时
 - **CUDA / cuDNN**：NVIDIA 的并行计算驱动/深度网络加速库，是 PyTorch GPU 版依赖；`torch2.7.1+cu126` 表示对应 CUDA 12.6 的构建。**注意**：本项目曾发现 CPU 版 torch（+cpu）导致 CUDA 不可用，须安装匹配 CUDA 版本。
 - **torch / torchvision / ultralytics**：PyTorch 深度学习框架 / 视觉工具箱 / YOLO 官方工具链；环境冻结报告锁定版本（Ultralytics 8.4.90 等）以保可复现。
 - **ONNX / TensorRT**：模型部署格式与加速引擎；本项目当前无部署验证，不得宣称机载可用。
-- **Conda**：Python 虚拟环境管理；本项目独立环境 `H:/Conda/envs/UAV_BT1`，脚本迁移需重建环境而不是只复制代码。
+- **Conda**：Python 虚拟环境管理；本项目冻结运行用独立环境 `H:/Conda/envs/UAV_BT1`（已随 H: 盘丢失），现用 `F:/Conda/envs/UAV_BT2`；脚本迁移需重建环境而不是只复制代码。
 - **RSS / GiB**：进程常驻内存 / 二进制容量单位（1 GiB=2³⁰ 字节）；资源守卫（如 RSS<3GiB）保证实验不把机器跑死。
 - **NumPy**：数值计算库，缓存分析脚本依赖；曾因 NumPy int64 JSON 序列化问题导致 BTD7-01 归档失败（典型工程坑）。
 - **SHA256**：密码学哈希（64 位十六进制），用于校验权重/数据文件完整性；[项目] 冻结权重指纹 `bc42d54e37acaf...`。

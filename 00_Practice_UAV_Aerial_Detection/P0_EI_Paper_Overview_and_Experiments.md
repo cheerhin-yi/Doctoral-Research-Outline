@@ -115,7 +115,7 @@
 
 | 项 | 值 | 来源 |
 |---|---|---|
-| conda 环境 | `H:\Conda\envs\UAV_BT1`（base `E:/miniconda3`），没有重装 | `P0_EI/00_freeze/Environment_Freeze.md` |
+| conda 环境 | 冻结运行（Stage A–F）用 `H:\Conda\envs\UAV_BT1`（base `E:/miniconda3`；该环境已随 H: 盘于 2026-10-04 丢失）；现用 `F:\Conda\envs\UAV_BT2`（2026-10-06 采用，用于 Run G 与以后重跑） | `P0_EI/00_freeze/Environment_Freeze.md`、`Environment_Delta_UAV_BT2_vs_UAV_BT1.md` |
 | Python | 3.12.14（conda-forge，MSC v.1944 64 bit） | `P0_EI/00_freeze/env_snapshot.txt` |
 | torch／torchvision | 2.7.1+cu126／0.22.1+cu126；CUDA 12.6；cuDNN 90701 | 同上 |
 | ultralytics | 8.4.90 | 同上 |
@@ -490,7 +490,7 @@
 
 ### 6.5 下一步可检查事项（按优先级）
 
-1. 在本机 RTX 5060 Ti 16GB 上按 Run G 跑正式时序（计划中，未跑；5060 Ti 为 Blackwell（sm_120），冻结环境 torch 2.7.1+cu126（`00_freeze/pip_freeze.txt`）不支持；2026-10-04 已建 conda 环境 `UAV_BT2`（Python 3.10，torch 2.7.1+cu128，ultralytics／sahi 已装），跑 Run G 前须把该环境快照（pip freeze、nvidia-smi）写入 `00_freeze/` 并登记与冻结环境的差异；权重／协议／评价器不变） → 写 `Timing_5060Ti_Table.md`（单列）。
+1. 在本机 RTX 5060 Ti 16GB 上按 Run G 跑正式时序（计划中，未跑；计时环境已定：`F:\Conda\envs\UAV_BT2`（2026-10-06 用户决定采用；Python 3.10.22，torch 2.7.1+cu128，ultralytics 8.4.90 与冻结运行同一 pinned zip；冻结环境 UAV_BT1 的 cu126 不支持 5060 Ti 的 sm_120，且已随 H: 盘丢失）；快照与差异见 `00_freeze/Environment_Delta_UAV_BT2_vs_UAV_BT1.md`；权重／协议／评价器不变） → 写 `Timing_5060Ti_Table.md`（单列）。
 2. 按提纲与第一节 C1／C2 终稿措辞写正文（Intro／Protocols & Evaluation／Results／Failure & Boundaries）。
 3. 选定会期并写入 Current_Stage（由用户操作）。
 4. 可选：Stage E 配对统计（只做分析）。
