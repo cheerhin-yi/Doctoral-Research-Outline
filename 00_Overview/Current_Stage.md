@@ -84,6 +84,8 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 
 信息学院学位分：[`SWJTU_Info_College_Degree_Credit_Note_2026-09-28.md`](SWJTU_Info_College_Degree_Credit_Note_2026-09-28.md)。学术博士：普通 EI／CCF-C **不计分**；两篇一作 SCI 二区为正常评阅最低线。
 
+投稿 venue 调研（2026-10-06，案头；不改 ACTIVE、不定会期）：[`Venue_Survey_20261006.md`](../00_Practice_UAV_Aerial_Detection/Writing/Venue_Survey_20261006.md)。
+
 ## 基础手册应读（2026-09-29）
 
 不改变上文唯一事项。阶段变了就改本段，并同步 [`../10_Foundations/00_How_To_Use.md`](../10_Foundations/00_How_To_Use.md)。
