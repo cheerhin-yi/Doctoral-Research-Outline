@@ -11,13 +11,14 @@
   2. `00_Overview/Project_Guide.md`
   3. `00_Overview/Current_Stage.md`
   4. `00_Overview/Seven_Paper_Roadmap.md`
-  5. `00_Overview/Paper_Reading_Guide.md`
+  5. `00_Overview/AI_Context/Paper_Reading_Guide.md`
   6. `00_Overview/Learning_Note_Method.md`
   7. `00_Practice_UAV_Aerial_Detection/README.md`
   8. `00_Practice_UAV_Aerial_Detection/Research_Plan.md`
   9. `00_Practice_UAV_Aerial_Detection/Literature/Literature_Matrix.md`
   10. `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md`
-- `Paper_Reading_Guide.md`已经承担发表载体筛选和阅读等级职责；练手论文的具体文献状态以`Literature_Matrix.md`为准。
+- `00_Overview/AI_Context/Paper_Reading_Guide.md`已经承担发表载体筛选和阅读等级职责；练手论文的具体文献状态以`Literature_Matrix.md`为准。
+- 面向AI助手的规则与登记表（文献流程、注册表、创新台账、阅读指南）统一放在`00_Overview/AI_Context/`。
 - 同一任务内已经完整读取且未变化的文件不重复全文读取；先用Git状态确认变化，再复核发生变化或当前任务直接相关的文件。
 - 英语任务额外读取`90_English_Learning/README.md`及对应课程和进度文件；Paper 1任务额外读取`01_Paper1_OpenWorld_Risk/`中的入口、研究计划和阶段指南。
 - 读取完成后检查Git状态和最近提交。用户未提交及未跟踪内容一律保留，不覆盖用户已有代码、数据、笔记或实验结果。
@@ -96,7 +97,7 @@
 
 ## 7. 使用说明
 
-处理新增论文或每周ChatGPT检索结果时，必须先读 `00_Overview/Literature_Tracking_Workflow.md`、`00_Overview/Literature_Registry.md`、`00_Overview/Innovation_Ledger.md` 及受影响方向的矩阵和研究边界；先审计去重，再归档PASS论文，完成主/次矩阵、必要创新台账四字段和周报同步后才能报告完成。暂停方向允许文献维护，不解除学习与实验阶段门。
+处理新增论文或每周ChatGPT检索结果时，必须先读 `00_Overview/AI_Context/Literature_Tracking_Workflow.md`、`00_Overview/AI_Context/Literature_Registry.md`、`00_Overview/AI_Context/Innovation_Ledger.md` 及受影响方向的矩阵和研究边界；先审计去重，再归档PASS论文，完成主/次矩阵、必要创新台账四字段和周报同步后才能报告完成。暂停方向允许文献维护，不解除学习与实验阶段门。
 
 Codex、检查点、Token、Skills、Plugins和常用提示方式见：
 

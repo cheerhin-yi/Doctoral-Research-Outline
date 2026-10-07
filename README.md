@@ -23,14 +23,14 @@
 - [当前阶段](00_Overview/Current_Stage.md)：现在具体学什么、做什么；
 - [七篇论文路线](00_Overview/Seven_Paper_Roadmap.md)：每篇论文的作用和知识依赖；
 - [Venue/Claim 政策 · JCR-primary](00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md)：分区主尺与 A/B 主张梯子（**不**改变 ACTIVE=P0_EI）；
-- [2026-09-24 讨论产物索引](00_Overview/INDEX_Discussion_Products_2026-09-24.md)：全局政策 / A·B 边界 / 案头预备路径（**不**改变 ACTIVE=P0_EI）；
-- [每周论文审计与归档](00_Overview/Literature_Tracking_Workflow.md)：接收ChatGPT检索结果，先审计去重，再联动各方向文献矩阵、创新台账和周报；
+- 2026-09-24 讨论产物索引（已删除）：全局政策 / A·B 边界 / 案头预备路径（**不**改变 ACTIVE=P0_EI）；
+- [每周论文审计与归档](00_Overview/AI_Context/Literature_Tracking_Workflow.md)：接收ChatGPT检索结果，先审计去重，再联动各方向文献矩阵、创新台账和周报；
 - [Paper 1任务指南](01_Paper1_OpenWorld_Risk/Stage_Guide.md)：从学习、文献、复现、数据、实验到投稿；
 - [Paper 1研究计划](01_Paper1_OpenWorld_Risk/Research_Plan.md)：问题、两项主张和研究边界。
 - 主线A练手论文：固定整帧时间预算下分配局部高分辨率计算；
 - [项目英语学习支持线](90_English_Learning/README.md)：领域英语优先的文献阅读、论文写作与四级计划；
 - [Codex使用指南](99_Attachments/查阅/Codex_Usage_Guide.md)：项目指令、检查点、上下文压缩、Token、Skills和Plugins的使用方法；
-- [论文阅读指南](00_Overview/Paper_Reading_Guide.md)：历史材料和新审计文献的阅读等级、当前用途及边界；
+- [论文阅读指南](00_Overview/AI_Context/Paper_Reading_Guide.md)：历史材料和新审计文献的阅读等级、当前用途及边界；
 - [项目参考材料](00_Overview/Reference_Materials/README.md)：博士科研计划书等方向依据。
 - [全项目附件](99_Attachments/README.md)：博士研究外部条件、资源需求、模板和写法说明；
 - [外部条件与资源需求](99_Attachments/事件/Doctoral_Research_External_Conditions.md)：无人机、工作站、铁路数据、传感器、通信平台、人员和许可的分阶段配置。

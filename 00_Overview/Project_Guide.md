@@ -14,10 +14,10 @@
 |---|---|
 | [Current_Stage.md](Current_Stage.md) | 当前阶段、唯一任务、完成门和禁止事项 |
 | [Seven_Paper_Roadmap.md](Seven_Paper_Roadmap.md) | 七篇论文的稳定边界、依赖和接口 |
-| [Paper_Reading_Guide.md](Paper_Reading_Guide.md) | 跨项目论文载体、阅读等级和归档边界 |
-| [Literature_Tracking_Workflow.md](Literature_Tracking_Workflow.md) | 周检索输入的审计、去重、归档、跨方向矩阵与周报联动 |
-| [Literature_Registry.md](Literature_Registry.md) | 工作级唯一ID、版本历史和正文主位置 |
-| [Innovation_Ledger.md](Innovation_Ledger.md) | 文献对候选创新、边界与待验证实验的影响 |
+| [Paper_Reading_Guide.md](AI_Context/Paper_Reading_Guide.md) | 跨项目论文载体、阅读等级和归档边界 |
+| [Literature_Tracking_Workflow.md](AI_Context/Literature_Tracking_Workflow.md) | 周检索输入的审计、去重、归档、跨方向矩阵与周报联动 |
+| [Literature_Registry.md](AI_Context/Literature_Registry.md) | 工作级唯一ID、版本历史和正文主位置 |
+| [Innovation_Ledger.md](AI_Context/Innovation_Ledger.md) | 文献对候选创新、边界与待验证实验的影响 |
 | [Learning_Note_Method.md](Learning_Note_Method.md) | 学习、文献、实验、写作的执行顺序与低负担记录方法 |
 | [练手论文学习枢纽](../00_Practice_UAV_Aerial_Detection/README.md) | 合并后的练手文目录；学习看 Completion_Metrics；事项看 Current_Stage |
 | [英语学习支持线](../90_English_Learning/README.md) | 与当前科研阶段同步的领域英语、写作和四级能力训练；不改变科研任务 |

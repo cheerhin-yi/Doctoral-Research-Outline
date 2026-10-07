@@ -4,7 +4,7 @@
 > **原则：** 只收录已扫描确认存在的路径；不枚举 `11_Datasets` 像素树 / Ultralytics 全量文件。  
 > **更新：** 2026-09-27（Asia/Shanghai）
 
-快速入口：[`README.md`](README.md) · [`00_Overview/Current_Stage.md`](00_Overview/Current_Stage.md) · [`00_Overview/INDEX_Discussion_Products_2026-09-24.md`](00_Overview/INDEX_Discussion_Products_2026-09-24.md)（当日政策/边界/A·B案头） · [`P0_EI/Run_Index.md`](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md) · [figures/](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/figures/)
+快速入口：[`README.md`](README.md) · [`00_Overview/Current_Stage.md`](00_Overview/Current_Stage.md) · [`P0_EI/Run_Index.md`](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md) · [figures/](00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/figures/)
 
 ---
 
@@ -51,6 +51,7 @@
 | 角色 | 路径（均已确认存在） |
 |---|---|
 | 当前唯一事项 | `00_Overview/Current_Stage.md` |
+| AI 规则与登记（AI_Context，用户无需阅读） | `00_Overview/AI_Context/`：`README.md` · `Literature_Tracking_Workflow.md` · `Literature_Registry.md` · `Innovation_Ledger.md` · `Paper_Reading_Guide.md`；学习笔记方法仍在 `00_Overview/Learning_Note_Method.md` |
 | 项目指南 / 七篇路线 | `00_Overview/Project_Guide.md` · `00_Overview/Seven_Paper_Roadmap.md` |
 | 练手入口 | `00_Practice_UAV_Aerial_Detection/README.md` |
 | 练手研究计划（C1／C2 终稿主张） / 近中远 | `00_Practice_UAV_Aerial_Detection/Research_Plan.md` · `Mainline_A_Current.md` |
@@ -72,7 +73,7 @@
 ## 3b. 2026-09-24 全局政策 + A/B 案头指针（讨论产物）
 
 > **不**改变唯一 ACTIVE=**P0_EI**；A/B 仍 **IDLE/PREP**；**不**解锁采集/训练。  
-> **总索引（权威入口）：** [`00_Overview/INDEX_Discussion_Products_2026-09-24.md`](00_Overview/INDEX_Discussion_Products_2026-09-24.md)
+> **总索引：** 原 `INDEX_Discussion_Products_2026-09-24.md`（已删除）；以下表格即当前指针。
 
 | 角色 | 权威路径 |
 |---|---|
@@ -80,9 +81,9 @@
 | **boundary** | `01_Paper1_OpenWorld_Risk/AB_Independent_Publication_Boundary.md` · `AB_Direction_Judgment_With_Literature_2026-09-24.md` · `Paper1_Direction_Worth_Judgment_2026-09-24.md` |
 | **A prep** | `08_RailUAV_SOD/Writing/PartFamily_CollectionDifficulty_and_VenueBounds_2026-09-24.md` · `Writing/` 案头草案簇；Learning_Notes 课程计划 `_PLAN_Learning_Notes_Curriculum_2026-09-24.md` → **pending**（sibling） |
 | **B prep** | `01_Paper1_OpenWorld_Risk/Writing/Claim_Freeze_C1_C2.md` · `Literature/Literature_Matrix_Addendum_2026-09-24.md` · `Writing/B_OpenWorld_Risk_Outline.md` |
-| **catalog** | 本文件 + 上列 INDEX |
+| **catalog** | 本文件（原 INDEX 已删除） |
 
-细目与 `.bak` 列示见 INDEX；下方 §4–§7 **P0_EI 图表/证据骨架保持不变**。文末「Paper1 / Post-EI / 案头 / JCR」各节为同日增量明细，与本表互指。
+细目与 `.bak` 列示原见 INDEX（已删除）；下方 §4–§7 **P0_EI 图表/证据骨架保持不变**。文末「Paper1 / Post-EI / 案头 / JCR」各节为同日增量明细，与本表互指。
 
 ---
 ## 4. P0_EI 图表 ↔ 基准数据对照表
@@ -145,7 +146,7 @@ Experiments/papers/P0_EI/
 | 文献矩阵 ↔ 主题文件夹 | `Literature/Literature_Matrix.md` ↔ `Literature/01_Slicing_Inference/` · `02_HighRes_Efficient_SOD/` · `03_Multiscale_Zoom_Inference/` · `04_Aerial_Benchmarks_Eval/` |
 | 写作计划 ↔ 大纲 | `Writing/P0_Two_Paper_Plan_2026-09-22.md` ↔ `Writing/P0_EI_Outline.md` |
 | 缩写表 | `99_Attachments/查阅/Abbreviation_Glossary.md` |
-| 文献登记 / 周审 | `00_Overview/Literature_Registry.md` · `Literature_Tracking_Workflow.md` |
+| 文献登记 / 周审 | `00_Overview/AI_Context/Literature_Registry.md` · `00_Overview/AI_Context/Literature_Tracking_Workflow.md` |
 | Paper 1 | `01_Paper1_OpenWorld_Risk/README.md` · `Stage_Guide.md` · `Research_Plan.md` |
 | 练手目录索引（含 Experiments 目录说明） | `00_Practice_UAV_Aerial_Detection/README.md` |
 | P0 运行代码（2026-09-27 从 `bad0f8b` 恢复） | `00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_{b,d,e,f}/run_stage_*.py` · `Experiments/diagnose_bt1.py`（SHA 见 `P0_EI/05_packaging/Reproducibility_Appendix.md` §10） |
@@ -257,4 +258,4 @@ Experiments/papers/P0_EI/
 | `08_RailUAV_SOD/Completion_Metrics.md` | **更新** L0–L4 对齐新笔记 |
 | `08_RailUAV_SOD/Learning_Check_Baseline.md` | **更新** 分块检查清单 |
 | `08_RailUAV_SOD/Mainline_Current.md` | **短更** Learning_Notes 脚手架 DONE |
-| `00_Overview/Discussion_Extras_Index_2026-09-24.md` | **新建** 近期 A/B 政策/判断/案头文件索引 |
+| Discussion_Extras_Index_2026-09-24.md（已删除） | **新建** 近期 A/B 政策/判断/案头文件索引 |
