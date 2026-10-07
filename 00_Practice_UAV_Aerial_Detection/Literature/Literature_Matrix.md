@@ -27,7 +27,6 @@
 | T3-01 | 03 | 2018 | Dynamic Zoom-in Network | CVPR | SCREENED | 必读 | Gao et al. | 局部放大问题陈述；对照 DensK1 |
 | T3-02 | 03 | 2019 | AutoFocus | ICCV | SCREENED | 必读 | Najibi et al. | 多尺度推理预算；学边界写法 |
 | T3-03 | 03 | 2019 | ClusDet | ICCV | SCREENED | 选读（原 SHOULD） | Yang et al. | 聚类切块再检测；学方法图与额外前向 |
-| T4-01 | 04 | 2019 | VisDrone Challenge / DET overview | ICCVW etc. | SCREENED | 必读 | Zhu / Du et al. | 学航拍表怎么排、小目标口径 |
 | T4-02 | 04 | 2018 | UAVDT | ECCV（2026-10-06 核：主会，DOI 10.1007/978-3-030-01249-6_23；原登记 ECCV Workshops） | SCREENED | 选读（原 SHOULD） | Du et al. | 跨集外推评测口径；对应 Stage E |
 | T1-03 | 01 | 2019 | The Power of Tiling | CVPRW | SCREENED | 建议优先读 | Unel et al. | 事实：训练与推理均分块；VisDrone；报 FPS（TX1／TX2）（与 P0 关系待用户填） |
 | T1-04 | 01 | 2018 | Selective Tile Processing | ICDSC | SCREENED | 选读 | Plastiras et al. | 事实：注意力选 tile + 记忆；自建行人集；报 CPU 处理时间（与 P0 关系待用户填） |
@@ -43,7 +42,7 @@
 | T3-09 | 03 | 2022 | Focus-and-Detect | SPIC | SCREENED | 选读 | Koyun et al. | 事实：GMM 聚焦区域再检测；VisDrone、UAVDT；报每图时间（2080 Ti）（与 P0 关系待用户填） |
 | T3-10 | 03 | 2024 | YOLC | T-ITS | SCREENED | 选读 | Liu et al. | 事实：局部尺度模块搜簇区域；VisDrone、UAVDT；报 s/img（2080 Ti）（与 P0 关系待用户填） |
 | T3-11 | 03 | 2023 | CZ Det | CVPRW | SCREENED | 建议优先读 | Meethal et al. | 事实：检测器自预测密度裁剪 + 二次放大；VisDrone、DOTA；报 FPS（与 P0 关系待用户填） |
-| T4-03 | 04 | 2022 | VisDrone（TPAMI） | TPAMI | SCREENED | 建议优先读 | Zhu et al. | 事实：VisDrone 数据集与挑战赛综述；test-dev 1,610 张（与 P0 关系待用户填） |
+| T4-03 | 04 | 2022 | VisDrone（TPAMI） | TPAMI | SCREENED | 必读 | Zhu et al. | 事实：VisDrone 数据集与挑战赛综述；test-dev 1,610 张（与 P0 关系待用户填） |
 | T4-04 | 04 | 2021 | VisDrone-DET2021 Results | ICCVW | SCREENED | 选读 | Cao et al. | 事实：DET2021 挑战赛结果汇总；test-challenge 1,580 张（与 P0 关系待用户填） |
 | T4-05 | 04 | 2017 | Speed/Accuracy Trade-offs | CVPR | SCREENED | 选读 | Huang et al. | 事实：统一实现下速度／精度／内存对照；COCO；GPU 时间（Titan X）（与 P0 关系待用户填） |
 | T4-06 | 04 | 2023 | SODA | TPAMI | SCREENED | 选读 | Cheng et al. | 事实：小目标检测综述 + SODA-D／SODA-A 基准（与 P0 关系待用户填） |
@@ -63,7 +62,7 @@
 | T3-01 | 局部放大 | 问题起笔／DensK1 对照 | 低 |
 | T3-02 | 多尺度预算 | 预算轴对照 | 低 |
 | T3-03 | 聚类切块 | 方法图表格式参考 | 低 |
-| T4-01 | VisDrone 口径 | 主评测表 | — |
+| T4-03 | VisDrone 口径（原 T4-01 并入） | 主评测表 | — |
 | T4-02 | UAVDT | 跨集；排序不稳可作负结果边界 | — |
 
 2026-10-06 新增的 T1-03 … T5-03（22 篇）本节不预填；「与P0关系」由你在各主题 `Reading_List.md` 阅读清单（2026-10-07 已与原必读清单合并为一张表）末列填写。
@@ -90,6 +89,8 @@
 **新建 `05_Detector_References/` 的原因：** T1–T4 收推理协议、选区与评测口径方面的近邻工作；YOLO／Ultralytics 是被冻结检测器本身的出处，用途是 Method 节引用，不是对照工作，混放会让两类引用难以区分。密度／聚类／区域引导类（建议主题 c）与已有 T3-03 ClusDet 同类，并入 T3，不另开文件夹。
 
 **建议优先读（8 篇，理由只写事实）：**
+
+> 2026-10-07：原 T4-01（VisDrone Challenge / DET overview，只登记了项目页、无具体论文）与 T4-03 是同一工作（VisDrone 挑战赛综述），已并入 T4-03，T4-03 优先级随之改为必读；文献总数 30 篇。
 
 | ID | 题目 | 理由 | 链接 |
 |---|---|---|---|
