@@ -180,6 +180,7 @@ P7_多机联合决策
 - Image output path：`99_Attachments/Zotero_Annot/{{citekey}}/`
 
 4. 命令面板运行一次 `Zotero Integration: Data Explorer`，选一篇有 PDF 的条目，确认能看到 title、citekey、annotations。看不到则回到 3.1 第 4 步。
+5. 执行 `Zotero Integration: Create literature note from selected item(s)`，可以生成笔记
 
 ---
 

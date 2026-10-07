@@ -1,4 +1,3 @@
-# Doctoral-Research-Outline｜科研叙事与论文草稿模板
 
 > 用途：每篇论文从 IDEA 开始长期维护的科研主文档。
 >

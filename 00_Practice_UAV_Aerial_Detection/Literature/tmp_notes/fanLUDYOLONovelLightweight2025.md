@@ -1,21 +1,21 @@
 
-# 精读笔记：{{citekey}}
+# 精读笔记：fanLUDYOLONovelLightweight2025
 
 ## 题目
 
-{{title}}
+LUD-YOLO: A novel lightweight object detection network for unmanned aerial vehicle
 
 ## 作者 / 年 / Venue
 
-{% for c in creators %}{{c.lastName}}{% if not loop.last %}, {% endif %}{% endfor %} / {{date | format("YYYY")}} / {{publicationTitle or proceedingsTitle or university}}
+Fan, Li, Deveci, Zhong, Kadry / 2025 / Information Sciences
 
 ## DOI 或 arXiv
 
-{% if DOI %}https://doi.org/{{DOI}}{% endif %}{% if extra %} {{extra}}{% endif %}
+https://doi.org/10.1016/j.ins.2024.121366
 
 ## Zotero
 
-[打开条目]({{desktopURI}}) {% for attachment in attachments | filterby("path", "endswith", ".pdf") %}[打开 PDF](file:///{{attachment.path | replace("\\", "/") | replace(" ", "%20")}}){% endfor %}
+[打开条目](zotero://select/library/items/FTWT37KN) [打开 PDF](file:///C:/Users/ChHao/Zotero/storage/HNJAC3XY/Fan%20等%20-%202025%20-%20LUD-YOLO%20A%20novel%20lightweight%20object%20detection%20network%20for%20unmanned%20aerial%20vehicle.pdf)
 
 # 1. 研究问题
 
@@ -23,11 +23,17 @@
 
 > 用自己的话概括研究对象、场景和任务。
 
+综合就一句话，把yolo8改成轻量化的小目标检测网络
+
 ## 1.2 为什么值得研究？
 
 > 科学价值 / 工程价值 / 应用价值。
 
 ## 1.3 现有方法有什么问题？
+
+1. yolo8对小目标识别漏检率较高
+2. 部署在无人机计算量太大，没有实时性
+3. yolo8轻量化的效果
 
 ## 1.4 作者真正要解决的问题
 
@@ -256,8 +262,9 @@ Output
 ## 未解决
 
 
-{% persist "annotations" %} 
+%% begin annotations %% 
 ## 划线与批注
 
-{% for a in annotations %}
-- p.{{a.pageLabel}} {% if a.color %}({{a.color}}) {% endif %}{{a.annotatedText}} {% if a.comment %} 注：{{a.comment}} {% endif %}{% endfor %} {% endpersist %}
+ %% end annotations %%
+
+%% Import Date: 2026-10-06T16:54:52.895+08:00 %%
