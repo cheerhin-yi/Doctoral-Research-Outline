@@ -49,7 +49,6 @@
 |---|---|
 | 本 README | 入口、规则、模块顺序 |
 | [Progress_Log.md](Progress_Log.md) | 本人作答、测试、CET 分项、状态 |
-| ../Completion_Metrics.md | 至 12 月完整日程与模块必答题 |
 | 原仓库 `Domain_English_Lessons.md`（若仍保留） | 可继续作题库；新日程以并行计划为准 |
 
 同一事实只留一处：课程/题干在课程或并行计划；作答只在 Progress_Log。
