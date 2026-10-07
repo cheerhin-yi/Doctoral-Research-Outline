@@ -15,10 +15,10 @@
 ## 根目录文件
 
 - [P0_C1C2.md](P0_C1C2.md) — 当前稿与后续稿能用的全文结论
-- [Literature_Matrix.md](Literature_Matrix.md) — 全主题必读／选读总表与证据摘要（§5：2026-10-06 候选 22 篇检索记录与建议优先读）
+- [Literature_Matrix.md](Literature_Matrix.md) — 全主题文献总表（优先级：必读／建议优先读／选读）与证据摘要（§5：2026-10-06 候选 22 篇检索记录与建议优先读）
 - [Coarse_Reading_Notes.md](Coarse_Reading_Notes.md) — 粗读学习笔记（主题级，不替代篇笔记）
 - [Paper_Note_Template.md](Paper_Note_Template.md) — 单篇笔记模板（三样：问题句／表轴／边界）
-- 各主题下：`Reading_List.md`、`notes/`、`pdfs/`（PDF 放入对应 `pdfs/`，清单里登记）
+- 各主题下：`Reading_List.md`（每主题一张阅读清单表：编号、题目+链接、年／Venue、数据集、检测器、指标、时延／硬件、优先级、状态、与P0关系）、`notes/`、`pdfs/`（PDF 放入对应 `pdfs/`，清单里登记）
 
 ## 纪律
 
