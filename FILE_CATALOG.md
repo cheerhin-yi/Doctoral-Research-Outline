@@ -65,6 +65,7 @@
 | 练手论文完整报告（叙事版） | `00_Practice_UAV_Aerial_Detection/P0_EI_Full_Report_20261006.md`（2026-10-06；背景、Stage 0／A–K 故事线、五协议与匹配器详解、全部结果表含 Run G–K、局限、投稿待办、术语表；示意图在 `00_Practice_UAV_Aerial_Detection/assets/P0_EI_Full_Report_20261006/`） |
 | P0_EI 证据仓 | `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/` |
 | Run 索引 | `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/Run_Index.md` |
+| 实验目录导读（给人看） | `00_Practice_UAV_Aerial_Detection/Experiments/实验目录导读.md`（文件夹地图、Run A–K 一览、不用打开/不能改的目录） |
 | Packaging 叙事 | `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/`（含 `Neighbor_Protocol_Table.md`） |
 | 对照图 | `00_Practice_UAV_Aerial_Detection/Experiments/papers/P0_EI/05_packaging/figures/` |
 | 缩写表 | `99_Attachments/查阅/Abbreviation_Glossary.md` |
