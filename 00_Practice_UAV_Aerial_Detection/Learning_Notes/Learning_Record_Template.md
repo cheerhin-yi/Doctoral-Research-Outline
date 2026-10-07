@@ -1,4 +1,4 @@
-> 过关证据以各主题笔记**第二部分**为准（见 [../Learning_Check_Baseline.md](../Learning_Check_Baseline.md)）。本模板可选作当日备忘。
+> 过关证据以各主题笔记**第二部分**为准（见 [../AI_Context/Learning_Check_Baseline.md](../AI_Context/Learning_Check_Baseline.md)）。本模板可选作当日备忘。
 
 # 单次学习记录模板（低负担）
 

@@ -203,7 +203,7 @@ _适用于练手论文、Paper 1及以后正式启动论文的学习、文献、
 如果只是“看过”“听懂”或复制了标准答案，但不能闭卷复述和验证，该任务仍然未完成。
 
 
-> **2026-09-16：** 核心学习按 [三周计划](../00_Practice_UAV_Aerial_Detection/Completion_Metrics.md) 每日约 5h（4h 科研 + 1h 英语）推进；记录用 [学习记录模板](../00_Practice_UAV_Aerial_Detection/Learning_Notes/Learning_Record_Template.md)。PrePaper 与 Startup 学习内容已合并到 Startup `Learning_Notes/`（00–07 并列）。旧共享头笔记仅作历史候选。验收见 [Completion_Metrics.md](../00_Practice_UAV_Aerial_Detection/Completion_Metrics.md)。
+> **2026-09-16：** 核心学习按 [三周计划](../00_Practice_UAV_Aerial_Detection/AI_Context/Completion_Metrics.md) 每日约 5h（4h 科研 + 1h 英语）推进；记录用 [学习记录模板](../00_Practice_UAV_Aerial_Detection/Learning_Notes/Learning_Record_Template.md)。PrePaper 与 Startup 学习内容已合并到 Startup `Learning_Notes/`（00–07 并列）。旧共享头笔记仅作历史候选。验收见 [Completion_Metrics.md](../00_Practice_UAV_Aerial_Detection/AI_Context/Completion_Metrics.md)。
 
 ## 📋 练手论文主线A的阶段顺序
 

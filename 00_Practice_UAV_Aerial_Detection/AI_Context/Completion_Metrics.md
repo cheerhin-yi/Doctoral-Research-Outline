@@ -6,8 +6,8 @@
 
 验收：闭卷复述／手算／必答证据；**不得代填**。状态：`TODO` → `LEARNING` → `REVIEWING` → `PASSED`／`REPEAT`。
 
-总入口：[`00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md)。  
-英语并行：[`90_English_Learning/README.md`](../90_English_Learning/README.md)。  
+总入口：[`00_Overview/Current_Stage.md`](../../00_Overview/Current_Stage.md)。  
+英语并行：[`90_English_Learning/README.md`](../../90_English_Learning/README.md)。  
 未授权前不新训模型。
 
 ---
@@ -26,7 +26,7 @@
 
 ## L0 · 检测链与指标
 
-**学习块：** [`Learning_Notes/01_YOLO_Research_Core.md`](Learning_Notes/01_YOLO_Research_Core.md)；按需 [`10_ResNet_Core.md`](Learning_Notes/10_ResNet_Core.md)。
+**学习块：** [`Learning_Notes/01_YOLO_Research_Core.md`](../Learning_Notes/01_YOLO_Research_Core.md)；按需 [`10_ResNet_Core.md`](../Learning_Notes/10_ResNet_Core.md)。
 
 **完成指标：** 见 `01` 与基准 §2.1。
 

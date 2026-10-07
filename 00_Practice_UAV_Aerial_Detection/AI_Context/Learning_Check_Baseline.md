@@ -1,6 +1,6 @@
 # 练手文学习检查基准（助手维护）
 
-路径：`00_Practice_UAV_Aerial_Detection/Learning_Check_Baseline.md`  
+路径：`00_Practice_UAV_Aerial_Detection/AI_Context/Learning_Check_Baseline.md`  
 更新日期：2026-09-27。  
 维护者：助手。用户完成某块笔记**第二部分**后提交检查；**未达标不得进入下一块／下一关**。
 

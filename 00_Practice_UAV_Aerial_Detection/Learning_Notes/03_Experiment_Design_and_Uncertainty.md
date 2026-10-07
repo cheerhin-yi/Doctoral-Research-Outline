@@ -1,6 +1,6 @@
 # 03 实验设计与不确定性（P0 路线）
 
-> 关卡：L1 · 块二｜过关只查**第二部分**｜检查基准见 [`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md)  
+> 关卡：L1 · 块二｜过关只查**第二部分**｜检查基准见 [`../AI_Context/Learning_Check_Baseline.md`](../AI_Context/Learning_Check_Baseline.md)  
 > 对齐主张：`P0-EI-C1` / `P0-EI-C2`（协议／对比，非新算法）｜实验入口：[`../../00_Overview/Current_Stage.md`](../../00_Overview/Current_Stage.md)
 
 ---

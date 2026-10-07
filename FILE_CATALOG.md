@@ -52,9 +52,10 @@
 |---|---|
 | 当前唯一事项 | `00_Overview/Current_Stage.md` |
 | AI 规则与登记（AI_Context，用户无需阅读） | `00_Overview/AI_Context/`：`README.md` · `Literature_Tracking_Workflow.md` · `Literature_Registry.md` · `Innovation_Ledger.md` · `Paper_Reading_Guide.md`；学习笔记方法仍在 `00_Overview/Learning_Note_Method.md` |
+| 练手 AI 规则（AI_Context，用户无需阅读） | `00_Practice_UAV_Aerial_Detection/AI_Context/`：`README.md` · `Learning_Check_Baseline.md` · `Completion_Metrics.md` · `Mainline_A_Current.md` |
 | 项目指南 / 七篇路线 | `00_Overview/Project_Guide.md` · `00_Overview/Seven_Paper_Roadmap.md` |
 | 练手入口 | `00_Practice_UAV_Aerial_Detection/README.md` |
-| 练手研究计划（C1／C2 终稿主张） / 近中远 | `00_Practice_UAV_Aerial_Detection/Research_Plan.md` · `Mainline_A_Current.md` |
+| 练手研究计划（C1／C2 终稿主张） / 近中远 | `00_Practice_UAV_Aerial_Detection/Research_Plan.md` · `AI_Context/Mainline_A_Current.md` |
 | 学习笔记 | `00_Practice_UAV_Aerial_Detection/Learning_Notes/`（含 `11_EI_Packaging_Neighbor_Failure_Repro.md` 等） |
 | 文献矩阵 ↔ 主题夹 | `00_Practice_UAV_Aerial_Detection/Literature/Literature_Matrix.md` ↔ `01_Slicing_Inference/` … `04_Aerial_Benchmarks_Eval/` |
 | 写作大纲 / 双文计划 | `00_Practice_UAV_Aerial_Detection/Writing/P0_EI_Outline.md` · `P0_Two_Paper_Plan_2026-09-22.md` |

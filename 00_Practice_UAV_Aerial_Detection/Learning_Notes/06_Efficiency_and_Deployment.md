@@ -1,6 +1,6 @@
 # 06 效率、时间预算与部署口径（P0 路线）
 
-> 关卡：L2｜过关只查**第二部分**｜[`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md)  
+> 关卡：L2｜过关只查**第二部分**｜[`../AI_Context/Learning_Check_Baseline.md`](../AI_Context/Learning_Check_Baseline.md)  
 > 对齐：Stage B 计时协议、Stage D 单次墙钟、C1「不显著更慢」的证据边界
 
 ---

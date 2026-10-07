@@ -1,6 +1,6 @@
 # 09 跨集外推、类别映射冻结与近邻推理技术（P0 EI）
 
-> 关卡：L3 补强／L4 前置｜过关只查**第二部分**｜[`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md)  
+> 关卡：L3 补强／L4 前置｜过关只查**第二部分**｜[`../AI_Context/Learning_Check_Baseline.md`](../AI_Context/Learning_Check_Baseline.md)  
 > 对齐：Stage E（UAVDT）PASS、类别映射 FROZEN、EI 稿「双集证据／不可写通论排序」纪律  
 > 权威入口：[`../../00_Overview/Current_Stage.md`](../../00_Overview/Current_Stage.md)
 

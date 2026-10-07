@@ -1,6 +1,6 @@
 # 11 EI 成稿包装：近邻协议表、失败边界与可复现附录
 
-> 关卡：L4 包装｜过关只查**第二部分**｜[`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md)  
+> 关卡：L4 包装｜过关只查**第二部分**｜[`../AI_Context/Learning_Check_Baseline.md`](../AI_Context/Learning_Check_Baseline.md)  
 > 对齐：Current_Stage「下一可检查事项 = EI 包装增量」；**不**默认开同质第三集、不重训、不改映射  
 > 前置：`03` 主张卡、`07` 五方法链、`08` 图级配对、`09` 跨集与词表
 

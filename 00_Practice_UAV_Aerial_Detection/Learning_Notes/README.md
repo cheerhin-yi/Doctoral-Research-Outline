@@ -7,8 +7,8 @@
 
 | 文件 | 用途 |
 |---|---|
-| [`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md) | 助手维护的检查基准 |
-| [`../Completion_Metrics.md`](../Completion_Metrics.md) | 关卡总门 L0–L4 |
+| [`../AI_Context/Learning_Check_Baseline.md`](../AI_Context/Learning_Check_Baseline.md) | 助手维护的检查基准 |
+| [`../AI_Context/Completion_Metrics.md`](../AI_Context/Completion_Metrics.md) | 关卡总门 L0–L4 |
 | `00_Unified_Core_Knowledge_Map.md` | 全局导航（不过关） |
 | `01_YOLO_Research_Core.md` | L0；**暂保持单部** |
 | `02_PyTorch_and_Reproducibility.md` | L1；双部样板 |

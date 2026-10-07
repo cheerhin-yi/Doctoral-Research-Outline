@@ -10,7 +10,7 @@
 
 **当前唯一待办：撰写 P0 EI 会议稿，并选定 2027 年会期。** 主张仅 P0-EI-C1／P0-EI-C2（PROPOSED）。旧 P0-A-C1／C2 保持 HOLD（历史追踪）。Paper 1 两项主张与 Paper 2–7 保持 PAUSED。
 
-权威入口：[当前阶段](00_Overview/Current_Stage.md)、[主线A当前](00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md)、2026-09-16决定、[研究计划](00_Practice_UAV_Aerial_Detection/Research_Plan.md)、阶段指南。
+权威入口：[当前阶段](00_Overview/Current_Stage.md)、[主线A当前](00_Practice_UAV_Aerial_Detection/AI_Context/Mainline_A_Current.md)、2026-09-16决定、[研究计划](00_Practice_UAV_Aerial_Detection/Research_Plan.md)、阶段指南。
 
 允许整理已有表成稿；若缺同口径 5060 Ti 时间表或一次 test-dev 终评，须先登记 Run ID。禁止新训练、改网络、用未采集高原数据占位写结果。不把 VisDrone 写成铁路安全或高原泛化；不承诺期刊录用。
 

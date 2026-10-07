@@ -1,6 +1,6 @@
 # 07 主线 A 知识链：预算–切片–分辨率（P0 核心）
 
-> 关卡：L3｜过关只查**第二部分**｜[`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md)  
+> 关卡：L3｜过关只查**第二部分**｜[`../AI_Context/Learning_Check_Baseline.md`](../AI_Context/Learning_Check_Baseline.md)  
 > 本块是练手 EI 稿的**主知识链**；对应五方法与 Stage A–F 纪律。  
 > 更新：2026-09-23 — Stage E（UAVDT）已 PASS；下一执行项见 `11` EI 包装。
 

@@ -3,7 +3,7 @@
 | 字段 | 内容 |
 |---|---|
 | 对应关卡 | **L1**（块一；与 `03` 共同构成 L1） |
-| 检查基准 | [`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md) §2.2 |
+| 检查基准 | [`../AI_Context/Learning_Check_Baseline.md`](../AI_Context/Learning_Check_Baseline.md) §2.2 |
 | 格式说明 | [`README.md`](README.md) |
 
 > **第一部分**＝必须掌握（下方教材，含说明）。**第二部分**＝你的记录。过关查第二部分。

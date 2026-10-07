@@ -2,7 +2,7 @@
 
 更新：2026-10-06（Asia/Shanghai；Run G 5060 Ti 正式时序已跑完，SMOKE／CAL48／TESTDEV／PAIRED 全部 PASS；2026-10-01 本机 GPU 换为 RTX 5060 Ti 16GB）。ACTIVE 不变：**P0_EI**。
 
-本文件是全项目**唯一当前事项入口**。研究问题、实验设置与 C1／C2 主张全文见 [`Research_Plan.md`](../00_Practice_UAV_Aerial_Detection/Research_Plan.md)；近中远边界见 [`Mainline_A_Current.md`](../00_Practice_UAV_Aerial_Detection/Mainline_A_Current.md)。
+本文件是全项目**唯一当前事项入口**。研究问题、实验设置与 C1／C2 主张全文见 [`Research_Plan.md`](../00_Practice_UAV_Aerial_Detection/Research_Plan.md)；近中远边界见 [`Mainline_A_Current.md`](../00_Practice_UAV_Aerial_Detection/AI_Context/Mainline_A_Current.md)。
 
 | 入口 | 路径 |
 |---|---|

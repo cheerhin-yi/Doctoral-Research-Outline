@@ -1,6 +1,6 @@
 # 04 小目标与多尺度（P0 路线）
 
-> 关卡：L2｜过关只查**第二部分**｜[`../Learning_Check_Baseline.md`](../Learning_Check_Baseline.md)  
+> 关卡：L2｜过关只查**第二部分**｜[`../AI_Context/Learning_Check_Baseline.md`](../AI_Context/Learning_Check_Baseline.md)  
 > 对齐：VisDrone 小目标定义、F640 vs F1280 分辨率轴、切片是否改变「有效分辨率」
 
 ---

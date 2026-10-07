@@ -77,7 +77,7 @@
 | 投稿会议 | 首投 **IJCNN 2027**（截稿 2027-01-31），落选转投 **ICIP 2027**（截稿 2027-03-31）（2026-10-06 定；均为 CCF-C，投稿前核对 CCF 第七版）；备选 ACCV／ICPR 全文；不把 CCF-B（ICME／ICASSP）当第一目标；Workshop／短文通常不算目录会议 | `PR/Writing/P0_Two_Paper_Plan_2026-09-22.md` |
 | 分区主尺 | 期刊用 **JCR-primary**（Q1–Q4）；会议按投稿时的 CCF 推荐目录；**EI 索引只是描述项**，不替代 CCF／JCR | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` §1 |
 | 第二篇（另授权） | 统一时间预算下的协议选择 + 一条受限推理切片；出口 **JCR Q2 应用／系统刊**；启动条件是五协议逐图 oracle 上界足够 | `P0_Two_Paper_Plan_2026-09-22.md` |
-| 会期 | Mainline §7 要求"选定 2027 年 EI 会期并写入 Current_Stage"——**待补**（Current_Stage 目前未写具体会期／截稿日） | `PR/Mainline_A_Current.md` §7 |
+| 会期 | Mainline §7 要求"选定 2027 年 EI 会期并写入 Current_Stage"——**待补**（Current_Stage 目前未写具体会期／截稿日） | `PR/AI_Context/Mainline_A_Current.md` §7 |
 
 > 注：`Venue_and_Claim_Policy_JCR_2026-09-24.md` 的正文只有 A／B 两篇的 claim×venue 梯子，**没有 P0 专条**。"P0 以 EI 为先"来自 Research_Plan 与两篇安排；该政策文件对 P0 只起到"会议看 CCF、期刊看 JCR"这一总口径的作用。
 
@@ -517,7 +517,7 @@
 |---|---|
 | 唯一当前事项 | `00_Overview/Current_Stage.md` |
 | 发表／主张政策 | `00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md` |
-| 练手入口／计划 | `PR/README.md` · `PR/Research_Plan.md` · `PR/Mainline_A_Current.md` |
+| 练手入口／计划 | `PR/README.md` · `PR/Research_Plan.md` · `PR/AI_Context/Mainline_A_Current.md` |
 | 写作 | `PR/Writing/P0_EI_Outline.md` · `PR/Writing/P0_Two_Paper_Plan_2026-09-22.md` |
 | 文献 | `PR/Literature/Literature_Matrix.md`（T1 切片／T2 高分高效 SOD／T3 多尺度放大／T4 航拍基准） |
 | Run 索引 | `P0_EI/Run_Index.md` |

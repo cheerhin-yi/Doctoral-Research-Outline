@@ -1,6 +1,6 @@
 # 主线 A 当前执行页（近中远）
 
-更新：2026-09-27（Asia/Shanghai）。当前事项以 [`../00_Overview/Current_Stage.md`](../00_Overview/Current_Stage.md) 为准；研究问题、实验设置与主张证据全文见 [`Research_Plan.md`](Research_Plan.md)。
+更新：2026-09-27（Asia/Shanghai）。当前事项以 [`../00_Overview/Current_Stage.md`](../../00_Overview/Current_Stage.md) 为准；研究问题、实验设置与主张证据全文见 [`Research_Plan.md`](../Research_Plan.md)。
 
 ---
 
