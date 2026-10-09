@@ -49,7 +49,29 @@ https://doi.org/10.1016/j.ins.2024.121366
 
 > 一句话说明论文最核心的解决思路。
 
+分三个方面，特征融合的改进，特征提取的改进，轻量化调整
 ## 2.2 方法流程
+
+### 2.2.1 特征融合
+
+共分两步。
+
+1. 普通yolo8的FAN上采样是直接C5（20×20）上逐步采样到C3（40×40）大小然后concat，文章改成C5直接上采样到C2大小concat，然后在下采样到C3（40×40）concat。
+2. 将原来的Neck（FAN-PAN）改为了***AFPN***，可以加强语义和细节间的融合，且文章在此基础上改进了AFPN。原来Neck里面逐级上采样直接丢掉，C5 一步上采样×8 到 160×160，与 **C2** concat；随后逐级下采样，在 80×80 处与 **C3** concat 并 ASFF 仲裁，在 40×40 处与 **C4** concat 并 ASFF 仲裁，在 20×20 处与 C5 普通融合。ASFF 只作用于 **C2-C4** 三个节点。
+3. 这里先简单介绍AFPN（Asymptotic Feature Pyramid Network，渐近特征金字塔网络）
+	1. 先融合相邻低层、再逐级融入高层。命名为渐近融合（Asymptotic Fusion），可弥补非相邻层级间的语义信息
+	2. 两个非相邻层级融合依靠ASFF，自适应空间融合（Adaptive Spatial Feature Fusion, ASFF），连接起来。
+
+#### 2.2.1.1 相关理论
+
+1. FPN 和 PAN上下采样被压缩和更换。C5直接上采样到C2大小，PAN下采样过程中修改为ASFF合并其他骨干特征
+2. AFPN具体做法：
+	1. 
+3. 
+
+	
+![[pGCZi.png]]
+
 
 ```text
 Input

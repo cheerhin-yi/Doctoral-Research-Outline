@@ -81,3 +81,5 @@
 ## 6. 禁止事项
 
 新训练／微调；改 backbone、loss、检测头；看分后改类别映射或 conf；重复使用 test-dev 选策略；1660 与 5060 Ti 混表；把 VisDrone 结果写成铁路或高原结论；开 Paper 2–7。
+
+> AI生成

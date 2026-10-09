@@ -11,3 +11,5 @@
 | [Paper_Reading_Guide.md](Paper_Reading_Guide.md) | 跨项目发表载体、阅读等级与归档边界 |
 
 > **注意：** Codex 每周审计自动化（`automation-6`）仍使用旧路径 `00_Overview/<文件名>`，需在 Codex 中把路径改为 `00_Overview/AI_Context/<文件名>`，或暂停该自动化。此项须由用户在 Codex 内操作。
+
+> AI生成

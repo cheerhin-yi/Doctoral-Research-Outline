@@ -64,3 +64,7 @@ Thumbs.db
 # P0_Benchmark run outputs (preds/logs/csv); canonical evidence lives in Experiments/papers/P0_EI/
 00_Practice_UAV_Aerial_Detection/Experiments/P0_Benchmark/stage_*/P0-BENCH-*/
 
+
+# AIGC watermark temp (platform-generated, not vault content)
+.watermark_tmp/
+

@@ -138,3 +138,5 @@ Unit = **image**. Primary pair F1280 vs DensK1.
 **Stage B — waiting for user continuation** (do not auto-start).
 
 > 2026-10-06 补记（以上冻结记录不变）：UAV_BT1 已随 H: 盘于 2026-10-04 丢失；Run G 与以后的重跑采用 `F:\Conda\envs\UAV_BT2`，版本差异见 `Environment_Delta_UAV_BT2_vs_UAV_BT1.md`。
+
+> AI生成

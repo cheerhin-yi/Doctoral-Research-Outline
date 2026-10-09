@@ -13,3 +13,5 @@
 | `Learning_Record_Template.md` | 当日备忘（新建） |
 
 学习不替代 `Current_Stage` 实验门；IDLE 期内以阅读与笔记为主。
+
+> AI生成

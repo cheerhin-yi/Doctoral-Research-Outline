@@ -14,3 +14,5 @@
 - [Synthetic_Disclosure_Checklist.md](Synthetic_Disclosure_Checklist.md)
 - [Collection_Protocol_Draft.md](Collection_Protocol_Draft.md) — **FUTURE**
 - [SciData_Disclosure_Template_Stub.md](SciData_Disclosure_Template_Stub.md)
+
+> AI生成

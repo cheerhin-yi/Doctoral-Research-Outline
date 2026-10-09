@@ -59,3 +59,5 @@
 | 中位 | *Scientific Data* |
 | 上限 | Sci Data 顺利 / NeurIPS Evaluations & Datasets（冲刺，须双审计写清） |
 | 下限 | **JCR Q2/Q3 related**（Electronics / Sensors 同档；无审计或与 RFDD/UAV 扣件重叠时） |
+
+> AI生成

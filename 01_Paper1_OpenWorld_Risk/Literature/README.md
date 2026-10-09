@@ -16,3 +16,5 @@
 1. 正式引用前核 DOI；不虚构指标。  
 2. SRLF/Meng/conformal 划界写在 B，不写进 A 主贡献。  
 3. A 侧数据近邻（UAV-RSOD/RFDD…）仅交叉引用，不占 B 贡献块。
+
+> AI生成

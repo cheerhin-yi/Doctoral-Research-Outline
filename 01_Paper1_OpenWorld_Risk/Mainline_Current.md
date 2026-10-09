@@ -45,3 +45,5 @@ Venue 政策：`../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`。
 2. 既有 AB/可行性备忘均保留并可从 README 链到。  
 3. Stage_Guide 无冲突标记。  
 4. 不改变唯一 ACTIVE=P0_EI。
+
+> AI生成

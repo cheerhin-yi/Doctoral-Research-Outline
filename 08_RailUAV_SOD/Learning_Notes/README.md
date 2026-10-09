@@ -77,3 +77,5 @@
 | `AB_Independent_Publication_Boundary.md` | 全部笔记禁止泄漏 B 告警主张 |
 
 样板结构对齐：Practice [`01_YOLO_Research_Core.md`](../../00_Practice_UAV_Aerial_Detection/Learning_Notes/01_YOLO_Research_Core.md)（必须掌握→知识链→按段拆解→必学问题；图标要求）+ [`Learning_Note_Method.md`](../../00_Overview/Learning_Note_Method.md)。
+
+> AI生成

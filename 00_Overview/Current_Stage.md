@@ -95,3 +95,5 @@ T4／Kaggle 训练轨已于 2026-09-18 撤回，未产生任何新权重；本�
 不改变上文唯一事项。阶段变了就改本段，并同步 [`../10_Foundations/00_How_To_Use.md`](../10_Foundations/00_How_To_Use.md)。
 
 现在读：[`01_Notation.md`](../10_Foundations/01_Notation.md)、[`02_Linear_Algebra_Vision.md`](../10_Foundations/02_Linear_Algebra_Vision.md)、[`04_Probability_Detection.md`](../10_Foundations/04_Probability_Detection.md)。读损失时再翻 `03`。组网、相机、强化学习、GAN、A\*、凸优化现在不读。
+
+> AI生成

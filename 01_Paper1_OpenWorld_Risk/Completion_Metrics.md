@@ -13,3 +13,5 @@
 案头预备（非关卡）：C1/C2 冻结、矩阵增补加厚、提纲 Intro/RW、LN 可核对知识 · **DONE**。
 
 详见 `Learning_Check_Baseline.md` 与 `Learning_Notes/`。
+
+> AI生成

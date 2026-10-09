@@ -11,3 +11,5 @@
 
 - 印象：DART 已占 DreamBooth+Grounding DINO 管线故事。
 - 待核：是否有受控人时曲线可对标；铁路术语域外失败模式。
+
+> AI生成

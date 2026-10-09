@@ -18,3 +18,5 @@
 | 图、代价、启发式、A\*、Dijkstra | [`13_Ext_Search_Networks.md`](13_Ext_Search_Networks.md) |
 | 凸集、凸函数、对偶、KKT | [`14_Ext_Convex_Optimization.md`](14_Ext_Convex_Optimization.md) |
 | OFDM、ISAC 波形、语义通信、图网络 | 不单开章。先看信道章或优化章的查阅节 |
+
+> AI生成

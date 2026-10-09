@@ -84,3 +84,5 @@
 - 通过条件见并行计划与 Progress_Log 模板；**当前未宣称 PASSED**
 
 英语证据不替代科研 S0/LEARNING-CORE 的手算与闭卷复述。
+
+> AI生成

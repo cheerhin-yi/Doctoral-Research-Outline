@@ -71,3 +71,5 @@ P0_EI 是冻结权重上的推理协议对照（C1／C2），目标可以是 EI 
 本稿定位：练手 + 占坑 + 第二篇引用基线。学位最小闭环仍是 **两篇能计分的 SCI 期刊（建议二区）**；方法增量在另授权的第二篇，不改变 P0_EI ACTIVE。
 
 工科 2023 目录中与方向较近、以后期刊轨可对的例子：*IEEE T-ITS*、*T-PAMI*、*T-VT*、*Information Sciences*、*Knowledge-Based Systems*（多在 A 档思路）；*Image and Vision Computing*、*Pattern Recognition Letters*（B 档）。当前证据厚度不够直接投这些 A 刊。
+
+> AI生成

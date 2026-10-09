@@ -9,3 +9,5 @@
 5. Experiments — 主证据五块上限；删除实验必做。  
 6. Failure & Limits — 协议泄漏、域外、道具异物披露。  
 7. Conclusion — C1/C2 各一句。
+
+> AI生成

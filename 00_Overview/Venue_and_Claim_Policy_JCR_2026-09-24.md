@@ -89,3 +89,5 @@ DESK-FROZEN 强/中措辞保留；fallback **不**覆盖冻结卡成功判据，
 - 会议出口：首投 **IJCNN 2027**（截稿 2027-01-31），落选转投 **ICIP 2027**（截稿 2027-03-31）（2026-10-06 定；均为 CCF-C，投稿前核 CCF 第七版）；备选 ACCV／ICPR 全文；不以 CCF-B（ICME／ICASSP）为第一目标（`00_Practice_UAV_Aerial_Detection/Writing/P0_Two_Paper_Plan_2026-09-22.md`）。
 - 口径：会议按投稿时 CCF 目录，EI 为描述项（本文件 §1.5）；P0 第二篇（另授权）出口为 JCR Q2 应用／系统刊（同上两篇安排）。
 - 本节仅指针，**不**改变 ACTIVE=P0_EI，不新增 venue 决定。
+
+> AI生成

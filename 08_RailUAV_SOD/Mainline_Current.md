@@ -45,3 +45,5 @@ A-C1 / A-C2 · **PROPOSED · IDLE**（见 `Research_Plan.md`）。
 1. 目录与 Practice 对齐；STATUS=PREP/IDLE。  
 2. 与 B 独立边界可自检。  
 3. 不改变唯一 ACTIVE=P0_EI。
+
+> AI生成

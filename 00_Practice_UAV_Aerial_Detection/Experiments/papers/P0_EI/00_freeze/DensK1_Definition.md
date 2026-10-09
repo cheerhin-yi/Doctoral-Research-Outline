@@ -20,3 +20,5 @@
 - L48: 144次K1输出全部与缓存逐值相同，最大差0；96次F1280重复输出比较全部精确一致。240窗口的匹配目标集合、补回/丢失、GT最优及同分规则、逐图计数守恒、时间分项总和、参考T和超限率均通过独立校核。第一片匹配集合和FP与BTD7保持一致，原输入SHA不变。
 - L54: 证据：[协议](provenance/BTD8_Single_Crop_Protocol.md)、分阶段执行入口 `check_single_crop.py`、结果校核 `verify_single_crop.py`（脚本仅存 Git 历史）。原始产物在被Git忽略的`11_Datasets/processed/VisDrone/BT1/BTD8-SINGLE-20260914-01/`：`cache_summary.json`、`all_240_single_windows.csv`、`all_48_frames.csv`、逐图匹配集合、`summary.json`、`timings.csv`、`resources.jsonl`、`verification.json`、输入SHA与产物清单。`expected_k1_*.npy`/`actual_k1_*.npy`保存单片预测，`reference_F1280_*.npy`保存参考首次预测。
 - L60: 下一项 **BTD9：复用已保存F1280预测，完成cal48强基线效果对照**。按既有小目标/ignore口径匹配标注，与原640全图、密度单片、GT最佳单片对照小TP/FP、补回/丢失及类别；使用本次真实F1280时间，但不给GT最佳单片分配未测耗时。无新推理、训练、评分调参或测试集访问。
+
+> AI生成

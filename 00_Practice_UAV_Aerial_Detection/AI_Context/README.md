@@ -9,3 +9,5 @@
 | [Mainline_A_Current.md](Mainline_A_Current.md) | 主线 A 近／中／远边界、资源与当前口径 |
 
 全局 AI 规则与登记见 [../../00_Overview/AI_Context/README.md](../../00_Overview/AI_Context/README.md)。
+
+> AI生成

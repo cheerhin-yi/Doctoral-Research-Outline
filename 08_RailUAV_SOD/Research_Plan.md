@@ -78,3 +78,5 @@ Venue/Claim 政策：[`../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`]
 
 - 部件族**可按采集难度增减**（见 `Writing/Taxonomy_Draft.md` §7 与 PartFamily 分析）。  
 - Sci Data 未达时，**不**并入 B；改投 JCR Q2/Q3 related 或暂缓。
+
+> AI生成

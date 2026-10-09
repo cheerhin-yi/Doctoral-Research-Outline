@@ -28,3 +28,5 @@ pedestrian, people, bicycle, tricycle, awning-tricycle, motor.
 - Stage E only checks trend under domain shift — not SOTA on UAVDT.
 
 > 2026-09-27：第 7、18 行文本编码修复（去除误入的控制字符 `\t`/`\b`/`\v`，恢复 truck/bus/van 字样，与 `class_mapping_preregister.json` 一致）。**映射本身未改**。
+
+> AI生成

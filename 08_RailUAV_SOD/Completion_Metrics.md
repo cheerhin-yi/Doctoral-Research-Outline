@@ -76,3 +76,5 @@
 ## 课表权威
 
 关卡与编号以 [Learning_Notes/_PLAN_Learning_Notes_Curriculum_2026-09-24.md](Learning_Notes/_PLAN_Learning_Notes_Curriculum_2026-09-24.md) 为准（2026-09-24 锁定）。
+
+> AI生成

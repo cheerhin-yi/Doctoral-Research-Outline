@@ -105,3 +105,5 @@ Venue/Claim 政策：[`../00_Overview/Venue_and_Claim_Policy_JCR_2026-09-24.md`]
 - 每个保留组件有删除实验；
 - 失败条件与适用范围明确；
 - 所有结论回链配置、Run ID 与原始结果。
+
+> AI生成

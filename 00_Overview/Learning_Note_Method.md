@@ -263,3 +263,5 @@ A0允许许可核验后的审计下载和只读分析，不运行模型，不补
 - 所有未确认判断都明确标记为待核验
 
 阶段是否完成以及下一项任务是什么，始终回到[当前阶段](Current_Stage.md)和[练手论文研究计划](../00_Practice_UAV_Aerial_Detection/Research_Plan.md)确认。
+
+> AI生成

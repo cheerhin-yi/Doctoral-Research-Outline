@@ -261,3 +261,5 @@ Experiments/papers/P0_EI/
 | `08_RailUAV_SOD/Learning_Check_Baseline.md` | **更新** 分块检查清单 |
 | `08_RailUAV_SOD/Mainline_Current.md` | **短更** Learning_Notes 脚手架 DONE |
 | Discussion_Extras_Index_2026-09-24.md（已删除） | **新建** 近期 A/B 政策/判断/案头文件索引 |
+
+> AI生成

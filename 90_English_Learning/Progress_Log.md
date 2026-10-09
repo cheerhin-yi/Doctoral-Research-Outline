@@ -132,3 +132,5 @@
 - AI 批改后必须本人重写；禁止用模型段落替换初稿而不留痕。  
 - 无运行证据不写假数字。  
 - Lightweight shared head = Week2 **historical/candidate** topic only.
+
+> AI生成

@@ -261,3 +261,5 @@ Output
 
 {% for a in annotations %}
 - p.{{a.pageLabel}} {% if a.color %}({{a.color}}) {% endif %}{{a.annotatedText}} {% if a.comment %} 注：{{a.comment}} {% endif %}{% endfor %} {% endpersist %}
+
+> AI生成

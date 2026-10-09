@@ -102,3 +102,5 @@
 Codex、检查点、Token、Skills、Plugins和常用提示方式见：
 
 `99_Attachments/Codex_Usage_Guide.md`
+
+> AI生成

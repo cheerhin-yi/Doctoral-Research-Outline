@@ -12,3 +12,5 @@
 
 - [Claim_Freeze_C1_C2.md](Claim_Freeze_C1_C2.md) — C1/C2 措辞冻结
 - [B_OpenWorld_Risk_Outline.md](B_OpenWorld_Risk_Outline.md) — Intro/RW 骨架
+
+> AI生成

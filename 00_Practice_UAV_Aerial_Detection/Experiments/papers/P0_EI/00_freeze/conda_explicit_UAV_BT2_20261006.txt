@@ -23,3 +23,6 @@ https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/win-64/packaging-26.3-py
 https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/win-64/setuptools-83.0.0-py310haa95532_0.conda
 https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/win-64/wheel-0.47.0-py310haa95532_0.conda
 https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/noarch/pip-26.2.1-pyhc872135_0.conda
+
+
+AI生成

@@ -69,3 +69,5 @@ YOLO 结构改动不是默认贡献。A 的数据集**不是** B 的必要条件
 | 中位 | TIM / Measurement（JCR 三区应用向） |
 | 上限 | TITS / TIM（双路径+预算+轨旁风险齐全） |
 | 下限 | Drones / Access（近似 UAV-OOD / YOLO+启发式时） |
+
+> AI生成
